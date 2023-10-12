@@ -1,0 +1,69 @@
+{
+  "campaigns" : [
+    {"name":"La nuit de la Zélatrice", "url":"campaigns/la_nuit _de_la_zelatrice.json", "replace":"0941ea"},
+    {"name":"L'Héritage de Dunwich", "url":"campaigns/LHéritage_de_Dunwich.json", "replace":"e073d5"},
+    {"name":"La Route de Carcosa", "url":"campaigns/La_Route_de_Carcosa.json", "replace":"4f52cd"},
+    {"name":"La Civilisation Oubliée", "url":"campaigns/La_Civilisation_Oubliee.json", "replace":"f23d51"},
+    {"name":"Le Cercle Brisé", "url":"campaigns/Le_Cercle_Brise.json", "replace":"dc7cca"},
+    {"name":"Les Dévoreurs de Rêves", "url":"campaigns/Les_Devoreurs_de_Reves.json", "replace":"56780b"},
+    {"name":"La Conspiration d'Innsmouth", "url":"campaigns/La_Conspiration_dInnsmouth.json", "replace":"01c1bc"},
+    {"name":"Aux Confins de la Terre", "url":"campaigns/Aux_Confins_de_la_Terre.json", "replace":"0ad50e"},
+    {"name":"Les Clefs Écarlates", "url":"campaigns/Les_Clefs_Ecarlates.json", "replace":"cc5aab"},
+    {"name":"Renouveau - La Nuit de la Zélatrice", "url":"campaigns/Renouveau_LNZ.json", "replace":"ba381f"},
+    {"name":"Renouveau - L'Héritage de Dunwitch", "url":"campaigns/Renouveau_LHD.json", "replace":"306162"},
+    {"name":"Renouveau - La Route de Carcosa", "url":"campaigns/Renouveau_LRC.json", "replace":"f5ba81"},
+    {"name":"Renouveau - La Civilisation Oubliée", "url":"campaigns/Renouveau _LCO.json", "replace":"7e8582"},
+    {"name":"Renouveau - Le Cercle Brisé", "url":"campaigns/Renouveau_LCB.json", "replace":"65b22b"}
+  ],
+  "players" : [
+    {"name":"Cartes joueur gardien 0XP", "url":"players/gardien0.json", "replace":"a463c0"},
+    {"name":"Cartes joueur chercheur 0XP", "url":"players/chercheur0.json", "replace":"dc460c"},
+    {"name":"Cartes joueur truand 0XP", "url":"players/truand0.json", "replace":"82ac47"},
+    {"name":"Cartes joueur mystique 0XP", "url":"players/mystique0.json", "replace":"3ca970"},
+    {"name":"Cartes joueur survivant 0XP", "url":"players/survivant0.json", "replace":"76cf3d"},
+    {"name":"Cartes joueur neutre 0XP", "url":"players/neutre0.json", "replace":"ba51b3"},
+    {"name":"Cartes joueur gardien 1-5XP", "url":"players/gardienx.json", "replace":"d5f9c8"},
+    {"name":"Cartes joueur chercheur 1-5XP", "url":"players/chercheurx.json", "replace":"bec8c9"},
+    {"name":"Cartes joueur truand 1-5XP", "url":"players/truandx.json", "replace":"8eb852"},
+    {"name":"Cartes joueur mystique 1-5XP", "url":"players/mystiquex.json", "replace":"8360b3"},
+    {"name":"Cartes joueur survivant 1-5 XP", "url":"players/survivantx.json", "replace":"fd30b8"},
+    {"name":"Cartes joueur neutre 1-5 XP", "url":"players/neutrex.json", "replace":"7b4586"},
+    {"name":"Cartes liées", "url":"players/liees.json", "replace":"b155ee"},
+    {"name":"Fiches d'amélioration", "url":"players/amelioration.json", "replace":"ec1f6c"},
+    {"name":"Faiblesses liées", "url":"players/faiblessesliees.json", "replace":"af8df1"}
+  ],
+  "scenarios" : [
+    {"name":"La Malédiction du Rougarou", "url":"scenarios/rougarou.json", "replace":"52da24"},
+    {"name":"Le Carnaval des Horreurs", "url":"scenarios/carnaval.json", "replace":"aa5f1e"},
+    {"name":"Le Gardien de l'Abîme", "url":"scenarios/egypte.json", "replace":"9ad12a"},
+    {"name":"Les Labyrinthes de la Folie", "url":"scenarios/labyrinthes.json", "replace":"10d2ad"},
+    {"name":"Meurtre à l'Hôtel Excelcior", "url":"scenarios/excelsior.json", "replace":"ba18ea"},
+    {"name":"Le Dévoreur de Toute Chose", "url":"scenarios/blob.json", "replace":"f0f46b"},
+    {"name":"La Guerre des Dieux Extérieurs", "url":"scenarios/guerre.json", "replace":"fd9ef1"},
+    {"name":"Machinations au Fil du Temps", "url":"scenarios/machinations.json", "replace":"82d39b"},
+    {"name":"Lire ou Mourir", "url":"scenarios/lireoumourir.json", "replace":"9ad12a"},
+    {"name":"Le Tout pour le Tout", "url":"scenarios/letoutpourletout.json", "replace":"10d2ad"},
+    {"name":"Mauvais Sang", "url":"scenarios/mauvaissang.json", "replace":"ba18ea"},
+    {"name":"Suivre les Règles", "url":"scenarios/suivrelesregles.json", "replace":"f0f46b"},
+    {"name":"Fan Made", "url":"scenarios/fanmade.json", "replace":"ece88a"}
+  ],
+  "investigators" : [
+    {"name":"Investigateurs - Boite de base", "url":"investigators/izelatrice.json", "replace":"92e7b2"},
+    {"name":"Investigateurs - L'Héritage de Dunwich", "url":"investigators/idunwich.json", "replace":"154f65"},
+    {"name":"Investigateurs - La Route de Carcosa", "url":"investigators/icarcosa.json", "replace":"ec94e1"},
+    {"name":"Investigateurs - La Civilisation Oubliée", "url":"investigators/icivilisation.json", "replace":"f8189e"},
+    {"name":"Investigateurs - Le Cercle Brisé", "url":"investigators/icercle.json", "replace":"eebe43"},
+    {"name":"Investigateurs - Les Dévoreurs de Rêves", "url":"investigators/idevoreurs.json", "replace":"ba9f48"},
+    {"name":"Investigateurs - La Conspiration d'Innsmouth", "url":"investigators/iinnsmouth.json", "replace":"d916b0"},
+    {"name":"Investigateurs - Aux Confins de la Terre", "url":"investigators/iconfins.json", "replace":"784d7a"},
+    {"name":"Investigateurs - Les Clefs Écarlates", "url":"investigators/iclefs.json", "replace":"7e5f01"},
+    {"name":"Investigateurs - Promos", "url":"investigators/ipromos.json", "replace":"9bef86"},
+    {"name":"Investigateurs - Packs", "url":"investigators/ipacks.json", "replace":"6a2b62"},
+    {"name":"Investigateurs -  Parallèles", "url":"investigators/iparallele.json", "replace":"63b501"}
+  ],
+  "extras" : [
+    {"name":"Campagnes mises en place Coolnash", "url":"extras/ccoolnash.json", "replace":"f199f8"},
+    {"name":"Gabarits soutiens", "url":"extras/gabaritscartes.json", "replace":"845644"},
+    {"name":"Les Outils de Maleson", "url":"extras/maleson.json", "replace":"7dd9c5"}
+  ]
+}
