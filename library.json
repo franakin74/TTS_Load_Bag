@@ -15,6 +15,9 @@
     {"name":"Renouveau - La Civilisation Oubliée", "url":"campaigns/Renouveau _LCO.json", "replace":"7e8582"},
     {"name":"Renouveau - Le Cercle Brisé", "url":"campaigns/Renouveau_LCB.json", "replace":"65b22b"}
   ],
+  "challenge" : [
+    {"name":"Scénarios Défis", "url":"challenge/challenge.json", "replace":"cd181c"},
+  ],
   "players" : [
     {"name":"Cartes joueur gardien 0XP", "url":"players/gardien0.json", "replace":"a463c0"},
     {"name":"Cartes joueur chercheur 0XP", "url":"players/chercheur0.json", "replace":"dc460c"},
