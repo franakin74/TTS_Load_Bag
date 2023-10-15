@@ -16,7 +16,7 @@
     {"name":"Renouveau - Le Cercle Brisé", "url":"campaigns/Renouveau_LCB.json", "replace":"65b22b"}
   ],
   "challenge" : [
-    {"name":"Scénarios Défis", "url":"challenge/challenge.json", "replace":"ea77ff"},
+    {"name":"Scénarios Défis", "url":"challenge/challenge.json", "replace":"79fa2c"},
   ],
     "fan" : [
     {"name":"Créations", "url":"fan/Fan_Made.json", "replace":"8d7a4b"},
