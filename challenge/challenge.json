@@ -1,23 +1,5 @@
-{
-  "SaveName": "",
-  "Date": "",
-  "VersionNumber": "",
-  "GameMode": "",
-  "GameType": "",
-  "GameComplexity": "",
-  "Tags": [],
-  "Gravity": 0.5,
-  "PlayArea": 0.5,
-  "Table": "",
-  "Sky": "",
-  "Note": "",
-  "TabStates": {},
-  "LuaScript": "",
-  "LuaScriptState": "",
-  "XmlUI": "",
-  "ObjectStates": [
     {
-      "GUID": "79fa2c",
+      "GUID": "cd181c",
       "Name": "Custom_Model_Bag",
       "Transform": {
         "posX": -52.9999542,
@@ -20066,5 +20048,3 @@
         }
       ]
     }
-  ]
-}
