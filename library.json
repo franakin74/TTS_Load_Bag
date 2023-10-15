@@ -51,6 +51,7 @@
     {"name":"Le Tout pour le Tout", "url":"scenarios/letoutpourletout.json", "replace":"10d2ad"},
     {"name":"Mauvais Sang", "url":"scenarios/mauvaissang.json", "replace":"ba18ea"},
     {"name":"Suivre les Règles", "url":"scenarios/suivrelesregles.json", "replace":"f0f46b"},
+    {"name":"Indépendants Officiels", "url":"scenarios/independant_officiel.json", "replace":"caa85c"},
     {"name":"Fan Made", "url":"scenarios/fanmade.json", "replace":"ece88a"}
   ],
   "investigators" : [
