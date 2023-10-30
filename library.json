@@ -19,7 +19,7 @@
     {"name":"Scénarios Défis", "url":"challenge/challenge.json", "replace":"cd181c"},
   ],
     "fan" : [
-    {"name":"Créations", "url":"fan/Fan_Made.json", "replace":"8d7a4b"},
+    {"name":"Créations", "url":"fan/fan_made.json", "replace":"a3fef9"},
   ],
   "players" : [
     {"name":"Cartes joueur gardien 0XP", "url":"players/gardien0.json", "replace":"a463c0"},
