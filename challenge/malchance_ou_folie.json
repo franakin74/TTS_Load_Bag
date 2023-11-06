@@ -2,12 +2,12 @@
       "GUID": "e505cc",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 12.9999495,
+        "posX": 12.9998989,
         "posY": 5.84359932,
-        "posZ": 51.49995,
-        "rotX": -3.82030336E-08,
-        "rotY": 180.004623,
-        "rotZ": 4.957707E-06,
+        "posZ": 51.5,
+        "rotX": -2.75883183E-09,
+        "rotY": 179.975189,
+        "rotZ": 4.99992666E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -43,7 +43,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-        "DiffuseURL": "",
+        "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2191624590400767395/02918C6773E74FB71C6E17029A6FAA75D5660B06/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
