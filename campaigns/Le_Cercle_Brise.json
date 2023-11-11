@@ -2,12 +2,12 @@
       "GUID": "dc7cca",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -61.0018,
-        "posY": 0.9800002,
-        "posZ": 19.223896,
-        "rotX": -4.933917E-06,
-        "rotY": 180.000214,
-        "rotZ": 4.890319E-07,
+        "posX": -61.00004,
+        "posY": 0.980000138,
+        "posZ": 19.4999352,
+        "rotX": -5.87747672E-06,
+        "rotY": 180.00119,
+        "rotZ": 4.2385642E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -75,9 +75,9 @@
             "posX": 17.519001,
             "posY": 0.9799975,
             "posZ": 44.4999,
-            "rotX": -4.94569349E-06,
+            "rotX": -4.939745E-06,
             "rotY": 179.994278,
-            "rotZ": 6.36043353E-07,
+            "rotZ": 5.38503969E-07,
             "scaleX": 1.23308516,
             "scaleY": 0.256660283,
             "scaleZ": 1.35025632
@@ -9364,12 +9364,12 @@
           "GUID": "079895",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 3.00040865,
+            "posX": 3.00040722,
             "posY": 1.5019747,
             "posZ": -5.50149536,
-            "rotX": 0.01089238,
+            "rotX": 0.0108923726,
             "rotY": 179.98996,
-            "rotZ": 0.00494651264,
+            "rotZ": 0.00494656758,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -9424,9 +9424,9 @@
             "posX": 13.019,
             "posY": 0.979997456,
             "posZ": 44.4999046,
-            "rotX": -5.404646E-06,
+            "rotX": -5.33574348E-06,
             "rotY": 180.000122,
-            "rotZ": -2.38351248E-07,
+            "rotZ": -1.89620607E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -47233,12 +47233,12 @@
           "GUID": "680fe7",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 4.01900339,
+            "posX": 4.01900434,
             "posY": 0.979997635,
             "posZ": 44.4999046,
-            "rotX": -4.83925623E-06,
-            "rotY": 179.999817,
-            "rotZ": 8.33014951E-07,
+            "rotX": -4.896421E-06,
+            "rotY": 179.9998,
+            "rotZ": 7.06498554E-07,
             "scaleX": 1.23308516,
             "scaleY": 0.256660283,
             "scaleZ": 1.35025632
@@ -47294,11 +47294,11 @@
               "Name": "Custom_Model",
               "Transform": {
                 "posX": -30.7742,
-                "posY": 1.76629961,
+                "posY": 1.77099931,
                 "posZ": 24.0037,
-                "rotX": 4.787238E-06,
-                "rotY": 9.99646945E-05,
-                "rotZ": -6.105119E-08,
+                "rotX": 5.06272636E-06,
+                "rotY": 9.198707E-05,
+                "rotZ": 1.83954768E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -47351,10 +47351,10 @@
               "Transform": {
                 "posX": -7.906011,
                 "posY": 1.5694232,
-                "posZ": 9.499696,
-                "rotX": 0.0109010367,
-                "rotY": 180.000671,
-                "rotZ": 0.00493985927,
+                "posZ": 9.499695,
+                "rotX": 0.0109009556,
+                "rotY": 180.000717,
+                "rotZ": 0.00493970839,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -47410,9 +47410,9 @@
                 "posX": 15.499999,
                 "posY": 1.50374687,
                 "posZ": 9.5,
-                "rotX": -0.00494774245,
+                "rotX": -0.004947718,
                 "rotY": 269.999939,
-                "rotZ": 0.0108981049,
+                "rotZ": 0.0108990259,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -47754,11 +47754,11 @@
               "Name": "Custom_Model_Bag",
               "Transform": {
                 "posX": -21.5000019,
-                "posY": 1.83530128,
-                "posZ": 4.99999857,
-                "rotX": -5.10481368E-06,
-                "rotY": 179.994553,
-                "rotZ": -1.635484E-07,
+                "posY": 1.84000111,
+                "posZ": 4.999999,
+                "rotX": -4.687888E-06,
+                "rotY": 179.994537,
+                "rotZ": 2.1684167E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -48347,11 +48347,11 @@
               "Name": "Custom_Model",
               "Transform": {
                 "posX": -30.5000038,
-                "posY": 1.76630151,
+                "posY": 1.77100134,
                 "posZ": 1.99999428,
-                "rotX": 4.784809E-06,
-                "rotY": -8.223887E-06,
-                "rotZ": -6.30726271E-09,
+                "rotX": 5.04115E-06,
+                "rotY": -1.0095303E-05,
+                "rotZ": 6.52128751E-09,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -48402,12 +48402,12 @@
               "GUID": "4e0524",
               "Name": "Card",
               "Transform": {
-                "posX": 19.5753269,
+                "posX": 19.5753345,
                 "posY": 1.51699674,
                 "posZ": 9.487496,
-                "rotX": 0.0108956993,
-                "rotY": 180.000381,
-                "rotZ": 0.00492081139,
+                "rotX": 0.0108955922,
+                "rotY": 180.000412,
+                "rotZ": 0.00492092827,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -48463,9 +48463,9 @@
                 "posX": 5.0,
                 "posY": 1.51673758,
                 "posZ": 1.50000048,
-                "rotX": 0.0108915,
+                "rotX": 0.0108915363,
                 "rotY": 179.999756,
-                "rotZ": 0.004948164,
+                "rotZ": 0.00494813733,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -48518,12 +48518,12 @@
               "GUID": "50fee5",
               "Name": "Card",
               "Transform": {
-                "posX": 0.09389717,
+                "posX": 0.09389673,
                 "posY": 1.570253,
                 "posZ": 17.4997959,
-                "rotX": 0.0109022008,
-                "rotY": 180.015579,
-                "rotZ": 0.00493843062,
+                "rotX": 0.0109022791,
+                "rotY": 180.01564,
+                "rotZ": 0.00493835844,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -48579,7 +48579,7 @@
                 "posX": -4.50000143,
                 "posY": 1.50623453,
                 "posZ": 13.5,
-                "rotX": -0.0042028185,
+                "rotX": -0.004203133,
                 "rotY": 45.0002174,
                 "rotZ": 359.9888,
                 "scaleX": 1.0,
@@ -48749,11 +48749,11 @@
               "GUID": "60bdf2",
               "Name": "Deck",
               "Transform": {
-                "posX": 12.501,
+                "posX": 12.5010014,
                 "posY": 1.53161466,
-                "posZ": -6.0168,
-                "rotX": 0.00494815968,
-                "rotY": 90.0004,
+                "posZ": -6.016801,
+                "rotX": 0.004948087,
+                "rotY": 90.00038,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -48937,12 +48937,12 @@
               "GUID": "6e7fb6",
               "Name": "Card",
               "Transform": {
-                "posX": -0.500003755,
+                "posX": -0.5000042,
                 "posY": 1.52025366,
                 "posZ": 17.5,
-                "rotX": 0.0108942362,
-                "rotY": 180.015732,
-                "rotZ": 0.00492375158,
+                "rotX": 0.0108943256,
+                "rotY": 180.015778,
+                "rotZ": 0.004923686,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -48998,7 +48998,7 @@
                 "posX": -4.49999952,
                 "posY": 1.50547409,
                 "posZ": 9.5,
-                "rotX": 0.004948422,
+                "rotX": 0.0049484456,
                 "rotY": 90.00303,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -49170,9 +49170,9 @@
               "Transform": {
                 "posX": 17.5049,
                 "posY": 1.531181,
-                "posZ": -6.02519846,
-                "rotX": 0.00493389042,
-                "rotY": 89.92423,
+                "posZ": -6.025199,
+                "rotX": 0.004933721,
+                "rotY": 89.92422,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -49356,12 +49356,12 @@
               "GUID": "82feae",
               "Name": "Card",
               "Transform": {
-                "posX": -0.5000078,
+                "posX": -0.5000086,
                 "posY": 1.51873326,
                 "posZ": 9.5,
-                "rotX": 0.0108918194,
-                "rotY": 179.995773,
-                "rotZ": 0.004947469,
+                "rotX": 0.0108918957,
+                "rotY": 179.995712,
+                "rotZ": 0.0049475464,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -49414,12 +49414,12 @@
               "GUID": "836fbc",
               "Name": "Card",
               "Transform": {
-                "posX": 11.5000038,
+                "posX": 11.5000048,
                 "posY": 1.51921725,
                 "posZ": 17.5,
-                "rotX": 0.0108973468,
-                "rotY": 179.981216,
-                "rotZ": 0.00491722766,
+                "rotX": 0.0108972834,
+                "rotY": 179.981232,
+                "rotZ": 0.0049171173,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -49472,12 +49472,12 @@
               "GUID": "87db06",
               "Name": "Deck",
               "Transform": {
-                "posX": 30.50097,
-                "posY": 1.66063106,
-                "posZ": -7.75290346,
-                "rotX": 0.128022432,
-                "rotY": 180.008179,
-                "rotZ": 180.001236,
+                "posX": 30.5009689,
+                "posY": 1.65721166,
+                "posZ": -7.752651,
+                "rotX": 7.153465E-09,
+                "rotY": 180.008118,
+                "rotZ": 180.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -50740,12 +50740,12 @@
               "GUID": "882caa",
               "Name": "Card",
               "Transform": {
-                "posX": 12.0939035,
+                "posX": 12.0939045,
                 "posY": 1.56921661,
                 "posZ": 17.5002,
-                "rotX": 0.0109053086,
-                "rotY": 179.981308,
-                "rotZ": 0.004931715,
+                "rotX": 0.0109052276,
+                "rotY": 179.981323,
+                "rotZ": 0.004931654,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -50799,11 +50799,11 @@
               "Name": "Deck",
               "Transform": {
                 "posX": -25.0000134,
-                "posY": 1.80548751,
-                "posZ": 9.999965,
-                "rotX": -5.356142E-06,
-                "rotY": 180.001038,
-                "rotZ": 4.656181E-07,
+                "posY": 1.81018734,
+                "posZ": 9.999961,
+                "rotX": -5.138714E-06,
+                "rotY": 180.001083,
+                "rotZ": 7.73717829E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -51096,10 +51096,10 @@
               "Name": "Deck",
               "Transform": {
                 "posX": 30.5,
-                "posY": 1.68099225,
-                "posZ": -3.0001,
-                "rotX": -0.0005907984,
-                "rotY": 180.000854,
+                "posY": 1.636536,
+                "posZ": -3.00010014,
+                "rotX": -0.000590848271,
+                "rotY": 180.00087,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -51134,6 +51134,8 @@
               "Hands": false,
               "SidewaysCard": false,
               "DeckIDs": [
+                1169631,
+                1169631,
                 274707,
                 274708,
                 274709,
@@ -51155,11 +51157,18 @@
                 274917,
                 274912,
                 1169633,
-                1169632,
-                1169631,
-                1169630
+                1169632
               ],
               "CustomDeck": {
+                "11696": {
+                  "FaceURL": "https://i.imgur.com/CWF1aKc.jpg",
+                  "BackURL": "https://i.imgur.com/QUAMFwq.jpg",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": true,
+                  "Type": 0
+                },
                 "2747": {
                   "FaceURL": "https://i.imgur.com/Eb4x1AU.jpg",
                   "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
@@ -51178,15 +51187,6 @@
                   "UniqueBack": false,
                   "Type": 0
                 },
-                "11696": {
-                  "FaceURL": "https://i.imgur.com/CWF1aKc.jpg",
-                  "BackURL": "https://i.imgur.com/QUAMFwq.jpg",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": true,
-                  "Type": 0
-                },
                 "2749": {
                   "FaceURL": "https://i.imgur.com/Eb4x1AU.jpg",
                   "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
@@ -51201,6 +51201,122 @@
               "LuaScriptState": "",
               "XmlUI": "",
               "ContainedObjects": [
+                {
+                  "GUID": "71e523",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 25.0000343,
+                    "posY": 1.54440057,
+                    "posZ": -0.5000479,
+                    "rotX": 0.0616713874,
+                    "rotY": 180.000137,
+                    "rotZ": 180.039642,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Mauvais Augure",
+                  "Description": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05183\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 1169631,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11696": {
+                      "FaceURL": "https://i.imgur.com/CWF1aKc.jpg",
+                      "BackURL": "https://i.imgur.com/QUAMFwq.jpg",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "69e4b4",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 25.0001335,
+                    "posY": 1.51442969,
+                    "posZ": -0.499766737,
+                    "rotX": 0.0128914556,
+                    "rotY": 179.996124,
+                    "rotZ": 180.018646,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Mauvais Augure",
+                  "Description": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05183\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 1169631,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11696": {
+                      "FaceURL": "https://i.imgur.com/CWF1aKc.jpg",
+                      "BackURL": "https://i.imgur.com/QUAMFwq.jpg",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
                 {
                   "GUID": "16b1ee",
                   "Name": "Card",
@@ -52476,122 +52592,6 @@
                   "LuaScript": "",
                   "LuaScriptState": "",
                   "XmlUI": ""
-                },
-                {
-                  "GUID": "71e523",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 30.5008984,
-                    "posY": 4.936396,
-                    "posZ": -3.00027633,
-                    "rotX": -0.0005911562,
-                    "rotY": 179.9974,
-                    "rotZ": 180.001068,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Mauvais Augure",
-                  "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05183\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 1169631,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11696": {
-                      "FaceURL": "https://i.imgur.com/CWF1aKc.jpg",
-                      "BackURL": "https://i.imgur.com/QUAMFwq.jpg",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "cad50e",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 30.5008984,
-                    "posY": 4.736396,
-                    "posZ": -3.00027633,
-                    "rotX": -0.0005911562,
-                    "rotY": 179.9974,
-                    "rotZ": 180.001068,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Mauvais Augure",
-                  "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05183\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 1169630,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11696": {
-                      "FaceURL": "https://i.imgur.com/CWF1aKc.jpg",
-                      "BackURL": "https://i.imgur.com/QUAMFwq.jpg",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
                 }
               ]
             },
@@ -52602,9 +52602,9 @@
                 "posX": 11.5,
                 "posY": 1.517697,
                 "posZ": 9.5,
-                "rotX": 0.0108919488,
-                "rotY": 179.995178,
-                "rotZ": 0.004947395,
+                "rotX": 0.0108919553,
+                "rotY": 179.995117,
+                "rotZ": 0.004947306,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -52832,10 +52832,10 @@
               "Transform": {
                 "posX": 3.000004,
                 "posY": 1.60163951,
-                "posZ": -6.49999666,
-                "rotX": 0.01681922,
-                "rotY": 179.982162,
-                "rotZ": 1.14446284E-05,
+                "posZ": -6.499997,
+                "rotX": 0.01682108,
+                "rotY": 179.982178,
+                "rotZ": 9.511617E-06,
                 "scaleX": 1.6428808,
                 "scaleY": 1.0,
                 "scaleZ": 1.6428808
@@ -52890,9 +52890,9 @@
                 "posX": -8.500012,
                 "posY": 1.51942384,
                 "posZ": 9.5,
-                "rotX": 0.0108932732,
-                "rotY": 180.028122,
-                "rotZ": 0.004925936,
+                "rotX": 0.0108931987,
+                "rotY": 180.028168,
+                "rotZ": 0.004925754,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -52948,9 +52948,9 @@
                 "posX": 33.5,
                 "posY": 1.540875,
                 "posZ": -10.0,
-                "rotX": -6.546562E-08,
-                "rotY": 0.000155886082,
-                "rotZ": -4.80624158E-06,
+                "rotX": 8.24305E-09,
+                "rotY": 0.000155875052,
+                "rotZ": -5.216369E-06,
                 "scaleX": 0.8750001,
                 "scaleY": 0.8750001,
                 "scaleZ": 0.8750001
@@ -53001,12 +53001,12 @@
               "GUID": "b47dae",
               "Name": "Card",
               "Transform": {
-                "posX": 23.501358,
+                "posX": 23.5013561,
                 "posY": 1.51380479,
-                "posZ": -5.522934,
-                "rotX": 0.01089149,
-                "rotY": 180.0,
-                "rotZ": 0.0049483,
+                "posZ": -5.52293634,
+                "rotX": 0.01089143,
+                "rotY": 180.000015,
+                "rotZ": 0.00494825747,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53062,7 +53062,7 @@
                 "posX": 5.0,
                 "posY": 1.50465369,
                 "posZ": 9.5,
-                "rotX": 0.004947849,
+                "rotX": 0.004947906,
                 "rotY": 90.0002441,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -53406,11 +53406,11 @@
               "Name": "Deck",
               "Transform": {
                 "posX": -20.4999981,
-                "posY": 1.80067348,
+                "posY": 1.80537331,
                 "posZ": 10.0,
-                "rotX": -5.02316834E-06,
+                "rotX": -4.859932E-06,
                 "rotY": 180.000687,
-                "rotZ": -5.43780025E-08,
+                "rotZ": 9.520747E-09,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53643,12 +53643,12 @@
               "GUID": "d21514",
               "Name": "Card",
               "Transform": {
-                "posX": 20.1697235,
+                "posX": 20.1697311,
                 "posY": 1.5669961,
                 "posZ": 9.484299,
-                "rotX": 0.0109039182,
-                "rotY": 180.000778,
-                "rotZ": 0.004936292,
+                "rotX": 0.0109035457,
+                "rotY": 180.000809,
+                "rotZ": 0.004936668,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53704,9 +53704,9 @@
                 "posX": 8.0,
                 "posY": 1.50363421,
                 "posZ": 5.49999857,
-                "rotX": 0.004203293,
+                "rotX": 0.004203042,
                 "rotY": 224.999817,
-                "rotZ": 0.01120753,
+                "rotZ": 0.0112043787,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53875,11 +53875,11 @@
               "Name": "Custom_Model",
               "Transform": {
                 "posX": -21.5000057,
-                "posY": 1.76630151,
-                "posZ": 1.99999464,
-                "rotX": 5.17951639E-06,
-                "rotY": -0.0002687862,
-                "rotZ": -1.83317567E-07,
+                "posY": 1.77100134,
+                "posZ": 1.9999938,
+                "rotX": 5.23417339E-06,
+                "rotY": -0.000309266441,
+                "rotZ": 2.97102844E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53949,9 +53949,9 @@
                 "z": 0.0
               },
               "ColorDiffuse": {
-                "r": 0.4429609,
-                "g": 0.230960876,
-                "b": 0.08996817
+                "r": 0.442960829,
+                "g": 0.230960816,
+                "b": 0.08996812
               },
               "LayoutGroupSortIndex": 0,
               "Value": 0,
@@ -53985,7 +53985,7 @@
                     "z": -1.59733665
                   },
                   "Rotation": {
-                    "x": -0.00309233554,
+                    "x": -0.00309233577,
                     "y": 359.9685,
                     "z": 0.00169893063
                   }
@@ -53997,7 +53997,7 @@
                     "z": -1.59855163
                   },
                   "Rotation": {
-                    "x": -0.000266810239,
+                    "x": -0.000266810268,
                     "y": 359.977783,
                     "z": 180.000946
                   }
@@ -54033,9 +54033,9 @@
             "posX": -20.0,
             "posY": 1.47986,
             "posZ": -5.0,
-            "rotX": 4.40522321E-08,
+            "rotX": 1.30790113E-07,
             "rotY": 180.0057,
-            "rotZ": 1.05321291E-07,
+            "rotZ": 1.38229481E-08,
             "scaleX": 2.05722,
             "scaleY": 1.0,
             "scaleZ": 2.05722
@@ -54081,12 +54081,12 @@
           "GUID": "7388bc",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -4.98126268,
-            "posY": 0.9800534,
-            "posZ": 44.5001678,
-            "rotX": -5.01912928E-06,
-            "rotY": 179.997665,
-            "rotZ": 6.23323331E-07,
+            "posX": -4.98095846,
+            "posY": 0.9799977,
+            "posZ": 44.4999123,
+            "rotX": -4.59140756E-06,
+            "rotY": 179.9973,
+            "rotZ": 1.29964155E-06,
             "scaleX": 1.13539386,
             "scaleY": 0.236326337,
             "scaleZ": 1.243282
@@ -58920,11 +58920,11 @@
           "Name": "Custom_Tile",
           "Transform": {
             "posX": 33.0,
-            "posY": 1.492153,
+            "posY": 1.49215245,
             "posZ": 11.9998,
-            "rotX": 0.0109457383,
+            "rotX": 0.0109092249,
             "rotY": 179.9711,
-            "rotZ": 0.102312289,
+            "rotZ": 0.10229367,
             "scaleX": 6.221754,
             "scaleY": 1.0,
             "scaleZ": 6.221754
@@ -59038,9 +59038,9 @@
             "posX": -0.4809984,
             "posY": 0.9799975,
             "posZ": 44.4999,
-            "rotX": -4.9981677E-06,
+            "rotX": -5.028962E-06,
             "rotY": 179.9786,
-            "rotZ": 6.438826E-07,
+            "rotZ": 6.65485857E-07,
             "scaleX": 1.16795754,
             "scaleY": 0.2431043,
             "scaleZ": 1.27894008
