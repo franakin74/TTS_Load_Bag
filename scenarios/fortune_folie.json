@@ -1,13 +1,31 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
     {
       "GUID": "e5fcd2",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 30.500103,
-        "posY": 5.84361029,
-        "posZ": 51.50004,
-        "rotX": 1.51794943E-09,
-        "rotY": 180.000259,
-        "rotZ": 4.993616E-06,
+        "posX": 26.4998169,
+        "posY": 5.843611,
+        "posZ": 51.50055,
+        "rotX": -1.51927875E-08,
+        "rotY": 179.965347,
+        "rotZ": 5.193274E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.2498823,
         "scaleZ": 1.3145982
@@ -65,123 +83,9 @@
         "Order": 0
       },
       "LuaScript": "-- Utility memory bag by Directsun\r\n-- Version 2.7.0\r\n-- Fork of Memory Bag 2.0 by MrStump\r\n--\r\n-- Want to contribute? Create an issue or fork the code on GitHub and submit a pull request:\r\n-- https://github.com/sunflowermans/TTS-UtilityMemoryBag\r\n\r\n\r\nfunction updateSave()\r\n    local data_to_save = {[\"ml\"]=memoryList}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction combineMemoryFromBagsWithin()\r\n    local bagObjList = self.getObjects()\r\n    for _, bagObj in ipairs(bagObjList) do\r\n        local data = bagObj.lua_script_state\r\n        if data ~= nil then\r\n            local j = JSON.decode(data)\r\n            if j ~= nil and j.ml ~= nil then\r\n                for guid, entry in pairs(j.ml) do\r\n                    memoryList[guid] = entry\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateMemoryWithMoves()\r\n    memoryList = memoryListBackup\r\n    --get the first transposed object's coordinates\r\n    local obj = getObjectFromGUID(moveGuid)\r\n\r\n    -- p1 is where needs to go, p2 is where it was\r\n    local refObjPos = memoryList[moveGuid].pos\r\n    local deltaPos = findOffsetDistance(obj.getPosition(), refObjPos, nil)\r\n    local movedRotation = obj.getRotation()\r\n    for guid, entry in pairs(memoryList) do\r\n        memoryList[guid].pos.x = entry.pos.x - deltaPos.x\r\n        memoryList[guid].pos.y = entry.pos.y - deltaPos.y\r\n        memoryList[guid].pos.z = entry.pos.z - deltaPos.z\r\n        -- memoryList[guid].rot.x = movedRotation.x\r\n        -- memoryList[guid].rot.y = movedRotation.y\r\n        -- memoryList[guid].rot.z = movedRotation.z\r\n    end\r\n\r\n    --theList[obj.getGUID()] = {\r\n    --    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n    --    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n    --    lock=obj.getLock()\r\n    --}\r\n    moveList = {}\r\nend\r\n\r\nfunction onload(saved_data)\r\n\r\n    fresh = true\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        --Set up information off of loaded_data\r\n        memoryList = loaded_data.ml\r\n    else\r\n        --Set up information for if there is no saved saved data\r\n        memoryList = {}\r\n\r\n    end\r\n\r\n    moveList = {}\r\n    moveGuid = nil\r\n\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        fresh = false\r\n        createMemoryActionButtons()\r\n    end\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make setup button\r\n function createSetupButton()\r\n    self.createButton({\r\n      label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n      position={0,0.1,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n end\r\n\r\n--Triggered by Transpose button\r\nfunction buttonClick_transpose()\r\n    moveGuid = nil\r\n    broadcastToAll(\"Select one object and move it- all objects will move relative to the new location\", {0.75, 0.75, 1})\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(true)\r\n    createSetupActionButtons(true)\r\nend\r\n\r\n--Triggered by setup button,\r\nfunction buttonClick_setup()\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(false)\r\n    createSetupActionButtons(false)\r\nend\r\n\r\nfunction getAllObjectsInMemory()\r\n    local objTable = {}\r\n    local curObj = {}\r\n\r\n    for guid in pairs(memoryListBackup) do\r\n        curObj = getObjectFromGUID(guid)\r\n        table.insert(objTable, curObj)\r\n    end\r\n\r\n    return objTable\r\n    -- return getAllObjects()\r\nend\r\n\r\n--Creates selection buttons on objects\r\nfunction createButtonsOnAllObjects(move)\r\n    buttonIndexMap = {}\r\n    local howManyButtons = 0\r\n\r\n    local objsToHaveButtons = {}\r\n    if move == true then\r\n        objsToHaveButtons = getAllObjectsInMemory()\r\n    else\r\n        objsToHaveButtons = getAllObjects()\r\n    end\r\n\r\n    for _, obj in ipairs(objsToHaveButtons) do\r\n        if obj ~= self then\r\n            --On a normal bag, the button positions aren't the same size as the bag.\r\n            globalScaleFactor = 1* 1/self.getScale().x\r\n            --Super sweet math to set button positions\r\n            local selfPos = self.getPosition()\r\n            local objPos = obj.getPosition()\r\n            local deltaPos = findOffsetDistance(selfPos, objPos, obj)\r\n            local objPos = rotateLocalCoordinates(deltaPos, self)\r\n            objPos.x = -objPos.x * globalScaleFactor\r\n            objPos.y = objPos.y * globalScaleFactor + 2\r\n            objPos.z = objPos.z * globalScaleFactor * 0.9\r\n            --Workaround for custom PDFs\r\n            if obj.Book then\r\n                objPos.y = objPos.y + 0.5\r\n            end\r\n            --Offset rotation of bag\r\n            local rot = self.getRotation()\r\n            rot.y = -rot.y + 180\r\n            --Create function\r\n            local funcName = \"selectButton_\" .. howManyButtons\r\n            local func = function() buttonClick_selection(obj, move) end\r\n            local color = {0.75,0.25,0.25,0.6}\r\n            local colorMove = {0,0,1,0.6}\r\n            if move == true then\r\n                color = colorMove\r\n            end\r\n            self.setVar(funcName, func)\r\n            self.createButton({\r\n                click_function=funcName, function_owner=self,\r\n                position=objPos, rotation=rot, height=500, width=500,\r\n                color=color,\r\n            })\r\n            buttonIndexMap[obj.getGUID()] = howManyButtons\r\n            howManyButtons = howManyButtons + 1\r\n        end\r\n    end\r\nend\r\n\r\n--Creates submit and cancel buttons\r\nfunction createSetupActionButtons(move)\r\n    self.createButton({\r\n        label=\"Annuler\", click_function=\"buttonClick_cancel\", function_owner=self,\r\n      position={-0.7,0.1,2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=145, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    self.createButton({\r\n        label=\"Valider\", click_function=\"buttonClick_submit\", function_owner=self,\r\n        position={-0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=140, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    if move == false then\r\n      self.createButton({\r\n          label=\"Ajouter\", click_function=\"buttonClick_add\", function_owner=self,\r\n          position={0.7,0.3,2.1}, rotation={0,0,0}, height=275, width=625,\r\n          font_size=140, color={0,0,0}, font_color={0.25,1,0.25}\r\n      })\r\n\r\n        self.createButton({\r\n            label=\"Sélection\", click_function=\"editDragSelection\", function_owner=self,\r\n            position={-0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=125, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n\r\n        if fresh == false then\r\n                self.createButton({\r\n                    label=\"Mise à jour\", click_function=\"buttonClick_setNew\", function_owner=self,\r\n                    position={0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=105, color={0,0,0}, font_color={0.75,0.75,1}\r\n                })\r\n                self.createButton({\r\n                    label=\"Retirer\", click_function=\"buttonClick_remove\", function_owner=self,\r\n                    position={0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=140, color={0,0,0}, font_color={1,0.25,0.25}\r\n                })\r\n            end\r\n        end\r\n\r\n        self.createButton({\r\n            label=\"Reset\", click_function=\"buttonClick_reset\", function_owner=self,\r\n            position={0,0.3,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=165, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n    end\r\n\r\n\r\n--During Setup\r\n\r\n\r\n--Checks or unchecks buttons\r\nfunction buttonClick_selection(obj, move)\r\n    local index = buttonIndexMap[obj.getGUID()]\r\n    local colorMove = {0,0,1,0.6}\r\n    local color = {0,1,0,0.6}\r\n\r\n    previousGuid = selectedGuid\r\n    selectedGuid = obj.getGUID()\r\n\r\n    theList = memoryList\r\n    if move == true then\r\n        theList = moveList\r\n        if previousGuid ~= nil and previousGuid ~= selectedGuid then\r\n            local prevObj = getObjectFromGUID(previousGuid)\r\n            prevObj.highlightOff()\r\n            self.editButton({index=previousIndex, color=colorMove})\r\n            theList[previousGuid] = nil\r\n        end\r\n        previousIndex = index\r\n    end\r\n\r\n    if theList[selectedGuid] == nil then\r\n        self.editButton({index=index, color=color})\r\n        --Adding pos/rot to memory table\r\n        local pos, rot = obj.getPosition(), obj.getRotation()\r\n        --I need to add it like this or it won't save due to indexing issue\r\n        theList[obj.getGUID()] = {\r\n            pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n            rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n            lock=obj.getLock(),\r\n            tint=obj.getColorTint()\r\n        }\r\n        obj.highlightOn({0,1,0})\r\n    else\r\n        color = {0.75,0.25,0.25,0.6}\r\n        if move == true then\r\n            color = colorMove\r\n        end\r\n        self.editButton({index=index, color=color})\r\n        theList[obj.getGUID()] = nil\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\nfunction editDragSelection(bagObj, player, remove)\r\n    local selectedObjs = Player[player].getSelectedObjects()\r\n    if not remove then\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            --Ignore if already in the memory list, or does not have a button\r\n            if index and not memoryList[obj.getGUID()] then\r\n                self.editButton({index=index, color={0,1,0,0.6}})\r\n                --Adding pos/rot to memory table\r\n                local pos, rot = obj.getPosition(), obj.getRotation()\r\n                --I need to add it like this or it won't save due to indexing issue\r\n                memoryList[obj.getGUID()] = {\r\n                    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n                    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n                    lock=obj.getLock(),\r\n                    tint=obj.getColorTint()\r\n                }\r\n                obj.highlightOn({0,1,0})\r\n            end\r\n        end\r\n    else\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            if index and memoryList[obj.getGUID()] then\r\n                color = {0.75,0.25,0.25,0.6}\r\n                self.editButton({index=index, color=color})\r\n                memoryList[obj.getGUID()] = nil\r\n                obj.highlightOff()\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n--Cancels selection process\r\nfunction buttonClick_cancel()\r\n    memoryList = memoryListBackup\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        createMemoryActionButtons()\r\n    end\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Sélection annulée\", {1,1,1})\r\n    moveGuid = nil\r\nend\r\n\r\n--Saves selections\r\nfunction buttonClick_submit()\r\n    fresh = false\r\n    if next(moveList) ~= nil then\r\n        for guid in pairs(moveList) do\r\n            moveGuid = guid\r\n        end\r\n        if memoryListBackup[moveGuid] == nil then\r\n            broadcastToAll(\"Item selected for moving is not already in memory\", {1, 0.25, 0.25})\r\n        else\r\n            broadcastToAll(\"Moving all items in memory relative to new objects position!\", {0.75, 0.75, 1})\r\n            self.clearButtons()\r\n            self.clearInputs()\r\n            createMemoryActionButtons()\r\n            local count = 0\r\n            for guid in pairs(moveList) do\r\n                moveGuid = guid\r\n                count = count + 1\r\n                local obj = getObjectFromGUID(guid)\r\n                if obj ~= nil then obj.highlightOff() end\r\n            end\r\n            updateMemoryWithMoves()\r\n            updateSave()\r\n            buttonClick_place()\r\n        end\r\n    elseif next(memoryList) == nil and moveGuid == nil then\r\n        memoryList = memoryListBackup\r\n        broadcastToAll(\"No selections made.\", {0.75, 0.25, 0.25})\r\n    end\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\n    moveGuid = nil\r\nend\r\n\r\nfunction combineTables(first_table, second_table)\r\n    for k,v in pairs(second_table) do first_table[k] = v end\r\nend\r\n\r\nfunction buttonClick_add()\r\n    fresh = false\r\n    combineTables(memoryList, memoryListBackup)\r\n    broadcastToAll(\"Adding internal bags and selections to existing memory\", {0.25, 0.75, 0.25})\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_remove()\r\n    broadcastToAll(\"Removing Selected Entries From Memory\", {1.0, 0.25, 0.25})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        memoryListBackup[guid] = nil\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Removed\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_setNew()\r\n    broadcastToAll(\"Setting new position relative to items in memory\", {0.75, 0.75, 1})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        guid = obj.guid\r\n        if memoryListBackup[guid] ~= nil then\r\n            count = count + 1\r\n            memoryListBackup[guid].pos = obj.getPosition()\r\n            memoryListBackup[guid].rot = obj.getRotation()\r\n            memoryListBackup[guid].lock = obj.getLock()\r\n            memoryListBackup[guid].tint = obj.getColorTint()\r\n        end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\n--Resets bag to starting status\r\nfunction buttonClick_reset()\r\n    fresh = true\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createSetupButton()\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Tool Reset\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\n\r\n--After Setup\r\n\r\n\r\n--Creates recall and place buttons\r\nfunction createMemoryActionButtons()\r\n    self.createButton({\r\n        label=\"Placer\", click_function=\"buttonClick_place\", function_owner=self,\r\n        position={0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Ranger\", click_function=\"buttonClick_recall\", function_owner=self,\r\n        position={-0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={0,0.1,-2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    ---    self.createButton({\r\n    ---      label=\"Bouger\", click_function=\"buttonClick_transpose\", function_owner=self,\r\n    ---      position={-2,0.3,0.8}, rotation={0,270,0}, height=350, width=800,\r\n    ---      font_size=250, color={0,0,0}, font_color={0.75,0.75,1}\r\n    ---\r\nend\r\n\r\n--Sends objects from bag/table to their saved position/rotation\r\nfunction buttonClick_place()\r\n    local bagObjList = self.getObjects()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        --If obj is out on the table, move it to the saved pos/rot\r\n        if obj ~= nil then\r\n            obj.setPositionSmooth(entry.pos)\r\n            obj.setRotationSmooth(entry.rot)\r\n            obj.setLock(entry.lock)\r\n            obj.setColorTint(entry.tint)\r\n        else\r\n            --If obj is inside of the bag\r\n            for _, bagObj in ipairs(bagObjList) do\r\n                if bagObj.guid == guid then\r\n                    local item = self.takeObject({\r\n                        guid=guid, position=entry.pos, rotation=entry.rot, smooth=false\r\n                    })\r\n                    item.setLock(entry.lock)\r\n                    item.setColorTint(entry.tint)\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    broadcastToAll(\"Objets placés\", {1,1,1})\r\nend\r\n\r\n--Recalls objects to bag from table\r\nfunction buttonClick_recall()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then self.putObject(obj) end\r\n    end\r\n    broadcastToAll(\"Objets rangés\", {1,1,1})\r\nend\r\n\r\n\r\n--Utility functions\r\n\r\n\r\n--Find delta (difference) between 2 x/y/z coordinates\r\nfunction findOffsetDistance(p1, p2, obj)\r\n    local yOffset = 0\r\n    if obj ~= nil then\r\n        local bounds = obj.getBounds()\r\n        yOffset = (bounds.size.y - bounds.offset.y)\r\n    end\r\n    local deltaPos = {}\r\n    deltaPos.x = (p2.x-p1.x)\r\n    deltaPos.y = (p2.y-p1.y) + yOffset\r\n    deltaPos.z = (p2.z-p1.z)\r\n    return deltaPos\r\nend\r\n\r\n--Used to rotate a set of coordinates by an angle\r\nfunction rotateLocalCoordinates(desiredPos, obj)\r\n    local objPos, objRot = obj.getPosition(), obj.getRotation()\r\n    local angle = math.rad(objRot.y)\r\n    local x = desiredPos.x * math.cos(angle) - desiredPos.z * math.sin(angle)\r\n    local z = desiredPos.x * math.sin(angle) + desiredPos.z * math.cos(angle)\r\n    --return {x=objPos.x+x, y=objPos.y+desiredPos.y, z=objPos.z+z}\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\nfunction rotateMyCoordinates(desiredPos, obj)\r\n    local angle = math.rad(obj.getRotation().y)\r\n    local x = desiredPos.x * math.sin(angle)\r\n    local z = desiredPos.z * math.cos(angle)\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\n--Coroutine delay, in seconds\r\nfunction wait(time)\r\n    local start = os.time()\r\n    repeat coroutine.yield(0) until os.time() > start + time\r\nend\r\n\r\n--Duplicates a table (needed to prevent it making reference to the same objects)\r\nfunction duplicateTable(oldTable)\r\n    local newTable = {}\r\n    for k, v in pairs(oldTable) do\r\n        newTable[k] = v\r\n    end\r\n    return newTable\r\nend\r\n\r\n--Moves scripted highlight from all objects\r\nfunction removeAllHighlights()\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\n--Round number (num) to the Nth decimal (dec)\r\nfunction round(num, dec)\r\n    local mult = 10^(dec or 0)\r\n    return math.floor(num * mult + 0.5) / mult\r\nend\r\n\r\n\r\n--[[\r\nThis object provides access to a variable stored on the \"Global script\".\r\nThe variable holds the GUIDs for every Utility Memory Bag in the scene.\r\nExample:\r\n{'805ebd', '35cc21', 'fc8886', 'f50264', '5f5f63'}\r\n--]]\r\nAllMemoryBagsInScene = {\r\n    NAME_OF_GLOBAL_VARIABLE = \"_UtilityMemoryBag_AllMemoryBagsInScene\"\r\n}\r\n\r\nfunction AllMemoryBagsInScene:add(guid)\r\n    local guids = Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\n    table.insert(guids, guid)\r\n    Global.setTable(self.NAME_OF_GLOBAL_VARIABLE, guids)\r\nend\r\n\r\nfunction AllMemoryBagsInScene:getGuidList()\r\n    return Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\nend\r\n",
-      "LuaScriptState": "{\"ml\":{\"0016b5\":{\"lock\":false,\"pos\":{\"x\":-26.5,\"y\":1.6749,\"z\":-16.5},\"rot\":{\"x\":0,\"y\":180.0222,\"z\":0},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"00f815\":{\"lock\":false,\"pos\":{\"x\":-34.6985,\"y\":1.5799,\"z\":-6.4996},\"rot\":{\"x\":0,\"y\":179.9929,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"07f57e\":{\"lock\":false,\"pos\":{\"x\":-25.5,\"y\":1.491,\"z\":-5},\"rot\":{\"x\":0.1824,\"y\":180.0258,\"z\":0},\"tint\":{\"a\":1,\"b\":0.318803369998932,\"g\":0.183692812919617,\"r\":0}},\"100cc4\":{\"lock\":false,\"pos\":{\"x\":4.508,\"y\":1.6749,\"z\":-16.4912},\"rot\":{\"x\":0,\"y\":179.7531,\"z\":0},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"4421a3\":{\"lock\":false,\"pos\":{\"x\":-19.9998,\"y\":1.4799,\"z\":-4.4956},\"rot\":{\"x\":0,\"y\":180.0209,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"466cfc\":{\"lock\":false,\"pos\":{\"x\":-1,\"y\":1.4799,\"z\":-16},\"rot\":{\"x\":0,\"y\":180,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0.4980388879776,\"r\":0.69803923368454}},\"476ea2\":{\"lock\":false,\"pos\":{\"x\":24,\"y\":0.98,\"z\":44},\"rot\":{\"x\":0,\"y\":180.0034,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"654a1f\":{\"lock\":true,\"pos\":{\"x\":-34.7,\"y\":1.48,\"z\":-1.9851},\"rot\":{\"x\":90,\"y\":0.2199,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"71d6af\":{\"lock\":false,\"pos\":{\"x\":-28.4999,\"y\":1.491,\"z\":-4.9999},\"rot\":{\"x\":0.1824,\"y\":180.031,\"z\":0},\"tint\":{\"a\":1,\"b\":0.318803399801254,\"g\":0.183692842721939,\"r\":0}},\"76daec\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":1.6749,\"z\":-16.5},\"rot\":{\"x\":0,\"y\":180.0222,\"z\":0},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"8985d8\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.5507,\"z\":-3},\"rot\":{\"x\":0.0109,\"y\":179.9995,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":1}},\"9aa0dd\":{\"lock\":false,\"pos\":{\"x\":29.5,\"y\":0.98,\"z\":44},\"rot\":{\"x\":0,\"y\":180,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b33e6c\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.5229},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cf4171\":{\"lock\":false,\"pos\":{\"x\":-11.5,\"y\":1.6745,\"z\":-16.5},\"rot\":{\"x\":-0.0013,\"y\":180.0222,\"z\":-0.0008},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}}}}",
+      "LuaScriptState": "{\"ml\":{\"0016b5\":{\"lock\":false,\"pos\":{\"x\":-26.5,\"y\":1.6749,\"z\":-16.5},\"rot\":{\"x\":0,\"y\":180.0222,\"z\":0},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"100cc4\":{\"lock\":false,\"pos\":{\"x\":4.508,\"y\":1.6749,\"z\":-16.4912},\"rot\":{\"x\":0,\"y\":179.7531,\"z\":0},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"4421a3\":{\"lock\":false,\"pos\":{\"x\":-19.9998,\"y\":1.4799,\"z\":-4.4956},\"rot\":{\"x\":0,\"y\":180.0209,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"466cfc\":{\"lock\":false,\"pos\":{\"x\":-1,\"y\":1.4799,\"z\":-16},\"rot\":{\"x\":0,\"y\":180,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0.4980388879776,\"r\":0.69803923368454}},\"476ea2\":{\"lock\":false,\"pos\":{\"x\":24,\"y\":0.98,\"z\":44},\"rot\":{\"x\":0,\"y\":180.0034,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"76daec\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":1.6749,\"z\":-16.5},\"rot\":{\"x\":0,\"y\":180.0222,\"z\":0},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"8985d8\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.5507,\"z\":-3},\"rot\":{\"x\":0.0109,\"y\":179.9995,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":1}},\"9aa0dd\":{\"lock\":false,\"pos\":{\"x\":29.5,\"y\":0.98,\"z\":44},\"rot\":{\"x\":0,\"y\":180,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b33e6c\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.5229},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cf4171\":{\"lock\":false,\"pos\":{\"x\":-11.5,\"y\":1.6745,\"z\":-16.5},\"rot\":{\"x\":-0.0013,\"y\":180.0222,\"z\":-0.0008},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344730019569397,\"r\":0.726724028587341}},\"f72a04\":{\"lock\":false,\"pos\":{\"x\":3,\"y\":1.502,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0125,\"z\":0.005},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}}}}",
       "XmlUI": "",
       "ContainedObjects": [
-        {
-          "GUID": "0016b5",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": -26.5,
-            "posY": 1.67486012,
-            "posZ": -16.5,
-            "rotX": 4.297134E-07,
-            "rotY": 180.0222,
-            "rotZ": -1.27677254E-07,
-            "scaleX": 0.306216359,
-            "scaleY": 1.0,
-            "scaleZ": 0.306216359
-          },
-          "Nickname": "Niveau d'Alarme",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.726724,
-            "g": 0.34473002,
-            "b": 0.465997934
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,1]",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "cf4171",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": -11.5,
-            "posY": 1.6745156,
-            "posZ": -16.5,
-            "rotX": -0.00125314447,
-            "rotY": 180.0222,
-            "rotZ": -0.0007736728,
-            "scaleX": 0.306216359,
-            "scaleY": 1.0,
-            "scaleZ": 0.306216359
-          },
-          "Nickname": "Niveau d'Alarme",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.726724,
-            "g": 0.34473002,
-            "b": 0.465997934
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,1]",
-          "XmlUI": ""
-        },
         {
           "GUID": "466cfc",
           "Name": "Custom_Tile",
@@ -240,202 +144,31 @@
           "XmlUI": ""
         },
         {
-          "GUID": "100cc4",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 4.508,
-            "posY": 1.67485833,
-            "posZ": -16.4912,
-            "rotX": -2.70135433E-06,
-            "rotY": 179.7531,
-            "rotZ": 3.916845E-06,
-            "scaleX": 0.306216359,
-            "scaleY": 1.0,
-            "scaleZ": 0.306216359
-          },
-          "Nickname": "Niveau d'Alarme",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.726724,
-            "g": 0.34473002,
-            "b": 0.465997934
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,1]",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "76daec",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 19.5,
-            "posY": 1.67486,
-            "posZ": -16.5,
-            "rotX": -1.18311914E-06,
-            "rotY": 180.0222,
-            "rotZ": 5.821759E-07,
-            "scaleX": 0.306216359,
-            "scaleY": 1.0,
-            "scaleZ": 0.306216359
-          },
-          "Nickname": "Niveau d'Alarme",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.726724,
-            "g": 0.34473002,
-            "b": 0.465997934
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,1]",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "00f815",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": -34.6985,
-            "posY": 1.57985961,
-            "posZ": -6.4996,
-            "rotX": 2.02169829E-07,
-            "rotY": 179.9929,
-            "rotZ": 3.675934E-08,
-            "scaleX": 0.9502119,
-            "scaleY": 1.0,
-            "scaleZ": 0.9502119
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2191624590391117415/E7B5B3F16ABB555D8E89AD4851DF8012FA1D204A/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.2,
-              "MergeDistancePixels": 15.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "07f57e",
+          "GUID": "f72a04",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": -25.5,
-            "posY": 1.49103785,
-            "posZ": -5.0,
-            "rotX": 0.182388261,
-            "rotY": 180.0261,
-            "rotZ": 1.35255982E-06,
-            "scaleX": 3.51147437,
+            "posX": 2.99999833,
+            "posY": 1.501975,
+            "posZ": -5.499996,
+            "rotX": 0.010890427,
+            "rotY": 180.012466,
+            "rotZ": 0.00495087635,
+            "scaleX": 1.6428808,
             "scaleY": 1.0,
-            "scaleZ": 3.51147437
+            "scaleZ": 1.6428808
           },
-          "Nickname": "Gestion du Chaos Bag",
-          "Description": "",
-          "GMNotes": "",
+          "Nickname": "Mise en place du Chaos Bag",
+          "Description": "Fortune et Folie",
+          "GMNotes": "{\"data\":\"FaF\",\"easy\":false,\"expert\":false,\"hard\":true,\"normal\":true,\"standalone\":false}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 0.0,
-            "g": 0.183692783,
-            "b": 0.31880334
+            "r": 0.8745098,
+            "g": 0.8,
+            "b": 0.7019608
           },
           "LayoutGroupSortIndex": 0,
           "Value": 0,
@@ -452,8 +185,8 @@
           "HideWhenFaceDown": false,
           "Hands": false,
           "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011455597252079641/AE13A58A34B47F4BF67E7EDA1A303E8ABAF9B28D/",
-            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011455597251612319/80A3529531C8E06F8E660B987F9F996E981EA147/",
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011456161884106028/81BF2DAD34FE18B6788B56E21F16B81E6525AD99/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011456161884106028/81BF2DAD34FE18B6788B56E21F16B81E6525AD99/",
             "ImageScalar": 1.0,
             "WidthScale": 0.0,
             "CustomTile": {
@@ -463,8 +196,122 @@
               "Stretch": true
             }
           },
-          "LuaScript": "jacqueline_guid = '42cd6e'\r\ndebug = false\r\nchaostokenparams = {\r\n    { name = \"+1\",                   GMNotes = 'p1',         button_index = 1,  click_function = 'clickP1' },\r\n    { name = \"0\",                    GMNotes = '0',          button_index = 2,  click_function = 'clickZ0' },\r\n    { name = \"-1\",                   GMNotes = 'm1',         button_index = 3,  click_function = 'clickM1' },\r\n    { name = \"-2\",                   GMNotes = 'm2',         button_index = 4,  click_function = 'clickM2' },\r\n    { name = \"-3\",                   GMNotes = 'm3',         button_index = 5,  click_function = 'clickM3' },\r\n    { name = \"-4\",                   GMNotes = 'm4',         button_index = 6,  click_function = 'clickM4' },\r\n    { name = \"-5\",                   GMNotes = 'm5',         button_index = 7,  click_function = 'clickM5' },\r\n    { name = \"-6\",                   GMNotes = 'm6',         button_index = 8,  click_function = 'clickM6' },\r\n    { name = \"-7\",                   GMNotes = 'm7',         button_index = 9,  click_function = 'clickM7' },\r\n    { name = \"-8\",                   GMNotes = 'm8',         button_index = 10, click_function = 'clickM8' },\r\n    { name = \"Crâne\",               GMNotes = 'skull',      button_index = 1,  click_function = 'clickSk' },\r\n    { name = \"Tablette\",             GMNotes = 'tablet',     button_index = 2,  click_function = 'clickTa' },\r\n    { name = \"Échec Automatique\",   GMNotes = 'chaosfail',  button_index = 3,  click_function = 'clickAF' },\r\n    { name = \"Béni\",                GMNotes = 'bless',      button_index = 4,  click_function = 'clickBl' },\r\n    { name = \"Gel\",                  GMNotes = 'frost',      button_index = 5,  click_function = 'clickfFr' },\r\n    { name = \"Cultiste\",             GMNotes = 'cultist',    button_index = 6,  click_function = 'clickCl' },\r\n    { name = \"Chose Très Ancienne\", GMNotes = 'elderthing', button_index = 7,  click_function = 'clickET' },\r\n    { name = \"Signe des Anciens\",    GMNotes = 'eldersign',  button_index = 8,  click_function = 'clickES' },\r\n    { name = \"Maudit\",               GMNotes = 'curse',      button_index = 9,  click_function = 'clickCr' },\r\n    { name = \"\",                     GMNotes = '',           button_index = 10, click_function = 'doNothing' }\r\n}\r\n\r\nfunction onLoad(saved_data)\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        tilestate = loaded_data[1]\r\n    else\r\n        saved_data = {}\r\n        tilestate = 0\r\n    end\r\n    jacqueline = getObjectFromGUID(jacqueline_guid)\r\n    chaosbagparams = jacqueline.getTable('chaosbagparams')\r\n    chaospoolparams = jacqueline.getTable('chaospoolparams')\r\n    specialpoolparams = jacqueline.getTable('specialpoolparams')\r\n    local data = {\r\n        click_function = \"switchTile\",\r\n        function_owner = self,\r\n        label = \"Autres pions Chaos\",\r\n        position = { 0, 0.1, 0.9 },\r\n        scale = { 0.1, 0.05, 0.1 },\r\n        width = 2000,\r\n        height = 400,\r\n        font_size = 225,\r\n        font_color = { 0.6509, 0.8588, 1, 1 },\r\n        color = { 0, 0, 0, 1 },\r\n        tooltip = \"Autres pions Chaos\"\r\n    }\r\n    self.createButton(data)\r\n\r\n    for j = 1, 2 do\r\n        for i = 1, 5 do\r\n            local z_i = -0.99 + 0.33 * i\r\n            local x_j = 0.07 * math.pow(-1, j)\r\n            -- local n = 4-2*i-j\r\n            -- if n > 0 then\r\n            --     label = '+'..n\r\n            -- else\r\n            --     label = n\r\n            -- end\r\n            local data = {\r\n                click_function = \"doNothing\",\r\n                function_owner = self,\r\n                label = 0,\r\n                position = { x_j, 0.1, z_i },\r\n                scale = { 0.15, 0.1, 0.15 },\r\n                width = 0,\r\n                height = 0,\r\n                font_size = 375,\r\n                font_color = { 0.6509, 0.8588, 1, 1 }\r\n            }\r\n            self.createButton(data)\r\n        end\r\n    end\r\n\r\n    for j = 1, 2 do\r\n        for i = 1, 5 do\r\n            local z_i = -1 + 0.33 * i\r\n            local label\r\n            local x_j = 0.24 * math.pow(-1, j)\r\n            local m = tilestate + i + 5 * j - 5\r\n            local data = {\r\n                click_function = chaostokenparams[m].click_function,\r\n                function_owner = self,\r\n                label = label,\r\n                position = { x_j, 0.1, z_i },\r\n                scale = { 0.15, 0.1, 0.15 },\r\n                width = 600,\r\n                height = 600,\r\n                tooltip = \"click gauche pour ajouter un pion \" ..\r\n                    chaostokenparams[m].name .. \", click droit pour le retirer\",\r\n                color = { 0, 0, 0, 0 }\r\n            }\r\n            self.createButton(data)\r\n        end\r\n    end\r\n\r\n\r\n    if tilestate == 10 then\r\n        for i = 1, 2 do\r\n            local params = {\r\n                index = 10 * i,\r\n                color = { 0, 0, 0, 0 },\r\n                width = 0,\r\n                height = 0,\r\n            }\r\n            self.editButton(params)\r\n        end\r\n    end\r\n    chaosbag = jacqueline.call('getChaosbag')\r\n    countChaosBag()\r\nend\r\n\r\nfunction switchTile()\r\n    if tilestate == 0 then\r\n        tilestate = 10\r\n        params = {\r\n            image =\r\n            'http://cloud-3.steamusercontent.com/ugc/2011455597252079641/AE13A58A34B47F4BF67E7EDA1A303E8ABAF9B28D/'\r\n        }\r\n    else\r\n        tilestate = 0\r\n        params = {\r\n            image =\r\n            'http://cloud-3.steamusercontent.com/ugc/2011456296097554180/A1BA38A0DB5571AE54FA9D3D0AABA1B5F60473B5/'\r\n        }\r\n    end\r\n    self.setCustomObject(params)\r\n    updateSave()\r\n    self.reload()\r\nend\r\n\r\nfunction onObjectCollisionEnter(chaosbag, _)\r\n    countChaosBag()\r\nend\r\n\r\nfunction onObjectLeaveContainer(chaosbag, _)\r\n    countChaosBag()\r\nend\r\n\r\nfunction onObjectEnterContainer(chaosbag, _)\r\n    countChaosBag()\r\nend\r\n\r\nfunction countChaosBag()\r\n    if chaosbag ~= nil then\r\n        local chaosbagcontent = chaosbag.getObjects()\r\n        local n = tilestate + 1\r\n        local m = tilestate + 10\r\n        for i = n, m do\r\n            local count = 0\r\n            for _, token in ipairs(chaosbagcontent) do\r\n                if token.gm_notes == chaostokenparams[i].GMNotes then\r\n                    count = count + 1\r\n                end\r\n            end\r\n            self.editButton({ index = chaostokenparams[i].button_index, label = count })\r\n        end\r\n    end\r\nend\r\n\r\nfunction doNothing()\r\n\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = { tilestate }\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction removeToken(token_gmnote)\r\n    local bagstable = jacqueline.call('getBags', chaosbagparams)\r\n    chaosbag = bagstable[1]\r\n    if chaosbag ~= nil then\r\n        local chaosbagcontent = chaosbag.getObjects()\r\n        for _, token in ipairs(chaosbagcontent) do\r\n            if token.gm_notes == token_gmnote then\r\n                local params = {}\r\n                params.position = chaosbag.getPosition() + Vector({ 0, 1, -5 })\r\n                params.guid = token.guid\r\n                chaosbag.takeObject(params)\r\n                break\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction addToken(token_gmnote)\r\n    local bagstable = jacqueline.call('getBags', chaosbagparams)\r\n    chaosbag = bagstable[1]\r\n    if chaosbag ~= nil then\r\n        local destination = chaosbag.getPosition() + Vector({ 0, 2, 0 })\r\n        local pooltable = jacqueline.call('getBags', chaospoolparams)\r\n        local specialpooltable = jacqueline.call('getBags', specialpoolparams)\r\n        for _, bag in ipairs(specialpooltable) do\r\n            table.insert(pooltable, bag)\r\n        end\r\n        for _, bag in ipairs(pooltable) do\r\n            if bag.getGMNotes() == token_gmnote then\r\n                local token = bag.takeObject()\r\n                token.setPositionSmooth(destination, false, false)\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction clickP1(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('p1')\r\n    else\r\n        addToken('p1')\r\n    end\r\nend\r\n\r\nfunction clickZ0(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('0')\r\n    else\r\n        addToken('0')\r\n    end\r\nend\r\n\r\nfunction clickM1(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m1')\r\n    else\r\n        addToken('m1')\r\n    end\r\nend\r\n\r\nfunction clickM2(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m2')\r\n    else\r\n        addToken('m2')\r\n    end\r\nend\r\n\r\nfunction clickM3(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m3')\r\n    else\r\n        addToken('m3')\r\n    end\r\nend\r\n\r\nfunction clickM4(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m4')\r\n    else\r\n        addToken('m4')\r\n    end\r\nend\r\n\r\nfunction clickM5(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m5')\r\n    else\r\n        addToken('m5')\r\n    end\r\nend\r\n\r\nfunction clickM6(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m6')\r\n    else\r\n        addToken('m6')\r\n    end\r\nend\r\n\r\nfunction clickM7(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m7')\r\n    else\r\n        addToken('m7')\r\n    end\r\nend\r\n\r\nfunction clickM8(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m8')\r\n    else\r\n        addToken('m8')\r\n    end\r\nend\r\n\r\nfunction clickSk(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('skull')\r\n    else\r\n        addToken('skull')\r\n    end\r\nend\r\n\r\nfunction clickCl(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('cultist')\r\n    else\r\n        addToken('cultist')\r\n    end\r\nend\r\n\r\nfunction clickTa(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('tablet')\r\n    else\r\n        addToken('tablet')\r\n    end\r\nend\r\n\r\nfunction clickET(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('elderthing')\r\n    else\r\n        addToken('elderthing')\r\n    end\r\nend\r\n\r\nfunction clickAF(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('chaosfail')\r\n    else\r\n        addToken('chaosfail')\r\n    end\r\nend\r\n\r\nfunction clickES(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('eldersign')\r\n    else\r\n        addToken('eldersign')\r\n    end\r\nend\r\n\r\nfunction clickBl(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('bless')\r\n    else\r\n        addToken('bless')\r\n    end\r\nend\r\n\r\nfunction clickCr(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('curse')\r\n    else\r\n        addToken('curse')\r\n    end\r\nend\r\n\r\nfunction clickfFr(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('frost')\r\n    else\r\n        addToken('frost')\r\n    end\r\nend",
-          "LuaScriptState": "[10]",
+          "LuaScript": "\r\njacqueline_guid = '42cd6e'\r\n\r\nbuttonparams = {\r\n   ['easy'] = {label = \"Facile\", click_function = 'modeEasy', z_i = -0.2},\r\n   ['normal'] = {label = \"Standard\", click_function = 'modeNormal', z_i = 0.1},\r\n   ['hard'] = {label = \"Difficile\", click_function = 'modeHard', z_i = 0.4},\r\n   ['expert'] = {label = \"Expert\", click_function = 'modeExpert', z_i = 0.7},\r\n   ['standalone'] = {label = \"Indépendant\", click_function = 'modeStandalone', z_i = 0},\r\n}\r\n\r\nfunction onLoad()\r\n\r\n    metadata = JSON.decode(self.getGMNotes())\r\n    buttontable = {}\r\n    for key, value in pairs(buttonparams) do\r\n        if metadata[key] == true then\r\n            table.insert(buttontable,value)\r\n        end\r\n        \r\n    end\r\n\r\n    for _, button in pairs(buttontable) do\r\n        local data = {\r\n            click_function = button.click_function, \r\n            function_owner = self, \r\n            label = button.label, \r\n            position = {0, 0.1, button.z_i}, \r\n            scale = {0.3, 0.5, 0.3}, \r\n            width = 1500, \r\n            height = 400, \r\n            font_size = 250, \r\n            tooltip = \"Chaos bag du mode \"..button.label,\r\n            color = {0.5647, 0.4627, 0.2353, 1}, \r\n            font_color = {0.9041, 0.8313, 0.7356, 1},\r\n            hover_color = {99/255, 85/255, 48/255},\r\n            press_color = {192/255, 152/255, 94/255} }\r\n        self.createButton(data)\r\n        \r\n    end\r\n    jacqueline = getObjectFromGUID(jacqueline_guid)\r\n    chaosdata = jacqueline.getTable('chaosdata')\r\nend\r\n\r\nfunction modeEasy()\r\n    local  params ={}\r\n     params.mode = 'easy'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend\r\n\r\nfunction modeNormal()\r\n      local  params ={}\r\n       params.mode = 'normal'\r\n       params.data = metadata.data\r\n       jacqueline.call('setChaosBag', params)\r\n    \r\nend\r\n\r\nfunction modeHard()\r\n    local  params ={}\r\n     params.mode = 'hard'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend\r\n\r\nfunction modeExpert()\r\n    local  params ={}\r\n     params.mode = 'expert'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend\r\n\r\nfunction modeStandalone()\r\n    local  params ={}\r\n     params.mode = 'standalone'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "0016b5",
+          "Name": "Custom_Token",
+          "Transform": {
+            "posX": -26.4999962,
+            "posY": 1.67486,
+            "posZ": -16.5,
+            "rotX": 5.973863E-06,
+            "rotY": 180.0222,
+            "rotZ": -8.416698E-06,
+            "scaleX": 0.306216359,
+            "scaleY": 1.0,
+            "scaleZ": 0.306216359
+          },
+          "Nickname": "Niveau d'Alarme",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.726724,
+            "g": 0.34472996,
+            "b": 0.465997934
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomImage": {
+            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.0,
+            "CustomToken": {
+              "Thickness": 0.1,
+              "MergeDistancePixels": 5.0,
+              "StandUp": false,
+              "Stackable": false
+            }
+          },
+          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
+          "LuaScriptState": "[true,1]",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "100cc4",
+          "Name": "Custom_Token",
+          "Transform": {
+            "posX": 4.508002,
+            "posY": 1.67485857,
+            "posZ": -16.4912,
+            "rotX": -4.824867E-06,
+            "rotY": 179.7531,
+            "rotZ": -1.59515985E-05,
+            "scaleX": 0.306216359,
+            "scaleY": 1.0,
+            "scaleZ": 0.306216359
+          },
+          "Nickname": "Niveau d'Alarme",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.726724,
+            "g": 0.34472996,
+            "b": 0.465997934
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomImage": {
+            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.0,
+            "CustomToken": {
+              "Thickness": 0.1,
+              "MergeDistancePixels": 5.0,
+              "StandUp": false,
+              "Stackable": false
+            }
+          },
+          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
+          "LuaScriptState": "[true,1]",
           "XmlUI": ""
         },
         {
@@ -473,10 +320,10 @@
           "Transform": {
             "posX": -19.9998,
             "posY": 1.47986,
-            "posZ": -4.49559975,
-            "rotX": 2.14577778E-08,
+            "posZ": -4.4956,
+            "rotX": -4.28168931E-08,
             "rotY": 180.020859,
-            "rotZ": -1.71946866E-08,
+            "rotZ": -3.70253161E-08,
             "scaleX": 2.17585182,
             "scaleY": 1.0,
             "scaleZ": 2.17585182
@@ -511,7 +358,7 @@
           "CustomPDF": {
             "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1879717073261731659/7D1F118E6BBD4508B886857C8BE83CB5328408E6/",
             "PDFPassword": "",
-            "PDFPage": 24,
+            "PDFPage": 0,
             "PDFPageOffset": 0
           },
           "LuaScript": "",
@@ -519,15 +366,72 @@
           "XmlUI": ""
         },
         {
+          "GUID": "466cfc",
+          "Name": "Custom_Tile",
+          "Transform": {
+            "posX": -0.9999923,
+            "posY": 1.47985959,
+            "posZ": -16.0,
+            "rotX": 3.83564069E-09,
+            "rotY": 180.000046,
+            "rotZ": 7.119144E-07,
+            "scaleX": 1.5,
+            "scaleY": 1.0,
+            "scaleZ": 1.5
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.698039234,
+            "g": 0.4980389,
+            "b": 0.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomImage": {
+            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/",
+            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837674878/ED05A2533CCB3FD5402D610E1EB468A27C2034EE/",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.0,
+            "CustomTile": {
+              "Type": 2,
+              "Thickness": 0.2,
+              "Stackable": false,
+              "Stretch": true
+            }
+          },
+          "LuaScript": "phasetable = {\r\n    {message = \"Phase d'Investigation\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/'},\r\n    {message = \"Phase des Ennemis\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837785877/853A7E3FD488ECC0A0245BEE06D031AC37C82087/'},\r\n    {message = \"Phase d'Entretien\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837788394/83426955E63CBB589CCAABFBB1C779683AA9FF10/'},\r\n    {message = \"Phase du Mythe\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837782161/29468925C308805079C761D7288E23C7EE610FB2/'},\r\n}\r\n\r\nfunction onLoad(saved_data)\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        phaseindex = loaded_data[1]\r\n\r\n        else\r\n        saved_data = {}\r\n        phaseindex = 1 \r\n    end\r\n\r\n    self.createButton({\r\n        click_function = \"swichPhase\", \r\n        function_owner = self, \r\n        label = '', \r\n        position = {0, 0.1, 0}, \r\n        scale =  {0.5, 0.5, 0.5}, \r\n        width = 1500, \r\n        height = 1500, \r\n        font_size = 1, \r\n        color = {0, 0, 0, 0}, \r\n        font_color = {0.7573, 0.7573, 0.7573, 0},\r\n        tooltip = \"Phase suivante\"})\r\n\r\nend\r\n\r\nfunction swichPhase()\r\n    if  phaseindex < 4 then\r\n        phaseindex = phaseindex + 1\r\n    else\r\n        phaseindex = 1 \r\n    end\r\n    params = {\r\n    image = phasetable[phaseindex].image,\r\n    }\r\n    self.setCustomObject(params)\r\n    broadcastToAll(phasetable[phaseindex].message, {r=178/255, g=127/255, b=0})\r\n    updateUpkeepParam()\r\n    self.reload()\r\n\r\nend\r\n\r\nfunction updateUpkeepParam()\r\n    local data_to_save = {phaseindex}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend",
+          "LuaScriptState": "[1]",
+          "XmlUI": ""
+        },
+        {
           "GUID": "476ea2",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 24.9996357,
+            "posX": 24.0000076,
             "posY": 0.9799974,
-            "posZ": 44.0004234,
-            "rotX": -5.120716E-06,
-            "rotY": 180.0035,
-            "rotZ": 1.06806544E-06,
+            "posZ": 44.0000076,
+            "rotX": -5.39662051E-06,
+            "rotY": 180.003372,
+            "rotZ": 2.77641277E-07,
             "scaleX": 1.265649,
             "scaleY": 0.263438284,
             "scaleZ": 1.38591444
@@ -10061,20 +9965,20 @@
           ]
         },
         {
-          "GUID": "654a1f",
-          "Name": "3DText",
+          "GUID": "76daec",
+          "Name": "Custom_Token",
           "Transform": {
-            "posX": -34.7000122,
-            "posY": 1.47999966,
-            "posZ": -1.9850992,
-            "rotX": 90.0,
-            "rotY": 0.219900012,
-            "rotZ": 0.0,
-            "scaleX": 1.0,
+            "posX": 19.5,
+            "posY": 1.67485988,
+            "posZ": -16.5,
+            "rotX": 3.01750265E-06,
+            "rotY": 180.0222,
+            "rotZ": -6.49346248E-06,
+            "scaleX": 0.306216359,
             "scaleY": 1.0,
-            "scaleZ": 1.0
+            "scaleZ": 0.306216359
           },
-          "Nickname": "",
+          "Nickname": "Niveau d'Alarme",
           "Description": "",
           "GMNotes": "",
           "AltLookAngle": {
@@ -10083,63 +9987,9 @@
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": true,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "Text": {
-            "Text": "Ajoutez vos pions chaos\nselon votre niveau de\ndifficulté choisi",
-            "colorstate": {
-              "r": 0.782458842,
-              "g": 0.1167758,
-              "b": 0.1167758
-            },
-            "fontSize": 60
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "71d6af",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": -28.4999,
-            "posY": 1.49103653,
-            "posZ": -4.999902,
-            "rotX": 0.182367459,
-            "rotY": 180.03064,
-            "rotZ": -3.82464748E-07,
-            "scaleX": 3.51147437,
-            "scaleY": 1.0,
-            "scaleZ": 3.51147437
-          },
-          "Nickname": "Gestion du Chaos Bag",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.0,
-            "g": 0.183692813,
-            "b": 0.31880337
+            "r": 0.726724,
+            "g": 0.34472996,
+            "b": 0.465997934
           },
           "LayoutGroupSortIndex": 0,
           "Value": 0,
@@ -10156,31 +10006,31 @@
           "HideWhenFaceDown": false,
           "Hands": false,
           "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011456296097554180/A1BA38A0DB5571AE54FA9D3D0AABA1B5F60473B5/",
-            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011455597251612319/80A3529531C8E06F8E660B987F9F996E981EA147/",
+            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
+            "ImageSecondaryURL": "",
             "ImageScalar": 1.0,
             "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
+            "CustomToken": {
               "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
+              "MergeDistancePixels": 5.0,
+              "StandUp": false,
+              "Stackable": false
             }
           },
-          "LuaScript": "jacqueline_guid = '42cd6e'\r\ndebug = false\r\nchaostokenparams = {\r\n    { name = \"+1\",                   GMNotes = 'p1',         button_index = 1,  click_function = 'clickP1' },\r\n    { name = \"0\",                    GMNotes = '0',          button_index = 2,  click_function = 'clickZ0' },\r\n    { name = \"-1\",                   GMNotes = 'm1',         button_index = 3,  click_function = 'clickM1' },\r\n    { name = \"-2\",                   GMNotes = 'm2',         button_index = 4,  click_function = 'clickM2' },\r\n    { name = \"-3\",                   GMNotes = 'm3',         button_index = 5,  click_function = 'clickM3' },\r\n    { name = \"-4\",                   GMNotes = 'm4',         button_index = 6,  click_function = 'clickM4' },\r\n    { name = \"-5\",                   GMNotes = 'm5',         button_index = 7,  click_function = 'clickM5' },\r\n    { name = \"-6\",                   GMNotes = 'm6',         button_index = 8,  click_function = 'clickM6' },\r\n    { name = \"-7\",                   GMNotes = 'm7',         button_index = 9,  click_function = 'clickM7' },\r\n    { name = \"-8\",                   GMNotes = 'm8',         button_index = 10, click_function = 'clickM8' },\r\n    { name = \"Crâne\",               GMNotes = 'skull',      button_index = 1,  click_function = 'clickSk' },\r\n    { name = \"Tablette\",             GMNotes = 'tablet',     button_index = 2,  click_function = 'clickTa' },\r\n    { name = \"Échec Automatique\",   GMNotes = 'chaosfail',  button_index = 3,  click_function = 'clickAF' },\r\n    { name = \"Béni\",                GMNotes = 'bless',      button_index = 4,  click_function = 'clickBl' },\r\n    { name = \"Gel\",                  GMNotes = 'frost',      button_index = 5,  click_function = 'clickfFr' },\r\n    { name = \"Cultiste\",             GMNotes = 'cultist',    button_index = 6,  click_function = 'clickCl' },\r\n    { name = \"Chose Très Ancienne\", GMNotes = 'elderthing', button_index = 7,  click_function = 'clickET' },\r\n    { name = \"Signe des Anciens\",    GMNotes = 'eldersign',  button_index = 8,  click_function = 'clickES' },\r\n    { name = \"Maudit\",               GMNotes = 'curse',      button_index = 9,  click_function = 'clickCr' },\r\n    { name = \"\",                     GMNotes = '',           button_index = 10, click_function = 'doNothing' }\r\n}\r\n\r\nfunction onLoad(saved_data)\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        tilestate = loaded_data[1]\r\n    else\r\n        saved_data = {}\r\n        tilestate = 0\r\n    end\r\n    jacqueline = getObjectFromGUID(jacqueline_guid)\r\n    chaosbagparams = jacqueline.getTable('chaosbagparams')\r\n    chaospoolparams = jacqueline.getTable('chaospoolparams')\r\n    specialpoolparams = jacqueline.getTable('specialpoolparams')\r\n    local data = {\r\n        click_function = \"switchTile\",\r\n        function_owner = self,\r\n        label = \"Autres pions Chaos\",\r\n        position = { 0, 0.1, 0.9 },\r\n        scale = { 0.1, 0.05, 0.1 },\r\n        width = 2000,\r\n        height = 400,\r\n        font_size = 225,\r\n        font_color = { 0.6509, 0.8588, 1, 1 },\r\n        color = { 0, 0, 0, 1 },\r\n        tooltip = \"Autres pions Chaos\"\r\n    }\r\n    self.createButton(data)\r\n\r\n    for j = 1, 2 do\r\n        for i = 1, 5 do\r\n            local z_i = -0.99 + 0.33 * i\r\n            local x_j = 0.07 * math.pow(-1, j)\r\n            -- local n = 4-2*i-j\r\n            -- if n > 0 then\r\n            --     label = '+'..n\r\n            -- else\r\n            --     label = n\r\n            -- end\r\n            local data = {\r\n                click_function = \"doNothing\",\r\n                function_owner = self,\r\n                label = 0,\r\n                position = { x_j, 0.1, z_i },\r\n                scale = { 0.15, 0.1, 0.15 },\r\n                width = 0,\r\n                height = 0,\r\n                font_size = 375,\r\n                font_color = { 0.6509, 0.8588, 1, 1 }\r\n            }\r\n            self.createButton(data)\r\n        end\r\n    end\r\n\r\n    for j = 1, 2 do\r\n        for i = 1, 5 do\r\n            local z_i = -1 + 0.33 * i\r\n            local label\r\n            local x_j = 0.24 * math.pow(-1, j)\r\n            local m = tilestate + i + 5 * j - 5\r\n            local data = {\r\n                click_function = chaostokenparams[m].click_function,\r\n                function_owner = self,\r\n                label = label,\r\n                position = { x_j, 0.1, z_i },\r\n                scale = { 0.15, 0.1, 0.15 },\r\n                width = 600,\r\n                height = 600,\r\n                tooltip = \"click gauche pour ajouter un pion \" ..\r\n                    chaostokenparams[m].name .. \", click droit pour le retirer\",\r\n                color = { 0, 0, 0, 0 }\r\n            }\r\n            self.createButton(data)\r\n        end\r\n    end\r\n\r\n\r\n    if tilestate == 10 then\r\n        for i = 1, 2 do\r\n            local params = {\r\n                index = 10 * i,\r\n                color = { 0, 0, 0, 0 },\r\n                width = 0,\r\n                height = 0,\r\n            }\r\n            self.editButton(params)\r\n        end\r\n    end\r\n    chaosbag = jacqueline.call('getChaosbag')\r\n    countChaosBag()\r\nend\r\n\r\nfunction switchTile()\r\n    if tilestate == 0 then\r\n        tilestate = 10\r\n        params = {\r\n            image =\r\n            'http://cloud-3.steamusercontent.com/ugc/2011455597252079641/AE13A58A34B47F4BF67E7EDA1A303E8ABAF9B28D/'\r\n        }\r\n    else\r\n        tilestate = 0\r\n        params = {\r\n            image =\r\n            'http://cloud-3.steamusercontent.com/ugc/2011456296097554180/A1BA38A0DB5571AE54FA9D3D0AABA1B5F60473B5/'\r\n        }\r\n    end\r\n    self.setCustomObject(params)\r\n    updateSave()\r\n    self.reload()\r\nend\r\n\r\nfunction onObjectCollisionEnter(chaosbag, _)\r\n    countChaosBag()\r\nend\r\n\r\nfunction onObjectLeaveContainer(chaosbag, _)\r\n    countChaosBag()\r\nend\r\n\r\nfunction onObjectEnterContainer(chaosbag, _)\r\n    countChaosBag()\r\nend\r\n\r\nfunction countChaosBag()\r\n    if chaosbag ~= nil then\r\n        local chaosbagcontent = chaosbag.getObjects()\r\n        local n = tilestate + 1\r\n        local m = tilestate + 10\r\n        for i = n, m do\r\n            local count = 0\r\n            for _, token in ipairs(chaosbagcontent) do\r\n                if token.gm_notes == chaostokenparams[i].GMNotes then\r\n                    count = count + 1\r\n                end\r\n            end\r\n            self.editButton({ index = chaostokenparams[i].button_index, label = count })\r\n        end\r\n    end\r\nend\r\n\r\nfunction doNothing()\r\n\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = { tilestate }\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction removeToken(token_gmnote)\r\n    local bagstable = jacqueline.call('getBags', chaosbagparams)\r\n    chaosbag = bagstable[1]\r\n    if chaosbag ~= nil then\r\n        local chaosbagcontent = chaosbag.getObjects()\r\n        for _, token in ipairs(chaosbagcontent) do\r\n            if token.gm_notes == token_gmnote then\r\n                local params = {}\r\n                params.position = chaosbag.getPosition() + Vector({ 0, 1, -5 })\r\n                params.guid = token.guid\r\n                chaosbag.takeObject(params)\r\n                break\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction addToken(token_gmnote)\r\n    local bagstable = jacqueline.call('getBags', chaosbagparams)\r\n    chaosbag = bagstable[1]\r\n    if chaosbag ~= nil then\r\n        local destination = chaosbag.getPosition() + Vector({ 0, 2, 0 })\r\n        local pooltable = jacqueline.call('getBags', chaospoolparams)\r\n        local specialpooltable = jacqueline.call('getBags', specialpoolparams)\r\n        for _, bag in ipairs(specialpooltable) do\r\n            table.insert(pooltable, bag)\r\n        end\r\n        for _, bag in ipairs(pooltable) do\r\n            if bag.getGMNotes() == token_gmnote then\r\n                local token = bag.takeObject()\r\n                token.setPositionSmooth(destination, false, false)\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction clickP1(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('p1')\r\n    else\r\n        addToken('p1')\r\n    end\r\nend\r\n\r\nfunction clickZ0(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('0')\r\n    else\r\n        addToken('0')\r\n    end\r\nend\r\n\r\nfunction clickM1(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m1')\r\n    else\r\n        addToken('m1')\r\n    end\r\nend\r\n\r\nfunction clickM2(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m2')\r\n    else\r\n        addToken('m2')\r\n    end\r\nend\r\n\r\nfunction clickM3(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m3')\r\n    else\r\n        addToken('m3')\r\n    end\r\nend\r\n\r\nfunction clickM4(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m4')\r\n    else\r\n        addToken('m4')\r\n    end\r\nend\r\n\r\nfunction clickM5(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m5')\r\n    else\r\n        addToken('m5')\r\n    end\r\nend\r\n\r\nfunction clickM6(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m6')\r\n    else\r\n        addToken('m6')\r\n    end\r\nend\r\n\r\nfunction clickM7(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m7')\r\n    else\r\n        addToken('m7')\r\n    end\r\nend\r\n\r\nfunction clickM8(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('m8')\r\n    else\r\n        addToken('m8')\r\n    end\r\nend\r\n\r\nfunction clickSk(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('skull')\r\n    else\r\n        addToken('skull')\r\n    end\r\nend\r\n\r\nfunction clickCl(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('cultist')\r\n    else\r\n        addToken('cultist')\r\n    end\r\nend\r\n\r\nfunction clickTa(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('tablet')\r\n    else\r\n        addToken('tablet')\r\n    end\r\nend\r\n\r\nfunction clickET(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('elderthing')\r\n    else\r\n        addToken('elderthing')\r\n    end\r\nend\r\n\r\nfunction clickAF(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('chaosfail')\r\n    else\r\n        addToken('chaosfail')\r\n    end\r\nend\r\n\r\nfunction clickES(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('eldersign')\r\n    else\r\n        addToken('eldersign')\r\n    end\r\nend\r\n\r\nfunction clickBl(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('bless')\r\n    else\r\n        addToken('bless')\r\n    end\r\nend\r\n\r\nfunction clickCr(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('curse')\r\n    else\r\n        addToken('curse')\r\n    end\r\nend\r\n\r\nfunction clickfFr(obj, color, alt_click)\r\n    if alt_click then\r\n        removeToken('frost')\r\n    else\r\n        addToken('frost')\r\n    end\r\nend",
-          "LuaScriptState": "[0]",
+          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
+          "LuaScriptState": "[true,1]",
           "XmlUI": ""
         },
         {
           "GUID": "9aa0dd",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 29.999609,
-            "posY": 0.98000747,
-            "posZ": 43.9995537,
-            "rotX": -4.82228324E-06,
-            "rotY": 180.0,
-            "rotZ": 1.76993865E-07,
+            "posX": 29.5000057,
+            "posY": 0.9799974,
+            "posZ": 44.0000076,
+            "rotX": -4.747283E-06,
+            "rotY": 180.000122,
+            "rotZ": 7.295591E-07,
             "scaleX": 1.265649,
             "scaleY": 0.263438284,
             "scaleZ": 1.38591444
@@ -19702,6 +19552,63 @@
               }
             }
           ]
+        },
+        {
+          "GUID": "cf4171",
+          "Name": "Custom_Token",
+          "Transform": {
+            "posX": -11.499999,
+            "posY": 1.67451549,
+            "posZ": -16.5,
+            "rotX": -0.00124219863,
+            "rotY": 180.0222,
+            "rotZ": -0.0007752313,
+            "scaleX": 0.306216359,
+            "scaleY": 1.0,
+            "scaleZ": 0.306216359
+          },
+          "Nickname": "Niveau d'Alarme",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.726724,
+            "g": 0.34472996,
+            "b": 0.465997934
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomImage": {
+            "ImageURL": "https://i.imgur.com/nEmqjmj.png",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.0,
+            "CustomToken": {
+              "Thickness": 0.1,
+              "MergeDistancePixels": 5.0,
+              "StandUp": false,
+              "Stackable": false
+            }
+          },
+          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=600,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
+          "LuaScriptState": "[true,1]",
+          "XmlUI": ""
         }
       ],
       "AttachedDecals": [
@@ -19725,3 +19632,5 @@
         }
       ]
     }
+  ]
+}
