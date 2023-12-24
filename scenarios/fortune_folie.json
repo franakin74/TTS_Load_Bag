@@ -2,12 +2,12 @@
       "GUID": "e5fcd2",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 22.00015,
-        "posY": 5.84359837,
-        "posZ": 51.50015,
-        "rotX": 4.677516E-09,
-        "rotY": 179.96904,
-        "rotZ": 5.09895654E-06,
+        "posX": 17.4999447,
+        "posY": 5.84360456,
+        "posZ": 51.5001259,
+        "rotX": -4.10817833E-08,
+        "rotY": 179.968658,
+        "rotZ": 5.064034E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.2498823,
         "scaleZ": 1.3145982
@@ -65,22 +65,22 @@
         "Order": 0
       },
       "LuaScript": "-- Utility memory bag by Directsun\r\n-- Version 2.7.0\r\n-- Fork of Memory Bag 2.0 by MrStump\r\n--\r\n-- Want to contribute? Create an issue or fork the code on GitHub and submit a pull request:\r\n-- https://github.com/sunflowermans/TTS-UtilityMemoryBag\r\n\r\n\r\nfunction updateSave()\r\n    local data_to_save = {[\"ml\"]=memoryList}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction combineMemoryFromBagsWithin()\r\n    local bagObjList = self.getObjects()\r\n    for _, bagObj in ipairs(bagObjList) do\r\n        local data = bagObj.lua_script_state\r\n        if data ~= nil then\r\n            local j = JSON.decode(data)\r\n            if j ~= nil and j.ml ~= nil then\r\n                for guid, entry in pairs(j.ml) do\r\n                    memoryList[guid] = entry\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateMemoryWithMoves()\r\n    memoryList = memoryListBackup\r\n    --get the first transposed object's coordinates\r\n    local obj = getObjectFromGUID(moveGuid)\r\n\r\n    -- p1 is where needs to go, p2 is where it was\r\n    local refObjPos = memoryList[moveGuid].pos\r\n    local deltaPos = findOffsetDistance(obj.getPosition(), refObjPos, nil)\r\n    local movedRotation = obj.getRotation()\r\n    for guid, entry in pairs(memoryList) do\r\n        memoryList[guid].pos.x = entry.pos.x - deltaPos.x\r\n        memoryList[guid].pos.y = entry.pos.y - deltaPos.y\r\n        memoryList[guid].pos.z = entry.pos.z - deltaPos.z\r\n        -- memoryList[guid].rot.x = movedRotation.x\r\n        -- memoryList[guid].rot.y = movedRotation.y\r\n        -- memoryList[guid].rot.z = movedRotation.z\r\n    end\r\n\r\n    --theList[obj.getGUID()] = {\r\n    --    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n    --    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n    --    lock=obj.getLock()\r\n    --}\r\n    moveList = {}\r\nend\r\n\r\nfunction onload(saved_data)\r\n\r\n    fresh = true\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        --Set up information off of loaded_data\r\n        memoryList = loaded_data.ml\r\n    else\r\n        --Set up information for if there is no saved saved data\r\n        memoryList = {}\r\n\r\n    end\r\n\r\n    moveList = {}\r\n    moveGuid = nil\r\n\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        fresh = false\r\n        createMemoryActionButtons()\r\n    end\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make setup button\r\n function createSetupButton()\r\n    self.createButton({\r\n      label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n      position={0,0.1,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n end\r\n\r\n--Triggered by Transpose button\r\nfunction buttonClick_transpose()\r\n    moveGuid = nil\r\n    broadcastToAll(\"Select one object and move it- all objects will move relative to the new location\", {0.75, 0.75, 1})\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(true)\r\n    createSetupActionButtons(true)\r\nend\r\n\r\n--Triggered by setup button,\r\nfunction buttonClick_setup()\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(false)\r\n    createSetupActionButtons(false)\r\nend\r\n\r\nfunction getAllObjectsInMemory()\r\n    local objTable = {}\r\n    local curObj = {}\r\n\r\n    for guid in pairs(memoryListBackup) do\r\n        curObj = getObjectFromGUID(guid)\r\n        table.insert(objTable, curObj)\r\n    end\r\n\r\n    return objTable\r\n    -- return getAllObjects()\r\nend\r\n\r\n--Creates selection buttons on objects\r\nfunction createButtonsOnAllObjects(move)\r\n    buttonIndexMap = {}\r\n    local howManyButtons = 0\r\n\r\n    local objsToHaveButtons = {}\r\n    if move == true then\r\n        objsToHaveButtons = getAllObjectsInMemory()\r\n    else\r\n        objsToHaveButtons = getAllObjects()\r\n    end\r\n\r\n    for _, obj in ipairs(objsToHaveButtons) do\r\n        if obj ~= self then\r\n            --On a normal bag, the button positions aren't the same size as the bag.\r\n            globalScaleFactor = 1* 1/self.getScale().x\r\n            --Super sweet math to set button positions\r\n            local selfPos = self.getPosition()\r\n            local objPos = obj.getPosition()\r\n            local deltaPos = findOffsetDistance(selfPos, objPos, obj)\r\n            local objPos = rotateLocalCoordinates(deltaPos, self)\r\n            objPos.x = -objPos.x * globalScaleFactor\r\n            objPos.y = objPos.y * globalScaleFactor + 2\r\n            objPos.z = objPos.z * globalScaleFactor * 0.9\r\n            --Workaround for custom PDFs\r\n            if obj.Book then\r\n                objPos.y = objPos.y + 0.5\r\n            end\r\n            --Offset rotation of bag\r\n            local rot = self.getRotation()\r\n            rot.y = -rot.y + 180\r\n            --Create function\r\n            local funcName = \"selectButton_\" .. howManyButtons\r\n            local func = function() buttonClick_selection(obj, move) end\r\n            local color = {0.75,0.25,0.25,0.6}\r\n            local colorMove = {0,0,1,0.6}\r\n            if move == true then\r\n                color = colorMove\r\n            end\r\n            self.setVar(funcName, func)\r\n            self.createButton({\r\n                click_function=funcName, function_owner=self,\r\n                position=objPos, rotation=rot, height=500, width=500,\r\n                color=color,\r\n            })\r\n            buttonIndexMap[obj.getGUID()] = howManyButtons\r\n            howManyButtons = howManyButtons + 1\r\n        end\r\n    end\r\nend\r\n\r\n--Creates submit and cancel buttons\r\nfunction createSetupActionButtons(move)\r\n    self.createButton({\r\n        label=\"Annuler\", click_function=\"buttonClick_cancel\", function_owner=self,\r\n      position={-0.7,0.1,2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=145, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    self.createButton({\r\n        label=\"Valider\", click_function=\"buttonClick_submit\", function_owner=self,\r\n        position={-0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=140, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    if move == false then\r\n      self.createButton({\r\n          label=\"Ajouter\", click_function=\"buttonClick_add\", function_owner=self,\r\n          position={0.7,0.3,2.1}, rotation={0,0,0}, height=275, width=625,\r\n          font_size=140, color={0,0,0}, font_color={0.25,1,0.25}\r\n      })\r\n\r\n        self.createButton({\r\n            label=\"Sélection\", click_function=\"editDragSelection\", function_owner=self,\r\n            position={-0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=125, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n\r\n        if fresh == false then\r\n                self.createButton({\r\n                    label=\"Mise à jour\", click_function=\"buttonClick_setNew\", function_owner=self,\r\n                    position={0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=105, color={0,0,0}, font_color={0.75,0.75,1}\r\n                })\r\n                self.createButton({\r\n                    label=\"Retirer\", click_function=\"buttonClick_remove\", function_owner=self,\r\n                    position={0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=140, color={0,0,0}, font_color={1,0.25,0.25}\r\n                })\r\n            end\r\n        end\r\n\r\n        self.createButton({\r\n            label=\"Reset\", click_function=\"buttonClick_reset\", function_owner=self,\r\n            position={0,0.3,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=165, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n    end\r\n\r\n\r\n--During Setup\r\n\r\n\r\n--Checks or unchecks buttons\r\nfunction buttonClick_selection(obj, move)\r\n    local index = buttonIndexMap[obj.getGUID()]\r\n    local colorMove = {0,0,1,0.6}\r\n    local color = {0,1,0,0.6}\r\n\r\n    previousGuid = selectedGuid\r\n    selectedGuid = obj.getGUID()\r\n\r\n    theList = memoryList\r\n    if move == true then\r\n        theList = moveList\r\n        if previousGuid ~= nil and previousGuid ~= selectedGuid then\r\n            local prevObj = getObjectFromGUID(previousGuid)\r\n            prevObj.highlightOff()\r\n            self.editButton({index=previousIndex, color=colorMove})\r\n            theList[previousGuid] = nil\r\n        end\r\n        previousIndex = index\r\n    end\r\n\r\n    if theList[selectedGuid] == nil then\r\n        self.editButton({index=index, color=color})\r\n        --Adding pos/rot to memory table\r\n        local pos, rot = obj.getPosition(), obj.getRotation()\r\n        --I need to add it like this or it won't save due to indexing issue\r\n        theList[obj.getGUID()] = {\r\n            pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n            rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n            lock=obj.getLock(),\r\n            tint=obj.getColorTint()\r\n        }\r\n        obj.highlightOn({0,1,0})\r\n    else\r\n        color = {0.75,0.25,0.25,0.6}\r\n        if move == true then\r\n            color = colorMove\r\n        end\r\n        self.editButton({index=index, color=color})\r\n        theList[obj.getGUID()] = nil\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\nfunction editDragSelection(bagObj, player, remove)\r\n    local selectedObjs = Player[player].getSelectedObjects()\r\n    if not remove then\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            --Ignore if already in the memory list, or does not have a button\r\n            if index and not memoryList[obj.getGUID()] then\r\n                self.editButton({index=index, color={0,1,0,0.6}})\r\n                --Adding pos/rot to memory table\r\n                local pos, rot = obj.getPosition(), obj.getRotation()\r\n                --I need to add it like this or it won't save due to indexing issue\r\n                memoryList[obj.getGUID()] = {\r\n                    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n                    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n                    lock=obj.getLock(),\r\n                    tint=obj.getColorTint()\r\n                }\r\n                obj.highlightOn({0,1,0})\r\n            end\r\n        end\r\n    else\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            if index and memoryList[obj.getGUID()] then\r\n                color = {0.75,0.25,0.25,0.6}\r\n                self.editButton({index=index, color=color})\r\n                memoryList[obj.getGUID()] = nil\r\n                obj.highlightOff()\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n--Cancels selection process\r\nfunction buttonClick_cancel()\r\n    memoryList = memoryListBackup\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        createMemoryActionButtons()\r\n    end\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Sélection annulée\", {1,1,1})\r\n    moveGuid = nil\r\nend\r\n\r\n--Saves selections\r\nfunction buttonClick_submit()\r\n    fresh = false\r\n    if next(moveList) ~= nil then\r\n        for guid in pairs(moveList) do\r\n            moveGuid = guid\r\n        end\r\n        if memoryListBackup[moveGuid] == nil then\r\n            broadcastToAll(\"Item selected for moving is not already in memory\", {1, 0.25, 0.25})\r\n        else\r\n            broadcastToAll(\"Moving all items in memory relative to new objects position!\", {0.75, 0.75, 1})\r\n            self.clearButtons()\r\n            self.clearInputs()\r\n            createMemoryActionButtons()\r\n            local count = 0\r\n            for guid in pairs(moveList) do\r\n                moveGuid = guid\r\n                count = count + 1\r\n                local obj = getObjectFromGUID(guid)\r\n                if obj ~= nil then obj.highlightOff() end\r\n            end\r\n            updateMemoryWithMoves()\r\n            updateSave()\r\n            buttonClick_place()\r\n        end\r\n    elseif next(memoryList) == nil and moveGuid == nil then\r\n        memoryList = memoryListBackup\r\n        broadcastToAll(\"No selections made.\", {0.75, 0.25, 0.25})\r\n    end\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\n    moveGuid = nil\r\nend\r\n\r\nfunction combineTables(first_table, second_table)\r\n    for k,v in pairs(second_table) do first_table[k] = v end\r\nend\r\n\r\nfunction buttonClick_add()\r\n    fresh = false\r\n    combineTables(memoryList, memoryListBackup)\r\n    broadcastToAll(\"Adding internal bags and selections to existing memory\", {0.25, 0.75, 0.25})\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_remove()\r\n    broadcastToAll(\"Removing Selected Entries From Memory\", {1.0, 0.25, 0.25})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        memoryListBackup[guid] = nil\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Removed\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_setNew()\r\n    broadcastToAll(\"Setting new position relative to items in memory\", {0.75, 0.75, 1})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        guid = obj.guid\r\n        if memoryListBackup[guid] ~= nil then\r\n            count = count + 1\r\n            memoryListBackup[guid].pos = obj.getPosition()\r\n            memoryListBackup[guid].rot = obj.getRotation()\r\n            memoryListBackup[guid].lock = obj.getLock()\r\n            memoryListBackup[guid].tint = obj.getColorTint()\r\n        end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\n--Resets bag to starting status\r\nfunction buttonClick_reset()\r\n    fresh = true\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createSetupButton()\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Tool Reset\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\n\r\n--After Setup\r\n\r\n\r\n--Creates recall and place buttons\r\nfunction createMemoryActionButtons()\r\n    self.createButton({\r\n        label=\"Placer\", click_function=\"buttonClick_place\", function_owner=self,\r\n        position={0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Ranger\", click_function=\"buttonClick_recall\", function_owner=self,\r\n        position={-0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={0,0.1,-2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    ---    self.createButton({\r\n    ---      label=\"Bouger\", click_function=\"buttonClick_transpose\", function_owner=self,\r\n    ---      position={-2,0.3,0.8}, rotation={0,270,0}, height=350, width=800,\r\n    ---      font_size=250, color={0,0,0}, font_color={0.75,0.75,1}\r\n    ---\r\nend\r\n\r\n--Sends objects from bag/table to their saved position/rotation\r\nfunction buttonClick_place()\r\n    local bagObjList = self.getObjects()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        --If obj is out on the table, move it to the saved pos/rot\r\n        if obj ~= nil then\r\n            obj.setPositionSmooth(entry.pos)\r\n            obj.setRotationSmooth(entry.rot)\r\n            obj.setLock(entry.lock)\r\n            obj.setColorTint(entry.tint)\r\n        else\r\n            --If obj is inside of the bag\r\n            for _, bagObj in ipairs(bagObjList) do\r\n                if bagObj.guid == guid then\r\n                    local item = self.takeObject({\r\n                        guid=guid, position=entry.pos, rotation=entry.rot, smooth=false\r\n                    })\r\n                    item.setLock(entry.lock)\r\n                    item.setColorTint(entry.tint)\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    broadcastToAll(\"Objets placés\", {1,1,1})\r\nend\r\n\r\n--Recalls objects to bag from table\r\nfunction buttonClick_recall()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then self.putObject(obj) end\r\n    end\r\n    broadcastToAll(\"Objets rangés\", {1,1,1})\r\nend\r\n\r\n\r\n--Utility functions\r\n\r\n\r\n--Find delta (difference) between 2 x/y/z coordinates\r\nfunction findOffsetDistance(p1, p2, obj)\r\n    local yOffset = 0\r\n    if obj ~= nil then\r\n        local bounds = obj.getBounds()\r\n        yOffset = (bounds.size.y - bounds.offset.y)\r\n    end\r\n    local deltaPos = {}\r\n    deltaPos.x = (p2.x-p1.x)\r\n    deltaPos.y = (p2.y-p1.y) + yOffset\r\n    deltaPos.z = (p2.z-p1.z)\r\n    return deltaPos\r\nend\r\n\r\n--Used to rotate a set of coordinates by an angle\r\nfunction rotateLocalCoordinates(desiredPos, obj)\r\n    local objPos, objRot = obj.getPosition(), obj.getRotation()\r\n    local angle = math.rad(objRot.y)\r\n    local x = desiredPos.x * math.cos(angle) - desiredPos.z * math.sin(angle)\r\n    local z = desiredPos.x * math.sin(angle) + desiredPos.z * math.cos(angle)\r\n    --return {x=objPos.x+x, y=objPos.y+desiredPos.y, z=objPos.z+z}\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\nfunction rotateMyCoordinates(desiredPos, obj)\r\n    local angle = math.rad(obj.getRotation().y)\r\n    local x = desiredPos.x * math.sin(angle)\r\n    local z = desiredPos.z * math.cos(angle)\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\n--Coroutine delay, in seconds\r\nfunction wait(time)\r\n    local start = os.time()\r\n    repeat coroutine.yield(0) until os.time() > start + time\r\nend\r\n\r\n--Duplicates a table (needed to prevent it making reference to the same objects)\r\nfunction duplicateTable(oldTable)\r\n    local newTable = {}\r\n    for k, v in pairs(oldTable) do\r\n        newTable[k] = v\r\n    end\r\n    return newTable\r\nend\r\n\r\n--Moves scripted highlight from all objects\r\nfunction removeAllHighlights()\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\n--Round number (num) to the Nth decimal (dec)\r\nfunction round(num, dec)\r\n    local mult = 10^(dec or 0)\r\n    return math.floor(num * mult + 0.5) / mult\r\nend\r\n\r\n\r\n--[[\r\nThis object provides access to a variable stored on the \"Global script\".\r\nThe variable holds the GUIDs for every Utility Memory Bag in the scene.\r\nExample:\r\n{'805ebd', '35cc21', 'fc8886', 'f50264', '5f5f63'}\r\n--]]\r\nAllMemoryBagsInScene = {\r\n    NAME_OF_GLOBAL_VARIABLE = \"_UtilityMemoryBag_AllMemoryBagsInScene\"\r\n}\r\n\r\nfunction AllMemoryBagsInScene:add(guid)\r\n    local guids = Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\n    table.insert(guids, guid)\r\n    Global.setTable(self.NAME_OF_GLOBAL_VARIABLE, guids)\r\nend\r\n\r\nfunction AllMemoryBagsInScene:getGuidList()\r\n    return Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\nend\r\n",
-      "LuaScriptState": "{\"ml\":{\"0016b5\":{\"lock\":false,\"pos\":{\"x\":-26.4999923706055,\"y\":1.67486000061035,\"z\":-16.5},\"rot\":{\"x\":-5.67089273317833E-06,\"y\":180.022201538086,\"z\":2.65823405243282E-06},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"100cc4\":{\"lock\":false,\"pos\":{\"x\":4.50800371170044,\"y\":1.67485857009888,\"z\":-16.4911994934082},\"rot\":{\"x\":5.50893764739158E-06,\"y\":179.75309753418,\"z\":1.47293599184195E-06},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"4421a3\":{\"lock\":false,\"pos\":{\"x\":-19.9997997283936,\"y\":1.47985994815826,\"z\":-4.4955997467041},\"rot\":{\"x\":1.39505598184542E-08,\"y\":180.020858764648,\"z\":-1.96267908592063E-08},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"466cfc\":{\"lock\":false,\"pos\":{\"x\":-0.999992430210114,\"y\":1.47985970973969,\"z\":-16},\"rot\":{\"x\":6.44047304376727E-07,\"y\":180.000045776367,\"z\":-8.70036728883861E-07},\"tint\":{\"a\":1,\"b\":0,\"g\":0.4980388879776,\"r\":0.69803923368454}},\"476ea2\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":0.979997336864471,\"z\":45.5},\"rot\":{\"x\":-5.02868533658329E-06,\"y\":180.003112792969,\"z\":4.34839193985681E-07},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"76daec\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":1.67485988140106,\"z\":-16.5},\"rot\":{\"x\":5.14407076934731E-07,\"y\":180.022201538086,\"z\":4.3758832362073E-06},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"8985d8\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.5507,\"z\":-3},\"rot\":{\"x\":0.0109,\"y\":179.9995,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":1}},\"9aa0dd\":{\"lock\":false,\"pos\":{\"x\":25.0000038146973,\"y\":0.979997217655182,\"z\":45.5000076293945},\"rot\":{\"x\":-4.98701365359011E-06,\"y\":180.00016784668,\"z\":1.56866201450612E-06},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b33e6c\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.5229},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cf4171\":{\"lock\":false,\"pos\":{\"x\":-11.4999990463257,\"y\":1.67451548576355,\"z\":-16.4999961853027},\"rot\":{\"x\":-0.00125811016187072,\"y\":180.022201538086,\"z\":-0.000782092742156237},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"f72a04\":{\"lock\":false,\"pos\":{\"x\":2.9999988079071,\"y\":1.50197494029999,\"z\":-5.50000047683716},\"rot\":{\"x\":0.010890506207943,\"y\":180.012496948242,\"z\":0.00495090149343014},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}}}}",
+      "LuaScriptState": "{\"ml\":{\"0016b5\":{\"lock\":false,\"pos\":{\"x\":-26.4999923706055,\"y\":1.67486000061035,\"z\":-16.5},\"rot\":{\"x\":-5.67089273317833E-06,\"y\":180.022201538086,\"z\":2.65823405243282E-06},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"100cc4\":{\"lock\":false,\"pos\":{\"x\":4.50800371170044,\"y\":1.67485857009888,\"z\":-16.4911994934082},\"rot\":{\"x\":5.50893764739158E-06,\"y\":179.75309753418,\"z\":1.47293599184195E-06},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"4421a3\":{\"lock\":false,\"pos\":{\"x\":-19.9997997283936,\"y\":1.47985994815826,\"z\":-4.4955997467041},\"rot\":{\"x\":1.39505598184542E-08,\"y\":180.020858764648,\"z\":-1.96267908592063E-08},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"476ea2\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":0.979997336864471,\"z\":45.5},\"rot\":{\"x\":-5.02868533658329E-06,\"y\":180.003112792969,\"z\":4.34839193985681E-07},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"76daec\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":1.67485988140106,\"z\":-16.5},\"rot\":{\"x\":5.14407076934731E-07,\"y\":180.022201538086,\"z\":4.3758832362073E-06},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"8985d8\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.5507,\"z\":-3},\"rot\":{\"x\":0.0109,\"y\":179.9995,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":1}},\"9aa0dd\":{\"lock\":false,\"pos\":{\"x\":25.0000038146973,\"y\":0.979997217655182,\"z\":45.5000076293945},\"rot\":{\"x\":-4.98701365359011E-06,\"y\":180.00016784668,\"z\":1.56866201450612E-06},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b33e6c\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.5229},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cf4171\":{\"lock\":false,\"pos\":{\"x\":-11.4999990463257,\"y\":1.67451548576355,\"z\":-16.4999961853027},\"rot\":{\"x\":-0.00125811016187072,\"y\":180.022201538086,\"z\":-0.000782092742156237},\"tint\":{\"a\":1,\"b\":0.465997934341431,\"g\":0.344729870557785,\"r\":0.726724028587341}},\"ecead9\":{\"lock\":false,\"pos\":{\"x\":-19.5,\"y\":1.4799,\"z\":-4.5},\"rot\":{\"x\":0,\"y\":180,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f72a04\":{\"lock\":false,\"pos\":{\"x\":2.9999988079071,\"y\":1.50197494029999,\"z\":-5.50000047683716},\"rot\":{\"x\":0.010890506207943,\"y\":180.012496948242,\"z\":0.00495090149343014},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}}}}",
       "XmlUI": "",
       "ContainedObjects": [
         {
-          "GUID": "466cfc",
-          "Name": "Custom_Tile",
+          "GUID": "ecead9",
+          "Name": "Custom_PDF",
           "Transform": {
-            "posX": -0.999994457,
-            "posY": 1.47985947,
-            "posZ": -16.0,
-            "rotX": -2.37693513E-07,
-            "rotY": 180.000046,
-            "rotZ": 8.67082747E-07,
-            "scaleX": 1.5,
+            "posX": -19.5,
+            "posY": 1.47986,
+            "posZ": -4.5,
+            "rotX": -1.03800055E-07,
+            "rotY": 180.0,
+            "rotZ": -1.24972274E-07,
+            "scaleX": 2.11755562,
             "scaleY": 1.0,
-            "scaleZ": 1.5
+            "scaleZ": 2.11755562
           },
           "Nickname": "",
           "Description": "",
@@ -91,9 +91,9 @@
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 0.698039234,
-            "g": 0.4980389,
-            "b": 0.0
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
           },
           "LayoutGroupSortIndex": 0,
           "Value": 0,
@@ -109,89 +109,26 @@
           "GridProjection": false,
           "HideWhenFaceDown": false,
           "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837785877/853A7E3FD488ECC0A0245BEE06D031AC37C82087/",
-            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837674878/ED05A2533CCB3FD5402D610E1EB468A27C2034EE/",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 2,
-              "Thickness": 0.2,
-              "Stackable": false,
-              "Stretch": true
-            }
+          "CustomPDF": {
+            "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/2297463342733604654/699B7D50CC08B92089D8AACD1D8C3A9EF7E04F9C/",
+            "PDFPassword": "",
+            "PDFPage": 0,
+            "PDFPageOffset": 0
           },
-          "LuaScript": "phasetable = {\r\n    {message = \"Phase d'Investigation\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/'},\r\n    {message = \"Phase des Ennemis\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837785877/853A7E3FD488ECC0A0245BEE06D031AC37C82087/'},\r\n    {message = \"Phase d'Entretien\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837788394/83426955E63CBB589CCAABFBB1C779683AA9FF10/'},\r\n    {message = \"Phase du Mythe\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837782161/29468925C308805079C761D7288E23C7EE610FB2/'},\r\n}\r\n\r\nfunction onLoad(saved_data)\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        phaseindex = loaded_data[1]\r\n\r\n        else\r\n        saved_data = {}\r\n        phaseindex = 1 \r\n    end\r\n\r\n    self.createButton({\r\n        click_function = \"swichPhase\", \r\n        function_owner = self, \r\n        label = '', \r\n        position = {0, 0.1, 0}, \r\n        scale =  {0.5, 0.5, 0.5}, \r\n        width = 1500, \r\n        height = 1500, \r\n        font_size = 1, \r\n        color = {0, 0, 0, 0}, \r\n        font_color = {0.7573, 0.7573, 0.7573, 0},\r\n        tooltip = \"Phase suivante\"})\r\n\r\nend\r\n\r\nfunction swichPhase()\r\n    if  phaseindex < 4 then\r\n        phaseindex = phaseindex + 1\r\n    else\r\n        phaseindex = 1 \r\n    end\r\n    params = {\r\n    image = phasetable[phaseindex].image,\r\n    }\r\n    self.setCustomObject(params)\r\n    broadcastToAll(phasetable[phaseindex].message, {r=178/255, g=127/255, b=0})\r\n    updateUpkeepParam()\r\n    self.reload()\r\n\r\nend\r\n\r\nfunction updateUpkeepParam()\r\n    local data_to_save = {phaseindex}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend",
-          "LuaScriptState": "[2]",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "466cfc",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": -0.9999923,
-            "posY": 1.47985959,
-            "posZ": -16.0,
-            "rotX": 3.83564069E-09,
-            "rotY": 180.000046,
-            "rotZ": 7.119144E-07,
-            "scaleX": 1.5,
-            "scaleY": 1.0,
-            "scaleZ": 1.5
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.698039234,
-            "g": 0.4980389,
-            "b": 0.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/",
-            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837674878/ED05A2533CCB3FD5402D610E1EB468A27C2034EE/",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 2,
-              "Thickness": 0.2,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "phasetable = {\r\n    {message = \"Phase d'Investigation\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/'},\r\n    {message = \"Phase des Ennemis\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837785877/853A7E3FD488ECC0A0245BEE06D031AC37C82087/'},\r\n    {message = \"Phase d'Entretien\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837788394/83426955E63CBB589CCAABFBB1C779683AA9FF10/'},\r\n    {message = \"Phase du Mythe\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837782161/29468925C308805079C761D7288E23C7EE610FB2/'},\r\n}\r\n\r\nfunction onLoad(saved_data)\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        phaseindex = loaded_data[1]\r\n\r\n        else\r\n        saved_data = {}\r\n        phaseindex = 1 \r\n    end\r\n\r\n    self.createButton({\r\n        click_function = \"swichPhase\", \r\n        function_owner = self, \r\n        label = '', \r\n        position = {0, 0.1, 0}, \r\n        scale =  {0.5, 0.5, 0.5}, \r\n        width = 1500, \r\n        height = 1500, \r\n        font_size = 1, \r\n        color = {0, 0, 0, 0}, \r\n        font_color = {0.7573, 0.7573, 0.7573, 0},\r\n        tooltip = \"Phase suivante\"})\r\n\r\nend\r\n\r\nfunction swichPhase()\r\n    if  phaseindex < 4 then\r\n        phaseindex = phaseindex + 1\r\n    else\r\n        phaseindex = 1 \r\n    end\r\n    params = {\r\n    image = phasetable[phaseindex].image,\r\n    }\r\n    self.setCustomObject(params)\r\n    broadcastToAll(phasetable[phaseindex].message, {r=178/255, g=127/255, b=0})\r\n    updateUpkeepParam()\r\n    self.reload()\r\n\r\nend\r\n\r\nfunction updateUpkeepParam()\r\n    local data_to_save = {phaseindex}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend",
-          "LuaScriptState": "[1]",
+          "LuaScript": "",
+          "LuaScriptState": "",
           "XmlUI": ""
         },
         {
           "GUID": "0016b5",
           "Name": "Custom_Token",
           "Transform": {
-            "posX": -26.4999847,
-            "posY": 1.67486012,
-            "posZ": -16.5000019,
-            "rotX": -5.404401E-06,
-            "rotY": 180.022186,
-            "rotZ": -9.42164263E-07,
+            "posX": -26.4999924,
+            "posY": 1.67486,
+            "posZ": -16.5,
+            "rotX": -5.02144758E-06,
+            "rotY": 180.0222,
+            "rotZ": -1.88028446E-06,
             "scaleX": 0.306216359,
             "scaleY": 1.0,
             "scaleZ": 0.306216359
@@ -206,7 +143,7 @@
           },
           "ColorDiffuse": {
             "r": 0.726724,
-            "g": 0.3447298,
+            "g": 0.344729751,
             "b": 0.465997934
           },
           "LayoutGroupSortIndex": 0,
@@ -243,12 +180,12 @@
           "GUID": "100cc4",
           "Name": "Custom_Token",
           "Transform": {
-            "posX": 4.50800753,
-            "posY": 1.67485857,
+            "posX": 4.50800371,
+            "posY": 1.67485833,
             "posZ": -16.4912,
-            "rotX": -1.71792988E-06,
+            "rotX": -1.96133283E-06,
             "rotY": 179.7531,
-            "rotZ": -6.76762966E-06,
+            "rotZ": -1.39116685E-06,
             "scaleX": 0.306216359,
             "scaleY": 1.0,
             "scaleZ": 0.306216359
@@ -263,7 +200,7 @@
           },
           "ColorDiffuse": {
             "r": 0.726724,
-            "g": 0.3447298,
+            "g": 0.344729751,
             "b": 0.465997934
           },
           "LayoutGroupSortIndex": 0,
@@ -297,123 +234,15 @@
           "XmlUI": ""
         },
         {
-          "GUID": "4421a3",
-          "Name": "Custom_PDF",
-          "Transform": {
-            "posX": -19.9998,
-            "posY": 1.47986,
-            "posZ": -4.49559975,
-            "rotX": -1.93611172E-08,
-            "rotY": 180.020813,
-            "rotZ": -3.699593E-08,
-            "scaleX": 2.17585182,
-            "scaleY": 1.0,
-            "scaleZ": 2.17585182
-          },
-          "Nickname": "Fortune and Folly",
-          "Description": "Scenario Guide",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomPDF": {
-            "PDFUrl": "http://cloud-3.steamusercontent.com/ugc/1879717073261731659/7D1F118E6BBD4508B886857C8BE83CB5328408E6/",
-            "PDFPassword": "",
-            "PDFPage": 0,
-            "PDFPageOffset": 0
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "466cfc",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": -0.9999924,
-            "posY": 1.47985971,
-            "posZ": -16.0,
-            "rotX": -4.45554747E-07,
-            "rotY": 180.000046,
-            "rotZ": 8.391957E-07,
-            "scaleX": 1.5,
-            "scaleY": 1.0,
-            "scaleZ": 1.5
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.698039234,
-            "g": 0.4980389,
-            "b": 0.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/",
-            "ImageSecondaryURL": "http://cloud-3.steamusercontent.com/ugc/2011453778837674878/ED05A2533CCB3FD5402D610E1EB468A27C2034EE/",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 2,
-              "Thickness": 0.2,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "phasetable = {\r\n    {message = \"Phase d'Investigation\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837784480/524B6C30FA60F2AA87894F7AC0704BC4AD3D0FFA/'},\r\n    {message = \"Phase des Ennemis\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837785877/853A7E3FD488ECC0A0245BEE06D031AC37C82087/'},\r\n    {message = \"Phase d'Entretien\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837788394/83426955E63CBB589CCAABFBB1C779683AA9FF10/'},\r\n    {message = \"Phase du Mythe\", \r\n    image = 'http://cloud-3.steamusercontent.com/ugc/2011453778837782161/29468925C308805079C761D7288E23C7EE610FB2/'},\r\n}\r\n\r\nfunction onLoad(saved_data)\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        phaseindex = loaded_data[1]\r\n\r\n        else\r\n        saved_data = {}\r\n        phaseindex = 1 \r\n    end\r\n\r\n    self.createButton({\r\n        click_function = \"swichPhase\", \r\n        function_owner = self, \r\n        label = '', \r\n        position = {0, 0.1, 0}, \r\n        scale =  {0.5, 0.5, 0.5}, \r\n        width = 1500, \r\n        height = 1500, \r\n        font_size = 1, \r\n        color = {0, 0, 0, 0}, \r\n        font_color = {0.7573, 0.7573, 0.7573, 0},\r\n        tooltip = \"Phase suivante\"})\r\n\r\nend\r\n\r\nfunction swichPhase()\r\n    if  phaseindex < 4 then\r\n        phaseindex = phaseindex + 1\r\n    else\r\n        phaseindex = 1 \r\n    end\r\n    params = {\r\n    image = phasetable[phaseindex].image,\r\n    }\r\n    self.setCustomObject(params)\r\n    broadcastToAll(phasetable[phaseindex].message, {r=178/255, g=127/255, b=0})\r\n    updateUpkeepParam()\r\n    self.reload()\r\n\r\nend\r\n\r\nfunction updateUpkeepParam()\r\n    local data_to_save = {phaseindex}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend",
-          "LuaScriptState": "[1]",
-          "XmlUI": ""
-        },
-        {
           "GUID": "476ea2",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 19.49887,
-            "posY": 0.9800009,
-            "posZ": 45.49991,
-            "rotX": -5.10508835E-06,
-            "rotY": 180.002731,
-            "rotZ": 7.192123E-07,
+            "posX": 19.5,
+            "posY": 0.979997456,
+            "posZ": 45.5,
+            "rotX": -5.11902545E-06,
+            "rotY": 180.003113,
+            "rotZ": 2.73693615E-07,
             "scaleX": 1.265649,
             "scaleY": 0.263438284,
             "scaleZ": 1.38591444
@@ -478,12 +307,12 @@
               "GUID": "086ff7",
               "Name": "Card",
               "Transform": {
-                "posX": -35.000618,
+                "posX": -35.0006027,
                 "posY": 1.78360534,
-                "posZ": 10.999383,
-                "rotX": -4.917695E-06,
-                "rotY": 180.000839,
-                "rotZ": 3.97461228E-08,
+                "posZ": 10.9993954,
+                "rotX": -5.10189739E-06,
+                "rotY": 180.000778,
+                "rotZ": 9.075602E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -539,8 +368,8 @@
                 "posX": 12.501,
                 "posY": 1.514661,
                 "posZ": -6.0168,
-                "rotX": 0.004948161,
-                "rotY": 90.00006,
+                "rotX": 0.00494810427,
+                "rotY": 90.00003,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -596,10 +425,10 @@
               "Transform": {
                 "posX": 23.5013,
                 "posY": 1.51380479,
-                "posZ": -5.52289772,
-                "rotX": 0.010889465,
-                "rotY": 180.024109,
-                "rotZ": 0.004952879,
+                "posZ": -5.52289963,
+                "rotX": 0.0108894315,
+                "rotY": 180.024017,
+                "rotZ": 0.00495282328,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -652,12 +481,12 @@
               "GUID": "2a0881",
               "Name": "Card",
               "Transform": {
-                "posX": 5.999975,
-                "posY": 1.51627076,
-                "posZ": -0.499826252,
-                "rotX": 0.0108943032,
-                "rotY": 180.023178,
-                "rotZ": 0.00492926035,
+                "posX": 6.0,
+                "posY": 1.53015435,
+                "posZ": -0.500100255,
+                "rotX": 0.5303357,
+                "rotY": 180.022888,
+                "rotZ": 0.0050528124,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -713,7 +542,7 @@
                 "posX": 2.49999976,
                 "posY": 1.50296867,
                 "posZ": -0.5,
-                "rotX": 0.004948233,
+                "rotX": 0.004948376,
                 "rotY": 90.0033951,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -883,12 +712,12 @@
               "GUID": "355708",
               "Name": "Card",
               "Transform": {
-                "posX": -32.50002,
+                "posX": -32.5000038,
                 "posY": 1.78360534,
-                "posZ": 10.9999847,
-                "rotX": -5.062457E-06,
-                "rotY": 179.997925,
-                "rotZ": 1.00423705E-08,
+                "posZ": 10.9999981,
+                "rotX": -5.00385E-06,
+                "rotY": 179.998,
+                "rotZ": 8.72743442E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -941,12 +770,12 @@
               "GUID": "387ca4",
               "Name": "Card",
               "Transform": {
-                "posX": -34.99992,
+                "posX": -34.9999046,
                 "posY": 1.78360569,
-                "posZ": 7.01857662,
-                "rotX": -4.95861059E-06,
-                "rotY": 180.00235,
-                "rotZ": -1.78828419E-08,
+                "posZ": 7.01859426,
+                "rotX": -4.835914E-06,
+                "rotY": 180.0023,
+                "rotZ": 9.22242052E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -999,12 +828,12 @@
               "GUID": "3e5ced",
               "Name": "Card",
               "Transform": {
-                "posX": 1.499399,
+                "posX": 1.4994,
                 "posY": 1.51941609,
                 "posZ": 14.0,
-                "rotX": 0.0108903768,
-                "rotY": 180.014252,
-                "rotZ": 0.00495100953,
+                "rotX": 0.0108903153,
+                "rotY": 180.0142,
+                "rotZ": 0.004951012,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1057,12 +886,12 @@
               "GUID": "43df22",
               "Name": "Deck",
               "Transform": {
-                "posX": -20.0005074,
-                "posY": 1.81018794,
-                "posZ": 2.99939322,
-                "rotX": -4.88629939E-06,
-                "rotY": 180.0058,
-                "rotZ": -2.925094E-07,
+                "posX": -20.0005,
+                "posY": 1.810188,
+                "posZ": 2.99939871,
+                "rotX": -4.902081E-06,
+                "rotY": 180.0057,
+                "rotZ": 4.944291E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -3735,12 +3564,12 @@
               "GUID": "4c7058",
               "Name": "Card",
               "Transform": {
-                "posX": -1.00010073,
+                "posX": -1.0000999,
                 "posY": 1.51820624,
                 "posZ": 6.5,
-                "rotX": 0.0108898878,
-                "rotY": 180.019043,
-                "rotZ": 0.00495191943,
+                "rotX": 0.0108898506,
+                "rotY": 180.019089,
+                "rotZ": 0.004951869,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -3793,12 +3622,12 @@
               "GUID": "4df2ac",
               "Name": "Custom_Token",
               "Transform": {
-                "posX": 18.5,
-                "posY": 1.57813263,
-                "posZ": -3.50001168,
-                "rotX": 0.01181716,
-                "rotY": 180.020874,
-                "rotZ": 0.00111167517,
+                "posX": 18.5000019,
+                "posY": 1.57813168,
+                "posZ": -3.500002,
+                "rotX": 0.0114145018,
+                "rotY": 180.020966,
+                "rotZ": 0.00318479119,
                 "scaleX": 0.23,
                 "scaleY": 1.0,
                 "scaleZ": 0.225
@@ -3853,9 +3682,9 @@
                 "posX": 13.0,
                 "posY": 1.51832783,
                 "posZ": 13.5,
-                "rotX": 0.0108914832,
-                "rotY": 179.999817,
-                "rotZ": 0.004948248,
+                "rotX": 0.0108915381,
+                "rotY": 179.9998,
+                "rotZ": 0.00494820857,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -3910,10 +3739,10 @@
               "Transform": {
                 "posX": 13.0,
                 "posY": 1.51566648,
-                "posZ": -0.5005048,
-                "rotX": 0.0108916583,
+                "posZ": -0.500500858,
+                "rotX": 0.0108916126,
                 "rotY": 179.9983,
-                "rotZ": 0.004947953,
+                "rotZ": 0.004947909,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -4212,12 +4041,12 @@
               "GUID": "6f0000",
               "Name": "Card",
               "Transform": {
-                "posX": -30.00041,
+                "posX": -30.0004025,
                 "posY": 1.78360534,
-                "posZ": 10.99949,
-                "rotX": -4.95819859E-06,
-                "rotY": 180.0385,
-                "rotZ": 5.927384E-10,
+                "posZ": 10.9994984,
+                "rotX": -5.001567E-06,
+                "rotY": 180.038513,
+                "rotZ": 6.5556236E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -4443,11 +4272,11 @@
               "GUID": "7c5488",
               "Name": "3DText",
               "Transform": {
-                "posX": -21.0000038,
-                "posY": 1.9999994,
-                "posZ": 10.4999866,
+                "posX": -21.0000114,
+                "posY": 2.00000143,
+                "posZ": 10.5000048,
                 "rotX": 90.0,
-                "rotY": 0.219900012,
+                "rotY": 0.219899967,
                 "rotZ": 0.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -4500,8 +4329,8 @@
                 "posX": 17.501,
                 "posY": 1.51422858,
                 "posZ": -6.0196,
-                "rotX": 0.00494798133,
-                "rotY": 90.00008,
+                "rotX": 0.00494815269,
+                "rotY": 90.00006,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -4901,12 +4730,12 @@
               "GUID": "8bb15c",
               "Name": "Card",
               "Transform": {
-                "posX": -1.00010061,
+                "posX": -1.0000999,
                 "posY": 1.51687562,
-                "posZ": -0.499999523,
-                "rotX": 0.0108892722,
-                "rotY": 180.026108,
-                "rotZ": 0.00495325541,
+                "posZ": -0.4999999,
+                "rotX": 0.0108892368,
+                "rotY": 180.0261,
+                "rotZ": 0.004953344,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -5132,12 +4961,12 @@
               "GUID": "93b1e0",
               "Name": "Card",
               "Transform": {
-                "posX": -1.00000083,
+                "posX": -1.00000024,
                 "posY": 1.51953685,
                 "posZ": 13.5,
-                "rotX": 0.0108893756,
-                "rotY": 180.024841,
-                "rotZ": 0.004953026,
+                "rotX": 0.0108893858,
+                "rotY": 180.0248,
+                "rotZ": 0.00495310035,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -5366,7 +5195,7 @@
                 "posX": 30.5,
                 "posY": 1.6220938,
                 "posZ": -2.9971,
-                "rotX": -0.00059114123,
+                "rotX": -0.0005912041,
                 "rotY": 179.9998,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -6666,9 +6495,9 @@
                 "posX": 1.5,
                 "posY": 1.51808536,
                 "posZ": 7.0,
-                "rotX": 0.0108915,
+                "rotX": 0.0108914515,
                 "rotY": 180.0,
-                "rotZ": 0.00494823372,
+                "rotZ": 0.00494821044,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -6721,12 +6550,12 @@
               "GUID": "b3df01",
               "Name": "Card",
               "Transform": {
-                "posX": 13.000103,
+                "posX": 13.0001,
                 "posY": 1.51699722,
-                "posZ": 6.500001,
-                "rotX": 0.0108898636,
-                "rotY": 180.019165,
-                "rotZ": 0.00495201442,
+                "posZ": 6.5,
+                "rotX": 0.010889804,
+                "rotY": 180.01918,
+                "rotZ": 0.00495183235,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -6779,12 +6608,12 @@
               "GUID": "b8075c",
               "Name": "Card",
               "Transform": {
-                "posX": -30.0007172,
+                "posX": -30.0007038,
                 "posY": 1.78360569,
-                "posZ": 6.99928141,
-                "rotX": -4.88933256E-06,
-                "rotY": 180.00177,
-                "rotZ": -8.708578E-08,
+                "posZ": 6.99929571,
+                "rotX": -4.901684E-06,
+                "rotY": 180.0017,
+                "rotZ": 6.114771E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -6834,13 +6663,131 @@
               "XmlUI": ""
             },
             {
+              "GUID": "b97edc",
+              "Name": "CardCustom",
+              "Transform": {
+                "posX": 5.99999952,
+                "posY": 1.51683986,
+                "posZ": 2.4999,
+                "rotX": 0.0109058069,
+                "rotY": 179.97821,
+                "rotZ": 0.004851908,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Le Repérage",
+              "Description": "Tâches sélectionnables",
+              "GMNotes": "{\n  \"id\": \"09040-c\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 1113400,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "11134": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730588616/DB575AB256CB1CD5B8EA564EEA602C0CDC936F94/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730588927/2572776B7C09E07E59AECF518E390CB3B46E8EA2/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "-- Clickable Card: Le Repérage\r\n-- by franakin74\r\ninformation = {\r\n    version = \"1.0\",\r\n    last_updated = \"04.11.2022\"\r\n}\r\n\r\n-- Color information for buttons\r\nboxSize = 38\r\n\r\n-- static values\r\nx_1         = -0.905\r\nx_offset    = 0.075\r\ny_visible   = 0.25\r\ny_invisible = -0.5\r\n\r\n-- z-values (lines on the sheet)\r\nposZ = {\r\n    -0.50,\r\n    -0.28,\r\n    -0.15,\r\n    0.08,\r\n    0.30,\r\n    0.53\r\n}\r\n\r\n-- box setup (amount of boxes per line and amount of marked boxes in that line)\r\nexistingBoxes = { 1, 1, 1, 1, 1, 1 }\r\n\r\n-- override 'marked boxes' for debugging ('all' or 'none')\r\nmarkDEBUG = \"\"\r\n\r\n-- save state when going into bags / decks\r\nfunction onDestroy() self.script_state = onSave() end\r\n\r\nfunction onSave() return JSON.encode(markedBoxes) end\r\n\r\n-- Startup procedure\r\nfunction onLoad(saved_data)\r\n    if saved_data ~= \"\" and markDEBUG == \"\" then\r\n        markedBoxes = JSON.decode(saved_data)\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\n\r\n    self.addContextMenuItem(\"Reset Inputs\", function() updateState() end)\r\n    self.addContextMenuItem(\"Scale: normal\", function() self.setScale({ 1, 1, 1 }) end)\r\n    self.addContextMenuItem(\"Scale: double\", function() self.setScale({ 2, 1, 2 }) end)\r\nend\r\n\r\nfunction updateState(markedBoxesNew)\r\n    if markedBoxesNew then\r\n        markedBoxes = markedBoxesNew\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\nend\r\n\r\n-- create Data\r\nfunction makeData()\r\n    Data = {}\r\n    Data.checkbox = {}\r\n\r\n    -- repeat this for each entry (= line) in existingBoxes\r\n    local totalCount = 0\r\n    for i = 1, #existingBoxes do\r\n        -- repeat this for each checkbox per line\r\n        for j = 1, existingBoxes[i] do\r\n            totalCount                      = totalCount + 1\r\n            Data.checkbox[totalCount]       = {}\r\n            Data.checkbox[totalCount].pos   = {}\r\n            Data.checkbox[totalCount].pos.x = x_1 + j * x_offset\r\n            Data.checkbox[totalCount].pos.z = posZ[i]\r\n            Data.checkbox[totalCount].row   = i\r\n\r\n            if (markDEBUG == \"all\") or (markedBoxes[i] >= j and markDEBUG ~= \"none\") then\r\n                Data.checkbox[totalCount].pos.y = y_visible\r\n                Data.checkbox[totalCount].state = true\r\n            else\r\n                Data.checkbox[totalCount].pos.y = y_invisible\r\n                Data.checkbox[totalCount].state = false\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n-- checks or unchecks the given box\r\nfunction click_checkbox(tableIndex)\r\n    local row = Data.checkbox[tableIndex].row\r\n\r\n    if Data.checkbox[tableIndex].state == true then\r\n        Data.checkbox[tableIndex].pos.y = y_invisible\r\n        Data.checkbox[tableIndex].state = false\r\n        markedBoxes[row] = markedBoxes[row] - 1\r\n    else\r\n        Data.checkbox[tableIndex].pos.y = y_visible\r\n        Data.checkbox[tableIndex].state = true\r\n        markedBoxes[row] = markedBoxes[row] + 1\r\n    end\r\n\r\n    self.editButton({\r\n        index = tableIndex - 1,\r\n        position = Data.checkbox[tableIndex].pos\r\n    })\r\nend\r\n\r\nfunction createButtonsAndBoxes()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n\r\n    for i, box_data in ipairs(Data.checkbox) do\r\n        local funcName = \"checkbox\" .. i\r\n        local func = function() click_checkbox(i) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createButton({\r\n            click_function = funcName,\r\n            function_owner = self,\r\n            position       = box_data.pos,\r\n            height         = boxSize,\r\n            width          = boxSize,\r\n            font_size      = box_data.size,\r\n            scale          = { 1, 1, 1 },\r\n            color          = { 0, 0, 0 },\r\n            font_color     = { 0, 0, 0 }\r\n        })\r\n    end\r\nend\r\n",
+              "LuaScriptState": "[0,0,0,0,0,0,0,0,0,0]",
+              "XmlUI": "",
+              "States": {
+                "2": {
+                  "GUID": "40e947",
+                  "Name": "CardCustom",
+                  "Transform": {
+                    "posX": -15.0000029,
+                    "posY": 1.52435768,
+                    "posZ": 32.5000458,
+                    "rotX": 0.010890441,
+                    "rotY": 179.979889,
+                    "rotZ": 0.004944918,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Le Cambriolage",
+                  "Description": "Tâches sélectionnables",
+                  "GMNotes": "{\n  \"id\": \"09040-c\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 1113500,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11135": {
+                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730675650/9E5AB1D19DE22E010C565D47E7E0B9EA897EE465/",
+                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730675942/2572776B7C09E07E59AECF518E390CB3B46E8EA2/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "-- Clickable Card: Le Cambriolage\r\n-- by franakin74\r\ninformation = {\r\n    version = \"1.0\",\r\n    last_updated = \"04.11.2022\"\r\n}\r\n\r\n-- Color information for buttons\r\nboxSize = 38\r\n\r\n-- static values\r\nx_1         = -0.905\r\nx_offset    = 0.075\r\ny_visible   = 0.25\r\ny_invisible = -0.5\r\n\r\n-- z-values (lines on the sheet)\r\nposZ = {\r\n    -0.505,\r\n    -0.289,\r\n    -0.167,\r\n    0.062,\r\n    0.165,\r\n    0.292,\r\n    0.419,\r\n    0.54\r\n}\r\n\r\n-- box setup (amount of boxes per line and amount of marked boxes in that line)\r\nexistingBoxes = { 1, 1, 1, 1, 1, 1, 1, 1 }\r\n\r\n-- override 'marked boxes' for debugging ('all' or 'none')\r\nmarkDEBUG = \"\"\r\n\r\n-- save state when going into bags / decks\r\nfunction onDestroy() self.script_state = onSave() end\r\n\r\nfunction onSave() return JSON.encode(markedBoxes) end\r\n\r\n-- Startup procedure\r\nfunction onLoad(saved_data)\r\n    if saved_data ~= \"\" and markDEBUG == \"\" then\r\n        markedBoxes = JSON.decode(saved_data)\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\n\r\n    self.addContextMenuItem(\"Reset Inputs\", function() updateState() end)\r\n    self.addContextMenuItem(\"Scale: normal\", function() self.setScale({ 1, 1, 1 }) end)\r\n    self.addContextMenuItem(\"Scale: double\", function() self.setScale({ 2, 1, 2 }) end)\r\nend\r\n\r\nfunction updateState(markedBoxesNew)\r\n    if markedBoxesNew then\r\n        markedBoxes = markedBoxesNew\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\nend\r\n\r\n-- create Data\r\nfunction makeData()\r\n    Data = {}\r\n    Data.checkbox = {}\r\n\r\n    -- repeat this for each entry (= line) in existingBoxes\r\n    local totalCount = 0\r\n    for i = 1, #existingBoxes do\r\n        -- repeat this for each checkbox per line\r\n        for j = 1, existingBoxes[i] do\r\n            totalCount                      = totalCount + 1\r\n            Data.checkbox[totalCount]       = {}\r\n            Data.checkbox[totalCount].pos   = {}\r\n            Data.checkbox[totalCount].pos.x = x_1 + j * x_offset\r\n            Data.checkbox[totalCount].pos.z = posZ[i]\r\n            Data.checkbox[totalCount].row   = i\r\n\r\n            if (markDEBUG == \"all\") or (markedBoxes[i] >= j and markDEBUG ~= \"none\") then\r\n                Data.checkbox[totalCount].pos.y = y_visible\r\n                Data.checkbox[totalCount].state = true\r\n            else\r\n                Data.checkbox[totalCount].pos.y = y_invisible\r\n                Data.checkbox[totalCount].state = false\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n-- checks or unchecks the given box\r\nfunction click_checkbox(tableIndex)\r\n    local row = Data.checkbox[tableIndex].row\r\n\r\n    if Data.checkbox[tableIndex].state == true then\r\n        Data.checkbox[tableIndex].pos.y = y_invisible\r\n        Data.checkbox[tableIndex].state = false\r\n\r\n        markedBoxes[row] = markedBoxes[row] - 1\r\n    else\r\n        Data.checkbox[tableIndex].pos.y = y_visible\r\n        Data.checkbox[tableIndex].state = true\r\n\r\n        markedBoxes[row] = markedBoxes[row] + 1\r\n    end\r\n\r\n    self.editButton({\r\n        index = tableIndex - 1,\r\n        position = Data.checkbox[tableIndex].pos\r\n    })\r\nend\r\n\r\nfunction createButtonsAndBoxes()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n\r\n    for i, box_data in ipairs(Data.checkbox) do\r\n        local funcName = \"checkbox\" .. i\r\n        local func = function() click_checkbox(i) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createButton({\r\n            click_function = funcName,\r\n            function_owner = self,\r\n            position       = box_data.pos,\r\n            height         = boxSize,\r\n            width          = boxSize,\r\n            font_size      = box_data.size,\r\n            scale          = { 1, 1, 1 },\r\n            color          = { 0, 0, 0 },\r\n            font_color     = { 0, 0, 0 }\r\n        })\r\n    end\r\nend\r\n",
+                  "LuaScriptState": "[0,0,0,0,0,0,0,0,0,0]",
+                  "XmlUI": ""
+                }
+              }
+            },
+            {
               "GUID": "be8ffe",
               "Name": "Custom_Tile",
               "Transform": {
                 "posX": 6.0,
                 "posY": 1.50399709,
                 "posZ": 6.5,
-                "rotX": 0.004948704,
+                "rotX": 0.00494873757,
                 "rotY": 90.0035,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -7010,12 +6957,12 @@
               "GUID": "c6ee96",
               "Name": "Card",
               "Transform": {
-                "posX": 15.5000019,
+                "posX": 15.5,
                 "posY": 1.51687634,
-                "posZ": 6.99999952,
-                "rotX": 0.0108920587,
-                "rotY": 179.993835,
-                "rotZ": 0.00494708167,
+                "posZ": 7.0,
+                "rotX": 0.0108919824,
+                "rotY": 179.993881,
+                "rotZ": 0.00494712451,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -7068,12 +7015,12 @@
               "GUID": "c8b3cc",
               "Name": "Card",
               "Transform": {
-                "posX": -32.5009232,
+                "posX": -32.5009041,
                 "posY": 1.78360569,
-                "posZ": 6.999179,
-                "rotX": -5.03018737E-06,
-                "rotY": 180.003876,
-                "rotZ": -1.15165008E-07,
+                "posZ": 6.99919462,
+                "rotX": -4.78047968E-06,
+                "rotY": 180.00383,
+                "rotZ": -1.64285154E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -7127,11 +7074,11 @@
               "Name": "Card",
               "Transform": {
                 "posX": 18.5001,
-                "posY": 1.514692,
-                "posZ": -3.000707,
-                "rotX": 0.0111312373,
-                "rotY": 180.015808,
-                "rotZ": 0.003282323,
+                "posY": 1.51469135,
+                "posZ": -3.000701,
+                "rotX": 0.0111366967,
+                "rotY": 180.015869,
+                "rotZ": 0.00324329641,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -7357,12 +7304,12 @@
               "GUID": "db1533",
               "Name": "Card",
               "Transform": {
-                "posX": -27.5004177,
+                "posX": -27.5004044,
                 "posY": 1.78360569,
-                "posZ": 6.999487,
-                "rotX": -4.92668E-06,
-                "rotY": 180.012375,
-                "rotZ": -2.18350877E-07,
+                "posZ": 6.99949741,
+                "rotX": -5.01379236E-06,
+                "rotY": 180.012314,
+                "rotZ": 1.4490351E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -7415,12 +7362,12 @@
               "GUID": "e67379",
               "Name": "Deck",
               "Transform": {
-                "posX": -23.0007114,
+                "posX": -23.0007019,
                 "posY": 1.85351431,
-                "posZ": 2.99918771,
-                "rotX": -5.13349369E-06,
-                "rotY": 180.00592,
-                "rotZ": 5.5616713E-08,
+                "posZ": 2.99919772,
+                "rotX": -5.00862143E-06,
+                "rotY": 180.005859,
+                "rotZ": 6.215008E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -8243,12 +8190,12 @@
               "GUID": "e79ccf",
               "Name": "Deck",
               "Transform": {
-                "posX": -27.50001,
-                "posY": 1.80537319,
-                "posZ": 10.9999943,
-                "rotX": -4.990447E-06,
-                "rotY": 180.00293,
-                "rotZ": 2.4485221E-08,
+                "posX": -27.5000019,
+                "posY": 1.80537331,
+                "posZ": 11.0,
+                "rotX": -4.92552863E-06,
+                "rotY": 180.00296,
+                "rotZ": 8.231192E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -8476,124 +8423,6 @@
                   "XmlUI": ""
                 }
               ]
-            },
-            {
-              "GUID": "b97edc",
-              "Name": "CardCustom",
-              "Transform": {
-                "posX": 6.00002956,
-                "posY": 1.51684117,
-                "posZ": 2.499945,
-                "rotX": 0.0108681712,
-                "rotY": 179.97818,
-                "rotZ": 0.004986579,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "Le Repérage",
-              "Description": "Tâches sélectionnables",
-              "GMNotes": "{\n  \"id\": \"09040-c\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 1113400,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "11134": {
-                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730588616/DB575AB256CB1CD5B8EA564EEA602C0CDC936F94/",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730588927/2572776B7C09E07E59AECF518E390CB3B46E8EA2/",
-                  "NumWidth": 1,
-                  "NumHeight": 1,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "-- Clickable Card: Le Repérage\r\n-- by franakin74\r\ninformation = {\r\n    version = \"1.0\",\r\n    last_updated = \"04.11.2022\"\r\n}\r\n\r\n-- Color information for buttons\r\nboxSize = 38\r\n\r\n-- static values\r\nx_1         = -0.905\r\nx_offset    = 0.075\r\ny_visible   = 0.25\r\ny_invisible = -0.5\r\n\r\n-- z-values (lines on the sheet)\r\nposZ = {\r\n    -0.50,\r\n    -0.28,\r\n    -0.15,\r\n    0.08,\r\n    0.30,\r\n    0.53\r\n}\r\n\r\n-- box setup (amount of boxes per line and amount of marked boxes in that line)\r\nexistingBoxes = { 1, 1, 1, 1, 1, 1 }\r\n\r\n-- override 'marked boxes' for debugging ('all' or 'none')\r\nmarkDEBUG = \"\"\r\n\r\n-- save state when going into bags / decks\r\nfunction onDestroy() self.script_state = onSave() end\r\n\r\nfunction onSave() return JSON.encode(markedBoxes) end\r\n\r\n-- Startup procedure\r\nfunction onLoad(saved_data)\r\n    if saved_data ~= \"\" and markDEBUG == \"\" then\r\n        markedBoxes = JSON.decode(saved_data)\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\n\r\n    self.addContextMenuItem(\"Reset Inputs\", function() updateState() end)\r\n    self.addContextMenuItem(\"Scale: normal\", function() self.setScale({ 1, 1, 1 }) end)\r\n    self.addContextMenuItem(\"Scale: double\", function() self.setScale({ 2, 1, 2 }) end)\r\nend\r\n\r\nfunction updateState(markedBoxesNew)\r\n    if markedBoxesNew then\r\n        markedBoxes = markedBoxesNew\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\nend\r\n\r\n-- create Data\r\nfunction makeData()\r\n    Data = {}\r\n    Data.checkbox = {}\r\n\r\n    -- repeat this for each entry (= line) in existingBoxes\r\n    local totalCount = 0\r\n    for i = 1, #existingBoxes do\r\n        -- repeat this for each checkbox per line\r\n        for j = 1, existingBoxes[i] do\r\n            totalCount                      = totalCount + 1\r\n            Data.checkbox[totalCount]       = {}\r\n            Data.checkbox[totalCount].pos   = {}\r\n            Data.checkbox[totalCount].pos.x = x_1 + j * x_offset\r\n            Data.checkbox[totalCount].pos.z = posZ[i]\r\n            Data.checkbox[totalCount].row   = i\r\n\r\n            if (markDEBUG == \"all\") or (markedBoxes[i] >= j and markDEBUG ~= \"none\") then\r\n                Data.checkbox[totalCount].pos.y = y_visible\r\n                Data.checkbox[totalCount].state = true\r\n            else\r\n                Data.checkbox[totalCount].pos.y = y_invisible\r\n                Data.checkbox[totalCount].state = false\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n-- checks or unchecks the given box\r\nfunction click_checkbox(tableIndex)\r\n    local row = Data.checkbox[tableIndex].row\r\n\r\n    if Data.checkbox[tableIndex].state == true then\r\n        Data.checkbox[tableIndex].pos.y = y_invisible\r\n        Data.checkbox[tableIndex].state = false\r\n        markedBoxes[row] = markedBoxes[row] - 1\r\n    else\r\n        Data.checkbox[tableIndex].pos.y = y_visible\r\n        Data.checkbox[tableIndex].state = true\r\n        markedBoxes[row] = markedBoxes[row] + 1\r\n    end\r\n\r\n    self.editButton({\r\n        index = tableIndex - 1,\r\n        position = Data.checkbox[tableIndex].pos\r\n    })\r\nend\r\n\r\nfunction createButtonsAndBoxes()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n\r\n    for i, box_data in ipairs(Data.checkbox) do\r\n        local funcName = \"checkbox\" .. i\r\n        local func = function() click_checkbox(i) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createButton({\r\n            click_function = funcName,\r\n            function_owner = self,\r\n            position       = box_data.pos,\r\n            height         = boxSize,\r\n            width          = boxSize,\r\n            font_size      = box_data.size,\r\n            scale          = { 1, 1, 1 },\r\n            color          = { 0, 0, 0 },\r\n            font_color     = { 0, 0, 0 }\r\n        })\r\n    end\r\nend\r\n",
-              "LuaScriptState": "[0,0,0,0,0,0,0,0,0,0]",
-              "XmlUI": "",
-              "States": {
-                "2": {
-                  "GUID": "40e947",
-                  "Name": "CardCustom",
-                  "Transform": {
-                    "posX": -15.0000029,
-                    "posY": 1.52435768,
-                    "posZ": 32.5000458,
-                    "rotX": 0.010890441,
-                    "rotY": 179.979889,
-                    "rotZ": 0.004944918,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Le Cambriolage",
-                  "Description": "Tâches sélectionnables",
-                  "GMNotes": "{\n  \"id\": \"09040-c\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 1113500,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11135": {
-                      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730675650/9E5AB1D19DE22E010C565D47E7E0B9EA897EE465/",
-                      "BackURL": "http://cloud-3.steamusercontent.com/ugc/2297463342730675942/2572776B7C09E07E59AECF518E390CB3B46E8EA2/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "-- Clickable Card: Le Cambriolage\r\n-- by franakin74\r\ninformation = {\r\n    version = \"1.0\",\r\n    last_updated = \"04.11.2022\"\r\n}\r\n\r\n-- Color information for buttons\r\nboxSize = 38\r\n\r\n-- static values\r\nx_1         = -0.905\r\nx_offset    = 0.075\r\ny_visible   = 0.25\r\ny_invisible = -0.5\r\n\r\n-- z-values (lines on the sheet)\r\nposZ = {\r\n    -0.505,\r\n    -0.289,\r\n    -0.167,\r\n    0.062,\r\n    0.165,\r\n    0.292,\r\n    0.419,\r\n    0.54\r\n}\r\n\r\n-- box setup (amount of boxes per line and amount of marked boxes in that line)\r\nexistingBoxes = { 1, 1, 1, 1, 1, 1, 1, 1 }\r\n\r\n-- override 'marked boxes' for debugging ('all' or 'none')\r\nmarkDEBUG = \"\"\r\n\r\n-- save state when going into bags / decks\r\nfunction onDestroy() self.script_state = onSave() end\r\n\r\nfunction onSave() return JSON.encode(markedBoxes) end\r\n\r\n-- Startup procedure\r\nfunction onLoad(saved_data)\r\n    if saved_data ~= \"\" and markDEBUG == \"\" then\r\n        markedBoxes = JSON.decode(saved_data)\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\n\r\n    self.addContextMenuItem(\"Reset Inputs\", function() updateState() end)\r\n    self.addContextMenuItem(\"Scale: normal\", function() self.setScale({ 1, 1, 1 }) end)\r\n    self.addContextMenuItem(\"Scale: double\", function() self.setScale({ 2, 1, 2 }) end)\r\nend\r\n\r\nfunction updateState(markedBoxesNew)\r\n    if markedBoxesNew then\r\n        markedBoxes = markedBoxesNew\r\n    else\r\n        markedBoxes = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }\r\n    end\r\n\r\n    makeData()\r\n    createButtonsAndBoxes()\r\nend\r\n\r\n-- create Data\r\nfunction makeData()\r\n    Data = {}\r\n    Data.checkbox = {}\r\n\r\n    -- repeat this for each entry (= line) in existingBoxes\r\n    local totalCount = 0\r\n    for i = 1, #existingBoxes do\r\n        -- repeat this for each checkbox per line\r\n        for j = 1, existingBoxes[i] do\r\n            totalCount                      = totalCount + 1\r\n            Data.checkbox[totalCount]       = {}\r\n            Data.checkbox[totalCount].pos   = {}\r\n            Data.checkbox[totalCount].pos.x = x_1 + j * x_offset\r\n            Data.checkbox[totalCount].pos.z = posZ[i]\r\n            Data.checkbox[totalCount].row   = i\r\n\r\n            if (markDEBUG == \"all\") or (markedBoxes[i] >= j and markDEBUG ~= \"none\") then\r\n                Data.checkbox[totalCount].pos.y = y_visible\r\n                Data.checkbox[totalCount].state = true\r\n            else\r\n                Data.checkbox[totalCount].pos.y = y_invisible\r\n                Data.checkbox[totalCount].state = false\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n-- checks or unchecks the given box\r\nfunction click_checkbox(tableIndex)\r\n    local row = Data.checkbox[tableIndex].row\r\n\r\n    if Data.checkbox[tableIndex].state == true then\r\n        Data.checkbox[tableIndex].pos.y = y_invisible\r\n        Data.checkbox[tableIndex].state = false\r\n\r\n        markedBoxes[row] = markedBoxes[row] - 1\r\n    else\r\n        Data.checkbox[tableIndex].pos.y = y_visible\r\n        Data.checkbox[tableIndex].state = true\r\n\r\n        markedBoxes[row] = markedBoxes[row] + 1\r\n    end\r\n\r\n    self.editButton({\r\n        index = tableIndex - 1,\r\n        position = Data.checkbox[tableIndex].pos\r\n    })\r\nend\r\n\r\nfunction createButtonsAndBoxes()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n\r\n    for i, box_data in ipairs(Data.checkbox) do\r\n        local funcName = \"checkbox\" .. i\r\n        local func = function() click_checkbox(i) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createButton({\r\n            click_function = funcName,\r\n            function_owner = self,\r\n            position       = box_data.pos,\r\n            height         = boxSize,\r\n            width          = boxSize,\r\n            font_size      = box_data.size,\r\n            scale          = { 1, 1, 1 },\r\n            color          = { 0, 0, 0 },\r\n            font_color     = { 0, 0, 0 }\r\n        })\r\n    end\r\nend\r\n",
-                  "LuaScriptState": "[0,0,0,0,0,0,0,0,0,0]",
-                  "XmlUI": ""
-                }
-              }
             }
           ],
           "AttachedDecals": [
@@ -8624,9 +8453,9 @@
             "posX": 19.5,
             "posY": 1.67486,
             "posZ": -16.5,
-            "rotX": -8.594443E-07,
+            "rotX": -4.331979E-06,
             "rotY": 180.0222,
-            "rotZ": 1.7594075E-05,
+            "rotZ": 1.01852229E-05,
             "scaleX": 0.306216359,
             "scaleY": 1.0,
             "scaleZ": 0.306216359
@@ -8641,7 +8470,7 @@
           },
           "ColorDiffuse": {
             "r": 0.726724,
-            "g": 0.3447298,
+            "g": 0.344729751,
             "b": 0.465997934
           },
           "LayoutGroupSortIndex": 0,
@@ -8678,12 +8507,12 @@
           "GUID": "9aa0dd",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 24.9997959,
-            "posY": 0.9800952,
-            "posZ": 45.5000229,
-            "rotX": -5.16032242E-06,
-            "rotY": 180.000809,
-            "rotZ": -3.4474192E-07,
+            "posX": 25.0000076,
+            "posY": 0.979997337,
+            "posZ": 45.5000076,
+            "rotX": -5.116728E-06,
+            "rotY": 180.0001,
+            "rotZ": 4.58834251E-07,
             "scaleX": 1.265649,
             "scaleY": 0.263438284,
             "scaleZ": 1.38591444
@@ -17254,12 +17083,12 @@
           "GUID": "cf4171",
           "Name": "Custom_Token",
           "Transform": {
-            "posX": -11.4999971,
+            "posX": -11.499999,
             "posY": 1.67451549,
-            "posZ": -16.4999981,
-            "rotX": -0.00125449139,
-            "rotY": 180.022186,
-            "rotZ": -0.0007733088,
+            "posZ": -16.4999962,
+            "rotX": -0.0012491385,
+            "rotY": 180.0222,
+            "rotZ": -0.0007709909,
             "scaleX": 0.306216359,
             "scaleY": 1.0,
             "scaleZ": 0.306216359
@@ -17274,7 +17103,7 @@
           },
           "ColorDiffuse": {
             "r": 0.726724,
-            "g": 0.3447298,
+            "g": 0.344729751,
             "b": 0.465997934
           },
           "LayoutGroupSortIndex": 0,
@@ -17311,12 +17140,12 @@
           "GUID": "f72a04",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 2.99999762,
+            "posX": 2.99999857,
             "posY": 1.50197494,
-            "posZ": -5.50000048,
-            "rotX": 0.010890496,
+            "posZ": -5.5,
+            "rotX": 0.0108902939,
             "rotY": 180.0125,
-            "rotZ": 0.00495104073,
+            "rotZ": 0.00495090662,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
