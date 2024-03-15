@@ -2,12 +2,12 @@
       "GUID": "caa85c",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -53.0001,
+        "posX": -53.0000954,
         "posY": 1.19691873,
-        "posZ": 15.4999723,
-        "rotX": -4.602238E-06,
-        "rotY": 180.0202,
-        "rotZ": 5.74939236E-07,
+        "posZ": 15.4999084,
+        "rotX": -5.13485E-06,
+        "rotY": 180.019684,
+        "rotZ": 4.39479066E-07,
         "scaleX": 1.170821,
         "scaleY": 0.0619766228,
         "scaleZ": 0.9910606
@@ -68,92 +68,6 @@
       "LuaScriptState": "{\"ml\":{\"10d2ad\":{\"lock\":false,\"pos\":{\"x\":-5.00004816055298,\"y\":5.84360074996948,\"z\":51.4999504089355},\"rot\":{\"x\":2.81931011869574E-08,\"y\":179.968414306641,\"z\":5.09209758092766E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"4e9f43\":{\"lock\":true,\"pos\":{\"x\":5.99459505081177,\"y\":5.84360456466675,\"z\":55.9183540344238},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"52da24\":{\"lock\":false,\"pos\":{\"x\":-18,\"y\":5.84360218048096,\"z\":51.5},\"rot\":{\"x\":-1.78357488778147E-08,\"y\":179.968490600586,\"z\":5.00522264701431E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"6d85a9\":{\"lock\":false,\"pos\":{\"x\":21.9999523162842,\"y\":5.84359836578369,\"z\":51.4999504089355},\"rot\":{\"x\":2.05909493899981E-08,\"y\":179.966598510742,\"z\":5.04771605847054E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"7fa434\":{\"lock\":true,\"pos\":{\"x\":5.75449991226196,\"y\":5.84359979629517,\"z\":52.4053993225098},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0,\"g\":0.0787451788783073,\"r\":0.196863561868668}},\"82d39b\":{\"lock\":false,\"pos\":{\"x\":12.9999494552612,\"y\":5.84359931945801,\"z\":51.4999504089355},\"rot\":{\"x\":3.14098187459422E-08,\"y\":179.96858215332,\"z\":5.11118560098112E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"857fe4\":{\"lock\":false,\"pos\":{\"x\":17.4999504089355,\"y\":5.84359884262085,\"z\":51.4999504089355},\"rot\":{\"x\":-4.00939583755644E-08,\"y\":179.96858215332,\"z\":5.0328444558545E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"9ad12a\":{\"lock\":false,\"pos\":{\"x\":-9.50005149841309,\"y\":5.84360122680664,\"z\":51.4999504089355},\"rot\":{\"x\":1.36334490363765E-08,\"y\":179.968399047852,\"z\":5.05657726534992E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"a6eb0c\":{\"lock\":false,\"pos\":{\"x\":31.5,\"y\":5.8436,\"z\":51.5},\"rot\":{\"x\":0,\"y\":179.9686,\"z\":0},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"aa5f1e\":{\"lock\":false,\"pos\":{\"x\":-13.5000495910645,\"y\":5.8436017036438,\"z\":51.4999504089355},\"rot\":{\"x\":-9.24526446510754E-08,\"y\":179.96842956543,\"z\":4.94716960020014E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"ba18ea\":{\"lock\":false,\"pos\":{\"x\":-0.500049591064453,\"y\":5.84360027313232,\"z\":51.4999504089355},\"rot\":{\"x\":2.0266504918709E-07,\"y\":179.966796875,\"z\":5.06995365867624E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"f0f46b\":{\"lock\":false,\"pos\":{\"x\":3.99994993209839,\"y\":5.84360027313232,\"z\":51.4999504089355},\"rot\":{\"x\":-1.3116579822281E-08,\"y\":179.968414306641,\"z\":5.02161628901376E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}},\"fd9ef1\":{\"lock\":false,\"pos\":{\"x\":8.49994945526123,\"y\":5.84359979629517,\"z\":51.4999504089355},\"rot\":{\"x\":5.04781070276294E-08,\"y\":179.968490600586,\"z\":5.13740269525442E-06},\"tint\":{\"a\":0.39215686917305,\"b\":1,\"g\":1,\"r\":1}}}}",
       "XmlUI": "",
       "ContainedObjects": [
-        {
-          "GUID": "a6eb0c",
-          "Name": "Custom_Model",
-          "Transform": {
-            "posX": 31.5,
-            "posY": 5.84359741,
-            "posZ": 51.5,
-            "rotX": -3.33961026E-10,
-            "rotY": 179.9686,
-            "rotZ": 5.01179147E-06,
-            "scaleX": 1.20052135,
-            "scaleY": 0.249882281,
-            "scaleZ": 1.3145982
-          },
-          "Nickname": "La Cabale de Myarlothotep",
-          "Description": "Horreur à Warkham",
-          "GMNotes": "scenarios/meddling_of_meowlathotep.json",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 0.392156869
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomMesh": {
-            "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2038486699957629839/74B187339172F55B05CD212F214F5D31B117FDF0/",
-            "NormalURL": "",
-            "ColliderURL": "",
-            "Convex": true,
-            "MaterialIndex": 3,
-            "TypeIndex": 0,
-            "CustomShader": {
-              "SpecularColor": {
-                "r": 1.0,
-                "g": 1.0,
-                "b": 1.0
-              },
-              "SpecularIntensity": 0.0,
-              "SpecularSharpness": 2.0,
-              "FresnelStrength": 0.0
-            },
-            "CastShadows": true
-          },
-          "LuaScript": "\r\nfunction onload(saved_data)\r\n    createDownloadButton()\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make Download button\r\nfunction createDownloadButton()\r\n    self.createButton({\r\n        label=\"Charger\", click_function=\"buttonClick_download\", function_owner=self,\r\n        position={0,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\nend\r\n\r\n--Triggered by download button,\r\nfunction buttonClick_download()\r\n    local params = { url = self.getGMNotes(), replace = self.guid }\r\n    Global.call('placeholder_download', params)\r\nend\r\n",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "AttachedDecals": [
-            {
-              "Transform": {
-                "posX": -0.0021877822,
-                "posY": -0.08963572,
-                "posZ": -0.00288731651,
-                "rotX": 270.0,
-                "rotY": 359.869568,
-                "rotZ": 0.0,
-                "scaleX": 2.00000215,
-                "scaleY": 2.00000238,
-                "scaleZ": 2.00000262
-              },
-              "CustomDecal": {
-                "Name": "dunwich_back",
-                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
-                "Size": 7.4
-              }
-            }
-          ]
-        },
         {
           "GUID": "10d2ad",
           "Name": "Custom_Model",
@@ -244,11 +158,11 @@
           "GUID": "4e9f43",
           "Name": "3DText",
           "Transform": {
-            "posX": 5.99459457,
-            "posY": 5.84360743,
-            "posZ": 55.9183846,
+            "posX": 5.994641,
+            "posY": 5.84360552,
+            "posZ": 55.91838,
             "rotX": 90.0,
-            "rotY": 4.716477E-09,
+            "rotY": -2.35823849E-09,
             "rotZ": 0.0,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -301,9 +215,9 @@
             "posX": -18.0,
             "posY": 5.8436017,
             "posZ": 51.5,
-            "rotX": -1.35382319E-08,
+            "rotX": 2.06776622E-08,
             "rotY": 179.968491,
-            "rotZ": 5.140385E-06,
+            "rotZ": 5.12696033E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -394,7 +308,7 @@
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
           },
-          "Nickname": "Le Dévoreur de Toute Autre Chose",
+          "Nickname": "Le Dévoreur de Toute Chose... et du Reste",
           "Description": "",
           "GMNotes": "scenarios/blob2.json",
           "AltLookAngle": {
@@ -489,8 +403,8 @@
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 0.1968635,
-            "g": 0.07874515,
+            "r": 0.196863443,
+            "g": 0.0787451044,
             "b": 0.0
           },
           "LayoutGroupSortIndex": 0,
@@ -525,8 +439,8 @@
                 "z": 0.5214403
               },
               "Rotation": {
-                "x": 1.76689539E-07,
-                "y": 0.0315282568,
+                "x": 1.76689554E-07,
+                "y": 0.03152826,
                 "z": 180.0
               }
             },
@@ -585,7 +499,7 @@
                 "z": 0.5214392
               },
               "Rotation": {
-                "x": 1.16502914E-08,
+                "x": 1.16502923E-08,
                 "y": 0.03320838,
                 "z": 180.0
               }
@@ -609,7 +523,7 @@
                 "z": 0.5214388
               },
               "Rotation": {
-                "x": 1.12840354E-07,
+                "x": 1.12840347E-07,
                 "y": 0.0348476246,
                 "z": 180.0
               }
@@ -633,7 +547,7 @@
                 "z": 0.5214383
               },
               "Rotation": {
-                "x": 4.743674E-08,
+                "x": 4.74367425E-08,
                 "y": 0.0315419,
                 "z": 180.0
               }
@@ -819,9 +733,9 @@
             "posX": -9.5000515,
             "posY": 5.843601,
             "posZ": 51.49995,
-            "rotX": 1.09945937E-07,
-            "rotY": 179.968384,
-            "rotZ": 4.8983643E-06,
+            "rotX": -4.42302266E-08,
+            "rotY": 179.9684,
+            "rotZ": 5.10259451E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -857,6 +771,92 @@
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
             "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/826883954590180592/50C4420774777AFE0D3168DA24D0E72941862CC4/",
+            "NormalURL": "",
+            "ColliderURL": "",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+              "SpecularColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0
+              },
+              "SpecularIntensity": 0.0,
+              "SpecularSharpness": 2.0,
+              "FresnelStrength": 0.0
+            },
+            "CastShadows": true
+          },
+          "LuaScript": "\r\nfunction onload(saved_data)\r\n    createDownloadButton()\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make Download button\r\nfunction createDownloadButton()\r\n    self.createButton({\r\n        label=\"Charger\", click_function=\"buttonClick_download\", function_owner=self,\r\n        position={0,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\nend\r\n\r\n--Triggered by download button,\r\nfunction buttonClick_download()\r\n    local params = { url = self.getGMNotes(), replace = self.guid }\r\n    Global.call('placeholder_download', params)\r\nend\r\n",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "AttachedDecals": [
+            {
+              "Transform": {
+                "posX": -0.0021877822,
+                "posY": -0.08963572,
+                "posZ": -0.00288731651,
+                "rotX": 270.0,
+                "rotY": 359.869568,
+                "rotZ": 0.0,
+                "scaleX": 2.00000215,
+                "scaleY": 2.00000238,
+                "scaleZ": 2.00000262
+              },
+              "CustomDecal": {
+                "Name": "dunwich_back",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "Size": 7.4
+              }
+            }
+          ]
+        },
+        {
+          "GUID": "a6eb0c",
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": 31.5,
+            "posY": 5.84359741,
+            "posZ": 51.5,
+            "rotX": 1.7433301E-08,
+            "rotY": 179.9686,
+            "rotZ": 4.954255E-06,
+            "scaleX": 1.20052135,
+            "scaleY": 0.249882281,
+            "scaleZ": 1.3145982
+          },
+          "Nickname": "La Cabale de Myarlothotep",
+          "Description": "Horreur à Warkham",
+          "GMNotes": "scenarios/meddling_of_meowlathotep.json",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 0.392156869
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomMesh": {
+            "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2038486699957629839/74B187339172F55B05CD212F214F5D31B117FDF0/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -991,9 +991,9 @@
             "posX": -0.5000496,
             "posY": 5.84360027,
             "posZ": 51.49995,
-            "rotX": 2.04839861E-08,
+            "rotX": 7.27148E-08,
             "rotY": 179.9668,
-            "rotZ": 5.109293E-06,
+            "rotZ": 5.04408172E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -1077,9 +1077,9 @@
             "posX": 3.99995,
             "posY": 5.8436,
             "posZ": 51.49995,
-            "rotX": -5.48394858E-08,
+            "rotX": 4.60911878E-08,
             "rotY": 179.968414,
-            "rotZ": 5.14185558E-06,
+            "rotZ": 5.077868E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -1163,9 +1163,9 @@
             "posX": 8.499949,
             "posY": 5.8436,
             "posZ": 51.49995,
-            "rotX": 1.67460978E-08,
+            "rotX": 2.793514E-08,
             "rotY": 179.968491,
-            "rotZ": 5.124327E-06,
+            "rotZ": 5.05477874E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
