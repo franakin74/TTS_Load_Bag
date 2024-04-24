@@ -2,12 +2,12 @@
       "GUID": "aa5f1e",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -9.500186,
-        "posY": 5.84360933,
-        "posZ": 51.50014,
-        "rotX": -8.01849538E-08,
-        "rotY": 179.968414,
-        "rotZ": 4.93157449E-06,
+        "posX": -13.5000505,
+        "posY": 5.8436017,
+        "posZ": 51.49995,
+        "rotX": -1.5002442E-08,
+        "rotY": 179.96843,
+        "rotZ": 4.940766E-06,
         "scaleX": 1.265649,
         "scaleY": 0.263438284,
         "scaleZ": 1.38591444
@@ -62,12 +62,12 @@
           "GUID": "0439f4",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -20.0011044,
+            "posX": -20.0011063,
             "posY": 1.84000123,
-            "posZ": 3.999498,
-            "rotX": -5.07244431E-06,
-            "rotY": 179.970657,
-            "rotZ": 1.61806213E-07,
+            "posZ": 3.99949646,
+            "rotX": -4.45699243E-06,
+            "rotY": 179.970779,
+            "rotZ": -2.58610644E-08,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -537,73 +537,15 @@
           ]
         },
         {
-          "GUID": "93b250",
-          "Name": "Card",
-          "Transform": {
-            "posX": 8.49931049,
-            "posY": 1.58211637,
-            "posZ": 20.9979076,
-            "rotX": 358.467072,
-            "rotY": 180.017868,
-            "rotZ": 358.9236,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "Abbesse Allegria Di Biase",
-          "Description": "Des Plus Bénies",
-          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82022\",\n  \"intellectIcons\": 1,\n  \"sanity\": 2,\n  \"traits\": \"Ally. Believer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": true,
-          "Hands": true,
-          "CardID": 122222,
-          "SidewaysCard": false,
-          "CustomDeck": {
-            "1222": {
-              "FaceURL": "https://i.imgur.com/FeuZox7.jpg",
-              "BackURL": "https://i.imgur.com/4V9vvvT.jpg",
-              "NumWidth": 10,
-              "NumHeight": 7,
-              "BackIsHidden": true,
-              "UniqueBack": true,
-              "Type": 0
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
           "GUID": "0e05ae",
           "Name": "Custom_Model",
           "Transform": {
-            "posX": -28.9117012,
+            "posX": -28.911705,
             "posY": 1.77100134,
-            "posZ": 0.8908236,
-            "rotX": 5.047461E-06,
-            "rotY": 0.000165151287,
-            "rotZ": 1.66172015E-07,
+            "posZ": 0.890819669,
+            "rotX": 5.084858E-06,
+            "rotY": 0.000274539168,
+            "rotZ": 4.34710827E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -657,7 +599,7 @@
             "posX": 10.500001,
             "posY": 1.50651193,
             "posZ": 3.99999666,
-            "rotX": -6.594482E-05,
+            "rotX": -6.594483E-05,
             "rotY": 90.0,
             "rotZ": -1.45857566E-05,
             "scaleX": 1.0,
@@ -827,12 +769,12 @@
           "GUID": "37f346",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -26.0016079,
+            "posX": -26.00161,
             "posY": 1.84000123,
-            "posZ": 4.000171,
-            "rotX": -4.755072E-06,
-            "rotY": 179.971848,
-            "rotZ": -6.466229E-07,
+            "posZ": 4.00016832,
+            "rotX": -6.882338E-06,
+            "rotY": 179.971909,
+            "rotZ": -5.07898E-08,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -1709,18 +1651,18 @@
           "GUID": "65f980",
           "Name": "Deck",
           "Transform": {
-            "posX": 30.5,
+            "posX": 30.4999924,
             "posY": 1.64616406,
-            "posZ": -3.00000024,
-            "rotX": -0.000590859,
-            "rotY": 179.999969,
+            "posZ": -2.99999762,
+            "rotX": -0.0005907695,
+            "rotY": 179.999985,
             "rotZ": 180.001068,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
           },
-          "Nickname": "Le Carnaval des Horreurs",
-          "Description": "",
+          "Nickname": "Deck de Rencontre",
+          "Description": "Le Carnaval des Horreurs",
           "GMNotes": "",
           "AltLookAngle": {
             "x": 0.0,
@@ -1748,34 +1690,124 @@
           "Hands": false,
           "SidewaysCard": false,
           "DeckIDs": [
-            122423,
-            122407,
-            122400,
-            122417,
-            122410,
-            122404,
-            122403,
-            122422,
-            122412,
-            122401,
-            122420,
+            277700,
+            277800,
+            277500,
+            277600,
+            277300,
+            277200,
+            277400,
+            276900,
+            277000,
+            277100,
             122409,
+            122410,
             122411,
+            122407,
             122408,
-            122425,
-            122415,
-            122414,
-            122418,
-            122416,
-            122424,
             122406,
-            122419,
-            122413,
-            122402,
+            122404,
             122405,
-            122421
+            122423,
+            122422,
+            122420,
+            122424,
+            122425,
+            122419,
+            122421,
+            122418
           ],
           "CustomDeck": {
+            "2777": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867049765/6393693A20B0E3D513A80B26E0BB4BAD51CF1594/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2778": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867049185/83CF26B3EED677830DC914A5625F0C61C3BCD97D/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2775": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867047357/B2F7F95EB62A31CD26ECA1255CD98319CC26D3FC/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2776": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867048227/1632621602CB3DF8C58C3B939A8D6A24CC59470B/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2773": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867045361/0E256263C6CD81F73AC84705EEFC43AEF02FAAC6/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2772": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867044648/53F17C85DF3815764F86D7DD4A8C9C808FC47E1C/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2774": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867046618/EFFF46F038DCC13F9637E4A3F0BB47455313CB7F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2769": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867041853/9E3B04C1A95FB57B015B51D412AFE1E4E353A73B/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2770": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867042615/2753000AA689F4EF059A0A4F6E7CFA6844CEBEB7/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
+            "2771": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867043369/0F168514F6D7F1F60EEAA139041BE6CED3E5CD7D/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            },
             "1224": {
               "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
               "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
@@ -1791,137 +1823,21 @@
           "XmlUI": "",
           "ContainedObjects": [
             {
-              "GUID": "9122f1",
-              "Name": "Card",
+              "GUID": "8aad8f",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 9.208536,
-                "posZ": -3.0,
-                "rotX": -0.0005909363,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.64031577,
+                "posZ": 16.5,
+                "rotX": 0.00899411,
+                "rotY": 180.0,
+                "rotZ": 179.98587,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122423,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "e7dcd5",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 9.346024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82034\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122407,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "3396ab",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 9.146023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Miasme Âcre",
+              "Description": "Risque.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82037\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -1947,14 +1863,14 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122400,
+              "CardID": 277700,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2777": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867049765/6393693A20B0E3D513A80B26E0BB4BAD51CF1594/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -1965,22 +1881,22 @@
               "XmlUI": ""
             },
             {
-              "GUID": "a2f6c6",
-              "Name": "Card",
+              "GUID": "caa95a",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 8.946023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.63034332,
+                "posZ": 16.5,
+                "rotX": -0.00285777962,
+                "rotY": 180.0,
+                "rotZ": 180.035568,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82031\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "Nickname": "Miasme Âcre",
+              "Description": "Risque.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82037\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2005,14 +1921,14 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122417,
+              "CardID": 277800,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2778": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867049185/83CF26B3EED677830DC914A5625F0C61C3BCD97D/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -2023,137 +1939,21 @@
               "XmlUI": ""
             },
             {
-              "GUID": "850046",
-              "Name": "Card",
+              "GUID": "338cfc",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 8.746023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.62070942,
+                "posZ": 16.5,
+                "rotX": 0.00260744779,
+                "rotY": 180.0,
+                "rotZ": 179.963913,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82033\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122410,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "d5cbb6",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 8.546023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82035\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122404,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "7fab7d",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 8.346024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Enlèvement",
+              "Description": "Manigance.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82036\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -2179,14 +1979,14 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122403,
+              "CardID": 277500,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2775": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867047357/B2F7F95EB62A31CD26ECA1255CD98319CC26D3FC/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -2197,22 +1997,22 @@
               "XmlUI": ""
             },
             {
-              "GUID": "b74d05",
-              "Name": "Card",
+              "GUID": "16682b",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 8.146023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.611139,
+                "posZ": 16.5,
+                "rotX": 359.9936,
+                "rotY": 180.0,
+                "rotZ": 179.96434,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "Nickname": "Enlèvement",
+              "Description": "Manigance.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82036\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2237,14 +2037,14 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122422,
+              "CardID": 277600,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2776": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867048227/1632621602CB3DF8C58C3B939A8D6A24CC59470B/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -2255,21 +2055,21 @@
               "XmlUI": ""
             },
             {
-              "GUID": "623617",
-              "Name": "Card",
+              "GUID": "e53a09",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 7.946023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.60145247,
+                "posZ": 16.0,
+                "rotX": 0.00261213421,
+                "rotY": 180.0,
+                "rotZ": 179.9639,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Perdu dans Venise",
+              "Description": "Bévue.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82032\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -2295,14 +2095,14 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122412,
+              "CardID": 277300,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2773": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867045361/0E256263C6CD81F73AC84705EEFC43AEF02FAAC6/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -2313,22 +2113,22 @@
               "XmlUI": ""
             },
             {
-              "GUID": "0b956f",
-              "Name": "Card",
+              "GUID": "aace16",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 7.746023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.59183371,
+                "posZ": 16.5,
+                "rotX": 0.00349916541,
+                "rotY": 180.0,
+                "rotZ": 179.963745,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82037\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "Nickname": "Perdu dans Venise",
+              "Description": "Bévue.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82032\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2353,14 +2153,14 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122401,
+              "CardID": 277200,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2772": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867044648/53F17C85DF3815764F86D7DD4A8C9C808FC47E1C/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -2371,22 +2171,22 @@
               "XmlUI": ""
             },
             {
-              "GUID": "ac60f6",
-              "Name": "Card",
+              "GUID": "67b8e6",
+              "Name": "CardCustom",
               "Transform": {
-                "posX": 30.5,
-                "posY": 7.54602337,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 38.0,
+                "posY": 1.582197,
+                "posZ": 16.5,
+                "rotX": 0.002796676,
+                "rotY": 180.0,
+                "rotZ": 180.03598,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "Nickname": "Perdu dans Venise",
+              "Description": "Bévue.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82032\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2411,14 +2211,188 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122420,
+              "CardID": 277400,
               "SidewaysCard": false,
               "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
+                "2774": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867046618/EFFF46F038DCC13F9637E4A3F0BB47455313CB7F/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "415d9a",
+              "Name": "CardCustom",
+              "Transform": {
+                "posX": 38.5,
+                "posY": 1.572572,
+                "posZ": 16.0,
+                "rotX": 0.00332714245,
+                "rotY": 180.0,
+                "rotZ": 180.03476,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Hystérie Collective",
+              "Description": "Risque.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82031\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 276900,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "2769": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867041853/9E3B04C1A95FB57B015B51D412AFE1E4E353A73B/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "c61a37",
+              "Name": "CardCustom",
+              "Transform": {
+                "posX": 38.0,
+                "posY": 1.53865874,
+                "posZ": 16.5,
+                "rotX": 0.00280764326,
+                "rotY": 180.0,
+                "rotZ": 180.036,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Hystérie Collective",
+              "Description": "Risque.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82031\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 277000,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "2770": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867042615/2753000AA689F4EF059A0A4F6E7CFA6844CEBEB7/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "9a9570",
+              "Name": "CardCustom",
+              "Transform": {
+                "posX": 38.0002174,
+                "posY": 1.49346411,
+                "posZ": 16.5000134,
+                "rotX": 3.774629E-06,
+                "rotY": 180.000046,
+                "rotZ": 180.000015,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Hystérie Collective",
+              "Description": "Risque.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82031\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 277100,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "2771": {
+                  "FaceURL": "http://cloud-3.steamusercontent.com/ugc/1835784470867043369/0F168514F6D7F1F60EEAA139041BE6CED3E5CD7D/",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/1835784131957489171/6E3F1D1BAA5FBB7101D3F84B5E8502CD0F7E299E/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
                   "BackIsHidden": true,
                   "UniqueBack": false,
                   "Type": 0
@@ -2432,18 +2406,18 @@
               "GUID": "430034",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 5.630067,
-                "posZ": -3.00000024,
-                "rotX": -0.0005910545,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 57.1223335,
+                "posY": 2.00364518,
+                "posZ": -1.17579675,
+                "rotX": -0.0005910941,
+                "rotY": 180.00029,
+                "rotZ": 0.00124137173,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Regard des Spectateurs",
+              "Description": "Terreur.",
               "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82033\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -2487,21 +2461,79 @@
               "XmlUI": ""
             },
             {
-              "GUID": "fc9808",
+              "GUID": "850046",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 7.00852633,
-                "posZ": -3.0,
-                "rotX": 6.7044316E-06,
-                "rotY": 179.999954,
-                "rotZ": 180.0008,
+                "posX": 52.6195068,
+                "posY": 2.00364184,
+                "posZ": -2.22841263,
+                "rotX": -0.0005911743,
+                "rotY": 180.000244,
+                "rotZ": 0.00107032619,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Regard des Spectateurs",
+              "Description": "Terreur.",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82033\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122410,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "fc9808",
+              "Name": "Card",
+              "Transform": {
+                "posX": 59.62532,
+                "posY": 2.00364184,
+                "posZ": -1.0993278,
+                "rotX": -0.0005911197,
+                "rotY": 180.000259,
+                "rotZ": 0.00107028743,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Regard des Spectateurs",
+              "Description": "Terreur.",
               "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82033\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -2545,21 +2577,79 @@
               "XmlUI": ""
             },
             {
-              "GUID": "285f7b",
+              "GUID": "e7dcd5",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 7.146023,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 63.0985031,
+                "posY": 2.10364079,
+                "posZ": -1.8338666,
+                "rotX": -0.000591120566,
+                "rotY": 180.000259,
+                "rotZ": 0.00107052235,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Chaos dans l'Eau",
+              "Description": "Risque.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82034\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122407,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "285f7b",
+              "Name": "Card",
+              "Transform": {
+                "posX": 52.655468,
+                "posY": 2.00364232,
+                "posZ": -6.683113,
+                "rotX": -0.000591093034,
+                "rotY": 180.000259,
+                "rotZ": 0.00107031083,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Chaos dans l'Eau",
+              "Description": "Risque.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82034\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -2603,369 +2693,21 @@
               "XmlUI": ""
             },
             {
-              "GUID": "12125a",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 6.946024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"82028\",\n  \"traits\": \"Monster. Deep One.\",\n  \"type\": \"Enemy\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122425,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "a6dba2",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 6.746024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82032\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122415,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "0dc675",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 6.54602432,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82031\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122414,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "dacc66",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 6.346024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82030\",\n  \"traits\": \"Monster. Tentacle.\",\n  \"type\": \"Enemy\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122418,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "a6a93e",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 6.146024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82031\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122416,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "634ade",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 5.60853767,
-                "posZ": -3.0,
-                "rotX": -0.0005910365,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"82028\",\n  \"traits\": \"Monster. Deep One.\",\n  \"type\": \"Enemy\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122424,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
               "GUID": "8769aa",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 5.746024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 53.2222443,
+                "posY": 2.00364232,
+                "posZ": -6.957169,
+                "rotX": -0.000591068354,
+                "rotY": 180.000244,
+                "rotZ": 0.001070404,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Chaos dans l'Eau",
+              "Description": "Risque.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82034\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -3009,22 +2751,22 @@
               "XmlUI": ""
             },
             {
-              "GUID": "ec906e",
+              "GUID": "d5cbb6",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 5.54602432,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 58.5408745,
+                "posY": 2.00364232,
+                "posZ": -6.414529,
+                "rotX": -0.000591220858,
+                "rotY": 180.000244,
+                "rotZ": 0.00107035262,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82030\",\n  \"traits\": \"Monster. Tentacle.\",\n  \"type\": \"Enemy\"\n}",
+              "Nickname": "Hypnose",
+              "Description": "Sortilège.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82035\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3049,123 +2791,7 @@
               "GridProjection": false,
               "HideWhenFaceDown": true,
               "Hands": true,
-              "CardID": 122419,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "e6f6a5",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 5.346024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82032\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122413,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "1224": {
-                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
-                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "431126",
-              "Name": "Card",
-              "Transform": {
-                "posX": 30.5,
-                "posY": 5.146024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82036\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 122402,
+              "CardID": 122404,
               "SidewaysCard": false,
               "CustomDeck": {
                 "1224": {
@@ -3186,18 +2812,18 @@
               "GUID": "3d6ee8",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 4.946024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 62.2201729,
+                "posY": 2.00364232,
+                "posZ": -6.959603,
+                "rotX": -0.0005911437,
+                "rotY": 180.000259,
+                "rotZ": 0.00107034622,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Hypnose",
+              "Description": "Sortilège.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82035\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -3241,21 +2867,369 @@
               "XmlUI": ""
             },
             {
-              "GUID": "30e8e9",
+              "GUID": "9122f1",
               "Name": "Card",
               "Transform": {
-                "posX": 30.5,
-                "posY": 4.746024,
-                "posZ": -3.00000024,
-                "rotX": -0.000590985059,
-                "rotY": 179.999954,
-                "rotZ": 180.001068,
+                "posX": 51.3307724,
+                "posY": 2.0036428,
+                "posZ": -10.8916626,
+                "rotX": -0.0005911846,
+                "rotY": 180.000244,
+                "rotZ": 0.00107043318,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Sentinelle du Carnaval",
+              "Description": "Humanoïde. Cultiste.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122423,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "b74d05",
+              "Name": "Card",
+              "Transform": {
+                "posX": 54.6207,
+                "posY": 2.00365877,
+                "posZ": -11.7555437,
+                "rotX": -0.000618814,
+                "rotY": 180.000244,
+                "rotZ": -0.00187760475,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Sentinelle du Carnaval",
+              "Description": "Humanoïde. Cultiste.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122422,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "ac60f6",
+              "Name": "Card",
+              "Transform": {
+                "posX": 56.7401047,
+                "posY": 2.0036428,
+                "posZ": -11.7614384,
+                "rotX": -0.0005911722,
+                "rotY": 180.000244,
+                "rotZ": 0.00107033527,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Sentinelle du Carnaval",
+              "Description": "Humanoïde. Cultiste.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122420,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "634ade",
+              "Name": "Card",
+              "Transform": {
+                "posX": 50.9070549,
+                "posY": 2.00364256,
+                "posZ": -8.164331,
+                "rotX": -0.000591166259,
+                "rotY": 180.000244,
+                "rotZ": 0.00107045122,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Gondolier",
+              "Description": "Monstre. Profond.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"82028\",\n  \"traits\": \"Monster. Deep One.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122424,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "12125a",
+              "Name": "Card",
+              "Transform": {
+                "posX": 42.1976128,
+                "posY": 2.523642,
+                "posZ": -12.1940012,
+                "rotX": -0.000591123069,
+                "rotY": 180.0002,
+                "rotZ": 0.00107030384,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Gondolier",
+              "Description": "Monstre. Profond.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"82028\",\n  \"traits\": \"Monster. Deep One.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122425,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "ec906e",
+              "Name": "Card",
+              "Transform": {
+                "posX": 47.6179276,
+                "posY": 2.0036428,
+                "posZ": -10.8700533,
+                "rotX": -0.0005911988,
+                "rotY": 180.0001,
+                "rotZ": 0.00107040245,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Appendice Tortueux",
+              "Description": "Monstre. Tentacule.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82030\",\n  \"traits\": \"Monster. Tentacle.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122419,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
+              "GUID": "30e8e9",
+              "Name": "Card",
+              "Transform": {
+                "posX": 30.4999943,
+                "posY": 1.71854782,
+                "posZ": -2.99714136,
+                "rotX": -0.0004999288,
+                "rotY": 180.0,
+                "rotZ": 0.00103056582,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Appendice Tortueux",
+              "Description": "Monstre. Tentacule.",
               "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82030\",\n  \"traits\": \"Monster. Tentacle.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
@@ -3297,6 +3271,64 @@
               "LuaScript": "",
               "LuaScriptState": "",
               "XmlUI": ""
+            },
+            {
+              "GUID": "dacc66",
+              "Name": "Card",
+              "Transform": {
+                "posX": 48.893898,
+                "posY": 2.0036428,
+                "posZ": -10.58469,
+                "rotX": -0.0005912177,
+                "rotY": 180.000153,
+                "rotZ": 0.00107032491,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Appendice Tortueux",
+              "Description": "Monstre. Tentacule.",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82030\",\n  \"traits\": \"Monster. Tentacle.\",\n  \"type\": \"Enemy\"\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 122418,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "1224": {
+                  "FaceURL": "https://i.imgur.com/K5W0Y7E.jpg",
+                  "BackURL": "http://cloud-3.steamusercontent.com/ugc/931553051989537266/4F8EF28EECA8E2376771AD6B18CA93622216C17A/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
             }
           ]
         },
@@ -3307,8 +3339,8 @@
             "posX": 17.5000038,
             "posY": 1.53600025,
             "posZ": -5.9998045,
-            "rotX": 0.00494567631,
-            "rotY": 89.98825,
+            "rotX": 0.004945794,
+            "rotY": 89.98827,
             "rotZ": 359.9891,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -3542,12 +3574,12 @@
           "GUID": "789a8b",
           "Name": "Card",
           "Transform": {
-            "posX": 6.499993,
-            "posY": 1.52009892,
-            "posZ": 20.0000324,
-            "rotX": 0.0111587429,
-            "rotY": 180.0008,
-            "rotZ": 0.00322051812,
+            "posX": 6.499833,
+            "posY": 1.52008259,
+            "posZ": 20.00002,
+            "rotX": 0.011326341,
+            "rotY": 180.003937,
+            "rotZ": 0.00213351869,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -3773,11 +3805,11 @@
           "GUID": "838556",
           "Name": "Deck",
           "Transform": {
-            "posX": 12.500001,
-            "posY": 1.53643215,
-            "posZ": -5.999712,
-            "rotX": 0.00494951429,
-            "rotY": 90.00779,
+            "posX": 12.5000086,
+            "posY": 1.536432,
+            "posZ": -5.9997797,
+            "rotX": 0.00494989054,
+            "rotY": 90.00948,
             "rotZ": 359.9891,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -4011,18 +4043,18 @@
           "GUID": "8b04d1",
           "Name": "Card",
           "Transform": {
-            "posX": 23.5002079,
+            "posX": 23.5002232,
             "posY": 1.51380932,
-            "posZ": -5.49980974,
-            "rotX": 0.0108936382,
-            "rotY": 179.976715,
-            "rotZ": 0.004943741,
+            "posZ": -5.49986124,
+            "rotX": 0.0108936224,
+            "rotY": 179.9751,
+            "rotZ": 0.004943499,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
           },
-          "Nickname": "",
-          "Description": "",
+          "Nickname": "Référence",
+          "Description": "Le Carnaval des Horreurs",
           "GMNotes": "",
           "AltLookAngle": {
             "x": 0.0,
@@ -4049,6 +4081,64 @@
           "HideWhenFaceDown": true,
           "Hands": true,
           "CardID": 122205,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "1222": {
+              "FaceURL": "https://i.imgur.com/FeuZox7.jpg",
+              "BackURL": "https://i.imgur.com/4V9vvvT.jpg",
+              "NumWidth": 10,
+              "NumHeight": 7,
+              "BackIsHidden": true,
+              "UniqueBack": true,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "93b250",
+          "Name": "Card",
+          "Transform": {
+            "posX": 8.499351,
+            "posY": 1.58211243,
+            "posZ": 20.9979076,
+            "rotX": 358.479645,
+            "rotY": 180.0157,
+            "rotZ": 358.906219,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Abbesse Allegria Di Biase",
+          "Description": "Des Plus Bénies",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82022\",\n  \"intellectIcons\": 1,\n  \"sanity\": 2,\n  \"traits\": \"Ally. Believer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 122222,
           "SidewaysCard": false,
           "CustomDeck": {
             "1222": {
@@ -4244,10 +4334,10 @@
           "Transform": {
             "posX": -20.0,
             "posY": 1.84000075,
-            "posZ": 7.49999666,
-            "rotX": -6.497534E-06,
-            "rotY": 179.982864,
-            "rotZ": 2.094144E-07,
+            "posZ": 7.49999571,
+            "rotX": -5.456255E-06,
+            "rotY": 179.982925,
+            "rotZ": 2.19291337E-07,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -4892,12 +4982,12 @@
           "GUID": "ca851d",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 2.99999976,
+            "posX": 2.99999952,
             "posY": 1.50178492,
-            "posZ": -6.5,
-            "rotX": 0.010890495,
+            "posZ": -6.50000048,
+            "rotX": 0.0108906087,
             "rotY": 180.01239,
-            "rotZ": 0.00495070126,
+            "rotZ": 0.004950803,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -4952,9 +5042,9 @@
             "posX": -19.0,
             "posY": 1.47986,
             "posZ": -4.50000048,
-            "rotX": -1.30797915E-07,
+            "rotX": -1.0021715E-07,
             "rotY": 180.006851,
-            "rotZ": -1.3602272E-07,
+            "rotZ": 5.90707749E-08,
             "scaleX": 2.05722,
             "scaleY": 1.0,
             "scaleZ": 2.05722
@@ -5000,12 +5090,12 @@
           "GUID": "f170f9",
           "Name": "Card",
           "Transform": {
-            "posX": -23.0003319,
+            "posX": -23.0004768,
             "posY": 1.783606,
-            "posZ": 3.99964166,
-            "rotX": -5.042482E-06,
-            "rotY": 179.9798,
-            "rotZ": -4.871449E-08,
+            "posZ": 3.99948072,
+            "rotX": -5.15880765E-06,
+            "rotY": 179.980438,
+            "rotZ": -4.813839E-09,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
