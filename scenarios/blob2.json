@@ -2,12 +2,12 @@
       "GUID": "6d85a9",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 31.4992065,
-        "posY": 1.47985971,
-        "posZ": 28.4998455,
-        "rotX": 4.509591E-08,
-        "rotY": 179.967239,
-        "rotZ": 2.05440585E-07,
+        "posX": 22.0004578,
+        "posY": 5.843615,
+        "posZ": 51.50018,
+        "rotX": 1.87075074E-07,
+        "rotY": 179.966766,
+        "rotZ": 5.04476475E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -65,408 +65,9 @@
         "Order": 0
       },
       "LuaScript": "-- Utility memory bag by Directsun\r\n-- Version 2.7.0\r\n-- Fork of Memory Bag 2.0 by MrStump\r\n--\r\n-- Want to contribute? Create an issue or fork the code on GitHub and submit a pull request:\r\n-- https://github.com/sunflowermans/TTS-UtilityMemoryBag\r\n\r\n\r\nfunction updateSave()\r\n    local data_to_save = {[\"ml\"]=memoryList}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction combineMemoryFromBagsWithin()\r\n    local bagObjList = self.getObjects()\r\n    for _, bagObj in ipairs(bagObjList) do\r\n        local data = bagObj.lua_script_state\r\n        if data ~= nil then\r\n            local j = JSON.decode(data)\r\n            if j ~= nil and j.ml ~= nil then\r\n                for guid, entry in pairs(j.ml) do\r\n                    memoryList[guid] = entry\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateMemoryWithMoves()\r\n    memoryList = memoryListBackup\r\n    --get the first transposed object's coordinates\r\n    local obj = getObjectFromGUID(moveGuid)\r\n\r\n    -- p1 is where needs to go, p2 is where it was\r\n    local refObjPos = memoryList[moveGuid].pos\r\n    local deltaPos = findOffsetDistance(obj.getPosition(), refObjPos, nil)\r\n    local movedRotation = obj.getRotation()\r\n    for guid, entry in pairs(memoryList) do\r\n        memoryList[guid].pos.x = entry.pos.x - deltaPos.x\r\n        memoryList[guid].pos.y = entry.pos.y - deltaPos.y\r\n        memoryList[guid].pos.z = entry.pos.z - deltaPos.z\r\n        -- memoryList[guid].rot.x = movedRotation.x\r\n        -- memoryList[guid].rot.y = movedRotation.y\r\n        -- memoryList[guid].rot.z = movedRotation.z\r\n    end\r\n\r\n    --theList[obj.getGUID()] = {\r\n    --    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n    --    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n    --    lock=obj.getLock()\r\n    --}\r\n    moveList = {}\r\nend\r\n\r\nfunction onload(saved_data)\r\n\r\n    fresh = true\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        --Set up information off of loaded_data\r\n        memoryList = loaded_data.ml\r\n    else\r\n        --Set up information for if there is no saved saved data\r\n        memoryList = {}\r\n\r\n    end\r\n\r\n    moveList = {}\r\n    moveGuid = nil\r\n\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        fresh = false\r\n        createMemoryActionButtons()\r\n    end\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make setup button\r\n function createSetupButton()\r\n    self.createButton({\r\n      label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n      position={0,0.1,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n end\r\n\r\n--Triggered by Transpose button\r\nfunction buttonClick_transpose()\r\n    moveGuid = nil\r\n    broadcastToAll(\"Select one object and move it- all objects will move relative to the new location\", {0.75, 0.75, 1})\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(true)\r\n    createSetupActionButtons(true)\r\nend\r\n\r\n--Triggered by setup button,\r\nfunction buttonClick_setup()\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(false)\r\n    createSetupActionButtons(false)\r\nend\r\n\r\nfunction getAllObjectsInMemory()\r\n    local objTable = {}\r\n    local curObj = {}\r\n\r\n    for guid in pairs(memoryListBackup) do\r\n        curObj = getObjectFromGUID(guid)\r\n        table.insert(objTable, curObj)\r\n    end\r\n\r\n    return objTable\r\n    -- return getAllObjects()\r\nend\r\n\r\n--Creates selection buttons on objects\r\nfunction createButtonsOnAllObjects(move)\r\n    buttonIndexMap = {}\r\n    local howManyButtons = 0\r\n\r\n    local objsToHaveButtons = {}\r\n    if move == true then\r\n        objsToHaveButtons = getAllObjectsInMemory()\r\n    else\r\n        objsToHaveButtons = getAllObjects()\r\n    end\r\n\r\n    for _, obj in ipairs(objsToHaveButtons) do\r\n        if obj ~= self then\r\n            --On a normal bag, the button positions aren't the same size as the bag.\r\n            globalScaleFactor = 1* 1/self.getScale().x\r\n            --Super sweet math to set button positions\r\n            local selfPos = self.getPosition()\r\n            local objPos = obj.getPosition()\r\n            local deltaPos = findOffsetDistance(selfPos, objPos, obj)\r\n            local objPos = rotateLocalCoordinates(deltaPos, self)\r\n            objPos.x = -objPos.x * globalScaleFactor\r\n            objPos.y = objPos.y * globalScaleFactor + 2\r\n            objPos.z = objPos.z * globalScaleFactor * 0.9\r\n            --Workaround for custom PDFs\r\n            if obj.Book then\r\n                objPos.y = objPos.y + 0.5\r\n            end\r\n            --Offset rotation of bag\r\n            local rot = self.getRotation()\r\n            rot.y = -rot.y + 180\r\n            --Create function\r\n            local funcName = \"selectButton_\" .. howManyButtons\r\n            local func = function() buttonClick_selection(obj, move) end\r\n            local color = {0.75,0.25,0.25,0.6}\r\n            local colorMove = {0,0,1,0.6}\r\n            if move == true then\r\n                color = colorMove\r\n            end\r\n            self.setVar(funcName, func)\r\n            self.createButton({\r\n                click_function=funcName, function_owner=self,\r\n                position=objPos, rotation=rot, height=500, width=500,\r\n                color=color,\r\n            })\r\n            buttonIndexMap[obj.getGUID()] = howManyButtons\r\n            howManyButtons = howManyButtons + 1\r\n        end\r\n    end\r\nend\r\n\r\n--Creates submit and cancel buttons\r\nfunction createSetupActionButtons(move)\r\n    self.createButton({\r\n        label=\"Annuler\", click_function=\"buttonClick_cancel\", function_owner=self,\r\n      position={-0.7,0.1,2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=145, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    self.createButton({\r\n        label=\"Valider\", click_function=\"buttonClick_submit\", function_owner=self,\r\n        position={-0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=140, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    if move == false then\r\n      self.createButton({\r\n          label=\"Ajouter\", click_function=\"buttonClick_add\", function_owner=self,\r\n          position={0.7,0.3,2.1}, rotation={0,0,0}, height=275, width=625,\r\n          font_size=140, color={0,0,0}, font_color={0.25,1,0.25}\r\n      })\r\n\r\n        self.createButton({\r\n            label=\"Sélection\", click_function=\"editDragSelection\", function_owner=self,\r\n            position={-0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=125, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n\r\n        if fresh == false then\r\n                self.createButton({\r\n                    label=\"Mise à jour\", click_function=\"buttonClick_setNew\", function_owner=self,\r\n                    position={0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=105, color={0,0,0}, font_color={0.75,0.75,1}\r\n                })\r\n                self.createButton({\r\n                    label=\"Retirer\", click_function=\"buttonClick_remove\", function_owner=self,\r\n                    position={0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=140, color={0,0,0}, font_color={1,0.25,0.25}\r\n                })\r\n            end\r\n        end\r\n\r\n        self.createButton({\r\n            label=\"Reset\", click_function=\"buttonClick_reset\", function_owner=self,\r\n            position={0,0.3,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=165, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n    end\r\n\r\n\r\n--During Setup\r\n\r\n\r\n--Checks or unchecks buttons\r\nfunction buttonClick_selection(obj, move)\r\n    local index = buttonIndexMap[obj.getGUID()]\r\n    local colorMove = {0,0,1,0.6}\r\n    local color = {0,1,0,0.6}\r\n\r\n    previousGuid = selectedGuid\r\n    selectedGuid = obj.getGUID()\r\n\r\n    theList = memoryList\r\n    if move == true then\r\n        theList = moveList\r\n        if previousGuid ~= nil and previousGuid ~= selectedGuid then\r\n            local prevObj = getObjectFromGUID(previousGuid)\r\n            prevObj.highlightOff()\r\n            self.editButton({index=previousIndex, color=colorMove})\r\n            theList[previousGuid] = nil\r\n        end\r\n        previousIndex = index\r\n    end\r\n\r\n    if theList[selectedGuid] == nil then\r\n        self.editButton({index=index, color=color})\r\n        --Adding pos/rot to memory table\r\n        local pos, rot = obj.getPosition(), obj.getRotation()\r\n        --I need to add it like this or it won't save due to indexing issue\r\n        theList[obj.getGUID()] = {\r\n            pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n            rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n            lock=obj.getLock(),\r\n            tint=obj.getColorTint()\r\n        }\r\n        obj.highlightOn({0,1,0})\r\n    else\r\n        color = {0.75,0.25,0.25,0.6}\r\n        if move == true then\r\n            color = colorMove\r\n        end\r\n        self.editButton({index=index, color=color})\r\n        theList[obj.getGUID()] = nil\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\nfunction editDragSelection(bagObj, player, remove)\r\n    local selectedObjs = Player[player].getSelectedObjects()\r\n    if not remove then\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            --Ignore if already in the memory list, or does not have a button\r\n            if index and not memoryList[obj.getGUID()] then\r\n                self.editButton({index=index, color={0,1,0,0.6}})\r\n                --Adding pos/rot to memory table\r\n                local pos, rot = obj.getPosition(), obj.getRotation()\r\n                --I need to add it like this or it won't save due to indexing issue\r\n                memoryList[obj.getGUID()] = {\r\n                    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n                    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n                    lock=obj.getLock(),\r\n                    tint=obj.getColorTint()\r\n                }\r\n                obj.highlightOn({0,1,0})\r\n            end\r\n        end\r\n    else\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            if index and memoryList[obj.getGUID()] then\r\n                color = {0.75,0.25,0.25,0.6}\r\n                self.editButton({index=index, color=color})\r\n                memoryList[obj.getGUID()] = nil\r\n                obj.highlightOff()\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n--Cancels selection process\r\nfunction buttonClick_cancel()\r\n    memoryList = memoryListBackup\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        createMemoryActionButtons()\r\n    end\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Sélection annulée\", {1,1,1})\r\n    moveGuid = nil\r\nend\r\n\r\n--Saves selections\r\nfunction buttonClick_submit()\r\n    fresh = false\r\n    if next(moveList) ~= nil then\r\n        for guid in pairs(moveList) do\r\n            moveGuid = guid\r\n        end\r\n        if memoryListBackup[moveGuid] == nil then\r\n            broadcastToAll(\"Item selected for moving is not already in memory\", {1, 0.25, 0.25})\r\n        else\r\n            broadcastToAll(\"Moving all items in memory relative to new objects position!\", {0.75, 0.75, 1})\r\n            self.clearButtons()\r\n            self.clearInputs()\r\n            createMemoryActionButtons()\r\n            local count = 0\r\n            for guid in pairs(moveList) do\r\n                moveGuid = guid\r\n                count = count + 1\r\n                local obj = getObjectFromGUID(guid)\r\n                if obj ~= nil then obj.highlightOff() end\r\n            end\r\n            updateMemoryWithMoves()\r\n            updateSave()\r\n            buttonClick_place()\r\n        end\r\n    elseif next(memoryList) == nil and moveGuid == nil then\r\n        memoryList = memoryListBackup\r\n        broadcastToAll(\"No selections made.\", {0.75, 0.25, 0.25})\r\n    end\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\n    moveGuid = nil\r\nend\r\n\r\nfunction combineTables(first_table, second_table)\r\n    for k,v in pairs(second_table) do first_table[k] = v end\r\nend\r\n\r\nfunction buttonClick_add()\r\n    fresh = false\r\n    combineTables(memoryList, memoryListBackup)\r\n    broadcastToAll(\"Adding internal bags and selections to existing memory\", {0.25, 0.75, 0.25})\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_remove()\r\n    broadcastToAll(\"Removing Selected Entries From Memory\", {1.0, 0.25, 0.25})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        memoryListBackup[guid] = nil\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Removed\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_setNew()\r\n    broadcastToAll(\"Setting new position relative to items in memory\", {0.75, 0.75, 1})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        guid = obj.guid\r\n        if memoryListBackup[guid] ~= nil then\r\n            count = count + 1\r\n            memoryListBackup[guid].pos = obj.getPosition()\r\n            memoryListBackup[guid].rot = obj.getRotation()\r\n            memoryListBackup[guid].lock = obj.getLock()\r\n            memoryListBackup[guid].tint = obj.getColorTint()\r\n        end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\n--Resets bag to starting status\r\nfunction buttonClick_reset()\r\n    fresh = true\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createSetupButton()\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Tool Reset\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\n\r\n--After Setup\r\n\r\n\r\n--Creates recall and place buttons\r\nfunction createMemoryActionButtons()\r\n    self.createButton({\r\n        label=\"Placer\", click_function=\"buttonClick_place\", function_owner=self,\r\n        position={0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Ranger\", click_function=\"buttonClick_recall\", function_owner=self,\r\n        position={-0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={0,0.1,-2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    ---    self.createButton({\r\n    ---      label=\"Bouger\", click_function=\"buttonClick_transpose\", function_owner=self,\r\n    ---      position={-2,0.3,0.8}, rotation={0,270,0}, height=350, width=800,\r\n    ---      font_size=250, color={0,0,0}, font_color={0.75,0.75,1}\r\n    ---\r\nend\r\n\r\n--Sends objects from bag/table to their saved position/rotation\r\nfunction buttonClick_place()\r\n    local bagObjList = self.getObjects()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        --If obj is out on the table, move it to the saved pos/rot\r\n        if obj ~= nil then\r\n            obj.setPositionSmooth(entry.pos)\r\n            obj.setRotationSmooth(entry.rot)\r\n            obj.setLock(entry.lock)\r\n            obj.setColorTint(entry.tint)\r\n        else\r\n            --If obj is inside of the bag\r\n            for _, bagObj in ipairs(bagObjList) do\r\n                if bagObj.guid == guid then\r\n                    local item = self.takeObject({\r\n                        guid=guid, position=entry.pos, rotation=entry.rot, smooth=false\r\n                    })\r\n                    item.setLock(entry.lock)\r\n                    item.setColorTint(entry.tint)\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    broadcastToAll(\"Objets placés\", {1,1,1})\r\nend\r\n\r\n--Recalls objects to bag from table\r\nfunction buttonClick_recall()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then self.putObject(obj) end\r\n    end\r\n    broadcastToAll(\"Objets rangés\", {1,1,1})\r\nend\r\n\r\n\r\n--Utility functions\r\n\r\n\r\n--Find delta (difference) between 2 x/y/z coordinates\r\nfunction findOffsetDistance(p1, p2, obj)\r\n    local yOffset = 0\r\n    if obj ~= nil then\r\n        local bounds = obj.getBounds()\r\n        yOffset = (bounds.size.y - bounds.offset.y)\r\n    end\r\n    local deltaPos = {}\r\n    deltaPos.x = (p2.x-p1.x)\r\n    deltaPos.y = (p2.y-p1.y) + yOffset\r\n    deltaPos.z = (p2.z-p1.z)\r\n    return deltaPos\r\nend\r\n\r\n--Used to rotate a set of coordinates by an angle\r\nfunction rotateLocalCoordinates(desiredPos, obj)\r\n    local objPos, objRot = obj.getPosition(), obj.getRotation()\r\n    local angle = math.rad(objRot.y)\r\n    local x = desiredPos.x * math.cos(angle) - desiredPos.z * math.sin(angle)\r\n    local z = desiredPos.x * math.sin(angle) + desiredPos.z * math.cos(angle)\r\n    --return {x=objPos.x+x, y=objPos.y+desiredPos.y, z=objPos.z+z}\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\nfunction rotateMyCoordinates(desiredPos, obj)\r\n    local angle = math.rad(obj.getRotation().y)\r\n    local x = desiredPos.x * math.sin(angle)\r\n    local z = desiredPos.z * math.cos(angle)\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\n--Coroutine delay, in seconds\r\nfunction wait(time)\r\n    local start = os.time()\r\n    repeat coroutine.yield(0) until os.time() > start + time\r\nend\r\n\r\n--Duplicates a table (needed to prevent it making reference to the same objects)\r\nfunction duplicateTable(oldTable)\r\n    local newTable = {}\r\n    for k, v in pairs(oldTable) do\r\n        newTable[k] = v\r\n    end\r\n    return newTable\r\nend\r\n\r\n--Moves scripted highlight from all objects\r\nfunction removeAllHighlights()\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\n--Round number (num) to the Nth decimal (dec)\r\nfunction round(num, dec)\r\n    local mult = 10^(dec or 0)\r\n    return math.floor(num * mult + 0.5) / mult\r\nend\r\n\r\n\r\n--[[\r\nThis object provides access to a variable stored on the \"Global script\".\r\nThe variable holds the GUIDs for every Utility Memory Bag in the scene.\r\nExample:\r\n{'805ebd', '35cc21', 'fc8886', 'f50264', '5f5f63'}\r\n--]]\r\nAllMemoryBagsInScene = {\r\n    NAME_OF_GLOBAL_VARIABLE = \"_UtilityMemoryBag_AllMemoryBagsInScene\"\r\n}\r\n\r\nfunction AllMemoryBagsInScene:add(guid)\r\n    local guids = Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\n    table.insert(guids, guid)\r\n    Global.setTable(self.NAME_OF_GLOBAL_VARIABLE, guids)\r\nend\r\n\r\nfunction AllMemoryBagsInScene:getGuidList()\r\n    return Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\nend\r\n",
-      "LuaScriptState": "{\"ml\":{\"0114e4\":{\"lock\":false,\"pos\":{\"x\":2,\"y\":1.49346446990967,\"z\":-12},\"rot\":{\"x\":2.18955147346378E-08,\"y\":179.999496459961,\"z\":-5.1320931504506E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"01469d\":{\"lock\":true,\"pos\":{\"x\":15,\"y\":1.51989996433258,\"z\":22.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997894287109,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"03e3f8\":{\"lock\":false,\"pos\":{\"x\":-25.5,\"y\":1.49105536937714,\"z\":-5},\"rot\":{\"x\":0.182110249996185,\"y\":180.028503417969,\"z\":2.06856529985089E-05},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"05d692\":{\"lock\":false,\"pos\":{\"x\":-21.9403991699219,\"y\":1.49346446990967,\"z\":-11.9173002243042},\"rot\":{\"x\":7.95888226434727E-08,\"y\":179.999404907227,\"z\":6.77363090062499E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"061b0f\":{\"lock\":true,\"pos\":{\"x\":-31.5020999908447,\"y\":1.83529996871948,\"z\":13.5051002502441},\"rot\":{\"x\":0,\"y\":180.002700805664,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"098203\":{\"lock\":false,\"pos\":{\"x\":17.5,\"y\":1.5419,\"z\":-5.9999},\"rot\":{\"x\":-0.0001,\"y\":90.0013,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0ae88f\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.51610004901886,\"z\":-1.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997894287109,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2b4096\":{\"lock\":false,\"pos\":{\"x\":-21.50026512146,\"y\":1.77866888046265,\"z\":19.4999504089355},\"rot\":{\"x\":0.00227246317081153,\"y\":180.036270141602,\"z\":359.98388671875},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2b78cf\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.50314152240753,\"z\":1.99999928474426},\"rot\":{\"x\":0.0108924014493823,\"y\":179.991516113281,\"z\":0.00495047448202968},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"2c8d02\":{\"lock\":false,\"pos\":{\"x\":-26.4365062713623,\"y\":1.83360481262207,\"z\":2.97429275512695},\"rot\":{\"x\":7.96769381850027E-06,\"y\":180.417251586914,\"z\":-1.20574859465705E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2cf647\":{\"lock\":true,\"pos\":{\"x\":-21,\"y\":1.83529996871948,\"z\":13.5},\"rot\":{\"x\":0,\"y\":179.996597290039,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"2eee61\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.52219998836517,\"z\":30.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997604370117,\"z\":0.00489999959245324},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"32a399\":{\"lock\":false,\"pos\":{\"x\":17.5,\"y\":1.5419,\"z\":-5.9999},\"rot\":{\"x\":-0.0001,\"y\":89.9997,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"32c650\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.521399974823,\"z\":22.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997894287109,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"35e0d5\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.49346446990967,\"z\":-12},\"rot\":{\"x\":2.37014301518457E-08,\"y\":179.999496459961,\"z\":-1.81572037405431E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3989a8\":{\"lock\":true,\"pos\":{\"x\":-20.5,\"y\":1.76629996299744,\"z\":17},\"rot\":{\"x\":0,\"y\":-0.000300000014249235,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"3a6bb8\":{\"lock\":false,\"pos\":{\"x\":10.5,\"y\":1.50664985179901,\"z\":22.5},\"rot\":{\"x\":0.00494612753391266,\"y\":89.9915542602539,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"3fb4be\":{\"lock\":false,\"pos\":{\"x\":-0.999900281429291,\"y\":1.49346089363098,\"z\":-11.9998998641968},\"rot\":{\"x\":3.43543651979417E-05,\"y\":89.9962158203125,\"z\":-0.000235945772146806},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"413ac2\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.49346446990967,\"z\":-11.9998998641968},\"rot\":{\"x\":5.71330218690491E-08,\"y\":179.999496459961,\"z\":9.00908236900477E-10},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"43b75f\":{\"lock\":false,\"pos\":{\"x\":-27.5002994537354,\"y\":1.77866888046265,\"z\":19.499906539917},\"rot\":{\"x\":0.0022723819129169,\"y\":180.025985717773,\"z\":359.98388671875},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"450679\":{\"lock\":false,\"pos\":{\"x\":-32,\"y\":1.49346446990967,\"z\":-11},\"rot\":{\"x\":5.50886518624338E-08,\"y\":179.999603271484,\"z\":-8.38781133438715E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"46f500\":{\"lock\":false,\"pos\":{\"x\":10.4999990463257,\"y\":1.5036084651947,\"z\":6.49999952316284},\"rot\":{\"x\":0.00494596408680081,\"y\":89.9917068481445,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"483110\":{\"lock\":false,\"pos\":{\"x\":-27.0741100311279,\"y\":1.78360557556152,\"z\":2.97148847579956},\"rot\":{\"x\":-1.53615701492527E-07,\"y\":180.41731262207,\"z\":-3.36466073349584E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"49ac45\":{\"lock\":false,\"pos\":{\"x\":-20.9098873138428,\"y\":1.82793986797333,\"z\":19.4995727539063},\"rot\":{\"x\":0.00302357575856149,\"y\":180.03630065918,\"z\":0.0715577453374863},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4a63ca\":{\"lock\":true,\"pos\":{\"x\":-20,\"y\":1.85780000686646,\"z\":7},\"rot\":{\"x\":0,\"y\":180.001098632813,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4ff304\":{\"lock\":false,\"pos\":{\"x\":1.49999964237213,\"y\":1.50590634346008,\"z\":14.5},\"rot\":{\"x\":0.00494605815038085,\"y\":89.9914932250977,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"5239e6\":{\"lock\":false,\"pos\":{\"x\":-26.3195762634277,\"y\":1.88135004043579,\"z\":19.4993629455566},\"rot\":{\"x\":0.00340429926291108,\"y\":180.027770996094,\"z\":0.0956790596246719},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5359e8\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.52059996128082,\"z\":22.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997695922852,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"538522\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.51839995384216,\"z\":6.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997497558594,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"548427\":{\"lock\":false,\"pos\":{\"x\":-32.9897003173828,\"y\":1.83360362052917,\"z\":19.4868011474609},\"rot\":{\"x\":7.0482792580151E-06,\"y\":180.15998840332,\"z\":-1.38051045723842E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5d8be3\":{\"lock\":false,\"pos\":{\"x\":1.5,\"y\":1.50742709636688,\"z\":22.5},\"rot\":{\"x\":0.00494634918868542,\"y\":89.9916458129883,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"60081f\":{\"lock\":false,\"pos\":{\"x\":15.0000200271606,\"y\":1.55084347724915,\"z\":-6.00001525878906},\"rot\":{\"x\":0.0109139159321785,\"y\":180.004913330078,\"z\":0.00496054859831929},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"61ae50\":{\"lock\":true,\"pos\":{\"x\":15,\"y\":1.51830005645752,\"z\":14.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997695922852,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"62ced0\":{\"lock\":true,\"pos\":{\"x\":-28.0023994445801,\"y\":1.83529996871948,\"z\":13.503999710083},\"rot\":{\"x\":0,\"y\":180.002502441406,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"6345b1\":{\"lock\":false,\"pos\":{\"x\":8.99999809265137,\"y\":1.50744473934174,\"z\":26.0000038146973},\"rot\":{\"x\":0.0108931874856353,\"y\":179.980361938477,\"z\":0.00494500063359737},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"6572d8\":{\"lock\":false,\"pos\":{\"x\":-20.3195629119873,\"y\":1.88189816474915,\"z\":19.4991931915283},\"rot\":{\"x\":0.00300828623585403,\"y\":180.034194946289,\"z\":0.0715579837560654},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"6978c3\":{\"lock\":false,\"pos\":{\"x\":-23.0000019073486,\"y\":1.80537354946136,\"z\":6.99999618530273},\"rot\":{\"x\":-5.22100071975729E-06,\"y\":180.001113891602,\"z\":1.8813075541857E-07},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"69fd89\":{\"lock\":false,\"pos\":{\"x\":15,\"y\":1.50550079345703,\"z\":18.5},\"rot\":{\"x\":0.0108923343941569,\"y\":179.991577148438,\"z\":0.00495033012703061},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"6fffbd\":{\"lock\":true,\"pos\":{\"x\":-24.5,\"y\":1.76629996299744,\"z\":12.5},\"rot\":{\"x\":0,\"y\":-9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"700c1f\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.51989996433258,\"z\":14.5},\"rot\":{\"x\":0.0109000010415912,\"y\":180.015701293945,\"z\":0.00500000035390258},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"703535\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.51912248134613,\"z\":14.5},\"rot\":{\"x\":0.0108888586983085,\"y\":180.029769897461,\"z\":0.0049540726467967},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"71210c\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":1.50435197353363,\"z\":14.5},\"rot\":{\"x\":0.00494621321558952,\"y\":89.99169921875,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7234af\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.50475740432739,\"z\":10.5},\"rot\":{\"x\":0.0108928671106696,\"y\":179.985794067383,\"z\":0.0049489582888782},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"764377\":{\"lock\":false,\"pos\":{\"x\":-25.7296104431152,\"y\":1.94014871120453,\"z\":19.4993057250977},\"rot\":{\"x\":0.00326459342613816,\"y\":180.020034790039,\"z\":0.0956796109676361},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"77e1a7\":{\"lock\":false,\"pos\":{\"x\":2.99999976158142,\"y\":1.50197505950928,\"z\":-5.49999952316284},\"rot\":{\"x\":0.0108908694237471,\"y\":180.006500244141,\"z\":0.00494970334693789},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}},\"7e350d\":{\"lock\":false,\"pos\":{\"x\":17.5039,\"y\":1.536,\"z\":-6.0055},\"rot\":{\"x\":0.0049,\"y\":89.9244,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7e3931\":{\"lock\":false,\"pos\":{\"x\":-31.8093280792236,\"y\":1.94049680233002,\"z\":19.4836711883545},\"rot\":{\"x\":0.00330737815238535,\"y\":180.154251098633,\"z\":0.0956804305315018},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"81cac9\":{\"lock\":true,\"pos\":{\"x\":15,\"y\":1.51670002937317,\"z\":6},\"rot\":{\"x\":0.0109000001102686,\"y\":180.010604858398,\"z\":0.00499999988824129},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"822b77\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.47985994815826,\"z\":-5},\"rot\":{\"x\":-6.10689943059128E-09,\"y\":179.998596191406,\"z\":6.30898622233644E-09},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"836865\":{\"lock\":false,\"pos\":{\"x\":10.0000076293945,\"y\":1.55098974704742,\"z\":-7.50000905990601},\"rot\":{\"x\":0.0109729152172804,\"y\":180.032989501953,\"z\":0.00494580576196313},\"tint\":{\"a\":1,\"b\":0.585550963878632,\"g\":1,\"r\":0}},\"8431e1\":{\"lock\":true,\"pos\":{\"x\":24,\"y\":1.51760005950928,\"z\":14.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997299194336,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"88e8cf\":{\"lock\":false,\"pos\":{\"x\":-3,\"y\":1.50705540180206,\"z\":18.5},\"rot\":{\"x\":0.0108919898048043,\"y\":179.99560546875,\"z\":0.00495151383802295},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"89ac42\":{\"lock\":true,\"pos\":{\"x\":-32.5,\"y\":1.76629996299744,\"z\":17},\"rot\":{\"x\":0,\"y\":0.000500000023748726,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"92575b\":{\"lock\":false,\"pos\":{\"x\":35,\"y\":1.558,\"z\":1.5},\"rot\":{\"x\":0.0011,\"y\":90.0005,\"z\":0.0006},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"997e6e\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.53643202781677,\"z\":-6.00000190734863},\"rot\":{\"x\":0.00494879577308893,\"y\":90.0044708251953,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9ab76d\":{\"lock\":false,\"pos\":{\"x\":-33.5800018310547,\"y\":1.78360426425934,\"z\":19.4883995056152},\"rot\":{\"x\":-9.44351484122308E-07,\"y\":180.160171508789,\"z\":-2.79556516034063E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9cae28\":{\"lock\":false,\"pos\":{\"x\":22.3267383575439,\"y\":1.51391160488129,\"z\":-5.49481868743896},\"rot\":{\"x\":0.010889514349401,\"y\":180.023300170898,\"z\":0.00495281582698226},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9ccbe0\":{\"lock\":false,\"pos\":{\"x\":-29,\"y\":1.57235956192017,\"z\":-12},\"rot\":{\"x\":-1.11162323790381E-08,\"y\":180.000595092773,\"z\":-1.70637562746379E-07},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"9d2e11\":{\"lock\":true,\"pos\":{\"x\":-28.0004005432129,\"y\":1.76629996299744,\"z\":11.0193996429443},\"rot\":{\"x\":0,\"y\":-0.00039999998989515,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"a1af1f\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.50779891014099,\"z\":26.5},\"rot\":{\"x\":0.0108920801430941,\"y\":179.991485595703,\"z\":0.00495017878711224},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a762fe\":{\"lock\":false,\"pos\":{\"x\":-32.3992881774902,\"y\":1.88166451454163,\"z\":19.4851131439209},\"rot\":{\"x\":0.00337715819478035,\"y\":180.158081054688,\"z\":0.0956800356507301},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a7fb18\":{\"lock\":false,\"pos\":{\"x\":-19.7295818328857,\"y\":1.9405118227005,\"z\":19.4990406036377},\"rot\":{\"x\":0.00330254272557795,\"y\":180.03010559082,\"z\":0.0956823974847794},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b76184\":{\"lock\":false,\"pos\":{\"x\":-3,\"y\":1.50553464889526,\"z\":10.5},\"rot\":{\"x\":0.0108926808461547,\"y\":179.986297607422,\"z\":0.00494953198358417},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"bcee25\":{\"lock\":true,\"pos\":{\"x\":-21,\"y\":1.76629996299744,\"z\":11},\"rot\":{\"x\":0,\"y\":0.000699999975040555,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"c05dd6\":{\"lock\":false,\"pos\":{\"x\":30.4999008178711,\"y\":1.66542017459869,\"z\":-3},\"rot\":{\"x\":-0.000590838608331978,\"y\":179.999893188477,\"z\":180.001068115234},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c13319\":{\"lock\":true,\"pos\":{\"x\":-12,\"y\":1.52069997787476,\"z\":14.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997695922852,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c1334a\":{\"lock\":false,\"pos\":{\"x\":-23.0001029968262,\"y\":1.8005598783493,\"z\":2.99989604949951},\"rot\":{\"x\":-5.12777660333086E-06,\"y\":180.00456237793,\"z\":1.4125554059774E-07},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c1ba60\":{\"lock\":false,\"pos\":{\"x\":-0.999899864196777,\"y\":1.51219630241394,\"z\":-10.4996995925903},\"rot\":{\"x\":358.80615234375,\"y\":179.99690246582,\"z\":2.88273031401332E-06},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c31416\":{\"lock\":false,\"pos\":{\"x\":24.9997787475586,\"y\":1.51367974281311,\"z\":-5.50001573562622},\"rot\":{\"x\":0.0108912205323577,\"y\":180.002258300781,\"z\":0.00494873942807317},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c425b7\":{\"lock\":false,\"pos\":{\"x\":10.4999990463257,\"y\":1.50512909889221,\"z\":14.5},\"rot\":{\"x\":0.0049463682807982,\"y\":89.9916000366211,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"c76ae2\":{\"lock\":false,\"pos\":{\"x\":-26.9098987579346,\"y\":1.78360462188721,\"z\":19.4997005462646},\"rot\":{\"x\":-4.92529215989634E-06,\"y\":180.026260375977,\"z\":2.4856502633952E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c91fef\":{\"lock\":true,\"pos\":{\"x\":-26.5,\"y\":1.76629996299744,\"z\":17},\"rot\":{\"x\":0,\"y\":-9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"d03c7b\":{\"lock\":false,\"pos\":{\"x\":35,\"y\":1.558,\"z\":1.5},\"rot\":{\"x\":0.0011,\"y\":90,\"z\":0.0006},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d24a4a\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":4,\"z\":18.58},\"rot\":{\"x\":90,\"y\":0.4397,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"d3deeb\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.51760005950928,\"z\":6.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.999801635742,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d5023c\":{\"lock\":false,\"pos\":{\"x\":-32.4999961853027,\"y\":1.77991259098053,\"z\":26.0000686645508},\"rot\":{\"x\":359.962280273438,\"y\":179.960586547852,\"z\":8.98252983461134E-06},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d7e54e\":{\"lock\":false,\"pos\":{\"x\":15,\"y\":1.50398015975952,\"z\":10.5},\"rot\":{\"x\":0.010890681296587,\"y\":180.011169433594,\"z\":0.00495770759880543},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"ed4821\":{\"lock\":true,\"pos\":{\"x\":-31.3040008544922,\"y\":1.76629996299744,\"z\":10.9652004241943},\"rot\":{\"x\":0,\"y\":9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"eee3f0\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.52967441082001,\"z\":-12},\"rot\":{\"x\":-4.47817463111733E-08,\"y\":180,\"z\":1.28283685896236E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f2a81d\":{\"lock\":false,\"pos\":{\"x\":17.501,\"y\":1.536,\"z\":-6.0196},\"rot\":{\"x\":0.0049,\"y\":89.981,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f8961e\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.5506796836853,\"z\":-3},\"rot\":{\"x\":0.0108913406729698,\"y\":180.00439453125,\"z\":0.00495129590854049},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f9947f\":{\"lock\":false,\"pos\":{\"x\":2,\"y\":1.50434243679047,\"z\":6.49999952316284},\"rot\":{\"x\":0.00494611775502563,\"y\":89.9916229248047,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"fad34b\":{\"lock\":false,\"pos\":{\"x\":-20.0000991821289,\"y\":1.78360605239868,\"z\":2.99989748001099},\"rot\":{\"x\":-4.94234382131253E-06,\"y\":180.005493164063,\"z\":2.08360091846771E-07},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"fb5176\":{\"lock\":false,\"pos\":{\"x\":-7.5,\"y\":1.50668370723724,\"z\":14.5},\"rot\":{\"x\":0.00494616944342852,\"y\":89.9914016723633,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"fe0c46\":{\"lock\":true,\"pos\":{\"x\":-34,\"y\":1.76629996299744,\"z\":12.5},\"rot\":{\"x\":0,\"y\":9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}}}}",
+      "LuaScriptState": "{\"ml\":{\"0114e4\":{\"lock\":false,\"pos\":{\"x\":2,\"y\":1.49346446990967,\"z\":-12},\"rot\":{\"x\":2.18955147346378E-08,\"y\":179.999496459961,\"z\":-5.1320931504506E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"01469d\":{\"lock\":true,\"pos\":{\"x\":15,\"y\":1.51989996433258,\"z\":22.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997894287109,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"03e3f8\":{\"lock\":false,\"pos\":{\"x\":-25.5,\"y\":1.49105536937714,\"z\":-5},\"rot\":{\"x\":0.182110249996185,\"y\":180.028503417969,\"z\":2.06856529985089E-05},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"05d692\":{\"lock\":false,\"pos\":{\"x\":-21.9403991699219,\"y\":1.49346446990967,\"z\":-11.9173002243042},\"rot\":{\"x\":7.95888226434727E-08,\"y\":179.999404907227,\"z\":6.77363090062499E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"061b0f\":{\"lock\":true,\"pos\":{\"x\":-31.5020999908447,\"y\":1.83529996871948,\"z\":13.5051002502441},\"rot\":{\"x\":0,\"y\":180.002700805664,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"098203\":{\"lock\":false,\"pos\":{\"x\":17.5,\"y\":1.5419,\"z\":-5.9999},\"rot\":{\"x\":-0.0001,\"y\":90.0013,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0ae88f\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.51610004901886,\"z\":-1.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997894287109,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2b4096\":{\"lock\":false,\"pos\":{\"x\":-21.50026512146,\"y\":1.77866888046265,\"z\":19.4999504089355},\"rot\":{\"x\":0.00227246317081153,\"y\":180.036270141602,\"z\":359.98388671875},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2b78cf\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.50314152240753,\"z\":1.99999928474426},\"rot\":{\"x\":0.0108924014493823,\"y\":179.991516113281,\"z\":0.00495047448202968},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"2c8d02\":{\"lock\":false,\"pos\":{\"x\":-26.4365062713623,\"y\":1.83360481262207,\"z\":2.97429275512695},\"rot\":{\"x\":7.96769381850027E-06,\"y\":180.417251586914,\"z\":-1.20574859465705E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2cf647\":{\"lock\":true,\"pos\":{\"x\":-21,\"y\":1.83529996871948,\"z\":13.5},\"rot\":{\"x\":0,\"y\":179.996597290039,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"2eee61\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.52219998836517,\"z\":30.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997604370117,\"z\":0.00489999959245324},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"32a399\":{\"lock\":false,\"pos\":{\"x\":17.5,\"y\":1.5419,\"z\":-5.9999},\"rot\":{\"x\":-0.0001,\"y\":89.9997,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"32c650\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.521399974823,\"z\":22.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997894287109,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"35e0d5\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.49346446990967,\"z\":-12},\"rot\":{\"x\":2.37014301518457E-08,\"y\":179.999496459961,\"z\":-1.81572037405431E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3989a8\":{\"lock\":true,\"pos\":{\"x\":-20.5,\"y\":1.76629996299744,\"z\":17},\"rot\":{\"x\":0,\"y\":-0.000300000014249235,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"3a6bb8\":{\"lock\":false,\"pos\":{\"x\":10.5,\"y\":1.50664985179901,\"z\":22.5},\"rot\":{\"x\":0.00494612753391266,\"y\":89.9915542602539,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"3fb4be\":{\"lock\":false,\"pos\":{\"x\":-0.999900281429291,\"y\":1.49346089363098,\"z\":-11.9998998641968},\"rot\":{\"x\":3.43543651979417E-05,\"y\":89.9962158203125,\"z\":-0.000235945772146806},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"413ac2\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.49346446990967,\"z\":-11.9998998641968},\"rot\":{\"x\":5.71330218690491E-08,\"y\":179.999496459961,\"z\":9.00908236900477E-10},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"43b75f\":{\"lock\":false,\"pos\":{\"x\":-27.5002994537354,\"y\":1.77866888046265,\"z\":19.499906539917},\"rot\":{\"x\":0.0022723819129169,\"y\":180.025985717773,\"z\":359.98388671875},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"450679\":{\"lock\":false,\"pos\":{\"x\":-32,\"y\":1.49346446990967,\"z\":-11},\"rot\":{\"x\":5.50886518624338E-08,\"y\":179.999603271484,\"z\":-8.38781133438715E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"46f500\":{\"lock\":false,\"pos\":{\"x\":10.4999990463257,\"y\":1.5036084651947,\"z\":6.49999952316284},\"rot\":{\"x\":0.00494596408680081,\"y\":89.9917068481445,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"483110\":{\"lock\":false,\"pos\":{\"x\":-27.0741100311279,\"y\":1.78360557556152,\"z\":2.97148847579956},\"rot\":{\"x\":-1.53615701492527E-07,\"y\":180.41731262207,\"z\":-3.36466073349584E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"49ac45\":{\"lock\":false,\"pos\":{\"x\":-20.9098873138428,\"y\":1.82793986797333,\"z\":19.4995727539063},\"rot\":{\"x\":0.00302357575856149,\"y\":180.03630065918,\"z\":0.0715577453374863},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4a63ca\":{\"lock\":true,\"pos\":{\"x\":-20,\"y\":1.85780000686646,\"z\":7},\"rot\":{\"x\":0,\"y\":180.001098632813,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4ff304\":{\"lock\":false,\"pos\":{\"x\":1.49999964237213,\"y\":1.50590634346008,\"z\":14.5},\"rot\":{\"x\":0.00494605815038085,\"y\":89.9914932250977,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"5239e6\":{\"lock\":false,\"pos\":{\"x\":-26.3195762634277,\"y\":1.88135004043579,\"z\":19.4993629455566},\"rot\":{\"x\":0.00340429926291108,\"y\":180.027770996094,\"z\":0.0956790596246719},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5359e8\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.52059996128082,\"z\":22.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997695922852,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"538522\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.51839995384216,\"z\":6.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997497558594,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"548427\":{\"lock\":false,\"pos\":{\"x\":-32.9897003173828,\"y\":1.83360362052917,\"z\":19.4868011474609},\"rot\":{\"x\":7.0482792580151E-06,\"y\":180.15998840332,\"z\":-1.38051045723842E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5d8be3\":{\"lock\":false,\"pos\":{\"x\":1.5,\"y\":1.50742709636688,\"z\":22.5},\"rot\":{\"x\":0.00494634918868542,\"y\":89.9916458129883,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"61ae50\":{\"lock\":true,\"pos\":{\"x\":15,\"y\":1.51830005645752,\"z\":14.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997695922852,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"62ced0\":{\"lock\":true,\"pos\":{\"x\":-28.0023994445801,\"y\":1.83529996871948,\"z\":13.503999710083},\"rot\":{\"x\":0,\"y\":180.002502441406,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"6345b1\":{\"lock\":false,\"pos\":{\"x\":8.99999809265137,\"y\":1.50744473934174,\"z\":26.0000038146973},\"rot\":{\"x\":0.0108931874856353,\"y\":179.980361938477,\"z\":0.00494500063359737},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"6572d8\":{\"lock\":false,\"pos\":{\"x\":-20.3195629119873,\"y\":1.88189816474915,\"z\":19.4991931915283},\"rot\":{\"x\":0.00300828623585403,\"y\":180.034194946289,\"z\":0.0715579837560654},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"6978c3\":{\"lock\":false,\"pos\":{\"x\":-23.0000019073486,\"y\":1.80537354946136,\"z\":6.99999618530273},\"rot\":{\"x\":-5.22100071975729E-06,\"y\":180.001113891602,\"z\":1.8813075541857E-07},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"69fd89\":{\"lock\":false,\"pos\":{\"x\":15,\"y\":1.50550079345703,\"z\":18.5},\"rot\":{\"x\":0.0108923343941569,\"y\":179.991577148438,\"z\":0.00495033012703061},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"6fffbd\":{\"lock\":true,\"pos\":{\"x\":-24.5,\"y\":1.76629996299744,\"z\":12.5},\"rot\":{\"x\":0,\"y\":-9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"700c1f\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.51989996433258,\"z\":14.5},\"rot\":{\"x\":0.0109000010415912,\"y\":180.015701293945,\"z\":0.00500000035390258},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"703535\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.51912248134613,\"z\":14.5},\"rot\":{\"x\":0.0108888586983085,\"y\":180.029769897461,\"z\":0.0049540726467967},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"71210c\":{\"lock\":false,\"pos\":{\"x\":19.5,\"y\":1.50435197353363,\"z\":14.5},\"rot\":{\"x\":0.00494621321558952,\"y\":89.99169921875,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7234af\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.50475740432739,\"z\":10.5},\"rot\":{\"x\":0.0108928671106696,\"y\":179.985794067383,\"z\":0.0049489582888782},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"764377\":{\"lock\":false,\"pos\":{\"x\":-25.7296104431152,\"y\":1.94014871120453,\"z\":19.4993057250977},\"rot\":{\"x\":0.00326459342613816,\"y\":180.020034790039,\"z\":0.0956796109676361},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"77e1a7\":{\"lock\":false,\"pos\":{\"x\":2.99999976158142,\"y\":1.50197505950928,\"z\":-5.49999952316284},\"rot\":{\"x\":0.0108908694237471,\"y\":180.006500244141,\"z\":0.00494970334693789},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}},\"7e350d\":{\"lock\":false,\"pos\":{\"x\":17.5039,\"y\":1.536,\"z\":-6.0055},\"rot\":{\"x\":0.0049,\"y\":89.9244,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7e3931\":{\"lock\":false,\"pos\":{\"x\":-31.8093280792236,\"y\":1.94049680233002,\"z\":19.4836711883545},\"rot\":{\"x\":0.00330737815238535,\"y\":180.154251098633,\"z\":0.0956804305315018},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"81cac9\":{\"lock\":true,\"pos\":{\"x\":15,\"y\":1.51670002937317,\"z\":6},\"rot\":{\"x\":0.0109000001102686,\"y\":180.010604858398,\"z\":0.00499999988824129},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"822b77\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.47985994815826,\"z\":-5},\"rot\":{\"x\":-6.10689943059128E-09,\"y\":179.998596191406,\"z\":6.30898622233644E-09},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"8431e1\":{\"lock\":true,\"pos\":{\"x\":24,\"y\":1.51760005950928,\"z\":14.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997299194336,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"88e8cf\":{\"lock\":false,\"pos\":{\"x\":-3,\"y\":1.50705540180206,\"z\":18.5},\"rot\":{\"x\":0.0108919898048043,\"y\":179.99560546875,\"z\":0.00495151383802295},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"89ac42\":{\"lock\":true,\"pos\":{\"x\":-32.5,\"y\":1.76629996299744,\"z\":17},\"rot\":{\"x\":0,\"y\":0.000500000023748726,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"92575b\":{\"lock\":false,\"pos\":{\"x\":35,\"y\":1.558,\"z\":1.5},\"rot\":{\"x\":0.0011,\"y\":90.0005,\"z\":0.0006},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"997e6e\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.53643202781677,\"z\":-6.00000190734863},\"rot\":{\"x\":0.00494879577308893,\"y\":90.0044708251953,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9ab76d\":{\"lock\":false,\"pos\":{\"x\":-33.5800018310547,\"y\":1.78360426425934,\"z\":19.4883995056152},\"rot\":{\"x\":-9.44351484122308E-07,\"y\":180.160171508789,\"z\":-2.79556516034063E-05},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9cae28\":{\"lock\":false,\"pos\":{\"x\":22.3267383575439,\"y\":1.51391160488129,\"z\":-5.49481868743896},\"rot\":{\"x\":0.010889514349401,\"y\":180.023300170898,\"z\":0.00495281582698226},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9ccbe0\":{\"lock\":false,\"pos\":{\"x\":-29,\"y\":1.57235956192017,\"z\":-12},\"rot\":{\"x\":-1.11162323790381E-08,\"y\":180.000595092773,\"z\":-1.70637562746379E-07},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"9d2e11\":{\"lock\":true,\"pos\":{\"x\":-28.0004005432129,\"y\":1.76629996299744,\"z\":11.0193996429443},\"rot\":{\"x\":0,\"y\":-0.00039999998989515,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"a1af1f\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.50779891014099,\"z\":26.5},\"rot\":{\"x\":0.0108920801430941,\"y\":179.991485595703,\"z\":0.00495017878711224},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a762fe\":{\"lock\":false,\"pos\":{\"x\":-32.3992881774902,\"y\":1.88166451454163,\"z\":19.4851131439209},\"rot\":{\"x\":0.00337715819478035,\"y\":180.158081054688,\"z\":0.0956800356507301},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a7fb18\":{\"lock\":false,\"pos\":{\"x\":-19.7295818328857,\"y\":1.9405118227005,\"z\":19.4990406036377},\"rot\":{\"x\":0.00330254272557795,\"y\":180.03010559082,\"z\":0.0956823974847794},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b76184\":{\"lock\":false,\"pos\":{\"x\":-3,\"y\":1.50553464889526,\"z\":10.5},\"rot\":{\"x\":0.0108926808461547,\"y\":179.986297607422,\"z\":0.00494953198358417},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"bcee25\":{\"lock\":true,\"pos\":{\"x\":-21,\"y\":1.76629996299744,\"z\":11},\"rot\":{\"x\":0,\"y\":0.000699999975040555,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"c05dd6\":{\"lock\":false,\"pos\":{\"x\":30.4999008178711,\"y\":1.66542017459869,\"z\":-3},\"rot\":{\"x\":-0.000590838608331978,\"y\":179.999893188477,\"z\":180.001068115234},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c13319\":{\"lock\":true,\"pos\":{\"x\":-12,\"y\":1.52069997787476,\"z\":14.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.997695922852,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c1334a\":{\"lock\":false,\"pos\":{\"x\":-23.0001029968262,\"y\":1.8005598783493,\"z\":2.99989604949951},\"rot\":{\"x\":-5.12777660333086E-06,\"y\":180.00456237793,\"z\":1.4125554059774E-07},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c1ba60\":{\"lock\":false,\"pos\":{\"x\":-0.999899864196777,\"y\":1.51219630241394,\"z\":-10.4996995925903},\"rot\":{\"x\":358.80615234375,\"y\":179.99690246582,\"z\":2.88273031401332E-06},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c31416\":{\"lock\":false,\"pos\":{\"x\":24.9997787475586,\"y\":1.51367974281311,\"z\":-5.50001573562622},\"rot\":{\"x\":0.0108912205323577,\"y\":180.002258300781,\"z\":0.00494873942807317},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c425b7\":{\"lock\":false,\"pos\":{\"x\":10.4999990463257,\"y\":1.50512909889221,\"z\":14.5},\"rot\":{\"x\":0.0049463682807982,\"y\":89.9916000366211,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"c76ae2\":{\"lock\":false,\"pos\":{\"x\":-26.9098987579346,\"y\":1.78360462188721,\"z\":19.4997005462646},\"rot\":{\"x\":-4.92529215989634E-06,\"y\":180.026260375977,\"z\":2.4856502633952E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c91fef\":{\"lock\":true,\"pos\":{\"x\":-26.5,\"y\":1.76629996299744,\"z\":17},\"rot\":{\"x\":0,\"y\":-9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"d03c7b\":{\"lock\":false,\"pos\":{\"x\":35,\"y\":1.558,\"z\":1.5},\"rot\":{\"x\":0.0011,\"y\":90,\"z\":0.0006},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d24a4a\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":4,\"z\":18.58},\"rot\":{\"x\":90,\"y\":0.4397,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"d3deeb\":{\"lock\":true,\"pos\":{\"x\":6,\"y\":1.51760005950928,\"z\":6.5},\"rot\":{\"x\":0.0109000001102686,\"y\":179.999801635742,\"z\":0.00490000005811453},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d5023c\":{\"lock\":false,\"pos\":{\"x\":-32.4999961853027,\"y\":1.77991259098053,\"z\":26.0000686645508},\"rot\":{\"x\":359.962280273438,\"y\":179.960586547852,\"z\":8.98252983461134E-06},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d7e54e\":{\"lock\":false,\"pos\":{\"x\":15,\"y\":1.50398015975952,\"z\":10.5},\"rot\":{\"x\":0.010890681296587,\"y\":180.011169433594,\"z\":0.00495770759880543},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"ed4821\":{\"lock\":true,\"pos\":{\"x\":-31.3040008544922,\"y\":1.76629996299744,\"z\":10.9652004241943},\"rot\":{\"x\":0,\"y\":9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"eee3f0\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.52967441082001,\"z\":-12},\"rot\":{\"x\":-4.47817463111733E-08,\"y\":180,\"z\":1.28283685896236E-08},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f2a81d\":{\"lock\":false,\"pos\":{\"x\":17.501,\"y\":1.536,\"z\":-6.0196},\"rot\":{\"x\":0.0049,\"y\":89.981,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f8961e\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.5506796836853,\"z\":-3},\"rot\":{\"x\":0.0108913406729698,\"y\":180.00439453125,\"z\":0.00495129590854049},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f9947f\":{\"lock\":false,\"pos\":{\"x\":2,\"y\":1.50434243679047,\"z\":6.49999952316284},\"rot\":{\"x\":0.00494611775502563,\"y\":89.9916229248047,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"fad34b\":{\"lock\":false,\"pos\":{\"x\":-20.0000991821289,\"y\":1.78360605239868,\"z\":2.99989748001099},\"rot\":{\"x\":-4.94234382131253E-06,\"y\":180.005493164063,\"z\":2.08360091846771E-07},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"fb5176\":{\"lock\":false,\"pos\":{\"x\":-7.5,\"y\":1.50668370723724,\"z\":14.5},\"rot\":{\"x\":0.00494616944342852,\"y\":89.9914016723633,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"fe0c46\":{\"lock\":true,\"pos\":{\"x\":-34,\"y\":1.76629996299744,\"z\":12.5},\"rot\":{\"x\":0,\"y\":9.99999974737875E-05,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}}}}",
       "XmlUI": "",
       "ContainedObjects": [
-        {
-          "GUID": "60081f",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 15.00002,
-            "posY": 1.5508436,
-            "posZ": -6.00001574,
-            "rotX": 0.0108364932,
-            "rotY": 180.004959,
-            "rotZ": 0.00494943652,
-            "scaleX": 0.23,
-            "scaleY": 1.0,
-            "scaleZ": 0.23
-          },
-          "Nickname": "Seuil de Fatalités",
-          "Description": "Click gauche - Ajouter\nClick droit - Soustraire",
-          "GMNotes": "Fatality",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": false,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/949592555964782208/CC876694A6684B3C2680CE2FE3259F574AE0AD97/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\r\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=800,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,0]",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "836865",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 10.0000076,
-            "posY": 1.55099,
-            "posZ": -7.50000954,
-            "rotX": 0.0108935712,
-            "rotY": 180.03302,
-            "rotZ": 0.004943412,
-            "scaleX": 0.23,
-            "scaleY": 1.0,
-            "scaleZ": 0.23
-          },
-          "Nickname": "Compteur de Tours",
-          "Description": "Click gauche - Ajouter\nClick droit - Soustraire",
-          "GMNotes": "Bounty",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.0,
-            "g": 1.0,
-            "b": 0.585550964
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": false,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2297464214277195152/7AD622C7889DAF2AAC83851387B2C2551E7502F9/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = false\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\r\n    if light_mode then\r\n        f_color = {1,0,0,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=800,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,0]",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "d24a4a",
-          "Name": "3DText",
-          "Transform": {
-            "posX": 5.999983,
-            "posY": 4.0,
-            "posZ": 18.58,
-            "rotX": 90.0,
-            "rotY": 0.439700127,
-            "rotZ": 0.0,
-            "scaleX": 2.0,
-            "scaleY": 2.0,
-            "scaleZ": 2.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": true,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "Text": {
-            "Text": "En Préparation...",
-            "colorstate": {
-              "r": 0.327825576,
-              "g": 1.0,
-              "b": 0.219649017
-            },
-            "fontSize": 150
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "6345b1",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": 8.999998,
-            "posY": 1.50744474,
-            "posZ": 26.0000038,
-            "rotX": 0.0108932052,
-            "rotY": 179.980362,
-            "rotZ": 0.00494863838,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.6045295,
-            "g": 0.6045295,
-            "b": 0.6045295
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/vppt2my.png",
-            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
-              "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "44b0c5",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -39.7933121,
-                "posY": 1.63758957,
-                "posZ": 2.038383,
-                "rotX": 359.9201,
-                "rotY": 269.9961,
-                "rotZ": 0.0168742146,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            "3": {
-              "GUID": "5b38c6",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -38.8217163,
-                "posY": 1.99356019,
-                "posZ": 0.4159239,
-                "rotX": 359.9201,
-                "rotY": 272.9828,
-                "rotZ": 0.01687373,
-                "scaleX": 0.8,
-                "scaleY": 1.0,
-                "scaleZ": 0.8
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            }
-          }
-        },
-        {
-          "GUID": "9cae28",
-          "Name": "Card",
-          "Transform": {
-            "posX": 22.32674,
-            "posY": 1.5139116,
-            "posZ": -5.494818,
-            "rotX": 0.0108894408,
-            "rotY": 180.023315,
-            "rotZ": 0.004952944,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "Référence",
-          "Description": "Le Dévoreur de Toute Chose... et du RESTE",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": true,
-          "Hands": true,
-          "CardID": 306200,
-          "SidewaysCard": false,
-          "CustomDeck": {
-            "3062": {
-              "FaceURL": "https://i.imgur.com/6ao8Cas.jpg",
-              "BackURL": "https://i.imgur.com/E6Viksz.jpg",
-              "NumWidth": 10,
-              "NumHeight": 7,
-              "BackIsHidden": true,
-              "UniqueBack": true,
-              "Type": 0
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
         {
           "GUID": "0114e4",
           "Name": "Card",
@@ -474,9 +75,9 @@
             "posX": 2.0,
             "posY": 1.49346447,
             "posZ": -12.0,
-            "rotX": 4.635906E-08,
+            "rotX": -5.784375E-08,
             "rotY": 179.9995,
-            "rotZ": -1.19550336E-07,
+            "rotZ": -4.181111E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -590,9 +191,9 @@
             "posX": -25.5,
             "posY": 1.49105537,
             "posZ": -5.0,
-            "rotX": 0.182110012,
+            "rotX": 0.182109967,
             "rotY": 180.0285,
-            "rotZ": 2.05119959E-05,
+            "rotZ": 2.10599628E-05,
             "scaleX": 1.76113939,
             "scaleY": 1.0,
             "scaleZ": 1.76113939
@@ -641,9 +242,9 @@
             "posX": -21.9404,
             "posY": 1.49346447,
             "posZ": -11.9173,
-            "rotX": -2.26775736E-08,
+            "rotX": 7.482544E-08,
             "rotY": 179.9994,
-            "rotZ": 1.300782E-07,
+            "rotZ": 1.145693E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -1133,10 +734,10 @@
           "Transform": {
             "posX": 6.0,
             "posY": 1.50314152,
-            "posZ": 1.99999857,
-            "rotX": 0.0108923409,
-            "rotY": 179.991531,
-            "rotZ": 0.00495003536,
+            "posZ": 1.99999881,
+            "rotX": 0.0108921705,
+            "rotY": 179.991516,
+            "rotZ": 0.0049505285,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -1304,12 +905,12 @@
           "GUID": "2c8d02",
           "Name": "Card",
           "Transform": {
-            "posX": -26.43651,
+            "posX": -26.4365139,
             "posY": 1.83360481,
-            "posZ": 2.97428942,
-            "rotX": 7.838451E-06,
-            "rotY": 180.417313,
-            "rotZ": -1.23586487E-05,
+            "posZ": 2.97428465,
+            "rotX": 8.320164E-06,
+            "rotY": 180.417221,
+            "rotZ": -1.0836914E-05,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2133,9 +1734,9 @@
             "posX": -26.0,
             "posY": 1.49346447,
             "posZ": -12.0,
-            "rotX": 8.60929461E-08,
+            "rotX": -6.211443E-08,
             "rotY": 179.9995,
-            "rotZ": -9.371869E-09,
+            "rotZ": -6.714073E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2247,7 +1848,7 @@
             "posX": 10.5,
             "posY": 1.50664985,
             "posZ": 22.5,
-            "rotX": 0.00494618667,
+            "rotX": 0.00494612474,
             "rotY": 89.9915543,
             "rotZ": 359.9891,
             "scaleX": 1.0,
@@ -2417,12 +2018,12 @@
           "GUID": "3fb4be",
           "Name": "CardCustom",
           "Transform": {
-            "posX": -0.999900341,
+            "posX": -0.9999005,
             "posY": 1.493461,
             "posZ": -11.9999,
-            "rotX": 3.3653123E-05,
+            "rotX": 3.4614226E-05,
             "rotY": 89.9962158,
-            "rotZ": -0.00023174574,
+            "rotZ": -0.000233114362,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2478,9 +2079,9 @@
             "posX": -19.0,
             "posY": 1.49346447,
             "posZ": -11.9999,
-            "rotX": 8.763566E-08,
+            "rotX": 4.464005E-08,
             "rotY": 179.9995,
-            "rotZ": -8.692094E-08,
+            "rotZ": -5.76082435E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2536,9 +2137,9 @@
             "posX": -32.0,
             "posY": 1.49346447,
             "posZ": -11.0,
-            "rotX": 6.613379E-08,
+            "rotX": 5.86858775E-08,
             "rotY": 179.9996,
-            "rotZ": -6.918776E-08,
+            "rotZ": -1.81439987E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2594,7 +2195,7 @@
             "posX": 10.499999,
             "posY": 1.50360847,
             "posZ": 6.499999,
-            "rotX": 0.00494609168,
+            "rotX": 0.00494632544,
             "rotY": 89.9917145,
             "rotZ": 359.9891,
             "scaleX": 1.0,
@@ -2764,12 +2365,12 @@
           "GUID": "483110",
           "Name": "Card",
           "Transform": {
-            "posX": -27.0741177,
+            "posX": -27.0741215,
             "posY": 1.78360558,
-            "posZ": 2.97148228,
-            "rotX": -2.60776176E-07,
-            "rotY": 180.417374,
-            "rotZ": -3.374429E-05,
+            "posZ": 2.97147679,
+            "rotX": 9.687124E-08,
+            "rotY": 180.417282,
+            "rotZ": -3.308774E-05,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -4098,7 +3699,7 @@
             "posX": 1.49999917,
             "posY": 1.50590634,
             "posZ": 14.5,
-            "rotX": 0.00494631054,
+            "rotX": 0.00494639948,
             "rotY": 89.99147,
             "rotZ": 359.9891,
             "scaleX": 1.0,
@@ -4386,10 +3987,10 @@
           "Transform": {
             "posX": -32.9897,
             "posY": 1.83360362,
-            "posZ": 19.4868011,
-            "rotX": 5.99401028E-06,
-            "rotY": 180.159927,
-            "rotZ": -1.33945086E-05,
+            "posZ": 19.4868,
+            "rotX": 7.603928E-06,
+            "rotY": 180.1599,
+            "rotZ": -1.3649319E-05,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -4445,7 +4046,7 @@
             "posX": 1.49999976,
             "posY": 1.5074271,
             "posZ": 22.5,
-            "rotX": 0.00494616758,
+            "rotX": 0.00494624,
             "rotY": 89.99165,
             "rotZ": 359.9891,
             "scaleX": 1.0,
@@ -4610,63 +4211,6 @@
               "XmlUI": ""
             }
           }
-        },
-        {
-          "GUID": "60081f",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 15.00002,
-            "posY": 1.55084348,
-            "posZ": -6.000015,
-            "rotX": 0.0108660674,
-            "rotY": 180.004822,
-            "rotZ": 0.00493358774,
-            "scaleX": 0.23,
-            "scaleY": 1.0,
-            "scaleZ": 0.23
-          },
-          "Nickname": "Seuil de Fatalités",
-          "Description": "Click gauche - Ajouter\nClick droit - Soustraire",
-          "GMNotes": "Fatality",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": false,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/949592555964782208/CC876694A6684B3C2680CE2FE3259F574AE0AD97/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\r\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=800,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,0]",
-          "XmlUI": ""
         },
         {
           "GUID": "61ae50",
@@ -5104,15 +4648,188 @@
           ]
         },
         {
+          "GUID": "6345b1",
+          "Name": "Custom_Tile",
+          "Transform": {
+            "posX": 8.999998,
+            "posY": 1.50744474,
+            "posZ": 26.0000038,
+            "rotX": 0.0108932666,
+            "rotY": 179.980362,
+            "rotZ": 0.00494755851,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.6045295,
+            "g": 0.6045295,
+            "b": 0.6045295
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomImage": {
+            "ImageURL": "https://i.imgur.com/vppt2my.png",
+            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.0,
+            "CustomTile": {
+              "Type": 3,
+              "Thickness": 0.1,
+              "Stackable": false,
+              "Stretch": true
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": "",
+          "States": {
+            "2": {
+              "GUID": "44b0c5",
+              "Name": "Custom_Tile",
+              "Transform": {
+                "posX": -39.7933121,
+                "posY": 1.63758957,
+                "posZ": 2.038383,
+                "rotX": 359.9201,
+                "rotY": 269.9961,
+                "rotZ": 0.0168742146,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "",
+              "Description": "",
+              "GMNotes": "",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.6045295,
+                "g": 0.6045295,
+                "b": 0.6045295
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": false,
+              "CustomImage": {
+                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
+                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
+                "ImageScalar": 1.0,
+                "WidthScale": 0.0,
+                "CustomTile": {
+                  "Type": 3,
+                  "Thickness": 0.1,
+                  "Stackable": false,
+                  "Stretch": true
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            "3": {
+              "GUID": "5b38c6",
+              "Name": "Custom_Tile",
+              "Transform": {
+                "posX": -38.8217163,
+                "posY": 1.99356019,
+                "posZ": 0.4159239,
+                "rotX": 359.9201,
+                "rotY": 272.9828,
+                "rotZ": 0.01687373,
+                "scaleX": 0.8,
+                "scaleY": 1.0,
+                "scaleZ": 0.8
+              },
+              "Nickname": "",
+              "Description": "",
+              "GMNotes": "",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.6045295,
+                "g": 0.6045295,
+                "b": 0.6045295
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": false,
+              "CustomImage": {
+                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
+                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
+                "ImageScalar": 1.0,
+                "WidthScale": 0.0,
+                "CustomTile": {
+                  "Type": 3,
+                  "Thickness": 0.1,
+                  "Stackable": false,
+                  "Stretch": true
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            }
+          }
+        },
+        {
           "GUID": "6978c3",
           "Name": "Deck",
           "Transform": {
-            "posX": -23.0000038,
+            "posX": -23.0000057,
             "posY": 1.80537355,
-            "posZ": 6.99999428,
-            "rotX": -5.09815072E-06,
+            "posZ": 6.99999332,
+            "rotX": -4.936206E-06,
             "rotY": 180.001144,
-            "rotZ": 3.34467956E-08,
+            "rotZ": -2.34687946E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -5635,9 +5352,9 @@
             "posX": 6.0,
             "posY": 1.51912248,
             "posZ": 14.5,
-            "rotX": 0.010888855,
+            "rotX": 0.0108889518,
             "rotY": 180.029755,
-            "rotZ": 0.00495394645,
+            "rotZ": 0.00495401,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -6039,9 +5756,9 @@
             "posX": 2.99999976,
             "posY": 1.50197494,
             "posZ": -5.499999,
-            "rotX": 0.0108910156,
+            "rotX": 0.0108909933,
             "rotY": 180.0065,
-            "rotZ": 0.004949843,
+            "rotZ": 0.004949667,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -6154,9 +5871,9 @@
             "posX": -19.0,
             "posY": 1.47986,
             "posZ": -5.0,
-            "rotX": 8.199452E-09,
+            "rotX": 3.47101548E-08,
             "rotY": 179.9986,
-            "rotZ": -7.906071E-08,
+            "rotZ": -4.495225E-08,
             "scaleX": 1.76113939,
             "scaleY": 1.0,
             "scaleZ": 1.76113939
@@ -6196,63 +5913,6 @@
           },
           "LuaScript": "",
           "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "836865",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 10.0000076,
-            "posY": 1.5509901,
-            "posZ": -7.500009,
-            "rotX": 0.010903853,
-            "rotY": 180.033127,
-            "rotZ": 0.00495439861,
-            "scaleX": 0.23,
-            "scaleY": 1.0,
-            "scaleZ": 0.23
-          },
-          "Nickname": "Compteur de Tours",
-          "Description": "Click gauche - Ajouter\nClick droit - Soustraire",
-          "GMNotes": "Bounty",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.0,
-            "g": 1.0,
-            "b": 0.585550964
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": false,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "http://cloud-3.steamusercontent.com/ugc/2297464214277195152/7AD622C7889DAF2AAC83851387B2C2551E7502F9/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = false\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\r\n    if light_mode then\r\n        f_color = {1,0,0,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=800,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,0]",
           "XmlUI": ""
         },
         {
@@ -6320,9 +5980,9 @@
             "posX": -3.0,
             "posY": 1.5070554,
             "posZ": 18.5,
-            "rotX": 0.0108919386,
-            "rotY": 179.9956,
-            "rotZ": 0.00495108357,
+            "rotX": 0.0108919917,
+            "rotY": 179.995575,
+            "rotZ": 0.004951047,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -6548,9 +6208,9 @@
           "Transform": {
             "posX": 12.5,
             "posY": 1.536432,
-            "posZ": -6.000003,
-            "rotX": 0.00494891172,
-            "rotY": 90.0044556,
+            "posZ": -6.000004,
+            "rotX": 0.0049488456,
+            "rotY": 90.00445,
             "rotZ": 359.9891,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -6787,9 +6447,9 @@
             "posX": -33.58,
             "posY": 1.78360426,
             "posZ": 19.4884,
-            "rotX": -1.00011664E-06,
-            "rotY": 180.1602,
-            "rotZ": -2.78613024E-05,
+            "rotX": -7.84809345E-07,
+            "rotY": 180.160172,
+            "rotZ": -2.749513E-05,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -6839,15 +6499,73 @@
           "XmlUI": ""
         },
         {
+          "GUID": "9cae28",
+          "Name": "Card",
+          "Transform": {
+            "posX": 22.3267422,
+            "posY": 1.5139116,
+            "posZ": -5.494818,
+            "rotX": 0.010889438,
+            "rotY": 180.023346,
+            "rotZ": 0.00495259929,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Référence",
+          "Description": "Le Dévoreur de Toute Chose... et du RESTE",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 306200,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "3062": {
+              "FaceURL": "https://i.imgur.com/6ao8Cas.jpg",
+              "BackURL": "https://i.imgur.com/E6Viksz.jpg",
+              "NumWidth": 10,
+              "NumHeight": 7,
+              "BackIsHidden": true,
+              "UniqueBack": true,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
           "GUID": "9ccbe0",
           "Name": "Custom_Model_Bag",
           "Transform": {
             "posX": -29.0,
-            "posY": 1.57235956,
+            "posY": 1.57235968,
             "posZ": -12.0,
-            "rotX": 5.06456281E-08,
+            "rotX": -6.732577E-08,
             "rotY": 180.0006,
-            "rotZ": -2.23671947E-07,
+            "rotZ": -1.29137518E-07,
             "scaleX": 0.9249998,
             "scaleY": 0.9249998,
             "scaleZ": 0.9249998
@@ -6970,11 +6688,11 @@
           "Name": "Custom_Tile",
           "Transform": {
             "posX": 6.0,
-            "posY": 1.50779891,
+            "posY": 1.50779879,
             "posZ": 26.5,
-            "rotX": 0.0108923148,
-            "rotY": 179.99147,
-            "rotZ": 0.004950591,
+            "rotX": 0.0108923046,
+            "rotY": 179.991486,
+            "rotZ": 0.00495068962,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -7145,9 +6863,9 @@
             "posX": -3.0,
             "posY": 1.50553465,
             "posZ": 10.5,
-            "rotX": 0.0108926939,
-            "rotY": 179.9863,
-            "rotZ": 0.00494986447,
+            "rotX": 0.0108928336,
+            "rotY": 179.986282,
+            "rotZ": 0.00495037343,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -7374,7 +7092,7 @@
             "posX": 30.4999,
             "posY": 1.66542017,
             "posZ": -3.0,
-            "rotX": -0.00059113,
+            "rotX": -0.0005909783,
             "rotY": 179.9999,
             "rotZ": 180.001068,
             "scaleX": 1.0,
@@ -9260,12 +8978,12 @@
           "GUID": "c1334a",
           "Name": "Deck",
           "Transform": {
-            "posX": -23.0001049,
+            "posX": -23.0001087,
             "posY": 1.80055988,
-            "posZ": 2.99989414,
-            "rotX": -4.881334E-06,
-            "rotY": 180.004562,
-            "rotZ": -6.1466E-08,
+            "posZ": 2.99988914,
+            "rotX": -4.970078E-06,
+            "rotY": 180.004547,
+            "rotZ": 2.33686023E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -9440,11 +9158,11 @@
           "Name": "CardCustom",
           "Transform": {
             "posX": -0.999899745,
-            "posY": 1.5121963,
+            "posY": 1.51219642,
             "posZ": -10.4997,
             "rotX": 358.806152,
             "rotY": 179.9969,
-            "rotZ": -8.087305E-08,
+            "rotZ": -3.28732722E-06,
             "scaleX": 0.587234735,
             "scaleY": 1.0,
             "scaleZ": 0.587234735
@@ -9499,10 +9217,10 @@
           "Transform": {
             "posX": 24.9997787,
             "posY": 1.51367974,
-            "posZ": -5.50001764,
-            "rotX": 0.0108913295,
+            "posZ": -5.5000186,
+            "rotX": 0.01089125,
             "rotY": 180.002213,
-            "rotZ": 0.00494857458,
+            "rotZ": 0.00494874,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -9558,7 +9276,7 @@
             "posX": 10.499999,
             "posY": 1.5051291,
             "posZ": 14.5,
-            "rotX": 0.00494613266,
+            "rotX": 0.00494623,
             "rotY": 89.9916,
             "rotZ": 359.9891,
             "scaleX": 1.0,
@@ -9728,12 +9446,12 @@
           "GUID": "c76ae2",
           "Name": "Card",
           "Transform": {
-            "posX": -26.9098969,
+            "posX": -26.9098949,
             "posY": 1.78360462,
-            "posZ": 19.4997025,
-            "rotX": -4.93251E-06,
+            "posZ": 19.4997044,
+            "rotX": -5.00872557E-06,
             "rotY": 180.026291,
-            "rotZ": -2.3896007E-08,
+            "rotZ": 4.318373E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -9839,6 +9557,60 @@
           "XmlUI": ""
         },
         {
+          "GUID": "d24a4a",
+          "Name": "3DText",
+          "Transform": {
+            "posX": 6.00001526,
+            "posY": 3.999997,
+            "posZ": 18.58001,
+            "rotX": 90.0,
+            "rotY": 0.439700127,
+            "rotZ": 0.0,
+            "scaleX": 2.0,
+            "scaleY": 2.0,
+            "scaleZ": 2.0
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": true,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "Text": {
+            "Text": "En Préparation...",
+            "colorstate": {
+              "r": 0.327825576,
+              "g": 1.0,
+              "b": 0.219649017
+            },
+            "fontSize": 150
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
           "GUID": "d3deeb",
           "Name": "CardCustom",
           "Transform": {
@@ -9903,9 +9675,9 @@
             "posX": 15.0,
             "posY": 1.50398016,
             "posZ": 10.5,
-            "rotX": 0.010890549,
+            "rotX": 0.0108905537,
             "rotY": 180.011139,
-            "rotZ": 0.004949062,
+            "rotZ": 0.00494919857,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -10132,9 +9904,9 @@
             "posX": 5.0,
             "posY": 1.52967441,
             "posZ": -12.0,
-            "rotX": -5.514416E-08,
+            "rotX": 6.52408261E-08,
             "rotY": 180.0,
-            "rotZ": -2.10406952E-07,
+            "rotZ": -1.689846E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -10546,10 +10318,10 @@
           "Transform": {
             "posX": 23.5,
             "posY": 1.5506798,
-            "posZ": -3.0,
-            "rotX": 0.01089954,
-            "rotY": 180.004379,
-            "rotZ": 0.00496170856,
+            "posZ": -3.00000048,
+            "rotX": 0.0108817164,
+            "rotY": 180.00441,
+            "rotZ": 0.004915964,
             "scaleX": 0.3,
             "scaleY": 1.0,
             "scaleZ": 0.3
@@ -10601,11 +10373,11 @@
           "GUID": "f9947f",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 2.0,
+            "posX": 2.00000024,
             "posY": 1.50434244,
             "posZ": 6.499999,
-            "rotX": 0.004946163,
-            "rotY": 89.99163,
+            "rotX": 0.00494591938,
+            "rotY": 89.9916458,
             "rotZ": 359.9891,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -10774,12 +10546,12 @@
           "GUID": "fad34b",
           "Name": "Card",
           "Transform": {
-            "posX": -20.0001011,
+            "posX": -20.000103,
             "posY": 1.783606,
-            "posZ": 2.999896,
-            "rotX": -5.05031358E-06,
-            "rotY": 180.005524,
-            "rotZ": -1.22936186E-08,
+            "posZ": 2.99989367,
+            "rotX": -5.00494571E-06,
+            "rotY": 180.005478,
+            "rotZ": 4.13042436E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -10835,7 +10607,7 @@
             "posX": -7.5,
             "posY": 1.50668371,
             "posZ": 14.5,
-            "rotX": 0.00494613964,
+            "rotX": 0.00494619831,
             "rotY": 89.9914,
             "rotZ": 359.9891,
             "scaleX": 1.0,
