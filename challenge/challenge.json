@@ -5,9 +5,9 @@
         "posX": -53.0001373,
         "posY": 1.1969192,
         "posZ": 9.99988,
-        "rotX": -4.848612E-06,
-        "rotY": 179.993347,
-        "rotZ": 4.02176084E-07,
+        "rotX": -5.17720628E-06,
+        "rotY": 179.993362,
+        "rotZ": 5.682027E-07,
         "scaleX": 1.170821,
         "scaleY": 0.0619766228,
         "scaleZ": 0.9910606
@@ -43,7 +43,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "http://pastebin.com/raw.php?i=uWAmuNZ2",
-        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/5077277234354602165/741EDFE74B3CDA7EF1E57E2D609640790BC196CC/",
+        "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/5077277234354602165/741EDFE74B3CDA7EF1E57E2D609640790BC196CC/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
@@ -84,7 +84,7 @@
           },
           "Nickname": "Le Tout pour le Tout",
           "Description": "",
-          "GMNotes": "scenarios/letoutpourletout.json",
+          "GMNotes": "challenge/letoutpourletout.json",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -112,7 +112,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1655600953066192972/8A5939900FCA8E2A2772CEDE6A03594A68961C4C/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1655600953066192972/8A5939900FCA8E2A2772CEDE6A03594A68961C4C/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -148,7 +148,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
@@ -198,7 +198,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2299716459828640802/A224024254ABCFB818F12B50C1E5E0B32060F972/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2299716459828640802/A224024254ABCFB818F12B50C1E5E0B32060F972/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -234,7 +234,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
@@ -247,9 +247,9 @@
             "posX": 10.5,
             "posY": 5.84359932,
             "posZ": 51.5,
-            "rotX": -4.30222471E-08,
+            "rotX": -4.92988832E-08,
             "rotY": 179.9752,
-            "rotZ": 4.98608961E-06,
+            "rotZ": 5.03415276E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -284,7 +284,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795194974/BD70BFDA6DED25221D6DC1BE60C8CE11B165F848/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2107179278795194974/BD70BFDA6DED25221D6DC1BE60C8CE11B165F848/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -320,7 +320,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
@@ -333,9 +333,9 @@
             "posX": 15.0,
             "posY": 5.843599,
             "posZ": 51.5,
-            "rotX": 8.62560441E-08,
+            "rotX": 1.25482245E-07,
             "rotY": 179.9752,
-            "rotZ": 4.946522E-06,
+            "rotZ": 4.880835E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -370,7 +370,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2115061845788468343/B7611EC7DCD2008B87D6518EBEFF0AD36EFE5B54/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2115061845788468343/B7611EC7DCD2008B87D6518EBEFF0AD36EFE5B54/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -406,7 +406,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
@@ -416,11 +416,11 @@
           "GUID": "7e512b",
           "Name": "3DText",
           "Transform": {
-            "posX": 6.00042,
-            "posY": 5.843625,
-            "posZ": 56.0541344,
+            "posX": 6.000447,
+            "posY": 5.84362364,
+            "posZ": 56.0541573,
             "rotX": 90.0,
-            "rotY": -3.77318173E-07,
+            "rotY": -1.179119E-09,
             "rotZ": 0.0,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -489,9 +489,9 @@
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 0.160782963,
-            "g": 0.08627332,
-            "b": 0.0588224679
+            "r": 0.1607829,
+            "g": 0.08627326,
+            "b": 0.0588224232
           },
           "LayoutGroupSortIndex": 0,
           "Value": 0,
@@ -525,8 +525,8 @@
                 "z": 0.5214403
               },
               "Rotation": {
-                "x": 1.76689682E-07,
-                "y": 0.0315282941,
+                "x": 1.766897E-07,
+                "y": 0.0315282978,
                 "z": 180.0
               }
             },
@@ -585,7 +585,7 @@
                 "z": 0.5214392
               },
               "Rotation": {
-                "x": 1.16503E-08,
+                "x": 1.16503012E-08,
                 "y": 0.03320838,
                 "z": 180.0
               }
@@ -609,7 +609,7 @@
                 "z": 0.5214388
               },
               "Rotation": {
-                "x": 1.12840226E-07,
+                "x": 1.12840219E-07,
                 "y": 0.0348476246,
                 "z": 180.0
               }
@@ -633,7 +633,7 @@
                 "z": 0.5214383
               },
               "Rotation": {
-                "x": 4.74367745E-08,
+                "x": 4.74367781E-08,
                 "y": 0.0315419,
                 "z": 180.0
               }
@@ -647,9 +647,9 @@
             "posX": -7.5,
             "posY": 5.84360075,
             "posZ": 51.5,
-            "rotX": -5.017505E-08,
+            "rotX": 4.35850822E-08,
             "rotY": 179.968414,
-            "rotZ": 5.007745E-06,
+            "rotZ": 5.089044E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -684,7 +684,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1655599785039304850/852232605656B7DD6577C475A1988491D3378506/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1655599785039304850/852232605656B7DD6577C475A1988491D3378506/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -720,7 +720,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
@@ -733,16 +733,16 @@
             "posX": 1.50000012,
             "posY": 5.84360027,
             "posZ": 51.5,
-            "rotX": -1.22569528E-08,
+            "rotX": -3.234245E-08,
             "rotY": 179.9668,
-            "rotZ": 4.93507423E-06,
+            "rotZ": 5.043089E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
           },
           "Nickname": "Mauvais Sang",
           "Description": "",
-          "GMNotes": "scenarios/mauvaissang.json",
+          "GMNotes": "challenge/mauvaissang.json",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -770,7 +770,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1655599785039299268/52DB5C3A0E600D6AECB0B851ECF90C5B3D016421/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1655599785039299268/52DB5C3A0E600D6AECB0B851ECF90C5B3D016421/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -806,7 +806,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
@@ -819,16 +819,16 @@
             "posX": 6.0,
             "posY": 5.8436,
             "posZ": 51.5,
-            "rotX": -5.75832821E-08,
+            "rotX": -6.642626E-08,
             "rotY": 179.975189,
-            "rotZ": 5.09129677E-06,
+            "rotZ": 5.04302943E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
           },
           "Nickname": "Suivre les Règles",
           "Description": "",
-          "GMNotes": "scenarios/suivrelesregles.json",
+          "GMNotes": "challenge/suivrelesregles.json",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -856,7 +856,7 @@
           "Hands": false,
           "CustomMesh": {
             "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-            "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/1719794129200879643/47A3BC15C8C8ADB45137A2258B86C1D2DB9C2B03/",
+            "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/1719794129200879643/47A3BC15C8C8ADB45137A2258B86C1D2DB9C2B03/",
             "NormalURL": "",
             "ColliderURL": "",
             "Convex": true,
@@ -892,7 +892,7 @@
               },
               "CustomDecal": {
                 "Name": "dunwich_back",
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
+                "ImageURL": "http://cloud-3.steamusercontent.com/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
               }
             }
