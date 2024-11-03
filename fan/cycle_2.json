@@ -4,10 +4,10 @@
       "Transform": {
         "posX": -80.00001,
         "posY": 1.196916,
-        "posZ": 49.9999962,
-        "rotX": -6.3343773E-06,
-        "rotY": 180.018463,
-        "rotZ": 8.291139E-07,
+        "posZ": 49.9999924,
+        "rotX": 1.2057717E-06,
+        "rotY": 180.018509,
+        "rotZ": 1.05623042E-06,
         "scaleX": 1.170821,
         "scaleY": 0.0619766228,
         "scaleZ": 0.9910606
@@ -43,7 +43,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "http://pastebin.com/raw.php?i=uWAmuNZ2",
-        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2040742305296091079/6E85C13FF452C966414E9EB6CE9DEE8FD05EE7F6/",
+        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2403326468921516873/B7A3480F8C8562F84CFEF64CADD786EE73CF35F8/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
@@ -20716,6 +20716,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 },
                 {
@@ -20773,6 +20774,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 },
                 {
@@ -20830,6 +20832,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 }
               ]
@@ -20950,6 +20953,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 },
                 {
@@ -21007,6 +21011,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 }
               ]
