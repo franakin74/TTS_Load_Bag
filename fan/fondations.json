@@ -2,12 +2,12 @@
       "GUID": "11c6c3",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -71.00024,
-        "posY": 0.9799985,
-        "posZ": 41.00002,
-        "rotX": -5.126889E-06,
-        "rotY": 180.004379,
-        "rotZ": 4.775599E-07,
+        "posX": -71.0001,
+        "posY": 0.980011761,
+        "posZ": 41.0000153,
+        "rotX": -5.08052653E-06,
+        "rotY": 180.00174,
+        "rotZ": 4.93903769E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -65,130 +65,9 @@
         "Order": 0
       },
       "LuaScript": "-- Utility memory bag by Directsun\r\n-- Version 2.7.0\r\n-- Fork of Memory Bag 2.0 by MrStump\r\n--\r\n-- Want to contribute? Create an issue or fork the code on GitHub and submit a pull request:\r\n-- https://github.com/sunflowermans/TTS-UtilityMemoryBag\r\n\r\n\r\nfunction updateSave()\r\n    local data_to_save = {[\"ml\"]=memoryList}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction combineMemoryFromBagsWithin()\r\n    local bagObjList = self.getObjects()\r\n    for _, bagObj in ipairs(bagObjList) do\r\n        local data = bagObj.lua_script_state\r\n        if data ~= nil then\r\n            local j = JSON.decode(data)\r\n            if j ~= nil and j.ml ~= nil then\r\n                for guid, entry in pairs(j.ml) do\r\n                    memoryList[guid] = entry\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateMemoryWithMoves()\r\n    memoryList = memoryListBackup\r\n    --get the first transposed object's coordinates\r\n    local obj = getObjectFromGUID(moveGuid)\r\n\r\n    -- p1 is where needs to go, p2 is where it was\r\n    local refObjPos = memoryList[moveGuid].pos\r\n    local deltaPos = findOffsetDistance(obj.getPosition(), refObjPos, nil)\r\n    local movedRotation = obj.getRotation()\r\n    for guid, entry in pairs(memoryList) do\r\n        memoryList[guid].pos.x = entry.pos.x - deltaPos.x\r\n        memoryList[guid].pos.y = entry.pos.y - deltaPos.y\r\n        memoryList[guid].pos.z = entry.pos.z - deltaPos.z\r\n        -- memoryList[guid].rot.x = movedRotation.x\r\n        -- memoryList[guid].rot.y = movedRotation.y\r\n        -- memoryList[guid].rot.z = movedRotation.z\r\n    end\r\n\r\n    --theList[obj.getGUID()] = {\r\n    --    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n    --    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n    --    lock=obj.getLock()\r\n    --}\r\n    moveList = {}\r\nend\r\n\r\nfunction onload(saved_data)\r\n\r\n    fresh = true\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        --Set up information off of loaded_data\r\n        memoryList = loaded_data.ml\r\n    else\r\n        --Set up information for if there is no saved saved data\r\n        memoryList = {}\r\n\r\n    end\r\n\r\n    moveList = {}\r\n    moveGuid = nil\r\n\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        fresh = false\r\n        createMemoryActionButtons()\r\n    end\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make setup button\r\n function createSetupButton()\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={0,0.1,5}, rotation={0,0,0}, height=500, width=1200,\r\n        font_size=300, color={0,0,0}, font_color={1,1,1}\r\n    })\r\nend\r\n\r\n--Triggered by Transpose button\r\nfunction buttonClick_transpose()\r\n    moveGuid = nil\r\n    broadcastToAll(\"Select one object and move it- all objects will move relative to the new location\", {0.75, 0.75, 1})\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(true)\r\n    createSetupActionButtons(true)\r\nend\r\n\r\n--Triggered by setup button,\r\nfunction buttonClick_setup()\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(false)\r\n    createSetupActionButtons(false)\r\nend\r\n\r\nfunction getAllObjectsInMemory()\r\n    local objTable = {}\r\n    local curObj = {}\r\n\r\n    for guid in pairs(memoryListBackup) do\r\n        curObj = getObjectFromGUID(guid)\r\n        table.insert(objTable, curObj)\r\n    end\r\n\r\n    return objTable\r\n    -- return getAllObjects()\r\nend\r\n\r\n--Creates selection buttons on objects\r\nfunction createButtonsOnAllObjects(move)\r\n    buttonIndexMap = {}\r\n    local howManyButtons = 0\r\n\r\n    local objsToHaveButtons = {}\r\n    if move == true then\r\n        objsToHaveButtons = getAllObjectsInMemory()\r\n    else\r\n        objsToHaveButtons = getAllObjects()\r\n    end\r\n\r\n    for _, obj in ipairs(objsToHaveButtons) do\r\n        if obj ~= self then\r\n            --On a normal bag, the button positions aren't the same size as the bag.\r\n            globalScaleFactor = 1* 1/self.getScale().x\r\n            --Super sweet math to set button positions\r\n            local selfPos = self.getPosition()\r\n            local objPos = obj.getPosition()\r\n            local deltaPos = findOffsetDistance(selfPos, objPos, obj)\r\n            local objPos = rotateLocalCoordinates(deltaPos, self)\r\n            objPos.x = -objPos.x * globalScaleFactor\r\n            objPos.y = objPos.y * globalScaleFactor + 4\r\n            objPos.z = objPos.z * globalScaleFactor\r\n            --Workaround for custom PDFs\r\n            if obj.Book then\r\n                objPos.y = objPos.y + 0.5\r\n            end\r\n            --Offset rotation of bag\r\n            local rot = self.getRotation()\r\n            rot.y = -rot.y + 180\r\n            --Create function\r\n            local funcName = \"selectButton_\" .. howManyButtons\r\n            local func = function() buttonClick_selection(obj, move) end\r\n            local color = {0.75,0.25,0.25,0.6}\r\n            local colorMove = {0,0,1,0.6}\r\n            if move == true then\r\n                color = colorMove\r\n            end\r\n            self.setVar(funcName, func)\r\n            self.createButton({\r\n                click_function=funcName, function_owner=self,\r\n                position=objPos, rotation=rot, height=1000, width=1000,\r\n                color=color,\r\n            })\r\n            buttonIndexMap[obj.getGUID()] = howManyButtons\r\n            howManyButtons = howManyButtons + 1\r\n        end\r\n    end\r\nend\r\n\r\n--Creates submit and cancel buttons\r\nfunction createSetupActionButtons(move)\r\n    self.createButton({\r\n        label=\"Annuler\", click_function=\"buttonClick_cancel\", function_owner=self,\r\n      position={-1.25,0.1,6}, rotation={0,0,0}, height=500, width=1200,\r\n        font_size=300, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    self.createButton({\r\n        label=\"Valider\", click_function=\"buttonClick_submit\", function_owner=self,\r\n        position={-1.25,0.3,7}, rotation={0,0,0}, height=500, width=1200,\r\n        font_size=300, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    if move == false then\r\n      self.createButton({\r\n          label=\"Ajouter\", click_function=\"buttonClick_add\", function_owner=self,\r\n          position={1.25,0.3,6}, rotation={0,0,0}, height=500, width=1200,\r\n          font_size=300, color={0,0,0}, font_color={0.25,1,0.25}\r\n      })\r\n\r\n        self.createButton({\r\n            label=\"Sélection\", click_function=\"editDragSelection\", function_owner=self,\r\n            position={-1.25,0.3,8}, rotation={0,0,0}, height=500, width=1200,\r\n            font_size=250, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n\r\n          if fresh == false then\r\n                self.createButton({\r\n                    label=\"Mise à jour\", click_function=\"buttonClick_setNew\", function_owner=self,\r\n                    position={1.25,0.3,8}, rotation={0,0,0}, height=500, width=1200,\r\n                    font_size=230, color={0,0,0}, font_color={0.75,0.75,1}\r\n                })\r\n                self.createButton({\r\n                    label=\"Retirer\", click_function=\"buttonClick_remove\", function_owner=self,\r\n                    position={1.25,0.3,7}, rotation={0,0,0}, height=500, width=1200,\r\n                    font_size=300, color={0,0,0}, font_color={1,0.25,0.25}\r\n                })\r\n            end\r\n        end\r\n\r\n        self.createButton({\r\n            label=\"Reset\", click_function=\"buttonClick_reset\", function_owner=self,\r\n            position={0,0.3,-6}, rotation={0,0,0}, height=500, width=1200,\r\n            font_size=300, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n    end\r\n\r\n\r\n--During Setup\r\n\r\n\r\n--Checks or unchecks buttons\r\nfunction buttonClick_selection(obj, move)\r\n    local index = buttonIndexMap[obj.getGUID()]\r\n    local colorMove = {0,0,1,0.6}\r\n    local color = {0,1,0,0.6}\r\n\r\n    previousGuid = selectedGuid\r\n    selectedGuid = obj.getGUID()\r\n\r\n    theList = memoryList\r\n    if move == true then\r\n        theList = moveList\r\n        if previousGuid ~= nil and previousGuid ~= selectedGuid then\r\n            local prevObj = getObjectFromGUID(previousGuid)\r\n            prevObj.highlightOff()\r\n            self.editButton({index=previousIndex, color=colorMove})\r\n            theList[previousGuid] = nil\r\n        end\r\n        previousIndex = index\r\n    end\r\n\r\n    if theList[selectedGuid] == nil then\r\n        self.editButton({index=index, color=color})\r\n        --Adding pos/rot to memory table\r\n        local pos, rot = obj.getPosition(), obj.getRotation()\r\n        --I need to add it like this or it won't save due to indexing issue\r\n        theList[obj.getGUID()] = {\r\n            pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n            rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n            lock=obj.getLock(),\r\n            tint=obj.getColorTint()\r\n        }\r\n        obj.highlightOn({0,1,0})\r\n    else\r\n        color = {0.75,0.25,0.25,0.6}\r\n        if move == true then\r\n            color = colorMove\r\n        end\r\n        self.editButton({index=index, color=color})\r\n        theList[obj.getGUID()] = nil\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\nfunction editDragSelection(bagObj, player, remove)\r\n    local selectedObjs = Player[player].getSelectedObjects()\r\n    if not remove then\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            --Ignore if already in the memory list, or does not have a button\r\n            if index and not memoryList[obj.getGUID()] then\r\n                self.editButton({index=index, color={0,1,0,0.6}})\r\n                --Adding pos/rot to memory table\r\n                local pos, rot = obj.getPosition(), obj.getRotation()\r\n                --I need to add it like this or it won't save due to indexing issue\r\n                memoryList[obj.getGUID()] = {\r\n                    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n                    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n                    lock=obj.getLock(),\r\n                    tint=obj.getColorTint()\r\n                }\r\n                obj.highlightOn({0,1,0})\r\n            end\r\n        end\r\n    else\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            if index and memoryList[obj.getGUID()] then\r\n                color = {0.75,0.25,0.25,0.6}\r\n                self.editButton({index=index, color=color})\r\n                memoryList[obj.getGUID()] = nil\r\n                obj.highlightOff()\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n--Cancels selection process\r\nfunction buttonClick_cancel()\r\n    memoryList = memoryListBackup\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        createMemoryActionButtons()\r\n    end\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Sélection annulée\", {1,1,1})\r\n    moveGuid = nil\r\nend\r\n\r\n--Saves selections\r\nfunction buttonClick_submit()\r\n    fresh = false\r\n    if next(moveList) ~= nil then\r\n        for guid in pairs(moveList) do\r\n            moveGuid = guid\r\n        end\r\n        if memoryListBackup[moveGuid] == nil then\r\n            broadcastToAll(\"Item selected for moving is not already in memory\", {1, 0.25, 0.25})\r\n        else\r\n            broadcastToAll(\"Moving all items in memory relative to new objects position!\", {0.75, 0.75, 1})\r\n            self.clearButtons()\r\n            self.clearInputs()\r\n            createMemoryActionButtons()\r\n            local count = 0\r\n            for guid in pairs(moveList) do\r\n                moveGuid = guid\r\n                count = count + 1\r\n                local obj = getObjectFromGUID(guid)\r\n                if obj ~= nil then obj.highlightOff() end\r\n            end\r\n            updateMemoryWithMoves()\r\n            updateSave()\r\n            buttonClick_place()\r\n        end\r\n    elseif next(memoryList) == nil and moveGuid == nil then\r\n        memoryList = memoryListBackup\r\n        broadcastToAll(\"No selections made.\", {0.75, 0.25, 0.25})\r\n    end\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\n    moveGuid = nil\r\nend\r\n\r\nfunction combineTables(first_table, second_table)\r\n    for k,v in pairs(second_table) do first_table[k] = v end\r\nend\r\n\r\nfunction buttonClick_add()\r\n    fresh = false\r\n    combineTables(memoryList, memoryListBackup)\r\n    broadcastToAll(\"Adding internal bags and selections to existing memory\", {0.25, 0.75, 0.25})\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_remove()\r\n    broadcastToAll(\"Removing Selected Entries From Memory\", {1.0, 0.25, 0.25})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        memoryListBackup[guid] = nil\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Removed\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_setNew()\r\n    broadcastToAll(\"Setting new position relative to items in memory\", {0.75, 0.75, 1})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        guid = obj.guid\r\n        if memoryListBackup[guid] ~= nil then\r\n            count = count + 1\r\n            memoryListBackup[guid].pos = obj.getPosition()\r\n            memoryListBackup[guid].rot = obj.getRotation()\r\n            memoryListBackup[guid].lock = obj.getLock()\r\n            memoryListBackup[guid].tint = obj.getColorTint()\r\n        end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\n--Resets bag to starting status\r\nfunction buttonClick_reset()\r\n    fresh = true\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createSetupButton()\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Tool Reset\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\n\r\n--After Setup\r\n\r\n\r\n--Creates recall and place buttons\r\nfunction createMemoryActionButtons()\r\n    self.createButton({\r\n        label=\"Placer\", click_function=\"buttonClick_place\", function_owner=self,\r\n        position={1.4,1,5.85}, rotation={0,0,0}, height=500, width=1200,\r\n        font_size=300, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Ranger\", click_function=\"buttonClick_recall\", function_owner=self,\r\n        position={-1.4,1,5.85}, rotation={0,0,0}, height=500, width=1200,\r\n        font_size=300, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={5.85,0.1,0}, rotation={0,270,0}, height=500, width=1200,\r\n        font_size=300, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    ---    self.createButton({\r\n    ---      label=\"Bouger\", click_function=\"buttonClick_transpose\", function_owner=self,\r\n    ---      position={-2,0.3,0.8}, rotation={0,270,0}, height=350, width=800,\r\n    ---      font_size=250, color={0,0,0}, font_color={0.75,0.75,1}\r\n    ---\r\nend\r\n\r\n--Sends objects from bag/table to their saved position/rotation\r\nfunction buttonClick_place()\r\n    local bagObjList = self.getObjects()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        --If obj is out on the table, move it to the saved pos/rot\r\n        if obj ~= nil then\r\n            obj.setPositionSmooth(entry.pos)\r\n            obj.setRotationSmooth(entry.rot)\r\n            obj.setLock(entry.lock)\r\n            obj.setColorTint(entry.tint)\r\n        else\r\n            --If obj is inside of the bag\r\n            for _, bagObj in ipairs(bagObjList) do\r\n                if bagObj.guid == guid then\r\n                    local item = self.takeObject({\r\n                        guid=guid, position=entry.pos, rotation=entry.rot, smooth=false\r\n                    })\r\n                    item.setLock(entry.lock)\r\n                    item.setColorTint(entry.tint)\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    broadcastToAll(\"Objets placés\", {1,1,1})\r\nend\r\n\r\n--Recalls objects to bag from table\r\nfunction buttonClick_recall()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then self.putObject(obj) end\r\n    end\r\n    broadcastToAll(\"Objets rangés\", {1,1,1})\r\nend\r\n\r\n\r\n--Utility functions\r\n\r\n\r\n--Find delta (difference) between 2 x/y/z coordinates\r\nfunction findOffsetDistance(p1, p2, obj)\r\n    local yOffset = 0\r\n    if obj ~= nil then\r\n        local bounds = obj.getBounds()\r\n        yOffset = (bounds.size.y - bounds.offset.y)\r\n    end\r\n    local deltaPos = {}\r\n    deltaPos.x = (p2.x-p1.x)\r\n    deltaPos.y = (p2.y-p1.y) + yOffset\r\n    deltaPos.z = (p2.z-p1.z)\r\n    return deltaPos\r\nend\r\n\r\n--Used to rotate a set of coordinates by an angle\r\nfunction rotateLocalCoordinates(desiredPos, obj)\r\n    local objPos, objRot = obj.getPosition(), obj.getRotation()\r\n    local angle = math.rad(objRot.y)\r\n    local x = desiredPos.x * math.cos(angle) - desiredPos.z * math.sin(angle)\r\n    local z = desiredPos.x * math.sin(angle) + desiredPos.z * math.cos(angle)\r\n    --return {x=objPos.x+x, y=objPos.y+desiredPos.y, z=objPos.z+z}\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\nfunction rotateMyCoordinates(desiredPos, obj)\r\n    local angle = math.rad(obj.getRotation().y)\r\n    local x = desiredPos.x * math.sin(angle)\r\n    local z = desiredPos.z * math.cos(angle)\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\n--Coroutine delay, in seconds\r\nfunction wait(time)\r\n    local start = os.time()\r\n    repeat coroutine.yield(0) until os.time() > start + time\r\nend\r\n\r\n--Duplicates a table (needed to prevent it making reference to the same objects)\r\nfunction duplicateTable(oldTable)\r\n    local newTable = {}\r\n    for k, v in pairs(oldTable) do\r\n        newTable[k] = v\r\n    end\r\n    return newTable\r\nend\r\n\r\n--Moves scripted highlight from all objects\r\nfunction removeAllHighlights()\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\n--Round number (num) to the Nth decimal (dec)\r\nfunction round(num, dec)\r\n    local mult = 10^(dec or 0)\r\n    return math.floor(num * mult + 0.5) / mult\r\nend\r\n\r\n\r\n--[[\r\nThis object provides access to a variable stored on the \"Global script\".\r\nThe variable holds the GUIDs for every Utility Memory Bag in the scene.\r\nExample:\r\n{'805ebd', '35cc21', 'fc8886', 'f50264', '5f5f63'}\r\n--]]\r\nAllMemoryBagsInScene = {\r\n    NAME_OF_GLOBAL_VARIABLE = \"_UtilityMemoryBag_AllMemoryBagsInScene\"\r\n}\r\n\r\nfunction AllMemoryBagsInScene:add(guid)\r\n    local guids = Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\n    table.insert(guids, guid)\r\n    Global.setTable(self.NAME_OF_GLOBAL_VARIABLE, guids)\r\nend\r\n\r\nfunction AllMemoryBagsInScene:getGuidList()\r\n    return Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\nend\r\n",
-      "LuaScriptState": "{\"ml\":{\"00941c\":{\"lock\":false,\"pos\":{\"x\":-20.5000019073486,\"y\":1.78360593318939,\"z\":4.49999904632568},\"rot\":{\"x\":-4.95304357173154E-06,\"y\":179.999694824219,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0210f6\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.84,\"z\":4},\"rot\":{\"x\":0,\"y\":179.9992,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"02f1b7\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":179.9997,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0603f8\":{\"lock\":false,\"pos\":{\"x\":12.4999990463257,\"y\":1.50277042388916,\"z\":3},\"rot\":{\"x\":0.00494785327464342,\"y\":90.0000991821289,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"076409\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.5033,\"z\":6},\"rot\":{\"x\":359.9881,\"y\":329.9999,\"z\":0.0012},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"08b28a\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.5188,\"z\":10.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0b6e85\":{\"lock\":false,\"pos\":{\"x\":10,\"y\":1.5165,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0002,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0e092b\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.84,\"z\":7},\"rot\":{\"x\":0,\"y\":180.0005,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"0e1162\":{\"lock\":false,\"pos\":{\"x\":8.0001,\"y\":1.5202,\"z\":21},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0fbaf1\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5037,\"z\":6},\"rot\":{\"x\":359.993,\"y\":30.0001,\"z\":359.9903},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"151fb4\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"17150c\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.85,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0242,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"1b5073\":{\"lock\":false,\"pos\":{\"x\":17,\"y\":1.50409257411957,\"z\":12},\"rot\":{\"x\":359.989105224609,\"y\":0.010610138066113,\"z\":-0.00495352735742927},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"21dc5d\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0005,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2dcc63\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.5053,\"z\":12},\"rot\":{\"x\":-0.0049,\"y\":270.0001,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"34b9e3\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9971,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"368e54\":{\"lock\":true,\"pos\":{\"x\":34.8804,\"y\":1.77,\"z\":0.55},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"388c1d\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.84,\"z\":4},\"rot\":{\"x\":0,\"y\":179.9993,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"39bf35\":{\"lock\":true,\"pos\":{\"x\":-4.5,\"y\":1.5212,\"z\":20.5},\"rot\":{\"x\":0.0109,\"y\":179.9987,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3fcaf9\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.84,\"z\":7},\"rot\":{\"x\":0,\"y\":180.0011,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"466c74\":{\"lock\":false,\"pos\":{\"x\":-23,\"y\":1.84,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0001,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"4b4956\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.77,\"z\":11},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4b8fbd\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.84,\"z\":8.5},\"rot\":{\"x\":0,\"y\":180.0008,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4b9a85\":{\"lock\":false,\"pos\":{\"x\":9,\"y\":1.5064,\"z\":20.5},\"rot\":{\"x\":-0.0049,\"y\":269.9914,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"4ba6b8\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.5045,\"z\":7},\"rot\":{\"x\":359.9891,\"y\":0.0193,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"4c6dff\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4e84af\":{\"lock\":false,\"pos\":{\"x\":-11.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4ea7cc\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.7836,\"z\":2.5},\"rot\":{\"x\":0,\"y\":180.0005,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"532c24\":{\"lock\":false,\"pos\":{\"x\":-1.00000023841858,\"y\":1.51754093170166,\"z\":3},\"rot\":{\"x\":0.0108915185555816,\"y\":179.999801635742,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"536c92\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.84,\"z\":8},\"rot\":{\"x\":0,\"y\":180.0231,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"547db2\":{\"lock\":false,\"pos\":{\"x\":-30,\"y\":1.7836,\"z\":2.5},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"54a078\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.517,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180.0003,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"551522\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.506,\"z\":15},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"558f08\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"595227\":{\"lock\":false,\"pos\":{\"x\":14.5,\"y\":1.5051,\"z\":16},\"rot\":{\"x\":359.9888,\"y\":315.0125,\"z\":0.0042},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"5a7ebc\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":179.9929,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5b3b0b\":{\"lock\":false,\"pos\":{\"x\":33.5,\"y\":1.5799,\"z\":12},\"rot\":{\"x\":0,\"y\":179.9934,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"5da28e\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0002,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"6161c8\":{\"lock\":false,\"pos\":{\"x\":-34.0001,\"y\":1.8198,\"z\":2.4999},\"rot\":{\"x\":0,\"y\":179.9999,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"61f518\":{\"lock\":false,\"pos\":{\"x\":12.5011005401611,\"y\":1.53642868995667,\"z\":-6.01690006256104},\"rot\":{\"x\":0.0108918910846114,\"y\":180.000305175781,\"z\":0.0049482611939311},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"63d52e\":{\"lock\":false,\"pos\":{\"x\":5.5,\"y\":1.5033,\"z\":2.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"65ce32\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.5189,\"z\":12},\"rot\":{\"x\":0.0109,\"y\":179.9966,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"669278\":{\"lock\":false,\"pos\":{\"x\":-1,\"y\":1.5065,\"z\":16.5},\"rot\":{\"x\":359.9891,\"y\":0.0106,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"6fb132\":{\"lock\":false,\"pos\":{\"x\":33,\"y\":1.5799,\"z\":12},\"rot\":{\"x\":0,\"y\":179.9901,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"704592\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5071,\"z\":24},\"rot\":{\"x\":359.9881,\"y\":330,\"z\":0.0012},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7234af\":{\"lock\":false,\"pos\":{\"x\":0,\"y\":1.5072,\"z\":20.5},\"rot\":{\"x\":-0.0049,\"y\":270.0001,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"742d9f\":{\"lock\":false,\"pos\":{\"x\":-1.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"77815c\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5217,\"z\":29},\"rot\":{\"x\":0.0109,\"y\":180.0007,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7cdf0e\":{\"lock\":false,\"pos\":{\"x\":-5.5,\"y\":1.506,\"z\":12},\"rot\":{\"x\":-0.0049,\"y\":269.9999,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7d157a\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.5195,\"z\":20},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7e4a03\":{\"lock\":true,\"pos\":{\"x\":13.5,\"y\":1.5196,\"z\":20.5},\"rot\":{\"x\":0.0109,\"y\":179.9997,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7f110a\":{\"lock\":false,\"pos\":{\"x\":-6.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"7fe087\":{\"lock\":false,\"pos\":{\"x\":12.5012,\"y\":1.5364,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":180.0024,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"80cda9\":{\"lock\":false,\"pos\":{\"x\":9,\"y\":1.5035,\"z\":5},\"rot\":{\"x\":0.0012,\"y\":240,\"z\":0.0119},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"867e4f\":{\"lock\":false,\"pos\":{\"x\":14.5,\"y\":1.5042,\"z\":11.5},\"rot\":{\"x\":0.0049,\"y\":90,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8a1a07\":{\"lock\":false,\"pos\":{\"x\":8,\"y\":1.50401437282562,\"z\":7.5},\"rot\":{\"x\":359.989105224609,\"y\":0.0105167543515563,\"z\":-0.00495435344055295},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8a8ce0\":{\"lock\":false,\"pos\":{\"x\":12.4999990463257,\"y\":1.50619208812714,\"z\":21},\"rot\":{\"x\":0.00494793616235256,\"y\":90.0001983642578,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8b4dd0\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":179.9987,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8ea5a2\":{\"lock\":false,\"pos\":{\"x\":-4,\"y\":1.5056,\"z\":10.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8eade2\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.50533664226532,\"z\":16.5},\"rot\":{\"x\":0.00420292560011148,\"y\":225.000030517578,\"z\":0.011204699985683},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8f03eb\":{\"lock\":false,\"pos\":{\"x\":11,\"y\":1.5026,\"z\":1.5},\"rot\":{\"x\":0.0049,\"y\":90,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"968ec5\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":180.0002,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"969e83\":{\"lock\":false,\"pos\":{\"x\":-22.5007991790771,\"y\":1.84000051021576,\"z\":10.4998979568481},\"rot\":{\"x\":-5.2436066653172E-06,\"y\":180.030868530273,\"z\":-8.47164827177949E-08},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"97f43b\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.5048,\"z\":10.5},\"rot\":{\"x\":0.0049,\"y\":89.9931,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"98fe81\":{\"lock\":false,\"pos\":{\"x\":5.5,\"y\":1.505,\"z\":11.5},\"rot\":{\"x\":-0.0049,\"y\":269.9932,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"9cee62\":{\"lock\":false,\"pos\":{\"x\":18.5,\"y\":1.5158,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0232,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9d58b9\":{\"lock\":false,\"pos\":{\"x\":0,\"y\":1.505,\"z\":9},\"rot\":{\"x\":0.0012,\"y\":240,\"z\":0.0119},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"9f5177\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.5041,\"z\":6},\"rot\":{\"x\":359.9881,\"y\":330,\"z\":0.0012},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a09801\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.50354754924774,\"z\":2.99999952316284},\"rot\":{\"x\":-0.00494781509041786,\"y\":270.000091552734,\"z\":0.0108988881111145},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a11b97\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0016,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a3f63b\":{\"lock\":false,\"pos\":{\"x\":30.5000019073486,\"y\":1.56432545185089,\"z\":-2.99709939956665},\"rot\":{\"x\":-0.000591077143326402,\"y\":180,\"z\":180.001068115234},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a44290\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6702,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a6de5f\":{\"lock\":false,\"pos\":{\"x\":-3.5,\"y\":1.5041,\"z\":2.5},\"rot\":{\"x\":0.0049,\"y\":89.9887,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a7a19e\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5042,\"z\":7},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a9a90f\":{\"lock\":false,\"pos\":{\"x\":17,\"y\":1.51598644256592,\"z\":3},\"rot\":{\"x\":0.0108915949240327,\"y\":180,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"aedc49\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.5065,\"z\":19.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"af9419\":{\"lock\":false,\"pos\":{\"x\":18.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b0ca45\":{\"lock\":false,\"pos\":{\"x\":16,\"y\":1.5039,\"z\":10.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"b1fcb4\":{\"lock\":false,\"pos\":{\"x\":17.5009994506836,\"y\":1.53599643707275,\"z\":-6.01959991455078},\"rot\":{\"x\":0.0108918454498053,\"y\":179.999389648438,\"z\":0.00494815967977047},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b25c74\":{\"lock\":false,\"pos\":{\"x\":-30,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b32e9d\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b4e2f3\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.8,\"z\":11},\"rot\":{\"x\":90,\"y\":0.2199,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b6fe6b\":{\"lock\":true,\"pos\":{\"x\":34.88,\"y\":1.6,\"z\":0.55},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b90460\":{\"lock\":false,\"pos\":{\"x\":-22,\"y\":1.84,\"z\":8.5},\"rot\":{\"x\":0,\"y\":180.0005,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"baca94\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.50362575054169,\"z\":7.5},\"rot\":{\"x\":0.0112005956470966,\"y\":134.999969482422,\"z\":-0.00420427275821567},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"be8ced\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.519,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"bf9066\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.5152,\"z\":-3},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c5d7cd\":{\"lock\":false,\"pos\":{\"x\":10,\"y\":1.5037,\"z\":7},\"rot\":{\"x\":359.9891,\"y\":0.0193,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"c8dae2\":{\"lock\":false,\"pos\":{\"x\":-31.0001,\"y\":1.8198,\"z\":2.9999},\"rot\":{\"x\":0,\"y\":180.0011,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cbc9cf\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.5788,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0001,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cf36a7\":{\"lock\":false,\"pos\":{\"x\":3.50000023841858,\"y\":1.50440299510956,\"z\":7.5},\"rot\":{\"x\":-0.00420079054310918,\"y\":45.0127906799316,\"z\":359.988800048828},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"d03ae0\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5187,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d1c7e8\":{\"lock\":false,\"pos\":{\"x\":0,\"y\":1.5042,\"z\":5},\"rot\":{\"x\":359.9903,\"y\":300,\"z\":0.007},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"d490ce\":{\"lock\":false,\"pos\":{\"x\":-32,\"y\":1.84,\"z\":8.5},\"rot\":{\"x\":0,\"y\":180.0008,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"d8d644\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.5179,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"daebef\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5166,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0001,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"de00a4\":{\"lock\":true,\"pos\":{\"x\":-8,\"y\":1.5181,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0006,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00001\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0026,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00002\":{\"lock\":false,\"pos\":{\"x\":15.9997,\"y\":1.5171,\"z\":8.5},\"rot\":{\"x\":0.0109,\"y\":180.0027,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00003\":{\"lock\":false,\"pos\":{\"x\":-24,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":180.0012,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00004\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.517,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":179.9999,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00005\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00006\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5204,\"z\":20.5},\"rot\":{\"x\":0.0109,\"y\":179.9997,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00007\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.517,\"z\":7},\"rot\":{\"x\":0.0109,\"y\":179.9991,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00008\":{\"lock\":false,\"pos\":{\"x\":-1,\"y\":1.5193,\"z\":12},\"rot\":{\"x\":0.0109,\"y\":179.9999,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00009\":{\"lock\":false,\"pos\":{\"x\":11,\"y\":1.5196,\"z\":19.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e0000b\":{\"lock\":false,\"pos\":{\"x\":-33,\"y\":1.8198,\"z\":3.4999},\"rot\":{\"x\":0,\"y\":179.9999,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e0000c\":{\"lock\":false,\"pos\":{\"x\":-33,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":179.9999,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e0000f\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.5836,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":179.9991,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00010\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.5836,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"eb64f8\":{\"lock\":false,\"pos\":{\"x\":9,\"y\":1.5042,\"z\":9},\"rot\":{\"x\":359.9903,\"y\":300,\"z\":0.007},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"eb7f3a\":{\"lock\":false,\"pos\":{\"x\":17.501,\"y\":1.5408,\"z\":-6.0196},\"rot\":{\"x\":0.0109,\"y\":179.9967,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ecf2d9\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6028,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0029,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ee2967\":{\"lock\":false,\"pos\":{\"x\":17.4838,\"y\":1.536,\"z\":-6.0195},\"rot\":{\"x\":0.0109,\"y\":179.9838,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ef3ac5\":{\"lock\":false,\"pos\":{\"x\":-4.5,\"y\":1.5186,\"z\":7},\"rot\":{\"x\":0.0109,\"y\":180.0001,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"efdb34\":{\"lock\":false,\"pos\":{\"x\":-11,\"y\":1.5201,\"z\":12},\"rot\":{\"x\":0.0109,\"y\":180.0003,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f14052\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.7836,\"z\":2.5},\"rot\":{\"x\":0,\"y\":180.0015,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f29c01\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5059,\"z\":16},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"f2f348\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":180.0012,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f7c30c\":{\"lock\":false,\"pos\":{\"x\":-34.5,\"y\":1.84,\"z\":3},\"rot\":{\"x\":0,\"y\":179.9893,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f93de1\":{\"lock\":false,\"pos\":{\"x\":3,\"y\":1.502,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0129,\"z\":0.005},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}}}}",
+      "LuaScriptState": "{\"ml\":{\"00941c\":{\"lock\":false,\"pos\":{\"x\":-20.5000019073486,\"y\":1.78360593318939,\"z\":4.49999904632568},\"rot\":{\"x\":-4.95304357173154E-06,\"y\":179.999694824219,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0210f6\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.84,\"z\":4},\"rot\":{\"x\":0,\"y\":179.9992,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"02f1b7\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":179.9997,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0603f8\":{\"lock\":false,\"pos\":{\"x\":12.4999990463257,\"y\":1.50277042388916,\"z\":3},\"rot\":{\"x\":0.00494785327464342,\"y\":90.0000991821289,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"076409\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.5033,\"z\":6},\"rot\":{\"x\":359.9881,\"y\":329.9999,\"z\":0.0012},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"08b28a\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.5188,\"z\":10.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0b6e85\":{\"lock\":false,\"pos\":{\"x\":10,\"y\":1.5165,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0002,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0e092b\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.84,\"z\":7},\"rot\":{\"x\":0,\"y\":180.0005,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"0e1162\":{\"lock\":false,\"pos\":{\"x\":8.0001,\"y\":1.5202,\"z\":21},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0fbaf1\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5037,\"z\":6},\"rot\":{\"x\":359.993,\"y\":30.0001,\"z\":359.9903},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"151fb4\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"17150c\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.85,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0242,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"1b5073\":{\"lock\":false,\"pos\":{\"x\":17,\"y\":1.50409257411957,\"z\":12},\"rot\":{\"x\":359.989105224609,\"y\":0.010610138066113,\"z\":-0.00495352735742927},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"21dc5d\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0005,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2dcc63\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.5053,\"z\":12},\"rot\":{\"x\":-0.0049,\"y\":270.0001,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"34b9e3\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9971,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"368e54\":{\"lock\":true,\"pos\":{\"x\":34.8804,\"y\":1.77,\"z\":0.55},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"388c1d\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.84,\"z\":4},\"rot\":{\"x\":0,\"y\":179.9993,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"39bf35\":{\"lock\":true,\"pos\":{\"x\":-4.5,\"y\":1.5212,\"z\":20.5},\"rot\":{\"x\":0.0109,\"y\":179.9987,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3fcaf9\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.84,\"z\":7},\"rot\":{\"x\":0,\"y\":180.0011,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"466c74\":{\"lock\":false,\"pos\":{\"x\":-23,\"y\":1.84,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0001,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"4b4956\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.77,\"z\":11},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4b8fbd\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.84,\"z\":8.5},\"rot\":{\"x\":0,\"y\":180.0008,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4b9a85\":{\"lock\":false,\"pos\":{\"x\":9,\"y\":1.5064,\"z\":20.5},\"rot\":{\"x\":-0.0049,\"y\":269.9914,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"4ba6b8\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.5045,\"z\":7},\"rot\":{\"x\":359.9891,\"y\":0.0193,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"4c6dff\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4e84af\":{\"lock\":false,\"pos\":{\"x\":-11.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4ea7cc\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.7836,\"z\":2.5},\"rot\":{\"x\":0,\"y\":180.0005,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"532c24\":{\"lock\":false,\"pos\":{\"x\":-1.00000023841858,\"y\":1.51754093170166,\"z\":3},\"rot\":{\"x\":0.0108915185555816,\"y\":179.999801635742,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"536c92\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.84,\"z\":8},\"rot\":{\"x\":0,\"y\":180.0231,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"547db2\":{\"lock\":false,\"pos\":{\"x\":-30,\"y\":1.7836,\"z\":2.5},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"54a078\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.517,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180.0003,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"551522\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.506,\"z\":15},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"558f08\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"595227\":{\"lock\":false,\"pos\":{\"x\":14.5,\"y\":1.5051,\"z\":16},\"rot\":{\"x\":359.9888,\"y\":315.0125,\"z\":0.0042},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"5a7ebc\":{\"lock\":false,\"pos\":{\"x\":-27,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":179.9929,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5b3b0b\":{\"lock\":false,\"pos\":{\"x\":33.5,\"y\":1.5799,\"z\":12},\"rot\":{\"x\":0,\"y\":179.9934,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"5da28e\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0002,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"6161c8\":{\"lock\":false,\"pos\":{\"x\":-34.0001,\"y\":1.8198,\"z\":2.4999},\"rot\":{\"x\":0,\"y\":179.9999,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"61f518\":{\"lock\":false,\"pos\":{\"x\":12.5011005401611,\"y\":1.53642868995667,\"z\":-6.01690006256104},\"rot\":{\"x\":0.0108918910846114,\"y\":180.000305175781,\"z\":0.0049482611939311},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"63d52e\":{\"lock\":false,\"pos\":{\"x\":5.5,\"y\":1.5033,\"z\":2.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"65ce32\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.5189,\"z\":12},\"rot\":{\"x\":0.0109,\"y\":179.9966,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"669278\":{\"lock\":false,\"pos\":{\"x\":-1,\"y\":1.5065,\"z\":16.5},\"rot\":{\"x\":359.9891,\"y\":0.0106,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"6fb132\":{\"lock\":false,\"pos\":{\"x\":33,\"y\":1.5799,\"z\":12},\"rot\":{\"x\":0,\"y\":179.9901,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"704592\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5071,\"z\":24},\"rot\":{\"x\":359.9881,\"y\":330,\"z\":0.0012},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7234af\":{\"lock\":false,\"pos\":{\"x\":0,\"y\":1.5072,\"z\":20.5},\"rot\":{\"x\":-0.0049,\"y\":270.0001,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"742d9f\":{\"lock\":false,\"pos\":{\"x\":-1.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"77815c\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5217,\"z\":29},\"rot\":{\"x\":0.0109,\"y\":180.0007,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7cdf0e\":{\"lock\":false,\"pos\":{\"x\":-5.5,\"y\":1.506,\"z\":12},\"rot\":{\"x\":-0.0049,\"y\":269.9999,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7d157a\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.5195,\"z\":20},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7e4a03\":{\"lock\":true,\"pos\":{\"x\":13.5,\"y\":1.5196,\"z\":20.5},\"rot\":{\"x\":0.0109,\"y\":179.9997,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"7f110a\":{\"lock\":false,\"pos\":{\"x\":-6.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"7fe087\":{\"lock\":false,\"pos\":{\"x\":12.5012,\"y\":1.5364,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":180.0024,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"80cda9\":{\"lock\":false,\"pos\":{\"x\":9,\"y\":1.5035,\"z\":5},\"rot\":{\"x\":0.0012,\"y\":240,\"z\":0.0119},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"867e4f\":{\"lock\":false,\"pos\":{\"x\":14.5,\"y\":1.5042,\"z\":11.5},\"rot\":{\"x\":0.0049,\"y\":90,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8a1a07\":{\"lock\":false,\"pos\":{\"x\":8,\"y\":1.50401437282562,\"z\":7.5},\"rot\":{\"x\":359.989105224609,\"y\":0.0105167543515563,\"z\":-0.00495435344055295},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8a8ce0\":{\"lock\":false,\"pos\":{\"x\":12.4999990463257,\"y\":1.50619208812714,\"z\":21},\"rot\":{\"x\":0.00494793616235256,\"y\":90.0001983642578,\"z\":359.989105224609},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8b4dd0\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":179.9987,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8ea5a2\":{\"lock\":false,\"pos\":{\"x\":-4,\"y\":1.5056,\"z\":10.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8eade2\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.50533664226532,\"z\":16.5},\"rot\":{\"x\":0.00420292560011148,\"y\":225.000030517578,\"z\":0.011204699985683},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"8f03eb\":{\"lock\":false,\"pos\":{\"x\":11,\"y\":1.5026,\"z\":1.5},\"rot\":{\"x\":0.0049,\"y\":90,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"968ec5\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":180.0002,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"969e83\":{\"lock\":false,\"pos\":{\"x\":-22.5007991790771,\"y\":1.84000051021576,\"z\":10.4998979568481},\"rot\":{\"x\":-5.2436066653172E-06,\"y\":180.030868530273,\"z\":-8.47164827177949E-08},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"97f43b\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.5048,\"z\":10.5},\"rot\":{\"x\":0.0049,\"y\":89.9931,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"98fe81\":{\"lock\":false,\"pos\":{\"x\":5.5,\"y\":1.505,\"z\":11.5},\"rot\":{\"x\":-0.0049,\"y\":269.9932,\"z\":0.0109},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"9cee62\":{\"lock\":false,\"pos\":{\"x\":18.5,\"y\":1.5158,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0232,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"9d58b9\":{\"lock\":false,\"pos\":{\"x\":0,\"y\":1.505,\"z\":9},\"rot\":{\"x\":0.0012,\"y\":240,\"z\":0.0119},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"9f5177\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.5041,\"z\":6},\"rot\":{\"x\":359.9881,\"y\":330,\"z\":0.0012},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a09801\":{\"lock\":false,\"pos\":{\"x\":3.5,\"y\":1.50354754924774,\"z\":2.99999952316284},\"rot\":{\"x\":-0.00494781509041786,\"y\":270.000091552734,\"z\":0.0108988881111145},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a11b97\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0016,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a3f63b\":{\"lock\":false,\"pos\":{\"x\":30.5000019073486,\"y\":1.56432545185089,\"z\":-2.99709939956665},\"rot\":{\"x\":-0.000591077143326402,\"y\":180,\"z\":180.001068115234},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a44290\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6702,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a6de5f\":{\"lock\":false,\"pos\":{\"x\":-3.5,\"y\":1.5041,\"z\":2.5},\"rot\":{\"x\":0.0049,\"y\":89.9887,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a7a19e\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5042,\"z\":7},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a9a90f\":{\"lock\":false,\"pos\":{\"x\":17,\"y\":1.51598644256592,\"z\":3},\"rot\":{\"x\":0.0108915949240327,\"y\":180,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"aedc49\":{\"lock\":false,\"pos\":{\"x\":6,\"y\":1.5065,\"z\":19.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"af9419\":{\"lock\":false,\"pos\":{\"x\":18.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b0ca45\":{\"lock\":false,\"pos\":{\"x\":16,\"y\":1.5039,\"z\":10.5},\"rot\":{\"x\":0.0049,\"y\":90.0001,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"b0e617\":{\"lock\":false,\"pos\":{\"x\":-20,\"y\":1.4799,\"z\":-4},\"rot\":{\"x\":0,\"y\":180,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b1fcb4\":{\"lock\":false,\"pos\":{\"x\":17.5009994506836,\"y\":1.53599643707275,\"z\":-6.01959991455078},\"rot\":{\"x\":0.0108918454498053,\"y\":179.999389648438,\"z\":0.00494815967977047},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b25c74\":{\"lock\":false,\"pos\":{\"x\":-30,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b32e9d\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":0.98,\"z\":47.5},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b4e2f3\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.8,\"z\":11},\"rot\":{\"x\":90,\"y\":0.2199,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b6fe6b\":{\"lock\":true,\"pos\":{\"x\":34.88,\"y\":1.6,\"z\":0.55},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"b90460\":{\"lock\":false,\"pos\":{\"x\":-22,\"y\":1.84,\"z\":8.5},\"rot\":{\"x\":0,\"y\":180.0005,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"baca94\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.50362575054169,\"z\":7.5},\"rot\":{\"x\":0.0112005956470966,\"y\":134.999969482422,\"z\":-0.00420427275821567},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"be8ced\":{\"lock\":false,\"pos\":{\"x\":1,\"y\":1.519,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"bf9066\":{\"lock\":false,\"pos\":{\"x\":12.5,\"y\":1.5152,\"z\":-3},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"c5d7cd\":{\"lock\":false,\"pos\":{\"x\":10,\"y\":1.5037,\"z\":7},\"rot\":{\"x\":359.9891,\"y\":0.0193,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"c8dae2\":{\"lock\":false,\"pos\":{\"x\":-31.0001,\"y\":1.8198,\"z\":2.9999},\"rot\":{\"x\":0,\"y\":180.0011,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cbc9cf\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.5788,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0001,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cf36a7\":{\"lock\":false,\"pos\":{\"x\":3.50000023841858,\"y\":1.50440299510956,\"z\":7.5},\"rot\":{\"x\":-0.00420079054310918,\"y\":45.0127906799316,\"z\":359.988800048828},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"d03ae0\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5187,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d1c7e8\":{\"lock\":false,\"pos\":{\"x\":0,\"y\":1.5042,\"z\":5},\"rot\":{\"x\":359.9903,\"y\":300,\"z\":0.007},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"d490ce\":{\"lock\":false,\"pos\":{\"x\":-32,\"y\":1.84,\"z\":8.5},\"rot\":{\"x\":0,\"y\":180.0008,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"d8d644\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.5179,\"z\":11.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"daebef\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5166,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0001,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"de00a4\":{\"lock\":true,\"pos\":{\"x\":-8,\"y\":1.5181,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":180.0006,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00001\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0026,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00002\":{\"lock\":false,\"pos\":{\"x\":15.9997,\"y\":1.5171,\"z\":8.5},\"rot\":{\"x\":0.0109,\"y\":180.0027,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00003\":{\"lock\":false,\"pos\":{\"x\":-24,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":180.0012,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00004\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.517,\"z\":2.5},\"rot\":{\"x\":0.0109,\"y\":179.9999,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00005\":{\"lock\":false,\"pos\":{\"x\":-21,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":180,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00006\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5204,\"z\":20.5},\"rot\":{\"x\":0.0109,\"y\":179.9997,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00007\":{\"lock\":false,\"pos\":{\"x\":13.5,\"y\":1.517,\"z\":7},\"rot\":{\"x\":0.0109,\"y\":179.9991,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00008\":{\"lock\":false,\"pos\":{\"x\":-1,\"y\":1.5193,\"z\":12},\"rot\":{\"x\":0.0109,\"y\":179.9999,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00009\":{\"lock\":false,\"pos\":{\"x\":11,\"y\":1.5196,\"z\":19.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e0000b\":{\"lock\":false,\"pos\":{\"x\":-33,\"y\":1.8198,\"z\":3.4999},\"rot\":{\"x\":0,\"y\":179.9999,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e0000c\":{\"lock\":false,\"pos\":{\"x\":-33,\"y\":1.7836,\"z\":15},\"rot\":{\"x\":0,\"y\":179.9999,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e0000f\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.5836,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":179.9991,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e00010\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.5836,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"eb64f8\":{\"lock\":false,\"pos\":{\"x\":9,\"y\":1.5042,\"z\":9},\"rot\":{\"x\":359.9903,\"y\":300,\"z\":0.007},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"eb7f3a\":{\"lock\":false,\"pos\":{\"x\":17.501,\"y\":1.5408,\"z\":-6.0196},\"rot\":{\"x\":0.0109,\"y\":179.9967,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ecf2d9\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6028,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":180.0029,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ee2967\":{\"lock\":false,\"pos\":{\"x\":17.4838,\"y\":1.536,\"z\":-6.0195},\"rot\":{\"x\":0.0109,\"y\":179.9838,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ef3ac5\":{\"lock\":false,\"pos\":{\"x\":-4.5,\"y\":1.5186,\"z\":7},\"rot\":{\"x\":0.0109,\"y\":180.0001,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"efdb34\":{\"lock\":false,\"pos\":{\"x\":-11,\"y\":1.5201,\"z\":12},\"rot\":{\"x\":0.0109,\"y\":180.0003,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f14052\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.7836,\"z\":2.5},\"rot\":{\"x\":0,\"y\":180.0015,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f29c01\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5059,\"z\":16},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"f2f348\":{\"lock\":false,\"pos\":{\"x\":12.5011,\"y\":1.5316,\"z\":-6.0169},\"rot\":{\"x\":0.0109,\"y\":180.0012,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f7c30c\":{\"lock\":false,\"pos\":{\"x\":-34.5,\"y\":1.84,\"z\":3},\"rot\":{\"x\":0,\"y\":179.9893,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f93de1\":{\"lock\":false,\"pos\":{\"x\":3,\"y\":1.502,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0129,\"z\":0.005},\"tint\":{\"a\":1,\"b\":0.701960802078247,\"g\":0.800000011920929,\"r\":0.874509811401367}}}}",
       "XmlUI": "",
       "ContainedObjects": [
-        {
-          "GUID": "6fb132",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 33.0,
-            "posY": 1.57985973,
-            "posZ": 12.0,
-            "rotX": 1.70919847E-07,
-            "rotY": 179.9901,
-            "rotZ": 1.4015022E-07,
-            "scaleX": 3.17662668,
-            "scaleY": 1.0,
-            "scaleZ": 3.17662668
-          },
-          "Nickname": "Carnet de Campagne p.1",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "Tags": [
-            "CameraZoom_ignore",
-            "CampaignLog",
-            "CleanUpHelper_ignore"
-          ],
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": true,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1746813422552892356/271AF704E848C2542888FF3F9ED3583195A8CAF4/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.2,
-              "MergeDistancePixels": 15.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "-- Campaign Log: Cyclopean Foundations\r\n\r\n-- returns the trauma values for the investigators from left to right (4x physical, 4x mental)\r\nfunction returnTrauma()\r\n    local trauma = {}\r\n\r\n    -- physical trauma from left to right\r\n    trauma[1] = ref_buttonData.counter[2].value or 0\r\n    trauma[2] = ref_buttonData.counter[5].value or 0\r\n    trauma[3] = ref_buttonData.counter[8].value or 0\r\n    trauma[4] = ref_buttonData.counter[11].value or 0\r\n\r\n    -- mental trauma from left to right\r\n    trauma[5] = ref_buttonData.counter[3].value or 0\r\n    trauma[6] = ref_buttonData.counter[6].value or 0\r\n    trauma[7] = ref_buttonData.counter[9].value or 0\r\n    trauma[8] = ref_buttonData.counter[12].value or 0\r\n\r\n    return trauma\r\nend\r\n\r\n\r\n--Set this to true while editing and false when you have finished\r\ndisableSave = false\r\n--Remember to set this to false once you are done making changes\r\n--Then, after you save & apply it, save your game too\r\n\r\n--Color information for button text (r,g,b, values of 0-1)\r\nbuttonFontColor = {0,0,0,200}\r\n--Color information for button background\r\nbuttonColor = {1,1,1,0}\r\n--Change scale of button (Avoid changing if possible)\r\nbuttonScale = {0.1,0.1,0.1}\r\n\r\n--This is the button placement information\r\ndefaultButtonData = {\r\n    --Add checkboxes\r\n    checkbox = {\r\n        --[[\r\n        pos   = the position (pasted from the helper tool)\r\n        size  = height/width/font_size for checkbox\r\n        state = default starting value for checkbox (true=checked, false=not)\r\n        ]]\r\n        --End of checkboxes\r\n    },\r\n    --Add counters that have a + and - button\r\n    counter = {\r\n        --[[\r\n        pos    = the position (pasted from the helper tool)\r\n        size   = height/width/font_size for counter\r\n        value  = default starting value for counter\r\n        hideBG = if background of counter is hidden (true=hidden, false=not)\r\n        ]]\r\n        --1st Player Experience\r\n        {\r\n            pos    = {-1.080,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --1st Player Physical Trauma\r\n        {\r\n            pos    = {-1.270,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --1st Player Mental Trauma\r\n        {\r\n            pos    = {-1.000,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --2nd Player Experience\r\n        {\r\n            pos    = {-0.251,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --2nd Player Physical Trauma\r\n        {\r\n            pos    = {-0.441,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --2nd Player Mental Trauma\r\n        {\r\n            pos    = {-0.171,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --3rd Player Experience\r\n        {\r\n            pos    = {0.579,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --3rd Player Physical Trauma\r\n        {\r\n            pos    = {0.389,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --3rd Player Mental Trauma\r\n        {\r\n            pos    = {0.659,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --4th Player Experience\r\n        {\r\n            pos    = {1.407,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --4th Player Physical Trauma\r\n        {\r\n            pos    = {1.217,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --4th Player Mental Trauma\r\n        {\r\n            pos    = {1.487,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n       --End of counters\r\n    },\r\n    --Add editable text boxes\r\n    textbox = {\r\n        --[[\r\n        pos       = the position (pasted from the helper tool)\r\n        rows      = how many lines of text you want for this box\r\n        width     = how wide the text box is\r\n        font_size = size of text. This and \"rows\" effect overall height\r\n        label     = what is shown when there is no text. \"\" = nothing\r\n        value     = text entered into box. \"\" = nothing\r\n        alignment = Number to indicate how you want text aligned\r\n                    (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)\r\n        ]]\r\n        --1st Player Name\r\n        {\r\n            pos       = {-1.265,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --1st Player Investigator\r\n        {\r\n            pos       = {-1.265,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --1st Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {-1.265,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --2nd Player Name\r\n        {\r\n            pos       = {-0.436,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --2nd Player Investigator\r\n        {\r\n            pos       = {-0.436,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --2nd Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {-0.436,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --3rd Player Name\r\n        {\r\n            pos       = {0.394,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --3rd Player Investigator\r\n        {\r\n            pos       = {0.394,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --3rd Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {0.394,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --4th Player Name\r\n        {\r\n            pos       = {1.222,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --4th Player Investigator\r\n        {\r\n            pos       = {1.222,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --4th Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {1.222,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --Campaign Notes 1\r\n        {\r\n            pos       = {-0.930,0.1,0.982},\r\n            rows      = 25,\r\n            width     = 7800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n\t    rot       = { x=0, y=-4, z=0 },\r\n            alignment = 2\r\n        },\r\n        --Campaign Notes 2\r\n        {\r\n            pos       = {0.820,0.1,0.707},\r\n            rows      = 20,\r\n            width     = 7800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n\t    rot       = { x=0, y=-4, z=0 },\r\n            alignment = 2\r\n        },\r\n        --Killed and Insane Investigators\r\n        {\r\n            pos       = {1.010,0.1,1.700},\r\n            rows      = 5,\r\n            width     = 7400,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --End of textboxes\r\n    }\r\n}\r\n\r\n\r\n\r\n--Lua beyond this point, I recommend doing something more fun with your life\r\n\r\n\r\n\r\n--Save function\r\nfunction updateSave()\r\n    saved_data = JSON.encode(ref_buttonData)\r\n    if disableSave==true then saved_data=\"\" end\r\n    self.script_state = saved_data\r\nend\r\n\r\n--Startup procedure\r\nfunction onload(saved_data)\r\n    if disableSave==true then saved_data=\"\" end\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        ref_buttonData = loaded_data\r\n    else\r\n        ref_buttonData = defaultButtonData\r\n    end\r\n\r\n    spawnedButtonCount = 0\r\n    createCheckbox()\r\n    createCounter()\r\n    createTextbox()\r\nend\r\n\r\n\r\n\r\n--Click functions for buttons\r\n\r\n\r\n\r\n--Checks or unchecks the given box\r\nfunction click_checkbox(tableIndex, buttonIndex)\r\n    if ref_buttonData.checkbox[tableIndex].state == true then\r\n        ref_buttonData.checkbox[tableIndex].state = false\r\n        self.editButton({index=buttonIndex, label=\"\"})\r\n    else\r\n        ref_buttonData.checkbox[tableIndex].state = true\r\n        self.editButton({index=buttonIndex, label=string.char(10008)})\r\n    end\r\n    updateSave()\r\nend\r\n\r\n--Applies value to given counter display\r\nfunction click_counter(tableIndex, buttonIndex, amount)\r\n    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount\r\n    self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})\r\n    updateSave()\r\nend\r\n\r\n--Updates saved value for given text box\r\nfunction click_textbox(i, value, selected)\r\n    if selected == false then\r\n        ref_buttonData.textbox[i].value = value\r\n        updateSave()\r\n    end\r\nend\r\n\r\n--Dud function for if you have a background on a counter\r\nfunction click_none() end\r\n\r\n\r\n\r\n--Button creation\r\n\r\n\r\n\r\n--Makes checkboxes\r\nfunction createCheckbox()\r\n    for i, data in ipairs(ref_buttonData.checkbox) do\r\n        --Sets up reference function\r\n        local buttonNumber = spawnedButtonCount\r\n        local funcName = \"checkbox\"..i\r\n        local func = function() click_checkbox(i, buttonNumber) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"\"\r\n        if data.state==true then label=string.char(10008) end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=data.pos, height=data.size, width=data.size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\n--Makes counters\r\nfunction createCounter()\r\n    for i, data in ipairs(ref_buttonData.counter) do\r\n        --Sets up display\r\n        local displayNumber = spawnedButtonCount\r\n        --Sets up label\r\n        local label = data.value\r\n        --Sets height/width for display\r\n        local size = data.size\r\n        if data.hideBG == true then size = 0 end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=\"click_none\", function_owner=self,\r\n            position=data.pos, height=size, width=size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up add 1\r\n        local funcName = \"counterAdd\"..i\r\n        local func = function() click_counter(i, displayNumber, 1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"+\"\r\n        --Sets up position\r\n        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)\r\n        local pos = {data.pos[1] + offsetDistance, data.pos[2], data.pos[3]}\r\n        --Sets up size\r\n        local size = data.size / 2\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up subtract 1\r\n        local funcName = \"counterSub\"..i\r\n        local func = function() click_counter(i, displayNumber, -1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"-\"\r\n        --Set up position\r\n        local pos = {data.pos[1] - offsetDistance, data.pos[2], data.pos[3]}\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\nfunction createTextbox()\r\n    for i, data in ipairs(ref_buttonData.textbox) do\r\n        --Sets up reference function\r\n        local funcName = \"textbox\"..i\r\n        local func = function(_,_,val,sel) click_textbox(i,val,sel) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createInput({\r\n            input_function = funcName,\r\n            function_owner = self,\r\n            label          = data.label,\r\n            alignment      = data.alignment,\r\n            position       = data.pos,\r\n            scale          = buttonScale,\r\n            width          = data.width,\r\n            height         = (data.font_size*data.rows)+24,\r\n            font_size      = data.font_size,\r\n            color          = buttonColor,\r\n            font_color     = { 0.211, 0.360, 0.435, 255 },\r\n            value          = data.value,\r\n\t    rotation\t   = data.rot or {x=0, y=0, z=0},\r\n        })\r\n    end\r\nend\r\n",
-          "LuaScriptState": "{\"checkbox\":[],\"counter\":[{\"hideBG\":true,\"pos\":[-1.08,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[-1.27,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[-1,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[-0.251,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[-0.441,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[-0.171,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[0.579,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[0.389,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[0.659,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[1.407,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[1.217,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[1.487,0.1,-0.79],\"size\":600,\"value\":0}],\"textbox\":[{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-1.265,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-1.265,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-1.265,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.436,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.436,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.436,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.394,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.394,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.394,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.222,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.222,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.222,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.93,0.1,0.982],\"rot\":{\"x\":0,\"y\":-4,\"z\":0},\"rows\":25,\"value\":\"\\nHumaoïde. Monstre. Profond.\\n\",\"width\":7800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.82,0.1,0.707],\"rot\":{\"x\":0,\"y\":-4,\"z\":0},\"rows\":20,\"value\":\"\",\"width\":7800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.01,0.1,1.7],\"rows\":5,\"value\":\"\",\"width\":7400}]}",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "afe00c",
-              "Name": "Custom_Token",
-              "Transform": {
-                "posX": 25.49821,
-                "posY": 1.60411906,
-                "posZ": 16.0001488,
-                "rotX": 0.0108922422,
-                "rotY": 179.9901,
-                "rotZ": 0.00494619552,
-                "scaleX": 3.17662668,
-                "scaleY": 1.0,
-                "scaleZ": 3.17662668
-              },
-              "Nickname": "Carnet de Campagne p.2",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 1.0,
-                "g": 1.0,
-                "b": 1.0
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1746813561756453431/F430752BBFBB38B8BD332A3A35E81ED6CD670FC8/",
-                "ImageSecondaryURL": "",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomToken": {
-                  "Thickness": 0.2,
-                  "MergeDistancePixels": 15.0,
-                  "StandUp": false,
-                  "Stackable": false
-                }
-              },
-              "LuaScript": "\t--[[    Character Sheet Template    by: MrStump\r\n\r\nYou can set up your own character sheet if you follow these steps.\r\n\r\nStep 1) Change the character sheet image\r\n    -Right click on the character sheet, click Custom\r\n    -Replace the image URL with one for your character sheet\r\n    -Click import, make sure your sheet loads\r\n    -SAVE THE GAME (the table setup)\r\n    -LOAD FROM THAT SAVE YOU JUST MADE\r\n\r\nStep 2) Edit script to fit your character sheet\r\n    -Below you will see some general options, and then the big data table\r\n    -The data table is what determines how many of which buttons are made\r\n        -Checkboxes\r\n        -Counters\r\n        -Textboxes\r\n    -By default, there are 3 of each. You can add more or remove entries\r\n    -If you intend to add/remove, be sure only to add/remove ENTRIES\r\n        -This is what an entry looks like:\r\n            {\r\n                pos   = {-0.977,0.1,-0.589},\r\n                size  = 800,\r\n                state = false\r\n            },\r\n        -Deleting the whole thing would remove that specific item on the sheet\r\n        -Copy and pasting it after another entry would create another\r\n    -Each entry type has unique data points (pos, size, state, etc)\r\n        -Do not try to add in your own data points or remove them individually\r\n        -There is a summary of what each point does at the top of its category\r\n\r\nStep 3) Save and check script changes\r\n    -Hit Save & Apply in the script window to save your code\r\n    -You can edit your code as needed and Save+Apply as often as needed\r\n    -When you are finished, make disableSave = false below then Save+apply\r\n        -This enables saving, so your sheet will remember whats on it.\r\n\r\nBonus) Finding/Editing Positions for elements\r\n    I have included a tool to get positions for buttons in {x,y,z} form\r\n    Place it where you want the center of your element to be\r\n    Then copy the table from the notes (lower right of screen)\r\n        You can highlight it and CTRL+C\r\n    Paste it into the data table where needed (pos=)\r\n    If you want to manually tweek the values:\r\n        {0,0,0} is the center of the character sheet\r\n        {1,0,0} is right, {-1,0,0} is left\r\n        {0,0,-1} is up, {0,0,1} is down\r\n        0.1 for Y is the height off of the page.\r\n            If it was 0, it would be down inside the model of the sheet\r\n\r\nBegin editing below:    ]]\r\n\r\n--Set this to true while editing and false when you have finished\r\ndisableSave = false\r\n--Remember to set this to false once you are done making changes\r\n--Then, after you save & apply it, save your game too\r\n\r\n--Color information for button text (r,g,b, values of 0-1)\r\nbuttonFontColor = {0,0,0,200}\r\n--Color information for button background\r\nbuttonColor = {1,1,1,0}\r\n--Change scale of button (Avoid changing if possible)\r\nbuttonScale = {0.1,0.1,0.1}\r\n\r\n--This is the button placement information\r\ndefaultButtonData = {\r\n    --Add checkboxes\r\n    checkbox = {\r\n        --[[\r\n        pos   = the position (pasted from the helper tool)\r\n        size  = height/width/font_size for checkbox\r\n        state = default starting value for checkbox (true=checked, false=not)\r\n        ]]\r\n        --Prologue\r\n        {\r\n            pos   = {-1.756,0.1,-1.435},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Lost Moorings\r\n        {\r\n            pos   = {-1.736,0.1,-1.232},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Going Twice\r\n        {\r\n            pos   = {-1.721,0.1,-0.987},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Private Lives\r\n        {\r\n            pos   = {-1.719,0.1,-0.77},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Crumbling Masonry\r\n        {\r\n            pos   = {-1.715,0.1,-0.545},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --A House Divided\r\n        {\r\n            pos   = {-1.702,0.1,-0.328},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Across Dreadful Waters\r\n        {\r\n            pos   = {-1.688,0.1,-0.086},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Blood From Stones\r\n        {\r\n            pos   = {-1.679,0.1,0.166},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Pyroclastic Flow\r\n        {\r\n            pos   = {-1.663,0.1,0.445},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Tomb of Dead Dreams\r\n        {\r\n            pos   = {-1.643,0.1,0.677},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Epilogue\r\n        {\r\n            pos   = {-1.632,0.1,0.948},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --End of checkboxes\r\n    },\r\n    --Add counters that have a + and - button\r\n    counter = {\r\n        --[[\r\n        pos    = the position (pasted from the helper tool)\r\n        size   = height/width/font_size for counter\r\n        value  = default starting value for counter\r\n        hideBG = if background of counter is hidden (true=hidden, false=not)\r\n        ]]\r\n        --Notice\r\n        {\r\n            pos    = {-0.399,0.1,-1.399},\r\n            size   = 1500,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --End of counters\r\n    },\r\n    --Add editable text boxes\r\n    textbox = {\r\n        --[[\r\n        pos       = the position (pasted from the helper tool)\r\n        rows      = how many lines of text you want for this box\r\n        width     = how wide the text box is\r\n        font_size = size of text. This and \"rows\" effect overall height\r\n        label     = what is shown when there is no text. \"\" = nothing\r\n        value     = text entered into box. \"\" = nothing\r\n        alignment = Number to indicate how you want text aligned\r\n                    (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)\r\n        ]]\r\n        --Cultists Alive\r\n        {\r\n            pos       = {0.543,0.1,-1.447},\r\n            rows      = 5,\r\n            width     = 3700,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --Cultists Killed\r\n        {\r\n            pos       = {1.404,0.1,-1.418},\r\n            rows      = 6,\r\n            width     = 4000,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --End of textboxes\r\n    }\r\n}\r\n\r\n\r\n\r\n--Lua beyond this point, I recommend doing something more fun with your life\r\n\r\n\r\n\r\n--Save function\r\nfunction updateSave()\r\n    saved_data = JSON.encode(ref_buttonData)\r\n    if disableSave==true then saved_data=\"\" end\r\n    self.script_state = saved_data\r\nend\r\n\r\n--Startup procedure\r\nfunction onload(saved_data)\r\n    if disableSave==true then saved_data=\"\" end\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        ref_buttonData = loaded_data\r\n    else\r\n        ref_buttonData = defaultButtonData\r\n    end\r\n\r\n    spawnedButtonCount = 0\r\n    createCheckbox()\r\n    createCounter()\r\n    createTextbox()\r\nend\r\n\r\n\r\n\r\n--Click functions for buttons\r\n\r\n\r\n\r\n--Checks or unchecks the given box\r\nfunction click_checkbox(tableIndex, buttonIndex)\r\n    if ref_buttonData.checkbox[tableIndex].state == true then\r\n        ref_buttonData.checkbox[tableIndex].state = false\r\n        self.editButton({index=buttonIndex, label=\"\"})\r\n    else\r\n        ref_buttonData.checkbox[tableIndex].state = true\r\n        self.editButton({index=buttonIndex, label=string.char(10008)})\r\n    end\r\n    updateSave()\r\nend\r\n\r\n--Applies value to given counter display\r\nfunction click_counter(tableIndex, buttonIndex, amount)\r\n    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount\r\n    self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})\r\n    updateSave()\r\nend\r\n\r\n--Updates saved value for given text box\r\nfunction click_textbox(i, value, selected)\r\n    if selected == false then\r\n        ref_buttonData.textbox[i].value = value\r\n        updateSave()\r\n    end\r\nend\r\n\r\n--Dud function for if you have a background on a counter\r\nfunction click_none() end\r\n\r\n\r\n\r\n--Button creation\r\n\r\n\r\n\r\n--Makes checkboxes\r\nfunction createCheckbox()\r\n    for i, data in ipairs(ref_buttonData.checkbox) do\r\n        --Sets up reference function\r\n        local buttonNumber = spawnedButtonCount\r\n        local funcName = \"checkbox\"..i\r\n        local func = function() click_checkbox(i, buttonNumber) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"\"\r\n        if data.state==true then label=string.char(10008) end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=data.pos, height=data.size, width=data.size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\n--Makes counters\r\nfunction createCounter()\r\n    for i, data in ipairs(ref_buttonData.counter) do\r\n        --Sets up display\r\n        local displayNumber = spawnedButtonCount\r\n        --Sets up label\r\n        local label = data.value\r\n        --Sets height/width for display\r\n        local size = data.size\r\n        if data.hideBG == true then size = 0 end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=\"click_none\", function_owner=self,\r\n            position=data.pos, height=size, width=size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up add 1\r\n        local funcName = \"counterAdd\"..i\r\n        local func = function() click_counter(i, displayNumber, 1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"+\"\r\n        --Sets up position\r\n        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)\r\n        local pos = {data.pos[1] + offsetDistance, data.pos[2], data.pos[3]}\r\n        --Sets up size\r\n        local size = data.size / 2\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up subtract 1\r\n        local funcName = \"counterSub\"..i\r\n        local func = function() click_counter(i, displayNumber, -1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"-\"\r\n        --Set up position\r\n        local pos = {data.pos[1] - offsetDistance, data.pos[2], data.pos[3]}\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\nfunction createTextbox()\r\n    for i, data in ipairs(ref_buttonData.textbox) do\r\n        --Sets up reference function\r\n        local funcName = \"textbox\"..i\r\n        local func = function(_,_,val,sel) click_textbox(i,val,sel) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createInput({\r\n            input_function = funcName,\r\n            function_owner = self,\r\n            label          = data.label,\r\n            alignment      = data.alignment,\r\n            position       = data.pos,\r\n            scale          = buttonScale,\r\n            width          = data.width,\r\n            height         = (data.font_size*data.rows)+24,\r\n            font_size      = data.font_size,\r\n            color          = buttonColor,\r\n            font_color     = { 0.211, 0.360, 0.435, 255 },\r\n            value          = data.value,\r\n\t    rotation\t   = data.rot or {x=0, y=0, z=0},\r\n\r\n        })\r\n    end\r\nend\r\n",
-              "LuaScriptState": "{\"checkbox\":[{\"pos\":[-1.756,0.1,-1.435],\"size\":600,\"state\":false},{\"pos\":[-1.736,0.1,-1.232],\"size\":600,\"state\":false},{\"pos\":[-1.721,0.1,-0.987],\"size\":600,\"state\":false},{\"pos\":[-1.719,0.1,-0.77],\"size\":600,\"state\":false},{\"pos\":[-1.715,0.1,-0.545],\"size\":600,\"state\":false},{\"pos\":[-1.702,0.1,-0.328],\"size\":600,\"state\":false},{\"pos\":[-1.688,0.1,-0.086],\"size\":600,\"state\":false},{\"pos\":[-1.679,0.1,0.166],\"size\":600,\"state\":false},{\"pos\":[-1.663,0.1,0.445],\"size\":600,\"state\":false},{\"pos\":[-1.643,0.1,0.677],\"size\":600,\"state\":false},{\"pos\":[-1.632,0.1,0.948],\"size\":600,\"state\":false}],\"counter\":[{\"hideBG\":true,\"pos\":[-0.399,0.1,-1.399],\"size\":1500,\"value\":0}],\"textbox\":[{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.543,0.1,-1.447],\"rows\":5,\"value\":\"\",\"width\":3700},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.404,0.1,-1.418],\"rows\":6,\"value\":\"\",\"width\":4000}]}",
-              "XmlUI": ""
-            }
-          }
-        },
         {
           "GUID": "34b9e3",
           "Name": "Custom_Model_Bag",
@@ -196,9 +75,9 @@
             "posX": 3.49999881,
             "posY": 0.979997158,
             "posZ": 47.4999962,
-            "rotX": -4.76940477E-06,
+            "rotX": -4.810246E-06,
             "rotY": 179.9971,
-            "rotZ": 1.06363632E-06,
+            "rotZ": 1.02336526E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -11826,9 +11705,9 @@
             "posX": 8.5,
             "posY": 0.979997158,
             "posZ": 47.5,
-            "rotX": -5.01539171E-06,
+            "rotX": -5.02066223E-06,
             "rotY": 179.9969,
-            "rotZ": 5.772476E-07,
+            "rotZ": 5.641234E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -11914,12 +11793,12 @@
           "GUID": "4e84af",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -11.5,
+            "posX": -11.499999,
             "posY": 0.9799974,
-            "posZ": 47.5,
-            "rotX": -4.92523441E-06,
-            "rotY": 179.996979,
-            "rotZ": 1.893826E-07,
+            "posZ": 47.5000038,
+            "rotX": -5.39127859E-06,
+            "rotY": 179.997009,
+            "rotZ": 2.200027E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -11984,11 +11863,11 @@
               "GUID": "00941c",
               "Name": "Card",
               "Transform": {
-                "posX": -20.50002,
+                "posX": -20.5000248,
                 "posY": 1.78360593,
-                "posZ": 4.499984,
-                "rotX": -5.196204E-06,
-                "rotY": 179.999832,
+                "posZ": 4.499976,
+                "rotX": -4.89410058E-06,
+                "rotY": 179.999786,
                 "rotZ": 180.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -12046,10 +11925,10 @@
               "Name": "Custom_Tile",
               "Transform": {
                 "posX": 12.499999,
-                "posY": 1.50277042,
-                "posZ": 3.0,
-                "rotX": 0.00494788773,
-                "rotY": 90.0001,
+                "posY": 1.5027703,
+                "posZ": 2.99999976,
+                "rotX": 0.00494762836,
+                "rotY": 90.00012,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -12215,6 +12094,68 @@
               }
             },
             {
+              "GUID": "0e1162",
+              "Name": "Card",
+              "Transform": {
+                "posX": 8.000104,
+                "posY": 1.52018535,
+                "posZ": 20.9999962,
+                "rotX": 0.0108915251,
+                "rotY": 180.000015,
+                "rotZ": 180.004959,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "La Truite Éventrée",
+              "Description": "Arkham",
+              "GMNotes": "{\"id\":\"eb344f4c-d5cb-49a1-92a6-624a622a7781\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"Arno Pro\\\"><size 8>Arkham.</family></size>\",\"locationFront\":{\"icons\":\"Heart\",\"connections\":\"Triangle|Slash\",\"uses\":[{\"countPerInvestigator\":2,\"token\":\"clue\",\"type\":\"Clue\"}]},\"locationBack\":{\"icons\":\"Heart\",\"connections\":\"Triangle|Slash\"},\"TtsZoopGuid\":\"eb344f4c-d5cb-49a1-92a6-624a622a7781\"}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "Tags": [
+                "Location",
+                "ScenarioCard"
+              ],
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": true,
+              "CardID": 1122200,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "11222": {
+                  "FaceURL": "https://i.imgur.com/H7EFxVu.jpeg",
+                  "BackURL": "https://i.imgur.com/BjZioXm.jpeg",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": true,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
               "GUID": "1b5073",
               "Name": "Custom_Tile",
               "Transform": {
@@ -12222,8 +12163,8 @@
                 "posY": 1.50409257,
                 "posZ": 12.0,
                 "rotX": 359.9891,
-                "rotY": 0.0106202336,
-                "rotZ": -0.00495333364,
+                "rotY": 0.0106202327,
+                "rotZ": -0.004953019,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 4.0
@@ -12391,11 +12332,11 @@
               "GUID": "532c24",
               "Name": "Card",
               "Transform": {
-                "posX": -1.00000215,
+                "posX": -1.00000334,
                 "posY": 1.51754093,
                 "posZ": 3.0,
-                "rotX": 0.01089159,
-                "rotY": 179.999741,
+                "rotX": 0.0108915288,
+                "rotY": 179.99971,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -12453,12 +12394,12 @@
               "GUID": "61f518",
               "Name": "Deck",
               "Transform": {
-                "posX": 12.5011053,
+                "posX": 12.501112,
                 "posY": 1.53642869,
-                "posZ": -6.0169,
-                "rotX": 0.0108916685,
-                "rotY": 180.0005,
-                "rotZ": 0.0049483655,
+                "posZ": -6.016899,
+                "rotX": 0.0108918389,
+                "rotY": 180.000366,
+                "rotZ": 0.00494831055,
                 "scaleX": 0.714285731,
                 "scaleY": 1.0,
                 "scaleZ": 0.714285731
@@ -12898,8 +12839,8 @@
                 "posY": 1.50401437,
                 "posZ": 7.5,
                 "rotX": 359.9891,
-                "rotY": 0.0105209909,
-                "rotZ": -0.00495403027,
+                "rotY": 0.0105209257,
+                "rotZ": -0.00495463423,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -13243,9 +13184,9 @@
                 "posX": 12.5,
                 "posY": 1.50533652,
                 "posZ": 16.5,
-                "rotX": 0.004203062,
-                "rotY": 225.000031,
-                "rotZ": 0.01120425,
+                "rotX": 0.00420296565,
+                "rotY": 225.000046,
+                "rotZ": 0.0112042772,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -13416,9 +13357,9 @@
                 "posX": -22.5008,
                 "posY": 1.84000051,
                 "posZ": 10.499898,
-                "rotX": -5.02913326E-06,
-                "rotY": 180.030869,
-                "rotZ": -1.35801784E-07,
+                "rotX": -6.53182633E-06,
+                "rotY": 180.030914,
+                "rotZ": -2.4059382E-08,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -14193,9 +14134,9 @@
                 "posX": 3.5,
                 "posY": 1.50354755,
                 "posZ": 2.999999,
-                "rotX": -0.00494782627,
+                "rotX": -0.004947735,
                 "rotY": 270.0001,
-                "rotZ": 0.0108980807,
+                "rotZ": 0.0108976094,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -14365,8 +14306,8 @@
               "Transform": {
                 "posX": 30.5,
                 "posY": 1.6702342,
-                "posZ": -2.9971,
-                "rotX": -0.000590866955,
+                "posZ": -2.99710035,
+                "rotX": -0.0005908938,
                 "rotY": 180.0,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -14405,10 +14346,10 @@
                 1119600,
                 100600,
                 100700,
-                100900,
-                100800,
                 1119700,
                 1119800,
+                100200,
+                100100,
                 1119900,
                 1120000,
                 1118700,
@@ -14462,24 +14403,6 @@
                   "UniqueBack": false,
                   "Type": 0
                 },
-                "1009": {
-                  "FaceURL": "https://i.imgur.com/zxzsm8T.jpeg",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                  "NumWidth": 1,
-                  "NumHeight": 1,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                },
-                "1008": {
-                  "FaceURL": "https://i.imgur.com/hqSwnrV.jpeg",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                  "NumWidth": 1,
-                  "NumHeight": 1,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                },
                 "11197": {
                   "FaceURL": "https://i.imgur.com/DIihMO0.jpeg",
                   "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
@@ -14491,6 +14414,24 @@
                 },
                 "11198": {
                   "FaceURL": "https://i.imgur.com/plwUUVf.jpeg",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                },
+                "1002": {
+                  "FaceURL": "https://i.imgur.com/WWu4HK5.jpeg",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                },
+                "1001": {
+                  "FaceURL": "https://i.imgur.com/jXuQltO.jpeg",
                   "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
                   "NumWidth": 1,
                   "NumHeight": 1,
@@ -14903,128 +14844,6 @@
                   "XmlUI": ""
                 },
                 {
-                  "GUID": "e0000a",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -33.50001,
-                    "posY": 1.7836026,
-                    "posZ": 10.9999895,
-                    "rotX": 2.41365851E-05,
-                    "rotY": 180.000885,
-                    "rotZ": -0.000186156365,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Traqueur Englouti",
-                  "Description": "",
-                  "GMNotes": "{\"id\":\"48e46760-7659-4335-ab38-9539878229f3\",\"type\":\"Enemy\",\"class\":\"Mythos\",\"traits\":\"<family \\\"Arno Pro\\\"><size 8>Humano�de. Monstre. Profond.</family></size>\",\"TtsZoopGuid\":\"48e46760-7659-4335-ab38-9539878229f3\"}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100900,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1009": {
-                      "FaceURL": "https://i.imgur.com/zxzsm8T.jpeg",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "e00009",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -33.5,
-                    "posY": 1.829386,
-                    "posZ": 11.0,
-                    "rotX": -0.000446160557,
-                    "rotY": 180.000946,
-                    "rotZ": -0.000220310918,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Traqueur Englouti",
-                  "Description": "",
-                  "GMNotes": "{\"id\":\"840c74da-316a-47d9-95b7-d6d847d52392\",\"type\":\"Enemy\",\"class\":\"Mythos\",\"traits\":\"<family \\\"Arno Pro\\\"><size 8>Humano�de. Monstre. Profond.</family></size>\",\"TtsZoopGuid\":\"840c74da-316a-47d9-95b7-d6d847d52392\"}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100800,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1008": {
-                      "FaceURL": "https://i.imgur.com/hqSwnrV.jpeg",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
                   "GUID": "e00004",
                   "Name": "Card",
                   "Transform": {
@@ -15134,6 +14953,128 @@
                   "CustomDeck": {
                     "1004": {
                       "FaceURL": "https://i.imgur.com/plwUUVf.jpeg",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "e00003",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 30.07885,
+                    "posY": 2.504066,
+                    "posZ": 20.6616478,
+                    "rotX": 0.0108915353,
+                    "rotY": 180.0,
+                    "rotZ": 0.00494821,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Traqueur Englouti",
+                  "Description": "Humanoïde. Monstre. Profond.",
+                  "GMNotes": "{\"id\":\"11bba939-89ea-4de5-a10e-42234f98eee1\",\"type\":\"Enemy\",\"class\":\"Mythos\",\"traits\":\"<family \\\"Arno Pro\\\"><size 8>Humano�de. Monstre. Profond.</family></size>\",\"TtsZoopGuid\":\"11bba939-89ea-4de5-a10e-42234f98eee1\"}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100200,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1002": {
+                      "FaceURL": "https://i.imgur.com/WWu4HK5.jpeg",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "f13062",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 32.57885,
+                    "posY": 2.50385,
+                    "posZ": 20.66164,
+                    "rotX": 0.0108914468,
+                    "rotY": 180.0,
+                    "rotZ": 0.00494830264,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Traqueur Englouti",
+                  "Description": "Humanoïde. Monstre. Profond.",
+                  "GMNotes": "{\"id\":\"e4fb7e25-060a-4b7f-989f-eeeef30c3bf1\",\"type\":\"Enemy\",\"class\":\"Mythos\",\"traits\":\"<family \\\"Arno Pro\\\"><size 8>Humano�de. Monstre. Profond.</family></size>\",\"TtsZoopGuid\":\"e4fb7e25-060a-4b7f-989f-eeeef30c3bf1\"}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100100,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1001": {
+                      "FaceURL": "https://i.imgur.com/jXuQltO.jpeg",
                       "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
                       "NumWidth": 1,
                       "NumHeight": 1,
@@ -16616,11 +16557,11 @@
               "GUID": "a9a90f",
               "Name": "Card",
               "Transform": {
-                "posX": 17.0,
+                "posX": 17.0000076,
                 "posY": 1.51598644,
-                "posZ": 2.99999952,
-                "rotX": 0.0108915418,
-                "rotY": 180.0,
+                "posZ": 3.00000048,
+                "rotX": 0.0108915186,
+                "rotY": 179.999741,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -16681,9 +16622,9 @@
                 "posX": 17.501,
                 "posY": 1.53599644,
                 "posZ": -6.0196,
-                "rotX": 0.010891933,
-                "rotY": 179.999237,
-                "rotZ": 0.0049481215,
+                "rotX": 0.0108917765,
+                "rotY": 179.999222,
+                "rotZ": 0.00494807865,
                 "scaleX": 0.714285731,
                 "scaleY": 1.0,
                 "scaleZ": 0.714285731
@@ -16949,9 +16890,9 @@
                 "posX": 12.5,
                 "posY": 1.50362575,
                 "posZ": 7.5,
-                "rotX": 0.0112006292,
+                "rotX": 0.0112006618,
                 "rotY": 134.999954,
-                "rotZ": -0.00420417031,
+                "rotZ": -0.00420376845,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -17122,7 +17063,7 @@
                 "posX": 3.50000048,
                 "posY": 1.504403,
                 "posZ": 7.5,
-                "rotX": -0.00420056144,
+                "rotX": -0.00420061965,
                 "rotY": 45.01278,
                 "rotZ": 359.9888,
                 "scaleX": 1.0,
@@ -17292,12 +17233,12 @@
               "GUID": "e00001",
               "Name": "Card",
               "Transform": {
-                "posX": 23.501297,
+                "posX": 23.5012989,
                 "posY": 1.51380479,
-                "posZ": -5.523001,
-                "rotX": 0.01089134,
-                "rotY": 180.001373,
-                "rotZ": 0.00494846143,
+                "posZ": -5.523006,
+                "rotX": 0.0108914133,
+                "rotY": 180.0015,
+                "rotZ": 0.00494862,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -17353,11 +17294,11 @@
               "GUID": "e00002",
               "Name": "Card",
               "Transform": {
-                "posX": -25.0000286,
+                "posX": -25.00004,
                 "posY": 1.78360593,
-                "posZ": 4.49997473,
-                "rotX": -5.01549448E-06,
-                "rotY": 180.000427,
+                "posZ": 4.49995852,
+                "rotX": -5.10451446E-06,
+                "rotY": 180.000443,
                 "rotZ": 180.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -17417,8 +17358,8 @@
                 "posX": 8.0,
                 "posY": 1.51676369,
                 "posZ": 2.99999976,
-                "rotX": 0.0108915353,
-                "rotY": 180.000031,
+                "rotX": 0.0108915493,
+                "rotY": 179.999985,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -17477,10 +17418,10 @@
               "Name": "Card",
               "Transform": {
                 "posX": 17.0000019,
-                "posY": 1.519408,
+                "posY": 1.51940811,
                 "posZ": 21.0,
-                "rotX": 0.0108915446,
-                "rotY": 180.000015,
+                "rotX": 0.0108915726,
+                "rotY": 179.999939,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -17538,11 +17479,11 @@
               "GUID": "e00007",
               "Name": "Card",
               "Transform": {
-                "posX": 7.99999952,
+                "posX": 8.0,
                 "posY": 1.51847446,
                 "posZ": 12.0,
-                "rotX": 0.01089155,
-                "rotY": 180.0,
+                "rotX": 0.0108915726,
+                "rotY": 180.000031,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -17585,68 +17526,6 @@
                 "11152": {
                   "FaceURL": "https://i.imgur.com/RAcjciQ.jpeg",
                   "BackURL": "https://i.imgur.com/gDjDEwK.jpeg",
-                  "NumWidth": 1,
-                  "NumHeight": 1,
-                  "BackIsHidden": true,
-                  "UniqueBack": true,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            {
-              "GUID": "0e1162",
-              "Name": "Card",
-              "Transform": {
-                "posX": 8.00006,
-                "posY": 1.52018535,
-                "posZ": 20.9999638,
-                "rotX": 0.01089148,
-                "rotY": 180.000015,
-                "rotZ": 180.004959,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "La Truite Éventrée",
-              "Description": "Arkham",
-              "GMNotes": "{\"id\":\"eb344f4c-d5cb-49a1-92a6-624a622a7781\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"Arno Pro\\\"><size 8>Arkham.</family></size>\",\"locationFront\":{\"icons\":\"Heart\",\"connections\":\"Triangle|Slash\",\"uses\":[{\"countPerInvestigator\":2,\"token\":\"clue\",\"type\":\"Clue\"}]},\"locationBack\":{\"icons\":\"Heart\",\"connections\":\"Triangle|Slash\"},\"TtsZoopGuid\":\"eb344f4c-d5cb-49a1-92a6-624a622a7781\"}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "Tags": [
-                "Location",
-                "ScenarioCard"
-              ],
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": true,
-              "CardID": 1122200,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "11222": {
-                  "FaceURL": "https://i.imgur.com/H7EFxVu.jpeg",
-                  "BackURL": "https://i.imgur.com/BjZioXm.jpeg",
                   "NumWidth": 1,
                   "NumHeight": 1,
                   "BackIsHidden": true,
@@ -17770,6 +17649,127 @@
               }
             }
           ]
+        },
+        {
+          "GUID": "6fb132",
+          "Name": "Custom_Token",
+          "Transform": {
+            "posX": 33.0,
+            "posY": 1.57985973,
+            "posZ": 12.0,
+            "rotX": 1.67569269E-07,
+            "rotY": 179.9901,
+            "rotZ": 1.5128623E-07,
+            "scaleX": 3.17662668,
+            "scaleY": 1.0,
+            "scaleZ": 3.17662668
+          },
+          "Nickname": "Carnet de Campagne p.1",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "Tags": [
+            "CameraZoom_ignore",
+            "CampaignLog",
+            "CleanUpHelper_ignore"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomImage": {
+            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1746813422552892356/271AF704E848C2542888FF3F9ED3583195A8CAF4/",
+            "ImageSecondaryURL": "",
+            "ImageScalar": 1.0,
+            "WidthScale": 0.0,
+            "CustomToken": {
+              "Thickness": 0.2,
+              "MergeDistancePixels": 15.0,
+              "StandUp": false,
+              "Stackable": false
+            }
+          },
+          "LuaScript": "-- Campaign Log: Cyclopean Foundations\r\n\r\n-- returns the trauma values for the investigators from left to right (4x physical, 4x mental)\r\nfunction returnTrauma()\r\n    local trauma = {}\r\n\r\n    -- physical trauma from left to right\r\n    trauma[1] = ref_buttonData.counter[2].value or 0\r\n    trauma[2] = ref_buttonData.counter[5].value or 0\r\n    trauma[3] = ref_buttonData.counter[8].value or 0\r\n    trauma[4] = ref_buttonData.counter[11].value or 0\r\n\r\n    -- mental trauma from left to right\r\n    trauma[5] = ref_buttonData.counter[3].value or 0\r\n    trauma[6] = ref_buttonData.counter[6].value or 0\r\n    trauma[7] = ref_buttonData.counter[9].value or 0\r\n    trauma[8] = ref_buttonData.counter[12].value or 0\r\n\r\n    return trauma\r\nend\r\n\r\n\r\n--Set this to true while editing and false when you have finished\r\ndisableSave = false\r\n--Remember to set this to false once you are done making changes\r\n--Then, after you save & apply it, save your game too\r\n\r\n--Color information for button text (r,g,b, values of 0-1)\r\nbuttonFontColor = {0,0,0,200}\r\n--Color information for button background\r\nbuttonColor = {1,1,1,0}\r\n--Change scale of button (Avoid changing if possible)\r\nbuttonScale = {0.1,0.1,0.1}\r\n\r\n--This is the button placement information\r\ndefaultButtonData = {\r\n    --Add checkboxes\r\n    checkbox = {\r\n        --[[\r\n        pos   = the position (pasted from the helper tool)\r\n        size  = height/width/font_size for checkbox\r\n        state = default starting value for checkbox (true=checked, false=not)\r\n        ]]\r\n        --End of checkboxes\r\n    },\r\n    --Add counters that have a + and - button\r\n    counter = {\r\n        --[[\r\n        pos    = the position (pasted from the helper tool)\r\n        size   = height/width/font_size for counter\r\n        value  = default starting value for counter\r\n        hideBG = if background of counter is hidden (true=hidden, false=not)\r\n        ]]\r\n        --1st Player Experience\r\n        {\r\n            pos    = {-1.080,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --1st Player Physical Trauma\r\n        {\r\n            pos    = {-1.270,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --1st Player Mental Trauma\r\n        {\r\n            pos    = {-1.000,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --2nd Player Experience\r\n        {\r\n            pos    = {-0.251,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --2nd Player Physical Trauma\r\n        {\r\n            pos    = {-0.441,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --2nd Player Mental Trauma\r\n        {\r\n            pos    = {-0.171,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --3rd Player Experience\r\n        {\r\n            pos    = {0.579,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --3rd Player Physical Trauma\r\n        {\r\n            pos    = {0.389,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --3rd Player Mental Trauma\r\n        {\r\n            pos    = {0.659,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --4th Player Experience\r\n        {\r\n            pos    = {1.407,0.1,-1.010},\r\n            size   = 800,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --4th Player Physical Trauma\r\n        {\r\n            pos    = {1.217,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --4th Player Mental Trauma\r\n        {\r\n            pos    = {1.487,0.1,-0.790},\r\n            size   = 600,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n       --End of counters\r\n    },\r\n    --Add editable text boxes\r\n    textbox = {\r\n        --[[\r\n        pos       = the position (pasted from the helper tool)\r\n        rows      = how many lines of text you want for this box\r\n        width     = how wide the text box is\r\n        font_size = size of text. This and \"rows\" effect overall height\r\n        label     = what is shown when there is no text. \"\" = nothing\r\n        value     = text entered into box. \"\" = nothing\r\n        alignment = Number to indicate how you want text aligned\r\n                    (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)\r\n        ]]\r\n        --1st Player Name\r\n        {\r\n            pos       = {-1.265,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --1st Player Investigator\r\n        {\r\n            pos       = {-1.265,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --1st Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {-1.265,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --2nd Player Name\r\n        {\r\n            pos       = {-0.436,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --2nd Player Investigator\r\n        {\r\n            pos       = {-0.436,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --2nd Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {-0.436,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --3rd Player Name\r\n        {\r\n            pos       = {0.394,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --3rd Player Investigator\r\n        {\r\n            pos       = {0.394,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --3rd Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {0.394,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --4th Player Name\r\n        {\r\n            pos       = {1.222,0.1,-1.390},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --4th Player Investigator\r\n        {\r\n            pos       = {1.222,0.1,-1.195},\r\n            rows      = 1,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --4th Player Story Assets/Weaknesses\r\n        {\r\n            pos       = {1.222,0.1,-0.420},\r\n            rows      = 7,\r\n            width     = 3800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --Campaign Notes 1\r\n        {\r\n            pos       = {-0.930,0.1,0.982},\r\n            rows      = 25,\r\n            width     = 7800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n\t    rot       = { x=0, y=-4, z=0 },\r\n            alignment = 2\r\n        },\r\n        --Campaign Notes 2\r\n        {\r\n            pos       = {0.820,0.1,0.707},\r\n            rows      = 20,\r\n            width     = 7800,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n\t    rot       = { x=0, y=-4, z=0 },\r\n            alignment = 2\r\n        },\r\n        --Killed and Insane Investigators\r\n        {\r\n            pos       = {1.010,0.1,1.700},\r\n            rows      = 5,\r\n            width     = 7400,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --End of textboxes\r\n    }\r\n}\r\n\r\n\r\n\r\n--Lua beyond this point, I recommend doing something more fun with your life\r\n\r\n\r\n\r\n--Save function\r\nfunction updateSave()\r\n    saved_data = JSON.encode(ref_buttonData)\r\n    if disableSave==true then saved_data=\"\" end\r\n    self.script_state = saved_data\r\nend\r\n\r\n--Startup procedure\r\nfunction onload(saved_data)\r\n    if disableSave==true then saved_data=\"\" end\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        ref_buttonData = loaded_data\r\n    else\r\n        ref_buttonData = defaultButtonData\r\n    end\r\n\r\n    spawnedButtonCount = 0\r\n    createCheckbox()\r\n    createCounter()\r\n    createTextbox()\r\nend\r\n\r\n\r\n\r\n--Click functions for buttons\r\n\r\n\r\n\r\n--Checks or unchecks the given box\r\nfunction click_checkbox(tableIndex, buttonIndex)\r\n    if ref_buttonData.checkbox[tableIndex].state == true then\r\n        ref_buttonData.checkbox[tableIndex].state = false\r\n        self.editButton({index=buttonIndex, label=\"\"})\r\n    else\r\n        ref_buttonData.checkbox[tableIndex].state = true\r\n        self.editButton({index=buttonIndex, label=string.char(10008)})\r\n    end\r\n    updateSave()\r\nend\r\n\r\n--Applies value to given counter display\r\nfunction click_counter(tableIndex, buttonIndex, amount)\r\n    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount\r\n    self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})\r\n    updateSave()\r\nend\r\n\r\n--Updates saved value for given text box\r\nfunction click_textbox(i, value, selected)\r\n    if selected == false then\r\n        ref_buttonData.textbox[i].value = value\r\n        updateSave()\r\n    end\r\nend\r\n\r\n--Dud function for if you have a background on a counter\r\nfunction click_none() end\r\n\r\n\r\n\r\n--Button creation\r\n\r\n\r\n\r\n--Makes checkboxes\r\nfunction createCheckbox()\r\n    for i, data in ipairs(ref_buttonData.checkbox) do\r\n        --Sets up reference function\r\n        local buttonNumber = spawnedButtonCount\r\n        local funcName = \"checkbox\"..i\r\n        local func = function() click_checkbox(i, buttonNumber) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"\"\r\n        if data.state==true then label=string.char(10008) end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=data.pos, height=data.size, width=data.size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\n--Makes counters\r\nfunction createCounter()\r\n    for i, data in ipairs(ref_buttonData.counter) do\r\n        --Sets up display\r\n        local displayNumber = spawnedButtonCount\r\n        --Sets up label\r\n        local label = data.value\r\n        --Sets height/width for display\r\n        local size = data.size\r\n        if data.hideBG == true then size = 0 end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=\"click_none\", function_owner=self,\r\n            position=data.pos, height=size, width=size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up add 1\r\n        local funcName = \"counterAdd\"..i\r\n        local func = function() click_counter(i, displayNumber, 1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"+\"\r\n        --Sets up position\r\n        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)\r\n        local pos = {data.pos[1] + offsetDistance, data.pos[2], data.pos[3]}\r\n        --Sets up size\r\n        local size = data.size / 2\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up subtract 1\r\n        local funcName = \"counterSub\"..i\r\n        local func = function() click_counter(i, displayNumber, -1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"-\"\r\n        --Set up position\r\n        local pos = {data.pos[1] - offsetDistance, data.pos[2], data.pos[3]}\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\nfunction createTextbox()\r\n    for i, data in ipairs(ref_buttonData.textbox) do\r\n        --Sets up reference function\r\n        local funcName = \"textbox\"..i\r\n        local func = function(_,_,val,sel) click_textbox(i,val,sel) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createInput({\r\n            input_function = funcName,\r\n            function_owner = self,\r\n            label          = data.label,\r\n            alignment      = data.alignment,\r\n            position       = data.pos,\r\n            scale          = buttonScale,\r\n            width          = data.width,\r\n            height         = (data.font_size*data.rows)+24,\r\n            font_size      = data.font_size,\r\n            color          = buttonColor,\r\n            font_color     = { 0.211, 0.360, 0.435, 255 },\r\n            value          = data.value,\r\n\t    rotation\t   = data.rot or {x=0, y=0, z=0},\r\n        })\r\n    end\r\nend\r\n",
+          "LuaScriptState": "{\"checkbox\":[],\"counter\":[{\"hideBG\":true,\"pos\":[-1.08,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[-1.27,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[-1,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[-0.251,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[-0.441,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[-0.171,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[0.579,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[0.389,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[0.659,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[1.407,0.1,-1.01],\"size\":800,\"value\":0},{\"hideBG\":true,\"pos\":[1.217,0.1,-0.79],\"size\":600,\"value\":0},{\"hideBG\":true,\"pos\":[1.487,0.1,-0.79],\"size\":600,\"value\":0}],\"textbox\":[{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-1.265,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-1.265,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-1.265,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.436,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.436,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.436,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.394,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.394,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.394,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.222,0.1,-1.39],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.222,0.1,-1.195],\"rows\":1,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.222,0.1,-0.42],\"rows\":7,\"value\":\"\",\"width\":3800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[-0.93,0.1,0.982],\"rot\":{\"x\":0,\"y\":-4,\"z\":0},\"rows\":25,\"value\":\"\\nHumaoïde. Monstre. Profond.\\n\",\"width\":7800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.82,0.1,0.707],\"rot\":{\"x\":0,\"y\":-4,\"z\":0},\"rows\":20,\"value\":\"\",\"width\":7800},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.01,0.1,1.7],\"rows\":5,\"value\":\"\",\"width\":7400}]}",
+          "XmlUI": "",
+          "States": {
+            "2": {
+              "GUID": "afe00c",
+              "Name": "Custom_Token",
+              "Transform": {
+                "posX": 25.49821,
+                "posY": 1.60411906,
+                "posZ": 16.0001488,
+                "rotX": 0.0108922422,
+                "rotY": 179.9901,
+                "rotZ": 0.00494619552,
+                "scaleX": 3.17662668,
+                "scaleY": 1.0,
+                "scaleZ": 3.17662668
+              },
+              "Nickname": "Carnet de Campagne p.2",
+              "Description": "",
+              "GMNotes": "",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": false,
+              "CustomImage": {
+                "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/1746813561756453431/F430752BBFBB38B8BD332A3A35E81ED6CD670FC8/",
+                "ImageSecondaryURL": "",
+                "ImageScalar": 1.0,
+                "WidthScale": 0.0,
+                "CustomToken": {
+                  "Thickness": 0.2,
+                  "MergeDistancePixels": 15.0,
+                  "StandUp": false,
+                  "Stackable": false
+                }
+              },
+              "LuaScript": "\t--[[    Character Sheet Template    by: MrStump\r\n\r\nYou can set up your own character sheet if you follow these steps.\r\n\r\nStep 1) Change the character sheet image\r\n    -Right click on the character sheet, click Custom\r\n    -Replace the image URL with one for your character sheet\r\n    -Click import, make sure your sheet loads\r\n    -SAVE THE GAME (the table setup)\r\n    -LOAD FROM THAT SAVE YOU JUST MADE\r\n\r\nStep 2) Edit script to fit your character sheet\r\n    -Below you will see some general options, and then the big data table\r\n    -The data table is what determines how many of which buttons are made\r\n        -Checkboxes\r\n        -Counters\r\n        -Textboxes\r\n    -By default, there are 3 of each. You can add more or remove entries\r\n    -If you intend to add/remove, be sure only to add/remove ENTRIES\r\n        -This is what an entry looks like:\r\n            {\r\n                pos   = {-0.977,0.1,-0.589},\r\n                size  = 800,\r\n                state = false\r\n            },\r\n        -Deleting the whole thing would remove that specific item on the sheet\r\n        -Copy and pasting it after another entry would create another\r\n    -Each entry type has unique data points (pos, size, state, etc)\r\n        -Do not try to add in your own data points or remove them individually\r\n        -There is a summary of what each point does at the top of its category\r\n\r\nStep 3) Save and check script changes\r\n    -Hit Save & Apply in the script window to save your code\r\n    -You can edit your code as needed and Save+Apply as often as needed\r\n    -When you are finished, make disableSave = false below then Save+apply\r\n        -This enables saving, so your sheet will remember whats on it.\r\n\r\nBonus) Finding/Editing Positions for elements\r\n    I have included a tool to get positions for buttons in {x,y,z} form\r\n    Place it where you want the center of your element to be\r\n    Then copy the table from the notes (lower right of screen)\r\n        You can highlight it and CTRL+C\r\n    Paste it into the data table where needed (pos=)\r\n    If you want to manually tweek the values:\r\n        {0,0,0} is the center of the character sheet\r\n        {1,0,0} is right, {-1,0,0} is left\r\n        {0,0,-1} is up, {0,0,1} is down\r\n        0.1 for Y is the height off of the page.\r\n            If it was 0, it would be down inside the model of the sheet\r\n\r\nBegin editing below:    ]]\r\n\r\n--Set this to true while editing and false when you have finished\r\ndisableSave = false\r\n--Remember to set this to false once you are done making changes\r\n--Then, after you save & apply it, save your game too\r\n\r\n--Color information for button text (r,g,b, values of 0-1)\r\nbuttonFontColor = {0,0,0,200}\r\n--Color information for button background\r\nbuttonColor = {1,1,1,0}\r\n--Change scale of button (Avoid changing if possible)\r\nbuttonScale = {0.1,0.1,0.1}\r\n\r\n--This is the button placement information\r\ndefaultButtonData = {\r\n    --Add checkboxes\r\n    checkbox = {\r\n        --[[\r\n        pos   = the position (pasted from the helper tool)\r\n        size  = height/width/font_size for checkbox\r\n        state = default starting value for checkbox (true=checked, false=not)\r\n        ]]\r\n        --Prologue\r\n        {\r\n            pos   = {-1.756,0.1,-1.435},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Lost Moorings\r\n        {\r\n            pos   = {-1.736,0.1,-1.232},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Going Twice\r\n        {\r\n            pos   = {-1.721,0.1,-0.987},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Private Lives\r\n        {\r\n            pos   = {-1.719,0.1,-0.77},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Crumbling Masonry\r\n        {\r\n            pos   = {-1.715,0.1,-0.545},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --A House Divided\r\n        {\r\n            pos   = {-1.702,0.1,-0.328},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Across Dreadful Waters\r\n        {\r\n            pos   = {-1.688,0.1,-0.086},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Blood From Stones\r\n        {\r\n            pos   = {-1.679,0.1,0.166},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Pyroclastic Flow\r\n        {\r\n            pos   = {-1.663,0.1,0.445},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Tomb of Dead Dreams\r\n        {\r\n            pos   = {-1.643,0.1,0.677},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --Epilogue\r\n        {\r\n            pos   = {-1.632,0.1,0.948},\r\n            size  = 600,\r\n            state = false\r\n        },\r\n        --End of checkboxes\r\n    },\r\n    --Add counters that have a + and - button\r\n    counter = {\r\n        --[[\r\n        pos    = the position (pasted from the helper tool)\r\n        size   = height/width/font_size for counter\r\n        value  = default starting value for counter\r\n        hideBG = if background of counter is hidden (true=hidden, false=not)\r\n        ]]\r\n        --Notice\r\n        {\r\n            pos    = {-0.399,0.1,-1.399},\r\n            size   = 1500,\r\n            value  = 0,\r\n            hideBG = true\r\n        },\r\n        --End of counters\r\n    },\r\n    --Add editable text boxes\r\n    textbox = {\r\n        --[[\r\n        pos       = the position (pasted from the helper tool)\r\n        rows      = how many lines of text you want for this box\r\n        width     = how wide the text box is\r\n        font_size = size of text. This and \"rows\" effect overall height\r\n        label     = what is shown when there is no text. \"\" = nothing\r\n        value     = text entered into box. \"\" = nothing\r\n        alignment = Number to indicate how you want text aligned\r\n                    (1=Automatic, 2=Left, 3=Center, 4=Right, 5=Justified)\r\n        ]]\r\n        --Cultists Alive\r\n        {\r\n            pos       = {0.543,0.1,-1.447},\r\n            rows      = 5,\r\n            width     = 3700,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --Cultists Killed\r\n        {\r\n            pos       = {1.404,0.1,-1.418},\r\n            rows      = 6,\r\n            width     = 4000,\r\n            font_size = 300,\r\n            label     = \"Cliquez ici\",\r\n            value     = \"\",\r\n            alignment = 2\r\n        },\r\n        --End of textboxes\r\n    }\r\n}\r\n\r\n\r\n\r\n--Lua beyond this point, I recommend doing something more fun with your life\r\n\r\n\r\n\r\n--Save function\r\nfunction updateSave()\r\n    saved_data = JSON.encode(ref_buttonData)\r\n    if disableSave==true then saved_data=\"\" end\r\n    self.script_state = saved_data\r\nend\r\n\r\n--Startup procedure\r\nfunction onload(saved_data)\r\n    if disableSave==true then saved_data=\"\" end\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        ref_buttonData = loaded_data\r\n    else\r\n        ref_buttonData = defaultButtonData\r\n    end\r\n\r\n    spawnedButtonCount = 0\r\n    createCheckbox()\r\n    createCounter()\r\n    createTextbox()\r\nend\r\n\r\n\r\n\r\n--Click functions for buttons\r\n\r\n\r\n\r\n--Checks or unchecks the given box\r\nfunction click_checkbox(tableIndex, buttonIndex)\r\n    if ref_buttonData.checkbox[tableIndex].state == true then\r\n        ref_buttonData.checkbox[tableIndex].state = false\r\n        self.editButton({index=buttonIndex, label=\"\"})\r\n    else\r\n        ref_buttonData.checkbox[tableIndex].state = true\r\n        self.editButton({index=buttonIndex, label=string.char(10008)})\r\n    end\r\n    updateSave()\r\nend\r\n\r\n--Applies value to given counter display\r\nfunction click_counter(tableIndex, buttonIndex, amount)\r\n    ref_buttonData.counter[tableIndex].value = ref_buttonData.counter[tableIndex].value + amount\r\n    self.editButton({index=buttonIndex, label=ref_buttonData.counter[tableIndex].value})\r\n    updateSave()\r\nend\r\n\r\n--Updates saved value for given text box\r\nfunction click_textbox(i, value, selected)\r\n    if selected == false then\r\n        ref_buttonData.textbox[i].value = value\r\n        updateSave()\r\n    end\r\nend\r\n\r\n--Dud function for if you have a background on a counter\r\nfunction click_none() end\r\n\r\n\r\n\r\n--Button creation\r\n\r\n\r\n\r\n--Makes checkboxes\r\nfunction createCheckbox()\r\n    for i, data in ipairs(ref_buttonData.checkbox) do\r\n        --Sets up reference function\r\n        local buttonNumber = spawnedButtonCount\r\n        local funcName = \"checkbox\"..i\r\n        local func = function() click_checkbox(i, buttonNumber) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"\"\r\n        if data.state==true then label=string.char(10008) end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=data.pos, height=data.size, width=data.size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\n--Makes counters\r\nfunction createCounter()\r\n    for i, data in ipairs(ref_buttonData.counter) do\r\n        --Sets up display\r\n        local displayNumber = spawnedButtonCount\r\n        --Sets up label\r\n        local label = data.value\r\n        --Sets height/width for display\r\n        local size = data.size\r\n        if data.hideBG == true then size = 0 end\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=\"click_none\", function_owner=self,\r\n            position=data.pos, height=size, width=size,\r\n            font_size=data.size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up add 1\r\n        local funcName = \"counterAdd\"..i\r\n        local func = function() click_counter(i, displayNumber, 1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"+\"\r\n        --Sets up position\r\n        local offsetDistance = (data.size/2 + data.size/4) * (buttonScale[1] * 0.002)\r\n        local pos = {data.pos[1] + offsetDistance, data.pos[2], data.pos[3]}\r\n        --Sets up size\r\n        local size = data.size / 2\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n\r\n        --Sets up subtract 1\r\n        local funcName = \"counterSub\"..i\r\n        local func = function() click_counter(i, displayNumber, -1) end\r\n        self.setVar(funcName, func)\r\n        --Sets up label\r\n        local label = \"-\"\r\n        --Set up position\r\n        local pos = {data.pos[1] - offsetDistance, data.pos[2], data.pos[3]}\r\n        --Creates button and counts it\r\n        self.createButton({\r\n            label=label, click_function=funcName, function_owner=self,\r\n            position=pos, height=size, width=size,\r\n            font_size=size, scale=buttonScale,\r\n            color=buttonColor, font_color=buttonFontColor\r\n        })\r\n        spawnedButtonCount = spawnedButtonCount + 1\r\n    end\r\nend\r\n\r\nfunction createTextbox()\r\n    for i, data in ipairs(ref_buttonData.textbox) do\r\n        --Sets up reference function\r\n        local funcName = \"textbox\"..i\r\n        local func = function(_,_,val,sel) click_textbox(i,val,sel) end\r\n        self.setVar(funcName, func)\r\n\r\n        self.createInput({\r\n            input_function = funcName,\r\n            function_owner = self,\r\n            label          = data.label,\r\n            alignment      = data.alignment,\r\n            position       = data.pos,\r\n            scale          = buttonScale,\r\n            width          = data.width,\r\n            height         = (data.font_size*data.rows)+24,\r\n            font_size      = data.font_size,\r\n            color          = buttonColor,\r\n            font_color     = { 0.211, 0.360, 0.435, 255 },\r\n            value          = data.value,\r\n\t    rotation\t   = data.rot or {x=0, y=0, z=0},\r\n\r\n        })\r\n    end\r\nend\r\n",
+              "LuaScriptState": "{\"checkbox\":[{\"pos\":[-1.756,0.1,-1.435],\"size\":600,\"state\":false},{\"pos\":[-1.736,0.1,-1.232],\"size\":600,\"state\":false},{\"pos\":[-1.721,0.1,-0.987],\"size\":600,\"state\":false},{\"pos\":[-1.719,0.1,-0.77],\"size\":600,\"state\":false},{\"pos\":[-1.715,0.1,-0.545],\"size\":600,\"state\":false},{\"pos\":[-1.702,0.1,-0.328],\"size\":600,\"state\":false},{\"pos\":[-1.688,0.1,-0.086],\"size\":600,\"state\":false},{\"pos\":[-1.679,0.1,0.166],\"size\":600,\"state\":false},{\"pos\":[-1.663,0.1,0.445],\"size\":600,\"state\":false},{\"pos\":[-1.643,0.1,0.677],\"size\":600,\"state\":false},{\"pos\":[-1.632,0.1,0.948],\"size\":600,\"state\":false}],\"counter\":[{\"hideBG\":true,\"pos\":[-0.399,0.1,-1.399],\"size\":1500,\"value\":0}],\"textbox\":[{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[0.543,0.1,-1.447],\"rows\":5,\"value\":\"\",\"width\":3700},{\"alignment\":2,\"font_size\":300,\"label\":\"Cliquez ici\",\"pos\":[1.404,0.1,-1.418],\"rows\":6,\"value\":\"\",\"width\":4000}]}",
+              "XmlUI": ""
+            }
+          }
         },
         {
           "GUID": "742d9f",
@@ -30901,9 +30901,9 @@
             "posX": 2.99999976,
             "posY": 1.501975,
             "posZ": -5.50000048,
-            "rotX": 0.0108904587,
+            "rotX": 0.0108904513,
             "rotY": 180.012878,
-            "rotZ": 0.0049510845,
+            "rotZ": 0.00495106867,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -30948,6 +30948,57 @@
             }
           },
           "LuaScript": "\r\njacqueline_guid = '42cd6e'\r\n\r\nbuttonparams = {\r\n   ['easy'] = {label = \"Facile\", click_function = 'modeEasy', z_i = -0.2},\r\n   ['normal'] = {label = \"Standard\", click_function = 'modeNormal', z_i = 0.1},\r\n   ['hard'] = {label = \"Difficile\", click_function = 'modeHard', z_i = 0.4},\r\n   ['expert'] = {label = \"Expert\", click_function = 'modeExpert', z_i = 0.7},\r\n   ['standalone'] = {label = \"Indépendant\", click_function = 'modeStandalone', z_i = 0},\r\n}\r\n\r\nfunction onLoad()\r\n\r\n    metadata = JSON.decode(self.getGMNotes())\r\n    buttontable = {}\r\n    for key, value in pairs(buttonparams) do\r\n        if metadata[key] == true then\r\n            table.insert(buttontable,value)\r\n        end\r\n        \r\n    end\r\n\r\n    for _, button in pairs(buttontable) do\r\n        local data = {\r\n            click_function = button.click_function, \r\n            function_owner = self, \r\n            label = button.label, \r\n            position = {0, 0.1, button.z_i}, \r\n            scale = {0.3, 0.5, 0.3}, \r\n            width = 1500, \r\n            height = 400, \r\n            font_size = 250, \r\n            tooltip = \"Chaos bag du mode \"..button.label,\r\n            color = {0.5647, 0.4627, 0.2353, 1}, \r\n            font_color = {0.9041, 0.8313, 0.7356, 1},\r\n            hover_color = {99/255, 85/255, 48/255},\r\n            press_color = {192/255, 152/255, 94/255} }\r\n        self.createButton(data)\r\n        \r\n    end\r\n    jacqueline = getObjectFromGUID(jacqueline_guid)\r\n    chaosdata = jacqueline.getTable('chaosdata')\r\nend\r\n\r\nfunction modeEasy()\r\n    local  params ={}\r\n     params.mode = 'easy'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend\r\n\r\nfunction modeNormal()\r\n      local  params ={}\r\n       params.mode = 'normal'\r\n       params.data = metadata.data\r\n       jacqueline.call('setChaosBag', params)\r\n    \r\nend\r\n\r\nfunction modeHard()\r\n    local  params ={}\r\n     params.mode = 'hard'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend\r\n\r\nfunction modeExpert()\r\n    local  params ={}\r\n     params.mode = 'expert'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend\r\n\r\nfunction modeStandalone()\r\n    local  params ={}\r\n     params.mode = 'standalone'\r\n     params.data = metadata.data\r\n     jacqueline.call('setChaosBag', params)\r\n  \r\nend",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "b0e617",
+          "Name": "Custom_PDF",
+          "Transform": {
+            "posX": -20.0,
+            "posY": 1.47986,
+            "posZ": -4.0,
+            "rotX": -1.83541076E-07,
+            "rotY": 179.999985,
+            "rotZ": -2.04197889E-07,
+            "scaleX": 1.93762064,
+            "scaleY": 1.0,
+            "scaleZ": 1.93762064
+          },
+          "Nickname": "",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomPDF": {
+            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/2458494928514743504/5763889FC61A6D10BB0C2B509D799E57D47C6A64/",
+            "PDFPassword": "",
+            "PDFPage": 0,
+            "PDFPageOffset": 0
+          },
+          "LuaScript": "",
           "LuaScriptState": "",
           "XmlUI": ""
         }
