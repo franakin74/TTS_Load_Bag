@@ -2,12 +2,12 @@
       "GUID": "9c4d3c",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -93.0029449,
+        "posX": -93.00299,
         "posY": 0.9824785,
-        "posZ": 5.49956131,
-        "rotX": -4.60852743E-06,
-        "rotY": 179.997025,
-        "rotZ": 5.12734232E-07,
+        "posZ": 5.499515,
+        "rotX": -4.62952357E-06,
+        "rotY": 179.997314,
+        "rotZ": 2.57318419E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -578,7 +578,7 @@
                   },
                   "Nickname": "Brouilard Couvrant",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01168\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -694,7 +694,7 @@
                   },
                   "Nickname": "Froid de la Crypte",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01167\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -810,7 +810,7 @@
                   },
                   "Nickname": "Antiques Fléaux",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01166\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -868,7 +868,7 @@
                   },
                   "Nickname": "Antiques Fléaux",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01166\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -926,7 +926,7 @@
                   },
                   "Nickname": "Toiles Répugnantes",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06103\",\n  \"traits\": \"Obstacle.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1042,7 +1042,7 @@
                   },
                   "Nickname": "Fileuse de Toiles",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"06351\",\n  \"traits\": \"Monster. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1100,7 +1100,7 @@
                   },
                   "Nickname": "Nuée d'Araignées",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06102\",\n  \"traits\": \"Creature. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1158,7 +1158,7 @@
                   },
                   "Nickname": "Nuée d'Araignées",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06102\",\n  \"traits\": \"Creature. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1332,7 +1332,7 @@
                   },
                   "Nickname": "Volonté de la Mère-Araignée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06085\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1390,7 +1390,7 @@
                   },
                   "Nickname": "Volonté de la Mère-Araignée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06085\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1680,7 +1680,7 @@
                   },
                   "Nickname": "Tissage Éternel",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06354\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1796,7 +1796,7 @@
                   },
                   "Nickname": "Pris dans la Toile",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06353\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1912,7 +1912,7 @@
                   },
                   "Nickname": "Fileuse de Toiles",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"06351\",\n  \"traits\": \"Monster. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1970,7 +1970,7 @@
                   },
                   "Nickname": "Fileuse de Toiles",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"06351\",\n  \"traits\": \"Monster. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2150,7 +2150,7 @@
                   },
                   "Nickname": "Une Traînée de Nœuds",
                   "Description": "Intrigue 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 9,\n  \"id\": \"06335\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2509,7 +2509,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06344\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2683,7 +2683,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06342\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2741,7 +2741,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06345\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2799,7 +2799,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06344\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2915,7 +2915,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06341\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3031,7 +3031,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06345\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3089,7 +3089,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06341\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3147,7 +3147,7 @@
                   },
                   "Nickname": "La Grande Toile",
                   "Description": "Autre Monde. Extradimensionnel.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06343\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Otherworld. Extradimensional.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3323,7 +3323,7 @@
               },
               "Nickname": "Référence",
               "Description": "Tisseuse du Cosmos",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3499,7 +3499,7 @@
                   },
                   "Nickname": "Un Plan Déjoué",
                   "Description": "Acte 3a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06339\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3802,7 +3802,7 @@
                   },
                   "Nickname": "Atlach-Nacha",
                   "Description": "Le Dieu Araignée",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"06346\",\n  \"traits\": \"Ancient One. Spider. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3961,7 +3961,7 @@
                 },
                 {
                   "GUID": "12d7a6",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 6.0,
                     "posY": 1.520168,
@@ -3975,7 +3975,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4019,7 +4019,7 @@
                 },
                 {
                   "GUID": "1c2f81",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 12.0,
                     "posY": 1.51926959,
@@ -4033,7 +4033,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4077,7 +4077,7 @@
                 },
                 {
                   "GUID": "24499d",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -0.000299975276,
                     "posY": 1.51783478,
@@ -4091,7 +4091,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4192,7 +4192,7 @@
                 },
                 {
                   "GUID": "443ac4",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 14.0,
                     "posY": 1.51776624,
@@ -4206,7 +4206,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4365,7 +4365,7 @@
                 },
                 {
                   "GUID": "6219c9",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -2.00030136,
                     "posY": 1.519148,
@@ -4379,7 +4379,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4437,7 +4437,7 @@
                   },
                   "Nickname": "Pattes d'Atlach-Nacha",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"06349\",\n  \"traits\": \"Ancient One. Spider. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4781,7 +4781,7 @@
                   },
                   "Nickname": "Pattes d'Atlach-Nacha",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"06347\",\n  \"traits\": \"Ancient One. Spider. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4939,7 +4939,7 @@
                 },
                 {
                   "GUID": "c6350a",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -5.309675E-08,
                     "posY": 1.52030587,
@@ -4953,7 +4953,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5011,7 +5011,7 @@
                   },
                   "Nickname": "Pattes d'Atlach-Nacha",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"06350\",\n  \"traits\": \"Ancient One. Spider. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5055,7 +5055,7 @@
                 },
                 {
                   "GUID": "ca83a4",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 12.0,
                     "posY": 1.51670337,
@@ -5069,7 +5069,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5284,7 +5284,7 @@
                 },
                 {
                   "GUID": "f585ad",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 6.0,
                     "posY": 1.51684129,
@@ -5298,7 +5298,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5807,7 +5807,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "4b4507",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -32.50001,
                     "posY": 1.78360236,
@@ -5865,7 +5865,7 @@
                 },
                 {
                   "GUID": "bc5262",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -32.5,
                     "posY": 1.82938719,
@@ -6171,7 +6171,7 @@
                   },
                   "Nickname": "Prêtre d'un Millier de Masques",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"06149\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6403,7 +6403,7 @@
               },
               "Nickname": "Référence",
               "Description": "À la Recherche de Kadath",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"06119\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6589,7 +6589,7 @@
                   },
                   "Nickname": "Serannian",
                   "Description": "Ooth-Nargai. Ville. Port.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06140\",\n  \"locationFront\": {\n    \"connections\": \"Hourglass\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Ooth-Nargai. City. Port.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6703,7 +6703,7 @@
                   },
                   "Nickname": "Temple des Désirs Inaccessibles",
                   "Description": "Ooth-Nargai. Temple.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06142\",\n  \"locationFront\": {\n    \"connections\": \"Plus|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Ooth-Nargai. Temple.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7107,7 +7107,7 @@
                   },
                   "Nickname": "La-Cité-Qui-N'Apparaît-Sur-Aucune-Carte",
                   "Description": "Ville. Autre Monde.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06143\",\n  \"locationFront\": {\n    \"connections\": \"Tee\",\n    \"icons\": \"Star\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 2\n  },\n  \"traits\": \"City. Otherworld.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7625,7 +7625,7 @@
                   },
                   "Nickname": "Hazuth-Kleg",
                   "Description": "Ooth-Nargai. Ville.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06141\",\n  \"locationFront\": {\n    \"connections\": \"Hourglass|Tee\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Ooth-Nargai. City.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8376,7 +8376,7 @@
                   },
                   "Nickname": "Murmures d'Hypnos",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06090\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8492,7 +8492,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Discorde)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06088\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8608,7 +8608,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Chaos)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06087\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9246,7 +9246,7 @@
                   },
                   "Nickname": "Zoog Discret",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06107\",\n  \"traits\": \"Creature. Zoog.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9420,7 +9420,7 @@
                   },
                   "Nickname": "Poursuivis par les Corsaires",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06104\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9594,7 +9594,7 @@
                   },
                   "Nickname": "Zoog Furtif",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06106\",\n  \"traits\": \"Creature. Zoog.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9652,7 +9652,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Pandémonium)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06089\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10362,7 +10362,7 @@
                   },
                   "Nickname": "L'Île d'Oriab",
                   "Description": "Acte 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06123\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10420,7 +10420,7 @@
                   },
                   "Nickname": "Mont Ngranek",
                   "Description": "Oriab. Montagne.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06137\",\n  \"locationFront\": {\n    \"connections\": \"Circle|Diamond\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Oriab. Mountain.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10651,7 +10651,7 @@
                   },
                   "Nickname": "Ruines sans Nom",
                   "Description": "Oriab. Antique. Ruines.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06138\",\n  \"locationFront\": {\n    \"connections\": \"Circle|Square\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Oriab. Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11239,7 +11239,7 @@
                   },
                   "Nickname": "Terres Interdites",
                   "Description": "Interdit. Dévastations.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06134\",\n  \"locationFront\": {\n    \"connections\": \"Circle|Square\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Forbidden. Wastes.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11297,7 +11297,7 @@
                   },
                   "Nickname": "Manticore Agressive",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"06146\",\n  \"traits\": \"Creature. Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11469,7 +11469,7 @@
                   },
                   "Nickname": "Ilek-Vad",
                   "Description": "Interdit. Ville. Port.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06133\",\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Forbidden. City. Port.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12634,7 +12634,7 @@
                   },
                   "Nickname": "Royaume de la Skai",
                   "Description": "Acte 1a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"06122\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12692,7 +12692,7 @@
                   },
                   "Nickname": "Dylath-Leen",
                   "Description": "Skai. Ville. Port.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06129\",\n  \"locationFront\": {\n    \"connections\": \"Tilde\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Skai. City. Port.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14573,7 +14573,7 @@
               },
               "Nickname": "Travailleur Gug",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"id\": \"06060\",\n  \"traits\": \"Monster. Gug.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -14848,7 +14848,7 @@
             },
             {
               "GUID": "2efca1",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 10.0,
                 "posY": 1.51849186,
@@ -14862,7 +14862,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -14906,7 +14906,7 @@
             },
             {
               "GUID": "53d98a",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 1.5,
                 "posY": 1.519226,
@@ -14920,7 +14920,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15020,7 +15020,7 @@
             },
             {
               "GUID": "67d398",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 1.5,
                 "posY": 1.5178,
@@ -15034,7 +15034,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16236,7 +16236,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Pandémonium)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06089\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16410,7 +16410,7 @@
                   },
                   "Nickname": "Brouilard Couvrant",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01168\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16642,7 +16642,7 @@
                   },
                   "Nickname": "Zoog Furtif",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06106\",\n  \"traits\": \"Creature. Zoog.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16758,7 +16758,7 @@
                   },
                   "Nickname": "Froid de la Crypte",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01167\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16816,7 +16816,7 @@
                   },
                   "Nickname": "Perdu dans les Bois",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06062\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16990,7 +16990,7 @@
                   },
                   "Nickname": "Malédiction du Rêveur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06093\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17048,7 +17048,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Discorde)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06088\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17222,7 +17222,7 @@
                   },
                   "Nickname": "Profond Sommeil",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06095\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17338,7 +17338,7 @@
                   },
                   "Nickname": "Zoog Discret",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06107\",\n  \"traits\": \"Creature. Zoog.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17570,7 +17570,7 @@
                   },
                   "Nickname": "Malédiction du Rêveur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06093\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17686,7 +17686,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Chaos)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06087\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17920,7 +17920,7 @@
               },
               "Nickname": "Référence",
               "Description": "Par delà le Mur du Sommeil",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -17978,7 +17978,7 @@
               },
               "Nickname": "La Caverne de la Flamme",
               "Description": "Grotte. Marches.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06046\",\n  \"locationBack\": {\n    \"connections\": \"Heart|SlantedEquals\",\n    \"icons\": \"Hourglass\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart|SlantedEquals\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Cave. Steps.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -18092,7 +18092,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "013ee9",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 9.0,
                     "posY": 1.5179,
@@ -18106,7 +18106,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18669,7 +18669,7 @@
                 },
                 {
                   "GUID": "4233ba",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -6.0,
                     "posY": 1.5192,
@@ -18683,7 +18683,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -19317,7 +19317,7 @@
                 },
                 {
                   "GUID": "748d92",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -2.0,
                     "posY": 1.5167,
@@ -19331,7 +19331,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -19690,7 +19690,7 @@
                       },
                       "Nickname": "Bois Enchantés",
                       "Description": "Bois.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06054\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Diamond|Circle\",\n    \"icons\": \"Star|EnchantedWoods\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 2\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde\",\n    \"icons\": \"Crescent|EnchantedWoods\"\n  },\n  \"traits\": \"Woods.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19806,7 +19806,7 @@
                       },
                       "Nickname": "Bois Enchantés",
                       "Description": "Bois.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06055\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Circle|Triangle\",\n    \"icons\": \"Plus|EnchantedWoods\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 2\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde\",\n    \"icons\": \"Crescent|EnchantedWoods\"\n  },\n  \"traits\": \"Woods.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20026,7 +20026,7 @@
                 },
                 {
                   "GUID": "a1dc75",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 9.0,
                     "posY": 1.5167,
@@ -20040,7 +20040,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20658,7 +20658,7 @@
                 },
                 {
                   "GUID": "decc48",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 5.0,
                     "posY": 1.5161,
@@ -20672,7 +20672,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20889,7 +20889,7 @@
                 },
                 {
                   "GUID": "f05262",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -6.0028,
                     "posY": 1.518,
@@ -20903,7 +20903,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21353,7 +21353,7 @@
             },
             {
               "GUID": "0a67d9",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -34.0,
                 "posY": 1.7836,
@@ -21367,7 +21367,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21411,7 +21411,7 @@
             },
             {
               "GUID": "c62b0d",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -31.5,
                 "posY": 1.7836,
@@ -21425,7 +21425,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21469,7 +21469,7 @@
             },
             {
               "GUID": "e0b7f5",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -29.0,
                 "posY": 1.7836,
@@ -21483,7 +21483,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21527,7 +21527,7 @@
             },
             {
               "GUID": "aba5ca",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -26.5005,
                 "posY": 1.7836,
@@ -21541,7 +21541,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21585,7 +21585,7 @@
             },
             {
               "GUID": "71826c",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -24.0,
                 "posY": 1.7836,
@@ -21599,7 +21599,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21643,7 +21643,7 @@
             },
             {
               "GUID": "248257",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -21.5,
                 "posY": 1.7836,
@@ -21657,7 +21657,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -22000,7 +22000,7 @@
                   },
                   "Nickname": "Mystérieuse Mélopée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01171\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22116,7 +22116,7 @@
                   },
                   "Nickname": "Magicien de l'Ordre",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22348,7 +22348,7 @@
                   },
                   "Nickname": "Murmures d'Hypnos",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06090\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22580,7 +22580,7 @@
                   },
                   "Nickname": "Dhole des Terres Désolées",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"06312\",\n  \"traits\": \"Monster.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22638,7 +22638,7 @@
                   },
                   "Nickname": "Profond Sommeil",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06095\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22812,7 +22812,7 @@
                   },
                   "Nickname": "Malédiction du Rêveur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06093\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22870,7 +22870,7 @@
                   },
                   "Nickname": "Malédiction du Rêveur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06093\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22928,7 +22928,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Pandémonium)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06089\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22986,7 +22986,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Discorde)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06088\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23044,7 +23044,7 @@
                   },
                   "Nickname": "Loi de 'Ygiroth (Chaos)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06087\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23102,7 +23102,7 @@
                   },
                   "Nickname": "Abandonné par les Dieux",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06322\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23334,7 +23334,7 @@
                   },
                   "Nickname": "Voyage Agité (Fausseté)",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06319\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23810,7 +23810,7 @@
                   },
                   "Nickname": "Tour Abandonnée",
                   "Description": "Kadath.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"06301\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Kadath.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24332,7 +24332,7 @@
               },
               "Nickname": "Chaos Chuchotant (Ouest)",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"hidden\": \"true\",\n  \"id\": \"06317\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24994,7 +24994,7 @@
                   },
                   "Nickname": "Les Dévoreurs de Rêves",
                   "Description": "Acte 5a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06294\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -25168,7 +25168,7 @@
                   },
                   "Nickname": "La Chose en Robes",
                   "Description": "Acte 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06291\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -25862,7 +25862,7 @@
               },
               "Nickname": "Référence",
               "Description": "La Demeure des Dieux",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"06286\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25920,7 +25920,7 @@
               },
               "Nickname": "Grand Prêtre qu'on ne Peut Décrire",
               "Description": "Agent des Autres Dieux",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"06311\",\n  \"traits\": \"Monster. Cultist. Avatar. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -27217,7 +27217,7 @@
             },
             {
               "GUID": "112487",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -20.4999943,
                 "posY": 1.78360522,
@@ -27231,7 +27231,7 @@
               },
               "Nickname": "L'Innommable",
               "Description": "L'Abomination Ultime",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -27521,7 +27521,7 @@
                   },
                   "Nickname": "Nuée de Rats",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01159\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28217,7 +28217,7 @@
                   },
                   "Nickname": "Brouilard Couvrant",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01168\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28333,7 +28333,7 @@
                   },
                   "Nickname": "Froid de la Crypte",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01167\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28391,7 +28391,7 @@
                   },
                   "Nickname": "Écheveau de la Réalité",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06100\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -31679,7 +31679,7 @@
               },
               "Nickname": "Référence",
               "Description": "Mille Nuances d'Horreur",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"06168\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33778,7 +33778,7 @@
                   },
                   "Nickname": "L'Infestation Commence – Test d'Infestation",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -34486,7 +34486,7 @@
                   },
                   "Nickname": "Volonté de la Mère-Araignée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06085\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -34544,7 +34544,7 @@
                   },
                   "Nickname": "Volonté de la Mère-Araignée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06085\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -36017,7 +36017,7 @@
               },
               "Nickname": "Référence",
               "Description": "Cauchemar Éveillé",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"06063\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -36514,7 +36514,7 @@
                   },
                   "Nickname": "Nuée d'Araignées",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06102\",\n  \"traits\": \"Creature. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -36572,7 +36572,7 @@
                   },
                   "Nickname": "Nuée d'Araignées",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"06102\",\n  \"traits\": \"Creature. Spider.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -36920,7 +36920,7 @@
                   },
                   "Nickname": "Toiles Répugnantes",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06103\",\n  \"traits\": \"Obstacle.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -37973,7 +37973,7 @@
                   },
                   "Nickname": "Murmures d'Hypnos",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06090\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -38147,7 +38147,7 @@
                   },
                   "Nickname": "Écheveau de la Réalité",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06100\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42162,7 +42162,7 @@
                   },
                   "Nickname": "Antiques Fléaux",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01166\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42220,7 +42220,7 @@
                   },
                   "Nickname": "Antiques Fléaux",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01166\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42336,7 +42336,7 @@
                   },
                   "Nickname": "Profond Sommeil",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06095\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42510,7 +42510,7 @@
                   },
                   "Nickname": "Malédiction du Rêveur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06093\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42568,7 +42568,7 @@
                   },
                   "Nickname": "Malédiction du Rêveur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06093\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42612,7 +42612,7 @@
                 },
                 {
                   "GUID": "bc5262",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 21.6755085,
                     "posY": 2.53001261,
@@ -42670,7 +42670,7 @@
                 },
                 {
                   "GUID": "4b4507",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 24.5889854,
                     "posY": 2.52976775,
@@ -42742,7 +42742,7 @@
                   },
                   "Nickname": "Poursuivis par les Corsaires",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06104\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44197,7 +44197,7 @@
               },
               "Nickname": "Référence",
               "Description": "La Face Cachée de la Lune",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"06206\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -47021,7 +47021,7 @@
                   },
                   "Nickname": "Volonté de la Mère-Araignée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06085\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -47079,7 +47079,7 @@
                   },
                   "Nickname": "Volonté de la Mère-Araignée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06085\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -47382,7 +47382,7 @@
                   "ContainedObjects": [
                     {
                       "GUID": "cb914c",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": 25.5,
                         "posY": 2.52673173,
@@ -48761,7 +48761,7 @@
                   },
                   "Nickname": "Antiques Fléaux",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01166\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -48819,7 +48819,7 @@
                   },
                   "Nickname": "Antiques Fléaux",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01166\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -48877,7 +48877,7 @@
                   },
                   "Nickname": "Murmures d'Hypnos",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"06090\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -49560,7 +49560,7 @@
             },
             {
               "GUID": "449a2f",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -7.500008,
                 "posY": 1.52294958,
@@ -49574,7 +49574,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -49804,7 +49804,7 @@
               },
               "Nickname": "Référence",
               "Description": "Point de Non-Retour",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"06247\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -51748,7 +51748,7 @@
                   "ContainedObjects": [
                     {
                       "GUID": "7f1260",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": 19.0883026,
                         "posY": 2.53014088,

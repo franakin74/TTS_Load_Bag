@@ -2,12 +2,12 @@
       "GUID": "dc7cca",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -61.00008,
-        "posY": 0.980000257,
-        "posZ": 19.4998837,
-        "rotX": -4.165573E-06,
-        "rotY": 180.000961,
-        "rotZ": 3.20108228E-07,
+        "posX": -61.00019,
+        "posY": 0.9800004,
+        "posZ": 19.4997787,
+        "rotX": -5.126936E-06,
+        "rotY": 180.000748,
+        "rotZ": 7.786813E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -953,7 +953,7 @@
               },
               "Nickname": "Référence",
               "Description": "Dans les Griffes du Chaos",
-              "GMNotes": "\r{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If there are fewer than 3 breaches on your location, place 1 breach on your location.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-4. If you fail, place 1 breach on a random location.\", \"modifier\": -4}, \"Skull\": {\"description\": \"-X. X is 1 higher than the total amount of doom and breaches on your location.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. For each point you fail by, remove 1 breach from the current act.\", \"modifier\": -3}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. If there are fewer than 3 breaches on your location, place 1 breach on your location.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-3. If you fail, place 1 breach on a random location.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-X. X is the total amount of doom and breaches on your location.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-2. For each point you fail by, remove 1 breach from the current act.\", \"modifier\": -2}}}, \"id\": \"05284\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05284\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2515,7 +2515,7 @@
                     },
                     {
                       "GUID": "6f0c15",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": -19.9999962,
                         "posY": 9.219753,
@@ -2529,7 +2529,7 @@
                       },
                       "Nickname": "Gardien des Secrets",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -2587,7 +2587,7 @@
                       },
                       "Nickname": "Néophyte de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -2645,7 +2645,7 @@
                       },
                       "Nickname": "Néophyte de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -2703,7 +2703,7 @@
                       },
                       "Nickname": "Néophyte de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -2921,7 +2921,7 @@
                     },
                     {
                       "GUID": "51218e",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": -19.9999962,
                         "posY": 7.819752,
@@ -8186,7 +8186,7 @@
             },
             {
               "GUID": "b86460",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -23.5000019,
                 "posY": 1.78360558,
@@ -8200,7 +8200,7 @@
               },
               "Nickname": "Anette Mason",
               "Description": "Mal Réincarné",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8244,7 +8244,7 @@
             },
             {
               "GUID": "bd6f43",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -20.5,
                 "posY": 1.78360558,
@@ -8258,7 +8258,7 @@
               },
               "Nickname": "Carl Sanford",
               "Description": "Fanatique Immortel",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -9605,7 +9605,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "0148f8",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 4.49999857,
                     "posY": 1.52058268,
@@ -9619,7 +9619,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9717,7 +9717,7 @@
                 },
                 {
                   "GUID": "8b971e",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -10.5,
                     "posY": 1.52045238,
@@ -9731,7 +9731,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9775,7 +9775,7 @@
                 },
                 {
                   "GUID": "9bdc74",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -4.5,
                     "posY": 1.51993418,
@@ -9789,7 +9789,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9833,7 +9833,7 @@
                 },
                 {
                   "GUID": "e4096f",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 13.5,
                     "posY": 1.5184,
@@ -9847,7 +9847,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10008,7 +10008,7 @@
             },
             {
               "GUID": "4e9120",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 7.5,
                 "posY": 1.5189,
@@ -10022,7 +10022,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10080,7 +10080,7 @@
               },
               "Nickname": "Josef Meiger",
               "Description": "Hôte de la Loge",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 3,\n    \"traits\": \"Humanoid. Cultist. Silver Twilight. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05085b\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Humanoid. Cultist. Silver Twilight. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05085b\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -12374,7 +12374,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "21ceee",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 4.49999857,
                     "posY": 1.52058268,
@@ -12388,7 +12388,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12486,7 +12486,7 @@
                 },
                 {
                   "GUID": "6b366c",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 13.4999981,
                     "posY": 1.51837969,
@@ -12500,7 +12500,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12544,7 +12544,7 @@
                 },
                 {
                   "GUID": "94d30e",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -4.50000143,
                     "posY": 1.51993418,
@@ -12558,7 +12558,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12732,7 +12732,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "6d6689",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 4.5,
                     "posY": 1.5207,
@@ -12746,7 +12746,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12844,7 +12844,7 @@
                 },
                 {
                   "GUID": "2d22c8",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -10.5,
                     "posY": 1.5205,
@@ -12858,7 +12858,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12902,7 +12902,7 @@
                 },
                 {
                   "GUID": "4a1a21",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -4.5,
                     "posY": 1.5199,
@@ -12916,7 +12916,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12960,7 +12960,7 @@
                 },
                 {
                   "GUID": "fd4e4b",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 13.5,
                     "posY": 1.5184,
@@ -12974,7 +12974,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13018,7 +13018,7 @@
                 },
                 {
                   "GUID": "348d53",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 19.5,
                     "posY": 1.5179,
@@ -13032,7 +13032,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13092,7 +13092,7 @@
               },
               "Nickname": "Référence",
               "Description": "Union et Désillusion",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-4. If you have no damage on you, take 1 damage. If you have no horror on you, take 1 horror.\", \"modifier\": -4}, \"Elder Thing\": {\"description\": \"-4. If this is a skill test during a circle action and you fail, resolve each haunted ability on your location.\", \"modifier\": -4}, \"Skull\": {\"description\": \"-3. If this is a skill test during a circle action, reveal another token.\", \"modifier\": -3}, \"Tablet\": {\"description\": \"-4. If you fail, a Spectral enemy at your location attacks you (even if it is exhausted).\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-3. If you have no damage on you, take 1 damage. If you have no horror on you, take 1 horror.\", \"modifier\": -3}, \"Elder Thing\": {\"description\": \"-3. If this is a skill test during a circle action and you fail, resolve each haunted ability on your location.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-2. If this is a skill test during a circle action, reveal another token.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-3. If you fail, a Spectral enemy at your location attacks you (even if it is exhausted).\", \"modifier\": -3}}}, \"id\": \"05238\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05238\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13922,7 +13922,7 @@
             },
             {
               "GUID": "88d1d8",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 1.5,
                 "posY": 1.5194,
@@ -13936,7 +13936,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15756,7 +15756,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "96b607",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 4.49999857,
                     "posY": 1.52067769,
@@ -15770,7 +15770,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15868,7 +15868,7 @@
                 },
                 {
                   "GUID": "35165a",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -4.500001,
                     "posY": 1.51993418,
@@ -15882,7 +15882,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16353,7 +16353,7 @@
             },
             {
               "GUID": "d24d7f",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 4.499988,
                 "posY": 1.51630557,
@@ -17151,7 +17151,7 @@
                   },
                   "Nickname": "Les Mystères de la Loge",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05097\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17209,7 +17209,7 @@
                   },
                   "Nickname": "Les Mystères de la Loge",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05097\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17253,7 +17253,7 @@
                 },
                 {
                   "GUID": "6f0c15",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -6.99994135,
                     "posY": 1.6385113,
@@ -17267,7 +17267,7 @@
                   },
                   "Nickname": "Gardien des Secrets",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17325,7 +17325,7 @@
                   },
                   "Nickname": "Néophyte de la Loge",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17383,7 +17383,7 @@
                   },
                   "Nickname": "Néophyte de la Loge",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17441,7 +17441,7 @@
                   },
                   "Nickname": "Néophyte de la Loge",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17952,7 +17952,7 @@
               },
               "Nickname": "Bête Invoquée",
               "Description": "Gardienne du Piège",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 6,\n  \"healthPerInv\": \"true\",\n  \"id\": \"05220\",\n  \"traits\": \"Monster. Silver Twilight. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 6,\n  \"healthPerInv\": \"true\",\n  \"id\": \"05220\",\n  \"traits\": \"Monster. Silver Twilight. Elite.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  },\n  \"victory\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -18533,7 +18533,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "2b0237",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -6.0,
                     "posY": 1.5187,
@@ -18547,7 +18547,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18591,7 +18591,7 @@
                 },
                 {
                   "GUID": "4661b7",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -5.999993,
                     "posY": 1.518733,
@@ -18605,7 +18605,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -19486,7 +19486,7 @@
                     },
                     {
                       "GUID": "d295f1",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": 30.5,
                         "posY": 8.360465,
@@ -19500,7 +19500,7 @@
                       },
                       "Nickname": "Gardien des Secrets",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19558,7 +19558,7 @@
                       },
                       "Nickname": "Néophyte de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19616,7 +19616,7 @@
                       },
                       "Nickname": "Néophyte de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19674,7 +19674,7 @@
                       },
                       "Nickname": "Néophyte de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19906,7 +19906,7 @@
                       },
                       "Nickname": "Geôlier de la Loge",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05218\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05218\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 2,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20544,7 +20544,7 @@
                       },
                       "Nickname": "Chevalier du Vide Extérieur",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05222\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05222\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20602,7 +20602,7 @@
                       },
                       "Nickname": "Chevalier du Vide Extérieur",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05222\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05222\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -22387,7 +22387,7 @@
                 },
                 {
                   "GUID": "e8c1f4",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 2.0,
                     "posY": 1.5165,
@@ -22401,7 +22401,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22692,7 +22692,7 @@
               },
               "Nickname": "Référence",
               "Description": "Pour le Bien Commun",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-2. Reveal another token.\", \"modifier\": -2}, \"Elder Thing\": {\"description\": \"-3. If you fail, move all doom from the Cultist enemy with the most doom on it to the current agenda. If no Cultist enemies in play have doom on them, reveal another token.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-X. X is the total number of doom among Cultist enemies in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, place 1 doom on each Cultist enemy in play. If there are no Cultist enemies in play, reveal another token.\", \"modifier\": -3}}, \"front\": {\"Cultist\": {\"description\": \"-2. Reveal another token.\", \"modifier\": -2}, \"Elder Thing\": {\"description\": \"-3. If you fail, move 1 doom from the nearest Cultist enemy to the current agenda.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-X. X is the highest number of doom on a Cultist enemy in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, place 1 doom on the nearest Cultist enemy in play.\", \"modifier\": -3}}}, \"id\": \"05197\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05197\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23589,7 +23589,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "92a91d",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -5.99997759,
                     "posY": 1.518733,
@@ -23603,7 +23603,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24726,7 +24726,7 @@
                       },
                       "Nickname": "Magicien de l'Ordre",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -25248,7 +25248,7 @@
                       },
                       "Nickname": "Gardien de Cellule",
                       "Description": "",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05219\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 3,\n  \"id\": \"05219\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 2,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -27376,7 +27376,7 @@
                 },
                 {
                   "GUID": "e8c1f4",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 2.0,
                     "posY": 1.5165,
@@ -27390,7 +27390,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28716,7 +28716,7 @@
               },
               "Nickname": "Azathoth",
               "Description": "Le Chaos Primordial",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05346\",\n  \"traits\": \"Ancient One. Elite.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05346\",\n  \"traits\": \"Ancient One. Elite.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -29012,7 +29012,7 @@
                 },
                 {
                   "GUID": "0fb7c2",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 17.5009975,
                     "posY": 4.5914,
@@ -29070,7 +29070,7 @@
                 },
                 {
                   "GUID": "df3a8c",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 17.5010052,
                     "posY": 1.612643,
@@ -29623,7 +29623,7 @@
                   },
                   "Nickname": "Magicien de l'Ordre",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -31307,7 +31307,7 @@
               },
               "Nickname": "Référence",
               "Description": "Devant le Trône Noir",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, search the encounter deck and discard pile for a Cultist enemy and draw it. Shuffle the encounter deck.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-6. If your modified skill value for this test is 0, place 1 doom on Azathoth.\", \"modifier\": -6}, \"Skull\": {\"description\": \"-X. X is the amount of doom on Azathoth, to a minimum of 2.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, Azathoth attacks you.\", \"modifier\": -3}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, search the encounter deck and discard pile for a Cultist enemy and draw it. Shuffle the encounter deck.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-4. If your modified skill value for this test is 0, place 1 doom on Azathoth.\", \"modifier\": -4}, \"Skull\": {\"description\": \" -X. X is half of the doom on Azathoth (rounded up), to a minimum of 2.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-2. If you fail, Azathoth attacks you.\", \"modifier\": -2}}}, \"id\": \"05325\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05325\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -32934,7 +32934,7 @@
               },
               "Nickname": "Référence",
               "Description": "L'Heure des Sorcières",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Elder Thing\": {\"description\": \"-4. If you fail, ready each Witch enemy at your location and at each conecting location. Heal all damage from each of those enemies.\", \"modifier\": -4}, \"Skull\": {\"description\": \"-2. Discard cards from the top of the encounter deck equal to this test's difficulty.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-2. If you fail, after this test resolves, draw the bottommost treachery in the encounter discard pile.\", \"modifier\": -2}}, \"front\": {\"Elder Thing\": {\"description\": \"-3. If you fail, choose an exhausted or damage Witch enemy at your location or at a connecting location. Ready that enemy and heal all damage from it.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-1. For each point you fail by, discard the top card of the encounter deck.\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-1. If you fail, after this test resolves, draw the bottommost treachery in the encounter discard pile.\", \"modifier\": -1}}}, \"id\": \"05050\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05050\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -34964,7 +34964,7 @@
             },
             {
               "GUID": "c09563",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -24.4999981,
                 "posY": 1.783605,
@@ -34978,7 +34978,7 @@
               },
               "Nickname": "Cercle des Sorcières",
               "Description": "Bois. Cercle.",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -35157,7 +35157,7 @@
                   },
                   "Nickname": "Chemins dans la Pénombre",
                   "Description": "Acte 3a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 3,\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05055\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 3,\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05055\",\n  \"locationBack\": {\n    \"connections\": \"Tilde\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 2\n  },\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -36815,7 +36815,7 @@
             },
             {
               "GUID": "2846eb",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 17.5000019,
                 "posY": 1.5142324,
@@ -38006,7 +38006,7 @@
             },
             {
               "GUID": "71a5e8",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.5000019,
                 "posY": 1.51466417,
@@ -39154,7 +39154,7 @@
               },
               "Nickname": "Référence",
               "Description": "Disparitions dans la Demeure du Crépuscule",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Skull\": {\"description\": \"-5. If you fail and this is an attack or evasion attempt, resolve each haunted ability on your location.\", \"modifier\": -5}}, \"front\": {\"Skull\": {\"description\": \"-3. If you fail and this is an attack or evasion attempt, resolve each haunted ability on your location.\", \"modifier\": -3}}}, \"id\": \"05043\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05043\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -43943,7 +43943,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "3ceb7b",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -29.5000038,
                     "posY": 1.77890611,
@@ -43957,7 +43957,7 @@
                   },
                   "Nickname": "Hérétique",
                   "Description": "Tâche Inachevée",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178e\",\n  \"type\": \"Story\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178e\",\n  \"type\": \"Story\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44015,7 +44015,7 @@
                   },
                   "Nickname": "Hérétique",
                   "Description": "Tâche Inachevée",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178i\",\n  \"type\": \"Story\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178i\",\n  \"type\": \"Story\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44059,7 +44059,7 @@
                 },
                 {
                   "GUID": "697aa4",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -32.0000076,
                     "posY": 1.77890611,
@@ -44073,7 +44073,7 @@
                   },
                   "Nickname": "Hérétique",
                   "Description": "Tâche Inachevée",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178k\",\n  \"type\": \"Story\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178k\",\n  \"type\": \"Story\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44117,7 +44117,7 @@
                 },
                 {
                   "GUID": "7a195b",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -34.5000038,
                     "posY": 1.77890611,
@@ -44131,7 +44131,7 @@
                   },
                   "Nickname": "Hérétique",
                   "Description": "Tâche Inachevée",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178c\",\n  \"type\": \"Story\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178c\",\n  \"type\": \"Story\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44175,7 +44175,7 @@
                 },
                 {
                   "GUID": "84558b",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -29.9999981,
                     "posY": 1.7789042,
@@ -44189,7 +44189,7 @@
                   },
                   "Nickname": "Hérétique",
                   "Description": "Tâche Inachevée",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178a\",\n  \"type\": \"Story\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178a\",\n  \"type\": \"Story\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44233,7 +44233,7 @@
                 },
                 {
                   "GUID": "c48a7e",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -32.5,
                     "posY": 1.7789042,
@@ -44247,7 +44247,7 @@
                   },
                   "Nickname": "Hérétique",
                   "Description": "Tâche Inachevée",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178g\",\n  \"type\": \"Story\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178g\",\n  \"type\": \"Story\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44939,7 +44939,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "eb99fb",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 12.5009995,
                     "posY": 1.6061728,
@@ -45416,7 +45416,7 @@
                 },
                 {
                   "GUID": "df0442",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 17.5049038,
                     "posY": 1.60398531,
@@ -49135,7 +49135,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Salaire du Péché",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-4. Until the end of the round, each Heretic enemy in play gets +1 fight and +1 evade.\", \"modifier\": -4}, \"Elder Thing\": {\"description\": \"-2. If this is an attack or evasion attempt, resolve each haunted ability on your location.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-X. X is the number of copies of Unfinished Business in the victory display. Reveal another token.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-4. If you fail, trigger the forced ability on a copy of Unfinished Business in your threat area as if it were the end of the round.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-3. Until the end of the round, each Heretic enemy in play gets +1 fight and +1 evade.\", \"modifier\": -3}, \"Elder Thing\": {\"description\": \"-2. If you fail and this is an attack or evasion attempt, resolve each haunted ability on your location.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-X. X is 1 higher than the number of copies of Unfinished Business in the victory display.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, trigger the forced ability on a copy of Unfinished Business in your threat area as if it were the end of the round.\", \"modifier\": -3}}}, \"id\": \"05161\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05161\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -50574,7 +50574,7 @@
               },
               "Nickname": "Josef Meiger",
               "Description": "Hôte de la Loge",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 3,\n    \"traits\": \"Humanoid. Cultist. Silver Twilight. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05085b\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Humanoid. Cultist. Silver Twilight. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"The Circle Undone\",\n  \"id\": \"05085b\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -52907,7 +52907,7 @@
                 },
                 {
                   "GUID": "6f0c15",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.5,
                     "posY": 6.34121,
@@ -52921,7 +52921,7 @@
                   },
                   "Nickname": "Gardien des Secrets",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 2,\n  \"id\": \"05096\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -52979,7 +52979,7 @@
                   },
                   "Nickname": "Néophyte de la Loge",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -53037,7 +53037,7 @@
                   },
                   "Nickname": "Néophyte de la Loge",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -53095,7 +53095,7 @@
                   },
                   "Nickname": "Néophyte de la Loge",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"id\": \"05095\",\n  \"traits\": \"Humanoid. Cultist. Silver Twilight.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -54621,7 +54621,7 @@
               },
               "Nickname": "Référence",
               "Description": "Aux Portes de la Mort",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Elder Thing\": {\"description\": \"-4. If there is a Spectral enemy at your location, take 1 damage and 1 horror.\", \"modifier\": -4}, \"Skull\": {\"description\": \"-2 (-4 instead if your location is haunted).\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-3. If you fail and this is an attack or evasion attempt, resolve each haunted ability on your location.\", \"modifier\": -3}}, \"front\": {\"Elder Thing\": {\"description\": \"-2. If there is a Spectral enemy at your location, take 1 damage.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-1 (-3 instead if your location is haunted).\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-2. If you fail and this is an attack or evasion attempt, resolve each haunted ability on your location.\", \"modifier\": -2}}}, \"id\": \"05065\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05065\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -57123,7 +57123,7 @@
                 },
                 {
                   "GUID": "af5839",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.5,
                     "posY": 6.18935061,
@@ -57902,7 +57902,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Nom Secret",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another chaos token. If you fail, discard the top 5 cards of the encounter deck.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-4. Resolve the hunter keyword on each enemy in play.\", \"modifier\": -4}, \"Skull\": {\"description\": \"-2 (-4 instead if you are at an Extradimensional location).\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-2. If you fail and Nahab is in play, she attacks you (regardless of her current location).\", \"modifier\": -2}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another chaos token. If you fail, discard the top 3 cards of the encounter deck.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-3. If you fail, resolve the hunter keyword on each enemy in play.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-1 (-3 instead if you are at an Extradimensional location).\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-2. If you fail and Nahab is at your location, she attacks you.\", \"modifier\": -2}}}, \"id\": \"05120\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"05120\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -58132,7 +58132,7 @@
               },
               "Nickname": "Nahab",
               "Description": "Celle qui a Signé le Livre Noir",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"healthPerInv\": \"true\",\n  \"id\": \"05149\",\n  \"traits\": \"Monster. Geist. Witch. Elite.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"The Circle Undone\",\n  \"health\": 1,\n  \"healthPerInv\": \"true\",\n  \"id\": \"05149\",\n  \"traits\": \"Monster. Geist. Witch. Elite.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -58535,7 +58535,7 @@
                 },
                 {
                   "GUID": "8b9da8",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 12.5010109,
                     "posY": 1.621755,
@@ -58723,7 +58723,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "018503",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -11.0000057,
                     "posY": 1.51954067,
@@ -58737,7 +58737,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -58954,7 +58954,7 @@
                 },
                 {
                   "GUID": "0b671e",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 11.4970942,
                     "posY": 1.51634073,
@@ -58968,7 +58968,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -59012,7 +59012,7 @@
                 },
                 {
                   "GUID": "134c7a",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 12.9999971,
                     "posY": 1.51865458,
@@ -59026,7 +59026,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -59070,7 +59070,7 @@
                 },
                 {
                   "GUID": "2fa8a8",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -3.00000572,
                     "posY": 1.51884067,
@@ -59084,7 +59084,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -59128,7 +59128,7 @@
                 },
                 {
                   "GUID": "4e3d13",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 5.99999428,
                     "posY": 1.51954424,
@@ -59142,7 +59142,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -59705,7 +59705,7 @@
                 },
                 {
                   "GUID": "816601",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 15.9999924,
                     "posY": 1.51715994,
@@ -59719,7 +59719,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -59763,7 +59763,7 @@
                 },
                 {
                   "GUID": "909ba6",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 0.499994278,
                     "posY": 1.51724064,
@@ -59777,7 +59777,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -60686,7 +60686,7 @@
                 },
                 {
                   "GUID": "f898ff",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -1.00000775,
                     "posY": 1.51986361,
@@ -60700,7 +60700,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -61465,7 +61465,7 @@
             },
             {
               "GUID": "b289b4",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 6.0,
                 "posY": 1.518172,
