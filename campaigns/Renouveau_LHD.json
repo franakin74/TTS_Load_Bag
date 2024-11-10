@@ -4,10 +4,10 @@
       "Transform": {
         "posX": -85.00011,
         "posY": 1.1969192,
-        "posZ": 12.9999094,
-        "rotX": -5.104201E-06,
+        "posZ": 12.99991,
+        "rotX": -5.069753E-06,
         "rotY": 180.0189,
-        "rotZ": 4.51036E-07,
+        "rotZ": 4.7497187E-07,
         "scaleX": 1.170821,
         "scaleY": 0.0619766228,
         "scaleZ": 0.9910606
@@ -470,7 +470,7 @@
                   },
                   "Nickname": "Porte de Derrière",
                   "Description": "Club du Trèfle.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02076\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Clover Club.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -709,7 +709,7 @@
                   },
                   "Nickname": "Tout Compris",
                   "Description": "Acte 3a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02068\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -767,7 +767,7 @@
                   },
                   "Nickname": "Jeu de Dupes",
                   "Description": "Acte 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"02067\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -871,7 +871,7 @@
             },
             {
               "GUID": "219139",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -30.499752,
                 "posY": 1.783606,
@@ -1116,7 +1116,7 @@
               },
               "Nickname": "Référence",
               "Description": "La Banque Gagne Toujours",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-3. If you fail, discard 3 resources.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-3. You may spend 3 resources to treat this token as a 0, instead.\", \"modifier\": -3}, \"Tablet\": {\"description\": \"-2. Discard 2 resources.\", \"modifier\": -2}}, \"front\": {\"Cultist\": {\"description\": \"-3. If you succeed, gain 3 resources.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-2. You may spend 2 resources to treat this token as a 0, instead.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-2. If you fail, discard 2 resources.\", \"modifier\": -2}}}, \"id\": \"02062\"}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1160,7 +1160,7 @@
             },
             {
               "GUID": "2c8685",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -7.49999952,
                 "posY": 1.519718,
@@ -1395,7 +1395,7 @@
                   },
                   "Nickname": "Nuée de Rats",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01159\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1453,7 +1453,7 @@
                   },
                   "Nickname": "Nuée de Rats",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01159\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1627,7 +1627,7 @@
                   },
                   "Nickname": "Pourchassé",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02099\",\n  \"traits\": \"Tactic.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1671,7 +1671,7 @@
                 },
                 {
                   "GUID": "612943",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.5,
                     "posY": 7.9315815,
@@ -1729,7 +1729,7 @@
                 },
                 {
                   "GUID": "6faab1",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.5,
                     "posY": 7.73158073,
@@ -1787,7 +1787,7 @@
                 },
                 {
                   "GUID": "113ffe",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.5,
                     "posY": 7.531581,
@@ -1845,7 +1845,7 @@
                 },
                 {
                   "GUID": "858dcb",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.5,
                     "posY": 7.331581,
@@ -2033,7 +2033,7 @@
                   },
                   "Nickname": "Coup du Sort",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02093\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2091,7 +2091,7 @@
                   },
                   "Nickname": "Coup du Sort",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02093\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2149,7 +2149,7 @@
                   },
                   "Nickname": "Chance Maudite",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02092\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2207,7 +2207,7 @@
                   },
                   "Nickname": "Chance Maudite",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02092\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2323,7 +2323,7 @@
                   },
                   "Nickname": "Éveiller les Soupçons",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02082\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2381,7 +2381,7 @@
                   },
                   "Nickname": "Éveiller les Soupçons",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02082\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2439,7 +2439,7 @@
                   },
                   "Nickname": "Un Goût Suspect",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02081\",\n  \"traits\": \"Poison. Illicit.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2731,7 +2731,7 @@
               },
               "Nickname": "Bar du Club du Trèfle",
               "Description": "Club du Trèfle.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02072\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Circle\",\n    \"icons\": \"Square\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Circle\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Clover Club.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3006,7 +3006,7 @@
             },
             {
               "GUID": "77812e",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -12.500001,
                 "posY": 1.52138543,
@@ -3020,7 +3020,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3307,7 +3307,7 @@
               "ContainedObjects": [
                 {
                   "GUID": "bf9b17",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -27.0,
                     "posY": 1.94219279,
@@ -3379,7 +3379,7 @@
                   },
                   "Nickname": "Dr Francis Morgan",
                   "Description": "Professeur d'Archéologie",
-                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 3,\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"02080\",\n  \"sanity\": 1,\n  \"traits\": \"Ally. Miskatonic.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3970,7 +3970,7 @@
                   },
                   "Nickname": "Rixe Souterraine",
                   "Description": "Intrigue 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 3,\n  \"id\": \"02064\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4028,7 +4028,7 @@
                   },
                   "Nickname": "Le Club du Trèfle",
                   "Description": "Intrigue 1a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 4,\n  \"id\": \"02063\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4606,7 +4606,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6062,7 +6062,7 @@
                   },
                   "Nickname": "Couloir Obscur",
                   "Description": "Club du Trèfle.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02074\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Tee|Hourglass|Plus|Tilde\",\n    \"icons\": \"Diamond\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Clover Club.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6404,7 +6404,7 @@
                   },
                   "Nickname": "Marche Arrière",
                   "Description": "Intrigue 3a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 4,\n  \"id\": \"02162\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6578,7 +6578,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Monster. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 2,\n  \"id\": \"51026\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Monster. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 2,\n  \"health\": 4,\n  \"id\": \"51026\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6638,7 +6638,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6766,7 +6766,7 @@
                   },
                   "Nickname": "Wagon",
                   "Description": "Train.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02170\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Train.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6824,7 +6824,7 @@
                   },
                   "Nickname": "Wagon",
                   "Description": "Train.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02174\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Train.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7172,7 +7172,7 @@
                   },
                   "Nickname": "Wagon",
                   "Description": "Train.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02172\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Train.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7288,7 +7288,7 @@
                   },
                   "Nickname": "Wagon",
                   "Description": "Train.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02171\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Train.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7334,7 +7334,7 @@
             },
             {
               "GUID": "4720dd",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -23.5000076,
                 "posY": 1.783606,
@@ -7348,7 +7348,7 @@
               },
               "Nickname": "Le Contrôleur",
               "Description": "Bête d'au-delà du Portail",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7534,7 +7534,7 @@
                   },
                   "Nickname": "Technicien",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"51031\",\n  \"sanity\": 2,\n  \"traits\": \"Ally. Bystander.\",\n  \"type\": \"Asset\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7594,7 +7594,7 @@
               },
               "Nickname": "Un Accroc dans la Réalité",
               "Description": "Intrigue 1a",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 4,\n  \"id\": \"02160\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7652,7 +7652,7 @@
               },
               "Nickname": "Référence",
               "Description": "L'Express du Comté d'Essex",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail and it is your turn, lose all remaining actions and end your turn immediately.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-3. If you fail, choose and discard a card from your hand for each point you fail by.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-X. X is one more than the current Agenda #.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-4. Add 1 doom token to each Cultist enemy in play.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-1. If you fail and it is your turn, lose all remaining actions and end your turn immediately.\", \"modifier\": -1}, \"Elder Thing\": {\"description\": \"-3. If you fail, choose and discard a card from your hand.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-X. X is the current Agenda #.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-2. Add 1 doom token to the nearest Cultist enemy.\", \"modifier\": -2}}}, \"id\": \"02159\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"02159\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7780,7 +7780,7 @@
                   },
                   "Nickname": "Locomotive",
                   "Description": "Train.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02177\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Train.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7838,7 +7838,7 @@
                   },
                   "Nickname": "Locomotive",
                   "Description": "Train.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02176\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Train.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8604,7 +8604,7 @@
                   },
                   "Nickname": "Mystérieuse Mélopée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01171\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8662,7 +8662,7 @@
                   },
                   "Nickname": "Mystérieuse Mélopée",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01171\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8720,7 +8720,7 @@
                   },
                   "Nickname": "Magicien de l'Ordre",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9996,7 +9996,7 @@
                   },
                   "Nickname": "Rails Brisés",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02181\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10112,7 +10112,7 @@
                   },
                   "Nickname": "Rails Brisés",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02181\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10228,7 +10228,7 @@
                   },
                   "Nickname": "Griffes de Vapeur",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02180\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10523,7 +10523,7 @@
                   },
                   "Nickname": "Relancer la Locomotive !",
                   "Description": "Acte 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02166\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10581,7 +10581,7 @@
                   },
                   "Nickname": "Courrez !",
                   "Description": "Acte 1a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02165\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10998,7 +10998,7 @@
           "ContainedObjects": [
             {
               "GUID": "018503",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 13.5,
                 "posY": 1.5161,
@@ -11012,7 +11012,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11140,7 +11140,7 @@
                   },
                   "Nickname": "Bibliothèque Orne",
                   "Description": "Miskatonic.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02050\",\n  \"locationBack\": {\n    \"connections\": \"Plus|Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Plus|Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Miskatonic.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11446,7 +11446,7 @@
               },
               "Nickname": "Cour de l'Université",
               "Description": "Miskatonic.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02048\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Hourglass|Square|Diamond|Circle\",\n    \"icons\": \"Plus\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Hourglass|Square|Diamond|Circle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Miskatonic.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11490,7 +11490,7 @@
             },
             {
               "GUID": "2efca1",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 2.5,
                 "posY": 1.517,
@@ -11504,7 +11504,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11679,7 +11679,7 @@
                   },
                   "Nickname": "Bureaux des Enseignants",
                   "Description": "[La Nuit Vient de Tomber]\nMiskatonic.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02054\",\n  \"locationBack\": {\n    \"connections\": \"Circle\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Miskatonic.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12316,7 +12316,7 @@
               },
               "Nickname": "Dortoirs",
               "Description": "Miskatonic.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02052\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Miskatonic.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -12547,7 +12547,7 @@
               },
               "Nickname": "Labo d'Alchimie",
               "Description": "Miskatonic.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02057\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass\",\n    \"icons\": \"Tilde\"\n  },\n  \"traits\": \"Miskatonic.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -12661,7 +12661,7 @@
               },
               "Nickname": "Référence",
               "Description": "Activité Extrascolaire",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-1 (-5 instead of there are 10 or more cards in your discard pile).\", \"modifier\": -1}, \"Elder Thing\": {\"description\": \"-X. Discard the top 3 cards of your deck. X is the total printed cost of those discarded cards.\", \"modifier\": -999}, \"Skull\": {\"description\": \"-2. If you fail, discard the top 5 cards of your deck.\", \"modifier\": -2}}, \"front\": {\"Cultist\": {\"description\": \"-1 (-3 instead of there are 10 or more cards in your discard pile).\", \"modifier\": -1}, \"Elder Thing\": {\"description\": \"-X. Discard the top 2 cards of your deck. X is the total printed cost of those discarded cards.\", \"modifier\": -999}, \"Skull\": {\"description\": \"-1. If you fail, discard the top 3 cards of your deck.\", \"modifier\": -1}}}, \"id\": \"02041\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"02041\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13179,7 +13179,7 @@
                 },
                 {
                   "GUID": "40c6d9",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -32.0,
                     "posY": 1.94219029,
@@ -13253,7 +13253,7 @@
               },
               "Nickname": "L'Expérience",
               "Description": "Quelque Chose a Mal Tourné",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 7,\n  \"id\": \"02058\",\n  \"traits\": \"Monster. Abomination. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13353,7 +13353,7 @@
             },
             {
               "GUID": "94d30e",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 21.0,
                 "posY": 1.5181,
@@ -13367,7 +13367,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13776,7 +13776,7 @@
                   },
                   "Nickname": "Après des Heures",
                   "Description": "Acte 1a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 3,\n  \"cycle\": \"Standalone\",\n  \"id\": \"02045\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14188,7 +14188,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15305,7 +15305,7 @@
                   },
                   "Nickname": "Visions des Avenirs Passés",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02083\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15595,7 +15595,7 @@
                   },
                   "Nickname": "Thrall",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"02086\",\n  \"traits\": \"Humanoid. Monster. Abomination.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15827,7 +15827,7 @@
                   },
                   "Nickname": "Avides de Mort",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02091\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15885,7 +15885,7 @@
                   },
                   "Nickname": "Engoulevent",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02090\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15943,7 +15943,7 @@
                   },
                   "Nickname": "Engoulevent",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02090\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17259,7 +17259,7 @@
                   },
                   "Nickname": "Étranges Disparitions",
                   "Description": "Intrigue 1a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"02196\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17590,7 +17590,7 @@
             },
             {
               "GUID": "1e79fd",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -1.0,
                 "posY": 1.5212,
@@ -17604,7 +17604,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -17927,7 +17927,7 @@
                   },
                   "Nickname": "Pourchassé",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02099\",\n  \"traits\": \"Tactic.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18029,7 +18029,7 @@
                 },
                 {
                   "GUID": "612943",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -26.99996,
                     "posY": 5.152886,
@@ -18087,7 +18087,7 @@
                 },
                 {
                   "GUID": "6faab1",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -26.99995,
                     "posY": 5.480148,
@@ -18145,7 +18145,7 @@
                 },
                 {
                   "GUID": "113ffe",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -26.99995,
                     "posY": 5.680148,
@@ -18203,7 +18203,7 @@
                 },
                 {
                   "GUID": "858dcb",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -26.99995,
                     "posY": 1.92066777,
@@ -18321,7 +18321,7 @@
             },
             {
               "GUID": "3a93d1",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -1.0,
                 "posY": 1.5173,
@@ -18335,7 +18335,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -18379,7 +18379,7 @@
             },
             {
               "GUID": "46de24",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -8.0,
                 "posY": 1.5199,
@@ -18393,7 +18393,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -18521,7 +18521,7 @@
                   },
                   "Nickname": "Poudre d'Ibn-Ghazi",
                   "Description": "Voir l'Invisible",
-                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 0,\n  \"cycle\": \"The Dunwich Legacy\",\n  \"id\": \"02219\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 0,\n  \"cycle\": \"Standalone\",\n  \"id\": \"02219\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18794,7 +18794,7 @@
             },
             {
               "GUID": "5a1dd5",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -28.5000019,
                 "posY": 1.78360522,
@@ -19607,7 +19607,7 @@
             },
             {
               "GUID": "868ba5",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 20.0,
                 "posY": 1.5174,
@@ -19621,7 +19621,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -19819,7 +19819,7 @@
                       },
                       "Nickname": "Ruisseau des Bishop",
                       "Description": "Dunwich.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02203\",\n  \"locationBack\": {\n    \"connections\": \"Plus|Circle|Triangle\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"count\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Plus|Circle|Triangle\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Dunwich.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20065,7 +20065,7 @@
                       },
                       "Nickname": "Magasin d'Osborn",
                       "Description": "Dunwich.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02206\",\n  \"locationBack\": {\n    \"connections\": \"Crescent|Square\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Crescent|Square\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Dunwich.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20311,7 +20311,7 @@
                       },
                       "Nickname": "École",
                       "Description": "Dunwich.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02212\",\n  \"locationBack\": {\n    \"connections\": \"Plus|Tilde|Circle\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Plus|Tilde|Circle\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Dunwich.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20557,7 +20557,7 @@
                       },
                       "Nickname": "Maison aux Roseaux",
                       "Description": "Dunwich.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02211\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent\",\n    \"icons\": \"Tilde\"\n  },\n  \"traits\": \"Dunwich.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -20905,7 +20905,7 @@
                     },
                     {
                       "GUID": "b98f52",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": -23.5160942,
                         "posY": 1.78360367,
@@ -21107,7 +21107,7 @@
                       },
                       "Nickname": "Église Congrégationaliste",
                       "Description": "Dunwich.",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02208\",\n  \"locationBack\": {\n    \"connections\": \"Plus|Triangle|Tilde\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Plus|Triangle|Tilde\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Dunwich.\",\n  \"type\": \"Location\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -21227,7 +21227,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21285,7 +21285,7 @@
               },
               "Nickname": "Référence",
               "Description": "Du Sang sur l'Autel",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-4. If you fail, add 1 clue from the token pool to your location.\", \"modifier\": -4}, \"Elder Thing\": {\"description\": \"-3. Place 1 doom on the current agenda.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-1 for each location in play with no encounter card underneath it.\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-3. Reveal another token.\", \"modifier\": -3}}, \"front\": {\"Cultist\": {\"description\": \"-2. If you fail, add 1 clue from the token pool to your location.\", \"modifier\": -2}, \"Elder Thing\": {\"description\": \"-3. If you fail, place 1 doom on the current agenda.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-1 for each location in play with no encounter card underneath it (max -4).\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-2. If you are in the Hidden Chamber, reveal another token.\", \"modifier\": -2}}}, \"id\": \"02195\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"02195\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21641,7 +21641,7 @@
                   },
                   "Nickname": "Maigre Bête de la Nuit Chasseresse",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"01172\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22047,7 +22047,7 @@
                   },
                   "Nickname": "Avides de Mort",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02091\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22105,7 +22105,7 @@
                   },
                   "Nickname": "Engoulevent",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02090\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22279,7 +22279,7 @@
                   },
                   "Nickname": "Serviteur de Nombreuses Bouches",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"02224\",\n  \"traits\": \"Humanoid.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22627,7 +22627,7 @@
                   },
                   "Nickname": "Engoulevent",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02090\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22685,7 +22685,7 @@
                   },
                   "Nickname": "Maigre Bête de la Nuit Chasseresse",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"01172\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22917,7 +22917,7 @@
                   },
                   "Nickname": "Sordide et Silencieux",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02089\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22975,7 +22975,7 @@
                   },
                   "Nickname": "Sur les Ailes des Ténèbres",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01173\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23337,7 +23337,7 @@
                   },
                   "Nickname": "Earl Sawyer",
                   "Description": "Plus Malin qu'il n'en a l'Air",
-                  "GMNotes": "{\n  \"agilityIcons\": 1,\n  \"class\": \"Neutral\",\n  \"cost\": 3,\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02218\",\n  \"sanity\": 2,\n  \"traits\": \"Ally. Dunwich.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24011,7 +24011,7 @@
             },
             {
               "GUID": "e23149",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 13.0,
                 "posY": 1.52,
@@ -24025,7 +24025,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24069,7 +24069,7 @@
             },
             {
               "GUID": "e2ee03",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 13.0,
                 "posY": 1.516,
@@ -24083,7 +24083,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24141,7 +24141,7 @@
               },
               "Nickname": "Clé de la Chambre",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 0,\n  \"cycle\": \"Standalone\",\n  \"id\": \"02215\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24199,7 +24199,7 @@
               },
               "Nickname": "Dr Francis Morgan",
               "Description": "Professeur d'Archéologie",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 3,\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"02080\",\n  \"sanity\": 1,\n  \"traits\": \"Ally. Miskatonic.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24566,7 +24566,7 @@
           "ContainedObjects": [
             {
               "GUID": "018503",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 6.99999666,
                 "posY": 1.52103209,
@@ -24580,7 +24580,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25211,7 +25211,7 @@
                 },
                 {
                   "GUID": "6b8d34",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -29.5,
                     "posY": 1.86330962,
@@ -25444,7 +25444,7 @@
             },
             {
               "GUID": "2efca1",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 16.0,
                 "posY": 1.51854384,
@@ -25458,7 +25458,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25848,7 +25848,7 @@
             },
             {
               "GUID": "4e6a71",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 0.0,
                 "posY": 1.5191,
@@ -25862,7 +25862,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -26191,7 +26191,7 @@
             },
             {
               "GUID": "61f6d6",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -2.00000572,
                 "posY": 1.52180934,
@@ -26205,7 +26205,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -27767,7 +27767,7 @@
             },
             {
               "GUID": "94d30e",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 16.0000038,
                 "posY": 1.54360044,
@@ -27781,7 +27781,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -28964,7 +28964,7 @@
                   },
                   "Nickname": "Thrall",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"02086\",\n  \"traits\": \"Humanoid. Monster. Abomination.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29428,7 +29428,7 @@
                   },
                   "Nickname": "Visions des Avenirs Passés",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02083\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -30663,7 +30663,7 @@
                   },
                   "Nickname": "Chemin Altéré",
                   "Description": "Dunwich. Bois. Altéré.\r",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02291\",\n  \"locationBack\": {\n    \"connections\": \"Square|Tee\",\n    \"icons\": \"Crescent|AlteredPath\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"AlteredPath\"\n  },\n  \"traits\": \"Dunwich. Woods. Altered.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -30883,7 +30883,7 @@
             },
             {
               "GUID": "9eee13",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 13.99999,
                 "posY": 1.51548517,
@@ -30897,7 +30897,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -31114,7 +31114,7 @@
             },
             {
               "GUID": "a6e9e5",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 0.0,
                 "posY": 1.5179,
@@ -31128,7 +31128,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -31769,7 +31769,7 @@
                 },
                 {
                   "GUID": "8cc40c",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -22.5003414,
                     "posY": 1.8773303,
@@ -32189,7 +32189,7 @@
                 },
                 {
                   "GUID": "8724bd",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": -26.0003567,
                     "posY": 1.8773303,
@@ -32862,7 +32862,7 @@
               },
               "Nickname": "Référence",
               "Description": "Là où le Destin Attend",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. Cancel the effects and icons of each skill card committed to this test.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-X. Discard the top 3 cards of your deck. X is the total printed cost of those discarded cards.\", \"modifier\": -999}, \"Skull\": {\"description\": \"-2 (-5 instead if you are at al Altered location).\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-3. If it is Agenda 2, you automatically fail instead.\", \"modifier\": -3}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. Cancel the effects and icons of each skill card committed to this test.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-X. Discard the top 2 cards of your deck. X is the total printed cost of those discarded cards.\", \"modifier\": -999}, \"Skull\": {\"description\": \"-1 (-3 instead if you are at al Altered location).\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-2 (-4 instead if it is Agenda 2).\", \"modifier\": -2}}}, \"id\": \"02274\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"02274\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33252,7 +33252,7 @@
             },
             {
               "GUID": "fccb36",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -6.092735E-08,
                 "posY": 1.51669419,
@@ -33266,7 +33266,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33310,7 +33310,7 @@
             },
             {
               "GUID": "fdfeeb",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -2.00000763,
                 "posY": 1.52009845,
@@ -33324,7 +33324,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33382,7 +33382,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33426,7 +33426,7 @@
             },
             {
               "GUID": "ff2fa7",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 7.0,
                 "posY": 1.51608968,
@@ -33440,7 +33440,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -34286,7 +34286,7 @@
             },
             {
               "GUID": "4b176b",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 22.3267479,
                 "posY": 1.5139116,
@@ -34300,7 +34300,7 @@
               },
               "Nickname": "Référence",
               "Description": "Aux Frontières du Visible",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail this test, take 1 horror and 1 damage.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-5. If this token is revealed during an attack or evasion attempt against a Brood of Yog-Sothoth, it immediately attacks you.\", \"modifier\": -5}, \"Skull\": {\"description\": \"-2 for each Brood of Yog-Sothoth in play.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"0. You must either remove all clue tokens from a Brood of Yog-Sothoth in play, or this test automatically fails.\", \"modifier\": 0}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail this test, take 1 horror.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-3. If this token is revealed during an attack or evasion attempt against a Brood of Yog-Sothoth, it immediately attacks you.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-1 for each Brood of Yog-Sothoth in play.\", \"modifier\": -1}, \"Tablet\": {\"description\": \"0. You must either remove all clue tokens from a Brood of Yog-Sothoth in play, or this token's modifier is -4 instead.\", \"modifier\": 0}}}, \"id\": \"02236\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"02236\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -38173,7 +38173,7 @@
                   },
                   "Nickname": "Sordide et Silencieux",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02089\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -38753,7 +38753,7 @@
                   },
                   "Nickname": "Avides de Mort",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02091\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -38985,7 +38985,7 @@
                   },
                   "Nickname": "Engoulevent",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02090\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -39043,7 +39043,7 @@
                   },
                   "Nickname": "Engoulevent",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02090\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -39856,7 +39856,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -40404,7 +40404,7 @@
           "ContainedObjects": [
             {
               "GUID": "018503",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -3.500106,
                 "posY": 1.52108347,
@@ -40418,7 +40418,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -41825,7 +41825,7 @@
                   },
                   "Nickname": "Visions des Avenirs Passés",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02083\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42057,7 +42057,7 @@
                   },
                   "Nickname": "Coup du Sort",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02093\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42115,7 +42115,7 @@
                   },
                   "Nickname": "Coup du Sort",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02093\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42173,7 +42173,7 @@
                   },
                   "Nickname": "Chance Maudite",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02092\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42289,7 +42289,7 @@
                   },
                   "Nickname": "Chance Maudite",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"02092\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -42871,7 +42871,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Musée Miskatonic",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-3. If you fail, search the encounter deck, discard pile, and the void for Hunting Horror and spawn it at your location, if able.\", \"modifier\": -3}, \"Elder Thing\": {\"description\": \"-5. If you fail, discard an asset you control.\", \"modifier\": -5}, \"Skull\": {\"description\": \"-2. -4 instead if Hunting Horror is at your location.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-4. If Hunting Horror is at your location, if immediately attacks you.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-1. If you fail, search the encounter deck, discard pile, and the void for Hunting Horror and spawn it at your location, if able.\", \"modifier\": -1}, \"Elder Thing\": {\"description\": \"-3. If you fail, discard an asset you control.\", \"modifier\": -3}, \"Skull\": {\"description\": \"-1. -3 instead if Hunting Horror is at your location.\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-2. Return 1 of your clues to your current location.\", \"modifier\": -2}}}, \"id\": \"02118\"}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -43102,7 +43102,7 @@
               },
               "Nickname": "Entrée du Musée",
               "Description": "Miskatonic.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02126\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"count\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Miskatonic.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -43319,7 +43319,7 @@
             },
             {
               "GUID": "2efca1",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.0,
                 "posY": 1.51822412,
@@ -43333,7 +43333,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -43915,7 +43915,7 @@
                   },
                   "Nickname": "Les Ombres Grandissent",
                   "Description": "Intrigue 2a",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"02120\",\n  \"type\": \"Agenda\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -44394,7 +44394,7 @@
               },
               "Nickname": "Adam Lynch",
               "Description": "Sécurité du Musée",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 0,\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"02139\",\n  \"sanity\": 1,\n  \"traits\": \"Ally. Miskatonic.\",\n  \"type\": \"Asset\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -44438,7 +44438,7 @@
             },
             {
               "GUID": "61f6d6",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -3.50000024,
                 "posY": 1.51956272,
@@ -44452,7 +44452,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -44683,7 +44683,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -45155,7 +45155,7 @@
                   },
                   "Nickname": "Le Necronomicon",
                   "Description": "Traduction d'Olaus Wormius",
-                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"The Dunwich Legacy\",\n  \"id\": \"02140\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Tome.\",\n  \"type\": \"Asset\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"02140\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Tome.\",\n  \"type\": \"Asset\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -45406,7 +45406,7 @@
                   },
                   "Nickname": "Salle d'Exposition",
                   "Description": "Miskatonic. Exposition.",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02133\",\n  \"locationBack\": {\n    \"connections\": \"Square|Crescent\",\n    \"icons\": \"Tee|ExhibitHall\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"ExhibitHall\"\n  },\n  \"traits\": \"Miskatonic. Exhibit.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -45684,7 +45684,7 @@
             },
             {
               "GUID": "94d30e",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 8.0,
                 "posY": 1.52094567,
@@ -45698,7 +45698,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -46558,7 +46558,7 @@
             },
             {
               "GUID": "a4c96c",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.0,
                 "posY": 1.5193646,
@@ -46572,7 +46572,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -47564,7 +47564,7 @@
               },
               "Nickname": "Salle d'Exposition",
               "Description": "Miskatonic. Exposition.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02137\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"SlantedEquals|ExhibitHall\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"ExhibitHall\"\n  },\n  \"traits\": \"Miskatonic. Exhibit.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -47608,7 +47608,7 @@
             },
             {
               "GUID": "fccb36",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.0,
                 "posY": 1.5206002,
@@ -47622,7 +47622,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -47666,7 +47666,7 @@
             },
             {
               "GUID": "fcf19d",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -3.49999166,
                 "posY": 1.5219388,
@@ -47680,7 +47680,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -47724,7 +47724,7 @@
             },
             {
               "GUID": "ff2fa7",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 0.499998569,
                 "posY": 1.52159345,
@@ -47738,7 +47738,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -48252,7 +48252,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -49899,7 +49899,7 @@
                   },
                   "Nickname": "Visions des Avenirs Passés",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"02083\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -50421,7 +50421,7 @@
                   },
                   "Nickname": "Chercheur d'Étoiles Yithien",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"02330\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"02330\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -50537,7 +50537,7 @@
                   },
                   "Nickname": "Chercheur d'Étoiles Yithien",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"02330\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"02330\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -50595,7 +50595,7 @@
                   },
                   "Nickname": "Voyageur Interstellaire",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02329\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02329\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -50653,7 +50653,7 @@
                   },
                   "Nickname": "Voyageur Interstellaire",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02329\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02329\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -50711,7 +50711,7 @@
                   },
                   "Nickname": "Voyageur Interstellaire",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02329\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"02329\",\n  \"traits\": \"Monster. Yithian.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -50755,7 +50755,7 @@
                 },
                 {
                   "GUID": "04c970",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 30.4999,
                     "posY": 6.10000467,
@@ -51777,7 +51777,7 @@
               },
               "Nickname": "Référence",
               "Description": "Perdu dans le Temps et l'Espace",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. Aafter this skill test, discard cards from the top of the encounter deck until a location is discarded. Put that location into play and move there.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-X. X is the shroud value of your location. If you fail and your location is Extradimensional, discard it.\", \"modifier\": -999}, \"Skull\": {\"description\": \"-1 for each Extradimensional location in play.\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-5. If Yog-Sothoth is in play, it attacks you after this skill test.\", \"modifier\": -5}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, after this skill test, discard cards from the top of the encounter deck until a location is discarded. Put that location into play and move there.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-X. X is the shroud value of your location. If you fail and your location is Extradimensional, discard it.\", \"modifier\": -999}, \"Skull\": {\"description\": \"-1 for each Extradimensional location in play (max -5).\", \"modifier\": -1}, \"Tablet\": {\"description\": \"-3. If Yog-Sothoth is in play, it attacks you after this skill test.\", \"modifier\": -3}}}, \"id\": \"02311\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"02311\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,

@@ -2,12 +2,12 @@
       "GUID": "ba381f",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -93.00014,
-        "posY": 1.19692981,
-        "posZ": 12.9998064,
-        "rotX": -5.01969271E-06,
-        "rotY": 180.019272,
-        "rotZ": 4.761148E-07,
+        "posX": -93.00017,
+        "posY": 1.19691932,
+        "posZ": 12.9997768,
+        "rotX": -5.00377428E-06,
+        "rotY": 180.019424,
+        "rotZ": 3.97569522E-07,
         "scaleX": 1.170821,
         "scaleY": 0.0619766228,
         "scaleZ": 0.9910606
@@ -2152,7 +2152,7 @@
                 },
                 {
                   "GUID": "460c9f",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 11.60493,
                     "posY": 1.5700202,
@@ -2210,7 +2210,7 @@
                 },
                 {
                   "GUID": "46c286",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 12.0000267,
                     "posY": 1.5673511,
@@ -3150,7 +3150,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Rassemblement",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, take 2 horror.\", \"modifier\": 0}, \"Skull\": {\"description\": \"-2. If you fail, after this skill test, search the encounter deck and discard pile for a Ghoul enemy and draw it. Shuffle the encounter deck.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-4. If there is a Ghoul enemy at your location, take 1 damage and 1 horror.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-1. If you fail, take 1 horror.\", \"modifier\": -1}, \"Skull\": {\"description\": \"-X. X is the number of Ghoul enemies at your location.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-2. If there is a Ghoul enemy at your location, take 1 damage.\", \"modifier\": -2}}}, \"id\": \"01104\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"01104\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3208,7 +3208,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5746,7 +5746,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5861,7 +5861,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7155,7 +7155,7 @@
                       },
                       "Nickname": "Porteur de Cadavre",
                       "Description": "Monstre. Serviteur. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -7213,7 +7213,7 @@
                       },
                       "Nickname": "Disciple du Dévoreur",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -8679,7 +8679,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10031,7 +10031,7 @@
                       },
                       "Nickname": "Porteur de Cadavre",
                       "Description": "Monstre. Serviteur. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -10089,7 +10089,7 @@
                       },
                       "Nickname": "Disciple du Dévoreur",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -10147,7 +10147,7 @@
                       },
                       "Nickname": "Disciple du Dévoreur",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -11628,7 +11628,7 @@
                       },
                       "Nickname": "Porteur de Cadavre",
                       "Description": "Monstre. Serviteur. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -11688,7 +11688,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11803,7 +11803,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11918,7 +11918,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13261,7 +13261,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Humanoïde. Cultiste. Élite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"01121a\",\n  \"type\": \"Agenda\",\n  \"upsidedown\": \"true\",\n  \"victory\": 2\n}",
+                      "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Humanoid. Cultist. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"01121a\",\n  \"type\": \"Agenda\",\n  \"victory\": 2\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -13435,7 +13435,7 @@
                     },
                     {
                       "GUID": "ab88c4",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": -33.0,
                         "posY": 1.82940137,
@@ -13449,7 +13449,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Humanoïde. Monstre. Cultiste. Élite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"50026a\",\n  \"type\": \"Agenda\",\n  \"victory\": 2\n}",
+                      "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Humanoid. Monster. Cultist. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"50026a\",\n  \"type\": \"Agenda\",\n  \"victory\": 2\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -13555,7 +13555,7 @@
             },
             {
               "GUID": "a069b3",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 5.079267,
                 "posY": 1.51701391,
@@ -13727,7 +13727,7 @@
             },
             {
               "GUID": "a5c9b6",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 6.07926655,
                 "posY": 1.567006,
@@ -15221,7 +15221,7 @@
                       },
                       "Nickname": "Porteur de Cadavre",
                       "Description": "Monstre. Serviteur. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -15279,7 +15279,7 @@
                       },
                       "Nickname": "Disciple du Dévoreur",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -15337,7 +15337,7 @@
                       },
                       "Nickname": "Disciple du Dévoreur",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -15395,7 +15395,7 @@
                       },
                       "Nickname": "Disciple du Dévoreur",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -15457,7 +15457,7 @@
               },
               "Nickname": "Référence",
               "Description": "Les Masques de Minuit",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-2. Place 1 doom on each Cultist enemy in play. If there are no Cultist enemies in play, reveal another token.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-X. X is the total number of doom in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-4. If you fail, place all your clues on your location.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-2. Place 1 doom on the nearest Cultist enemy.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-X. X is the highest number of doom on a Cultist enemy in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, place 1 of your clues on your location.\", \"modifier\": -3}}}, \"id\": \"01120\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"01120\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15501,7 +15501,7 @@
             },
             {
               "GUID": "b86294",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -22.50002,
                 "posY": 1.78360558,
@@ -15515,7 +15515,7 @@
               },
               "Nickname": "Le Chasseur Masqué",
               "Description": "Traqueur Silencieux",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15559,7 +15559,7 @@
             },
             {
               "GUID": "cfdd91",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -19.4999866,
                 "posY": 1.78360558,
@@ -15573,7 +15573,7 @@
               },
               "Nickname": "Narôgath",
               "Description": "Le Seigneur du Charnier",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15631,7 +15631,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -17891,7 +17891,7 @@
             },
             {
               "GUID": "2eee61",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 4.5,
                 "posY": 1.5201,
@@ -17905,7 +17905,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -19070,7 +19070,7 @@
             },
             {
               "GUID": "721582",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 1.4982,
                 "posY": 1.5201,
@@ -19084,7 +19084,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -19358,7 +19358,7 @@
             },
             {
               "GUID": "8f58c9",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 14.5,
                 "posY": 1.5201,
@@ -19372,7 +19372,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -19818,7 +19818,7 @@
             },
             {
               "GUID": "c3e250",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.0,
                 "posY": 1.5201,
@@ -19832,7 +19832,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20184,7 +20184,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21109,7 +21109,7 @@
             },
             {
               "GUID": "e2afeb",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 11.5,
                 "posY": 1.5201,
@@ -21123,7 +21123,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21167,7 +21167,7 @@
             },
             {
               "GUID": "e2dd09",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 4.5,
                 "posY": 1.5201,
@@ -21181,7 +21181,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21239,7 +21239,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Dévoreur du Dessous",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-4. Place 2 doom on the nearest enemy.\", \"modifier\": -4}, \"Elder Thing\": {\"description\": \"-7. If there is an Ancient One enemy in play, reveal another token.\", \"modifier\": -7}, \"Skull\": {\"description\": \"-3. If you fail, after this skill test, search the encounter deck and discard pile for a Monster enemy, and draw it. Shuffle the encounter deck.\", \"modifier\": -3}, \"Tablet\": {\"description\": \"-5. If there is a Monster enemy at your location, take 1 damage and 1 horror.\", \"modifier\": -5}}, \"front\": {\"Cultist\": {\"description\": \"-2. Place 1 doom on the nearest enemy.\", \"modifier\": -2}, \"Elder Thing\": {\"description\": \"-5. If there is an Ancient One enemy in play, reveal another token.\", \"modifier\": -5}, \"Skull\": {\"description\": \"-X. X is the number of Monster enemies in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If there is a Monster enemy at your location, take 1 damage.\", \"modifier\": -3}}}, \"id\": \"01142\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"01142\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -21849,7 +21849,7 @@
                   },
                   "Nickname": "Porteur de Cadavre",
                   "Description": "Monstre. Serviteur. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"50042\",\n  \"traits\": \"Monster. Servitor. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21907,7 +21907,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21965,7 +21965,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22023,7 +22023,7 @@
                   },
                   "Nickname": "Disciple du Dévoreur",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"50041\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
