@@ -5,9 +5,9 @@
         "posX": 15.0,
         "posY": 5.843599,
         "posZ": 51.5,
-        "rotX": -3.49884921E-08,
+        "rotX": -9.96322846E-09,
         "rotY": 179.9752,
-        "rotZ": 5.18417437E-06,
+        "rotZ": 5.03340652E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -197,7 +197,7 @@
           },
           "Nickname": "Jean Devereux",
           "Description": "Humanoïde. Sorcier. Élite",
-          "GMNotes": "{\n  \"type\": \"Enemy\",\n  \"id\": \"90057\",\n  \"traits\": \"Humanoid. Sorcerer. Elite.\",\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"90057\",\n  \"traits\": \"Humanoid. Sorcerer. Elite.\",\n  \"type\": \"Enemy\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -255,7 +255,7 @@
           },
           "Nickname": "Esprit Affamé",
           "Description": "Monstre. Geist. Spectral. Élite",
-          "GMNotes": "{\n  \"type\": \"Enemy\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"victory\": 1,\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -715,7 +715,7 @@
           "ContainedObjects": [
             {
               "GUID": "3ceb7b",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -34.5000076,
                 "posY": 1.78360593,
@@ -729,7 +729,7 @@
               },
               "Nickname": "Hérétique",
               "Description": "Tâche Inachevée",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178e\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178e\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -787,7 +787,7 @@
               },
               "Nickname": "Hérétique",
               "Description": "Tâche Inachevée",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178i\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178i\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -831,7 +831,7 @@
             },
             {
               "GUID": "697aa4",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -29.5000076,
                 "posY": 1.78360593,
@@ -845,7 +845,7 @@
               },
               "Nickname": "Hérétique",
               "Description": "Tâche Inachevée",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178k\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178k\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -889,7 +889,7 @@
             },
             {
               "GUID": "7a195b",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -32.0000076,
                 "posY": 1.78360593,
@@ -903,7 +903,7 @@
               },
               "Nickname": "Hérétique",
               "Description": "Tâche Inachevée",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178c\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178c\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -947,7 +947,7 @@
             },
             {
               "GUID": "84558b",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -27.0000114,
                 "posY": 1.78360593,
@@ -961,7 +961,7 @@
               },
               "Nickname": "Hérétique",
               "Description": "Tâche Inachevée",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178a\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178a\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1005,7 +1005,7 @@
             },
             {
               "GUID": "c48a7e",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -29.9999962,
                 "posY": 1.783604,
@@ -1019,7 +1019,7 @@
               },
               "Nickname": "Hérétique",
               "Description": "Tâche Inachevée",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"id\": \"05178g\",\n  \"type\": \"Story\"\n}",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 2,\n    \"traits\": \"Monster. Geist. Witch. Spectral. Elite.\"\n  },\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"05178g\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1252,7 +1252,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1366,7 +1366,7 @@
           },
           "Nickname": "Repos Éternel",
           "Description": "Acte 1",
-          "GMNotes": "{\n  \"id\": \"90056\",\n  \"type\": \"Act\",\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"90056\",\n  \"type\": \"Act\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2059,7 +2059,7 @@
         },
         {
           "GUID": "7c4f47",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 23.5013,
             "posY": 1.51380479,
@@ -2073,7 +2073,7 @@
           },
           "Nickname": "Référence",
           "Description": "Repos Éternel",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"id\": \"90054\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2304,7 +2304,7 @@
           },
           "Nickname": "Esprit Affamé",
           "Description": "Monstre. Geist. Spectral. Élite",
-          "GMNotes": "{\n  \"type\": \"Enemy\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"victory\": 1,\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5479,7 +5479,7 @@
           },
           "Nickname": "Rassembler les Brumes",
           "Description": "Intrigue 1",
-          "GMNotes": "{\n  \"id\": \"90055\",\n  \"type\": \"Agenda\",\n  \"class\": \"Mythos\",\n  \"doomThreshold\": 4,\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 4,\n  \"id\": \"90055\",\n  \"type\": \"Agenda\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5940,7 +5940,7 @@
           },
           "Nickname": "Esprit Affamé",
           "Description": "Monstre. Geist. Spectral. Élite",
-          "GMNotes": "{\n  \"type\": \"Enemy\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"victory\": 1,\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6172,7 +6172,7 @@
         },
         {
           "GUID": "e41c4c",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 21.4998,
             "posY": 1.51702344,
@@ -6186,7 +6186,7 @@
           },
           "Nickname": "Esprit Affamé",
           "Description": "Monstre. Geist. Spectral. Élite",
-          "GMNotes": "{\n  \"type\": \"Enemy\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"victory\": 1,\n  \"cycle\": \"Standalone\"\n}",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"90058\",\n  \"traits\": \"Monster. Geist. Spectral. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6230,7 +6230,7 @@
         },
         {
           "GUID": "e5add1",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -1.0,
             "posY": 1.49346447,
@@ -6244,7 +6244,7 @@
           },
           "Nickname": "Ombre Vengeresse",
           "Description": "",
-          "GMNotes": "{\n  \"id\": \"90053\",\n  \"type\": \"Enemy\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Monster. Geist\",\n  \"weakness\": true,\n  \"cycle\": \"Laid to Rest\"\n}",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Laid to Rest\",\n  \"health\": 2,\n  \"id\": \"90053\",\n  \"traits\": \"Monster. Geist\",\n  \"type\": \"Enemy\",\n  \"weakness\": \"true\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

@@ -2,12 +2,12 @@
       "GUID": "ba18ea",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 1.5000186,
+        "posX": 1.50000012,
         "posY": 5.84360027,
-        "posZ": 51.50003,
-        "rotX": 6.691884E-08,
+        "posZ": 51.5,
+        "rotX": 2.88302839E-08,
         "rotY": 179.9668,
-        "rotZ": 4.986313E-06,
+        "rotZ": 5.074486E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -23,8 +23,7 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0,
-        "a": 0.392156869
+        "b": 1.0
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -1159,7 +1158,7 @@
         },
         {
           "GUID": "48ceba",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 22.0,
             "posY": 1.5168,
@@ -1173,7 +1172,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2792,7 +2791,7 @@
           },
           "Nickname": "Référence",
           "Description": "Mauvais Sang",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"90020\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2850,7 +2849,7 @@
           },
           "Nickname": "Quartier Est",
           "Description": "Arkham.",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01132\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Triangle|FromEasttown\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Triangle|FromEasttown\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Arkham.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3513,7 +3512,7 @@
               },
               "Nickname": "Sombre Souvenir",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"Core\",\n  \"id\": \"01013\",\n  \"traits\": \"Spell.\",\n  \"type\": \"Event\",\n  \"weakness\": \"true\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3963,7 +3962,7 @@
         },
         {
           "GUID": "aee45f",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -11.0,
             "posY": 1.5195,
@@ -3977,7 +3976,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5351,7 +5350,7 @@
         },
         {
           "GUID": "c41f54",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 16.5,
             "posY": 1.5159,
@@ -5365,7 +5364,7 @@
           },
           "Nickname": "croix",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7047,7 +7046,7 @@
               },
               "Nickname": "Cultiste de la Fraternité",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"04095\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"04095\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7105,7 +7104,7 @@
               },
               "Nickname": "Cultiste de la Fraternité",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"04095\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"04095\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7511,7 +7510,7 @@
               },
               "Nickname": "Ombre Chasseresse",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01135\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8207,7 +8206,7 @@
               },
               "Nickname": "Magicien de l'Ordre",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8599,7 +8598,7 @@
         },
         {
           "GUID": "fccb36",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -5.5,
             "posY": 1.5178,
@@ -8613,7 +8612,7 @@
           },
           "Nickname": "croix",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

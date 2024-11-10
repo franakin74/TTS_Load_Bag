@@ -2,12 +2,12 @@
       "GUID": "9ad12a",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -5.000048,
+        "posX": -7.5,
         "posY": 5.84360075,
-        "posZ": 51.49995,
-        "rotX": -1.08647875E-07,
+        "posZ": 51.5,
+        "rotX": 2.776316E-08,
         "rotY": 179.968414,
-        "rotZ": 5.149077E-06,
+        "rotZ": 5.0032977E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -198,7 +198,7 @@
           "ContainedObjects": [
             {
               "GUID": "5a1dd5",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -23.0,
                 "posY": 1.9421922,
@@ -212,7 +212,7 @@
               },
               "Nickname": "Dr Henry Armitage",
               "Description": "Le Bibliothécaire en Chef",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"02040\",\n  \"sanity\": 2,\n  \"traits\": \"Ally. Miskatonic.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1478,7 +1478,7 @@
           },
           "Nickname": "Référence",
           "Description": "Lire ou Mourir",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"90004\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

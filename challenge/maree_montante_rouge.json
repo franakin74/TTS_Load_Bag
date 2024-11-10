@@ -2,12 +2,12 @@
       "GUID": "e81a42",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -4.00000525,
-        "posY": 1.50923252,
-        "posZ": 29.5000248,
-        "rotX": 0.0108938664,
-        "rotY": 179.975052,
-        "rotZ": 0.00494413,
+        "posX": 10.5,
+        "posY": 5.84359932,
+        "posZ": 51.5,
+        "rotX": 1.05795932E-08,
+        "rotY": 179.9752,
+        "rotZ": 5.036669E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -75,9 +75,9 @@
             "posX": 32.5,
             "posY": 1.54999578,
             "posZ": 0.4176998,
-            "rotX": -0.000583783432,
-            "rotY": 179.9771,
-            "rotZ": 0.00106686517,
+            "rotX": -0.0006003544,
+            "rotY": 179.9768,
+            "rotZ": 0.00105847069,
             "scaleX": 0.306216359,
             "scaleY": 1.0,
             "scaleZ": 0.306216359
@@ -91,7 +91,7 @@
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 0.215685517,
+            "r": 0.215685159,
             "g": 1.0,
             "b": 0.470588028
           },
@@ -414,7 +414,7 @@
         },
         {
           "GUID": "190264",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 6.0,
             "posY": 1.5167,
@@ -428,7 +428,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -530,7 +530,7 @@
         },
         {
           "GUID": "248257",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -10.0,
             "posY": 1.5212,
@@ -544,7 +544,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -588,7 +588,7 @@
         },
         {
           "GUID": "2afac3",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 4.9999,
             "posY": 1.49346447,
@@ -602,7 +602,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"90038\",\n  \"permanent\": \"true\",\n  \"type\": \"Asset\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -646,7 +646,7 @@
         },
         {
           "GUID": "3171b2",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 23.5013,
             "posY": 1.51380479,
@@ -660,7 +660,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -991,7 +991,7 @@
         },
         {
           "GUID": "3d8fac",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -1.5,
             "posY": 1.49346447,
@@ -1005,7 +1005,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"agilityIcons\": 4,\n  \"class\": \"Survivor\",\n  \"combatIcons\": 1,\n  \"cycle\": \"Core\",\n  \"id\": \"01005-p\",\n  \"intellectIcons\": 3,\n  \"traits\": \"Drifter.\",\n  \"type\": \"Investigator\",\n  \"willpowerIcons\": 4\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1049,7 +1049,7 @@
         },
         {
           "GUID": "503dbe",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 17.501,
             "posY": 1.51422858,
@@ -1063,7 +1063,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"90044\",\n  \"type\": \"Act\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1107,7 +1107,7 @@
         },
         {
           "GUID": "531029",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 7.5001,
             "posY": 1.49346447,
@@ -1121,7 +1121,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"90039\",\n  \"traits\": \"Item. Relic.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 2,\n  \"willpowerIcons\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1753,7 +1753,7 @@
           },
           "Nickname": "Wendy Adams",
           "Description": "",
-          "GMNotes": "{\n  \"id\": \"01005-m\",\n  \"alternate_ids\": [\n    \"01505-m\"\n  ],\n  \"type\": \"Minicard\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3203,7 +3203,7 @@
         },
         {
           "GUID": "8a3209",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 22.0,
             "posY": 1.5154,
@@ -3217,7 +3217,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3835,7 +3835,7 @@
         },
         {
           "GUID": "92a91d",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 22.0,
             "posY": 1.5184,
@@ -3849,7 +3849,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3907,7 +3907,7 @@
           },
           "Nickname": "Place d'Innsmouth",
           "Description": "Innsmouth. Central.",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"07065\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Diamond|Star|Hourglass|Square|Tee\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Diamond|Star|Hourglass|Square|Tee\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Innsmouth. Central.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3965,7 +3965,7 @@
           },
           "Nickname": "Maison Gilman",
           "Description": "Innsmouth.",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"07064\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Apostrophe|Star|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Apostrophe|Star|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Innsmouth.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4228,7 +4228,7 @@
               },
               "Nickname": "Initiée de Dagon",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"07085\",\n  \"traits\": \"Humanoid. Hybrid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"07085\",\n  \"traits\": \"Humanoid. Hybrid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4286,7 +4286,7 @@
               },
               "Nickname": "Initiée de Dagon",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"07085\",\n  \"traits\": \"Humanoid. Hybrid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"07085\",\n  \"traits\": \"Humanoid. Hybrid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4344,7 +4344,7 @@
               },
               "Nickname": "Initiée de Dagon",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"07085\",\n  \"traits\": \"Humanoid. Hybrid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"07085\",\n  \"traits\": \"Humanoid. Hybrid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4402,7 +4402,7 @@
               },
               "Nickname": "Prêtre de Dagon",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"07084\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"07084\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4982,7 +4982,7 @@
               },
               "Nickname": "Froid de la Crypte",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01167\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5562,7 +5562,7 @@
               },
               "Nickname": "Ombre Chasseresse",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01135\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5666,7 +5666,7 @@
         },
         {
           "GUID": "aba5ca",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 6.0,
             "posY": 1.5198,
@@ -5680,7 +5680,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7229,7 +7229,7 @@
           "ContainedObjects": [
             {
               "GUID": "dc6ea4",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.5010738,
                 "posY": 1.51446033,
@@ -7243,7 +7243,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 9,\n  \"id\": \"90043\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7287,7 +7287,7 @@
             },
             {
               "GUID": "42a73f",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.5010319,
                 "posY": 1.54442656,
@@ -7301,7 +7301,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 3,\n  \"id\": \"90042\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7838,7 +7838,7 @@
               },
               "Nickname": "Allée des Rebouteux",
               "Description": "Innsmouth. Cachette.",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"07071\",\n  \"locationFront\": {\n    \"connections\": \"Apostrophe|Diamond\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Innsmouth. Hideout.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -9602,7 +9602,7 @@
         },
         {
           "GUID": "dcc316",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 2.0,
             "posY": 1.49346447,
@@ -9616,7 +9616,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"90040\",\n  \"traits\": \"Madness.\",\n  \"type\": \"Treachery\",\n  \"weakness\": \"true\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -11209,7 +11209,7 @@
         },
         {
           "GUID": "fb9296",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 10.5,
             "posY": 1.49346447,
@@ -11223,7 +11223,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -11267,7 +11267,7 @@
         },
         {
           "GUID": "fd3490",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -10.0,
             "posY": 1.5181,
@@ -11281,7 +11281,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

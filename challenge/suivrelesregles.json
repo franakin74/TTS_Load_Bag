@@ -5,9 +5,9 @@
         "posX": 6.0,
         "posY": 5.8436,
         "posZ": 51.5,
-        "rotX": -1.09900164E-07,
+        "rotX": -9.606436E-08,
         "rotY": 179.975189,
-        "rotZ": 5.1568004E-06,
+        "rotZ": 5.056687E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -23,8 +23,7 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0,
-        "a": 0.392156869
+        "b": 1.0
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -201,7 +200,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01133\",\n  \"locationBack\": {\n    \"connections\": \"Circle\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Arkham.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -320,7 +319,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 8,\n  \"id\": \"90034\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -378,7 +377,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 3,\n    \"traits\": \"Humanoid. Cultist. Elite.\",\n    \"victory\": 1\n  },\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"90033a\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -611,7 +610,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01128\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Square\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Square\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Arkham.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -711,7 +710,7 @@
         },
         {
           "GUID": "586187",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 6.10450172,
             "posY": 1.56688344,
@@ -1757,7 +1756,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01132\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Triangle|FromEasttown\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Triangle|FromEasttown\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Arkham.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1943,7 +1942,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2756,7 +2755,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"90035\",\n  \"type\": \"Act\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2800,7 +2799,7 @@
         },
         {
           "GUID": "91b616",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.50000238,
             "posY": 1.52030575,
@@ -2942,7 +2941,7 @@
               },
               "Nickname": "Effacer les Traces (Avancé)",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"90031\",\n  \"traits\": \"Task.\",\n  \"type\": \"Treachery\",\n  \"uses\": {\n    \"count\": 4,\n    \"token\": \"clue\",\n    \"type\": \"Clue\"\n  },\n  \"weakness\": \"true\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3304,7 +3303,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4195,7 +4194,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01135\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4601,7 +4600,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"01163\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4775,7 +4774,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01167\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5401,7 +5400,7 @@
         },
         {
           "GUID": "c455c3",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 6.10360336,
             "posY": 1.57030511,
@@ -5819,7 +5818,7 @@
           },
           "Nickname": "Référence",
           "Description": "Suivre les Règles",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6266,7 +6265,7 @@
         },
         {
           "GUID": "fa730d",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.500002,
             "posY": 1.51688409,
