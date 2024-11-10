@@ -2,12 +2,12 @@
       "GUID": "0941ea",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -93.00025,
+        "posX": -93.0003,
         "posY": 0.9800005,
-        "posZ": 19.4997635,
-        "rotX": -4.97472047E-06,
+        "posZ": 19.499733,
+        "rotX": -4.934712E-06,
         "rotY": 180.0006,
-        "rotZ": 4.403576E-07,
+        "rotZ": 4.74184731E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -1448,7 +1448,7 @@
             },
             {
               "GUID": "2eee61",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 4.5,
                 "posY": 1.5201,
@@ -1462,7 +1462,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2090,7 +2090,7 @@
             },
             {
               "GUID": "721582",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 1.4982,
                 "posY": 1.5201,
@@ -2104,7 +2104,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2732,7 +2732,7 @@
             },
             {
               "GUID": "8f58c9",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 14.5,
                 "posY": 1.5201,
@@ -2746,7 +2746,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2862,7 +2862,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Dévoreur du Dessous",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-4. Place 2 doom on the nearest enemy.\", \"modifier\": -4}, \"Elder Thing\": {\"description\": \"-7. If there is an Ancient One enemy in play, reveal another token.\", \"modifier\": -7}, \"Skull\": {\"description\": \"-3. If you fail, after this skill test, search the encounter deck and discard pile for a Monster enemy, and draw it. Shuffle the encounter deck.\", \"modifier\": -3}, \"Tablet\": {\"description\": \"-5. If there is a Monster enemy at your location, take 1 damage and 1 horror.\", \"modifier\": -5}}, \"front\": {\"Cultist\": {\"description\": \"-2. Place 1 doom on the nearest enemy.\", \"modifier\": -2}, \"Elder Thing\": {\"description\": \"-5. If there is an Ancient One enemy in play, reveal another token.\", \"modifier\": -5}, \"Skull\": {\"description\": \"-X. X is the number of Monster enemies in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If there is a Monster enemy at your location, take 1 damage.\", \"modifier\": -3}}}, \"id\": \"01142\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"01142\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3308,7 +3308,7 @@
             },
             {
               "GUID": "c3e250",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 12.0,
                 "posY": 1.5201,
@@ -3322,7 +3322,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4071,7 +4071,7 @@
             },
             {
               "GUID": "e2afeb",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 11.5,
                 "posY": 1.5201,
@@ -4085,7 +4085,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4129,7 +4129,7 @@
             },
             {
               "GUID": "e2dd09",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 4.5,
                 "posY": 1.5201,
@@ -4143,7 +4143,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5789,7 +5789,7 @@
                   },
                   "Nickname": "Magicien de l'Ordre",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5847,7 +5847,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5905,7 +5905,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5963,7 +5963,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9714,7 +9714,7 @@
               },
               "Nickname": "Référence",
               "Description": "Le Rassemblement",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, take 2 horror.\", \"modifier\": 0}, \"Skull\": {\"description\": \"-2. If you fail, after this skill test, search the encounter deck and discard pile for a Ghoul enemy and draw it. Shuffle the encounter deck.\", \"modifier\": -2}, \"Tablet\": {\"description\": \"-4. If there is a Ghoul enemy at your location, take 1 damage and 1 horror.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-1. If you fail, take 1 horror.\", \"modifier\": -1}, \"Skull\": {\"description\": \"-X. X is the number of Ghoul enemies at your location.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-2. If there is a Ghoul enemy at your location, take 1 damage.\", \"modifier\": -2}}}, \"id\": \"01104\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"01104\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -9820,7 +9820,7 @@
           "ContainedObjects": [
             {
               "GUID": "07c850",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 5.49844837,
                 "posY": 1.51688135,
@@ -9878,7 +9878,7 @@
             },
             {
               "GUID": "116f27",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 6.49884844,
                 "posY": 1.56687534,
@@ -10248,7 +10248,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10306,7 +10306,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10603,7 +10603,7 @@
                       },
                       "Nickname": "Magicien de l'Ordre",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -10661,7 +10661,7 @@
                       },
                       "Nickname": "Acolyte",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -12352,7 +12352,7 @@
               },
               "Nickname": "Référence",
               "Description": "Les Masque de Minuit",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"-2. Place 1 doom on each Cultist enemy in play. If there are no Cultist enemies in play, reveal another token.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-X. X is the total number of doom in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-4. If you fail, place all your clues on your location.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"-2. Place 1 doom on the nearest Cultist enemy.\", \"modifier\": -2}, \"Skull\": {\"description\": \"-X. X is the highest number of doom on a Cultist enemy in play.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, place 1 of your clues on your location.\", \"modifier\": -3}}}, \"id\": \"01120\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"01120\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -12653,7 +12653,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13008,7 +13008,7 @@
                       },
                       "Nickname": "Magicien de l'Ordre",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -13066,7 +13066,7 @@
                       },
                       "Nickname": "Acolyte",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -13124,7 +13124,7 @@
                       },
                       "Nickname": "Acolyte",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -14183,7 +14183,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14241,7 +14241,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14356,7 +14356,7 @@
                   },
                   "Nickname": "Acolyte",
                   "Description": "Humanoïde. Cultiste.",
-                  "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14709,7 +14709,7 @@
                       },
                       "Nickname": "Magicien de l'Ordre",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -16624,7 +16624,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Humanoïde. Cultiste. Élite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"01121a\",\n  \"type\": \"Agenda\",\n  \"upsidedown\": \"true\",\n  \"victory\": 2\n}",
+                  "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 4,\n    \"traits\": \"Humanoid. Cultist. Elite.\",\n    \"victory\": 2\n  },\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"01121a\",\n  \"type\": \"Agenda\",\n  \"victory\": 2\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17398,7 +17398,7 @@
                       },
                       "Nickname": "Magicien de l'Ordre",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+                      "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"01170\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -17456,7 +17456,7 @@
                       },
                       "Nickname": "Acolyte",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -17514,7 +17514,7 @@
                       },
                       "Nickname": "Acolyte",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -17572,7 +17572,7 @@
                       },
                       "Nickname": "Acolyte",
                       "Description": "Humanoïde. Cultiste.",
-                      "GMNotes": "{\n  \"id\": \"01169\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"uses\": [\n    {\n      \"count\": 1,\n      \"type\": \"Doom\",\n      \"token\": \"doom\"\n    }\n  ],\n  \"cycle\": \"Core\"\n}",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"01169\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  }\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -18490,7 +18490,7 @@
             },
             {
               "GUID": "b86294",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -23.0000134,
                 "posY": 1.78360558,
@@ -18504,7 +18504,7 @@
               },
               "Nickname": "Le Chasseur Masqué",
               "Description": "Traqueur Silencieux",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
