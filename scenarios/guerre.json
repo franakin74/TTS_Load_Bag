@@ -5,9 +5,9 @@
         "posX": 8.499949,
         "posY": 5.8436,
         "posZ": 51.49995,
-        "rotX": -4.4709946E-08,
+        "rotX": 3.36986723E-08,
         "rotY": 179.968491,
-        "rotZ": 5.101482E-06,
+        "rotZ": 4.95145559E-06,
         "scaleX": 1.265649,
         "scaleY": 0.263438284,
         "scaleZ": 1.38591444
@@ -204,7 +204,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86012\",\n  \"type\": \"Act\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -442,7 +442,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"86049\",\n  \"traits\": \"Creature. Insect.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1967,7 +1967,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"86043\",\n  \"traits\": \"Monster. Shoggoth. Mutated.\",\n  \"type\": \"Enemy\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2721,7 +2721,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"86044\",\n  \"traits\": \"Humanoid. Mutated.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2897,7 +2897,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"86019\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|Heart\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|Heart\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Montréal.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3186,7 +3186,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"86021\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Apostrophe|Crescent\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Apostrophe|Crescent\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"New York City.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4302,7 +4302,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 2,\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"86054\",\n  \"traits\": \"Item. Relic. Weapon. Melee.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4418,7 +4418,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"86055\",\n  \"intellectIcons\": 2,\n  \"traits\": \"Item. Relic.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4825,7 +4825,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"86022\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Crescent\",\n    \"icons\": \"Apostrophe\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Crescent\",\n    \"icons\": \"Apostrophe\"\n  },\n  \"traits\": \"Ritual Site. New York City.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5171,7 +5171,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"86049\",\n  \"traits\": \"Creature. Insect.\",\n  \"type\": \"Enemy\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5654,7 +5654,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86026\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5770,7 +5770,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86032\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6118,7 +6118,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86033\",\n  \"traits\": \"Omen.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6582,7 +6582,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86028\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7117,7 +7117,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86039\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7175,7 +7175,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"86039\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7582,7 +7582,7 @@
           },
           "Nickname": "Référence",
           "Description": "La Guerre des Dieux Extérieurs",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

@@ -5,9 +5,9 @@
         "posX": 3.99995,
         "posY": 5.8436,
         "posZ": 51.49995,
-        "rotX": -1.802302E-08,
+        "rotX": -2.29805224E-08,
         "rotY": 179.968414,
-        "rotZ": 5.02124749E-06,
+        "rotZ": 5.05286835E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -70,7 +70,7 @@
       "ContainedObjects": [
         {
           "GUID": "01469d",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 15.0,
             "posY": 1.51986587,
@@ -84,7 +84,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -341,7 +341,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85008\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -399,7 +399,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85007\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -505,7 +505,7 @@
         },
         {
           "GUID": "0ae88f",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.99999857,
             "posY": 1.516081,
@@ -519,7 +519,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -878,7 +878,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85020\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -994,7 +994,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85017\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1052,7 +1052,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85019\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1226,7 +1226,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85018\",\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1446,7 +1446,7 @@
         },
         {
           "GUID": "2eee61",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.99999857,
             "posY": 1.52216387,
@@ -1460,7 +1460,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1504,7 +1504,7 @@
         },
         {
           "GUID": "32c650",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -3.00000143,
             "posY": 1.52142048,
@@ -1518,7 +1518,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2303,7 +2303,7 @@
                   },
                   "Nickname": "Universal Solvent",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"85029\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Science.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 4,\n    \"token\": \"resource\",\n    \"type\": \"Supply\"\n  },\n  \"wildIcons\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2559,7 +2559,7 @@
                   },
                   "Nickname": "Mi-Go Weapon",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"85031\",\n  \"traits\": \"Weapon. Science.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 3,\n    \"token\": \"resource\",\n    \"type\": \"Ammo\"\n  },\n  \"wildIcons\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3468,7 +3468,7 @@
         },
         {
           "GUID": "5359e8",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.999998,
             "posY": 1.52064323,
@@ -3482,7 +3482,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3526,7 +3526,7 @@
         },
         {
           "GUID": "538522",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -3.00000238,
             "posY": 1.518379,
@@ -3540,7 +3540,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3598,7 +3598,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85012\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3866,7 +3866,7 @@
         },
         {
           "GUID": "61ae50",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 14.9999981,
             "posY": 1.51834524,
@@ -3880,7 +3880,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4079,7 +4079,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85009\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4137,7 +4137,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85007\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4195,7 +4195,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"85006\",\n  \"type\": \"Act\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4255,7 +4255,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 15,\n  \"healthPerInv\": \"true\",\n  \"id\": \"85038\",\n  \"traits\": \"Monster. Ooze. Elite.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4550,7 +4550,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"85033\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4666,7 +4666,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"85033\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4941,7 +4941,7 @@
         },
         {
           "GUID": "700c1f",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -3.000005,
             "posY": 1.51989973,
@@ -4955,7 +4955,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5403,7 +5403,7 @@
         },
         {
           "GUID": "81cac9",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 15.0,
             "posY": 1.51672935,
@@ -5417,7 +5417,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5461,7 +5461,7 @@
         },
         {
           "GUID": "8431e1",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 24.0,
             "posY": 1.517568,
@@ -5475,7 +5475,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5882,7 +5882,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"85003\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6000,7 +6000,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85011\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6058,7 +6058,7 @@
           },
           "Nickname": "Référence",
           "Description": "Le Dévoreur de Toute Chose",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6721,7 +6721,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85053\",\n  \"traits\": \"Ooze. Power.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6837,7 +6837,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85052\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7011,7 +7011,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85050\",\n  \"traits\": \"Ooze. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7069,7 +7069,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85050\",\n  \"traits\": \"Ooze. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7127,7 +7127,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85049\",\n  \"traits\": \"Ooze. Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7359,7 +7359,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85048\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7417,7 +7417,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85047\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7591,7 +7591,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85047\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7823,7 +7823,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85045\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7997,7 +7997,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85044\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8113,7 +8113,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"85041\",\n  \"traits\": \"Monster. Ooze. Manifold.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8171,7 +8171,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"id\": \"85040\",\n  \"traits\": \"Monster. Ooze. Manifold.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8391,7 +8391,7 @@
         },
         {
           "GUID": "c13319",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -12.0000019,
             "posY": 1.520677,
@@ -8405,7 +8405,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -8972,7 +8972,7 @@
         },
         {
           "GUID": "d3deeb",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.99999857,
             "posY": 1.51760173,
@@ -8986,7 +8986,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

@@ -2,12 +2,12 @@
       "GUID": "ba18ea",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -0.5000495,
+        "posX": -0.5000498,
         "posY": 5.84360027,
         "posZ": 51.49995,
-        "rotX": -5.71457441E-08,
-        "rotY": 179.9668,
-        "rotZ": 4.97288465E-06,
+        "rotX": -8.701298E-08,
+        "rotY": 179.966782,
+        "rotZ": 4.988291E-06,
         "scaleX": 1.23308516,
         "scaleY": 0.256660283,
         "scaleZ": 1.35025632
@@ -205,7 +205,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"84042\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -321,7 +321,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"84042\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -442,7 +442,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 12,\n  \"id\": \"84003\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -500,7 +500,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 3,\n  \"id\": \"84002\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -681,7 +681,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84015\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Plus\"\n  },\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1489,7 +1489,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84016\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Crime Scene.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1778,7 +1778,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84017\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Crime Scene.\",\n  \"type\": \"Location\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2129,7 +2129,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84009\",\n  \"traits\": \"Humanoid. Police. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2187,7 +2187,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84009\",\n  \"traits\": \"Humanoid. Police. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84009\",\n  \"traits\": \"Humanoid. Police. Innocent.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  },\n  \"victory\": 0\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2245,7 +2245,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84009\",\n  \"traits\": \"Humanoid. Police. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2542,7 +2542,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84039\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2831,7 +2831,7 @@
           },
           "Nickname": "Référence",
           "Description": "Meurtre à l'Hôtel Excelsior",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3317,7 +3317,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84025\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3433,7 +3433,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84025\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3491,7 +3491,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"84021\",\n  \"traits\": \"Humanoid. Staff.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3549,7 +3549,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  },\n  \"victory\": 0\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3665,7 +3665,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  },\n  \"victory\": 0\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3723,7 +3723,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  },\n  \"victory\": 0\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3897,7 +3897,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"id\": \"84020\",\n  \"traits\": \"Humanoid. Staff.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3955,7 +3955,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"84023\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4187,7 +4187,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84025\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4303,7 +4303,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"84022\",\n  \"traits\": \"Humanoid. Guest. Innocent.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4419,7 +4419,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"84021\",\n  \"traits\": \"Humanoid. Staff.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4598,7 +4598,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"84004\",\n  \"type\": \"Act\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4716,7 +4716,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84014\",\n  \"locationBack\": {\n    \"connections\": \"Square|Tee\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square|Tee\",\n    \"icons\": \"Tilde\"\n  },\n  \"traits\": \"Hall.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4774,7 +4774,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"84013\",\n  \"locationBack\": {\n    \"connections\": \"Square|Tilde|Hourglass|Crescent\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square|Tilde|Hourglass|Crescent\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Hall.\",\n  \"type\": \"Location\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4895,7 +4895,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"healthPerInv\": \"true\",\n  \"id\": \"84029\",\n  \"traits\": \"Monster. Mi-Go. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4953,7 +4953,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"84030\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5192,7 +5192,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"healthPerInv\": \"true\",\n  \"id\": \"84032\",\n  \"traits\": \"Monster. Staff. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"healthPerInv\": \"true\",\n  \"id\": \"84032\",\n  \"traits\": \"Monster. Staff. Elite.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"token\": \"doom\",\n    \"type\": \"Doom\"\n  },\n  \"victory\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5250,7 +5250,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84033\",\n  \"traits\": \"Humanoid. Monster. Staff.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5366,7 +5366,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84033\",\n  \"traits\": \"Humanoid. Monster. Staff.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5496,7 +5496,7 @@
               },
               "Nickname": "Sergeant Monroe",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 5,\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"84008\",\n  \"sanity\": 3,\n  \"traits\": \"Ally. Police.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5554,7 +5554,7 @@
               },
               "Nickname": "Bloodstained Dagger",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"84006\",\n  \"traits\": \"Item. Weapon. Melee. Cursed.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6614,7 +6614,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"84047\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6672,7 +6672,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 14,\n  \"id\": \"84046\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7372,7 +7372,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"84035\",\n  \"traits\": \"Monster. Extradimensional. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7488,7 +7488,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"84036\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,

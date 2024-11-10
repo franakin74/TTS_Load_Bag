@@ -5,9 +5,9 @@
         "posX": 31.5,
         "posY": 5.84359741,
         "posZ": 51.5,
-        "rotX": -4.30407141E-08,
+        "rotX": 1.57792623E-08,
         "rotY": 179.9686,
-        "rotZ": 5.036352E-06,
+        "rotZ": 4.98153349E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -84,7 +84,7 @@
           },
           "Nickname": "Fourrière de Warkham",
           "Description": "Warkham.",
-          "GMNotes": "{\n  \"id\": \"80034\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham.\",\n  \"locationFront\": {\n    \"icons\": \"Clover\",\n    \"connections\": \"Triangle|Diamond|Tee|Tilde\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Clover\",\n    \"connections\": \"Triangle|Diamond|Tee|Tilde\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80034\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Diamond|Tee|Tilde\",\n    \"icons\": \"Clover\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Diamond|Tee|Tilde\",\n    \"icons\": \"Clover\"\n  },\n  \"traits\": \"Barkham.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -321,7 +321,7 @@
           },
           "Nickname": "Braque Harrigan",
           "Description": "Le Chien de Guerre",
-          "GMNotes": "{\n  \"id\": \"80001\",\n  \"type\": \"Investigator\",\n  \"class\": \"Guardian\",\n  \"traits\": \"Veteran\",\n  \"willpowerIcons\": 3,\n  \"intellectIcons\": 2,\n  \"combatIcons\": 5,\n  \"agilityIcons\": 2\n}",
+          "GMNotes": "{\n  \"agilityIcons\": 2,\n  \"class\": \"Guardian\",\n  \"combatIcons\": 5,\n  \"id\": \"80001\",\n  \"intellectIcons\": 2,\n  \"traits\": \"Veteran\",\n  \"type\": \"Investigator\",\n  \"willpowerIcons\": 3\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -379,7 +379,7 @@
           },
           "Nickname": "Collier à Pointes",
           "Description": "Objet. Armure.",
-          "GMNotes": "{\n  \"id\": \"80016\",\n  \"type\": \"Asset\",\n  \"class\": \"Guardian\",\n  \"cost\": 3,\n  \"traits\": \"Item. Armor.\",\n  \"combatIcons\": 1\n}",
+          "GMNotes": "{\n  \"class\": \"Guardian\",\n  \"combatIcons\": 1,\n  \"cost\": 3,\n  \"id\": \"80016\",\n  \"traits\": \"Item. Armor.\",\n  \"type\": \"Asset\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -437,7 +437,7 @@
           },
           "Nickname": "Jacqueline Canine",
           "Description": "La Pattomancienne",
-          "GMNotes": "{\n  \"id\": \"80010\",\n  \"type\": \"Investigator\",\n  \"class\": \"Mystic\",\n  \"traits\": \"Clairvoyant.\",\n  \"willpowerIcons\": 5,\n  \"intellectIcons\": 3,\n  \"combatIcons\": 2,\n  \"agilityIcons\": 2\n}",
+          "GMNotes": "{\n  \"agilityIcons\": 2,\n  \"class\": \"Mystic\",\n  \"combatIcons\": 2,\n  \"id\": \"80010\",\n  \"intellectIcons\": 3,\n  \"traits\": \"Clairvoyant.\",\n  \"type\": \"Investigator\",\n  \"willpowerIcons\": 5\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -481,7 +481,7 @@
         },
         {
           "GUID": "1943ff",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -35.2566032,
             "posY": 1.78360486,
@@ -617,7 +617,7 @@
               },
               "Nickname": "Aboie Plus qu'il ne Mord",
               "Description": "Faiblesse.",
-              "GMNotes": "{\n  \"id\": \"80003\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Flaw.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80003\",\n  \"traits\": \"Flaw.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -675,7 +675,7 @@
               },
               "Nickname": "Minoutrailleuse",
               "Description": "Objet. Arme. Arme à feu.",
-              "GMNotes": "{\n  \"id\": \"80002\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"cost\": 5,\n  \"traits\": \"Item. Weapon. Firearm.\",\n  \"willpowerIcons\": 1,\n  \"combatIcons\": 1,\n  \"wildIcons\": 1,\n  \"uses\": [\n    {\n      \"count\": 12,\n      \"type\": \"Ammo\",\n      \"token\": \"resource\"\n    }\n  ]\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 5,\n  \"id\": \"80002\",\n  \"traits\": \"Item. Weapon. Firearm.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 12,\n    \"token\": \"resource\",\n    \"type\": \"Ammo\"\n  },\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -735,7 +735,7 @@
           },
           "Nickname": "Duke",
           "Description": "Le Gentil Toutou",
-          "GMNotes": "{\n  \"id\": \"80013\",\n  \"type\": \"Investigator\",\n  \"class\": \"Survivor\",\n  \"traits\": \"Drifter.\",\n  \"willpowerIcons\": 2,\n  \"intellectIcons\": 4,\n  \"combatIcons\": 4,\n  \"agilityIcons\": 2\n}",
+          "GMNotes": "{\n  \"agilityIcons\": 2,\n  \"class\": \"Survivor\",\n  \"combatIcons\": 4,\n  \"id\": \"80013\",\n  \"intellectIcons\": 4,\n  \"traits\": \"Drifter.\",\n  \"type\": \"Investigator\",\n  \"willpowerIcons\": 2\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -854,7 +854,7 @@
               },
               "Nickname": "Aucun Sens de l'Orientation",
               "Description": "Faiblesse.",
-              "GMNotes": "{\n  \"id\": \"80012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Flaw.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80012\",\n  \"traits\": \"Flaw.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -912,7 +912,7 @@
               },
               "Nickname": "Baballe de Cauchemar",
               "Description": "Vraiment Cauchemardesque",
-              "GMNotes": "{\n  \"id\": \"80011\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"traits\": \"Item. Relic. Cursed.\",\n  \"willpowerIcons\": 1,\n  \"intellectIcons\": 1,\n  \"wildIcons\": 1\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"id\": \"80011\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Relic. Cursed.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1304,7 +1304,7 @@
         },
         {
           "GUID": "3549e7",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -34.9938164,
             "posY": 1.783606,
@@ -1436,7 +1436,7 @@
           },
           "Nickname": "Kate Winthrott",
           "Description": "Le Labrador de Laboratoire",
-          "GMNotes": "{\n  \"id\": \"80004\",\n  \"type\": \"Investigator\",\n  \"class\": \"Seeker\",\n  \"traits\": \"Scholar. Pup.\",\n  \"willpowerIcons\": 3,\n  \"intellectIcons\": 4,\n  \"combatIcons\": 1,\n  \"agilityIcons\": 4\n}",
+          "GMNotes": "{\n  \"agilityIcons\": 4,\n  \"class\": \"Seeker\",\n  \"combatIcons\": 1,\n  \"id\": \"80004\",\n  \"intellectIcons\": 4,\n  \"traits\": \"Scholar. Pup.\",\n  \"type\": \"Investigator\",\n  \"willpowerIcons\": 3\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1494,7 +1494,7 @@
           },
           "Nickname": "Université de Miscabotic",
           "Description": "Warkham.",
-          "GMNotes": "{\n  \"id\": \"80033\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham.\",\n  \"locationFront\": {\n    \"icons\": \"Square\",\n    \"connections\": \"Hourglass|Star|Plus|Heart\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Square\",\n    \"connections\": \"Hourglass|Star|Plus|Heart\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80033\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|Star|Plus|Heart\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|Star|Plus|Heart\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Barkham.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -1786,7 +1786,7 @@
               },
               "Nickname": "Mauvaise Odeur",
               "Description": "Faiblesse.",
-              "GMNotes": "{\n  \"id\": \"80006\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Madness.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80006\",\n  \"traits\": \"Madness.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1844,7 +1844,7 @@
               },
               "Nickname": "Décontenanceur de Félins",
               "Description": "Il Décontenance les Félins",
-              "GMNotes": "{\n  \"id\": \"80005\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"traits\": \"Item. Science.\",\n  \"intellectIcons\": 1,\n  \"agilityIcons\": 1,\n  \"wildIcons\": 1\n}",
+              "GMNotes": "{\n  \"agilityIcons\": 1,\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"id\": \"80005\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Science.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1974,7 +1974,7 @@
               },
               "Nickname": "Les Miauleurs Affamés",
               "Description": "Jumeaux Capricieux",
-              "GMNotes": "{\n  \"id\": \"80041\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 5,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80041\",\n  \"traits\": \"Humanoid. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2032,7 +2032,7 @@
               },
               "Nickname": "Chat de Tindalos",
               "Description": "Chat Extradimensionnel",
-              "GMNotes": "{\n  \"id\": \"80039\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 3,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80039\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2090,7 +2090,7 @@
               },
               "Nickname": "L'Habitant des Profondeurs",
               "Description": "Ne Demandez pas Comment",
-              "GMNotes": "{\n  \"id\": \"80040\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"80040\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2148,7 +2148,7 @@
               },
               "Nickname": "Le Bondisseur Nocturne",
               "Description": "Chasseur au Coeur de la Nuit",
-              "GMNotes": "{\n  \"id\": \"80044\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 2,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80044\",\n  \"traits\": \"Humanoid. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2206,7 +2206,7 @@
               },
               "Nickname": "Chat Chevauchant au Byachat",
               "Description": "Quelle Jolie Allitération en « ch »",
-              "GMNotes": "{\n  \"id\": \"80043\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80043\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2264,7 +2264,7 @@
               },
               "Nickname": "Celui qui Feulait dans les Ténèbres",
               "Description": "Le Chat Ressuscité",
-              "GMNotes": "{\n  \"id\": \"80038\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80038\",\n  \"traits\": \"Monster. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2322,7 +2322,7 @@
               },
               "Nickname": "CHAT FANTÔME",
               "Description": "À la fois Chat et Fantôme",
-              "GMNotes": "{\n  \"id\": \"80042\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Creature. Meowsk. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"health\": 2,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80042\",\n  \"traits\": \"Creature. Meowsk. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2382,7 +2382,7 @@
           },
           "Nickname": "Whusky",
           "Description": "Illicite.",
-          "GMNotes": "{\n  \"id\": \"80021\",\n  \"type\": \"Skill\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Illicit.\",\n  \"wildIcons\": 4\n}",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"80021\",\n  \"traits\": \"Illicit.\",\n  \"type\": \"Skill\",\n  \"wildIcons\": 4\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2613,7 +2613,7 @@
           },
           "Nickname": "Myarlathotep",
           "Description": "Minetssagers des Dieux Extérieurs",
-          "GMNotes": "{\n  \"id\": \"80037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Ancient One. Elite.\",\n  \"victory\": 3\n}",
+          "GMNotes": "{\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"80037\",\n  \"traits\": \"Ancient One. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2671,7 +2671,7 @@
           },
           "Nickname": "Quartier de la Queue",
           "Description": "Warkham. Centra.",
-          "GMNotes": "{\n  \"id\": \"80028\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham. Central.\",\n  \"locationFront\": {\n    \"icons\": \"Hourglass\",\n    \"connections\": \"Triangle|Diamond|Square|Plus|Tee\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Hourglass\",\n    \"connections\": \"Triangle|Diamond|Square|Plus|Tee\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80028\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Diamond|Square|Plus|Tee\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Diamond|Square|Plus|Tee\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Barkham. Central.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2729,7 +2729,7 @@
           },
           "Nickname": "Monocle Canin",
           "Description": "Objet. Outil. Chic.",
-          "GMNotes": "{\n  \"id\": \"80017\",\n  \"type\": \"Asset\",\n  \"class\": \"Seeker\",\n  \"cost\": 2,\n  \"traits\": \"Item. Tool. Classy.\",\n  \"intellectIcons\": 1\n}",
+          "GMNotes": "{\n  \"class\": \"Seeker\",\n  \"cost\": 2,\n  \"id\": \"80017\",\n  \"intellectIcons\": 1,\n  \"sanity\": 2,\n  \"traits\": \"Item. Tool. Classy.\",\n  \"type\": \"Asset\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2773,7 +2773,7 @@
         },
         {
           "GUID": "6c5b9f",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -35.1639061,
             "posY": 1.7836051,
@@ -3108,7 +3108,7 @@
               },
               "Nickname": "Minou",
               "Description": "Créature.",
-              "GMNotes": "{\n  \"id\": \"80045\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Creature.\"\n}",
+              "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"80045\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3166,7 +3166,7 @@
               },
               "Nickname": "Minou",
               "Description": "Créature.",
-              "GMNotes": "{\n  \"id\": \"80045\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Creature.\"\n}",
+              "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"80045\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3224,7 +3224,7 @@
               },
               "Nickname": "Minou",
               "Description": "Créature.",
-              "GMNotes": "{\n  \"id\": \"80045\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Creature.\"\n}",
+              "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"80045\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 1,\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3282,7 +3282,7 @@
               },
               "Nickname": "Tueur de Rongeurs",
               "Description": "Humanoïde. Cultiste.",
-              "GMNotes": "{\n  \"id\": \"80046\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\"\n}",
+              "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"80046\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3340,7 +3340,7 @@
               },
               "Nickname": "Tueur de Rongeurs",
               "Description": "Humanoïde. Cultiste.",
-              "GMNotes": "{\n  \"id\": \"80046\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Cultist.\"\n}",
+              "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"80046\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3398,7 +3398,7 @@
               },
               "Nickname": "Cutiste de l'Ordre",
               "Description": "Cultiste, plus ou moins ?\nCultiste, clairement.",
-              "GMNotes": "{\n  \"id\": \"80047\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid, sort of? Cultist, definitely.\"\n}",
+              "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"80047\",\n  \"traits\": \"Humanoid, sort of? Cultist, definitely.\",\n  \"type\": \"Enemy\",\n  \"uses\": {\n    \"count\": 0,\n    \"type\": \"Doom\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3456,7 +3456,7 @@
               },
               "Nickname": "Serviteur de Dogue-Sothoth",
               "Description": "Monstre. Chabomination",
-              "GMNotes": "{\n  \"id\": \"80048\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Catbomination.\"\n}",
+              "GMNotes": "{\n  \"health\": 4,\n  \"id\": \"80048\",\n  \"traits\": \"Monster. Catbomination.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3514,7 +3514,7 @@
               },
               "Nickname": "Serviteur de Dogue-Sothoth",
               "Description": "Monstre. Chabomination",
-              "GMNotes": "{\n  \"id\": \"80048\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Catbomination.\"\n}",
+              "GMNotes": "{\n  \"health\": 4,\n  \"id\": \"80048\",\n  \"traits\": \"Monster. Catbomination.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3572,7 +3572,7 @@
               },
               "Nickname": "ÉCUREUIL !",
               "Description": "Écureuil !",
-              "GMNotes": "{\n  \"id\": \"80049\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Squirrel!\"\n}",
+              "GMNotes": "{\n  \"id\": \"80049\",\n  \"traits\": \"Squirrel!\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3630,7 +3630,7 @@
               },
               "Nickname": "ÉCUREUIL !",
               "Description": "Écureuil !",
-              "GMNotes": "{\n  \"id\": \"80049\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Squirrel!\"\n}",
+              "GMNotes": "{\n  \"id\": \"80049\",\n  \"traits\": \"Squirrel!\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3688,7 +3688,7 @@
               },
               "Nickname": "Traqué par les Byachats",
               "Description": "Manigance.",
-              "GMNotes": "{\n  \"id\": \"80050\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80050\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3746,7 +3746,7 @@
               },
               "Nickname": "Traqué par les Byachats",
               "Description": "Manigance.",
-              "GMNotes": "{\n  \"id\": \"80050\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80050\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3804,7 +3804,7 @@
               },
               "Nickname": "Sur Vos Traces",
               "Description": "Manigance.",
-              "GMNotes": "{\n  \"id\": \"80051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80051\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3862,7 +3862,7 @@
               },
               "Nickname": "Sur Vos Traces",
               "Description": "Manigance.",
-              "GMNotes": "{\n  \"id\": \"80051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80051\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3920,7 +3920,7 @@
               },
               "Nickname": "Chat dans la Brume",
               "Description": "Terreur.",
-              "GMNotes": "{\n  \"id\": \"80052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80052\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3978,7 +3978,7 @@
               },
               "Nickname": "Chat dans la Brume",
               "Description": "Terreur.",
-              "GMNotes": "{\n  \"id\": \"80052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80052\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4036,7 +4036,7 @@
               },
               "Nickname": "Chat dans la Brume",
               "Description": "Terreur.",
-              "GMNotes": "{\n  \"id\": \"80052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80052\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4094,7 +4094,7 @@
               },
               "Nickname": "Pattes Griffues",
               "Description": "Risque.",
-              "GMNotes": "{\n  \"id\": \"80053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4152,7 +4152,7 @@
               },
               "Nickname": "Pattes Griffues",
               "Description": "Risque.",
-              "GMNotes": "{\n  \"id\": \"80053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4210,7 +4210,7 @@
               },
               "Nickname": "Pattes Griffues",
               "Description": "Risque.",
-              "GMNotes": "{\n  \"id\": \"80053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4268,7 +4268,7 @@
               },
               "Nickname": "Les Miaousques de Myarlathotep",
               "Description": "Pouvoir.",
-              "GMNotes": "{\n  \"id\": \"80054\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Power.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80054\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4326,7 +4326,7 @@
               },
               "Nickname": "Les Miaousques de Myarlathotep",
               "Description": "Pouvoir.",
-              "GMNotes": "{\n  \"id\": \"80054\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Power.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80054\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4384,7 +4384,7 @@
               },
               "Nickname": "Chat Borné",
               "Description": "Risque.",
-              "GMNotes": "{\n  \"id\": \"80055\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80055\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4442,7 +4442,7 @@
               },
               "Nickname": "Chat Borné",
               "Description": "Risque.",
-              "GMNotes": "{\n  \"id\": \"80055\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80055\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4500,7 +4500,7 @@
               },
               "Nickname": "Regard du Chat Perché",
               "Description": "Terreur.",
-              "GMNotes": "{\n  \"id\": \"80057\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80057\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4558,7 +4558,7 @@
               },
               "Nickname": "Regard du Chat Perché",
               "Description": "Terreur.",
-              "GMNotes": "{\n  \"id\": \"80057\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80057\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4616,7 +4616,7 @@
               },
               "Nickname": "Méfaits et Chaos",
               "Description": "Manigance.",
-              "GMNotes": "{\n  \"id\": \"80056\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80056\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4674,7 +4674,7 @@
               },
               "Nickname": "Méfaits et Chaos",
               "Description": "Manigance.",
-              "GMNotes": "{\n  \"id\": \"80056\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80056\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5599,7 +5599,7 @@
           },
           "Nickname": "Hurlement de Clyhf'ford",
           "Description": "Sort.",
-          "GMNotes": "{\n  \"id\": \"80019\",\n  \"type\": \"Event\",\n  \"class\": \"Mystic\",\n  \"cost\": 5,\n  \"traits\": \"Spell.\",\n  \"willpowerIcons\": 1,\n  \"agilityIcons\": 1\n}",
+          "GMNotes": "{\n  \"agilityIcons\": 1,\n  \"class\": \"Mystic\",\n  \"cost\": 5,\n  \"id\": \"80019\",\n  \"traits\": \"Spell.\",\n  \"type\": \"Event\",\n  \"willpowerIcons\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5816,7 +5816,7 @@
         },
         {
           "GUID": "823edd",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -35.22291,
             "posY": 1.78360569,
@@ -5952,7 +5952,7 @@
               },
               "Nickname": "Le Plan de Myarlathotep",
               "Description": "Intrigue 2",
-              "GMNotes": "{\n  \"id\": \"80024\",\n  \"type\": \"Agenda\",\n  \"doomThreshold\": 8\n}",
+              "GMNotes": "{\n  \"doomThreshold\": 8,\n  \"id\": \"80024\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6010,7 +6010,7 @@
               },
               "Nickname": "Entre Chiens et Chats",
               "Description": "Intrigue 1",
-              "GMNotes": "{\n  \"id\": \"80023\",\n  \"type\": \"Agenda\",\n  \"doomThreshold\": 4\n}",
+              "GMNotes": "{\n  \"doomThreshold\": 4,\n  \"id\": \"80023\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6070,7 +6070,7 @@
           },
           "Nickname": "District Canin",
           "Description": "Warkham. Central.",
-          "GMNotes": "{\n  \"id\": \"80027\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham. Central.\",\n  \"locationFront\": {\n    \"icons\": \"Triangle\",\n    \"connections\": \"Diamond|Clover|Hourglass|Plus|Tee|Tilde\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Triangle\",\n    \"connections\": \"Diamond|Clover|Hourglass|Plus|Tee|Tilde\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80027\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Clover|Hourglass|Plus|Tee|Tilde\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Clover|Hourglass|Plus|Tee|Tilde\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Barkham. Central.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6301,7 +6301,7 @@
           },
           "Nickname": "Vieille Chaussure",
           "Description": "Objet. Paire de Chaussures, enfin plus vraiment",
-          "GMNotes": "{\n  \"id\": \"80020\",\n  \"type\": \"Asset\",\n  \"class\": \"Survivor\",\n  \"cost\": 1,\n  \"traits\": \"Item. Footwear, but not really.\",\n  \"willpowerIcons\": 1\n}",
+          "GMNotes": "{\n  \"class\": \"Survivor\",\n  \"cost\": 1,\n  \"health\": 2,\n  \"id\": \"80020\",\n  \"traits\": \"Item. Footwear, but not really.\",\n  \"type\": \"Asset\",\n  \"willpowerIcons\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6532,7 +6532,7 @@
           },
           "Nickname": "Chiens de Location",
           "Description": "Allié. Créature. Chiens Domestiques",
-          "GMNotes": "{\n  \"id\": \"80018\",\n  \"type\": \"Asset\",\n  \"class\": \"Rogue\",\n  \"cost\": 3,\n  \"traits\": \"Ally. Creature. Fellow Dogs.\",\n  \"intellectIcons\": 1,\n  \"combatIcons\": 1\n}",
+          "GMNotes": "{\n  \"class\": \"Rogue\",\n  \"combatIcons\": 1,\n  \"cost\": 3,\n  \"health\": 2,\n  \"id\": \"80018\",\n  \"intellectIcons\": 1,\n  \"sanity\": 2,\n  \"traits\": \"Ally. Creature. Fellow Dogs.\",\n  \"type\": \"Asset\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6997,7 +6997,7 @@
               },
               "Nickname": "Ramasseurs de Chiens Errants",
               "Description": "Faiblesse.",
-              "GMNotes": "{\n  \"id\": \"80009\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid.\"\n}",
+              "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"80009\",\n  \"traits\": \"Humanoid.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7055,7 +7055,7 @@
               },
               "Nickname": "Prendre le Volant",
               "Description": "Quoi ? Non. Stop. C'est vilain. Vilain chien.",
-              "GMNotes": "{\n  \"id\": \"80008\",\n  \"type\": \"Event\",\n  \"traits\": \"What? No. Stop, That's bad. Bad dog.\",\n  \"combatIcons\": 1,\n  \"agilityIcons\": 1,\n  \"wildIcons\": 1\n}",
+              "GMNotes": "{\n  \"agilityIcons\": 1,\n  \"combatIcons\": 1,\n  \"id\": \"80008\",\n  \"traits\": \"What? No. Stop, That's bad. Bad dog.\",\n  \"type\": \"Event\",\n  \"wildIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7115,7 +7115,7 @@
           },
           "Nickname": "Référence",
           "Description": "La Cabale de Myarlathotep",
-          "GMNotes": "{\"type\":\"ScenarioReference\",\"class\":\"Mythos\",\"tokens\":{\"back\":{\"Cultist\":{\"description\":\"-2. Place 1 doom on the nearest enemy.\",\"modifier\":-2},\"Elder Thing\":{\"description\":\"-7. Woof.\",\"modifier\":-7},\"Skull\":{\"description\":\"-X. X is the number of Meowsk enemies in play, in the victory display, and attached to Meowlathotep.\",\"modifier\":-999},\"Tablet\":{\"description\":\"-2. Place 1 of your clues on your location.\",\"modifier\":-2}},\"front\":{\"Cultist\":{\"description\":\"-2. If you fail, place 1 doom on the nearest enemy.\",\"modifier\":-2},\"Elder Thing\":{\"description\":\"-5. Woof.\",\"modifier\":-5},\"Skull\":{\"description\":\"-X. X is half the number of Meowsk enemies in play, in the victory display, and attached to Meowlathotep, rounded up.\",\"modifier\":-999},\"Tablet\":{\"description\":\"-2. If you fail, place 1 of your clues on your location.\",\"modifier\":-2}}}}}",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"80022\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7173,7 +7173,7 @@
           },
           "Nickname": "Clinique Vétérinaire St. Mary",
           "Description": "Warkham.",
-          "GMNotes": "{\n  \"id\": \"80035\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham.\",\n  \"locationFront\": {\n    \"icons\": \"Heart\",\n    \"connections\": \"Square|Star|Plus\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Heart\",\n    \"connections\": \"Square|Star|Plus\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80035\",\n  \"locationBack\": {\n    \"connections\": \"Square|Star|Plus\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square|Star|Plus\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Barkham.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7285,7 +7285,7 @@
           },
           "Nickname": "Quartier de la Truffe",
           "Description": "Warkham. Central.",
-          "GMNotes": "{\n  \"id\": \"80029\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham. Central.\",\n  \"locationFront\": {\n    \"icons\": \"Plus\",\n    \"connections\": \"Triangle|Square|Hourglass|Star|Tee|Heart\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Plus\",\n    \"connections\": \"Triangle|Square|Hourglass|Star|Tee|Heart\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80029\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Square|Hourglass|Star|Tee|Heart\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Square|Hourglass|Star|Tee|Heart\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Barkham. Central.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7577,7 +7577,7 @@
               },
               "Nickname": "À Court de Biscuits pour Chien",
               "Description": "Faiblesse",
-              "GMNotes": "{\n  \"id\": \"80015\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Blunder.\"\n}",
+              "GMNotes": "{\n  \"id\": \"80015\",\n  \"traits\": \"Blunder.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7635,7 +7635,7 @@
               },
               "Nickname": "Humain de Compagnie",
               "Description": "Je Crois qu'il s'Appelle « Pete » ?",
-              "GMNotes": "{\n  \"id\": \"80014\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"traits\": \"Ally.\",\n  \"uses\": [\n    {\n      \"count\": 5,\n      \"type\": \"Resource\",\n      \"token\": \"resource\"\n    }\n  ]\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"health\": 3,\n  \"id\": \"80014\",\n  \"sanity\": 2,\n  \"traits\": \"Ally.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 5,\n    \"token\": \"resource\",\n    \"type\": \"Resource\"\n  }\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7695,7 +7695,7 @@
           },
           "Nickname": "Faubourg des Babines",
           "Description": "Warkam. Centra.",
-          "GMNotes": "{\n  \"id\": \"80030\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham. Central.\",\n  \"locationFront\": {\n    \"icons\": \"Tee\",\n    \"connections\": \"Triangle|Clover|Hourglass|Star|Plus\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Tee\",\n    \"connections\": \"Triangle|Clover|Hourglass|Star|Plus\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80030\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Clover|Hourglass|Star|Plus\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Clover|Hourglass|Star|Plus\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Barkham. Central.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7753,7 +7753,7 @@
           },
           "Nickname": "Asile de Warkham",
           "Description": "Warkham.",
-          "GMNotes": "{\n  \"id\": \"80031\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham.\",\n  \"locationFront\": {\n    \"icons\": \"Diamond\",\n    \"connections\": \"Triangle|Clover|Hourglass|Tilde\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Diamond\",\n    \"connections\": \"Triangle|Clover|Hourglass|Tilde\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80031\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Clover|Hourglass|Tilde\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Clover|Hourglass|Tilde\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Barkham.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7984,7 +7984,7 @@
           },
           "Nickname": "« Skids » O'Toutou",
           "Description": "L'Évadé de la Fourrière",
-          "GMNotes": "{\n  \"id\": \"80007\",\n  \"type\": \"Investigator\",\n  \"class\": \"Rogue\",\n  \"traits\": \"Criminal.\",\n  \"willpowerIcons\": 2,\n  \"intellectIcons\": 3,\n  \"combatIcons\": 3,\n  \"agilityIcons\": 4\n}",
+          "GMNotes": "{\n  \"agilityIcons\": 4,\n  \"class\": \"Rogue\",\n  \"combatIcons\": 3,\n  \"id\": \"80007\",\n  \"intellectIcons\": 3,\n  \"traits\": \"Criminal.\",\n  \"type\": \"Investigator\",\n  \"willpowerIcons\": 2\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -8042,7 +8042,7 @@
           },
           "Nickname": "Niche de Velma",
           "Description": "Warkham.",
-          "GMNotes": "{\n  \"id\": \"80036\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham.\",\n  \"locationFront\": {\n    \"icons\": \"Tilde\",\n    \"connections\": \"Triangle|Diamond|Clover\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Tilde\",\n    \"connections\": \"Triangle|Diamond|Clover\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80036\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Diamond|Clover\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Diamond|Clover\",\n    \"icons\": \"Tilde\"\n  },\n  \"traits\": \"Barkham.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -8151,7 +8151,7 @@
           },
           "Nickname": "Champ d'Os",
           "Description": "Warkham",
-          "GMNotes": "{\n  \"id\": \"80032\",\n  \"type\": \"Location\",\n  \"traits\": \"Barkham.\",\n  \"locationFront\": {\n    \"icons\": \"Star\",\n    \"connections\": \"Square|Plus|Tee|Heart\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Star\",\n    \"connections\": \"Square|Plus|Tee|Heart\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+          "GMNotes": "{\n  \"id\": \"80032\",\n  \"locationBack\": {\n    \"connections\": \"Square|Plus|Tee|Heart\",\n    \"icons\": \"Star\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Square|Plus|Tee|Heart\",\n    \"icons\": \"Star\"\n  },\n  \"traits\": \"Barkham.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -8195,7 +8195,7 @@
         },
         {
           "GUID": "eab8ff",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -35.09171,
             "posY": 1.78360546,

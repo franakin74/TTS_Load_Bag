@@ -5,9 +5,9 @@
         "posX": -18.0,
         "posY": 5.8436017,
         "posZ": 51.5,
-        "rotX": -5.78236623E-08,
+        "rotX": -3.40979156E-08,
         "rotY": 179.968491,
-        "rotZ": 5.17756325E-06,
+        "rotZ": 5.14690873E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -243,7 +243,7 @@
         },
         {
           "GUID": "0c52b3",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 12.0,
             "posY": 1.5201,
@@ -257,7 +257,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -488,7 +488,7 @@
           },
           "Nickname": "Piège à Ours",
           "Description": "",
-          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81020\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Asset\"\n}",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -736,7 +736,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81036\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -794,7 +794,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"81031\",\n  \"traits\": \"Monster. Dhole.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -852,7 +852,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"81031\",\n  \"traits\": \"Monster. Dhole.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -910,7 +910,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81036\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -968,7 +968,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"81019\",\n  \"intellectIcons\": 1,\n  \"sanity\": 4,\n  \"traits\": \"Ally. Sorcerer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1026,7 +1026,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81036\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1142,7 +1142,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"81032\",\n  \"traits\": \"Monster. Gug.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1258,7 +1258,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81034\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1374,7 +1374,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81034\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1432,7 +1432,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81034\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1705,7 +1705,7 @@
         },
         {
           "GUID": "50e1a8",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -5.0,
             "posY": 1.5201,
@@ -1719,7 +1719,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -2204,7 +2204,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81011\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Tilde\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Tilde\",\n    \"icons\": \"Tilde\"\n  },\n  \"traits\": \"Riverside.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2320,7 +2320,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81010\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Diamond|Hourglass\",\n    \"icons\": \"Triangle\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Diamond|Hourglass\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Riverside. Bayou.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2500,7 +2500,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81014\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent\",\n    \"icons\": \"Crescent\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Wilderness.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2558,7 +2558,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81013\",\n  \"locationBack\": {\n    \"connections\": \"Crescent|Square|Triangle|Hourglass\",\n    \"icons\": \"Diamond\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Crescent|Square|Triangle|Hourglass\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Wilderness. Bayou.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2680,7 +2680,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81018\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Hourglass\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Hourglass\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Unhallowed.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2738,7 +2738,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Hourglass\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Hourglass\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Unhallowed.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2844,7 +2844,7 @@
         },
         {
           "GUID": "5b39bf",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 22.9999,
             "posY": 1.5201,
@@ -2858,7 +2858,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3451,7 +3451,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81024\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3567,7 +3567,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"81023\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3625,7 +3625,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81026\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3741,7 +3741,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81025\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3857,7 +3857,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81027\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3915,7 +3915,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81026\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3973,7 +3973,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81025\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4031,7 +4031,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81027\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4089,7 +4089,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"81027\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4379,7 +4379,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"81023\",\n  \"traits\": \"Creature.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4943,7 +4943,7 @@
         },
         {
           "GUID": "81a74e",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 5.99999952,
             "posY": 1.51863194,
@@ -4957,7 +4957,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5015,7 +5015,7 @@
           },
           "Nickname": "Référence",
           "Description": "La Malédiction du Rougarou",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5316,7 +5316,7 @@
               },
               "Nickname": "Lady Esprit",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"81019\",\n  \"intellectIcons\": 1,\n  \"sanity\": 4,\n  \"traits\": \"Ally. Sorcerer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5374,7 +5374,7 @@
               },
               "Nickname": "Curse of the Rougarou",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81029\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\",\n  \"weakness\": \"true\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5432,7 +5432,7 @@
               },
               "Nickname": "Transformation Monstrueuse",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 0,\n  \"cycle\": \"Standalone\",\n  \"id\": \"81030\",\n  \"traits\": \"Talent.\",\n  \"type\": \"Asset\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5478,7 +5478,7 @@
         },
         {
           "GUID": "9eb811",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 17.5,
             "posY": 1.5201,
@@ -5492,7 +5492,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5536,7 +5536,7 @@
         },
         {
           "GUID": "a30a82",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -11.0,
             "posY": 1.5201,
@@ -5550,7 +5550,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5767,7 +5767,7 @@
         },
         {
           "GUID": "b7ed18",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 1.0001,
             "posY": 1.5201,
@@ -5781,7 +5781,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5900,7 +5900,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"81006\",\n  \"type\": \"Act\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6080,7 +6080,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 8,\n  \"id\": \"81004\",\n  \"type\": \"Agenda\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6588,7 +6588,7 @@
         },
         {
           "GUID": "d9c215",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 11.0,
             "posY": 1.5201,
@@ -6602,7 +6602,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6702,7 +6702,7 @@
         },
         {
           "GUID": "e23149",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": -79.50004,
             "posY": 0.9936093,
@@ -6716,7 +6716,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -7043,7 +7043,7 @@
         },
         {
           "GUID": "f7e401",
-          "Name": "CardCustom",
+          "Name": "Card",
           "Transform": {
             "posX": 0.0001,
             "posY": 1.5201,
@@ -7057,7 +7057,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,

@@ -5,9 +5,9 @@
         "posX": 17.49995,
         "posY": 5.843599,
         "posZ": 51.49995,
-        "rotX": -6.005959E-08,
+        "rotX": -2.61459121E-08,
         "rotY": 179.968582,
-        "rotZ": 5.04159334E-06,
+        "rotZ": 5.048041E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.2498823,
         "scaleZ": 1.3145982
@@ -268,7 +268,7 @@
               },
               "Nickname": "Isamara Ordoñez",
               "Description": "La Crooneuse",
-              "GMNotes": "{\n  \"id\": \"88044\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"cost\": 3,\n  \"traits\": \"Ally. Performer.\",\n  \"willpowerIcons\": 1,\n  \"wildIcons\": 1\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 3,\n  \"health\": 1,\n  \"id\": \"88044\",\n  \"sanity\": 3,\n  \"traits\": \"Ally. Performer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -326,7 +326,7 @@
               },
               "Nickname": "La Banque Surveille Toujours",
               "Description": "",
-              "GMNotes": "{\n  \"id\": \"88002\",\n  \"type\": \"Agenda\",\n  \"doomThreshold\": 8\n}",
+              "GMNotes": "{\n  \"doomThreshold\": 8,\n  \"id\": \"88002\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -384,7 +384,7 @@
               },
               "Nickname": "Référence",
               "Description": "Fortune et Folie - partie 1",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, raise your alarm level by 1.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-6. You may raise your alarm level by 1 to automatically succeed, instead.\", \"modifier\": -6}, \"Skull\": {\"description\": \"-X. X is your alarm level.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-4. The nearest enemy moves once toward you.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, raise your alarm level by 1.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-5. You may raise your alarm level by 1 to automatically succeed, instead.\", \"modifier\": -5}, \"Skull\": {\"description\": \"-X. X is half your alarm level (rounded up).\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, the nearest enemy moves once toward you.\", \"modifier\": -3}}}, \"id\": \"88001\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"88001\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -442,7 +442,7 @@
               },
               "Nickname": "Le Casino",
               "Description": "Public. Casino",
-              "GMNotes": "{\n  \"id\": \"88009\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Circle\",\n    \"connections\": \"Square|Diamond\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Circle\",\n    \"connections\": \"Square|Diamond\"\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88009\",\n  \"locationBack\": {\n    \"connections\": \"Square|Diamond\",\n    \"icons\": \"Circle\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Square|Diamond\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Public. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -673,7 +673,7 @@
               },
               "Nickname": "Deck des Possibles",
               "Description": "Objet Tychokinésique",
-              "GMNotes": "{\n  \"id\": \"88043\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Item. Relic.\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -731,7 +731,7 @@
               },
               "Nickname": "L'Escroc",
               "Description": "",
-              "GMNotes": "{\n  \"id\": \"88031\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Role. Practiced.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88031\",\n  \"traits\": \"Role. Practiced.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -789,7 +789,7 @@
               },
               "Nickname": "Abarran Arrigorriagakoa",
               "Description": "Humanoïde. Coterie. Casino. Élite",
-              "GMNotes": "{\n  \"id\": \"88034\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Coterie. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"backEnnemy\": {\n    \"health\": 4,\n    \"healthPerInv\": \"true\"\n  },\n  \"id\": \"88034\",\n  \"traits\": \"Humanoid. Casino. Coterie. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -910,7 +910,7 @@
                   },
                   "Nickname": "Bouclier de la Fortune",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88046\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "{\n  \"health\": 4,\n  \"id\": \"88046\",\n  \"traits\": \"Humanoid. Casino. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -968,7 +968,7 @@
                   },
                   "Nickname": "Bouclier de la Fortune",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88046\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "{\n  \"health\": 4,\n  \"id\": \"88046\",\n  \"traits\": \"Humanoid. Casino. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1026,7 +1026,7 @@
                   },
                   "Nickname": "Dague de la Forutne",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88047\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88047\",\n  \"traits\": \"Humanoid. Casino. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1084,7 +1084,7 @@
                   },
                   "Nickname": "Dague de la Fortune",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88047\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3117,7 +3117,7 @@
                   },
                   "Nickname": "Couloir d'Accès du Personnel",
                   "Description": "Restreint. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88016\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Hourglass\",\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Hourglass\",\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\"\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"88016\",\n  \"locationBack\": {\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Hourglass\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3175,7 +3175,7 @@
                   },
                   "Nickname": "Salle de Garde",
                   "Description": "Restreint. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88018\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"SlantedEquals\",\n    \"connections\": \"Hourglass|Star|Crescent\"\n  },\n  \"locationBack\": {\n    \"icons\": \"SlantedEquals\",\n    \"connections\": \"Hourglass|Star|Crescent\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"88018\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|Star|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|Star|Crescent\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3233,7 +3233,7 @@
                   },
                   "Nickname": "Salle de Comptage",
                   "Description": "Restreint. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88020\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Star\",\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Star\",\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"88020\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\",\n    \"icons\": \"Star\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\",\n    \"icons\": \"Star\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3291,7 +3291,7 @@
                   },
                   "Nickname": "Bureau de la Sécurité",
                   "Description": "Restreint. Casino.",
-                  "GMNotes": "{\n  \"id\": \"02128\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Crescent\",\n    \"connections\": \"Heart|Hourglass|SlantedEquals\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Crescent\",\n    \"connections\": \"Heart|Hourglass|SlantedEquals\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"02128\",\n  \"locationBack\": {\n    \"connections\": \"Heart|Hourglass|SlantedEquals\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart|Hourglass|SlantedEquals\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3349,7 +3349,7 @@
                   },
                   "Nickname": "Salle des Reliques",
                   "Description": "Sanctuaire de la Fortune",
-                  "GMNotes": "{\n  \"id\": \"88022\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Clover\",\n    \"connections\": \"Apostrophe\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Clover\",\n    \"connections\": \"Apostrophe\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"88022\",\n  \"locationBack\": {\n    \"connections\": \"Apostrophe\",\n    \"icons\": \"Clover\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Apostrophe\",\n    \"icons\": \"Clover\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3407,7 +3407,7 @@
                   },
                   "Nickname": "Porte du Coffre",
                   "Description": "Restreint. Caisno.",
-                  "GMNotes": "{\n  \"id\": \"88021\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Apostrophe\",\n    \"connections\": \"Star|Heart|Clover\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Apostrophe\",\n    \"connections\": \"Star|Heart|Clover\"\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"88021\",\n  \"locationBack\": {\n    \"connections\": \"Star|Heart|Clover\",\n    \"icons\": \"Apostrophe\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Star|Heart|Clover\",\n    \"icons\": \"Apostrophe\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3465,7 +3465,7 @@
                   },
                   "Nickname": "Bureau du Gérant",
                   "Description": "Restreint. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88019\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Heart\",\n    \"connections\": \"Star|Crescent|Apostrophe\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Heart\",\n    \"connections\": \"Star|Crescent|Apostrophe\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 3,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+                  "GMNotes": "{\n  \"id\": \"88019\",\n  \"locationBack\": {\n    \"connections\": \"Star|Crescent|Apostrophe\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Star|Crescent|Apostrophe\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3525,7 +3525,7 @@
               },
               "Nickname": "Table de Baccarat",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Plus\",\n    \"connections\": \"Tilde|Square|Triangle\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Plus\",\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3640,7 +3640,7 @@
               },
               "Nickname": "Salon du Casino",
               "Description": "Public. Casino",
-              "GMNotes": "{\n  \"id\": \"88015\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Tee\",\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Tee\",\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88015\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Public. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3698,7 +3698,7 @@
               },
               "Nickname": "Machine à Sous",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88013\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Diamond\",\n    \"connections\": \"Circle|Triangle\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Diamond\",\n    \"connections\": \"Circle|Triangle\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88013\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Triangle\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Triangle\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3826,7 +3826,7 @@
                   },
                   "Nickname": "Gardien de Casino",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88035\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88035\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3884,7 +3884,7 @@
                   },
                   "Nickname": "Gardien de Casino",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88035\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88035\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3942,7 +3942,7 @@
                   },
                   "Nickname": "Gardien de Casino",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88035\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88035\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4002,7 +4002,7 @@
               },
               "Nickname": "Chariot à Liquidités",
               "Description": "Casinos",
-              "GMNotes": "{\n  \"id\": \"88033\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Casino.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"health\": 3,\n  \"id\": \"88033\",\n  \"traits\": \"Casino.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4691,7 +4691,7 @@
               },
               "Nickname": "Table de Poker",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88010\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Square\",\n    \"connections\": \"Plus|Circle\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Square\",\n    \"connections\": \"Plus|Circle\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88010\",\n  \"locationBack\": {\n    \"connections\": \"Plus|Circle\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Plus|Circle\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4922,7 +4922,7 @@
               },
               "Nickname": "La Table des Flambeurs",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88014\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Tilde\",\n    \"connections\": \"Tee|Plus|Star|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  },\n  \"locationBack\": {\n    \"icons\": \"Tilde\",\n    \"connections\": \"Tee|Plus|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88014\",\n  \"locationBack\": {\n    \"connections\": \"Tee|Plus|Hourglass\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tee|Plus|Star|Hourglass\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5233,7 +5233,7 @@
                   },
                   "Nickname": "Patrouille de Sécurité",
                   "Description": "Humanoïde. Casino",
-                  "GMNotes": "{\n  \"id\": \"88037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88037\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5291,7 +5291,7 @@
                   },
                   "Nickname": "Patrouille de Sécurité",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88037\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5349,7 +5349,7 @@
                   },
                   "Nickname": "Patrouille de Sécurité",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5407,7 +5407,7 @@
                   },
                   "Nickname": "Joueuse Compulsive",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5465,7 +5465,7 @@
                   },
                   "Nickname": "Joueuse Compulsive",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5523,7 +5523,7 @@
                   },
                   "Nickname": "Joueuse Compulsive",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5581,7 +5581,7 @@
                   },
                   "Nickname": "Regards Suspicieux",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5639,7 +5639,7 @@
                   },
                   "Nickname": "Regards Suspicieux",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5697,7 +5697,7 @@
                   },
                   "Nickname": "Regards Suspicieux",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5755,7 +5755,7 @@
                   },
                   "Nickname": "L'Appel de l'Avarice",
                   "Description": "Malédiction.",
-                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Curse.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5813,7 +5813,7 @@
                   },
                   "Nickname": "L'Appel de l'Avarice",
                   "Description": "Malédiction.",
-                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Curse.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5871,7 +5871,7 @@
                   },
                   "Nickname": "L'Appel de l'Avarice",
                   "Description": "Malédictions",
-                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Curse.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5929,7 +5929,7 @@
                   },
                   "Nickname": "Lumières Mystique",
                   "Description": "Sortilège. Obstacle",
-                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hex. Obstacle.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"traits\": \"Hex. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5987,7 +5987,7 @@
                   },
                   "Nickname": "Lumières Mystiques",
                   "Description": "Sortilège. Obstacle.",
-                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hex. Obstacle.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"traits\": \"Hex. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6045,7 +6045,7 @@
                   },
                   "Nickname": "Lumières Mystiques",
                   "Description": "Sortigèle. Obstacle.",
-                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hex. Obstacle.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"traits\": \"Hex. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6103,7 +6103,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6161,7 +6161,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6219,7 +6219,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6277,7 +6277,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6335,7 +6335,7 @@
                   },
                   "Nickname": "Croupière",
                   "Description": "Humonoîde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88036\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"88036\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6393,7 +6393,7 @@
                   },
                   "Nickname": "Croupière",
                   "Description": "Humanoîde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88036\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"88036\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6453,7 +6453,7 @@
               },
               "Nickname": "Isamara Ordoñez",
               "Description": "Chanteuse de Bar",
-              "GMNotes": "{\n  \"id\": \"88032\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Ally. Casino. Inconspicuous.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"health\": 1,\n  \"id\": \"88032\",\n  \"sanity\": 3,\n  \"traits\": \"Ally. Casino. Inconspicuous.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6511,7 +6511,7 @@
               },
               "Nickname": "Roulete",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88011\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Triangle\",\n    \"connections\": \"Diamond|Tee|Plus\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Triangle\",\n    \"connections\": \"Diamond|Tee|Plus\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88011\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Tee|Plus\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Tee|Plus\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6569,7 +6569,7 @@
               },
               "Nickname": "Le Visage",
               "Description": "",
-              "GMNotes": "{\n  \"id\": \"88028\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Role. Practiced.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88028\",\n  \"traits\": \"Role. Practiced.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6613,7 +6613,7 @@
             },
             {
               "GUID": "b97edc",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": 5.99999952,
                 "posY": 1.51683986,
@@ -6627,7 +6627,7 @@
               },
               "Nickname": "Le Repérage",
               "Description": "Tâches sélectionnables",
-              "GMNotes": "{\n  \"id\": \"09040-c\"\n}",
+              "GMNotes": "{\n  \"id\": \"09040-c\",\n  \"type\": \"UpgradeSheet\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6918,7 +6918,7 @@
               },
               "Nickname": "C'est la Bonne Taille",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6976,7 +6976,7 @@
               },
               "Nickname": "Le Voleur",
               "Description": "",
-              "GMNotes": "{\n  \"id\": \"88030\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Role. Practiced.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88030\",\n  \"traits\": \"Role. Practiced.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7034,7 +7034,7 @@
               },
               "Nickname": "La Source de Forune",
               "Description": "Symbole de Providence",
-              "GMNotes": "{\n  \"id\": \"88045\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88045\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7265,7 +7265,7 @@
               },
               "Nickname": "Les Muscles",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7395,7 +7395,7 @@
                   },
                   "Nickname": "Vagabon Dimensionel",
                   "Description": "Chasseur de l'Au-Delà",
-                  "GMNotes": "{\n  \"id\": \"88048\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional. Elite.\",\n  \"victory\": 1\n}",
+                  "GMNotes": "{\n  \"health\": 5,\n  \"id\": \"88048\",\n  \"traits\": \"Monster. Extradimensional. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7453,7 +7453,7 @@
                   },
                   "Nickname": "Duplicateur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88049\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88049\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7511,7 +7511,7 @@
                   },
                   "Nickname": "Duplicateur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88049\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88049\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7569,7 +7569,7 @@
                   },
                   "Nickname": "Repousseur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88050\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88050\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7627,7 +7627,7 @@
                   },
                   "Nickname": "Repousseur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88050\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88050\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7685,7 +7685,7 @@
                   },
                   "Nickname": "Hypnose Dimensionnelle",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7743,7 +7743,7 @@
                   },
                   "Nickname": "Hypnose Dimensionnelle",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7801,7 +7801,7 @@
                   },
                   "Nickname": "Hypnose Dimensionnelle",
                   "Description": "Terreur",
-                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7859,7 +7859,7 @@
                   },
                   "Nickname": "Emprise de l'Au-Delà",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7917,7 +7917,7 @@
                   },
                   "Nickname": "Emprise de l'Au-Delà",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7975,7 +7975,7 @@
                   },
                   "Nickname": "Emprise de l'Au-Delà",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8033,7 +8033,7 @@
                   },
                   "Nickname": "Chasseur Affamé",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8091,7 +8091,7 @@
                   },
                   "Nickname": "Chasseur Affamé",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8213,7 +8213,7 @@
                   },
                   "Nickname": "Revers de Fortune",
                   "Description": "",
-                  "GMNotes": "Null",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8271,7 +8271,7 @@
                   },
                   "Nickname": "Revers de Fortune",
                   "Description": "",
-                  "GMNotes": "Null",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8329,7 +8329,7 @@
                   },
                   "Nickname": "Revers de Fortune",
                   "Description": "",
-                  "GMNotes": "Null",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8884,7 +8884,7 @@
               },
               "Nickname": "Table de Poker",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88010\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Square\",\n    \"connections\": \"Plus|Circle\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Square\",\n    \"connections\": \"Plus|Circle\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88010\",\n  \"locationBack\": {\n    \"connections\": \"Plus|Circle\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Plus|Circle\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -9005,7 +9005,7 @@
                   },
                   "Nickname": "L'Escroc",
                   "Description": "",
-                  "GMNotes": "{\n  \"id\": \"88031\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Role. Practiced.\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88031\",\n  \"traits\": \"Role. Practiced.\",\n  \"type\": \"Asset\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9063,7 +9063,7 @@
                   },
                   "Nickname": "Le Voleur",
                   "Description": "",
-                  "GMNotes": "{\n  \"id\": \"88030\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Role. Practiced.\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88030\",\n  \"traits\": \"Role. Practiced.\",\n  \"type\": \"Asset\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9121,7 +9121,7 @@
                   },
                   "Nickname": "Le Visage",
                   "Description": "",
-                  "GMNotes": "{\n  \"id\": \"88028\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Role. Practiced.\"\n}",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88028\",\n  \"traits\": \"Role. Practiced.\",\n  \"type\": \"Asset\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9179,7 +9179,7 @@
                   },
                   "Nickname": "Les Muscles",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9239,7 +9239,7 @@
               },
               "Nickname": "Salon du Casino",
               "Description": "Public. Casino",
-              "GMNotes": "{\n  \"id\": \"88015\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Tee\",\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Tee\",\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88015\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Tilde|Hourglass\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Public. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -9297,7 +9297,7 @@
               },
               "Nickname": "Bureau du Gérant",
               "Description": "Restreint. Casino.",
-              "GMNotes": "{\n  \"id\": \"88019\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Heart\",\n    \"connections\": \"Star|Crescent|Apostrophe\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Heart\",\n    \"connections\": \"Star|Crescent|Apostrophe\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 3,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88019\",\n  \"locationBack\": {\n    \"connections\": \"Star|Crescent|Apostrophe\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Star|Crescent|Apostrophe\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -9427,7 +9427,7 @@
                   },
                   "Nickname": "Vagabon Dimensionel",
                   "Description": "Chasseur de l'Au-Delà",
-                  "GMNotes": "{\n  \"id\": \"88048\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional. Elite.\",\n  \"victory\": 1\n}",
+                  "GMNotes": "{\n  \"health\": 5,\n  \"id\": \"88048\",\n  \"traits\": \"Monster. Extradimensional. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9485,7 +9485,7 @@
                   },
                   "Nickname": "Duplicateur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88049\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88049\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9543,7 +9543,7 @@
                   },
                   "Nickname": "Duplicateur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88049\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88049\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9601,7 +9601,7 @@
                   },
                   "Nickname": "Repousseur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88050\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88050\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9659,7 +9659,7 @@
                   },
                   "Nickname": "Repousseur Dimensionnel",
                   "Description": "Monstre. Extradimensionnel",
-                  "GMNotes": "{\n  \"id\": \"88050\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Monster. Extradimensional.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88050\",\n  \"traits\": \"Monster. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9717,7 +9717,7 @@
                   },
                   "Nickname": "Hypnose Dimensionnelle",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9775,7 +9775,7 @@
                   },
                   "Nickname": "Hypnose Dimensionnelle",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9833,7 +9833,7 @@
                   },
                   "Nickname": "Hypnose Dimensionnelle",
                   "Description": "Terreur",
-                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88051\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9891,7 +9891,7 @@
                   },
                   "Nickname": "Emprise de l'Au-Delà",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9949,7 +9949,7 @@
                   },
                   "Nickname": "Emprise de l'Au-Delà",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10007,7 +10007,7 @@
                   },
                   "Nickname": "Emprise de l'Au-Delà",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88052\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10065,7 +10065,7 @@
                   },
                   "Nickname": "Chasseur Affamé",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10123,7 +10123,7 @@
                   },
                   "Nickname": "Chasseur Affamé",
                   "Description": "Risque.",
-                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hazard.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88053\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10708,7 +10708,7 @@
               },
               "Nickname": "Salle de Comptage",
               "Description": "Restreint. Casino.",
-              "GMNotes": "{\n  \"id\": \"88020\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Star\",\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Star\",\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88020\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\",\n    \"icons\": \"Star\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Heart|Apostrophe\",\n    \"icons\": \"Star\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10766,7 +10766,7 @@
               },
               "Nickname": "La Source de Forune",
               "Description": "Symbole de Providence",
-              "GMNotes": "{\n  \"id\": \"88045\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"id\": \"88045\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10824,7 +10824,7 @@
               },
               "Nickname": "Bureau de la Sécurité",
               "Description": "Restreint. Casino.",
-              "GMNotes": "{\n  \"id\": \"02128\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Crescent\",\n    \"connections\": \"Heart|Hourglass|SlantedEquals\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Crescent\",\n    \"connections\": \"Heart|Hourglass|SlantedEquals\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"02128\",\n  \"locationBack\": {\n    \"connections\": \"Heart|Hourglass|SlantedEquals\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart|Hourglass|SlantedEquals\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11055,7 +11055,7 @@
               },
               "Nickname": "Couloir d'Accès du Personnel",
               "Description": "Restreint. Casino.",
-              "GMNotes": "{\n  \"id\": \"88016\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Hourglass\",\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Hourglass\",\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\"\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88016\",\n  \"locationBack\": {\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Hourglass\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Crescent|SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11176,7 +11176,7 @@
                   },
                   "Nickname": "Bouclier de la Fortune",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88046\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "{\n  \"health\": 4,\n  \"id\": \"88046\",\n  \"traits\": \"Humanoid. Casino. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11234,7 +11234,7 @@
                   },
                   "Nickname": "Bouclier de la Fortune",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88046\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "{\n  \"health\": 4,\n  \"id\": \"88046\",\n  \"traits\": \"Humanoid. Casino. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11292,7 +11292,7 @@
                   },
                   "Nickname": "Dague de la Forutne",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88047\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88047\",\n  \"traits\": \"Humanoid. Casino. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11350,7 +11350,7 @@
                   },
                   "Nickname": "Dague de la Fortune",
                   "Description": "Humanoïde. Casino. Cultiste",
-                  "GMNotes": "{\n  \"id\": \"88047\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Cultist.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11818,7 +11818,7 @@
                   },
                   "Nickname": "Revers de Fortune",
                   "Description": "",
-                  "GMNotes": "Null",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11876,7 +11876,7 @@
                   },
                   "Nickname": "Revers de Fortune",
                   "Description": "",
-                  "GMNotes": "Null",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11934,7 +11934,7 @@
                   },
                   "Nickname": "Revers de Fortune",
                   "Description": "",
-                  "GMNotes": "Null",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12326,7 +12326,7 @@
             },
             {
               "GUID": "8fbaac",
-              "Name": "CardCustom",
+              "Name": "Card",
               "Transform": {
                 "posX": -11.5,
                 "posY": 1.52377033,
@@ -12340,7 +12340,7 @@
               },
               "Nickname": "Le Cambriolage",
               "Description": "Tâches sélectionnables",
-              "GMNotes": "{\n  \"id\": \"09040-c\"\n}",
+              "GMNotes": "{\n  \"id\": \"09040-c\",\n  \"type\": \"UpgradeSheet\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -12528,7 +12528,7 @@
                   },
                   "Nickname": "Gardien de Casino",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88035\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88035\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12586,7 +12586,7 @@
                   },
                   "Nickname": "Gardien de Casino",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88035\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88035\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12644,7 +12644,7 @@
                   },
                   "Nickname": "Gardien de Casino",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88035\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 3,\n  \"id\": \"88035\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12704,7 +12704,7 @@
               },
               "Nickname": "Deck des Possibles",
               "Description": "Objet Tychokinésique",
-              "GMNotes": "{\n  \"id\": \"88043\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Item. Relic.\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13219,7 +13219,7 @@
               },
               "Nickname": "Abarran Arrigorriagakoa",
               "Description": "Humanoïde. Coterie. Casino. Élite",
-              "GMNotes": "{\n  \"id\": \"88034\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino. Coterie. Elite.\",\n  \"victory\": 1\n}",
+              "GMNotes": "{\n  \"backEnnemy\": {\n    \"health\": 4,\n    \"healthPerInv\": \"true\"\n  },\n  \"id\": \"88034\",\n  \"traits\": \"Humanoid. Casino. Coterie. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13339,7 +13339,7 @@
                   },
                   "Nickname": "Les Jeux Sont Faits",
                   "Description": "Intrigue 4",
-                  "GMNotes": "{\n  \"id\": \"88005\",\n  \"type\": \"Agenda\",\n  \"doomThreshold\": 12\n}",
+                  "GMNotes": "{\n  \"doomThreshold\": 12,\n  \"id\": \"88005\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13397,7 +13397,7 @@
                   },
                   "Nickname": "La Tour",
                   "Description": "Intrigue 3",
-                  "GMNotes": "{\n  \"id\": \"88004\",\n  \"type\": \"Agenda\",\n  \"doomThreshold\": 3\n}",
+                  "GMNotes": "{\n  \"doomThreshold\": 3,\n  \"id\": \"88004\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13455,7 +13455,7 @@
                   },
                   "Nickname": "Première Main",
                   "Description": "Intrigue 2",
-                  "GMNotes": "{\n  \"id\": \"88003\",\n  \"type\": \"Agenda\",\n  \"doomThreshold\": 5\n}",
+                  "GMNotes": "{\n  \"doomThreshold\": 5,\n  \"id\": \"88003\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13592,7 +13592,7 @@
                   },
                   "Nickname": "Joueuse Compulsive",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13650,7 +13650,7 @@
                   },
                   "Nickname": "Joueuse Compulsive",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13708,7 +13708,7 @@
                   },
                   "Nickname": "Joueuse Compulsive",
                   "Description": "Terreur.",
-                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Terror.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88012\",\n  \"locationBack\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"icons\": \"Plus\"\n  },\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13766,7 +13766,7 @@
                   },
                   "Nickname": "Regards Suspicieux",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13824,7 +13824,7 @@
                   },
                   "Nickname": "Regards Suspicieux",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13882,7 +13882,7 @@
                   },
                   "Nickname": "Regards Suspicieux",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88041\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13940,7 +13940,7 @@
                   },
                   "Nickname": "L'Appel de l'Avarice",
                   "Description": "Malédiction.",
-                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Curse.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13998,7 +13998,7 @@
                   },
                   "Nickname": "L'Appel de l'Avarice",
                   "Description": "Malédiction.",
-                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Curse.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14056,7 +14056,7 @@
                   },
                   "Nickname": "L'Appel de l'Avarice",
                   "Description": "Malédictions",
-                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Curse.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88040\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14114,7 +14114,7 @@
                   },
                   "Nickname": "Lumières Mystique",
                   "Description": "Sortilège. Obstacle",
-                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hex. Obstacle.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"traits\": \"Hex. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14172,7 +14172,7 @@
                   },
                   "Nickname": "Lumières Mystiques",
                   "Description": "Sortilège. Obstacle.",
-                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hex. Obstacle.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"traits\": \"Hex. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14230,7 +14230,7 @@
                   },
                   "Nickname": "Lumières Mystiques",
                   "Description": "Sortigèle. Obstacle.",
-                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Hex. Obstacle.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88039\",\n  \"traits\": \"Hex. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14288,7 +14288,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14346,7 +14346,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14404,7 +14404,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance.",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14462,7 +14462,7 @@
                   },
                   "Nickname": "Interrogatoire Gênant",
                   "Description": "Manigance",
-                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"type\": \"Treachery\",\n  \"traits\": \"Scheme.\"\n}",
+                  "GMNotes": "{\n  \"id\": \"88038\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14520,7 +14520,7 @@
                   },
                   "Nickname": "Croupière",
                   "Description": "Humonoîde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88036\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"88036\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14578,7 +14578,7 @@
                   },
                   "Nickname": "Croupière",
                   "Description": "Humanoîde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88036\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 1,\n  \"id\": \"88036\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15157,7 +15157,7 @@
               },
               "Nickname": "Isamara Ordoñez",
               "Description": "Chanteuse de Bar",
-              "GMNotes": "{\n  \"id\": \"88032\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Ally. Casino. Inconspicuous.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"health\": 1,\n  \"id\": \"88032\",\n  \"sanity\": 3,\n  \"traits\": \"Ally. Casino. Inconspicuous.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15388,7 +15388,7 @@
               },
               "Nickname": "Roulete",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88011\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Triangle\",\n    \"connections\": \"Diamond|Tee|Plus\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Triangle\",\n    \"connections\": \"Diamond|Tee|Plus\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88011\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Tee|Plus\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Tee|Plus\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15446,7 +15446,7 @@
               },
               "Nickname": "Porte du Coffre",
               "Description": "Restreint. Caisno.",
-              "GMNotes": "{\n  \"id\": \"88021\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Apostrophe\",\n    \"connections\": \"Star|Heart|Clover\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Apostrophe\",\n    \"connections\": \"Star|Heart|Clover\"\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88021\",\n  \"locationBack\": {\n    \"connections\": \"Star|Heart|Clover\",\n    \"icons\": \"Apostrophe\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Star|Heart|Clover\",\n    \"icons\": \"Apostrophe\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15504,7 +15504,7 @@
               },
               "Nickname": "Machine à Sous",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88013\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Diamond\",\n    \"connections\": \"Circle|Triangle\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Diamond\",\n    \"connections\": \"Circle|Triangle\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88013\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Triangle\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Triangle\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15562,7 +15562,7 @@
               },
               "Nickname": "Référence",
               "Description": "Fortune et Folie - partie 2",
-              "GMNotes": "{\"type\": \"ScenarioReference\", \"class\": \"Mythos\", \"tokens\": {\"back\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, raise your alarm level by 1.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-6. You may raise your alarm level by 1 to automatically succeed, instead.\", \"modifier\": -6}, \"Skull\": {\"description\": \"-X. X is your alarm level.\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-4. The nearest enemy moves once toward you.\", \"modifier\": -4}}, \"front\": {\"Cultist\": {\"description\": \"Reveal another token. If you fail, raise your alarm level by 1.\", \"modifier\": 0}, \"Elder Thing\": {\"description\": \"-5. You may raise your alarm level by 1 to automatically succeed, instead.\", \"modifier\": -5}, \"Skull\": {\"description\": \"-X. X is half your alarm level (rounded up).\", \"modifier\": -999}, \"Tablet\": {\"description\": \"-3. If you fail, the nearest enemy moves once toward you.\", \"modifier\": -3}}}, \"id\": \"88001\"}",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"88001\",\n  \"type\": \"ScenarioReference\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16139,7 +16139,7 @@
               },
               "Nickname": "C'est la Bonne Taille",
               "Description": "",
-              "GMNotes": "",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16197,7 +16197,7 @@
               },
               "Nickname": "Salle de Garde",
               "Description": "Restreint. Casino.",
-              "GMNotes": "{\n  \"id\": \"88018\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"SlantedEquals\",\n    \"connections\": \"Hourglass|Star|Crescent\"\n  },\n  \"locationBack\": {\n    \"icons\": \"SlantedEquals\",\n    \"connections\": \"Hourglass|Star|Crescent\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88018\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|Star|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|Star|Crescent\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16255,7 +16255,7 @@
               },
               "Nickname": "Salle des Reliques",
               "Description": "Sanctuaire de la Fortune",
-              "GMNotes": "{\n  \"id\": \"88022\",\n  \"type\": \"Location\",\n  \"traits\": \"Restricted. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Clover\",\n    \"connections\": \"Apostrophe\"\n  },\n  \"locationBack\": {\n    \"victory\": 1,\n    \"icons\": \"Clover\",\n    \"connections\": \"Apostrophe\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88022\",\n  \"locationBack\": {\n    \"connections\": \"Apostrophe\",\n    \"icons\": \"Clover\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"locationFront\": {\n    \"connections\": \"Apostrophe\",\n    \"icons\": \"Clover\"\n  },\n  \"traits\": \"Restricted. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16313,7 +16313,7 @@
               },
               "Nickname": "Chariot à Liquidités",
               "Description": "Casinos",
-              "GMNotes": "{\n  \"id\": \"88033\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"traits\": \"Casino.\"\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"health\": 3,\n  \"id\": \"88033\",\n  \"traits\": \"Casino.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16441,7 +16441,7 @@
                   },
                   "Nickname": "Patrouille de Sécurité",
                   "Description": "Humanoïde. Casino",
-                  "GMNotes": "{\n  \"id\": \"88037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88037\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16499,7 +16499,7 @@
                   },
                   "Nickname": "Patrouille de Sécurité",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16557,7 +16557,7 @@
                   },
                   "Nickname": "Patrouille de Sécurité",
                   "Description": "Humanoïde. Casino.",
-                  "GMNotes": "{\n  \"id\": \"88037\",\n  \"type\": \"Enemy\",\n  \"traits\": \"Humanoid. Casino.\"\n}",
+                  "GMNotes": "{\n  \"health\": 2,\n  \"id\": \"88037\",\n  \"traits\": \"Humanoid. Casino.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16790,7 +16790,7 @@
               },
               "Nickname": "Table de Baccarat",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88012\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Plus\",\n    \"connections\": \"Tilde|Square|Triangle\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Plus\",\n    \"connections\": \"Tilde|Square|Triangle\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 1,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16848,7 +16848,7 @@
               },
               "Nickname": "La Table des Flambeurs",
               "Description": "Public. Casino. Jeu",
-              "GMNotes": "{\n  \"id\": \"88014\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino. Game.\",\n  \"locationFront\": {\n    \"icons\": \"Tilde\",\n    \"connections\": \"Tee|Plus|Star|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  },\n  \"locationBack\": {\n    \"icons\": \"Tilde\",\n    \"connections\": \"Tee|Plus|Hourglass\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 2,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88014\",\n  \"locationBack\": {\n    \"connections\": \"Tee|Plus|Hourglass\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Tee|Plus|Star|Hourglass\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Public. Casino. Game.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16906,7 +16906,7 @@
               },
               "Nickname": "Le Casino",
               "Description": "Public. Casino",
-              "GMNotes": "{\n  \"id\": \"88009\",\n  \"type\": \"Location\",\n  \"traits\": \"Public. Casino.\",\n  \"locationFront\": {\n    \"icons\": \"Circle\",\n    \"connections\": \"Square|Diamond\"\n  },\n  \"locationBack\": {\n    \"icons\": \"Circle\",\n    \"connections\": \"Square|Diamond\"\n  }\n}",
+              "GMNotes": "{\n  \"id\": \"88009\",\n  \"locationBack\": {\n    \"connections\": \"Square|Diamond\",\n    \"icons\": \"Circle\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Square|Diamond\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Public. Casino.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -16964,7 +16964,7 @@
               },
               "Nickname": "Isamara Ordoñez",
               "Description": "La Crooneuse",
-              "GMNotes": "{\n  \"id\": \"88044\",\n  \"type\": \"Asset\",\n  \"class\": \"Neutral\",\n  \"cost\": 3,\n  \"traits\": \"Ally. Performer.\",\n  \"willpowerIcons\": 1,\n  \"wildIcons\": 1\n}",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 3,\n  \"health\": 1,\n  \"id\": \"88044\",\n  \"sanity\": 3,\n  \"traits\": \"Ally. Performer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,

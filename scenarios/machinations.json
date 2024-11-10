@@ -2,12 +2,12 @@
       "GUID": "82d39b",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 12.9998894,
-        "posY": 5.84361,
-        "posZ": 51.5000458,
-        "rotX": -1.398854E-07,
+        "posX": 12.9999495,
+        "posY": 5.84359932,
+        "posZ": 51.49995,
+        "rotX": -1.842405E-08,
         "rotY": 179.968582,
-        "rotZ": 5.0475E-06,
+        "rotZ": 5.03737328E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -697,7 +697,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"87041\",\n  \"traits\": \"Humanoid. Criminal. Syndicate. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -755,7 +755,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"87041\",\n  \"traits\": \"Humanoid. Criminal. Syndicate. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -3847,7 +3847,7 @@
                 },
                 {
                   "GUID": "bc0ba0",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 22.0,
                     "posY": 1.518596,
@@ -3861,7 +3861,7 @@
                   },
                   "Nickname": "apostrophe",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4849,7 +4849,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"87024\",\n  \"type\": \"Story\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8319,7 +8319,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "",
+                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87012\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Past.\",\n  \"type\": \"Asset\"\n}",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -10844,7 +10844,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87021\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Present.\",\n  \"type\": \"Asset\"\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -11206,7 +11206,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87021\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Present.\",\n  \"type\": \"Asset\"\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -11510,7 +11510,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87021\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Present.\",\n  \"type\": \"Asset\"\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -12088,7 +12088,7 @@
                       },
                       "Nickname": "Problèmes avec la Pègre",
                       "Description": "Complot",
-                      "GMNotes": "",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"87039\",\n  \"traits\": \"Plot.\",\n  \"type\": \"Story\",\n  \"victory\": 1\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -12266,7 +12266,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"87041\",\n  \"traits\": \"Humanoid. Criminal. Syndicate. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -12324,7 +12324,7 @@
                           },
                           "Nickname": "",
                           "Description": "",
-                          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"87041\",\n  \"traits\": \"Humanoid. Criminal. Syndicate. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 0\n}",
+                          "GMNotes": "[]",
                           "AltLookAngle": {
                             "x": 0.0,
                             "y": 0.0,
@@ -14300,7 +14300,7 @@
                 },
                 {
                   "GUID": "bc0ba0",
-                  "Name": "CardCustom",
+                  "Name": "Card",
                   "Transform": {
                     "posX": 7.0,
                     "posY": 1.517,
@@ -14314,7 +14314,7 @@
                   },
                   "Nickname": "apostrophe",
                   "Description": "",
-                  "GMNotes": "",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15302,7 +15302,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"87024\",\n  \"type\": \"Story\",\n  \"victory\": 1\n}",
+                  "GMNotes": "[]",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20428,7 +20428,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87021\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Present.\",\n  \"type\": \"Asset\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -21079,7 +21079,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87021\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Present.\",\n  \"type\": \"Asset\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -21789,7 +21789,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87021\",\n  \"sanity\": 2,\n  \"traits\": \"Scientist. Ally. Present.\",\n  \"type\": \"Asset\"\n}",
+                      "GMNotes": "[]",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -22678,7 +22678,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"87054\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -22794,7 +22794,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"87045\",\n  \"traits\": \"Monster. Extradimensional. Tindalos.\",\n  \"type\": \"Enemy\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -22968,7 +22968,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"87056\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23200,7 +23200,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"87052\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23374,7 +23374,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 7,\n  \"id\": \"87046\",\n  \"traits\": \"Monster. Extradimensional. Tindalos. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23432,7 +23432,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"87053\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24418,7 +24418,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"87051\",\n  \"traits\": \"Hazard. Power.\",\n  \"type\": \"Treachery\"\n}",
+              "GMNotes": "[]",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -24594,7 +24594,7 @@
           },
           "Nickname": "Référence",
           "Description": "Machinations au Fil du Temps",
-          "GMNotes": "",
+          "GMNotes": "[]",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
