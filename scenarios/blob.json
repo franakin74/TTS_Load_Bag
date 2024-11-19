@@ -5,16 +5,16 @@
         "posX": 3.99995,
         "posY": 5.8436,
         "posZ": 51.49995,
-        "rotX": -2.29805224E-08,
+        "rotX": -2.09329087E-08,
         "rotY": 179.968414,
-        "rotZ": 5.05286835E-06,
+        "rotZ": 4.98823647E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
       },
       "Nickname": "Le Dévoreur de Toute Chose",
       "Description": "",
-      "GMNotes": "scenarios/blob.json",
+      "GMNotes": "Le Dévoreur de Toute Chose",
       "AltLookAngle": {
         "x": 0.0,
         "y": 0.0,
@@ -23,7 +23,8 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0
+        "b": 1.0,
+        "a": 0.392156869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -341,7 +342,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85008\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -399,7 +400,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85007\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -878,7 +879,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85020\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -994,7 +995,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85017\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1052,7 +1053,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85019\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1226,7 +1227,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85018\",\n  \"traits\": \"Oozified.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2303,7 +2304,7 @@
                   },
                   "Nickname": "Universal Solvent",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"85029\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Science.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 4,\n    \"token\": \"resource\",\n    \"type\": \"Supply\"\n  },\n  \"wildIcons\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2559,7 +2560,7 @@
                   },
                   "Nickname": "Mi-Go Weapon",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"85031\",\n  \"traits\": \"Weapon. Science.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 3,\n    \"token\": \"resource\",\n    \"type\": \"Ammo\"\n  },\n  \"wildIcons\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3598,7 +3599,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85012\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4079,7 +4080,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85009\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4137,7 +4138,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85007\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4195,7 +4196,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"85006\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4255,7 +4256,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 15,\n  \"healthPerInv\": \"true\",\n  \"id\": \"85038\",\n  \"traits\": \"Monster. Ooze. Elite.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4550,7 +4551,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"85033\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4666,7 +4667,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"85033\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5882,7 +5883,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"85003\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6000,7 +6001,7 @@
           },
           "Nickname": "",
           "Description": "",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85011\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6058,7 +6059,7 @@
           },
           "Nickname": "Référence",
           "Description": "Le Dévoreur de Toute Chose",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"85001\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -6721,7 +6722,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85053\",\n  \"traits\": \"Ooze. Power.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6837,7 +6838,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"85052\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7011,7 +7012,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85050\",\n  \"traits\": \"Ooze. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7069,7 +7070,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85050\",\n  \"traits\": \"Ooze. Obstacle.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7127,7 +7128,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85049\",\n  \"traits\": \"Ooze. Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7359,7 +7360,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85048\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7417,7 +7418,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85047\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7591,7 +7592,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85047\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7823,7 +7824,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85045\",\n  \"traits\": \"Attack.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7997,7 +7998,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"85044\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8113,7 +8114,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"85041\",\n  \"traits\": \"Monster. Ooze. Manifold.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8171,7 +8172,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"id\": \"85040\",\n  \"traits\": \"Monster. Ooze. Manifold.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,

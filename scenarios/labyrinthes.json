@@ -5,16 +5,16 @@
         "posX": -5.000048,
         "posY": 5.84360075,
         "posZ": 51.49995,
-        "rotX": 1.15895226E-07,
+        "rotX": 3.19928262E-08,
         "rotY": 179.968414,
-        "rotZ": 4.96544135E-06,
+        "rotZ": 5.001966E-06,
         "scaleX": 1.22298908,
         "scaleY": 0.110677734,
         "scaleZ": 1.36133635
       },
       "Nickname": "Les Labyrinthes de la Folie",
       "Description": "",
-      "GMNotes": "scenarios/labyrinthes.json",
+      "GMNotes": "Les Labyrinthes de la Folie",
       "AltLookAngle": {
         "x": 0.0,
         "y": 0.0,
@@ -23,7 +23,8 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0
+        "b": 1.0,
+        "a": 0.392156869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -144,7 +145,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70039\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -202,7 +203,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70047\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -331,7 +332,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70006\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -389,7 +390,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70005\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -447,7 +448,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"70003\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -507,7 +508,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70043\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -691,7 +692,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"70048\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -749,7 +750,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70032\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1052,7 +1053,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70023\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|SlantedEquals\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|SlantedEquals\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1168,7 +1169,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70031\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1226,7 +1227,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70024\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1284,7 +1285,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70030\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1342,7 +1343,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70021\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1400,7 +1401,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70019\",\n  \"locationBack\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1588,7 +1589,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Prison. Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1767,7 +1768,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1825,7 +1826,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -1885,7 +1886,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70041\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2035,7 +2036,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2093,7 +2094,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2151,7 +2152,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2209,7 +2210,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2267,7 +2268,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2325,7 +2326,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2383,7 +2384,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2441,7 +2442,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2499,7 +2500,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2557,7 +2558,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2673,7 +2674,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2731,7 +2732,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2847,7 +2848,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2905,7 +2906,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -2963,7 +2964,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3021,7 +3022,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3137,7 +3138,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3195,7 +3196,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3253,7 +3254,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3311,7 +3312,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3369,7 +3370,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3616,7 +3617,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"70007\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -3989,7 +3990,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70025\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -4047,7 +4048,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70026\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Star\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -4105,7 +4106,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70027\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -4394,7 +4395,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70029\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -4454,7 +4455,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"70050\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4570,7 +4571,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70040\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4868,7 +4869,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70042\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4926,7 +4927,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70044\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4984,7 +4985,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70040\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5042,7 +5043,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70041\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5100,7 +5101,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70046\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5286,7 +5287,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Prison. Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5465,7 +5466,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5523,7 +5524,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5583,7 +5584,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70039\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5767,7 +5768,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"70048\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -5825,7 +5826,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70032\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6128,7 +6129,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70020\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6186,7 +6187,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70029\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6244,7 +6245,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70019\",\n  \"locationBack\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6302,7 +6303,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70031\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6360,7 +6361,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70030\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6490,7 +6491,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"70050\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7020,7 +7021,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70025\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -7078,7 +7079,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70026\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Star\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -7136,7 +7137,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70027\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -7314,7 +7315,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70024\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7545,7 +7546,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 12,\n  \"id\": \"70051\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 5\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7661,7 +7662,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70034\",\n  \"traits\": \"Act 1. Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7719,7 +7720,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70037\",\n  \"traits\": \"Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7777,7 +7778,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70036\",\n  \"traits\": \"Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7835,7 +7836,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70033\",\n  \"traits\": \"Act 1.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7893,7 +7894,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70035\",\n  \"traits\": \"Act 1. Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -8022,7 +8023,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70006\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8080,7 +8081,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70004\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8269,7 +8270,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70014\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8385,7 +8386,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70010\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8537,7 +8538,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8595,7 +8596,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8653,7 +8654,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8711,7 +8712,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8769,7 +8770,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8827,7 +8828,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8885,7 +8886,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -8943,7 +8944,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9001,7 +9002,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9059,7 +9060,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9175,7 +9176,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9233,7 +9234,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9349,7 +9350,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9407,7 +9408,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9465,7 +9466,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9523,7 +9524,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9639,7 +9640,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9697,7 +9698,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -9755,7 +9756,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70059\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10054,7 +10055,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70042\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10112,7 +10113,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70041\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10170,7 +10171,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70040\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10228,7 +10229,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70044\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10286,7 +10287,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"70050\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10344,7 +10345,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70046\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10402,7 +10403,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 12,\n  \"id\": \"70051\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 5\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10460,7 +10461,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70036\",\n  \"traits\": \"Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10518,7 +10519,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70037\",\n  \"traits\": \"Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10634,7 +10635,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70034\",\n  \"traits\": \"Act 1. Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10692,7 +10693,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70033\",\n  \"traits\": \"Act 1.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10750,7 +10751,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70035\",\n  \"traits\": \"Act 1. Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -10869,7 +10870,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10927,7 +10928,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10987,7 +10988,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70039\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11171,7 +11172,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"70048\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11229,7 +11230,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70032\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11648,7 +11649,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70024\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11764,7 +11765,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Prison. Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11880,7 +11881,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70029\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12010,7 +12011,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70030\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12311,7 +12312,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70025\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -12369,7 +12370,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70026\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Star\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -12427,7 +12428,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70027\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -12889,7 +12890,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70031\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -12949,7 +12950,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70019\",\n  \"locationBack\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13180,7 +13181,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70020\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -13309,7 +13310,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70006\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13367,7 +13368,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70004\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13556,7 +13557,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70014\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13614,7 +13615,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70012\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13672,7 +13673,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"70008\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13824,7 +13825,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13882,7 +13883,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13940,7 +13941,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -13998,7 +13999,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14056,7 +14057,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14114,7 +14115,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14172,7 +14173,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14230,7 +14231,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14288,7 +14289,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14346,7 +14347,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14462,7 +14463,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14520,7 +14521,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14636,7 +14637,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14694,7 +14695,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14752,7 +14753,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14810,7 +14811,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14926,7 +14927,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14984,7 +14985,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15042,7 +15043,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70059\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15276,7 +15277,7 @@
           },
           "Nickname": "Référence",
           "Description": "Les Labyrinthes de la Folie",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"70001\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -15404,7 +15405,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70039\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15462,7 +15463,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70047\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15591,7 +15592,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70006\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15649,7 +15650,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70005\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15707,7 +15708,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"70003\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -15767,7 +15768,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70043\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -15951,7 +15952,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"70048\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16009,7 +16010,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70032\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16312,7 +16313,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70029\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16370,7 +16371,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70021\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16428,7 +16429,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70019\",\n  \"locationBack\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16486,7 +16487,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70031\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16544,7 +16545,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70030\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16732,7 +16733,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Prison. Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16911,7 +16912,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -16969,7 +16970,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17029,7 +17030,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70041\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -17179,7 +17180,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17237,7 +17238,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17295,7 +17296,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17353,7 +17354,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17411,7 +17412,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17469,7 +17470,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17527,7 +17528,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17585,7 +17586,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17643,7 +17644,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17701,7 +17702,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17817,7 +17818,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17875,7 +17876,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -17991,7 +17992,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18049,7 +18050,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18107,7 +18108,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18165,7 +18166,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18281,7 +18282,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18339,7 +18340,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18397,7 +18398,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18455,7 +18456,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18513,7 +18514,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -19115,7 +19116,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70025\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19173,7 +19174,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70026\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Star\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19231,7 +19232,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70027\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -19349,7 +19350,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"70050\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -19409,7 +19410,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70023\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|SlantedEquals\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|SlantedEquals\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -19467,7 +19468,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70024\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -19583,7 +19584,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70040\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20001,7 +20002,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70010\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20245,7 +20246,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70043\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20361,7 +20362,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70041\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20419,7 +20420,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70040\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20477,7 +20478,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70047\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20535,7 +20536,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"70050\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20654,7 +20655,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20712,7 +20713,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20772,7 +20773,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70039\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -20956,7 +20957,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"70048\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21014,7 +21015,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70032\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21317,7 +21318,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70023\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|SlantedEquals\",\n    \"icons\": \"Square\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|SlantedEquals\",\n    \"icons\": \"Square\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21433,7 +21434,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70024\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21549,7 +21550,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Prison. Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21665,7 +21666,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70029\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21968,7 +21969,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70030\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22096,7 +22097,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70025\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -22154,7 +22155,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70026\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Star\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -22212,7 +22213,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70027\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -22674,7 +22675,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70031\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22734,7 +22735,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70021\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -22965,7 +22966,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70019\",\n  \"locationBack\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23094,7 +23095,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70006\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23152,7 +23153,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70005\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23210,7 +23211,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"70003\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23399,7 +23400,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70012\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23457,7 +23458,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"70008\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23609,7 +23610,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23667,7 +23668,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23725,7 +23726,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23783,7 +23784,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23841,7 +23842,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23899,7 +23900,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23957,7 +23958,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24015,7 +24016,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24073,7 +24074,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24131,7 +24132,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24247,7 +24248,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24305,7 +24306,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24421,7 +24422,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24479,7 +24480,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24537,7 +24538,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24595,7 +24596,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24711,7 +24712,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24769,7 +24770,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24827,7 +24828,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24885,7 +24886,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24943,7 +24944,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70060\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -25075,7 +25076,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70041\",\n  \"traits\": \"Item.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25133,7 +25134,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70044\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25191,7 +25192,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70046\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25249,7 +25250,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70035\",\n  \"traits\": \"Act 1. Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25307,7 +25308,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70033\",\n  \"traits\": \"Act 1.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25365,7 +25366,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70034\",\n  \"traits\": \"Act 1. Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25481,7 +25482,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70037\",\n  \"traits\": \"Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25539,7 +25540,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70036\",\n  \"traits\": \"Act 2.\",\n  \"type\": \"Story\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25597,7 +25598,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 12,\n  \"id\": \"70051\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 5\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25655,7 +25656,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"healthPerInv\": \"true\",\n  \"id\": \"70050\",\n  \"traits\": \"Monster. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 2\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25713,7 +25714,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70042\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -25899,7 +25900,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70017\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\",\n    \"uses\": {\n      \"countPerInvestigator\": 3,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals\",\n    \"icons\": \"Circle\"\n  },\n  \"traits\": \"Prison. Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26078,7 +26079,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26136,7 +26137,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"70052\",\n  \"traits\": \"Monster. Nightgaunt.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26196,7 +26197,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70039\",\n  \"traits\": \"Item. Script.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -26380,7 +26381,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 6,\n  \"id\": \"70048\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 3\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26438,7 +26439,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70032\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|Crescent|Star\",\n    \"icons\": \"Tee\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26799,7 +26800,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70020\",\n  \"locationBack\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Hourglass|SlantedEquals\",\n    \"icons\": \"Heart\"\n  },\n  \"traits\": \"Prison.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26915,7 +26916,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70031\",\n  \"locationBack\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond\",\n    \"icons\": \"Tilde\"\n  },\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -26973,7 +26974,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70024\",\n  \"locationBack\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -27031,7 +27032,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70030\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -27089,7 +27090,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70019\",\n  \"locationBack\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Heart\",\n    \"icons\": \"Hourglass\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -27462,7 +27463,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70025\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Diamond\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -27520,7 +27521,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70026\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Star\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -27578,7 +27579,7 @@
                       },
                       "Nickname": "",
                       "Description": "",
-                      "GMNotes": "[]",
+                      "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70027\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals|Crescent\",\n    \"icons\": \"SlantedEquals\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Square|Heart|SlantedEquals\",\n    \"icons\": \"SlantedEquals\"\n  },\n  \"type\": \"Location\"\n}",
                       "AltLookAngle": {
                         "x": 0.0,
                         "y": 0.0,
@@ -27867,7 +27868,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70029\",\n  \"locationBack\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"SlantedEquals|Tee\",\n    \"icons\": \"Crescent\"\n  },\n  \"traits\": \"Distortion.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -27927,7 +27928,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70040\",\n  \"traits\": \"Item. Key.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -28056,7 +28057,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70006\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28114,7 +28115,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 7,\n  \"id\": \"70004\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28303,7 +28304,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70014\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28419,7 +28420,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"70007\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28571,7 +28572,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28629,7 +28630,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28687,7 +28688,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28745,7 +28746,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70056\",\n  \"traits\": \"Trap. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28803,7 +28804,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28861,7 +28862,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28919,7 +28920,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -28977,7 +28978,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29035,7 +29036,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70058\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29093,7 +29094,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70055\",\n  \"traits\": \"Injury. Poison.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29209,7 +29210,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29267,7 +29268,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70057\",\n  \"traits\": \"Trap.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29383,7 +29384,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"70061\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29441,7 +29442,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29499,7 +29500,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29557,7 +29558,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"70053\",\n  \"traits\": \"Humanoid. Extradimensional.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29673,7 +29674,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29731,7 +29732,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"70054\",\n  \"traits\": \"Monster. Mi-Go.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -29789,7 +29790,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"70059\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,

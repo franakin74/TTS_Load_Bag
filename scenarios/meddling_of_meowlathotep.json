@@ -5,16 +5,16 @@
         "posX": 31.5,
         "posY": 5.84359741,
         "posZ": 51.5,
-        "rotX": 1.57792623E-08,
+        "rotX": -9.275283E-09,
         "rotY": 179.9686,
-        "rotZ": 4.98153349E-06,
+        "rotZ": 5.03126057E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
       },
       "Nickname": "La Cabale de Myarlothotep",
       "Description": "Horreur à Warkham",
-      "GMNotes": "scenarios/meddling_of_meowlathotep.json",
+      "GMNotes": "La Cabale de Myarlathotep",
       "AltLookAngle": {
         "x": 0.0,
         "y": 0.0,
@@ -23,7 +23,8 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0
+        "b": 1.0,
+        "a": 0.392156869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,

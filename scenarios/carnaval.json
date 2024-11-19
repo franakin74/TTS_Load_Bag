@@ -5,16 +5,16 @@
         "posX": -13.5000505,
         "posY": 5.8436017,
         "posZ": 51.49995,
-        "rotX": 3.43081936E-08,
+        "rotX": 1.8349489E-08,
         "rotY": 179.96843,
-        "rotZ": 5.054754E-06,
+        "rotZ": 5.06966671E-06,
         "scaleX": 1.265649,
         "scaleY": 0.263438284,
         "scaleZ": 1.38591444
       },
       "Nickname": "Le Carnaval des Horreurs",
       "Description": "",
-      "GMNotes": "scenarios/carnaval.json",
+      "GMNotes": "Le Carnaval des Horreurs",
       "AltLookAngle": {
         "x": 0.0,
         "y": 0.0,
@@ -23,7 +23,8 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0
+        "b": 1.0,
+        "a": 0.392156869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -144,7 +145,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"82017\",\n  \"traits\": \"Humanoid. Servitor. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -260,7 +261,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82019\",\n  \"traits\": \"Humanoid. Sorcerer. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -318,7 +319,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82021\",\n  \"sanity\": 2,\n  \"traits\": \"Ally. Bystander. Carnevale.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -434,7 +435,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82021\",\n  \"sanity\": 2,\n  \"traits\": \"Ally. Bystander. Carnevale.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -492,7 +493,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82021\",\n  \"sanity\": 2,\n  \"traits\": \"Ally. Bystander. Carnevale.\",\n  \"type\": \"Asset\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -851,7 +852,7 @@
               },
               "Nickname": "Jardin Vénitien",
               "Description": "Venise.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82012\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Venice.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -967,7 +968,7 @@
               },
               "Nickname": "Pont de L'Académie",
               "Description": "Venise. Pont.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82015\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Venice. Bridge.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1025,7 +1026,7 @@
               },
               "Nickname": "Le Gardien",
               "Description": "Venise.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82016\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Venice.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1083,7 +1084,7 @@
               },
               "Nickname": "Bord du Canal",
               "Description": "Venise.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82009\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Venice.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1141,7 +1142,7 @@
               },
               "Nickname": "Pont du Rialto",
               "Description": "Venise. Pont.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82011\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"count\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Venice. Bridge.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -1257,7 +1258,7 @@
               },
               "Nickname": "Pont des Soupirs",
               "Description": "Venise. Pont.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82013\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"count\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Venice. Bridge.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2534,7 +2535,7 @@
               },
               "Nickname": "Regard des Spectateurs",
               "Description": "Terreur.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82033\",\n  \"traits\": \"Terror.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2766,7 +2767,7 @@
               },
               "Nickname": "Hypnose",
               "Description": "Sortilège.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82035\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2824,7 +2825,7 @@
               },
               "Nickname": "Hypnose",
               "Description": "Sortilège.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82035\",\n  \"traits\": \"Hex.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2882,7 +2883,7 @@
               },
               "Nickname": "Sentinelle du Carnaval",
               "Description": "Humanoïde. Cultiste.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2940,7 +2941,7 @@
               },
               "Nickname": "Sentinelle du Carnaval",
               "Description": "Humanoïde. Cultiste.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -2998,7 +2999,7 @@
               },
               "Nickname": "Sentinelle du Carnaval",
               "Description": "Humanoïde. Cultiste.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"82029\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3056,7 +3057,7 @@
               },
               "Nickname": "Gondolier",
               "Description": "Monstre. Profond.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"82028\",\n  \"traits\": \"Monster. Deep One.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3172,7 +3173,7 @@
               },
               "Nickname": "Appendice Tortueux",
               "Description": "Monstre. Tentacule.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82030\",\n  \"traits\": \"Monster. Tentacle.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3410,7 +3411,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82007\",\n  \"type\": \"Act\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3468,7 +3469,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82006\",\n  \"type\": \"Act\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3526,7 +3527,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"82005\",\n  \"type\": \"Act\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3586,7 +3587,7 @@
           },
           "Nickname": "Basilique St-Marc",
           "Description": "Venise.",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"82008\",\n  \"traits\": \"Venice.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3879,7 +3880,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 3,\n  \"id\": \"82004\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3937,7 +3938,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 3,\n  \"id\": \"82003\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -3995,7 +3996,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"backEnemy\": {\n    \"health\": 5,\n    \"healthPerInv\": \"true\",\n    \"traits\": \"Humanoid. Cultist. Elite.\",\n    \"victory\": 2\n  },\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 8,\n  \"id\": \"82002\",\n  \"type\": \"Agenda\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4055,7 +4056,7 @@
           },
           "Nickname": "Référence",
           "Description": "Le Carnaval des Horreurs",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"82001\",\n  \"type\": \"ScenarioReference\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4113,7 +4114,7 @@
           },
           "Nickname": "Abbesse Allegria Di Biase",
           "Description": "Des Plus Bénies",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"82022\",\n  \"intellectIcons\": 1,\n  \"sanity\": 2,\n  \"traits\": \"Ally. Believer.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4414,7 +4415,7 @@
               },
               "Nickname": "Volto Doré",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"agilityIcons\": 1,\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"82026\",\n  \"traits\": \"Item. Mask.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4472,7 +4473,7 @@
               },
               "Nickname": "Pantalone",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"82025\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Item. Mask.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4530,7 +4531,7 @@
               },
               "Nickname": "Medico Della Peste",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"82024\",\n  \"traits\": \"Item. Mask.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -4588,7 +4589,7 @@
               },
               "Nickname": "Bauta",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"82023\",\n  \"traits\": \"Item. Mask.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,

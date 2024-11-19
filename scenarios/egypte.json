@@ -5,16 +5,16 @@
         "posX": -9.5000515,
         "posY": 5.843601,
         "posZ": 51.49995,
-        "rotX": 3.62266448E-08,
+        "rotX": 6.573452E-08,
         "rotY": 179.968384,
-        "rotZ": 5.035696E-06,
+        "rotZ": 5.03539377E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
       },
       "Nickname": "Le Gardien de l'Abîme",
       "Description": "",
-      "GMNotes": "scenarios/egypte.json",
+      "GMNotes": "Le Gardien de l'Abîme",
       "AltLookAngle": {
         "x": 0.0,
         "y": 0.0,
@@ -23,7 +23,8 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0
+        "b": 1.0,
+        "a": 0.392156869
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
@@ -262,7 +263,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"id\": \"83029\",\n  \"traits\": \"Monster. Dreamlands. Shantak.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -493,7 +494,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"83031a\",\n  \"traits\": \"Humanoid. Cultist. Brotherhood.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5627,7 +5628,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83028\",\n  \"locationFront\": {\n    \"connections\": \"Hourglass|Tee|Heart\",\n    \"icons\": \"Apostrophe\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert. Ruins\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5685,7 +5686,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"83032a\",\n  \"traits\": \"Humanoid. Cultist. Brotherhood.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -6500,7 +6501,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83044\",\n  \"locationFront\": {\n    \"connections\": \"Tilde|Plus|Hourglass|Apostrophe\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6558,7 +6559,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83042\",\n  \"locationFront\": {\n    \"connections\": \"Crescent|Heart\",\n    \"icons\": \"Star\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6616,7 +6617,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83049\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6674,7 +6675,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83053\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6790,7 +6791,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83050\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6906,7 +6907,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83041\",\n  \"locationFront\": {\n    \"connections\": \"Plus|Tee\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -6964,7 +6965,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83038\",\n  \"locationFront\": {\n    \"connections\": \"Circle|Star|Heart|Hourglass\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7547,7 +7548,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83021\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7605,7 +7606,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 1,\n  \"cycle\": \"Standalone\",\n  \"id\": \"83020\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -7663,7 +7664,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"clueThresholdPerInvestigator\": 2,\n  \"cycle\": \"Standalone\",\n  \"id\": \"83019\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10091,7 +10092,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"83030\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10149,7 +10150,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"83030\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10207,7 +10208,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"83045\",\n  \"traits\": \"Monster. Dreamlands.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10439,7 +10440,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83051\",\n  \"traits\": \"Curse. Abyss.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10613,7 +10614,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83052\",\n  \"traits\": \"Curse. Abyss.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10671,7 +10672,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83050\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10729,7 +10730,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83053\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -10961,7 +10962,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83048\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11135,7 +11136,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83047\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11309,7 +11310,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83049\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11427,7 +11428,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"83036a\",\n  \"traits\": \"Humanoid. Cultist. Brotherhood.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11669,7 +11670,7 @@
                   },
                   "Nickname": "Summoned Nightgaunt",
                   "Description": "Gift from Nodens",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"agilityIcons\": 1,\n  \"class\": \"Neutral\",\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"id\": \"83058\",\n  \"intellectIcons\": 1,\n  \"traits\": \"Monster. Nightgaunt. Power.\",\n  \"type\": \"Asset\",\n  \"uses\": {\n    \"count\": 3,\n    \"token\": \"resource\",\n    \"type\": \"\"\n  },\n  \"wildIcons\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -11727,7 +11728,7 @@
                   },
                   "Nickname": "Khopesh of the Abyss",
                   "Description": "Manifested Malice",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Neutral\",\n  \"combatIcons\": 1,\n  \"cost\": 4,\n  \"cycle\": \"Standalone\",\n  \"id\": \"83057\",\n  \"traits\": \"Item. Weapon. Relic. Melee.\",\n  \"type\": \"Asset\",\n  \"wildIcons\": 1,\n  \"willpowerIcons\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -14269,7 +14270,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"id\": \"83027a\",\n  \"traits\": \"Servitor. Dreamlands. Conspirator. Elite.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -18571,7 +18572,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 12,\n  \"id\": \"83018\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -18629,7 +18630,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"83017\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20127,7 +20128,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 1,\n  \"id\": \"83032a\",\n  \"traits\": \"Humanoid. Cultist. Brotherhood.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20185,7 +20186,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"83031a\",\n  \"traits\": \"Humanoid. Cultist. Brotherhood.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -20243,7 +20244,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"83036a\",\n  \"traits\": \"Humanoid. Cultist. Brotherhood.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21209,7 +21210,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83048\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21267,7 +21268,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83050\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21325,7 +21326,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83047\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21441,7 +21442,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83049\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21499,7 +21500,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83050\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21673,7 +21674,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83053\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21789,7 +21790,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83052\",\n  \"traits\": \"Curse. Abyss.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -21847,7 +21848,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"83014\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22021,7 +22022,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83049\",\n  \"traits\": \"Scheme.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22485,7 +22486,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83051\",\n  \"traits\": \"Curse. Abyss.\",\n  \"type\": \"Treachery\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22543,7 +22544,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83053\",\n  \"traits\": \"Power.\",\n  \"type\": \"Treachery\",\n  \"victory\": 1\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22601,7 +22602,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"83015\",\n  \"traits\": \"Monster. Dreamlands.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22659,7 +22660,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 3,\n  \"id\": \"83015\",\n  \"traits\": \"Monster. Dreamlands.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22717,7 +22718,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 2,\n  \"id\": \"83014\",\n  \"traits\": \"Humanoid. Cultist.\",\n  \"type\": \"Enemy\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -22777,7 +22778,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83041\",\n  \"locationFront\": {\n    \"connections\": \"Plus|Tee\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Ruins.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -22835,7 +22836,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83042\",\n  \"locationFront\": {\n    \"connections\": \"Crescent|Heart\",\n    \"icons\": \"Star\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert. Ruins.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23122,7 +23123,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83038\",\n  \"locationFront\": {\n    \"connections\": \"Circle|Star|Heart|Hourglass\",\n    \"icons\": \"Crescent\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23300,7 +23301,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 5,\n  \"id\": \"83004\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23358,7 +23359,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"doomThreshold\": 6,\n  \"id\": \"83003\",\n  \"type\": \"Agenda\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23476,7 +23477,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 4,\n  \"id\": \"83045\",\n  \"traits\": \"Monster. Dreamlands.\",\n  \"type\": \"Enemy\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -23784,7 +23785,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"83007\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -23900,7 +23901,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "[]",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83005\",\n  \"type\": \"Act\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -24076,7 +24077,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83044\",\n  \"locationFront\": {\n    \"connections\": \"Tilde|Plus|Hourglass|Apostrophe\",\n    \"icons\": \"Tee\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Expedition. Desert. Ruins.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33251,7 +33252,7 @@
               },
               "Nickname": "Musée de Antiguités Égyptiennes",
               "Description": "Le Caire.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"83010\",\n  \"locationBack\": {\n    \"connections\": \"Diamond|SlantedEquals|Square\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Diamond|SlantedEquals|Square\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Cairo.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -33483,7 +33484,7 @@
               },
               "Nickname": "",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"health\": 5,\n  \"healthPerInv\": \"true\",\n  \"id\": \"83013\",\n  \"traits\": \"Humanoid. Brotherhood. Elite.\",\n  \"type\": \"Enemy\",\n  \"victory\": 1\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
