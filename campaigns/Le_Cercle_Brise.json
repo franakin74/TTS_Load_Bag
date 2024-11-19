@@ -2,12 +2,12 @@
       "GUID": "dc7cca",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -61.00019,
+        "posX": -58.0,
         "posY": 0.9800004,
-        "posZ": 19.4997787,
-        "rotX": -5.126936E-06,
-        "rotY": 180.000748,
-        "rotZ": 7.786813E-07,
+        "posZ": 13.500001,
+        "rotX": -4.44330772E-06,
+        "rotY": 180.000656,
+        "rotZ": 5.320733E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -84,7 +84,7 @@
           },
           "Nickname": "VII : Dans les Griffes du Chaos",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Dans les Griffes du Chaos",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -9433,7 +9433,7 @@
           },
           "Nickname": "VI : Union et Disillusion",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Union et Désillusion",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -17892,7 +17892,7 @@
           },
           "Nickname": "V : Pour le Bien Commun",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Pour le Bien Commun",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -27703,7 +27703,7 @@
           },
           "Nickname": "VIII : Devant le Trône Noir",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Devant le Trône Noir",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -31501,7 +31501,7 @@
           },
           "Nickname": "I : L'heure des Sorcières",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "L'Heure des Sorcières",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -35411,7 +35411,7 @@
           },
           "Nickname": "O : Disparitions dans la Demeure du Crépuscule",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Disparitions dans la Demeure du Crépuscule",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -43367,7 +43367,7 @@
           },
           "Nickname": "IV : Le Salaire du Péché",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Le Salaire du Péché",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -50215,7 +50215,7 @@
           },
           "Nickname": "II : Au Porte de la Mort",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Aux Portes de la Mort",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -55169,7 +55169,7 @@
           },
           "Nickname": "III : Le Nom Secret",
           "Description": "Le Cercle Brisé",
-          "GMNotes": "",
+          "GMNotes": "Le Nom Secret",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
