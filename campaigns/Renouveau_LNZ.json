@@ -2,12 +2,12 @@
       "GUID": "ba381f",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -93.00017,
-        "posY": 1.19691932,
-        "posZ": 12.9997768,
-        "rotX": -5.14017074E-06,
-        "rotY": 180.019424,
-        "rotZ": 4.17767183E-07,
+        "posX": -92.5,
+        "posY": 1.1969198,
+        "posZ": 6.500003,
+        "rotX": -4.88932847E-06,
+        "rotY": 180.0195,
+        "rotZ": 5.404951E-07,
         "scaleX": 1.170821,
         "scaleY": 0.0619766228,
         "scaleZ": 0.9910606
@@ -135,7 +135,7 @@
           },
           "Nickname": "I : Renouveau - Le Rassemblement",
           "Description": "Renouveau - La Nuit de la Zélatrice",
-          "GMNotes": "",
+          "GMNotes": "Le Rassemblement",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -5426,7 +5426,7 @@
           },
           "Nickname": "II : Renouveau - Les Masques de Minuit",
           "Description": "Renouveau - La Nuit de la Zélatrice",
-          "GMNotes": "",
+          "GMNotes": "Les Masques de Minuit",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -13090,7 +13090,7 @@
                     },
                     {
                       "GUID": "ea1fd0",
-                      "Name": "CardCustom",
+                      "Name": "Card",
                       "Transform": {
                         "posX": -38.0012932,
                         "posY": 1.86838424,
@@ -16057,7 +16057,7 @@
           },
           "Nickname": "III : Renouveau - Le Dévoreur du Dessous",
           "Description": "Renouveau - La Nuit de la Zélatrice",
-          "GMNotes": "",
+          "GMNotes": "Le Dévoreur du Dessous",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
