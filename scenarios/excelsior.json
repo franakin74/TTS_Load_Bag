@@ -2,12 +2,12 @@
       "GUID": "ba18ea",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -0.5000496,
+        "posX": -0.500049651,
         "posY": 5.84360027,
         "posZ": 51.49995,
-        "rotX": -9.78502257E-08,
-        "rotY": 179.966782,
-        "rotZ": 5.017361E-06,
+        "rotX": 1.509969E-08,
+        "rotY": 179.9668,
+        "rotZ": 5.118985E-06,
         "scaleX": 1.23308516,
         "scaleY": 0.256660283,
         "scaleZ": 1.35025632
@@ -23,8 +23,7 @@
       "ColorDiffuse": {
         "r": 1.0,
         "g": 1.0,
-        "b": 1.0,
-        "a": 0.392156869
+        "b": 1.0
       },
       "LayoutGroupSortIndex": 0,
       "Value": 0,
