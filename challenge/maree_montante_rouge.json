@@ -1,20 +1,20 @@
     {
-      "GUID": "e81a42",
+      "GUID": "4b83b8",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 10.5,
-        "posY": 5.84359932,
-        "posZ": 51.5,
-        "rotX": 1.05795932E-08,
-        "rotY": 179.9752,
-        "rotZ": 5.036669E-06,
+        "posX": 37.8664246,
+        "posY": -0.5099311,
+        "posZ": 1.11221719,
+        "rotX": -3.458128E-07,
+        "rotY": 179.9754,
+        "rotZ": -0.000103501632,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
       },
       "Nickname": "Marée Montante Rouge",
       "Description": "",
-      "GMNotes": "challenge/maree_montante_rouge.json",
+      "GMNotes": "Marée Montante Rouge",
       "AltLookAngle": {
         "x": 0.0,
         "y": 0.0,
@@ -633,64 +633,6 @@
             "11136": {
               "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795224150/305ADAE76BA0E06AF3B79A7F54034C07FE11A72F/",
               "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795220141/AC03B2C180790A3606D307817D359A1FA0B4F65A/",
-              "NumWidth": 1,
-              "NumHeight": 1,
-              "BackIsHidden": true,
-              "UniqueBack": false,
-              "Type": 0
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
-        },
-        {
-          "GUID": "3171b2",
-          "Name": "Card",
-          "Transform": {
-            "posX": 23.5013,
-            "posY": 1.51380479,
-            "posZ": -5.522902,
-            "rotX": 0.0108914506,
-            "rotY": 180.000977,
-            "rotZ": 0.00494847866,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "[]",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.713235259,
-            "g": 0.713235259,
-            "b": 0.713235259
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": true,
-          "Hands": true,
-          "CardID": 1113800,
-          "SidewaysCard": false,
-          "CustomDeck": {
-            "11138": {
-              "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795238233/5680541219B43E05A8F5330DB94D21F91AF4F357/",
-              "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795238670/FAE82E8E5E83E1602224535C0851173F4EC73B63/",
               "NumWidth": 1,
               "NumHeight": 1,
               "BackIsHidden": true,
@@ -1753,7 +1695,7 @@
           },
           "Nickname": "Wendy Adams",
           "Description": "",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"alternate_ids\": [ \"01505-m\" ],\n  \"cycle\": \"Core\",\n  \"id\": \"01005-m\",\n  \"type\": \"Minicard\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3907,7 +3849,7 @@
           },
           "Nickname": "Place d'Innsmouth",
           "Description": "Innsmouth. Central.",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"07065\",\n  \"locationBack\": {\n    \"connections\": \"Circle|Diamond|Star|Hourglass|Square|Tee\",\n    \"icons\": \"Triangle\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Circle|Diamond|Star|Hourglass|Square|Tee\",\n    \"icons\": \"Triangle\"\n  },\n  \"traits\": \"Innsmouth. Central.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -3965,7 +3907,7 @@
           },
           "Nickname": "Maison Gilman",
           "Description": "Innsmouth.",
-          "GMNotes": "[]",
+          "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"07064\",\n  \"locationBack\": {\n    \"connections\": \"Triangle|Apostrophe|Star|Tilde|Tee\",\n    \"icons\": \"Diamond\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"locationFront\": {\n    \"connections\": \"Triangle|Apostrophe|Star|Tilde|Tee\",\n    \"icons\": \"Diamond\"\n  },\n  \"traits\": \"Innsmouth.\",\n  \"type\": \"Location\"\n}",
           "AltLookAngle": {
             "x": 0.0,
             "y": 0.0,
@@ -4982,7 +4924,7 @@
               },
               "Nickname": "Froid de la Crypte",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01167\",\n  \"traits\": \"Hazard.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -5562,7 +5504,7 @@
               },
               "Nickname": "Ombre Chasseresse",
               "Description": "",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"cycle\": \"Standalone\",\n  \"id\": \"01135\",\n  \"traits\": \"Curse.\",\n  \"type\": \"Treachery\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -7838,7 +7780,7 @@
               },
               "Nickname": "Allée des Rebouteux",
               "Description": "Innsmouth. Cachette.",
-              "GMNotes": "[]",
+              "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"07071\",\n  \"locationFront\": {\n    \"connections\": \"Apostrophe|Diamond\",\n    \"icons\": \"Tilde\",\n    \"uses\": {\n      \"countPerInvestigator\": 2,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Innsmouth. Hideout.\",\n  \"type\": \"Location\"\n}",
               "AltLookAngle": {
                 "x": 0.0,
                 "y": 0.0,
@@ -11312,6 +11254,64 @@
             "11149": {
               "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/1874087573755659049/9AF2DF88904D62C086CAAA295BE046CBE8E65415/",
               "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/1874087573755659049/9AF2DF88904D62C086CAAA295BE046CBE8E65415/",
+              "NumWidth": 1,
+              "NumHeight": 1,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "3171b2",
+          "Name": "Card",
+          "Transform": {
+            "posX": 37.407753,
+            "posY": -0.228453785,
+            "posZ": 0.738638163,
+            "rotX": -5.620239E-06,
+            "rotY": 180.0008,
+            "rotZ": -0.000114720322,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Référence",
+          "Description": "Marée Montante Rouge",
+          "GMNotes": "{\n  \"class\": \"Mythos\",\n  \"id\": \"90041\",\n  \"type\": \"ScenarioReference\"\n}",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 1113800,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "11138": {
+              "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795238233/5680541219B43E05A8F5330DB94D21F91AF4F357/",
+              "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2107179278795238670/FAE82E8E5E83E1602224535C0851173F4EC73B63/",
               "NumWidth": 1,
               "NumHeight": 1,
               "BackIsHidden": true,
