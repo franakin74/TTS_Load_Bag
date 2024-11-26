@@ -20,12 +20,12 @@
       "GUID": "4e4b72",
       "Name": "Custom_Token",
       "Transform": {
-        "posX": 60.50002,
-        "posY": 1.02999818,
-        "posZ": 32.0000076,
-        "rotX": -9.13721851E-06,
-        "rotY": 179.999115,
-        "rotZ": -6.740258E-07,
+        "posX": 99.00043,
+        "posY": 1.02999723,
+        "posZ": 36.50019,
+        "rotX": 5.026269E-06,
+        "rotY": 179.999985,
+        "rotZ": -2.28605913E-05,
         "scaleX": 1.33,
         "scaleY": 1.0,
         "scaleZ": 1.33
@@ -58,7 +58,7 @@
       "HideWhenFaceDown": false,
       "Hands": false,
       "CustomImage": {
-        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/2026086584367391757/2E37A1020563AA528471DA7425B8E58343E2BAF7/",
+        "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/11916971579972253/7022567261A2A47CBEB4402429D814221630156E/",
         "ImageSecondaryURL": "",
         "ImageScalar": 1.0,
         "WidthScale": 0.0,
