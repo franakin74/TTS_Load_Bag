@@ -1,13 +1,31 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
     {
       "GUID": "2a9ebf",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -53.0000076,
-        "posY": 0.979998231,
-        "posZ": 40.99999,
-        "rotX": -4.65727362E-06,
-        "rotY": 180.001572,
-        "rotZ": 2.53403556E-07,
+        "posX": -71.0,
+        "posY": 0.979999244,
+        "posZ": 30.9999943,
+        "rotX": -4.885027E-06,
+        "rotY": 180.001556,
+        "rotZ": 3.8545744E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -43,7 +61,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/core_h_MSH.obj",
-        "DiffuseURL": "https://i.imgur.com/WtioCq1.jpg",
+        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/13546593730946982308/672CD0BD1464A698AC278F98A1931D1AC1FD9D63/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
@@ -1089,3 +1107,5 @@
         }
       ]
     }
+  ]
+}

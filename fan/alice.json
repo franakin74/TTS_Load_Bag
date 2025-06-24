@@ -20,12 +20,12 @@
       "GUID": "3113ce",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -62.0001869,
-        "posY": 0.9799984,
-        "posZ": 40.9999962,
-        "rotX": -4.928195E-06,
-        "rotY": 180.006317,
-        "rotZ": 5.356368E-07,
+        "posX": -62.0000153,
+        "posY": 0.97999835,
+        "posZ": 40.9999924,
+        "rotX": -5.08418952E-06,
+        "rotY": 180.00148,
+        "rotZ": 4.96109863E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -61,7 +61,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/core_h_MSH.obj",
-        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2379676861897027977/1DB24D21F066E10062BBE1D918C892CCEC798100/",
+        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/9349669672787436437/81D02E27D99C1D3073491B91AA0033FC9AFCE86D/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
