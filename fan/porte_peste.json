@@ -23,9 +23,9 @@
         "posX": -89.0,
         "posY": 0.979998469,
         "posZ": 41.0,
-        "rotX": -5.03935644E-06,
+        "rotX": -5.01702E-06,
         "rotY": 180.0017,
-        "rotZ": 5.61366E-07,
+        "rotZ": 4.18629241E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -61,7 +61,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/core_h_MSH.obj",
-        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/13968252931793258156/2F8547BB0B2383CA48E36A0F1A7338122C9CCCF3/",
+        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/9725593069801479724/97CA57E9C0DB9C382F76DFC5F8E4C520C1F40A73/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
