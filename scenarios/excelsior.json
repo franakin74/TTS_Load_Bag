@@ -20,12 +20,12 @@
       "GUID": "ba18ea",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -0.500049651,
+        "posX": -0.5000498,
         "posY": 5.84360027,
         "posZ": 51.49995,
-        "rotX": 1.33679734E-08,
-        "rotY": 179.9668,
-        "rotZ": 5.133805E-06,
+        "rotX": 3.90594863E-08,
+        "rotY": 179.966782,
+        "rotZ": 5.005931E-06,
         "scaleX": 1.23308516,
         "scaleY": 0.256660283,
         "scaleZ": 1.35025632
@@ -90,12 +90,12 @@
           "GUID": "10fd01",
           "Name": "Deck",
           "Transform": {
-            "posX": -28.5000248,
+            "posX": -28.5000038,
             "posY": 1.81018722,
-            "posZ": 10.9999752,
-            "rotX": -5.12137E-06,
-            "rotY": 179.994781,
-            "rotZ": -2.26941435E-08,
+            "posZ": 10.9999962,
+            "rotX": -4.85486635E-06,
+            "rotY": 179.994873,
+            "rotZ": -2.9485113E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -388,10 +388,10 @@
           "Name": "Deck",
           "Transform": {
             "posX": 12.5011225,
-            "posY": 1.53161466,
-            "posZ": -6.017001,
-            "rotX": 0.00494728144,
-            "rotY": 89.99555,
+            "posY": 1.521615,
+            "posZ": -6.01699972,
+            "rotX": 0.0049472237,
+            "rotY": 89.9955,
             "rotZ": 359.9891,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -567,11 +567,11 @@
           "Name": "Custom_PDF",
           "Transform": {
             "posX": -19.0,
-            "posY": 1.47986,
+            "posY": 1.48149931,
             "posZ": -4.49999952,
-            "rotX": -9.42507654E-08,
+            "rotX": -2.53187267E-07,
             "rotY": 179.996338,
-            "rotZ": -1.65856633E-07,
+            "rotZ": -7.537249E-08,
             "scaleX": 2.05722,
             "scaleY": 1.0,
             "scaleZ": 2.05722
@@ -619,10 +619,10 @@
           "Transform": {
             "posX": -20.5000019,
             "posY": 1.840001,
-            "posZ": 5.49999762,
-            "rotX": -4.89235435E-06,
+            "posZ": 5.49999666,
+            "rotX": -5.150067E-06,
             "rotY": 179.97197,
-            "rotZ": 1.6158144E-07,
+            "rotZ": 2.09494058E-08,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -687,12 +687,12 @@
               "GUID": "090422",
               "Name": "Card",
               "Transform": {
-                "posX": -2.00000143,
-                "posY": 1.52142906,
-                "posZ": 23.0000038,
-                "rotX": 0.0108892955,
-                "rotY": 180.026535,
-                "rotZ": 0.004953267,
+                "posX": -2.00000215,
+                "posY": 1.51142943,
+                "posZ": 23.0000057,
+                "rotX": 0.0108892126,
+                "rotY": 180.02652,
+                "rotZ": 0.004953221,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -742,534 +742,15 @@
               "XmlUI": ""
             },
             {
-              "GUID": "1f94ff",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -1.500003,
-                "posY": 1.50626051,
-                "posZ": 15.0000038,
-                "rotX": -0.00494507328,
-                "rotY": 269.984222,
-                "rotZ": 0.0109001109,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/vppt2my.png",
-                "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "States": {
-                "2": {
-                  "GUID": "4d3553",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.11995,
-                    "posY": 1.60650957,
-                    "posZ": 3.85999179,
-                    "rotX": 359.9831,
-                    "rotY": 359.984558,
-                    "rotZ": 359.920074,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                "3": {
-                  "GUID": "5b38c6",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.1199474,
-                    "posY": 1.60650969,
-                    "posZ": 3.85999274,
-                    "rotX": 359.983124,
-                    "rotY": 359.984467,
-                    "rotZ": 359.9201,
-                    "scaleX": 0.8,
-                    "scaleY": 1.0,
-                    "scaleZ": 0.8
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              }
-            },
-            {
-              "GUID": "339e83",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -2.22174549E-06,
-                "posY": 1.50689137,
-                "posZ": 19.0000038,
-                "rotX": 359.9881,
-                "rotY": 330.011658,
-                "rotZ": 0.001156264,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/vppt2my.png",
-                "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "States": {
-                "2": {
-                  "GUID": "4d3553",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.11995,
-                    "posY": 1.60650957,
-                    "posZ": 3.85999179,
-                    "rotX": 359.9831,
-                    "rotY": 359.984558,
-                    "rotZ": 359.920074,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                "3": {
-                  "GUID": "5b38c6",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.1199474,
-                    "posY": 1.60650969,
-                    "posZ": 3.85999274,
-                    "rotX": 359.983124,
-                    "rotY": 359.984467,
-                    "rotZ": 359.9201,
-                    "scaleX": 0.8,
-                    "scaleY": 1.0,
-                    "scaleZ": 0.8
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              }
-            },
-            {
-              "GUID": "368b8c",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": 7.99999857,
-                "posY": 1.50315893,
-                "posZ": 3.00000286,
-                "rotX": 0.0119062522,
-                "rotY": 149.988266,
-                "rotZ": -0.00116287393,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/vppt2my.png",
-                "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "States": {
-                "2": {
-                  "GUID": "4d3553",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.11995,
-                    "posY": 1.60650957,
-                    "posZ": 3.85999179,
-                    "rotX": 359.9831,
-                    "rotY": 359.984558,
-                    "rotZ": 359.920074,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                "3": {
-                  "GUID": "5b38c6",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.1199474,
-                    "posY": 1.60650969,
-                    "posZ": 3.85999274,
-                    "rotX": 359.983124,
-                    "rotY": 359.984467,
-                    "rotZ": 359.9201,
-                    "scaleX": 0.8,
-                    "scaleY": 1.0,
-                    "scaleZ": 0.8
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              }
-            },
-            {
               "GUID": "406556",
               "Name": "Card",
               "Transform": {
-                "posX": 9.999998,
-                "posY": 1.51583052,
-                "posZ": -0.9999958,
-                "rotX": 0.0108895833,
+                "posX": 9.999997,
+                "posY": 1.50583088,
+                "posZ": -0.9999946,
+                "rotX": 0.0108895451,
                 "rotY": 180.02243,
-                "rotZ": 0.00495252851,
+                "rotZ": 0.004952366,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1319,188 +800,15 @@
               "XmlUI": ""
             },
             {
-              "GUID": "4d3553",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": 9.999998,
-                "posY": 1.50365162,
-                "posZ": 6.500004,
-                "rotX": 0.00494792871,
-                "rotY": 90.0,
-                "rotZ": 359.9891,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "States": {
-                "1": {
-                  "GUID": "9fd734",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": 12.999999,
-                    "posY": 1.50405788,
-                    "posZ": 10.0000029,
-                    "rotX": 0.004947662,
-                    "rotY": 89.9999847,
-                    "rotZ": 359.9891,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/vppt2my.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                "3": {
-                  "GUID": "5b38c6",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.1199474,
-                    "posY": 1.60650969,
-                    "posZ": 3.85999274,
-                    "rotX": 359.983124,
-                    "rotY": 359.984467,
-                    "rotZ": 359.9201,
-                    "scaleX": 0.8,
-                    "scaleY": 1.0,
-                    "scaleZ": 0.8
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              }
-            },
-            {
               "GUID": "90f947",
               "Name": "Card",
               "Transform": {
-                "posX": -5.500002,
-                "posY": 1.52021062,
-                "posZ": 15.0000038,
-                "rotX": 0.010889668,
-                "rotY": 180.0222,
-                "rotZ": 0.004952493,
+                "posX": -5.500003,
+                "posY": 1.510211,
+                "posZ": 15.0000057,
+                "rotX": 0.01088964,
+                "rotY": 180.022217,
+                "rotZ": 0.004952652,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1553,12 +861,12 @@
               "GUID": "b4d0fc",
               "Name": "Card",
               "Transform": {
-                "posX": 14.0,
-                "posY": 1.5170058,
-                "posZ": 7.000004,
-                "rotX": 0.0108894464,
-                "rotY": 180.024139,
-                "rotZ": 0.004952771,
+                "posX": 13.9999981,
+                "posY": 1.50700617,
+                "posZ": 7.000005,
+                "rotX": 0.010889397,
+                "rotY": 180.024124,
+                "rotZ": 0.00495280651,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1608,188 +916,15 @@
               "XmlUI": ""
             },
             {
-              "GUID": "db94cd",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": 11.9999981,
-                "posY": 1.50281358,
-                "posZ": 3.00000334,
-                "rotX": 359.993042,
-                "rotY": 29.9876461,
-                "rotZ": 359.990265,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/vppt2my.png",
-                "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "States": {
-                "2": {
-                  "GUID": "4d3553",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.11995,
-                    "posY": 1.60650957,
-                    "posZ": 3.85999179,
-                    "rotX": 359.9831,
-                    "rotY": 359.984558,
-                    "rotZ": 359.920074,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                "3": {
-                  "GUID": "5b38c6",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.1199474,
-                    "posY": 1.60650969,
-                    "posZ": 3.85999274,
-                    "rotX": 359.983124,
-                    "rotY": 359.984467,
-                    "rotZ": 359.9201,
-                    "scaleX": 0.8,
-                    "scaleY": 1.0,
-                    "scaleZ": 0.8
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              }
-            },
-            {
               "GUID": "edceff",
               "Name": "Card",
               "Transform": {
-                "posX": 6.999998,
-                "posY": 1.52065194,
-                "posZ": 23.0000038,
-                "rotX": 0.0108890682,
-                "rotY": 180.029236,
-                "rotZ": 0.00495378161,
+                "posX": 6.99999762,
+                "posY": 1.51065218,
+                "posZ": 23.0000057,
+                "rotX": 0.0108890077,
+                "rotY": 180.029221,
+                "rotZ": 0.004953897,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1837,179 +972,6 @@
               "LuaScript": "",
               "LuaScriptState": "",
               "XmlUI": ""
-            },
-            {
-              "GUID": "f089dd",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": 4.999998,
-                "posY": 1.50645971,
-                "posZ": 19.0000038,
-                "rotX": 359.993042,
-                "rotY": 29.9999561,
-                "rotZ": 359.990265,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/vppt2my.png",
-                "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "States": {
-                "2": {
-                  "GUID": "4d3553",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.11995,
-                    "posY": 1.60650957,
-                    "posZ": 3.85999179,
-                    "rotX": 359.9831,
-                    "rotY": 359.984558,
-                    "rotZ": 359.920074,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                "3": {
-                  "GUID": "5b38c6",
-                  "Name": "Custom_Tile",
-                  "Transform": {
-                    "posX": -17.1199474,
-                    "posY": 1.60650969,
-                    "posZ": 3.85999274,
-                    "rotX": 359.983124,
-                    "rotY": 359.984467,
-                    "rotZ": 359.9201,
-                    "scaleX": 0.8,
-                    "scaleY": 1.0,
-                    "scaleZ": 0.8
-                  },
-                  "Nickname": "",
-                  "Description": "",
-                  "GMNotes": "",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.6045295,
-                    "g": 0.6045295,
-                    "b": 0.6045295
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": false,
-                  "CustomImage": {
-                    "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                    "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                    "ImageScalar": 1.0,
-                    "WidthScale": 0.0,
-                    "CustomTile": {
-                      "Type": 3,
-                      "Thickness": 0.1,
-                      "Stackable": false,
-                      "Stretch": true
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              }
             }
           ]
         },
@@ -2019,10 +981,10 @@
           "Transform": {
             "posX": 34.4667,
             "posY": 1.5009613,
-            "posZ": 0.202199921,
-            "rotX": 0.000591181859,
-            "rotY": 9.48691159E-05,
-            "rotZ": -0.00107025926,
+            "posZ": 0.202199861,
+            "rotX": 0.0005909698,
+            "rotY": 9.65279251E-05,
+            "rotZ": -0.00107046962,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2073,12 +1035,12 @@
           "GUID": "526e32",
           "Name": "Deck",
           "Transform": {
-            "posX": -31.5003948,
+            "posX": -31.5003414,
             "posY": 1.80537391,
-            "posZ": 3.49951839,
-            "rotX": -4.98283862E-06,
-            "rotY": 180.0032,
-            "rotZ": -9.00616541E-08,
+            "posZ": 3.499568,
+            "rotX": -5.0251756E-06,
+            "rotY": 180.00296,
+            "rotZ": 5.401907E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2311,12 +1273,12 @@
           "GUID": "5f4df0",
           "Name": "Deck",
           "Transform": {
-            "posX": -25.5000172,
+            "posX": -25.5000038,
             "posY": 1.81018746,
-            "posZ": 9.499982,
-            "rotX": -5.033863E-06,
-            "rotY": 179.998352,
-            "rotZ": -2.18341025E-08,
+            "posZ": 9.499996,
+            "rotX": -4.92558229E-06,
+            "rotY": 179.998291,
+            "rotZ": -1.95742217E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -2661,187 +1623,14 @@
           "XmlUI": ""
         },
         {
-          "GUID": "6db2f6",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": 6.49999857,
-            "posY": 1.5055697,
-            "posZ": 15.0000038,
-            "rotX": 0.00494783,
-            "rotY": 90.00013,
-            "rotZ": 359.9891,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.6045295,
-            "g": 0.6045295,
-            "b": 0.6045295
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/vppt2my.png",
-            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
-              "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "4d3553",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.11995,
-                "posY": 1.60650957,
-                "posZ": 3.85999179,
-                "rotX": 359.9831,
-                "rotY": 359.984558,
-                "rotZ": 359.920074,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            "3": {
-              "GUID": "5b38c6",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.1199474,
-                "posY": 1.60650969,
-                "posZ": 3.85999274,
-                "rotX": 359.983124,
-                "rotY": 359.984467,
-                "rotZ": 359.9201,
-                "scaleX": 0.8,
-                "scaleY": 1.0,
-                "scaleZ": 0.8
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            }
-          }
-        },
-        {
           "GUID": "6e2eea",
           "Name": "Card",
           "Transform": {
-            "posX": 23.5013466,
-            "posY": 1.51380479,
-            "posZ": -5.522952,
-            "rotX": 0.0108916275,
-            "rotY": 179.99826,
+            "posX": 23.5013447,
+            "posY": 1.50380516,
+            "posZ": -5.522945,
+            "rotX": 0.0108918445,
+            "rotY": 179.9985,
             "rotZ": 180.004959,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -2892,188 +1681,15 @@
           "XmlUI": ""
         },
         {
-          "GUID": "7234af",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": 14.499999,
-            "posY": 1.50487876,
-            "posZ": 15.0000038,
-            "rotX": 0.004947809,
-            "rotY": 90.00003,
-            "rotZ": 359.9891,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.6045295,
-            "g": 0.6045295,
-            "b": 0.6045295
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/vppt2my.png",
-            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
-              "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "4d3553",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.11995,
-                "posY": 1.60650957,
-                "posZ": 3.85999179,
-                "rotX": 359.9831,
-                "rotY": 359.984558,
-                "rotZ": 359.920074,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            "3": {
-              "GUID": "5b38c6",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.1199474,
-                "posY": 1.60650969,
-                "posZ": 3.85999274,
-                "rotX": 359.983124,
-                "rotY": 359.984467,
-                "rotZ": 359.9201,
-                "scaleX": 0.8,
-                "scaleY": 1.0,
-                "scaleZ": 0.8
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            }
-          }
-        },
-        {
           "GUID": "77083b",
           "Name": "Card",
           "Transform": {
             "posX": 10.4999981,
-            "posY": 1.51882887,
-            "posZ": 15.0000048,
-            "rotX": 0.01089152,
+            "posY": 1.50882924,
+            "posZ": 15.0000067,
+            "rotX": 0.0108917188,
             "rotY": 179.999832,
-            "rotZ": 0.00494831661,
+            "rotZ": 0.004948286,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -3129,7 +1745,7 @@
             "posX": 30.5000038,
             "posY": 1.62690783,
             "posZ": -2.99999738,
-            "rotX": -0.0005911809,
+            "rotX": -0.0005911545,
             "rotY": 180.0,
             "rotZ": 180.001068,
             "scaleX": 1.0,
@@ -4486,10 +3102,10 @@
           "Name": "Deck",
           "Transform": {
             "posX": 17.5010014,
-            "posY": 1.53118229,
-            "posZ": -6.0198,
-            "rotX": 0.00494933175,
-            "rotY": 90.00661,
+            "posY": 1.52118266,
+            "posZ": -6.019799,
+            "rotX": 0.00494918227,
+            "rotY": 90.0066,
             "rotZ": 359.9891,
             "scaleX": 1.0,
             "scaleY": 1.0,
@@ -4664,12 +3280,12 @@
           "GUID": "81cace",
           "Name": "Card",
           "Transform": {
-            "posX": 18.5,
-            "posY": 1.51813793,
-            "posZ": 15.0000038,
-            "rotX": 0.0108916787,
-            "rotY": 179.998566,
-            "rotZ": 0.0049479804,
+            "posX": 18.4999981,
+            "posY": 1.5081383,
+            "posZ": 15.0000048,
+            "rotX": 0.0108914617,
+            "rotY": 179.998917,
+            "rotZ": 0.004948124,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -4722,12 +3338,12 @@
           "GUID": "87ec04",
           "Name": "Card",
           "Transform": {
-            "posX": -2.00000978,
-            "posY": 1.51838768,
-            "posZ": 7.000003,
-            "rotX": 0.0108946646,
-            "rotY": 179.96283,
-            "rotZ": 0.004941247,
+            "posX": -2.00000715,
+            "posY": 1.508388,
+            "posZ": 7.000004,
+            "rotX": 0.0108947642,
+            "rotY": 179.962982,
+            "rotZ": 0.004941278,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -4780,12 +3396,12 @@
           "GUID": "87fd82",
           "Name": "Card",
           "Transform": {
-            "posX": 6.00000048,
-            "posY": 1.51769674,
-            "posZ": 7.000004,
-            "rotX": 0.0108929425,
-            "rotY": 179.984146,
-            "rotZ": 0.004945364,
+            "posX": 5.99999952,
+            "posY": 1.50769711,
+            "posZ": 7.00000525,
+            "rotX": 0.01089289,
+            "rotY": 179.984161,
+            "rotZ": 0.00494527537,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -4838,12 +3454,12 @@
           "GUID": "8a8b7e",
           "Name": "Deck",
           "Transform": {
-            "posX": -31.5000324,
+            "posX": -31.5000057,
             "posY": 1.81018722,
-            "posZ": 10.9999685,
-            "rotX": -5.307202E-06,
-            "rotY": 179.989517,
-            "rotZ": 4.12957121E-07,
+            "posZ": 10.9999952,
+            "rotX": -5.111731E-06,
+            "rotY": 179.989212,
+            "rotZ": 1.84747933E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -5135,12 +3751,12 @@
           "GUID": "914b72",
           "Name": "Deck",
           "Transform": {
-            "posX": -31.5000477,
+            "posX": -31.5000076,
             "posY": 1.81018758,
-            "posZ": 7.499951,
-            "rotX": -5.252802E-06,
-            "rotY": 180.0026,
-            "rotZ": 1.93719586E-07,
+            "posZ": 7.499992,
+            "rotX": -5.01698651E-06,
+            "rotY": 180.002365,
+            "rotZ": 2.12411919E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -5432,12 +4048,12 @@
           "GUID": "98830f",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -24.5000134,
+            "posX": -24.5000019,
             "posY": 1.840001,
-            "posZ": 5.49998569,
-            "rotX": -6.296387E-06,
-            "rotY": 179.982925,
-            "rotZ": 5.571144E-07,
+            "posZ": 5.49999666,
+            "rotX": -6.278918E-06,
+            "rotY": 179.983,
+            "rotZ": 7.05647665E-07,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -5678,12 +4294,12 @@
           "GUID": "a2f17c",
           "Name": "Card",
           "Transform": {
-            "posX": 2.49999857,
-            "posY": 1.51951981,
-            "posZ": 15.0000038,
-            "rotX": 0.0108914915,
+            "posX": 2.499998,
+            "posY": 1.50952,
+            "posZ": 15.0000048,
+            "rotX": 0.0108915893,
             "rotY": 179.999832,
-            "rotZ": 0.00494824443,
+            "rotZ": 0.0049482435,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -5731,179 +4347,6 @@
           "LuaScript": "",
           "LuaScriptState": "",
           "XmlUI": ""
-        },
-        {
-          "GUID": "b3017a",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": 1.99999833,
-            "posY": 1.50434256,
-            "posZ": 6.50000334,
-            "rotX": 0.00494487071,
-            "rotY": 89.98435,
-            "rotZ": 359.9891,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.6045295,
-            "g": 0.6045295,
-            "b": 0.6045295
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/vppt2my.png",
-            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
-              "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "4d3553",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.11995,
-                "posY": 1.60650957,
-                "posZ": 3.85999179,
-                "rotX": 359.9831,
-                "rotY": 359.984558,
-                "rotZ": 359.920074,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            "3": {
-              "GUID": "5b38c6",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.1199474,
-                "posY": 1.60650969,
-                "posZ": 3.85999274,
-                "rotX": 359.983124,
-                "rotY": 359.984467,
-                "rotZ": 359.9201,
-                "scaleX": 0.8,
-                "scaleY": 1.0,
-                "scaleZ": 0.8
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            }
-          }
         },
         {
           "GUID": "bb7acd",
@@ -6263,10 +4706,10 @@
           "Transform": {
             "posX": -22.0000019,
             "posY": 1.83907163,
-            "posZ": 9.499992,
-            "rotX": 1.5137833E-07,
-            "rotY": 90.00059,
-            "rotZ": 5.036161E-06,
+            "posZ": 9.499998,
+            "rotX": -3.04636472E-07,
+            "rotY": 90.0005,
+            "rotZ": 5.02655757E-06,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -6912,12 +5355,12 @@
           "GUID": "c7d068",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 3.0,
-            "posY": 1.50178492,
-            "posZ": -6.500001,
-            "rotX": 0.01089232,
-            "rotY": 179.991,
-            "rotZ": 0.004946723,
+            "posX": 2.99999976,
+            "posY": 1.49178529,
+            "posZ": -6.499999,
+            "rotX": 0.0108923437,
+            "rotY": 179.990967,
+            "rotZ": 0.004946812,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -6966,361 +5409,15 @@
           "XmlUI": ""
         },
         {
-          "GUID": "cc410f",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": -0.500002444,
-            "posY": 1.50541377,
-            "posZ": 11.0000038,
-            "rotX": 359.993042,
-            "rotY": 29.9842739,
-            "rotZ": 359.990265,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.6045295,
-            "g": 0.6045295,
-            "b": 0.6045295
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/vppt2my.png",
-            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
-              "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "4d3553",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.11995,
-                "posY": 1.60650957,
-                "posZ": 3.85999179,
-                "rotX": 359.9831,
-                "rotY": 359.984558,
-                "rotZ": 359.920074,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            "3": {
-              "GUID": "5b38c6",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.1199474,
-                "posY": 1.60650969,
-                "posZ": 3.85999274,
-                "rotX": 359.983124,
-                "rotY": 359.984467,
-                "rotZ": 359.9201,
-                "scaleX": 0.8,
-                "scaleY": 1.0,
-                "scaleZ": 0.8
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            }
-          }
-        },
-        {
-          "GUID": "f0c920",
-          "Name": "Custom_Tile",
-          "Transform": {
-            "posX": 4.999998,
-            "posY": 1.50493884,
-            "posZ": 11.0000038,
-            "rotX": 359.9881,
-            "rotY": 329.9843,
-            "rotZ": 0.00116245251,
-            "scaleX": 1.0,
-            "scaleY": 1.0,
-            "scaleZ": 1.0
-          },
-          "Nickname": "",
-          "Description": "",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 0.6045295,
-            "g": 0.6045295,
-            "b": 0.6045295
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://i.imgur.com/vppt2my.png",
-            "ImageSecondaryURL": "https://i.imgur.com/vppt2my.png",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomTile": {
-              "Type": 3,
-              "Thickness": 0.1,
-              "Stackable": false,
-              "Stretch": true
-            }
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": "",
-          "States": {
-            "2": {
-              "GUID": "4d3553",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.11995,
-                "posY": 1.60650957,
-                "posZ": 3.85999179,
-                "rotX": 359.9831,
-                "rotY": 359.984558,
-                "rotZ": 359.920074,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            },
-            "3": {
-              "GUID": "5b38c6",
-              "Name": "Custom_Tile",
-              "Transform": {
-                "posX": -17.1199474,
-                "posY": 1.60650969,
-                "posZ": 3.85999274,
-                "rotX": 359.983124,
-                "rotY": 359.984467,
-                "rotZ": 359.9201,
-                "scaleX": 0.8,
-                "scaleY": 1.0,
-                "scaleZ": 0.8
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.6045295,
-                "g": 0.6045295,
-                "b": 0.6045295
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomImage": {
-                "ImageURL": "https://i.imgur.com/dHKBLoD.png",
-                "ImageSecondaryURL": "https://i.imgur.com/HyfE8m8.png",
-                "ImageScalar": 1.0,
-                "WidthScale": 0.0,
-                "CustomTile": {
-                  "Type": 3,
-                  "Thickness": 0.1,
-                  "Stackable": false,
-                  "Stretch": true
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
-            }
-          }
-        },
-        {
           "GUID": "f10ed1",
           "Name": "Deck",
           "Transform": {
-            "posX": -28.5000362,
+            "posX": -28.5000038,
             "posY": 1.81018758,
-            "posZ": 7.499964,
-            "rotX": -4.98051941E-06,
-            "rotY": 179.996948,
-            "rotZ": 2.85628914E-07,
+            "posZ": 7.499995,
+            "rotX": -5.165174E-06,
+            "rotY": 179.996735,
+            "rotZ": 1.73686175E-07,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
