@@ -22,10 +22,10 @@
       "Transform": {
         "posX": -93.00014,
         "posY": 0.9800026,
-        "posZ": -3.500114,
-        "rotX": -5.12338374E-06,
+        "posZ": -3.50011373,
+        "rotX": -5.07103459E-06,
         "rotY": 180.0019,
-        "rotZ": 4.02099744E-07,
+        "rotZ": 5.712624E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -6036,9 +6036,9 @@
             "posX": -9.000499,
             "posY": 0.9799974,
             "posZ": 46.5002,
-            "rotX": -5.03653746E-06,
+            "rotX": -5.03385763E-06,
             "rotY": 179.997009,
-            "rotZ": 5.393535E-07,
+            "rotZ": 7.59674833E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -9632,6 +9632,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 }
               ]
@@ -13277,6 +13278,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 }
               ]
@@ -13437,9 +13439,9 @@
             "posX": -27.0,
             "posY": 1.48149931,
             "posZ": -5.0,
-            "rotX": 2.9599569E-08,
+            "rotX": -3.134988E-08,
             "rotY": 180.0,
-            "rotZ": -1.07558272E-07,
+            "rotZ": -3.11307645E-07,
             "scaleX": 1.3656503,
             "scaleY": 1.0,
             "scaleZ": 1.3656503
@@ -13488,9 +13490,9 @@
             "posX": 22.9997063,
             "posY": 0.979997158,
             "posZ": 46.5002022,
-            "rotX": -5.01775367E-06,
+            "rotX": -5.01369868E-06,
             "rotY": 179.997437,
-            "rotZ": 1.52598125E-06,
+            "rotZ": 1.53880922E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -13558,9 +13560,9 @@
                 "posX": 5.500002,
                 "posY": 1.50859571,
                 "posZ": 11.4999971,
-                "rotX": 0.0108915884,
+                "rotX": 0.0108914748,
                 "rotY": 179.999374,
-                "rotZ": 0.004948051,
+                "rotZ": 0.00494806934,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -14149,12 +14151,12 @@
               "GUID": "4b82c0",
               "Name": "Card",
               "Transform": {
-                "posX": 14.5001154,
+                "posX": 14.5001163,
                 "posY": 1.50952923,
                 "posZ": 20.5000038,
-                "rotX": 0.010891675,
-                "rotY": 179.997269,
-                "rotZ": 0.00494755758,
+                "rotX": 0.0108916974,
+                "rotY": 179.997253,
+                "rotZ": 0.00494762557,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -14268,9 +14270,9 @@
                 "posX": 2.49999881,
                 "posY": 1.549043,
                 "posZ": -7.99999952,
-                "rotX": 0.0108927889,
+                "rotX": 0.010892896,
                 "rotY": 180.000031,
-                "rotZ": 0.00494923,
+                "rotZ": 0.004949236,
                 "scaleX": 0.5750004,
                 "scaleY": 0.5750004,
                 "scaleZ": 0.5750004
@@ -14510,7 +14512,7 @@
                 "posX": 30.5,
                 "posY": 1.61727977,
                 "posZ": -2.9971,
-                "rotX": -0.000591180054,
+                "rotX": -0.0005911959,
                 "rotY": 179.9999,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -15949,9 +15951,9 @@
                 "posX": -32.50001,
                 "posY": 1.84000111,
                 "posZ": 4.499989,
-                "rotX": -2.7830954E-06,
+                "rotX": -2.847782E-06,
                 "rotY": 179.971466,
-                "rotZ": -2.36021251E-07,
+                "rotZ": -3.603593E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -16250,12 +16252,12 @@
               "GUID": "af5bf4",
               "Name": "Card",
               "Transform": {
-                "posX": -24.0000057,
+                "posX": -24.0000076,
                 "posY": 1.78360558,
                 "posZ": 9.499878,
-                "rotX": -5.002172E-06,
-                "rotY": 180.002258,
-                "rotZ": 2.24950966E-07,
+                "rotX": -5.10174459E-06,
+                "rotY": 180.002274,
+                "rotZ": 4.62437981E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -16310,10 +16312,10 @@
               "Transform": {
                 "posX": -22.5000019,
                 "posY": 1.86500108,
-                "posZ": 4.499998,
-                "rotX": -5.73649641E-06,
-                "rotY": 179.975525,
-                "rotZ": 5.676583E-07,
+                "posZ": 4.49999666,
+                "rotX": -6.11405949E-06,
+                "rotY": 179.9755,
+                "rotZ": 1.48580767E-07,
                 "scaleX": 0.9499998,
                 "scaleY": 0.9499998,
                 "scaleZ": 0.9499998
@@ -16963,7 +16965,7 @@
                 "posX": 12.5010033,
                 "posY": 1.5046612,
                 "posZ": -6.016799,
-                "rotX": 0.0049453387,
+                "rotX": 0.004945292,
                 "rotY": 89.98488,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -17021,7 +17023,7 @@
                 "posX": 17.501,
                 "posY": 1.504229,
                 "posZ": -6.01959848,
-                "rotX": 0.004948356,
+                "rotX": 0.00494834036,
                 "rotY": 90.00088,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -20813,12 +20815,12 @@
           "GUID": "4e84af",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -13.5002022,
+            "posX": -13.5001974,
             "posY": 0.979997456,
-            "posZ": 46.5002,
-            "rotX": -5.08866469E-06,
-            "rotY": 179.996826,
-            "rotZ": 4.057951E-07,
+            "posZ": 46.5002022,
+            "rotX": -4.997752E-06,
+            "rotY": 179.996857,
+            "rotZ": 5.471556E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -24602,9 +24604,9 @@
             "posX": -20.0,
             "posY": 1.48149931,
             "posZ": -5.0,
-            "rotX": -5.19967323E-08,
+            "rotX": -3.988321E-08,
             "rotY": 180.0003,
-            "rotZ": -9.139615E-08,
+            "rotZ": -9.6337665E-08,
             "scaleX": 1.93762064,
             "scaleY": 1.0,
             "scaleZ": 1.93762064
@@ -24710,9 +24712,9 @@
             "posX": -32.5000038,
             "posY": 1.56399894,
             "posZ": -5.00000048,
-            "rotX": 1.368517E-06,
+            "rotX": -4.415475E-07,
             "rotY": 179.9893,
-            "rotZ": 7.309273E-07,
+            "rotZ": 7.97991561E-07,
             "scaleX": 0.824999869,
             "scaleY": 0.824999869,
             "scaleZ": 0.824999869
@@ -26262,12 +26264,12 @@
               "GUID": "0dcf66",
               "Name": "Deck",
               "Transform": {
-                "posX": -33.0,
-                "posY": 1.724494,
-                "posZ": -4.5,
-                "rotX": -0.002799611,
-                "rotY": 179.999863,
-                "rotZ": -0.0009397955,
+                "posX": -32.0,
+                "posY": 1.72448671,
+                "posZ": -5.5,
+                "rotX": 0.00272120512,
+                "rotY": 180.000549,
+                "rotZ": 179.999954,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -26301,7 +26303,7 @@
               "Hands": false,
               "SidewaysCard": false,
               "DeckIDs": [
-                100800,
+                1116800,
                 1113750,
                 1113751,
                 1113752,
@@ -26311,9 +26313,9 @@
                 1113756
               ],
               "CustomDeck": {
-                "1008": {
-                  "FaceURL": "https://i.ibb.co/4DSX3gx/07ccb3313cf4.jpg",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940352139/A2D42E7E5C43D045D72CE5CFC907E4F886C8C690/",
+                "11168": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15886994737166006273/788B56B2361658DA086B60037A5CF78882FD097E/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11757086934776629242/CE73E46AA14B3AAD8A5891D68813F3488043E0E7/",
                   "NumWidth": 1,
                   "NumHeight": 1,
                   "BackIsHidden": true,
@@ -26335,21 +26337,21 @@
               "XmlUI": "",
               "ContainedObjects": [
                 {
-                  "GUID": "e0000b",
-                  "Name": "Card",
+                  "GUID": "71092a",
+                  "Name": "CardCustom",
                   "Transform": {
-                    "posX": 60.3171959,
-                    "posY": 2.00360584,
-                    "posZ": 1.2714355,
-                    "rotX": -2.66375127E-06,
-                    "rotY": 179.999878,
-                    "rotZ": -8.798755E-06,
+                    "posX": -32.0,
+                    "posY": 1.892862,
+                    "posZ": 3.50000024,
+                    "rotX": 3.08158974E-06,
+                    "rotY": 180.0,
+                    "rotZ": 180.000046,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
                   },
                   "Nickname": "On n'Est Bien que Chez Soi",
-                  "Description": "Perdu et Hésitant",
+                  "Description": "",
                   "GMNotes": "{\n  \"id\": \"11753a\",\n  \"type\": \"Asset\",\n  \"traits\": \"Task. Incomplete.\",\n  \"startsInPlay\": true,\n  \"permanent\": true,\n  \"weakness\": true,\n  \"uses\": [\n    {\n      \"count\": 8,\n      \"type\": \"Discovery\",\n      \"token\": \"resource\"\n    }\n  ],\n  \"cycle\": \"The Drowned City\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
@@ -26361,10 +26363,6 @@
                     "g": 0.713235259,
                     "b": 0.713235259
                   },
-                  "Tags": [
-                    "Asset",
-                    "PlayerCard"
-                  ],
                   "LayoutGroupSortIndex": 0,
                   "Value": 0,
                   "Locked": false,
@@ -26379,12 +26377,12 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 100800,
+                  "CardID": 1116800,
                   "SidewaysCard": false,
                   "CustomDeck": {
-                    "1008": {
-                      "FaceURL": "https://i.ibb.co/4DSX3gx/07ccb3313cf4.jpg",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940352139/A2D42E7E5C43D045D72CE5CFC907E4F886C8C690/",
+                    "11168": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/15886994737166006273/788B56B2361658DA086B60037A5CF78882FD097E/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11757086934776629242/CE73E46AA14B3AAD8A5891D68813F3488043E0E7/",
                       "NumWidth": 1,
                       "NumHeight": 1,
                       "BackIsHidden": true,
@@ -26400,12 +26398,12 @@
                   "GUID": "0d8396",
                   "Name": "Card",
                   "Transform": {
-                    "posX": 48.5,
-                    "posY": 1.0393852,
-                    "posZ": 32.5,
-                    "rotX": 0.0005350625,
-                    "rotY": 179.988785,
-                    "rotZ": -0.000260093337,
+                    "posX": -32.5,
+                    "posY": 1.9018203,
+                    "posZ": 3.5,
+                    "rotX": 4.870905E-05,
+                    "rotY": 180.000015,
+                    "rotZ": 180.000031,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -26870,9 +26868,9 @@
             "posX": 27.49951,
             "posY": 0.9799973,
             "posZ": 46.5002022,
-            "rotX": -4.9613086E-06,
-            "rotY": 179.997391,
-            "rotZ": 5.301594E-07,
+            "rotX": -5.117241E-06,
+            "rotY": 179.997437,
+            "rotZ": 3.897541E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -27058,6 +27056,7 @@
                     }
                   },
                   "LuaScript": "",
+                  "LuaScriptState": "",
                   "XmlUI": ""
                 },
                 {
@@ -51358,12 +51357,12 @@
           "GUID": "bad162",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 4.49737072,
-            "posY": 0.980031669,
-            "posZ": 46.4995651,
-            "rotX": -4.93720154E-06,
-            "rotY": 179.997849,
-            "rotZ": 4.878051E-07,
+            "posX": 4.49930239,
+            "posY": 0.979997456,
+            "posZ": 46.4995,
+            "rotX": -5.0099834E-06,
+            "rotY": 179.9977,
+            "rotZ": 5.27544671E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -51428,12 +51427,12 @@
               "GUID": "103cfe",
               "Name": "Custom_Model_Infinite_Bag",
               "Transform": {
-                "posX": 2.499999,
+                "posX": 2.49999881,
                 "posY": 1.549043,
                 "posZ": -7.99999762,
-                "rotX": 0.0108924927,
-                "rotY": 179.999863,
-                "rotZ": 0.004949027,
+                "rotX": 0.0108928718,
+                "rotY": 179.999878,
+                "rotZ": 0.00494950963,
                 "scaleX": 0.5750004,
                 "scaleY": 0.5750004,
                 "scaleZ": 0.5750004
@@ -51556,10 +51555,10 @@
               "Transform": {
                 "posX": 23.5013,
                 "posY": 1.503805,
-                "posZ": -5.523106,
-                "rotX": 0.0108914459,
-                "rotY": 180.001175,
-                "rotZ": 0.00494849728,
+                "posZ": -5.52310562,
+                "rotX": 0.0108913379,
+                "rotY": 180.00119,
+                "rotZ": 0.00494855177,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -51612,11 +51611,11 @@
               "GUID": "27c773",
               "Name": "Deck",
               "Transform": {
-                "posX": -34.00015,
+                "posX": -34.000145,
                 "posY": 1.81018686,
-                "posZ": 14.9998465,
-                "rotX": -5.00353326E-06,
-                "rotY": 180.000641,
+                "posZ": 14.999856,
+                "rotX": -5.38648874E-06,
+                "rotY": 180.000671,
                 "rotZ": 180.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -51909,12 +51908,12 @@
               "GUID": "34574e",
               "Name": "Card",
               "Transform": {
-                "posX": -1.00000143,
+                "posX": -1.00000119,
                 "posY": 1.50887191,
                 "posZ": 9.999994,
-                "rotX": 0.0108915726,
-                "rotY": 180.000122,
-                "rotZ": 0.004948279,
+                "rotX": 0.0108914133,
+                "rotY": 180.0001,
+                "rotZ": 0.004948286,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -51946,10 +51945,10 @@
               "GridProjection": false,
               "HideWhenFaceDown": false,
               "Hands": true,
-              "CardID": 1114037,
+              "CardID": 1116937,
               "SidewaysCard": false,
               "CustomDeck": {
-                "11140": {
+                "11169": {
                   "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041515472/D4F4E9B1F130FD4FD3F8471D56A2B8B6773F303D/",
                   "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041518746/1CBF799DC87C3B6D6A766D976BC3FFEDDA83906D/",
                   "NumWidth": 10,
@@ -51970,7 +51969,7 @@
                 "posX": 30.5,
                 "posY": 1.61246574,
                 "posZ": -2.9971,
-                "rotX": -0.0005911126,
+                "rotX": -0.000590985641,
                 "rotY": 179.999878,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -52006,27 +52005,36 @@
               "Hands": false,
               "SidewaysCard": false,
               "DeckIDs": [
-                1113427,
+                100500,
                 1113429,
                 1113429,
                 1113429,
-                1114102,
-                1114102,
-                1114103,
-                1114103,
+                1117002,
+                1117002,
+                1117003,
+                1117003,
                 1113468,
                 1113468,
-                1114100,
-                1114100,
-                1114101,
-                1114101,
-                1114115,
-                1114115,
-                1114114,
-                1114114,
-                1114114
+                1117000,
+                1117000,
+                1117001,
+                1117001,
+                1117015,
+                1117015,
+                1117014,
+                1117014,
+                1117014
               ],
               "CustomDeck": {
+                "1005": {
+                  "FaceURL": "https://i.ibb.co/XZrhms4n/4eb82b2f6ced.jpg",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                },
                 "11134": {
                   "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041477943/5F226E85EEDFEA86B67F0A5DC729CA66771F2C5A/",
                   "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883033910071331/B2D9D305B83B81493551903C70CB8938BAFD4142/",
@@ -52036,7 +52044,7 @@
                   "UniqueBack": false,
                   "Type": 0
                 },
-                "11141": {
+                "11170": {
                   "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041490248/04D83A514D8FF65F8294E77892209631A9CE426C/",
                   "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883033910071331/B2D9D305B83B81493551903C70CB8938BAFD4142/",
                   "NumWidth": 10,
@@ -52051,15 +52059,15 @@
               "XmlUI": "",
               "ContainedObjects": [
                 {
-                  "GUID": "e069ee",
+                  "GUID": "e00008",
                   "Name": "Card",
                   "Transform": {
-                    "posX": 12.9999647,
-                    "posY": 1.51680923,
-                    "posZ": 13.0000038,
-                    "rotX": 0.0246402547,
-                    "rotY": 180.0003,
-                    "rotZ": 359.908081,
+                    "posX": 30.4999943,
+                    "posY": 1.74743271,
+                    "posZ": -2.99714136,
+                    "rotX": -0.0005197951,
+                    "rotY": 179.999878,
+                    "rotZ": 180.00116,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -52077,6 +52085,9 @@
                     "g": 0.713235259,
                     "b": 0.713235259
                   },
+                  "Tags": [
+                    "ScenarioCard"
+                  ],
                   "LayoutGroupSortIndex": 0,
                   "Value": 0,
                   "Locked": false,
@@ -52091,15 +52102,15 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1113427,
+                  "CardID": 100500,
                   "SidewaysCard": false,
                   "CustomDeck": {
-                    "11134": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041477943/5F226E85EEDFEA86B67F0A5DC729CA66771F2C5A/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883033910071331/B2D9D305B83B81493551903C70CB8938BAFD4142/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": false,
+                    "1005": {
+                      "FaceURL": "https://i.ibb.co/XZrhms4n/4eb82b2f6ced.jpg",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
                       "UniqueBack": false,
                       "Type": 0
                     }
@@ -52112,12 +52123,12 @@
                   "GUID": "5184fd",
                   "Name": "Card",
                   "Transform": {
-                    "posX": 17.9999981,
-                    "posY": 1.51950777,
-                    "posZ": 22.0000038,
-                    "rotX": 0.0109401708,
-                    "rotY": 179.997238,
-                    "rotZ": 0.00465983432,
+                    "posX": 30.4999943,
+                    "posY": 1.73780572,
+                    "posZ": -2.99714136,
+                    "rotX": -0.0006030471,
+                    "rotY": 179.999878,
+                    "rotZ": 180.001129,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -52323,7 +52334,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114102,
+                  "CardID": 1117002,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52381,7 +52392,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114102,
+                  "CardID": 1117002,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52439,7 +52450,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114103,
+                  "CardID": 1117003,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52497,7 +52508,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114103,
+                  "CardID": 1117003,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52671,7 +52682,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114100,
+                  "CardID": 1117000,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52729,7 +52740,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114100,
+                  "CardID": 1117000,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52787,7 +52798,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114101,
+                  "CardID": 1117001,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52845,7 +52856,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114101,
+                  "CardID": 1117001,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52903,7 +52914,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114115,
+                  "CardID": 1117015,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -52961,7 +52972,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114115,
+                  "CardID": 1117015,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -53019,7 +53030,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114114,
+                  "CardID": 1117014,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -53077,7 +53088,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114114,
+                  "CardID": 1117014,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -53135,7 +53146,7 @@
                   "GridProjection": false,
                   "HideWhenFaceDown": true,
                   "Hands": true,
-                  "CardID": 1114114,
+                  "CardID": 1117014,
                   "SidewaysCard": false,
                   "CustomDeck": {
                     "11135": {
@@ -53158,12 +53169,12 @@
               "GUID": "62987c",
               "Name": "Card",
               "Transform": {
-                "posX": -7.99999666,
+                "posX": -7.99999762,
                 "posY": 1.50947642,
                 "posZ": 10.000001,
-                "rotX": 0.0108916527,
+                "rotX": 0.0108916089,
                 "rotY": 179.999069,
-                "rotZ": 0.004947938,
+                "rotZ": 0.004948024,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53219,7 +53230,7 @@
                 "posX": 17.501,
                 "posY": 1.52118289,
                 "posZ": -6.01959848,
-                "rotX": 0.00494797667,
+                "rotX": 0.0049479967,
                 "rotY": 90.0,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -53392,14 +53403,72 @@
               ]
             },
             {
+              "GUID": "8aa1ba",
+              "Name": "CardCustom",
+              "Transform": {
+                "posX": 6.0,
+                "posY": 1.5082674,
+                "posZ": 10.0,
+                "rotX": 0.0108914915,
+                "rotY": 180.0001,
+                "rotZ": 180.004959,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Cœur de la Crypte",
+              "Description": "Cœur de la Machine",
+              "GMNotes": "{\n  \"id\": \"11595\",\n  \"type\": \"Location\",\n  \"traits\": \"R'lyeh.\",\n  \"cycle\": \"The Drowned City\",\n  \"locationFront\": {\n    \"icons\": \"Heart\",\n    \"connections\": \"Square\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 3,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": true,
+              "CardID": 1114700,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "11147": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16496198768885539021/6A423A3C6DDCC459D9DCC6D60A7B1510D2FC35B7/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/17259280426519761282/E72D228F8582F600CC4B3B295F6133BAD19E56DA/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
               "GUID": "9be533",
               "Name": "Deck",
               "Transform": {
-                "posX": 12.4857111,
+                "posX": 12.4857063,
                 "posY": 1.52644014,
-                "posZ": -5.96652126,
-                "rotX": 0.004947639,
-                "rotY": 89.99851,
+                "posZ": -5.96651649,
+                "rotX": 0.004947695,
+                "rotY": 89.99846,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -53635,10 +53704,10 @@
               "Transform": {
                 "posX": 20.0000114,
                 "posY": 1.50705826,
-                "posZ": 9.999991,
-                "rotX": 0.0108915009,
-                "rotY": 179.999664,
-                "rotZ": 0.00494826538,
+                "posZ": 9.999992,
+                "rotX": 0.0108914217,
+                "rotY": 179.99971,
+                "rotZ": 0.004948112,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -53821,12 +53890,12 @@
               "GUID": "cab691",
               "Name": "Deck",
               "Transform": {
-                "posX": -27.0000019,
-                "posY": 1.80537307,
-                "posZ": 14.9999866,
-                "rotX": -5.288012E-06,
-                "rotY": 180.000656,
-                "rotZ": 2.941184E-07,
+                "posX": -27.0,
+                "posY": 1.805373,
+                "posZ": 14.9999886,
+                "rotX": -5.119156E-06,
+                "rotY": 180.000565,
+                "rotZ": -2.68579168E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -54062,9 +54131,9 @@
                 "posX": -27.0000153,
                 "posY": 1.84000123,
                 "posZ": 3.99997234,
-                "rotX": -5.1228285E-06,
+                "rotX": -5.0245585E-06,
                 "rotY": 179.9713,
-                "rotZ": -7.016989E-08,
+                "rotZ": -1.08335421E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -54363,12 +54432,12 @@
               "GUID": "eda60c",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -27.00001,
+                "posX": -27.0000114,
                 "posY": 1.86500072,
-                "posZ": 8.49998951,
-                "rotX": -5.005703E-06,
-                "rotY": 179.971313,
-                "rotZ": -1.40023715E-07,
+                "posZ": 8.499989,
+                "rotX": -6.50645734E-06,
+                "rotY": 179.971329,
+                "rotZ": 2.24163486E-07,
                 "scaleX": 0.9499998,
                 "scaleY": 0.9499998,
                 "scaleZ": 0.9499998
@@ -55159,11 +55228,11 @@
               "GUID": "edc3fc",
               "Name": "Deck",
               "Transform": {
-                "posX": -30.5001354,
+                "posX": -30.5001316,
                 "posY": 1.80537283,
-                "posZ": 14.9998665,
-                "rotX": -4.992091E-06,
-                "rotY": 180.000061,
+                "posZ": 14.9998693,
+                "rotX": -5.05693924E-06,
+                "rotY": 180.000031,
                 "rotZ": 180.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -55392,64 +55461,6 @@
                   "XmlUI": ""
                 }
               ]
-            },
-            {
-              "GUID": "8aa1ba",
-              "Name": "CardCustom",
-              "Transform": {
-                "posX": 5.99999857,
-                "posY": 1.5082674,
-                "posZ": 10.0000029,
-                "rotX": 0.0108917,
-                "rotY": 180.0,
-                "rotZ": 180.004959,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "Cœur de la Crypte",
-              "Description": "Cœur de la Machine",
-              "GMNotes": "{\n  \"id\": \"11595\",\n  \"type\": \"Location\",\n  \"traits\": \"R'lyeh.\",\n  \"cycle\": \"The Drowned City\",\n  \"locationFront\": {\n    \"icons\": \"Heart\",\n    \"connections\": \"Square\",\n    \"uses\": [\n      {\n        \"countPerInvestigator\": 3,\n        \"type\": \"Clue\",\n        \"token\": \"clue\"\n      }\n    ]\n  }\n}",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": true,
-              "CardID": 1114700,
-              "SidewaysCard": false,
-              "CustomDeck": {
-                "11147": {
-                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16496198768885539021/6A423A3C6DDCC459D9DCC6D60A7B1510D2FC35B7/",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/17259280426519761282/E72D228F8582F600CC4B3B295F6133BAD19E56DA/",
-                  "NumWidth": 1,
-                  "NumHeight": 1,
-                  "BackIsHidden": true,
-                  "UniqueBack": false,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": ""
             }
           ],
           "AttachedDecals": [
@@ -55478,12 +55489,12 @@
           "GUID": "e137b3",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 17.9994984,
+            "posX": 17.9954414,
             "posY": 0.979997158,
-            "posZ": 46.4997025,
-            "rotX": -5.20381764E-06,
-            "rotY": 179.996887,
-            "rotZ": -2.36366873E-07,
+            "posZ": 46.49885,
+            "rotX": -5.031242E-06,
+            "rotY": 179.997284,
+            "rotZ": 6.00903E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -55541,9 +55552,197 @@
             "Order": 0
           },
           "LuaScript": "-- Utility memory bag by Directsun\r\n-- Version 2.7.0\r\n-- Fork of Memory Bag 2.0 by MrStump\r\n--\r\n-- Want to contribute? Create an issue or fork the code on GitHub and submit a pull request:\r\n-- https://github.com/sunflowermans/TTS-UtilityMemoryBag\r\n\r\n\r\nfunction updateSave()\r\n    local data_to_save = {[\"ml\"]=memoryList}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction combineMemoryFromBagsWithin()\r\n    local bagObjList = self.getObjects()\r\n    for _, bagObj in ipairs(bagObjList) do\r\n        local data = bagObj.lua_script_state\r\n        if data ~= nil then\r\n            local j = JSON.decode(data)\r\n            if j ~= nil and j.ml ~= nil then\r\n                for guid, entry in pairs(j.ml) do\r\n                    memoryList[guid] = entry\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateMemoryWithMoves()\r\n    memoryList = memoryListBackup\r\n    --get the first transposed object's coordinates\r\n    local obj = getObjectFromGUID(moveGuid)\r\n\r\n    -- p1 is where needs to go, p2 is where it was\r\n    local refObjPos = memoryList[moveGuid].pos\r\n    local deltaPos = findOffsetDistance(obj.getPosition(), refObjPos, nil)\r\n    local movedRotation = obj.getRotation()\r\n    for guid, entry in pairs(memoryList) do\r\n        memoryList[guid].pos.x = entry.pos.x - deltaPos.x\r\n        memoryList[guid].pos.y = entry.pos.y - deltaPos.y\r\n        memoryList[guid].pos.z = entry.pos.z - deltaPos.z\r\n        -- memoryList[guid].rot.x = movedRotation.x\r\n        -- memoryList[guid].rot.y = movedRotation.y\r\n        -- memoryList[guid].rot.z = movedRotation.z\r\n    end\r\n\r\n    --theList[obj.getGUID()] = {\r\n    --    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n    --    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n    --    lock=obj.getLock()\r\n    --}\r\n    moveList = {}\r\nend\r\n\r\nfunction onload(saved_data)\r\n\r\n    fresh = true\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        --Set up information off of loaded_data\r\n        memoryList = loaded_data.ml\r\n    else\r\n        --Set up information for if there is no saved saved data\r\n        memoryList = {}\r\n\r\n    end\r\n\r\n    moveList = {}\r\n    moveGuid = nil\r\n\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        fresh = false\r\n        createMemoryActionButtons()\r\n    end\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make setup button\r\n function createSetupButton()\r\n    self.createButton({\r\n      label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n      position={0,0.1,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n end\r\n\r\n--Triggered by Transpose button\r\nfunction buttonClick_transpose()\r\n    moveGuid = nil\r\n    broadcastToAll(\"Select one object and move it- all objects will move relative to the new location\", {0.75, 0.75, 1})\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(true)\r\n    createSetupActionButtons(true)\r\nend\r\n\r\n--Triggered by setup button,\r\nfunction buttonClick_setup()\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(false)\r\n    createSetupActionButtons(false)\r\nend\r\n\r\nfunction getAllObjectsInMemory()\r\n    local objTable = {}\r\n    local curObj = {}\r\n\r\n    for guid in pairs(memoryListBackup) do\r\n        curObj = getObjectFromGUID(guid)\r\n        table.insert(objTable, curObj)\r\n    end\r\n\r\n    return objTable\r\n    -- return getAllObjects()\r\nend\r\n\r\n--Creates selection buttons on objects\r\nfunction createButtonsOnAllObjects(move)\r\n    buttonIndexMap = {}\r\n    local howManyButtons = 0\r\n\r\n    local objsToHaveButtons = {}\r\n    if move == true then\r\n        objsToHaveButtons = getAllObjectsInMemory()\r\n    else\r\n        objsToHaveButtons = getAllObjects()\r\n    end\r\n\r\n    for _, obj in ipairs(objsToHaveButtons) do\r\n        if obj ~= self then\r\n            --On a normal bag, the button positions aren't the same size as the bag.\r\n            globalScaleFactor = 1* 1/self.getScale().x\r\n            --Super sweet math to set button positions\r\n            local selfPos = self.getPosition()\r\n            local objPos = obj.getPosition()\r\n            local deltaPos = findOffsetDistance(selfPos, objPos, obj)\r\n            local objPos = rotateLocalCoordinates(deltaPos, self)\r\n            objPos.x = -objPos.x * globalScaleFactor\r\n            objPos.y = objPos.y * globalScaleFactor + 2\r\n            objPos.z = objPos.z * globalScaleFactor * 0.9\r\n            --Workaround for custom PDFs\r\n            if obj.Book then\r\n                objPos.y = objPos.y + 0.5\r\n            end\r\n            --Offset rotation of bag\r\n            local rot = self.getRotation()\r\n            rot.y = -rot.y + 180\r\n            --Create function\r\n            local funcName = \"selectButton_\" .. howManyButtons\r\n            local func = function() buttonClick_selection(obj, move) end\r\n            local color = {0.75,0.25,0.25,0.6}\r\n            local colorMove = {0,0,1,0.6}\r\n            if move == true then\r\n                color = colorMove\r\n            end\r\n            self.setVar(funcName, func)\r\n            self.createButton({\r\n                click_function=funcName, function_owner=self,\r\n                position=objPos, rotation=rot, height=500, width=500,\r\n                color=color,\r\n            })\r\n            buttonIndexMap[obj.getGUID()] = howManyButtons\r\n            howManyButtons = howManyButtons + 1\r\n        end\r\n    end\r\nend\r\n\r\n--Creates submit and cancel buttons\r\nfunction createSetupActionButtons(move)\r\n    self.createButton({\r\n        label=\"Annuler\", click_function=\"buttonClick_cancel\", function_owner=self,\r\n      position={-0.7,0.1,2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=145, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    self.createButton({\r\n        label=\"Valider\", click_function=\"buttonClick_submit\", function_owner=self,\r\n        position={-0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=140, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    if move == false then\r\n      self.createButton({\r\n          label=\"Ajouter\", click_function=\"buttonClick_add\", function_owner=self,\r\n          position={0.7,0.3,2.1}, rotation={0,0,0}, height=275, width=625,\r\n          font_size=140, color={0,0,0}, font_color={0.25,1,0.25}\r\n      })\r\n\r\n        self.createButton({\r\n            label=\"Sélection\", click_function=\"editDragSelection\", function_owner=self,\r\n            position={-0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=125, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n\r\n        if fresh == false then\r\n                self.createButton({\r\n                    label=\"Mise à jour\", click_function=\"buttonClick_setNew\", function_owner=self,\r\n                    position={0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=105, color={0,0,0}, font_color={0.75,0.75,1}\r\n                })\r\n                self.createButton({\r\n                    label=\"Retirer\", click_function=\"buttonClick_remove\", function_owner=self,\r\n                    position={0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=140, color={0,0,0}, font_color={1,0.25,0.25}\r\n                })\r\n            end\r\n        end\r\n\r\n        self.createButton({\r\n            label=\"Reset\", click_function=\"buttonClick_reset\", function_owner=self,\r\n            position={0,0.3,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=165, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n    end\r\n\r\n\r\n--During Setup\r\n\r\n\r\n--Checks or unchecks buttons\r\nfunction buttonClick_selection(obj, move)\r\n    local index = buttonIndexMap[obj.getGUID()]\r\n    local colorMove = {0,0,1,0.6}\r\n    local color = {0,1,0,0.6}\r\n\r\n    previousGuid = selectedGuid\r\n    selectedGuid = obj.getGUID()\r\n\r\n    theList = memoryList\r\n    if move == true then\r\n        theList = moveList\r\n        if previousGuid ~= nil and previousGuid ~= selectedGuid then\r\n            local prevObj = getObjectFromGUID(previousGuid)\r\n            prevObj.highlightOff()\r\n            self.editButton({index=previousIndex, color=colorMove})\r\n            theList[previousGuid] = nil\r\n        end\r\n        previousIndex = index\r\n    end\r\n\r\n    if theList[selectedGuid] == nil then\r\n        self.editButton({index=index, color=color})\r\n        --Adding pos/rot to memory table\r\n        local pos, rot = obj.getPosition(), obj.getRotation()\r\n        --I need to add it like this or it won't save due to indexing issue\r\n        theList[obj.getGUID()] = {\r\n            pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n            rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n            lock=obj.getLock(),\r\n            tint=obj.getColorTint()\r\n        }\r\n        obj.highlightOn({0,1,0})\r\n    else\r\n        color = {0.75,0.25,0.25,0.6}\r\n        if move == true then\r\n            color = colorMove\r\n        end\r\n        self.editButton({index=index, color=color})\r\n        theList[obj.getGUID()] = nil\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\nfunction editDragSelection(bagObj, player, remove)\r\n    local selectedObjs = Player[player].getSelectedObjects()\r\n    if not remove then\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            --Ignore if already in the memory list, or does not have a button\r\n            if index and not memoryList[obj.getGUID()] then\r\n                self.editButton({index=index, color={0,1,0,0.6}})\r\n                --Adding pos/rot to memory table\r\n                local pos, rot = obj.getPosition(), obj.getRotation()\r\n                --I need to add it like this or it won't save due to indexing issue\r\n                memoryList[obj.getGUID()] = {\r\n                    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n                    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n                    lock=obj.getLock(),\r\n                    tint=obj.getColorTint()\r\n                }\r\n                obj.highlightOn({0,1,0})\r\n            end\r\n        end\r\n    else\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            if index and memoryList[obj.getGUID()] then\r\n                color = {0.75,0.25,0.25,0.6}\r\n                self.editButton({index=index, color=color})\r\n                memoryList[obj.getGUID()] = nil\r\n                obj.highlightOff()\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n--Cancels selection process\r\nfunction buttonClick_cancel()\r\n    memoryList = memoryListBackup\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        createMemoryActionButtons()\r\n    end\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Sélection annulée\", {1,1,1})\r\n    moveGuid = nil\r\nend\r\n\r\n--Saves selections\r\nfunction buttonClick_submit()\r\n    fresh = false\r\n    if next(moveList) ~= nil then\r\n        for guid in pairs(moveList) do\r\n            moveGuid = guid\r\n        end\r\n        if memoryListBackup[moveGuid] == nil then\r\n            broadcastToAll(\"Item selected for moving is not already in memory\", {1, 0.25, 0.25})\r\n        else\r\n            broadcastToAll(\"Moving all items in memory relative to new objects position!\", {0.75, 0.75, 1})\r\n            self.clearButtons()\r\n            self.clearInputs()\r\n            createMemoryActionButtons()\r\n            local count = 0\r\n            for guid in pairs(moveList) do\r\n                moveGuid = guid\r\n                count = count + 1\r\n                local obj = getObjectFromGUID(guid)\r\n                if obj ~= nil then obj.highlightOff() end\r\n            end\r\n            updateMemoryWithMoves()\r\n            updateSave()\r\n            buttonClick_place()\r\n        end\r\n    elseif next(memoryList) == nil and moveGuid == nil then\r\n        memoryList = memoryListBackup\r\n        broadcastToAll(\"No selections made.\", {0.75, 0.25, 0.25})\r\n    end\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\n    moveGuid = nil\r\nend\r\n\r\nfunction combineTables(first_table, second_table)\r\n    for k,v in pairs(second_table) do first_table[k] = v end\r\nend\r\n\r\nfunction buttonClick_add()\r\n    fresh = false\r\n    combineTables(memoryList, memoryListBackup)\r\n    broadcastToAll(\"Adding internal bags and selections to existing memory\", {0.25, 0.75, 0.25})\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_remove()\r\n    broadcastToAll(\"Removing Selected Entries From Memory\", {1.0, 0.25, 0.25})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        memoryListBackup[guid] = nil\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Removed\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_setNew()\r\n    broadcastToAll(\"Setting new position relative to items in memory\", {0.75, 0.75, 1})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        guid = obj.guid\r\n        if memoryListBackup[guid] ~= nil then\r\n            count = count + 1\r\n            memoryListBackup[guid].pos = obj.getPosition()\r\n            memoryListBackup[guid].rot = obj.getRotation()\r\n            memoryListBackup[guid].lock = obj.getLock()\r\n            memoryListBackup[guid].tint = obj.getColorTint()\r\n        end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\n--Resets bag to starting status\r\nfunction buttonClick_reset()\r\n    fresh = true\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createSetupButton()\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Tool Reset\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\n\r\n--After Setup\r\n\r\n\r\n--Creates recall and place buttons\r\nfunction createMemoryActionButtons()\r\n    self.createButton({\r\n        label=\"Placer\", click_function=\"buttonClick_place\", function_owner=self,\r\n        position={0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Ranger\", click_function=\"buttonClick_recall\", function_owner=self,\r\n        position={-0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={0,0.1,-2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    ---    self.createButton({\r\n    ---      label=\"Bouger\", click_function=\"buttonClick_transpose\", function_owner=self,\r\n    ---      position={-2,0.3,0.8}, rotation={0,270,0}, height=350, width=800,\r\n    ---      font_size=250, color={0,0,0}, font_color={0.75,0.75,1}\r\n    ---\r\nend\r\n\r\n--Sends objects from bag/table to their saved position/rotation\r\nfunction buttonClick_place()\r\n    local bagObjList = self.getObjects()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        --If obj is out on the table, move it to the saved pos/rot\r\n        if obj ~= nil then\r\n            obj.setPositionSmooth(entry.pos)\r\n            obj.setRotationSmooth(entry.rot)\r\n            obj.setLock(entry.lock)\r\n            obj.setColorTint(entry.tint)\r\n        else\r\n            --If obj is inside of the bag\r\n            for _, bagObj in ipairs(bagObjList) do\r\n                if bagObj.guid == guid then\r\n                    local item = self.takeObject({\r\n                        guid=guid, position=entry.pos, rotation=entry.rot, smooth=false\r\n                    })\r\n                    item.setLock(entry.lock)\r\n                    item.setColorTint(entry.tint)\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    broadcastToAll(\"Objets placés\", {1,1,1})\r\nend\r\n\r\n--Recalls objects to bag from table\r\nfunction buttonClick_recall()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then self.putObject(obj) end\r\n    end\r\n    broadcastToAll(\"Objets rangés\", {1,1,1})\r\nend\r\n\r\n\r\n--Utility functions\r\n\r\n\r\n--Find delta (difference) between 2 x/y/z coordinates\r\nfunction findOffsetDistance(p1, p2, obj)\r\n    local yOffset = 0\r\n    if obj ~= nil then\r\n        local bounds = obj.getBounds()\r\n        yOffset = (bounds.size.y - bounds.offset.y)\r\n    end\r\n    local deltaPos = {}\r\n    deltaPos.x = (p2.x-p1.x)\r\n    deltaPos.y = (p2.y-p1.y) + yOffset\r\n    deltaPos.z = (p2.z-p1.z)\r\n    return deltaPos\r\nend\r\n\r\n--Used to rotate a set of coordinates by an angle\r\nfunction rotateLocalCoordinates(desiredPos, obj)\r\n    local objPos, objRot = obj.getPosition(), obj.getRotation()\r\n    local angle = math.rad(objRot.y)\r\n    local x = desiredPos.x * math.cos(angle) - desiredPos.z * math.sin(angle)\r\n    local z = desiredPos.x * math.sin(angle) + desiredPos.z * math.cos(angle)\r\n    --return {x=objPos.x+x, y=objPos.y+desiredPos.y, z=objPos.z+z}\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\nfunction rotateMyCoordinates(desiredPos, obj)\r\n    local angle = math.rad(obj.getRotation().y)\r\n    local x = desiredPos.x * math.sin(angle)\r\n    local z = desiredPos.z * math.cos(angle)\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\n--Coroutine delay, in seconds\r\nfunction wait(time)\r\n    local start = os.time()\r\n    repeat coroutine.yield(0) until os.time() > start + time\r\nend\r\n\r\n--Duplicates a table (needed to prevent it making reference to the same objects)\r\nfunction duplicateTable(oldTable)\r\n    local newTable = {}\r\n    for k, v in pairs(oldTable) do\r\n        newTable[k] = v\r\n    end\r\n    return newTable\r\nend\r\n\r\n--Moves scripted highlight from all objects\r\nfunction removeAllHighlights()\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\n--Round number (num) to the Nth decimal (dec)\r\nfunction round(num, dec)\r\n    local mult = 10^(dec or 0)\r\n    return math.floor(num * mult + 0.5) / mult\r\nend\r\n\r\n\r\n--[[\r\nThis object provides access to a variable stored on the \"Global script\".\r\nThe variable holds the GUIDs for every Utility Memory Bag in the scene.\r\nExample:\r\n{'805ebd', '35cc21', 'fc8886', 'f50264', '5f5f63'}\r\n--]]\r\nAllMemoryBagsInScene = {\r\n    NAME_OF_GLOBAL_VARIABLE = \"_UtilityMemoryBag_AllMemoryBagsInScene\"\r\n}\r\n\r\nfunction AllMemoryBagsInScene:add(guid)\r\n    local guids = Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\n    table.insert(guids, guid)\r\n    Global.setTable(self.NAME_OF_GLOBAL_VARIABLE, guids)\r\nend\r\n\r\nfunction AllMemoryBagsInScene:getGuidList()\r\n    return Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\nend\r\n",
-          "LuaScriptState": "{\"ml\":{\"074665\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":179.9993,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2b00fd\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5046,\"z\":11},\"rot\":{\"x\":359.9924,\"y\":285,\"z\":0.0093},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"311066\":{\"lock\":false,\"pos\":{\"x\":7.5,\"y\":1.5058,\"z\":16.5},\"rot\":{\"x\":0.0042,\"y\":225,\"z\":0.0112},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"4b8792\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0016,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"70191e\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5053,\"z\":11},\"rot\":{\"x\":-0.002,\"y\":255,\"z\":0.0118},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7234af\":{\"lock\":false,\"pos\":{\"x\":1.5,\"y\":1.5063,\"z\":16.5},\"rot\":{\"x\":359.9888,\"y\":315,\"z\":0.0042},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a34a8c\":{\"lock\":false,\"pos\":{\"x\":-22.5002,\"y\":1.9475,\"z\":13.0003},\"rot\":{\"x\":0,\"y\":179.9725,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"d2bd41\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.519,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9998,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d892fd\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5316,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":90,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"dfb6a4\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5045,\"z\":8.5},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}}}}",
+          "LuaScriptState": "{\"ml\":{\"0508fe\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5216,\"z\":-6.0185},\"rot\":{\"x\":0.0049,\"y\":90.0002,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"074665\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6606,\"z\":-2.9971},\"rot\":{\"x\":-0.0006,\"y\":179.9993,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2b00fd\":{\"lock\":false,\"pos\":{\"x\":8.5,\"y\":1.5046,\"z\":11},\"rot\":{\"x\":359.9924,\"y\":285,\"z\":0.0093},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"311066\":{\"lock\":false,\"pos\":{\"x\":7.5,\"y\":1.5058,\"z\":16.5},\"rot\":{\"x\":0.0042,\"y\":225,\"z\":0.0112},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"4b8792\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0016,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"70191e\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5053,\"z\":11},\"rot\":{\"x\":-0.002,\"y\":255,\"z\":0.0118},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"7234af\":{\"lock\":false,\"pos\":{\"x\":1.5,\"y\":1.5063,\"z\":16.5},\"rot\":{\"x\":359.9888,\"y\":315,\"z\":0.0042},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}},\"a34a8c\":{\"lock\":false,\"pos\":{\"x\":-22.5002,\"y\":1.9475,\"z\":13.0003},\"rot\":{\"x\":0,\"y\":179.9725,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"d2bd41\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.519,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9998,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d892fd\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5316,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":90,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"dfb6a4\":{\"lock\":false,\"pos\":{\"x\":4.5,\"y\":1.5045,\"z\":8.5},\"rot\":{\"x\":359.9891,\"y\":0,\"z\":-0.005},\"tint\":{\"a\":1,\"b\":0.604529500007629,\"g\":0.604529500007629,\"r\":0.604529500007629}}}}",
           "XmlUI": "",
           "ContainedObjects": [
+            {
+              "GUID": "0508fe",
+              "Name": "Deck",
+              "Transform": {
+                "posX": 12.501,
+                "posY": 1.52161479,
+                "posZ": -6.0185,
+                "rotX": 0.004948088,
+                "rotY": 90.00022,
+                "rotZ": 359.9891,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Deck Intrigue",
+              "Description": "Le Sépulcre du Dormeur",
+              "GMNotes": "",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": false,
+              "SidewaysCard": true,
+              "DeckIDs": [
+                1113837,
+                1116500
+              ],
+              "CustomDeck": {
+                "11138": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041592472/25A3F22C0B93686591550CBDA88A244B1C5D7148/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041593966/88745AD57106424FA85C6407C541A79BC1A7F799/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": true,
+                  "Type": 0
+                },
+                "11165": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17050955776021955377/358D7D14D4BB195470685AC6CA6BD595E3DCBFD2/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/16851688221485005357/4E6530D5989341960454F6825E15E7F20012DA61/",
+                  "NumWidth": 1,
+                  "NumHeight": 1,
+                  "BackIsHidden": true,
+                  "UniqueBack": false,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": "",
+              "ContainedObjects": [
+                {
+                  "GUID": "2819de",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 12.5010118,
+                    "posY": 1.5046612,
+                    "posZ": -6.01680946,
+                    "rotX": 0.004948007,
+                    "rotY": 90.0001,
+                    "rotZ": 359.9891,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Cthulhu s'Éveille",
+                  "Description": "",
+                  "GMNotes": "{\n  \"id\": \"11689\",\n  \"type\": \"Agenda\",\n  \"class\": \"Mythos\",\n  \"doomThreshold\": 100,\n  \"cycle\": \"The Drowned City\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113837,
+                  "SidewaysCard": true,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041592472/25A3F22C0B93686591550CBDA88A244B1C5D7148/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041593966/88745AD57106424FA85C6407C541A79BC1A7F799/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "23c3d8",
+                  "Name": "CardCustom",
+                  "Transform": {
+                    "posX": 12.5009871,
+                    "posY": 1.54959512,
+                    "posZ": -6.018547,
+                    "rotX": 0.0264704917,
+                    "rotY": 90.000145,
+                    "rotZ": 359.942444,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Sous la Cité",
+                  "Description": "",
+                  "GMNotes": "{\n    \"backEnemy\": {\r\n    \"health\": 20,\n    \"healthPerInv\": \"true\",\r\n    \"traits\": \"Humanoid. Cultist. Elite.\",\r\n    \"victory\": 2\r\n  },\r\n\n  \"id\": \"11674\",\n  \"type\": \"Agenda\",\n  \"class\": \"Mythos\",\n  \"victory\": 5,\n  \"cycle\": \"The Drowned City\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 1116500,
+                  "SidewaysCard": true,
+                  "CustomDeck": {
+                    "11165": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17050955776021955377/358D7D14D4BB195470685AC6CA6BD595E3DCBFD2/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/16851688221485005357/4E6530D5989341960454F6825E15E7F20012DA61/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                }
+              ]
+            },
             {
               "GUID": "074665",
               "Name": "Deck",
@@ -55551,7 +55750,7 @@
                 "posX": 30.5,
                 "posY": 1.66060615,
                 "posZ": -2.9971,
-                "rotX": -0.0005908151,
+                "rotX": -0.000590946234,
                 "rotY": 179.9993,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -57376,10 +57575,10 @@
               "Transform": {
                 "posX": 23.5013,
                 "posY": 1.50380516,
-                "posZ": -5.52300024,
-                "rotX": 0.01089132,
+                "posZ": -5.52299929,
+                "rotX": 0.0108913239,
                 "rotY": 180.001587,
-                "rotZ": 0.0049485513,
+                "rotZ": 0.004948634,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -57435,12 +57634,12 @@
               "GUID": "a34a8c",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -27.0,
-                "posY": 1.91250026,
+                "posX": -22.5001984,
+                "posY": 1.91250014,
                 "posZ": 13.0003014,
-                "rotX": -5.11662347E-06,
-                "rotY": 179.972626,
-                "rotZ": 3.292405E-07,
+                "rotX": -5.56327677E-06,
+                "rotY": 179.9725,
+                "rotZ": 3.66510477E-07,
                 "scaleX": 1.42499924,
                 "scaleY": 1.42499924,
                 "scaleZ": 1.42499924
@@ -57800,9 +57999,9 @@
                 "posX": 4.49999952,
                 "posY": 1.50896716,
                 "posZ": 13.000001,
-                "rotX": 0.0108916275,
+                "rotX": 0.0108916787,
                 "rotY": 179.9998,
-                "rotZ": 0.00494839251,
+                "rotZ": 0.004948329,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -57850,185 +58049,6 @@
               "LuaScript": "",
               "LuaScriptState": "",
               "XmlUI": ""
-            },
-            {
-              "GUID": "d892fd",
-              "Name": "Deck",
-              "Transform": {
-                "posX": 12.5009995,
-                "posY": 1.521615,
-                "posZ": -6.0167985,
-                "rotX": 0.004947905,
-                "rotY": 90.00003,
-                "rotZ": 359.9891,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "Deck Intrigue",
-              "Description": "Le Sépulcre du Dormeur",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "SidewaysCard": true,
-              "DeckIDs": [
-                1113837,
-                1113836
-              ],
-              "CustomDeck": {
-                "11138": {
-                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041592472/25A3F22C0B93686591550CBDA88A244B1C5D7148/",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041593966/88745AD57106424FA85C6407C541A79BC1A7F799/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": true,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "ContainedObjects": [
-                {
-                  "GUID": "2819de",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 11.9998856,
-                    "posY": 1.49346447,
-                    "posZ": -12.0000668,
-                    "rotX": 5.729247E-08,
-                    "rotY": 179.995438,
-                    "rotZ": -4.44554331E-07,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Cthulhu s'Éveille",
-                  "Description": "",
-                  "GMNotes": "{\n  \"id\": \"11689\",\n  \"type\": \"Agenda\",\n  \"class\": \"Mythos\",\n  \"doomThreshold\": 100,\n  \"cycle\": \"The Drowned City\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113837,
-                  "SidewaysCard": true,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041592472/25A3F22C0B93686591550CBDA88A244B1C5D7148/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041593966/88745AD57106424FA85C6407C541A79BC1A7F799/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "da0926",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 12.0,
-                    "posY": 1.53888774,
-                    "posZ": -12.0,
-                    "rotX": 0.0103082126,
-                    "rotY": 180.0,
-                    "rotZ": 359.987335,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Sous la Cité",
-                  "Description": "",
-                  "GMNotes": "{\n    \"backEnemy\": {\r\n    \"health\": 20,\n    \"healthPerInv\": \"true\",\r\n    \"traits\": \"Humanoid. Cultist. Elite.\",\r\n    \"victory\": 2\r\n  },\r\n\n  \"id\": \"11674\",\n  \"type\": \"Agenda\",\n  \"class\": \"Mythos\",\n  \"victory\": 5,\n  \"cycle\": \"The Drowned City\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 180.0,
-                    "z": 90.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113836,
-                  "SidewaysCard": true,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041592472/25A3F22C0B93686591550CBDA88A244B1C5D7148/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/11930285041593966/88745AD57106424FA85C6407C541A79BC1A7F799/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              ]
             }
           ],
           "AttachedDecals": [
@@ -58060,9 +58080,9 @@
             "posX": 8.999602,
             "posY": 0.9799974,
             "posZ": 46.500103,
-            "rotX": -5.4543043E-06,
+            "rotX": -5.445287E-06,
             "rotY": 179.997,
-            "rotZ": 1.85969867E-07,
+            "rotZ": 8.501878E-08,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -65317,9 +65337,9 @@
             "posX": 2.99999928,
             "posY": 1.49197531,
             "posZ": -5.49999857,
-            "rotX": 0.0108904606,
+            "rotX": 0.0108902836,
             "rotY": 180.012878,
-            "rotZ": 0.00495094853,
+            "rotZ": 0.00495088,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
