@@ -20,12 +20,12 @@
       "GUID": "019f9f",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -77.0006943,
-        "posY": 0.980072856,
-        "posZ": -3.501597,
-        "rotX": -4.4446524E-06,
-        "rotY": 180.002472,
-        "rotZ": 1.81721163E-07,
+        "posX": -76.99999,
+        "posY": 0.9800024,
+        "posZ": -3.50000787,
+        "rotX": -5.809653E-06,
+        "rotY": 180.00238,
+        "rotZ": 6.319077E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -87,15 +87,66 @@
       "XmlUI": "",
       "ContainedObjects": [
         {
+          "GUID": "27332a",
+          "Name": "Custom_PDF",
+          "Transform": {
+            "posX": -20.0,
+            "posY": 1.48149931,
+            "posZ": -4.5,
+            "rotX": 2.02838262E-08,
+            "rotY": 180.0001,
+            "rotZ": 3.17439031E-09,
+            "scaleX": 1.94999933,
+            "scaleY": 1.0,
+            "scaleZ": 1.94999933
+          },
+          "Nickname": "Fraternité des Cendres",
+          "Description": "Guide de Campagne",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomPDF": {
+            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/18087851593300234701/F65CEA01361857E328DF47E1C376F7D14A65C3C8/",
+            "PDFPassword": "",
+            "PDFPage": 0,
+            "PDFPageOffset": 0
+          },
+          "LuaScript": "",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
           "GUID": "4e84af",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -2.00228834,
+            "posX": -2.001335,
             "posY": 0.9799974,
-            "posZ": 47.49852,
-            "rotX": -4.94042661E-06,
-            "rotY": 179.997086,
-            "rotZ": 5.285154E-07,
+            "posZ": 47.4977837,
+            "rotX": -5.011656E-06,
+            "rotY": 179.997009,
+            "rotZ": 3.52832075E-07,
             "scaleX": 1.39590418,
             "scaleY": 0.290550232,
             "scaleZ": 1.52854693
@@ -157,14 +208,72 @@
           "XmlUI": "",
           "ContainedObjects": [
             {
+              "GUID": "7b721a",
+              "Name": "Card",
+              "Transform": {
+                "posX": 23.5013,
+                "posY": 1.5038048,
+                "posZ": -5.524801,
+                "rotX": 0.01089163,
+                "rotY": 179.9983,
+                "rotZ": 0.004947921,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "Référence",
+              "Description": "Les Flammes S'Étendent",
+              "GMNotes": "{\n  \"id\": \"12105\",\n  \"type\": \"ScenarioReference\",\n  \"class\": \"Mythos\",\n  \"cycle\": \"Core 2026\",\n  \"tokens\": {\n    \"front\": {\n      \"Skull\": {\n        \"description\": \"-X. X is the current act number.\",\n        \"modifier\": -1\n      },\n      \"Tablet\": {\n        \"description\": \"-1. Reveal another token. If you fail, take 1 damage.\",\n        \"modifier\": -1\n      },\n      \"Elder Thing\": {\n        \"description\": \"-3. If you fail by 2 or more, draw the topmost copy of Fire! in the encounter discard pile, if able.\",\n        \"modifier\": -3\n      }\n    },\n    \"back\": {\n      \"Skull\": {\n        \"description\": \"-X. X is one more than the current act number.\",\n        \"modifier\": -2\n      },\n      \"Tablet\": {\n        \"description\": \"-2. Reveal another token. If you fail, take 1 damage.\",\n        \"modifier\": -2\n      },\n      \"Elder Thing\": {\n        \"description\": \"-4. If you fail, draw the topmost copy of Fire! in the encounter discard pile, if able.\",\n        \"modifier\": -4\n      }\n    }\n  }\n}",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": true,
+              "CardID": 1113500,
+              "SidewaysCard": false,
+              "CustomDeck": {
+                "11135": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/12029311553768877598/EE529991BEEEAD25B2EFAD376CF017EDCECB2A4F/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/10441134088225262182/CD6A24D7C5AB8AE60CC1646155C22053E564B775/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": false,
+                  "UniqueBack": true,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": ""
+            },
+            {
               "GUID": "13e515",
               "Name": "Card",
               "Transform": {
                 "posX": 15.000001,
                 "posY": 1.50596929,
-                "posZ": 1.99959862,
-                "rotX": 0.0108910939,
-                "rotY": 180.0055,
+                "posZ": 1.99959946,
+                "rotX": 0.0108910212,
+                "rotY": 180.005478,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -220,9 +329,9 @@
               "Transform": {
                 "posX": 17.5005,
                 "posY": 1.53081059,
-                "posZ": -6.02130032,
-                "rotX": 0.004948175,
-                "rotY": 90.0006256,
+                "posZ": -6.0213,
+                "rotX": 0.00494821044,
+                "rotY": 90.00063,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -518,7 +627,7 @@
                 "posX": 30.5,
                 "posY": 1.63653588,
                 "posZ": -2.9971,
-                "rotX": -0.000591048331,
+                "rotX": -0.0005913212,
                 "rotY": 179.9994,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -1992,12 +2101,12 @@
               "GUID": "daacbf",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -22.0000134,
+                "posX": -22.0000019,
                 "posY": 1.852501,
-                "posZ": 4.499985,
-                "rotX": -5.82268967E-06,
-                "rotY": 180.03154,
-                "rotZ": 1.08060952E-07,
+                "posZ": 4.499998,
+                "rotX": -5.528491E-06,
+                "rotY": 180.031525,
+                "rotZ": 4.23735514E-07,
                 "scaleX": 0.824999869,
                 "scaleY": 0.824999869,
                 "scaleZ": 0.824999869
@@ -2033,7 +2142,7 @@
               "MeshIndex": -1,
               "CustomMesh": {
                 "MeshURL": "https://pastebin.com/raw/ALrYhQGb",
-                "DiffuseURL": "",
+                "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/10458153438582463418/0DE529A049ADF80A07E909D988DFF4600E160412/",
                 "NormalURL": "",
                 "ColliderURL": "",
                 "Convex": true,
@@ -2352,12 +2461,12 @@
                   "GUID": "acba68",
                   "Name": "Card",
                   "Transform": {
-                    "posX": -12.0,
-                    "posY": 1.86267889,
-                    "posZ": 5.0,
-                    "rotX": 0.0108915,
+                    "posX": 42.8322029,
+                    "posY": 2.52725768,
+                    "posZ": 13.7221642,
+                    "rotX": -5.11371854E-06,
                     "rotY": 180.000381,
-                    "rotZ": 0.004948228,
+                    "rotZ": 4.38467055E-07,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -2404,72 +2513,7 @@
                   },
                   "LuaScript": "",
                   "LuaScriptState": "",
-                  "XmlUI": "",
-                  "AttachedVectorLines": [
-                    {
-                      "OwnerSteamID": 0,
-                      "points3": [
-                        {
-                          "x": -5.1297975E-05,
-                          "y": -9.089884,
-                          "z": 0.000112314738
-                        },
-                        {
-                          "x": -17.090395,
-                          "y": -9.058524,
-                          "z": 2.99999952
-                        }
-                      ],
-                      "color": {
-                        "r": 0.4,
-                        "g": 0.4,
-                        "b": 0.4
-                      },
-                      "thickness": 0.15
-                    },
-                    {
-                      "OwnerSteamID": 0,
-                      "points3": [
-                        {
-                          "x": -5.1297975E-05,
-                          "y": -9.089884,
-                          "z": 0.000112314738
-                        },
-                        {
-                          "x": -10.0531845,
-                          "y": -9.076598,
-                          "z": 4.75987545E-05
-                        }
-                      ],
-                      "color": {
-                        "r": 0.4,
-                        "g": 0.4,
-                        "b": 0.4
-                      },
-                      "thickness": 0.15
-                    },
-                    {
-                      "OwnerSteamID": 0,
-                      "points3": [
-                        {
-                          "x": -5.1297975E-05,
-                          "y": -9.089884,
-                          "z": 0.000112314738
-                        },
-                        {
-                          "x": -17.0746441,
-                          "y": -9.119921,
-                          "z": -17.9870033
-                        }
-                      ],
-                      "color": {
-                        "r": 0.4,
-                        "g": 0.4,
-                        "b": 0.4
-                      },
-                      "thickness": 0.15
-                    }
-                  ]
+                  "XmlUI": ""
                 },
                 {
                   "GUID": "357b87",
@@ -2767,11 +2811,11 @@
               "GUID": "e84e82",
               "Name": "Deck",
               "Transform": {
-                "posX": 12.501,
+                "posX": 12.5010014,
                 "posY": 1.52642882,
                 "posZ": -6.01860046,
-                "rotX": 0.00494835433,
-                "rotY": 90.0012741,
+                "rotX": 0.00494823,
+                "rotY": 90.0013,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -3005,12 +3049,12 @@
               "GUID": "f7c30c",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -28.0000076,
+                "posX": -28.0000038,
                 "posY": 1.84000111,
-                "posZ": 4.49999237,
-                "rotX": -3.66406061E-06,
-                "rotY": 179.989075,
-                "rotZ": 1.79877389E-07,
+                "posZ": 3.49999523,
+                "rotX": -5.26033227E-06,
+                "rotY": 179.989151,
+                "rotZ": 3.92442928E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -3158,12 +3202,12 @@
           "GUID": "5ed626",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 5.997558,
-            "posY": 0.9799973,
-            "posZ": 47.4993134,
-            "rotX": -5.03147567E-06,
-            "rotY": 179.997009,
-            "rotZ": 2.30590373E-07,
+            "posX": 6.000001,
+            "posY": 0.9799974,
+            "posZ": 47.5,
+            "rotX": -4.966858E-06,
+            "rotY": 179.997131,
+            "rotZ": 6.09975359E-07,
             "scaleX": 1.39590418,
             "scaleY": 0.290550232,
             "scaleZ": 1.52854693
@@ -3231,9 +3275,9 @@
                 "posX": 23.5013,
                 "posY": 1.5038048,
                 "posZ": -5.524701,
-                "rotX": 0.0108915772,
+                "rotX": 0.0108915893,
                 "rotY": 179.9983,
-                "rotZ": 0.00494789844,
+                "rotZ": 0.004947907,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -3289,7 +3333,7 @@
                 "posX": 16.0,
                 "posY": 1.505883,
                 "posZ": 1.99999976,
-                "rotX": 0.0108913751,
+                "rotX": 0.0108914841,
                 "rotY": 180.0013,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
@@ -3346,10 +3390,10 @@
               "Transform": {
                 "posX": -21.5000038,
                 "posY": 1.85500109,
-                "posZ": 3.99999666,
-                "rotX": -5.029358E-06,
-                "rotY": 180.031464,
-                "rotZ": 2.15868852E-08,
+                "posZ": 3.99999642,
+                "rotX": -6.133209E-06,
+                "rotY": 180.0315,
+                "rotZ": -2.4936595E-08,
                 "scaleX": 0.849999845,
                 "scaleY": 0.849999845,
                 "scaleZ": 0.849999845
@@ -3385,7 +3429,7 @@
               "MeshIndex": -1,
               "CustomMesh": {
                 "MeshURL": "https://pastebin.com/raw/ALrYhQGb",
-                "DiffuseURL": "",
+                "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/10331816182203378286/571C84101B2C48F26DA18040509FCE78420922EE/",
                 "NormalURL": "",
                 "ColliderURL": "",
                 "Convex": true,
@@ -4231,7 +4275,7 @@
                 "posX": 30.5,
                 "posY": 1.63172185,
                 "posZ": -2.9971,
-                "rotX": -0.0005909708,
+                "rotX": -0.0005907763,
                 "rotY": 180.0003,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
@@ -5823,7 +5867,7 @@
                 "posX": 5.5,
                 "posY": 1.5067898,
                 "posZ": 1.99999928,
-                "rotX": 0.0108915,
+                "rotX": 0.0108914124,
                 "rotY": 180.000092,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
@@ -5881,15 +5925,15 @@
                 "posX": 12.501,
                 "posY": 1.52161479,
                 "posZ": -6.0186,
-                "rotX": 0.00494806375,
+                "rotX": 0.00494811963,
                 "rotY": 90.00012,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
               },
-              "Nickname": "",
-              "Description": "",
+              "Nickname": "Deck Intrigue",
+              "Description": "Une Vaste Fumisterie",
               "GMNotes": "",
               "AltLookAngle": {
                 "x": 0.0,
@@ -6060,7 +6104,7 @@
                 "posX": -4.0,
                 "posY": 1.511412,
                 "posZ": 22.0,
-                "rotX": 0.0108914841,
+                "rotX": 0.0108915335,
                 "rotY": 180.0002,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
@@ -6115,12 +6159,12 @@
               "GUID": "f7c30c",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -27.0000038,
+                "posX": -27.0000019,
                 "posY": 1.84000111,
-                "posZ": 3.99999714,
-                "rotX": -3.898449E-06,
-                "rotY": 179.9895,
-                "rotZ": -5.807293E-07,
+                "posZ": 3.99999762,
+                "rotX": -4.81691768E-06,
+                "rotY": 179.989365,
+                "rotZ": -1.19266588E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -6445,9 +6489,9 @@
             "posX": 33.5001,
             "posY": 1.53149891,
             "posZ": 14.0,
-            "rotX": -1.95700078E-08,
+            "rotX": -1.17845467E-08,
             "rotY": 180.0,
-            "rotZ": -5.094034E-08,
+            "rotZ": -8.74034445E-09,
             "scaleX": 3.3,
             "scaleY": 1.0,
             "scaleZ": 3.3
@@ -6470,7 +6514,7 @@
           ],
           "LayoutGroupSortIndex": 0,
           "Value": 0,
-          "Locked": false,
+          "Locked": true,
           "Grid": true,
           "Snap": true,
           "IgnoreFoW": false,
@@ -6502,12 +6546,12 @@
           "GUID": "f93de1",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 2.99999738,
+            "posX": 2.99999857,
             "posY": 1.49197531,
-            "posZ": -5.5,
-            "rotX": 0.0108903367,
+            "posZ": -5.50000048,
+            "rotX": 0.01089048,
             "rotY": 180.012787,
-            "rotZ": 0.00495112175,
+            "rotZ": 0.004950945,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -6559,12 +6603,12 @@
           "GUID": "fddae0",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 13.9954519,
-            "posY": 0.979997158,
-            "posZ": 47.4990845,
-            "rotX": -5.05663866E-06,
-            "rotY": 179.997208,
-            "rotZ": 3.85642323E-07,
+            "posX": 14.0000048,
+            "posY": 0.9799974,
+            "posZ": 47.5000038,
+            "rotX": -5.160628E-06,
+            "rotY": 179.997131,
+            "rotZ": 3.60753035E-07,
             "scaleX": 1.39590418,
             "scaleY": 0.290550232,
             "scaleZ": 1.52854693
@@ -6629,12 +6673,12 @@
               "GUID": "441a6c",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -23.0000076,
+                "posX": -23.0000019,
                 "posY": 1.8525008,
-                "posZ": 8.499988,
-                "rotX": -5.13693431E-06,
-                "rotY": 180.0317,
-                "rotZ": -4.972945E-07,
+                "posZ": 8.499996,
+                "rotX": -6.13429665E-06,
+                "rotY": 180.031616,
+                "rotZ": -5.76044E-08,
                 "scaleX": 0.824999869,
                 "scaleY": 0.824999869,
                 "scaleZ": 0.824999869
@@ -6670,7 +6714,7 @@
               "MeshIndex": -1,
               "CustomMesh": {
                 "MeshURL": "https://pastebin.com/raw/ALrYhQGb",
-                "DiffuseURL": "",
+                "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/17760537483724212204/56CED9D62A014638B4E2B2FA1A1558E38C8DA0DF/",
                 "NormalURL": "",
                 "ColliderURL": "",
                 "Convex": true,
@@ -7458,7 +7502,7 @@
                 "posX": 17.501,
                 "posY": 1.52118254,
                 "posZ": -6.0213,
-                "rotX": 0.00494809635,
+                "rotX": 0.00494797761,
                 "rotY": 89.9999847,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
@@ -7634,11 +7678,11 @@
               "GUID": "65072b",
               "Name": "Card",
               "Transform": {
-                "posX": 5.50000048,
+                "posX": 5.5,
                 "posY": 1.50659966,
-                "posZ": 0.999995232,
-                "rotX": 0.0108915335,
-                "rotY": 179.999573,
+                "posZ": 0.9999993,
+                "rotX": 0.0108916033,
+                "rotY": 179.9996,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -7695,8 +7739,8 @@
                 "posX": 30.5,
                 "posY": 1.6702342,
                 "posZ": -2.9973,
-                "rotX": -0.0005910929,
-                "rotY": 180.000992,
+                "rotX": -0.0005909917,
+                "rotY": 180.001,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -9585,7 +9629,7 @@
                 "posX": 5.5,
                 "posY": 1.51021242,
                 "posZ": 20.0053,
-                "rotX": 0.010891513,
+                "rotX": 0.0108915344,
                 "rotY": 180.0001,
                 "rotZ": 180.004959,
                 "scaleX": 1.0,
@@ -9642,9 +9686,9 @@
               "Transform": {
                 "posX": 12.501,
                 "posY": 1.52642882,
-                "posZ": -6.01860142,
-                "rotX": 0.004948221,
-                "rotY": 90.00092,
+                "posZ": -6.01860046,
+                "rotX": 0.00494820857,
+                "rotY": 90.00085,
                 "rotZ": 359.9891,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -9878,12 +9922,12 @@
               "GUID": "a99124",
               "Name": "Card",
               "Transform": {
-                "posX": -20.5001087,
+                "posX": -20.5001011,
                 "posY": 1.783606,
-                "posZ": 2.99988937,
-                "rotX": -4.908654E-06,
-                "rotY": 179.999649,
-                "rotZ": 6.7908914E-08,
+                "posZ": 2.999898,
+                "rotX": -5.000404E-06,
+                "rotY": 179.999542,
+                "rotZ": 3.13063779E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -9938,10 +9982,10 @@
               "Transform": {
                 "posX": 23.5013,
                 "posY": 1.5038048,
-                "posZ": -5.52471352,
-                "rotX": 0.0108915558,
-                "rotY": 179.9998,
-                "rotZ": 0.004948288,
+                "posZ": -5.524702,
+                "rotX": 0.0108915251,
+                "rotY": 179.999878,
+                "rotZ": 0.00494829845,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -9994,12 +10038,12 @@
               "GUID": "c772ad",
               "Name": "Card",
               "Transform": {
-                "posX": -25.000021,
+                "posX": -25.0000038,
                 "posY": 1.783606,
-                "posZ": 2.99997759,
-                "rotX": -5.041187E-06,
-                "rotY": 180.002289,
-                "rotZ": 2.23239823E-07,
+                "posZ": 2.99999666,
+                "rotX": -5.0552926E-06,
+                "rotY": 180.002213,
+                "rotZ": 5.84795039E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -10052,12 +10096,12 @@
               "GUID": "f7c30c",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -31.0000114,
+                "posX": -31.0000038,
                 "posY": 1.84000111,
-                "posZ": 3.4999876,
-                "rotX": -6.11616133E-06,
+                "posZ": 3.49999619,
+                "rotX": -5.240582E-06,
                 "rotY": 179.989044,
-                "rotZ": 8.438831E-07,
+                "rotZ": 1.77438167E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -10258,57 +10302,6 @@
               "OwnerSteamID": 0
             }
           ]
-        },
-        {
-          "GUID": "27332a",
-          "Name": "Custom_PDF",
-          "Transform": {
-            "posX": -20.0,
-            "posY": 1.48149931,
-            "posZ": -4.5,
-            "rotX": 2.98828127E-08,
-            "rotY": 180.000076,
-            "rotZ": 3.77765836E-08,
-            "scaleX": 1.94999933,
-            "scaleY": 1.0,
-            "scaleZ": 1.94999933
-          },
-          "Nickname": "Fraternité des Cendres",
-          "Description": "Guide de Campagne",
-          "GMNotes": "",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": true,
-          "Snap": true,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomPDF": {
-            "PDFUrl": "https://steamusercontent-a.akamaihd.net/ugc/18087851593300234701/F65CEA01361857E328DF47E1C376F7D14A65C3C8/",
-            "PDFPassword": "",
-            "PDFPage": 0,
-            "PDFPageOffset": 0
-          },
-          "LuaScript": "",
-          "LuaScriptState": "",
-          "XmlUI": ""
         }
       ]
     }
