@@ -21,11 +21,11 @@
       "Name": "Custom_Model_Bag",
       "Transform": {
         "posX": -62.0000153,
-        "posY": 0.9799983,
+        "posY": 0.9799984,
         "posZ": 40.9999924,
-        "rotX": -4.95239647E-06,
+        "rotX": -4.982263E-06,
         "rotY": 180.00148,
-        "rotZ": 4.11891364E-07,
+        "rotZ": 5.961287E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -90,12 +90,12 @@
           "GUID": "00ea66",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 26.0000038,
-            "posY": 1.049997,
+            "posX": 26.00001,
+            "posY": 1.04999709,
             "posZ": 47.5,
-            "rotX": -6.101711E-06,
-            "rotY": 179.989517,
-            "rotZ": 1.70476278E-06,
+            "rotX": -3.737961E-06,
+            "rotY": 179.989624,
+            "rotZ": 1.38898849E-06,
             "scaleX": 0.7,
             "scaleY": 0.7,
             "scaleZ": 0.7
@@ -409,11 +409,11 @@
           "Name": "Notecard",
           "Transform": {
             "posX": 33.0000038,
-            "posY": 1.55149889,
+            "posY": 1.551499,
             "posZ": 22.0,
-            "rotX": -5.57427E-07,
-            "rotY": 0.000148794468,
-            "rotZ": -1.25404505E-08,
+            "rotX": 8.822861E-08,
+            "rotY": 0.000148260442,
+            "rotZ": -2.51562E-08,
             "scaleX": 1.0,
             "scaleY": 1.0,
             "scaleZ": 1.0
@@ -454,11 +454,11 @@
           "Name": "Custom_Model_Bag",
           "Transform": {
             "posX": 22.0,
-            "posY": 0.9799969,
-            "posZ": 47.4999962,
-            "rotX": -4.71134763E-06,
-            "rotY": 179.997223,
-            "rotZ": 1.48721426E-06,
+            "posY": 0.979997158,
+            "posZ": 47.5,
+            "rotX": -5.02518469E-06,
+            "rotY": 179.9956,
+            "rotZ": 4.90145453E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -581,12 +581,12 @@
               "GUID": "38a9b4",
               "Name": "Card",
               "Transform": {
-                "posX": 11.0016966,
-                "posY": 1.50820684,
-                "posZ": 11.99998,
-                "rotX": 0.0110025145,
-                "rotY": 179.992355,
-                "rotZ": 180.005569,
+                "posX": 11.001708,
+                "posY": 1.508207,
+                "posZ": 11.9999762,
+                "rotX": 0.0109996432,
+                "rotY": 179.992416,
+                "rotZ": 180.005554,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -643,11 +643,11 @@
               "GUID": "3b402d",
               "Name": "Card",
               "Transform": {
-                "posX": 1.00001657,
+                "posX": 1.00002182,
                 "posY": 1.51097274,
-                "posZ": 22.0,
-                "rotX": 0.0109841628,
-                "rotY": 179.9999,
+                "posZ": 21.9999981,
+                "rotX": 0.01098402,
+                "rotY": 179.999756,
                 "rotZ": 180.005478,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -705,12 +705,12 @@
               "GUID": "415129",
               "Name": "Deck",
               "Transform": {
-                "posX": 17.5009975,
-                "posY": 1.52118242,
-                "posZ": -6.021328,
-                "rotX": 0.01089171,
-                "rotY": 179.999908,
-                "rotZ": 0.00494820252,
+                "posX": 17.5010014,
+                "posY": 1.52118278,
+                "posZ": -6.0196,
+                "rotX": 0.010891851,
+                "rotY": 180.000183,
+                "rotZ": 0.004948251,
                 "scaleX": 0.714285731,
                 "scaleY": 1.0,
                 "scaleZ": 0.714285731
@@ -902,12 +902,12 @@
               "GUID": "500cb1",
               "Name": "Card",
               "Transform": {
-                "posX": -1.00001371,
+                "posX": -1.000017,
                 "posY": 1.511153,
                 "posZ": 22.0000019,
-                "rotX": 0.0108910995,
-                "rotY": 180.0069,
-                "rotZ": 0.00494985841,
+                "rotX": 0.0108910538,
+                "rotY": 180.006912,
+                "rotZ": 0.004949943,
                 "scaleX": 0.6,
                 "scaleY": 1.0,
                 "scaleZ": 0.6
@@ -964,12 +964,12 @@
               "GUID": "5fe060",
               "Name": "Card",
               "Transform": {
-                "posX": 0.9999987,
-                "posY": 1.50717151,
-                "posZ": 1.99996245,
-                "rotX": 0.010977203,
-                "rotY": 179.999939,
-                "rotZ": 180.005432,
+                "posX": 1.00000572,
+                "posY": 1.50716877,
+                "posZ": 1.99995208,
+                "rotX": 0.0110132629,
+                "rotY": 179.999756,
+                "rotZ": 180.005615,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1026,12 +1026,12 @@
               "GUID": "6a923b",
               "Name": "Card",
               "Transform": {
-                "posX": 1.00010777,
-                "posY": 1.50906837,
-                "posZ": 11.9999762,
-                "rotX": 0.0110292323,
-                "rotY": 179.999527,
-                "rotZ": 180.005722,
+                "posX": 1.00011468,
+                "posY": 1.50906873,
+                "posZ": 11.9999628,
+                "rotX": 0.011025086,
+                "rotY": 179.99939,
+                "rotZ": 180.005692,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1088,12 +1088,12 @@
               "GUID": "853b40",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -27.0,
+                "posX": -27.0000019,
                 "posY": 1.84000039,
-                "posZ": 12.4999981,
-                "rotX": -5.37757751E-06,
-                "rotY": 179.973068,
-                "rotZ": 1.05557262E-06,
+                "posZ": 12.4999952,
+                "rotX": -5.33103139E-06,
+                "rotY": 179.973145,
+                "rotZ": -3.353579E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -1150,7 +1150,7 @@
               "Bag": {
                 "Order": 2
               },
-              "LuaScript": "\r\nlocal bagGUID = \"853b40\"\r\nGurathnakaFamelique = \"3b7ce3\"\r\nGurathnakaAffame = \"d0b469\"\r\nGurathnakaVorace = \"2f2691\"\r\nGurathnakaRassasie = \"797653\"\r\nGurathnakaRepus = \"d1a1d3\"\r\n\r\n\r\nlocal place_Gurathnaka = {14.00, 1.52, 22.00}\r\n\r\nfunction onLoad()\r\n\r\n    self.createButton({\r\n        click_function = \"famelique\",\r\n        function_owner = self,\r\n        label = \"0\",\r\n        position = {-5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"affame\",\r\n        function_owner = self,\r\n        label = \"1 à 6\",\r\n        position = {-2.5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"vorace\",\r\n        function_owner = self,\r\n        label = \"7 à 12\",\r\n        position = {0, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"rassasie\",\r\n        function_owner = self,\r\n        label = \"13 à 18\",\r\n        position = {2.5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"repus\",\r\n        function_owner = self,\r\n        label = \"19\",\r\n        position = {5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n\r\n    self.createButton({\r\n        click_function = \"ranger\",\r\n        function_owner = self,\r\n        label = \"Ranger\",\r\n        position = {0, 0.2, -2},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n\r\nend\r\n\r\n\r\nfunction famelique()\r\n  placeGurathnaka(GurathnakaFamelique)\r\n\r\nend\r\n\r\nfunction affame()\r\n  placeGurathnaka(GurathnakaAffame)\r\nend\r\n\r\n\r\nfunction vorace()\r\n  placeGurathnaka(GurathnakaVorace)\r\n\r\nend\r\n\r\nfunction rassasie()\r\n  placeGurathnaka(GurathnakaRassasie)\r\n\r\nend\r\n\r\nfunction repus()\r\n  placeGurathnaka(GurathnakaRepus)\r\n\r\nend\r\n\r\nfunction placeGurathnaka(idGura)\r\n\r\n  local bag = getObjectFromGUID(bagGUID)\r\n\r\n  local bagObjects = bag.getObjects()\r\n  --On verifie qqu'il contient le bon nombre d'éléments\r\n  if #bagObjects ~= 5 then\r\n      broadcastToAll(\"Le sac doit contenir exactement 5 éléments.\")\r\n      return\r\n  end\r\n\r\n  bag.takeObject(\r\n        {\r\n          guid = idGura,\r\n          position = place_Gurathnaka,\r\n          rotation = {0, 180, 0},\r\n          smooth = true,\r\n        })\r\n\r\nend\r\n\r\n\r\n\r\nfunction ranger()\r\n  local GurathnakaFamelique = getObjectFromGUID(GurathnakaFamelique)\r\n  if GurathnakaFamelique ~= nil then\r\n    self.putObject(GurathnakaFamelique)\r\n  end\r\n\r\n  local GurathnakaAffame = getObjectFromGUID(GurathnakaAffame)\r\n  if GurathnakaAffame ~= nil then\r\n    self.putObject(GurathnakaAffame)\r\n  end\r\n\r\n  local GurathnakaVorace = getObjectFromGUID(GurathnakaVorace)\r\n  if GurathnakaVorace ~= nil then\r\n    self.putObject(GurathnakaVorace)\r\n  end\r\n\r\n  local GurathnakaRassasie = getObjectFromGUID(GurathnakaRassasie)\r\n  if GurathnakaRassasie ~= nil then\r\n    self.putObject(GurathnakaRassasie)\r\n  end\r\n\r\n  local GurathnakaRepus = getObjectFromGUID(GurathnakaRepus)\r\n  if GurathnakaRepus ~= nil then\r\n    self.putObject(GurathnakaRepus)\r\n  end\r\n\r\nend",
+              "LuaScript": "\r\nlocal bagGUID = \"853b40\"\r\nGurathnakaFamelique = \"3b7ce3\"\r\nGurathnakaAffame = \"d0b469\"\r\nGurathnakaVorace = \"2f2691\"\r\nGurathnakaRassasie = \"e00004\"\r\nGurathnakaRepus = \"d1a1d3\"\r\n\r\n\r\nlocal place_Gurathnaka = {14.00, 1.52, 22.00}\r\n\r\nfunction onLoad()\r\n\r\n    self.createButton({\r\n        click_function = \"famelique\",\r\n        function_owner = self,\r\n        label = \"0\",\r\n        position = {-5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"affame\",\r\n        function_owner = self,\r\n        label = \"1 à 6\",\r\n        position = {-2.5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"vorace\",\r\n        function_owner = self,\r\n        label = \"7 à 12\",\r\n        position = {0, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"rassasie\",\r\n        function_owner = self,\r\n        label = \"13 à 18\",\r\n        position = {2.5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"repus\",\r\n        function_owner = self,\r\n        label = \"19\",\r\n        position = {5, 0.2, 4},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n\r\n    self.createButton({\r\n        click_function = \"ranger\",\r\n        function_owner = self,\r\n        label = \"Ranger\",\r\n        position = {0, 0.2, -2},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 1000,\r\n        height = 380,\r\n        font_size = 250,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n\r\nend\r\n\r\n\r\nfunction famelique()\r\n  placeGurathnaka(GurathnakaFamelique)\r\n\r\nend\r\n\r\nfunction affame()\r\n  placeGurathnaka(GurathnakaAffame)\r\nend\r\n\r\n\r\nfunction vorace()\r\n  placeGurathnaka(GurathnakaVorace)\r\n\r\nend\r\n\r\nfunction rassasie()\r\n  placeGurathnaka(GurathnakaRassasie)\r\n\r\nend\r\n\r\nfunction repus()\r\n  placeGurathnaka(GurathnakaRepus)\r\n\r\nend\r\n\r\nfunction placeGurathnaka(idGura)\r\n\r\n  local bag = getObjectFromGUID(bagGUID)\r\n\r\n  local bagObjects = bag.getObjects()\r\n  --On verifie qqu'il contient le bon nombre d'éléments\r\n  if #bagObjects ~= 5 then\r\n      broadcastToAll(\"Le sac doit contenir exactement 5 éléments.\")\r\n      return\r\n  end\r\n\r\n  bag.takeObject(\r\n        {\r\n          guid = idGura,\r\n          position = place_Gurathnaka,\r\n          rotation = {0, 180, 0},\r\n          smooth = true,\r\n        })\r\n\r\nend\r\n\r\n\r\n\r\nfunction ranger()\r\n  local GurathnakaFamelique = getObjectFromGUID(GurathnakaFamelique)\r\n  if GurathnakaFamelique ~= nil then\r\n    self.putObject(GurathnakaFamelique)\r\n  end\r\n\r\n  local GurathnakaAffame = getObjectFromGUID(GurathnakaAffame)\r\n  if GurathnakaAffame ~= nil then\r\n    self.putObject(GurathnakaAffame)\r\n  end\r\n\r\n  local GurathnakaVorace = getObjectFromGUID(GurathnakaVorace)\r\n  if GurathnakaVorace ~= nil then\r\n    self.putObject(GurathnakaVorace)\r\n  end\r\n\r\n  local GurathnakaRassasie = getObjectFromGUID(GurathnakaRassasie)\r\n  if GurathnakaRassasie ~= nil then\r\n    self.putObject(GurathnakaRassasie)\r\n  end\r\n\r\n  local GurathnakaRepus = getObjectFromGUID(GurathnakaRepus)\r\n  if GurathnakaRepus ~= nil then\r\n    self.putObject(GurathnakaRepus)\r\n  end\r\n\r\nend",
               "LuaScriptState": "{\"ml\":{\"35deab\":{\"lock\":false,\"pos\":{\"x\":-24.4499988555908,\"y\":1.78360486030579,\"z\":17.0299987792969},\"rot\":{\"x\":-5.04649278809666E-06,\"y\":180.001953125,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"45187f\":{\"lock\":false,\"pos\":{\"x\":-31.3499984741211,\"y\":1.78360486030579,\"z\":17.0299968719482},\"rot\":{\"x\":-4.6369686970138E-06,\"y\":180.00065612793,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"463bb9\":{\"lock\":false,\"pos\":{\"x\":1.10998833179474,\"y\":1.51952767372131,\"z\":14.4099950790405},\"rot\":{\"x\":0.0108915269374847,\"y\":180.000259399414,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4c4357\":{\"lock\":false,\"pos\":{\"x\":1.10999083518982,\"y\":1.51828253269196,\"z\":7.85999727249146},\"rot\":{\"x\":0.0108913239091635,\"y\":180.002212524414,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"534b3e\":{\"lock\":false,\"pos\":{\"x\":11.1000022888184,\"y\":1.51741981506348,\"z\":7.85998153686523},\"rot\":{\"x\":0.0108914654701948,\"y\":180.000747680664,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"547534\":{\"lock\":false,\"pos\":{\"x\":-20.9999961853027,\"y\":1.78360521793365,\"z\":13.1000032424927},\"rot\":{\"x\":-4.93870493301074E-06,\"y\":180.00065612793,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5a78b7\":{\"lock\":false,\"pos\":{\"x\":-22.149995803833,\"y\":1.78360486030579,\"z\":17.0300045013428},\"rot\":{\"x\":-5.0570070015965E-06,\"y\":180.00016784668,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8833c2\":{\"lock\":false,\"pos\":{\"x\":-23.2999992370605,\"y\":1.78360521793365,\"z\":13.0999994277954},\"rot\":{\"x\":-4.91863966090023E-06,\"y\":179.999786376953,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b6b09a\":{\"lock\":false,\"pos\":{\"x\":-30.2000141143799,\"y\":1.78360521793365,\"z\":13.0999822616577},\"rot\":{\"x\":-5.01395925311954E-06,\"y\":180.000350952148,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d11414\":{\"lock\":false,\"pos\":{\"x\":6.10499668121338,\"y\":1.51697957515717,\"z\":3.27498602867126},\"rot\":{\"x\":0.0108916284516454,\"y\":179.998748779297,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d90a31\":{\"lock\":false,\"pos\":{\"x\":-27.8997535705566,\"y\":1.78360521793365,\"z\":13.1442623138428},\"rot\":{\"x\":-4.825135874853E-06,\"y\":180.001815795898,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"db17e6\":{\"lock\":false,\"pos\":{\"x\":11.1000022888184,\"y\":1.51866495609283,\"z\":14.4099941253662},\"rot\":{\"x\":0.0108914179727435,\"y\":180.000915527344,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e40185\":{\"lock\":false,\"pos\":{\"x\":-32.5000228881836,\"y\":1.78360521793365,\"z\":13.099983215332},\"rot\":{\"x\":-5.00540909342817E-06,\"y\":179.998977661133,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e84179\":{\"lock\":false,\"pos\":{\"x\":-29.0499992370605,\"y\":1.78360486030579,\"z\":17.0299987792969},\"rot\":{\"x\":-5.01754857396008E-06,\"y\":180.001434326172,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e8da76\":{\"lock\":false,\"pos\":{\"x\":-25.6000003814697,\"y\":1.78360521793365,\"z\":13.0999908447266},\"rot\":{\"x\":-5.06032665725797E-06,\"y\":180.000640869141,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ea8a33\":{\"lock\":false,\"pos\":{\"x\":-26.75,\"y\":1.78360486030579,\"z\":17.0299987792969},\"rot\":{\"x\":-5.01863996760221E-06,\"y\":180.000549316406,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}}}}",
               "XmlUI": "<Panel\r\n  width = \"1300\"\r\n  height=\"200\"\r\n  position = \"0 220 -1\"\r\n  rotation = \"180 180 0\"\r\n  >\r\n\r\n  <VerticalLayout>\r\n    <Text\r\n      color= \"#fcfcfc\"\r\n      fontSize = \"70\"\r\n      fontStyle = \"Bold\"\r\n      >Nombre de traits sous</Text>\r\n\r\n    <Text\r\n      color= \"#fcfcfc\"\r\n      fontSize = \"70\"\r\n      fontStyle = \"Bold\"\r\n      >'Force du pays des Merveilles'</Text>\r\n\r\n  </VerticalLayout>\r\n\r\n\r\n</Panel>",
               "ContainedObjects": [
@@ -1265,67 +1265,6 @@
                     "1030": {
                       "FaceURL": "https://i.ibb.co/4gjyscF1/0a7bbfe1cf7b.jpg",
                       "BackURL": "https://i.ibb.co/Jhbnxwq/73801fd6f875.jpg",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "797653",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -25.5000057,
-                    "posY": 1.92851353,
-                    "posZ": 9.000006,
-                    "rotX": 0.00129866891,
-                    "rotY": 180.0,
-                    "rotZ": 0.000195473156,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Gurathnaka (v. IV)",
-                  "Description": "Mangeur de Rêves Rassasié",
-                  "GMNotes": "{\"TtsZoopGuid\":\"427682c8-8f3e-4b13-a656-daa0440ef99a\",\"id\":\"427682c8-8f3e-4b13-a656-daa0440ef99a\",\"type\":\"Enemy\",\"class\":\"Mythos\",\"traits\":\"<size 8>Grand Ancien. Ombre. Élite.\"}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 103100,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1031": {
-                      "FaceURL": "https://i.ibb.co/60PXDqyS/6bf24d3ab1f4.jpg",
-                      "BackURL": "https://i.ibb.co/4RZgfXyT/84edae1af585.jpg",
                       "NumWidth": 1,
                       "NumHeight": 1,
                       "BackIsHidden": true,
@@ -1458,6 +1397,67 @@
                   "LuaScript": "",
                   "LuaScriptState": "",
                   "XmlUI": ""
+                },
+                {
+                  "GUID": "e00004",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -27.0,
+                    "posY": 1.94218826,
+                    "posZ": 12.0,
+                    "rotX": 0.003033026,
+                    "rotY": 180.000031,
+                    "rotZ": 0.0008848754,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Gurathnaka (v. IV)",
+                  "Description": "Mangeur de Rêves Rassasié",
+                  "GMNotes": "{\"TtsZoopGuid\":\"5140930f-e358-4baa-b02c-2fd943cde0d8\",\"id\":\"5140930f-e358-4baa-b02c-2fd943cde0d8\",\"type\":\"Enemy\",\"class\":\"Mythos\",\"traits\":\"<size 8>Grand Ancien. Ombre. Élite.\"}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100100,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1001": {
+                      "FaceURL": "file:///C:/Users/dagen/Desktop/5140930f-e358-4baa-b02c-2fd943cde0d8-Front-270 - Gurathnaka 4-resolution-300-compressionquality-0.75-bleed-0.0-Front.jpg",
+                      "BackURL": "file:///C:/Users/dagen/Desktop/5140930f-e358-4baa-b02c-2fd943cde0d8-Back-270 - Gurathnaka 4-resolution-300-compressionquality-0.75-bleed-0.0-Back.jpg",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
                 }
               ]
             },
@@ -1465,11 +1465,11 @@
               "GUID": "89e0c4",
               "Name": "Card",
               "Transform": {
-                "posX": 11.0001249,
+                "posX": 11.0001173,
                 "posY": 1.51010585,
-                "posZ": 22.0001,
-                "rotX": 0.0110276351,
-                "rotY": 179.999557,
+                "posZ": 22.0000973,
+                "rotX": 0.011026972,
+                "rotY": 179.999435,
                 "rotZ": 180.0057,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -1527,12 +1527,12 @@
               "GUID": "91fb1c",
               "Name": "Card",
               "Transform": {
-                "posX": 11.0000362,
-                "posY": 1.50630426,
-                "posZ": 1.99997866,
-                "rotX": 0.0110244127,
-                "rotY": 179.999481,
-                "rotZ": 180.005692,
+                "posX": 11.0000372,
+                "posY": 1.50630653,
+                "posZ": 1.9999814,
+                "rotX": 0.01099393,
+                "rotY": 179.999283,
+                "rotZ": 180.005524,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -1589,12 +1589,12 @@
               "GUID": "93ad9a",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -27.0000076,
-                "posY": 1.84000123,
-                "posZ": 3.49999285,
-                "rotX": -4.37461631E-06,
-                "rotY": 179.973312,
-                "rotZ": 4.28784119E-08,
+                "posX": -27.0000114,
+                "posY": 1.84000111,
+                "posZ": 3.49998856,
+                "rotX": -5.08669837E-06,
+                "rotY": 179.973267,
+                "rotZ": 2.81898821E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -1912,8 +1912,8 @@
                 "posX": 30.5,
                 "posY": 1.75207293,
                 "posZ": -2.9971,
-                "rotX": -0.000590746466,
-                "rotY": 179.9994,
+                "rotX": -0.000590978947,
+                "rotY": 179.99939,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -5160,11 +5160,11 @@
               "Name": "Deck",
               "Transform": {
                 "posX": 12.5010986,
-                "posY": 1.526429,
-                "posZ": -6.016898,
-                "rotX": 0.0108918,
+                "posY": 1.52642918,
+                "posZ": -6.01689863,
+                "rotX": 0.0108917411,
                 "rotY": 180.000061,
-                "rotZ": 0.00494829938,
+                "rotZ": 0.00494821975,
                 "scaleX": 0.714285731,
                 "scaleY": 1.0,
                 "scaleZ": 0.714285731
@@ -5427,12 +5427,12 @@
               "GUID": "aff8ef",
               "Name": "Deck",
               "Transform": {
-                "posX": -33.51705,
-                "posY": 1.82462978,
-                "posZ": 6.499918,
-                "rotX": -5.14686462E-06,
-                "rotY": 179.9689,
-                "rotZ": -5.93043481E-08,
+                "posX": -33.5170937,
+                "posY": 1.8246299,
+                "posZ": 6.499871,
+                "rotX": -5.192034E-06,
+                "rotY": 179.968948,
+                "rotZ": -2.11028741E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -5968,12 +5968,12 @@
               "GUID": "cd0ed1",
               "Name": "Deck",
               "Transform": {
-                "posX": -30.5000572,
-                "posY": 1.82462978,
-                "posZ": 6.49994469,
-                "rotX": -5.08794164E-06,
-                "rotY": 179.991348,
-                "rotZ": -3.50246836E-07,
+                "posX": -30.5000916,
+                "posY": 1.8246299,
+                "posZ": 6.4999094,
+                "rotX": -5.273562E-06,
+                "rotY": 179.991562,
+                "rotZ": 4.133139E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -6504,10 +6504,10 @@
               "Transform": {
                 "posX": 22.0,
                 "posY": 1.50469947,
-                "posZ": -1.50004375,
-                "rotX": 0.0108914971,
-                "rotY": 179.9999,
-                "rotZ": 0.00494817039,
+                "posZ": -1.5000546,
+                "rotX": 0.0108916182,
+                "rotY": 179.9998,
+                "rotZ": 0.004948196,
                 "scaleX": 0.8214286,
                 "scaleY": 1.0,
                 "scaleZ": 0.8214286
@@ -6566,10 +6566,10 @@
               "Transform": {
                 "posX": 23.5013,
                 "posY": 1.50380516,
-                "posZ": -5.52291,
-                "rotX": 0.0108914375,
-                "rotY": 180.000473,
-                "rotZ": 0.004948451,
+                "posZ": -5.522914,
+                "rotX": 0.0108915064,
+                "rotY": 180.000671,
+                "rotZ": 0.00494837249,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -6625,12 +6625,12 @@
               "GUID": "e00053",
               "Name": "Card",
               "Transform": {
-                "posX": -20.0000019,
+                "posX": -20.0000038,
                 "posY": 1.78360581,
-                "posZ": 6.499998,
-                "rotX": -5.01642126E-06,
-                "rotY": 180.007675,
-                "rotZ": -1.14142775E-08,
+                "posZ": 6.49999666,
+                "rotX": -5.10241625E-06,
+                "rotY": 180.00769,
+                "rotZ": 3.214844E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -6745,12 +6745,12 @@
               "GUID": "f31ff5",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -26.4999542,
-                "posY": 1.83999884,
-                "posZ": 31.5000458,
-                "rotX": -4.565267E-06,
-                "rotY": 179.973343,
-                "rotZ": 1.799773E-08,
+                "posX": -26.49995,
+                "posY": 1.83999872,
+                "posZ": 31.50005,
+                "rotX": -4.97030851E-06,
+                "rotY": 179.9734,
+                "rotZ": 6.836253E-08,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -9684,12 +9684,12 @@
               "GUID": "f6414a",
               "Name": "Deck",
               "Transform": {
-                "posX": -23.00002,
-                "posY": 1.8101877,
-                "posZ": 6.49997759,
-                "rotX": -5.05415937E-06,
-                "rotY": 180.003586,
-                "rotZ": 1.03198417E-07,
+                "posX": -23.0000362,
+                "posY": 1.81018782,
+                "posZ": 6.49996376,
+                "rotX": -4.90839875E-06,
+                "rotY": 180.003662,
+                "rotZ": -1.8357791E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -10019,7 +10019,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -10027,12 +10028,12 @@
           "GUID": "3963e5",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 29.6000023,
+            "posX": 29.6000042,
             "posY": 0.979997158,
-            "posZ": 47.16,
-            "rotX": -4.53280973E-06,
-            "rotY": 179.978668,
-            "rotZ": -1.5867829E-06,
+            "posZ": 47.1600037,
+            "rotX": -6.560829E-06,
+            "rotY": 179.978653,
+            "rotZ": -1.39791075E-06,
             "scaleX": 1.0,
             "scaleY": 0.562042058,
             "scaleZ": 1.0
@@ -10533,12 +10534,12 @@
           "GUID": "4e84af",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -9.499994,
+            "posX": -9.499993,
             "posY": 0.9799972,
             "posZ": 47.5000076,
-            "rotX": -4.39717633E-06,
+            "rotX": -4.898978E-06,
             "rotY": 179.997131,
-            "rotZ": 8.83885036E-07,
+            "rotZ": 4.72648E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -15994,7 +15995,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -16005,9 +16007,9 @@
             "posX": 33.0002,
             "posY": 1.581499,
             "posZ": 12.5,
-            "rotX": -4.547511E-08,
+            "rotX": 4.86273E-08,
             "rotY": 179.9995,
-            "rotZ": 1.3198564E-08,
+            "rotZ": 3.96447035E-08,
             "scaleX": 3.18160987,
             "scaleY": 1.0,
             "scaleZ": 3.18160987
@@ -16178,9 +16180,9 @@
             "posX": -5.000003,
             "posY": 0.979997158,
             "posZ": 47.4999962,
-            "rotX": -4.670399E-06,
+            "rotX": -4.782497E-06,
             "rotY": 179.99707,
-            "rotZ": 1.13909766E-06,
+            "rotZ": 1.08487654E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -22374,7 +22376,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -22382,12 +22385,12 @@
           "GUID": "5e1bbe",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 8.500006,
-            "posY": 0.979997158,
-            "posZ": 47.5000076,
-            "rotX": -4.96056737E-06,
-            "rotY": 179.99704,
-            "rotZ": 5.03253034E-07,
+            "posX": 8.500009,
+            "posY": 0.979997039,
+            "posZ": 47.50001,
+            "rotX": -4.756465E-06,
+            "rotY": 179.99707,
+            "rotZ": 1.00528587E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -31339,7 +31342,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -31347,12 +31351,12 @@
           "GUID": "8a920f",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -0.499994755,
+            "posX": -0.499995172,
             "posY": 0.979997337,
             "posZ": 47.5000038,
-            "rotX": -5.327072E-06,
-            "rotY": 179.996841,
-            "rotZ": -4.84302234E-08,
+            "rotX": -4.93805874E-06,
+            "rotY": 179.996872,
+            "rotZ": 4.48669766E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -41650,7 +41654,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -41658,12 +41663,12 @@
           "GUID": "910d9d",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 4.00000048,
+            "posX": 4.0,
             "posY": 0.979997337,
             "posZ": 47.5000038,
-            "rotX": -5.19407058E-06,
+            "rotX": -5.27356633E-06,
             "rotY": 179.997009,
-            "rotZ": 4.79705E-08,
+            "rotZ": -5.58391E-08,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -49271,7 +49276,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -49279,12 +49285,12 @@
           "GUID": "9d4a3f",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 17.5000057,
-            "posY": 0.979997158,
+            "posX": 17.5000038,
+            "posY": 0.9799971,
             "posZ": 47.5,
-            "rotX": -4.45079377E-06,
-            "rotY": 179.997116,
-            "rotZ": 1.74242714E-07,
+            "rotX": -4.447234E-06,
+            "rotY": 179.997086,
+            "rotZ": 7.728477E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -54973,7 +54979,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -54983,10 +54990,10 @@
           "Transform": {
             "posX": 13.0,
             "posY": 0.9799973,
-            "posZ": 47.5000038,
-            "rotX": -5.335637E-06,
-            "rotY": 179.997,
-            "rotZ": -2.19923137E-08,
+            "posZ": 47.5,
+            "rotX": -4.60471438E-06,
+            "rotY": 179.996964,
+            "rotZ": 1.14502325E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -62723,7 +62730,8 @@
                 "Name": "dunwich_back",
                 "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
                 "Size": 7.4
-              }
+              },
+              "OwnerSteamID": 0
             }
           ]
         },
@@ -62734,9 +62742,9 @@
             "posX": -20.0,
             "posY": 1.48149931,
             "posZ": -4.5,
-            "rotX": -3.181935E-07,
+            "rotX": -7.504182E-08,
             "rotY": 179.9969,
-            "rotZ": -4.611917E-08,
+            "rotZ": -1.25071127E-08,
             "scaleX": 2.17822933,
             "scaleY": 1.0,
             "scaleZ": 2.17822933
@@ -62782,12 +62790,12 @@
           "GUID": "f93de1",
           "Name": "Custom_Tile",
           "Transform": {
-            "posX": 2.999999,
+            "posX": 2.99999881,
             "posY": 1.49197531,
-            "posZ": -5.499999,
-            "rotX": 0.0108903032,
-            "rotY": 180.012863,
-            "rotZ": 0.00495095924,
+            "posZ": -5.49999762,
+            "rotX": 0.0108904513,
+            "rotY": 180.012878,
+            "rotZ": 0.004950817,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
