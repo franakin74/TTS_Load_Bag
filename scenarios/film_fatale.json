@@ -20,12 +20,12 @@
       "GUID": "faf921",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": 26.4997253,
-        "posY": 5.84360743,
-        "posZ": 51.500412,
-        "rotX": -4.62054182E-08,
-        "rotY": 179.96637,
-        "rotZ": 5.005932E-06,
+        "posX": 26.4999,
+        "posY": 5.843598,
+        "posZ": 51.5,
+        "rotX": 1.10283107E-08,
+        "rotY": 179.9666,
+        "rotZ": 5.099976E-06,
         "scaleX": 1.20052135,
         "scaleY": 0.249882281,
         "scaleZ": 1.3145982
@@ -61,7 +61,7 @@
       "MeshIndex": -1,
       "CustomMesh": {
         "MeshURL": "https://raw.githubusercontent.com/RobMayer/TTSLibrary/master/advboxes/tuckbox_h_MSH.obj",
-        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/12443943477877751958/73AB449274C579E8A8F40E30B34E6A9EC9AE7683/",
+        "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/16929582695947484371/C5D511583DD279E09E16859A504B69AA0BB93AFA/",
         "NormalURL": "",
         "ColliderURL": "",
         "Convex": true,
@@ -1492,6 +1492,7 @@
               "Hands": false,
               "Text": {
                 "Text": "Deck Bobine",
+                "OwnerSteamID": 0,
                 "colorstate": {
                   "r": 1.0,
                   "g": 1.0,
@@ -3445,6 +3446,7 @@
               "Hands": false,
               "Text": {
                 "Text": "Deck Bobine",
+                "OwnerSteamID": 0,
                 "colorstate": {
                   "r": 1.0,
                   "g": 1.0,
@@ -4485,7 +4487,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -4562,7 +4565,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -4639,7 +4643,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -4716,7 +4721,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -4793,7 +4799,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -4870,7 +4877,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -4947,7 +4955,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5024,7 +5033,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5101,7 +5111,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5178,7 +5189,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             }
@@ -5558,7 +5570,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5635,7 +5648,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5712,7 +5726,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5789,7 +5804,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5866,7 +5882,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -5943,7 +5960,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -6020,7 +6038,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -6097,7 +6116,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             },
@@ -6174,7 +6194,8 @@
                     "Name": "RedCross",
                     "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/16527220566318339270/4533B90A1CDA9AC23D480DC0F520E1FC24DC087E/",
                     "Size": 1.0
-                  }
+                  },
+                  "OwnerSteamID": 0
                 }
               ]
             }
@@ -7572,6 +7593,7 @@
               "Hands": false,
               "Text": {
                 "Text": "Deck Bobine",
+                "OwnerSteamID": 0,
                 "colorstate": {
                   "r": 1.0,
                   "g": 1.0,
@@ -10454,6 +10476,7 @@
           "Hands": false,
           "Text": {
             "Text": "Lire la note avant tout !",
+            "OwnerSteamID": 0,
             "colorstate": {
               "r": 1.0,
               "g": 1.0,
@@ -10483,7 +10506,8 @@
             "Name": "dunwich_back",
             "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/959719855119695911/931B9829687A20F4DEADB36DA57B7E6D76792231/",
             "Size": 7.4
-          }
+          },
+          "OwnerSteamID": 0
         }
       ]
     }
