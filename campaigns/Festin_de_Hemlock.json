@@ -20,12 +20,12 @@
       "GUID": "ee2ba0",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -61.000248,
+        "posX": -61.0003052,
         "posY": 0.9800014,
-        "posZ": 5.499788,
-        "rotX": -5.13977375E-06,
-        "rotY": 180.002,
-        "rotZ": 4.08184462E-07,
+        "posZ": 5.49969435,
+        "rotX": -5.15508964E-06,
+        "rotY": 180.001755,
+        "rotZ": 4.897926E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -812,9 +812,9 @@
             "posX": -20.0,
             "posY": 1.48149931,
             "posZ": -5.0,
-            "rotX": -2.47804444E-09,
+            "rotX": 3.559778E-08,
             "rotY": 180.0,
-            "rotZ": -3.203582E-08,
+            "rotZ": -1.82487014E-09,
             "scaleX": 1.87838769,
             "scaleY": 1.0,
             "scaleZ": 1.87838769
@@ -860,12 +860,12 @@
           "GUID": "17c886",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 11.0000057,
-            "posY": 5.0001,
-            "posZ": 55.0,
-            "rotX": 7.267245E-08,
-            "rotY": 180.000122,
-            "rotZ": -0.0010979583,
+            "posX": 11.00023,
+            "posY": 5.000114,
+            "posZ": 55.0001259,
+            "rotX": 1.03885135E-07,
+            "rotY": 180.00029,
+            "rotZ": -0.0010978448,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -923,7 +923,7 @@
             "Order": 0
           },
           "LuaScript": "-- Utility memory bag by Directsun\r\n-- Version 2.7.0\r\n-- Fork of Memory Bag 2.0 by MrStump\r\n--\r\n-- Want to contribute? Create an issue or fork the code on GitHub and submit a pull request:\r\n-- https://github.com/sunflowermans/TTS-UtilityMemoryBag\r\n\r\n\r\nfunction updateSave()\r\n    local data_to_save = {[\"ml\"]=memoryList}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction combineMemoryFromBagsWithin()\r\n    local bagObjList = self.getObjects()\r\n    for _, bagObj in ipairs(bagObjList) do\r\n        local data = bagObj.lua_script_state\r\n        if data ~= nil then\r\n            local j = JSON.decode(data)\r\n            if j ~= nil and j.ml ~= nil then\r\n                for guid, entry in pairs(j.ml) do\r\n                    memoryList[guid] = entry\r\n                end\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateMemoryWithMoves()\r\n    memoryList = memoryListBackup\r\n    --get the first transposed object's coordinates\r\n    local obj = getObjectFromGUID(moveGuid)\r\n\r\n    -- p1 is where needs to go, p2 is where it was\r\n    local refObjPos = memoryList[moveGuid].pos\r\n    local deltaPos = findOffsetDistance(obj.getPosition(), refObjPos, nil)\r\n    local movedRotation = obj.getRotation()\r\n    for guid, entry in pairs(memoryList) do\r\n        memoryList[guid].pos.x = entry.pos.x - deltaPos.x\r\n        memoryList[guid].pos.y = entry.pos.y - deltaPos.y\r\n        memoryList[guid].pos.z = entry.pos.z - deltaPos.z\r\n        -- memoryList[guid].rot.x = movedRotation.x\r\n        -- memoryList[guid].rot.y = movedRotation.y\r\n        -- memoryList[guid].rot.z = movedRotation.z\r\n    end\r\n\r\n    --theList[obj.getGUID()] = {\r\n    --    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n    --    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n    --    lock=obj.getLock()\r\n    --}\r\n    moveList = {}\r\nend\r\n\r\nfunction onload(saved_data)\r\n\r\n    fresh = true\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        --Set up information off of loaded_data\r\n        memoryList = loaded_data.ml\r\n    else\r\n        --Set up information for if there is no saved saved data\r\n        memoryList = {}\r\n\r\n    end\r\n\r\n    moveList = {}\r\n    moveGuid = nil\r\n\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        fresh = false\r\n        createMemoryActionButtons()\r\n    end\r\nend\r\n\r\n\r\n--Beginning Setup\r\n\r\n\r\n--Make setup button\r\n function createSetupButton()\r\n    self.createButton({\r\n      label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n      position={0,0.1,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n end\r\n\r\n--Triggered by Transpose button\r\nfunction buttonClick_transpose()\r\n    moveGuid = nil\r\n    broadcastToAll(\"Select one object and move it- all objects will move relative to the new location\", {0.75, 0.75, 1})\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(true)\r\n    createSetupActionButtons(true)\r\nend\r\n\r\n--Triggered by setup button,\r\nfunction buttonClick_setup()\r\n    memoryListBackup = duplicateTable(memoryList)\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createButtonsOnAllObjects(false)\r\n    createSetupActionButtons(false)\r\nend\r\n\r\nfunction getAllObjectsInMemory()\r\n    local objTable = {}\r\n    local curObj = {}\r\n\r\n    for guid in pairs(memoryListBackup) do\r\n        curObj = getObjectFromGUID(guid)\r\n        table.insert(objTable, curObj)\r\n    end\r\n\r\n    return objTable\r\n    -- return getAllObjects()\r\nend\r\n\r\n--Creates selection buttons on objects\r\nfunction createButtonsOnAllObjects(move)\r\n    buttonIndexMap = {}\r\n    local howManyButtons = 0\r\n\r\n    local objsToHaveButtons = {}\r\n    if move == true then\r\n        objsToHaveButtons = getAllObjectsInMemory()\r\n    else\r\n        objsToHaveButtons = getAllObjects()\r\n    end\r\n\r\n    for _, obj in ipairs(objsToHaveButtons) do\r\n        if obj ~= self then\r\n            --On a normal bag, the button positions aren't the same size as the bag.\r\n            globalScaleFactor = 1* 1/self.getScale().x\r\n            --Super sweet math to set button positions\r\n            local selfPos = self.getPosition()\r\n            local objPos = obj.getPosition()\r\n            local deltaPos = findOffsetDistance(selfPos, objPos, obj)\r\n            local objPos = rotateLocalCoordinates(deltaPos, self)\r\n            objPos.x = -objPos.x * globalScaleFactor\r\n            objPos.y = objPos.y * globalScaleFactor + 2\r\n            objPos.z = objPos.z * globalScaleFactor * 0.9\r\n            --Workaround for custom PDFs\r\n            if obj.Book then\r\n                objPos.y = objPos.y + 0.5\r\n            end\r\n            --Offset rotation of bag\r\n            local rot = self.getRotation()\r\n            rot.y = -rot.y + 180\r\n            --Create function\r\n            local funcName = \"selectButton_\" .. howManyButtons\r\n            local func = function() buttonClick_selection(obj, move) end\r\n            local color = {0.75,0.25,0.25,0.6}\r\n            local colorMove = {0,0,1,0.6}\r\n            if move == true then\r\n                color = colorMove\r\n            end\r\n            self.setVar(funcName, func)\r\n            self.createButton({\r\n                click_function=funcName, function_owner=self,\r\n                position=objPos, rotation=rot, height=500, width=500,\r\n                color=color,\r\n            })\r\n            buttonIndexMap[obj.getGUID()] = howManyButtons\r\n            howManyButtons = howManyButtons + 1\r\n        end\r\n    end\r\nend\r\n\r\n--Creates submit and cancel buttons\r\nfunction createSetupActionButtons(move)\r\n    self.createButton({\r\n        label=\"Annuler\", click_function=\"buttonClick_cancel\", function_owner=self,\r\n      position={-0.7,0.1,2.1}, rotation={0,0,0}, height=275, width=625,\r\n      font_size=145, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    self.createButton({\r\n        label=\"Valider\", click_function=\"buttonClick_submit\", function_owner=self,\r\n        position={-0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=140, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n\r\n    if move == false then\r\n      self.createButton({\r\n          label=\"Ajouter\", click_function=\"buttonClick_add\", function_owner=self,\r\n          position={0.7,0.3,2.1}, rotation={0,0,0}, height=275, width=625,\r\n          font_size=140, color={0,0,0}, font_color={0.25,1,0.25}\r\n      })\r\n\r\n        self.createButton({\r\n            label=\"Sélection\", click_function=\"editDragSelection\", function_owner=self,\r\n            position={-0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=125, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n\r\n        if fresh == false then\r\n                self.createButton({\r\n                    label=\"Mise à jour\", click_function=\"buttonClick_setNew\", function_owner=self,\r\n                    position={0.7,0.3,3.1}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=105, color={0,0,0}, font_color={0.75,0.75,1}\r\n                })\r\n                self.createButton({\r\n                    label=\"Retirer\", click_function=\"buttonClick_remove\", function_owner=self,\r\n                    position={0.7,0.3,2.6}, rotation={0,0,0}, height=275, width=625,\r\n                    font_size=140, color={0,0,0}, font_color={1,0.25,0.25}\r\n                })\r\n            end\r\n        end\r\n\r\n        self.createButton({\r\n            label=\"Reset\", click_function=\"buttonClick_reset\", function_owner=self,\r\n            position={0,0.3,-2.1}, rotation={0,0,0}, height=275, width=625,\r\n            font_size=165, color={0,0,0}, font_color={1,1,1}\r\n        })\r\n    end\r\n\r\n\r\n--During Setup\r\n\r\n\r\n--Checks or unchecks buttons\r\nfunction buttonClick_selection(obj, move)\r\n    local index = buttonIndexMap[obj.getGUID()]\r\n    local colorMove = {0,0,1,0.6}\r\n    local color = {0,1,0,0.6}\r\n\r\n    previousGuid = selectedGuid\r\n    selectedGuid = obj.getGUID()\r\n\r\n    theList = memoryList\r\n    if move == true then\r\n        theList = moveList\r\n        if previousGuid ~= nil and previousGuid ~= selectedGuid then\r\n            local prevObj = getObjectFromGUID(previousGuid)\r\n            prevObj.highlightOff()\r\n            self.editButton({index=previousIndex, color=colorMove})\r\n            theList[previousGuid] = nil\r\n        end\r\n        previousIndex = index\r\n    end\r\n\r\n    if theList[selectedGuid] == nil then\r\n        self.editButton({index=index, color=color})\r\n        --Adding pos/rot to memory table\r\n        local pos, rot = obj.getPosition(), obj.getRotation()\r\n        --I need to add it like this or it won't save due to indexing issue\r\n        theList[obj.getGUID()] = {\r\n            pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n            rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n            lock=obj.getLock(),\r\n            tint=obj.getColorTint()\r\n        }\r\n        obj.highlightOn({0,1,0})\r\n    else\r\n        color = {0.75,0.25,0.25,0.6}\r\n        if move == true then\r\n            color = colorMove\r\n        end\r\n        self.editButton({index=index, color=color})\r\n        theList[obj.getGUID()] = nil\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\nfunction editDragSelection(bagObj, player, remove)\r\n    local selectedObjs = Player[player].getSelectedObjects()\r\n    if not remove then\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            --Ignore if already in the memory list, or does not have a button\r\n            if index and not memoryList[obj.getGUID()] then\r\n                self.editButton({index=index, color={0,1,0,0.6}})\r\n                --Adding pos/rot to memory table\r\n                local pos, rot = obj.getPosition(), obj.getRotation()\r\n                --I need to add it like this or it won't save due to indexing issue\r\n                memoryList[obj.getGUID()] = {\r\n                    pos={x=round(pos.x,4), y=round(pos.y,4), z=round(pos.z,4)},\r\n                    rot={x=round(rot.x,4), y=round(rot.y,4), z=round(rot.z,4)},\r\n                    lock=obj.getLock(),\r\n                    tint=obj.getColorTint()\r\n                }\r\n                obj.highlightOn({0,1,0})\r\n            end\r\n        end\r\n    else\r\n        for _, obj in ipairs(selectedObjs) do\r\n            local index = buttonIndexMap[obj.getGUID()]\r\n            if index and memoryList[obj.getGUID()] then\r\n                color = {0.75,0.25,0.25,0.6}\r\n                self.editButton({index=index, color=color})\r\n                memoryList[obj.getGUID()] = nil\r\n                obj.highlightOff()\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\n--Cancels selection process\r\nfunction buttonClick_cancel()\r\n    memoryList = memoryListBackup\r\n    moveList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    if next(memoryList) == nil then\r\n        createSetupButton()\r\n    else\r\n        createMemoryActionButtons()\r\n    end\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Sélection annulée\", {1,1,1})\r\n    moveGuid = nil\r\nend\r\n\r\n--Saves selections\r\nfunction buttonClick_submit()\r\n    fresh = false\r\n    if next(moveList) ~= nil then\r\n        for guid in pairs(moveList) do\r\n            moveGuid = guid\r\n        end\r\n        if memoryListBackup[moveGuid] == nil then\r\n            broadcastToAll(\"Item selected for moving is not already in memory\", {1, 0.25, 0.25})\r\n        else\r\n            broadcastToAll(\"Moving all items in memory relative to new objects position!\", {0.75, 0.75, 1})\r\n            self.clearButtons()\r\n            self.clearInputs()\r\n            createMemoryActionButtons()\r\n            local count = 0\r\n            for guid in pairs(moveList) do\r\n                moveGuid = guid\r\n                count = count + 1\r\n                local obj = getObjectFromGUID(guid)\r\n                if obj ~= nil then obj.highlightOff() end\r\n            end\r\n            updateMemoryWithMoves()\r\n            updateSave()\r\n            buttonClick_place()\r\n        end\r\n    elseif next(memoryList) == nil and moveGuid == nil then\r\n        memoryList = memoryListBackup\r\n        broadcastToAll(\"No selections made.\", {0.75, 0.25, 0.25})\r\n    end\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\n    moveGuid = nil\r\nend\r\n\r\nfunction combineTables(first_table, second_table)\r\n    for k,v in pairs(second_table) do first_table[k] = v end\r\nend\r\n\r\nfunction buttonClick_add()\r\n    fresh = false\r\n    combineTables(memoryList, memoryListBackup)\r\n    broadcastToAll(\"Adding internal bags and selections to existing memory\", {0.25, 0.75, 0.25})\r\n    combineMemoryFromBagsWithin()\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_remove()\r\n    broadcastToAll(\"Removing Selected Entries From Memory\", {1.0, 0.25, 0.25})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for guid in pairs(memoryList) do\r\n        count = count + 1\r\n        memoryListBackup[guid] = nil\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then obj.highlightOff() end\r\n    end\r\n    broadcastToAll(count..\" Objects Removed\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\nfunction buttonClick_setNew()\r\n    broadcastToAll(\"Setting new position relative to items in memory\", {0.75, 0.75, 1})\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createMemoryActionButtons()\r\n    local count = 0\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        guid = obj.guid\r\n        if memoryListBackup[guid] ~= nil then\r\n            count = count + 1\r\n            memoryListBackup[guid].pos = obj.getPosition()\r\n            memoryListBackup[guid].rot = obj.getRotation()\r\n            memoryListBackup[guid].lock = obj.getLock()\r\n            memoryListBackup[guid].tint = obj.getColorTint()\r\n        end\r\n    end\r\n    broadcastToAll(count..\" Objects Saved\", {1,1,1})\r\n    memoryList = memoryListBackup\r\n    updateSave()\r\nend\r\n\r\n--Resets bag to starting status\r\nfunction buttonClick_reset()\r\n    fresh = true\r\n    memoryList = {}\r\n    self.clearButtons()\r\n    self.clearInputs()\r\n    createSetupButton()\r\n    removeAllHighlights()\r\n    broadcastToAll(\"Tool Reset\", {1,1,1})\r\n    updateSave()\r\nend\r\n\r\n\r\n--After Setup\r\n\r\n\r\n--Creates recall and place buttons\r\nfunction createMemoryActionButtons()\r\n    self.createButton({\r\n        label=\"Placer\", click_function=\"buttonClick_place\", function_owner=self,\r\n        position={0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Ranger\", click_function=\"buttonClick_recall\", function_owner=self,\r\n        position={-0.7,0.1,2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    self.createButton({\r\n        label=\"Config\", click_function=\"buttonClick_setup\", function_owner=self,\r\n        position={0,0.1,-2.2}, rotation={0,0,0}, height=275, width=625,\r\n        font_size=150, color={0,0,0}, font_color={1,1,1}\r\n    })\r\n    ---    self.createButton({\r\n    ---      label=\"Bouger\", click_function=\"buttonClick_transpose\", function_owner=self,\r\n    ---      position={-2,0.3,0.8}, rotation={0,270,0}, height=350, width=800,\r\n    ---      font_size=250, color={0,0,0}, font_color={0.75,0.75,1}\r\n    ---\r\nend\r\n\r\n--Sends objects from bag/table to their saved position/rotation\r\nfunction buttonClick_place()\r\n    local bagObjList = self.getObjects()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        --If obj is out on the table, move it to the saved pos/rot\r\n        if obj ~= nil then\r\n            obj.setPositionSmooth(entry.pos)\r\n            obj.setRotationSmooth(entry.rot)\r\n            obj.setLock(entry.lock)\r\n            obj.setColorTint(entry.tint)\r\n        else\r\n            --If obj is inside of the bag\r\n            for _, bagObj in ipairs(bagObjList) do\r\n                if bagObj.guid == guid then\r\n                    local item = self.takeObject({\r\n                        guid=guid, position=entry.pos, rotation=entry.rot, smooth=false\r\n                    })\r\n                    item.setLock(entry.lock)\r\n                    item.setColorTint(entry.tint)\r\n                    break\r\n                end\r\n            end\r\n        end\r\n    end\r\n    broadcastToAll(\"Objets placés\", {1,1,1})\r\nend\r\n\r\n--Recalls objects to bag from table\r\nfunction buttonClick_recall()\r\n    for guid, entry in pairs(memoryList) do\r\n        local obj = getObjectFromGUID(guid)\r\n        if obj ~= nil then self.putObject(obj) end\r\n    end\r\n    broadcastToAll(\"Objets rangés\", {1,1,1})\r\nend\r\n\r\n\r\n--Utility functions\r\n\r\n\r\n--Find delta (difference) between 2 x/y/z coordinates\r\nfunction findOffsetDistance(p1, p2, obj)\r\n    local yOffset = 0\r\n    if obj ~= nil then\r\n        local bounds = obj.getBounds()\r\n        yOffset = (bounds.size.y - bounds.offset.y)\r\n    end\r\n    local deltaPos = {}\r\n    deltaPos.x = (p2.x-p1.x)\r\n    deltaPos.y = (p2.y-p1.y) + yOffset\r\n    deltaPos.z = (p2.z-p1.z)\r\n    return deltaPos\r\nend\r\n\r\n--Used to rotate a set of coordinates by an angle\r\nfunction rotateLocalCoordinates(desiredPos, obj)\r\n    local objPos, objRot = obj.getPosition(), obj.getRotation()\r\n    local angle = math.rad(objRot.y)\r\n    local x = desiredPos.x * math.cos(angle) - desiredPos.z * math.sin(angle)\r\n    local z = desiredPos.x * math.sin(angle) + desiredPos.z * math.cos(angle)\r\n    --return {x=objPos.x+x, y=objPos.y+desiredPos.y, z=objPos.z+z}\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\nfunction rotateMyCoordinates(desiredPos, obj)\r\n    local angle = math.rad(obj.getRotation().y)\r\n    local x = desiredPos.x * math.sin(angle)\r\n    local z = desiredPos.z * math.cos(angle)\r\n    return {x=x, y=desiredPos.y, z=z}\r\nend\r\n\r\n--Coroutine delay, in seconds\r\nfunction wait(time)\r\n    local start = os.time()\r\n    repeat coroutine.yield(0) until os.time() > start + time\r\nend\r\n\r\n--Duplicates a table (needed to prevent it making reference to the same objects)\r\nfunction duplicateTable(oldTable)\r\n    local newTable = {}\r\n    for k, v in pairs(oldTable) do\r\n        newTable[k] = v\r\n    end\r\n    return newTable\r\nend\r\n\r\n--Moves scripted highlight from all objects\r\nfunction removeAllHighlights()\r\n    for _, obj in ipairs(getAllObjects()) do\r\n        obj.highlightOff()\r\n    end\r\nend\r\n\r\n--Round number (num) to the Nth decimal (dec)\r\nfunction round(num, dec)\r\n    local mult = 10^(dec or 0)\r\n    return math.floor(num * mult + 0.5) / mult\r\nend\r\n\r\n\r\n--[[\r\nThis object provides access to a variable stored on the \"Global script\".\r\nThe variable holds the GUIDs for every Utility Memory Bag in the scene.\r\nExample:\r\n{'805ebd', '35cc21', 'fc8886', 'f50264', '5f5f63'}\r\n--]]\r\nAllMemoryBagsInScene = {\r\n    NAME_OF_GLOBAL_VARIABLE = \"_UtilityMemoryBag_AllMemoryBagsInScene\"\r\n}\r\n\r\nfunction AllMemoryBagsInScene:add(guid)\r\n    local guids = Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\n    table.insert(guids, guid)\r\n    Global.setTable(self.NAME_OF_GLOBAL_VARIABLE, guids)\r\nend\r\n\r\nfunction AllMemoryBagsInScene:getGuidList()\r\n    return Global.getTable(self.NAME_OF_GLOBAL_VARIABLE) or {}\r\nend\r\n",
-          "LuaScriptState": "{\"ml\":{\"040943\":{\"lock\":false,\"pos\":{\"x\":-0.5001,\"y\":1.5181,\"z\":6},\"rot\":{\"x\":0.0126,\"y\":180.0081,\"z\":0.0061},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0a7211\":{\"lock\":false,\"pos\":{\"x\":-25.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0231,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"0b591a\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5364,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":89.9977,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"1188ca\":{\"lock\":true,\"pos\":{\"x\":13.0116,\"y\":1.5198,\"z\":21.0103},\"rot\":{\"x\":0.0109,\"y\":179.9765,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"1916a7\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0111,\"z\":0.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"19687c\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0063,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2ec649\":{\"lock\":false,\"pos\":{\"x\":7.4995,\"y\":1.5219,\"z\":30},\"rot\":{\"x\":0.0109,\"y\":180.0051,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3081b1\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0005,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3271e1\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.77,\"z\":29},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"36f481\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5364,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":89.9974,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"376897\":{\"lock\":false,\"pos\":{\"x\":-28.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":179.9997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"44bf92\":{\"lock\":false,\"pos\":{\"x\":17.501,\"y\":1.5312,\"z\":-6.0196},\"rot\":{\"x\":0.0049,\"y\":89.9933,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"45f8c2\":{\"lock\":false,\"pos\":{\"x\":5.6496,\"y\":1.5808,\"z\":4.8508},\"rot\":{\"x\":0.0103,\"y\":179.9994,\"z\":0.0036},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4b3332\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6269,\"z\":-2.9972},\"rot\":{\"x\":-0.0006,\"y\":179.9712,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4da715\":{\"lock\":false,\"pos\":{\"x\":-29,\"y\":1.8102,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0035,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4df2ac\":{\"lock\":false,\"pos\":{\"x\":-2.3502,\"y\":1.5815,\"z\":4.8501},\"rot\":{\"x\":0.0149,\"y\":179.9569,\"z\":0.0042},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"500244\":{\"lock\":false,\"pos\":{\"x\":-26.5,\"y\":1.815,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0001,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"54be9e\":{\"lock\":false,\"pos\":{\"x\":0.5072,\"y\":1.5158,\"z\":-5.4916},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"599dab\":{\"lock\":false,\"pos\":{\"x\":-31.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0315,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"61c24c\":{\"lock\":false,\"pos\":{\"x\":-0.5005,\"y\":1.5181,\"z\":6},\"rot\":{\"x\":0.0109,\"y\":180.0056,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"6c7f1e\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.8,\"z\":11.7},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"6ecca9\":{\"lock\":true,\"pos\":{\"x\":5,\"y\":1.5189,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9749,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"748416\":{\"lock\":false,\"pos\":{\"x\":-0.5005,\"y\":1.5182,\"z\":6.5},\"rot\":{\"x\":0.0109,\"y\":180.0047,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"77b1b4\":{\"lock\":false,\"pos\":{\"x\":-22.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":179.9994,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"77f438\":{\"lock\":false,\"pos\":{\"x\":13,\"y\":1.5167,\"z\":5},\"rot\":{\"x\":0.0109,\"y\":180.0013,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"81a74e\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.5196,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9763,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8629a2\":{\"lock\":false,\"pos\":{\"x\":-21.5,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0019,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8d4b3a\":{\"lock\":false,\"pos\":{\"x\":-20,\"y\":1.815,\"z\":8},\"rot\":{\"x\":0,\"y\":180.0003,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"93aa7a\":{\"lock\":false,\"pos\":{\"x\":-34.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0315,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"96636f\":{\"lock\":false,\"pos\":{\"x\":-28,\"y\":1.865,\"z\":10.5},\"rot\":{\"x\":0,\"y\":179.9679,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"9e87bc\":{\"lock\":false,\"pos\":{\"x\":-3,\"y\":1.5181,\"z\":5},\"rot\":{\"x\":0.0109,\"y\":179.9987,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a56152\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.5174,\"z\":5},\"rot\":{\"x\":0.0109,\"y\":180.0003,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ad19ee\":{\"lock\":false,\"pos\":{\"x\":-31.5,\"y\":1.771,\"z\":26.5},\"rot\":{\"x\":0,\"y\":359.9937,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"ae331e\":{\"lock\":false,\"pos\":{\"x\":-20.0071,\"y\":1.77,\"z\":7.9943},\"rot\":{\"x\":0,\"y\":179.9792,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"afb9a3\":{\"lock\":false,\"pos\":{\"x\":-24,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0015,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b3839f\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":179.9977,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"bbcd64\":{\"lock\":false,\"pos\":{\"x\":-34.5,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":90.0024,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"bcce4f\":{\"lock\":false,\"pos\":{\"x\":5.6501,\"y\":1.5808,\"z\":4.8501},\"rot\":{\"x\":0.0104,\"y\":179.9935,\"z\":0.0023},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"c3dfce\":{\"lock\":false,\"pos\":{\"x\":-19.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0312,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"ccd359\":{\"lock\":true,\"pos\":{\"x\":5,\"y\":1.5204,\"z\":21},\"rot\":{\"x\":0.0109,\"y\":179.9764,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cd01b6\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5364,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":90.0007,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d2aab1\":{\"lock\":false,\"pos\":{\"x\":-31.4986,\"y\":1.8006,\"z\":3.5002},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d5366c\":{\"lock\":false,\"pos\":{\"x\":7.5,\"y\":1.5174,\"z\":6},\"rot\":{\"x\":0.0109,\"y\":180.0076,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d8787e\":{\"lock\":true,\"pos\":{\"x\":13,\"y\":1.5182,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9724,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"dee26a\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.5211,\"z\":21},\"rot\":{\"x\":0.0109,\"y\":179.9765,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e4e2e8\":{\"lock\":false,\"pos\":{\"x\":-31.5015,\"y\":1.84,\"z\":8.4999},\"rot\":{\"x\":0,\"y\":179.9676,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"e80688\":{\"lock\":false,\"pos\":{\"x\":-22.5,\"y\":1.771,\"z\":26.5},\"rot\":{\"x\":0,\"y\":0.001,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"e892a7\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e8b1be\":{\"lock\":false,\"pos\":{\"x\":13.65,\"y\":1.58,\"z\":4.85},\"rot\":{\"x\":0.0132,\"y\":179.994,\"z\":0.0088},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f4983a\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0023,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}}}}",
+          "LuaScriptState": "{\"ml\":{\"040943\":{\"lock\":false,\"pos\":{\"x\":-0.5001,\"y\":1.5181,\"z\":6},\"rot\":{\"x\":0.0126,\"y\":180.0081,\"z\":0.0061},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0a7211\":{\"lock\":false,\"pos\":{\"x\":-25.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0231,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"0aaf07\":{\"lock\":false,\"pos\":{\"x\":-28.5001,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":179.9986,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"0b591a\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5364,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":89.9977,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"1188ca\":{\"lock\":true,\"pos\":{\"x\":13.0116,\"y\":1.5198,\"z\":21.0103},\"rot\":{\"x\":0.0109,\"y\":179.9765,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"1916a7\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0111,\"z\":0.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"19687c\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180.0063,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"2ec649\":{\"lock\":false,\"pos\":{\"x\":7.4995,\"y\":1.5219,\"z\":30},\"rot\":{\"x\":0.0109,\"y\":180.0051,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3081b1\":{\"lock\":false,\"pos\":{\"x\":23.5013,\"y\":1.5138,\"z\":-5.523},\"rot\":{\"x\":0.0109,\"y\":180.0005,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"3271e1\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.77,\"z\":29},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"36f481\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5364,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":89.9974,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"376897\":{\"lock\":false,\"pos\":{\"x\":-28.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":179.9997,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"44bf92\":{\"lock\":false,\"pos\":{\"x\":17.501,\"y\":1.5312,\"z\":-6.0196},\"rot\":{\"x\":0.0049,\"y\":89.9933,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"45f8c2\":{\"lock\":false,\"pos\":{\"x\":5.6496,\"y\":1.5808,\"z\":4.8508},\"rot\":{\"x\":0.0103,\"y\":179.9994,\"z\":0.0036},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"4b3332\":{\"lock\":false,\"pos\":{\"x\":30.5,\"y\":1.6269,\"z\":-2.9972},\"rot\":{\"x\":-0.0006,\"y\":179.9712,\"z\":180.0011},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4da715\":{\"lock\":false,\"pos\":{\"x\":-29,\"y\":1.8102,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0035,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4df2ac\":{\"lock\":false,\"pos\":{\"x\":-2.3502,\"y\":1.5815,\"z\":4.8501},\"rot\":{\"x\":0.0149,\"y\":179.9569,\"z\":0.0042},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"500244\":{\"lock\":false,\"pos\":{\"x\":-26.5,\"y\":1.815,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0001,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"54be9e\":{\"lock\":false,\"pos\":{\"x\":0.5072,\"y\":1.5158,\"z\":-5.4916},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"599dab\":{\"lock\":false,\"pos\":{\"x\":-31.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0315,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"5b9c80\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.522,\"z\":29},\"rot\":{\"x\":0.0109,\"y\":179.9993,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"61c24c\":{\"lock\":false,\"pos\":{\"x\":-0.5005,\"y\":1.5181,\"z\":6},\"rot\":{\"x\":0.0109,\"y\":180.0056,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"6c7f1e\":{\"lock\":true,\"pos\":{\"x\":-27,\"y\":1.8,\"z\":11.7},\"rot\":{\"x\":90,\"y\":0,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"6ecca9\":{\"lock\":true,\"pos\":{\"x\":5,\"y\":1.5189,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9749,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"748416\":{\"lock\":false,\"pos\":{\"x\":-0.5005,\"y\":1.5182,\"z\":6.5},\"rot\":{\"x\":0.0109,\"y\":180.0047,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"77b1b4\":{\"lock\":false,\"pos\":{\"x\":-22.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":179.9994,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"77f438\":{\"lock\":false,\"pos\":{\"x\":13,\"y\":1.5167,\"z\":5},\"rot\":{\"x\":0.0109,\"y\":180.0013,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"81a74e\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.5196,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9763,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8287d8\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":180.002,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8629a2\":{\"lock\":false,\"pos\":{\"x\":-21.5,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0019,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8d4b3a\":{\"lock\":false,\"pos\":{\"x\":-20,\"y\":1.815,\"z\":8},\"rot\":{\"x\":0,\"y\":180.0003,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"93aa7a\":{\"lock\":false,\"pos\":{\"x\":-34.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0315,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"96636f\":{\"lock\":false,\"pos\":{\"x\":-28,\"y\":1.865,\"z\":10.5},\"rot\":{\"x\":0,\"y\":179.9679,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"9e87bc\":{\"lock\":false,\"pos\":{\"x\":-3,\"y\":1.5181,\"z\":5},\"rot\":{\"x\":0.0109,\"y\":179.9987,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"a56152\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.5174,\"z\":5},\"rot\":{\"x\":0.0109,\"y\":180.0003,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ad19ee\":{\"lock\":false,\"pos\":{\"x\":-31.5,\"y\":1.771,\"z\":26.5},\"rot\":{\"x\":0,\"y\":359.9937,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"ae331e\":{\"lock\":false,\"pos\":{\"x\":-20.0071,\"y\":1.77,\"z\":7.9943},\"rot\":{\"x\":0,\"y\":179.9792,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"afb9a3\":{\"lock\":false,\"pos\":{\"x\":-24,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0015,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b3839f\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":179.9977,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"bbcd64\":{\"lock\":false,\"pos\":{\"x\":-34.5,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":90.0024,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"bcce4f\":{\"lock\":false,\"pos\":{\"x\":5.6501,\"y\":1.5808,\"z\":4.8501},\"rot\":{\"x\":0.0104,\"y\":179.9935,\"z\":0.0023},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"c3dfce\":{\"lock\":false,\"pos\":{\"x\":-19.5,\"y\":1.84,\"z\":24.5},\"rot\":{\"x\":0,\"y\":180.0312,\"z\":0},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"ccd359\":{\"lock\":true,\"pos\":{\"x\":5,\"y\":1.5204,\"z\":21},\"rot\":{\"x\":0.0109,\"y\":179.9764,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"cd01b6\":{\"lock\":false,\"pos\":{\"x\":12.501,\"y\":1.5364,\"z\":-6.0168},\"rot\":{\"x\":0.0049,\"y\":90.0007,\"z\":359.9891},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d2aab1\":{\"lock\":false,\"pos\":{\"x\":-31.4986,\"y\":1.8006,\"z\":3.5002},\"rot\":{\"x\":0,\"y\":179.9969,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d5366c\":{\"lock\":false,\"pos\":{\"x\":7.5,\"y\":1.5174,\"z\":6},\"rot\":{\"x\":0.0109,\"y\":180.0076,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d8787e\":{\"lock\":true,\"pos\":{\"x\":13,\"y\":1.5182,\"z\":13},\"rot\":{\"x\":0.0109,\"y\":179.9724,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"dee26a\":{\"lock\":true,\"pos\":{\"x\":-3,\"y\":1.5211,\"z\":21},\"rot\":{\"x\":0.0109,\"y\":179.9765,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e4e2e8\":{\"lock\":false,\"pos\":{\"x\":-31.5015,\"y\":1.84,\"z\":8.4999},\"rot\":{\"x\":0,\"y\":179.9676,\"z\":0},\"tint\":{\"a\":1,\"b\":0,\"g\":0,\"r\":0.614982545375824}},\"e80688\":{\"lock\":false,\"pos\":{\"x\":-22.5,\"y\":1.771,\"z\":26.5},\"rot\":{\"x\":0,\"y\":0.001,\"z\":0},\"tint\":{\"a\":0,\"b\":0,\"g\":0,\"r\":0}},\"e8374d\":{\"lock\":false,\"pos\":{\"x\":23.5,\"y\":1.4908,\"z\":2},\"rot\":{\"x\":0.0927,\"y\":180.0151,\"z\":0.0771},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"e892a7\":{\"lock\":false,\"pos\":{\"x\":0.5,\"y\":1.5158,\"z\":-5.5},\"rot\":{\"x\":0.0109,\"y\":180,\"z\":180.005},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e8b1be\":{\"lock\":false,\"pos\":{\"x\":13.65,\"y\":1.58,\"z\":4.85},\"rot\":{\"x\":0.0132,\"y\":179.994,\"z\":0.0088},\"tint\":{\"a\":1,\"b\":1,\"g\":1,\"r\":1}},\"f4983a\":{\"lock\":false,\"pos\":{\"x\":-19,\"y\":1.7836,\"z\":3.5},\"rot\":{\"x\":0,\"y\":180.0023,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f68545\":{\"lock\":false,\"pos\":{\"x\":-23.5001,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":180.0013,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}}}}",
           "XmlUI": "",
           "ContainedObjects": [
             {
@@ -933,9 +933,9 @@
                 "posX": -25.4999981,
                 "posY": 1.83999932,
                 "posZ": 24.5000019,
-                "rotX": -5.01250861E-06,
-                "rotY": 180.023087,
-                "rotZ": -6.071936E-07,
+                "rotX": -2.396876E-06,
+                "rotY": 180.023026,
+                "rotZ": 5.27403E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -4163,11 +4163,11 @@
               "GUID": "3271e1",
               "Name": "3DText",
               "Transform": {
-                "posX": -27.0000019,
-                "posY": 1.77000415,
+                "posX": -26.99999,
+                "posY": 1.7700007,
                 "posZ": 29.0000134,
                 "rotX": 90.0,
-                "rotY": 4.71647743E-09,
+                "rotY": 3.5373573E-09,
                 "rotZ": 0.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -4221,9 +4221,9 @@
                 "posX": -28.4999981,
                 "posY": 1.83999932,
                 "posZ": 24.5000019,
-                "rotX": -5.798647E-06,
+                "rotX": -5.690623E-06,
                 "rotY": 179.999741,
-                "rotZ": 4.31494357E-07,
+                "rotZ": 4.45127426E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -7512,9 +7512,9 @@
                 "posX": -31.4999981,
                 "posY": 1.83999932,
                 "posZ": 24.5000019,
-                "rotX": -6.575315E-06,
+                "rotX": -6.413707E-06,
                 "rotY": 180.031448,
-                "rotZ": 3.44037034E-07,
+                "rotZ": 2.43478951E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -10745,9 +10745,9 @@
                 "posX": -22.4999962,
                 "posY": 1.83999932,
                 "posZ": 24.5000038,
-                "rotX": -5.388618E-06,
-                "rotY": 179.99939,
-                "rotZ": 2.02277633E-07,
+                "rotX": -6.39100563E-06,
+                "rotY": 179.999374,
+                "rotZ": -2.18245773E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -13914,15 +13914,380 @@
               ]
             },
             {
+              "GUID": "8d4b3a",
+              "Name": "Deck",
+              "Transform": {
+                "posX": -20.0,
+                "posY": 1.81500161,
+                "posZ": 7.99999952,
+                "rotX": -5.112715E-06,
+                "rotY": 180.000336,
+                "rotZ": -1.44403089E-07,
+                "scaleX": 1.0,
+                "scaleY": 1.0,
+                "scaleZ": 1.0
+              },
+              "Nickname": "",
+              "Description": "",
+              "GMNotes": "",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.713235259,
+                "g": 0.713235259,
+                "b": 0.713235259
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": true,
+              "Hands": false,
+              "SidewaysCard": false,
+              "DeckIDs": [
+                1113810,
+                1114401,
+                1113806,
+                1113809,
+                1113808
+              ],
+              "CustomDeck": {
+                "11138": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": true,
+                  "UniqueBack": true,
+                  "Type": 0
+                },
+                "11144": {
+                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549560590/F3D97CC92AA63D0E7485B03699510F4FC56DF050/",
+                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549561076/86578E35FF2E4D1075BA91AA9F5336B8E802CEE7/",
+                  "NumWidth": 10,
+                  "NumHeight": 7,
+                  "BackIsHidden": false,
+                  "UniqueBack": true,
+                  "Type": 0
+                }
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": "",
+              "ContainedObjects": [
+                {
+                  "GUID": "fb9ed3",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -20.5010033,
+                    "posY": 1.78360331,
+                    "posZ": 7.99978542,
+                    "rotX": 1.66331247E-05,
+                    "rotY": 179.995209,
+                    "rotZ": -0.00015872973,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Bibliothèque",
+                  "Description": "Pièce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10540\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113810,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "241c5a",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 5.00000143,
+                    "posY": 1.52036846,
+                    "posZ": 20.9999981,
+                    "rotX": 0.011639351,
+                    "rotY": 179.995178,
+                    "rotZ": -0.000248604425,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Salle de Bain",
+                  "Description": "Pièce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10537\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1114401,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11144": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549560590/F3D97CC92AA63D0E7485B03699510F4FC56DF050/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549561076/86578E35FF2E4D1075BA91AA9F5336B8E802CEE7/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": false,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "16150d",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -20.0006065,
+                    "posY": 1.98888683,
+                    "posZ": 7.999918,
+                    "rotX": -5.27495968E-06,
+                    "rotY": 179.99791,
+                    "rotZ": 4.62101582E-07,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Salle de Bain",
+                  "Description": "Pièce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10536\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113806,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "cfab5b",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -20.0006065,
+                    "posY": 1.98888683,
+                    "posZ": 7.999918,
+                    "rotX": -5.27495968E-06,
+                    "rotY": 179.99791,
+                    "rotZ": 4.62101582E-07,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Bibliothèque",
+                  "Description": "Pièce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10539\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113809,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "b572b3",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -20.0006065,
+                    "posY": 1.98888683,
+                    "posZ": 7.999918,
+                    "rotX": -5.27495968E-06,
+                    "rotY": 179.99791,
+                    "rotZ": 4.62101582E-07,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Salle de Bain",
+                  "Description": "Pièce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10538\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113808,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                }
+              ]
+            },
+            {
               "GUID": "93aa7a",
               "Name": "Custom_Model_Bag",
               "Transform": {
                 "posX": -34.5,
                 "posY": 1.83999932,
                 "posZ": 24.5,
-                "rotX": -5.356325E-06,
+                "rotX": -5.01898148E-06,
                 "rotY": 180.0315,
-                "rotZ": -1.3981618E-07,
+                "rotZ": 4.441814E-08,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -17263,15 +17628,319 @@
               ]
             },
             {
+              "GUID": "96636f",
+              "Name": "Custom_Model_Bag",
+              "Transform": {
+                "posX": -28.0000019,
+                "posY": 1.86500049,
+                "posZ": 10.4999981,
+                "rotX": -5.09344E-06,
+                "rotY": 179.967865,
+                "rotZ": -1.11963416E-07,
+                "scaleX": 0.9499998,
+                "scaleY": 0.9499998,
+                "scaleZ": 0.9499998
+              },
+              "Nickname": "Mise en place",
+              "Description": "Place 1 lieu au hasard et le reste",
+              "GMNotes": "",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.614982545,
+                "g": 0.0,
+                "b": 0.0
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": false,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": false,
+              "MaterialIndex": -1,
+              "MeshIndex": -1,
+              "CustomMesh": {
+                "MeshURL": "https://pastebin.com/raw/ALrYhQGb",
+                "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/11301215420607853675/8C4B80800CF0988FDF275947C7C115A2BFBA0415/",
+                "NormalURL": "",
+                "ColliderURL": "",
+                "Convex": true,
+                "MaterialIndex": 3,
+                "TypeIndex": 6,
+                "CustomShader": {
+                  "SpecularColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0
+                  },
+                  "SpecularIntensity": 0.0,
+                  "SpecularSharpness": 2.0,
+                  "FresnelStrength": 0.0
+                },
+                "CastShadows": true
+              },
+              "Bag": {
+                "Order": 0
+              },
+              "LuaScript": "-- ===== Sac : Mise en place Deck Lieu =====\r\n-- 1 carte au hasard posée à (5,1.55,29)\r\n-- le reste mélangé dans le deck Lieu à (-20.5,1.9,8)\r\n-- 2s après le mélange : distribuer 6 cartes du deck Lieu aux positions demandées\r\n\r\n-- Positions\r\nlocal SINGLE_POS   = {  5.0, 1.52, 29.0 }          -- la carte choisie\r\nlocal LIEU_DECK_POS= {-20.5, 1.90,  8.0 }          -- deck Lieu existant\r\nlocal DEAL_POS = {                                  -- 6 sorties depuis le deck Lieu\r\n  { -3.0, 1.52, 21.0 },\r\n  {  5.0, 1.52, 21.0 },\r\n  { 13.0, 1.52, 21.0 },\r\n  { -3.0, 1.52, 13.0 },\r\n  {  5.0, 1.52, 13.0 },\r\n  { 13.0, 1.52, 13.0 },\r\n}\r\n\r\n-- Rotation (face cachée par défaut : ajuste si besoin)\r\nlocal FACE_DOWN_ROT = {0, 180, 0}\r\n\r\n-- Pool 4 cartes (on en choisit 1, les 3 autres vont dans le deck Lieu)\r\nlocal POOL = { \"5b9c80\", \"f68545\", \"0aaf07\", \"8287d8\" }\r\n\r\n-- État\r\nlocal spawned = {}     -- GUID sortis de ce sac (sert pour Ranger / blocage)\r\nlocal buildNonce = 0   -- pour annuler opérations différées si Ranger entre-temps\r\n\r\n-- ==== Utils ====\r\nlocal function isBagLike(o) return o and (o.tag==\"Bag\" or o.tag==\"Infinite\") end\r\nlocal function bagEntries() if not isBagLike(self) then return {} end return self.getObjects() or {} end\r\nlocal function shuffleList(t) for i=#t,2,-1 do local j=math.random(i) t[i],t[j]=t[j],t[i] end return t end\r\n\r\nlocal function dropFaceDown(obj, pos, rot)\r\n  if not obj then return end\r\n  obj.setPositionSmooth(pos, false, true)\r\n  obj.setRotationSmooth(rot or FACE_DOWN_ROT, false, true)\r\n  Wait.time(function()\r\n    if obj and obj.getGUID() then obj.setRotation(rot or FACE_DOWN_ROT) obj.setAngularVelocity({0,0,0}) end\r\n  end, 0.2)\r\nend\r\n\r\n-- Cherche et sort une carte par GUID (table, ce sac, un deck), puis la dépose\r\nlocal function takeGuidFromAnywhere(guid, pos, rot)\r\n  pos = pos or LIEU_DECK_POS; rot = rot or FACE_DOWN_ROT\r\n  local o = getObjectFromGUID(guid)\r\n  if o then dropFaceDown(o, pos, rot) return o end\r\n  for _, e in ipairs(bagEntries()) do\r\n    if e.guid==guid then\r\n      local t=self.takeObject({guid=guid, position=pos, rotation=rot}); if t then dropFaceDown(t,pos,rot) end\r\n      return t\r\n    end\r\n  end\r\n  for _, any in ipairs(getAllObjects()) do\r\n    if any.tag==\"Deck\" then\r\n      for _, sub in ipairs(any.getObjects() or {}) do\r\n        if sub.guid==guid then\r\n          local t=any.takeObject({guid=guid, position=pos, rotation=rot}); if t then dropFaceDown(t,pos,rot) end\r\n          return t\r\n        end\r\n      end\r\n    end\r\n  end\r\n  return nil\r\nend\r\n\r\n-- Met un objet dans CE sac\r\nlocal function putInThisBag(obj)\r\n  if not obj or obj==self then return false end\r\n  if self.putObject(obj) then return true end\r\n  local p=self.getPosition(); obj.setPosition({p.x,p.y+0.3,p.z})\r\n  return self.putObject(obj)\r\nend\r\n\r\n-- Rapatrie un GUID (table, decks, autres sacs) dans CE sac\r\nlocal function pullGuidAnywhereToThisBag(guid)\r\n  for _, e in ipairs(bagEntries()) do if e.guid==guid then return true end end\r\n  local o = getObjectFromGUID(guid); if o then return putInThisBag(o) end\r\n  for _, any in ipairs(getAllObjects()) do\r\n    if any.tag==\"Deck\" then\r\n      for _, sub in ipairs(any.getObjects() or {}) do\r\n        if sub.guid==guid then\r\n          local p=any.getPosition()\r\n          local c=any.takeObject({guid=guid, position={p.x,p.y+0.2,p.z}})\r\n          if c then return putInThisBag(c) end\r\n        end\r\n      end\r\n    end\r\n  end\r\n  for _, bag in ipairs(getAllObjects()) do\r\n    if isBagLike(bag) and bag~=self then\r\n      for _, e in ipairs(bag.getObjects() or {}) do\r\n        if e.guid==guid then\r\n          local p=self.getPosition()\r\n          local t=bag.takeObject({guid=guid, position={p.x,p.y+0.5,p.z}})\r\n          if t then return putInThisBag(t) end\r\n        end\r\n      end\r\n    end\r\n  end\r\n  return false\r\nend\r\n\r\n-- Trouve un deck près d'une position\r\nlocal function findDeckNear(pos, r)\r\n  r=r or 2.2; local r2=r*r\r\n  for _,o in ipairs(getAllObjects()) do\r\n    if o.tag==\"Deck\" then\r\n      local p=o.getPosition(); local dx,dy,dz=p.x-pos[1],p.y-pos[2],p.z-pos[3]\r\n      if dx*dx+dy*dy+dz*dz<=r2 then return o end\r\n    end\r\n  end\r\n  return nil\r\nend\r\n\r\n-- ==== Action principale ====\r\nlocal function DoSetup()\r\n  if spawned and #spawned>0 then\r\n    broadcastToAll(\"⚠️ Range d'abord les cartes de ce sac (bouton Ranger).\", {1,0.8,0.2})\r\n    return\r\n  end\r\n  buildNonce = buildNonce + 1\r\n  local ticket = buildNonce\r\n\r\n  -- Choisir au hasard 1 sur 4\r\n  local pool={table.unpack(POOL)}; shuffleList(pool)\r\n  local keep = pool[1]\r\n  local rest = { pool[2], pool[3], pool[4] }\r\n\r\n  -- 1) Poser la carte choisie à SINGLE_POS\r\n  local obj = takeGuidFromAnywhere(keep, SINGLE_POS, FACE_DOWN_ROT)\r\n  if obj then table.insert(spawned, obj.getGUID()) end\r\n\r\n  -- 2) Mélanger les 3 autres dans le deck Lieu\r\n  for _, g in ipairs(rest) do\r\n    local o = takeGuidFromAnywhere(g, LIEU_DECK_POS, FACE_DOWN_ROT)\r\n    if o then table.insert(spawned, o.getGUID()) end\r\n  end\r\n\r\n  -- Laisser fusionner puis shuffle le deck Lieu\r\n  Wait.time(function()\r\n    if buildNonce~=ticket then return end\r\n    local deck = findDeckNear(LIEU_DECK_POS, 2.0)\r\n    if deck then deck.shuffle() end\r\n\r\n    -- 2 secondes plus tard : distribuer 6 cartes depuis ce deck vers les positions DEAL_POS\r\n    Wait.time(function()\r\n      if buildNonce~=ticket then return end\r\n      local deck2 = findDeckNear(LIEU_DECK_POS, 2.0)\r\n      if not deck2 or deck2.tag~=\"Deck\" then\r\n        broadcastToAll(\"⚠️ Deck Lieu introuvable pour la distribution.\", {1,0.8,0.2})\r\n        return\r\n      end\r\n      for i,pos in ipairs(DEAL_POS) do\r\n        local card = deck2.takeObject({ position=pos, rotation=FACE_DOWN_ROT })\r\n        if not card then break end\r\n      end\r\n      broadcastToAll(\"📍 Mise en place Lieu effectuée.\", {0.8,0.95,1})\r\n    end, 2.0)\r\n\r\n  end, 2.0)\r\nend\r\n\r\n-- ==== UI ====\r\nlocal function drawUI()\r\n  self.clearButtons(); self.clearInputs()\r\n\r\n  self.createButton({\r\n    label=\"Mise en place\",\r\n    click_function=\"DoSetupBtn\", function_owner=self,\r\n    position={0,0.3,2.0}, rotation={0,0,0},\r\n    width=2400, height=360, font_size=250,\r\n    color={0,0,0}, font_color={1,1,1},\r\n    tooltip=\"1 carte Chambre à Coucher au hasard. Le reste mélangé et placé en jeu.\"\r\n  })\r\n\r\n  self.createButton({\r\n    label=\"Ranger\",\r\n    click_function=\"DoRangerBtn\", function_owner=self,\r\n    position={0,0.3,2.8}, rotation={0,0,0},\r\n    width=1600, height=360, font_size=250,\r\n    color={0,0,0}, font_color={1,1,1},\r\n    tooltip=\"Ramène les cartes sorties de ce sac.\"\r\n  })\r\nend\r\n\r\nfunction onLoad()\r\n  math.randomseed(os.time())\r\n  spawned = {}\r\n  drawUI()\r\nend\r\n\r\nfunction DoSetupBtn() DoSetup() end\r\n\r\nfunction DoRangerBtn()\r\n  buildNonce = buildNonce + 1  -- annule actions différées\r\n  local n=0\r\n  for _, guid in ipairs(spawned or {}) do\r\n    if pullGuidAnywhereToThisBag(guid) then n=n+1 end\r\n  end\r\n  spawned = {}\r\n  broadcastToAll((\"🧹 Rangement : %d carte(s) remises dans le sac.\"):format(n), {0.7,1,0.8})\r\nend\r\n",
+              "LuaScriptState": "{\"ml\":{\"0aaf07\":{\"lock\":false,\"pos\":{\"x\":-28.5001,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":179.9986,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5b9c80\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.522,\"z\":29},\"rot\":{\"x\":0.0109,\"y\":179.9993,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8287d8\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":180.002,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f68545\":{\"lock\":false,\"pos\":{\"x\":-23.5001,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":180.0013,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}}}}",
+              "XmlUI": "",
+              "ContainedObjects": [
+                {
+                  "GUID": "8287d8",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -28.0000019,
+                    "posY": 1.86500061,
+                    "posZ": 10.4999981,
+                    "rotX": 0.0108916126,
+                    "rotY": 180.0,
+                    "rotZ": 0.00494841067,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Chambre à Coucher",
+                  "Description": "PIèce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10534\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 1113804,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "f68545",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -28.0000019,
+                    "posY": 1.86500061,
+                    "posZ": 10.4999981,
+                    "rotX": 0.0115618547,
+                    "rotY": 179.995163,
+                    "rotZ": 0.000296206126,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Chambre à Coucher",
+                  "Description": "Pièce. En Sommeil",
+                  "GMNotes": "{\n  \"id\": \"10533\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113803,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "5b9c80",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -28.0000019,
+                    "posY": 1.86500061,
+                    "posZ": 10.4999981,
+                    "rotX": -5.14581143E-06,
+                    "rotY": 179.995178,
+                    "rotZ": 1.29778982E-07,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Chambre à Coucher",
+                  "Description": "Pièce. En Sommel.",
+                  "GMNotes": "{\n  \"id\": \"10532\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 1113802,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "0aaf07",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -28.0000019,
+                    "posY": 1.86500061,
+                    "posZ": 10.4999981,
+                    "rotX": 0.0114095593,
+                    "rotY": 179.994827,
+                    "rotZ": 0.001470842,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Chambre à Coucher",
+                  "Description": "Pièce. En Sommeil.",
+                  "GMNotes": "{\n  \"id\": \"10535\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": false,
+                  "Hands": true,
+                  "CardID": 1113805,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "11138": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
+                      "NumWidth": 10,
+                      "NumHeight": 7,
+                      "BackIsHidden": true,
+                      "UniqueBack": true,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                }
+              ]
+            },
+            {
               "GUID": "ad19ee",
               "Name": "Custom_Model",
               "Transform": {
-                "posX": -31.4999981,
+                "posX": -31.5,
                 "posY": 1.77099919,
-                "posZ": 26.5,
-                "rotX": 5.1887846E-06,
-                "rotY": 359.993652,
-                "rotZ": -7.173402E-08,
+                "posZ": 26.5000019,
+                "rotX": 5.392153E-06,
+                "rotY": 359.9938,
+                "rotZ": 1.50955188E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -17325,9 +17994,9 @@
                 "posX": -19.4999962,
                 "posY": 1.83999932,
                 "posZ": 24.5000038,
-                "rotX": -5.183179E-06,
+                "rotX": -5.16869659E-06,
                 "rotY": 180.031189,
-                "rotZ": 1.80855267E-07,
+                "rotZ": 1.72395474E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -20500,9 +21169,9 @@
                 "posX": -22.4999962,
                 "posY": 1.77099919,
                 "posZ": 26.5000038,
-                "rotX": 4.522084E-06,
-                "rotY": 0.00107841659,
-                "rotZ": 1.53332209E-07,
+                "rotX": 4.669673E-06,
+                "rotY": 0.00107841706,
+                "rotZ": -7.649217E-08,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -20550,21 +21219,21 @@
               "XmlUI": ""
             },
             {
-              "GUID": "96636f",
+              "GUID": "e8374d",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -28.0000019,
-                "posY": 1.86500061,
-                "posZ": 10.4999971,
-                "rotX": -4.719586E-06,
-                "rotY": 179.967865,
-                "rotZ": 5.4774E-07,
-                "scaleX": 0.9499998,
-                "scaleY": 0.9499998,
-                "scaleZ": 0.9499998
+                "posX": 23.5,
+                "posY": 1.49081564,
+                "posZ": 2.00000167,
+                "rotX": 0.09273034,
+                "rotY": 180.015121,
+                "rotZ": 0.0771428943,
+                "scaleX": 2.14999914,
+                "scaleY": 2.14999914,
+                "scaleZ": 2.14999914
               },
-              "Nickname": "Mise en place",
-              "Description": "Place 1 lieu au hasard et le reste",
+              "Nickname": "Réserve de Prédation",
+              "Description": "Sort 1 pion au hasard",
               "GMNotes": "",
               "AltLookAngle": {
                 "x": 0.0,
@@ -20572,9 +21241,9 @@
                 "z": 0.0
               },
               "ColorDiffuse": {
-                "r": 0.614982545,
-                "g": 0.0,
-                "b": 0.0
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0
               },
               "LayoutGroupSortIndex": 0,
               "Value": 0,
@@ -20593,365 +21262,48 @@
               "MaterialIndex": -1,
               "MeshIndex": -1,
               "CustomMesh": {
-                "MeshURL": "https://pastebin.com/raw/ALrYhQGb",
-                "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/11301215420607853675/8C4B80800CF0988FDF275947C7C115A2BFBA0415/",
+                "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/87098596225685535/6C95EB6308A0A9E89367DD67D5C65D09EB3C06A0/",
+                "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/254843371596433525/C17559458CD1CB7D16A3B7FBB1620BE2D748314F/",
                 "NormalURL": "",
-                "ColliderURL": "",
+                "ColliderURL": "http://pastebin.com/raw/y74C6r8h",
                 "Convex": true,
                 "MaterialIndex": 3,
                 "TypeIndex": 6,
-                "CustomShader": {
-                  "SpecularColor": {
-                    "r": 1.0,
-                    "g": 1.0,
-                    "b": 1.0
-                  },
-                  "SpecularIntensity": 0.0,
-                  "SpecularSharpness": 2.0,
-                  "FresnelStrength": 0.0
-                },
                 "CastShadows": true
               },
               "Bag": {
-                "Order": 0
+                "Order": 2
               },
-              "LuaScript": "-- ===== Sac : Mise en place Deck Lieu =====\r\n-- 1 carte au hasard posée à (5,1.55,29)\r\n-- le reste mélangé dans le deck Lieu à (-20.5,1.9,8)\r\n-- 2s après le mélange : distribuer 6 cartes du deck Lieu aux positions demandées\r\n\r\n-- Positions\r\nlocal SINGLE_POS   = {  5.0, 1.52, 29.0 }          -- la carte choisie\r\nlocal LIEU_DECK_POS= {-20.5, 1.90,  8.0 }          -- deck Lieu existant\r\nlocal DEAL_POS = {                                  -- 6 sorties depuis le deck Lieu\r\n  { -3.0, 1.52, 21.0 },\r\n  {  5.0, 1.52, 21.0 },\r\n  { 13.0, 1.52, 21.0 },\r\n  { -3.0, 1.52, 13.0 },\r\n  {  5.0, 1.52, 13.0 },\r\n  { 13.0, 1.52, 13.0 },\r\n}\r\n\r\n-- Rotation (face cachée par défaut : ajuste si besoin)\r\nlocal FACE_DOWN_ROT = {0, 180, 0}\r\n\r\n-- Pool 4 cartes (on en choisit 1, les 3 autres vont dans le deck Lieu)\r\nlocal POOL = { \"5b9c80\", \"f68545\", \"0aaf07\", \"8287d8\" }\r\n\r\n-- État\r\nlocal spawned = {}     -- GUID sortis de ce sac (sert pour Ranger / blocage)\r\nlocal buildNonce = 0   -- pour annuler opérations différées si Ranger entre-temps\r\n\r\n-- ==== Utils ====\r\nlocal function isBagLike(o) return o and (o.tag==\"Bag\" or o.tag==\"Infinite\") end\r\nlocal function bagEntries() if not isBagLike(self) then return {} end return self.getObjects() or {} end\r\nlocal function shuffleList(t) for i=#t,2,-1 do local j=math.random(i) t[i],t[j]=t[j],t[i] end return t end\r\n\r\nlocal function dropFaceDown(obj, pos, rot)\r\n  if not obj then return end\r\n  obj.setPositionSmooth(pos, false, true)\r\n  obj.setRotationSmooth(rot or FACE_DOWN_ROT, false, true)\r\n  Wait.time(function()\r\n    if obj and obj.getGUID() then obj.setRotation(rot or FACE_DOWN_ROT) obj.setAngularVelocity({0,0,0}) end\r\n  end, 0.2)\r\nend\r\n\r\n-- Cherche et sort une carte par GUID (table, ce sac, un deck), puis la dépose\r\nlocal function takeGuidFromAnywhere(guid, pos, rot)\r\n  pos = pos or LIEU_DECK_POS; rot = rot or FACE_DOWN_ROT\r\n  local o = getObjectFromGUID(guid)\r\n  if o then dropFaceDown(o, pos, rot) return o end\r\n  for _, e in ipairs(bagEntries()) do\r\n    if e.guid==guid then\r\n      local t=self.takeObject({guid=guid, position=pos, rotation=rot}); if t then dropFaceDown(t,pos,rot) end\r\n      return t\r\n    end\r\n  end\r\n  for _, any in ipairs(getAllObjects()) do\r\n    if any.tag==\"Deck\" then\r\n      for _, sub in ipairs(any.getObjects() or {}) do\r\n        if sub.guid==guid then\r\n          local t=any.takeObject({guid=guid, position=pos, rotation=rot}); if t then dropFaceDown(t,pos,rot) end\r\n          return t\r\n        end\r\n      end\r\n    end\r\n  end\r\n  return nil\r\nend\r\n\r\n-- Met un objet dans CE sac\r\nlocal function putInThisBag(obj)\r\n  if not obj or obj==self then return false end\r\n  if self.putObject(obj) then return true end\r\n  local p=self.getPosition(); obj.setPosition({p.x,p.y+0.3,p.z})\r\n  return self.putObject(obj)\r\nend\r\n\r\n-- Rapatrie un GUID (table, decks, autres sacs) dans CE sac\r\nlocal function pullGuidAnywhereToThisBag(guid)\r\n  for _, e in ipairs(bagEntries()) do if e.guid==guid then return true end end\r\n  local o = getObjectFromGUID(guid); if o then return putInThisBag(o) end\r\n  for _, any in ipairs(getAllObjects()) do\r\n    if any.tag==\"Deck\" then\r\n      for _, sub in ipairs(any.getObjects() or {}) do\r\n        if sub.guid==guid then\r\n          local p=any.getPosition()\r\n          local c=any.takeObject({guid=guid, position={p.x,p.y+0.2,p.z}})\r\n          if c then return putInThisBag(c) end\r\n        end\r\n      end\r\n    end\r\n  end\r\n  for _, bag in ipairs(getAllObjects()) do\r\n    if isBagLike(bag) and bag~=self then\r\n      for _, e in ipairs(bag.getObjects() or {}) do\r\n        if e.guid==guid then\r\n          local p=self.getPosition()\r\n          local t=bag.takeObject({guid=guid, position={p.x,p.y+0.5,p.z}})\r\n          if t then return putInThisBag(t) end\r\n        end\r\n      end\r\n    end\r\n  end\r\n  return false\r\nend\r\n\r\n-- Trouve un deck près d'une position\r\nlocal function findDeckNear(pos, r)\r\n  r=r or 2.2; local r2=r*r\r\n  for _,o in ipairs(getAllObjects()) do\r\n    if o.tag==\"Deck\" then\r\n      local p=o.getPosition(); local dx,dy,dz=p.x-pos[1],p.y-pos[2],p.z-pos[3]\r\n      if dx*dx+dy*dy+dz*dz<=r2 then return o end\r\n    end\r\n  end\r\n  return nil\r\nend\r\n\r\n-- ==== Action principale ====\r\nlocal function DoSetup()\r\n  if spawned and #spawned>0 then\r\n    broadcastToAll(\"⚠️ Range d'abord les cartes de ce sac (bouton Ranger).\", {1,0.8,0.2})\r\n    return\r\n  end\r\n  buildNonce = buildNonce + 1\r\n  local ticket = buildNonce\r\n\r\n  -- Choisir au hasard 1 sur 4\r\n  local pool={table.unpack(POOL)}; shuffleList(pool)\r\n  local keep = pool[1]\r\n  local rest = { pool[2], pool[3], pool[4] }\r\n\r\n  -- 1) Poser la carte choisie à SINGLE_POS\r\n  local obj = takeGuidFromAnywhere(keep, SINGLE_POS, FACE_DOWN_ROT)\r\n  if obj then table.insert(spawned, obj.getGUID()) end\r\n\r\n  -- 2) Mélanger les 3 autres dans le deck Lieu\r\n  for _, g in ipairs(rest) do\r\n    local o = takeGuidFromAnywhere(g, LIEU_DECK_POS, FACE_DOWN_ROT)\r\n    if o then table.insert(spawned, o.getGUID()) end\r\n  end\r\n\r\n  -- Laisser fusionner puis shuffle le deck Lieu\r\n  Wait.time(function()\r\n    if buildNonce~=ticket then return end\r\n    local deck = findDeckNear(LIEU_DECK_POS, 2.0)\r\n    if deck then deck.shuffle() end\r\n\r\n    -- 2 secondes plus tard : distribuer 6 cartes depuis ce deck vers les positions DEAL_POS\r\n    Wait.time(function()\r\n      if buildNonce~=ticket then return end\r\n      local deck2 = findDeckNear(LIEU_DECK_POS, 2.0)\r\n      if not deck2 or deck2.tag~=\"Deck\" then\r\n        broadcastToAll(\"⚠️ Deck Lieu introuvable pour la distribution.\", {1,0.8,0.2})\r\n        return\r\n      end\r\n      for i,pos in ipairs(DEAL_POS) do\r\n        local card = deck2.takeObject({ position=pos, rotation=FACE_DOWN_ROT })\r\n        if not card then break end\r\n      end\r\n      broadcastToAll(\"📍 Mise en place Lieu effectuée.\", {0.8,0.95,1})\r\n    end, 2.0)\r\n\r\n  end, 2.0)\r\nend\r\n\r\n-- ==== UI ====\r\nlocal function drawUI()\r\n  self.clearButtons(); self.clearInputs()\r\n\r\n  self.createButton({\r\n    label=\"Mise en place\",\r\n    click_function=\"DoSetupBtn\", function_owner=self,\r\n    position={0,0.3,2.0}, rotation={0,0,0},\r\n    width=2400, height=360, font_size=250,\r\n    color={0,0,0}, font_color={1,1,1},\r\n    tooltip=\"1 carte Chambre à Coucher au hasard. Le reste mélangé et placé en jeu.\"\r\n  })\r\n\r\n  self.createButton({\r\n    label=\"Ranger\",\r\n    click_function=\"DoRangerBtn\", function_owner=self,\r\n    position={0,0.3,2.8}, rotation={0,0,0},\r\n    width=1600, height=360, font_size=250,\r\n    color={0,0,0}, font_color={1,1,1},\r\n    tooltip=\"Ramène les cartes sorties de ce sac.\"\r\n  })\r\nend\r\n\r\nfunction onLoad()\r\n  math.randomseed(os.time())\r\n  spawned = {}\r\n  drawUI()\r\nend\r\n\r\nfunction DoSetupBtn() DoSetup() end\r\n\r\nfunction DoRangerBtn()\r\n  buildNonce = buildNonce + 1  -- annule actions différées\r\n  local n=0\r\n  for _, guid in ipairs(spawned or {}) do\r\n    if pullGuidAnywhereToThisBag(guid) then n=n+1 end\r\n  end\r\n  spawned = {}\r\n  broadcastToAll((\"🧹 Rangement : %d carte(s) remises dans le sac.\"):format(n), {0.7,1,0.8})\r\nend\r\n",
-              "LuaScriptState": "{\"ml\":{\"0aaf07\":{\"lock\":false,\"pos\":{\"x\":-28.5001,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":179.9986,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5b9c80\":{\"lock\":false,\"pos\":{\"x\":5,\"y\":1.522,\"z\":29},\"rot\":{\"x\":0.0109,\"y\":179.9993,\"z\":0.0049},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8287d8\":{\"lock\":false,\"pos\":{\"x\":-26,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":180.002,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"f68545\":{\"lock\":false,\"pos\":{\"x\":-23.5001,\"y\":1.7836,\"z\":7.9999},\"rot\":{\"x\":0,\"y\":180.0013,\"z\":0},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}}}}",
-              "XmlUI": "",
-              "ContainedObjects": [
-                {
-                  "GUID": "8287d8",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 5.00000143,
-                    "posY": 1.5219655,
-                    "posZ": 28.9999981,
-                    "rotX": 0.0108916126,
-                    "rotY": 180.0,
-                    "rotZ": 0.00494841067,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Chambre à Coucher",
-                  "Description": "PIèce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10534\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 1113804,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "f68545",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 13.000001,
-                    "posY": 1.518165,
-                    "posZ": 12.9999962,
-                    "rotX": 0.0115618547,
-                    "rotY": 179.995163,
-                    "rotZ": 0.000296206126,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Chambre à Coucher",
-                  "Description": "Pièce. En Sommeil",
-                  "GMNotes": "{\n  \"id\": \"10533\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113803,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "5b9c80",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -20.5010033,
-                    "posY": 1.8141644,
-                    "posZ": 7.99978542,
-                    "rotX": -5.14581143E-06,
-                    "rotY": 179.995178,
-                    "rotZ": 1.29778982E-07,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Chambre à Coucher",
-                  "Description": "Pièce. En Sommel.",
-                  "GMNotes": "{\n  \"id\": \"10532\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 1113802,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "0aaf07",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -2.9999845,
-                    "posY": 1.52108407,
-                    "posZ": 21.0000019,
-                    "rotX": 0.0114095593,
-                    "rotY": 179.994827,
-                    "rotZ": 0.001470842,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Chambre à Coucher",
-                  "Description": "Pièce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10535\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113805,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                }
-              ]
-            },
-            {
-              "GUID": "8d4b3a",
-              "Name": "Deck",
-              "Transform": {
-                "posX": -20.0,
-                "posY": 1.81500161,
-                "posZ": 7.99999952,
-                "rotX": -5.20489948E-06,
-                "rotY": 180.000275,
-                "rotZ": 3.92360164E-07,
-                "scaleX": 1.0,
-                "scaleY": 1.0,
-                "scaleZ": 1.0
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.713235259,
-                "g": 0.713235259,
-                "b": 0.713235259
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": true,
-              "Hands": false,
-              "SidewaysCard": false,
-              "DeckIDs": [
-                1113810,
-                1114401,
-                1113806,
-                1113809,
-                1113808
-              ],
-              "CustomDeck": {
-                "11138": {
-                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": true,
-                  "UniqueBack": true,
-                  "Type": 0
-                },
-                "11144": {
-                  "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549560590/F3D97CC92AA63D0E7485B03699510F4FC56DF050/",
-                  "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549561076/86578E35FF2E4D1075BA91AA9F5336B8E802CEE7/",
-                  "NumWidth": 10,
-                  "NumHeight": 7,
-                  "BackIsHidden": false,
-                  "UniqueBack": true,
-                  "Type": 0
-                }
-              },
-              "LuaScript": "",
+              "LuaScript": "function onCollisionEnter(collision_info)\r\n  self.shuffle() \r\n self.shuffle() \r\n self.shuffle() \r\nend",
               "LuaScriptState": "",
               "XmlUI": "",
               "ContainedObjects": [
                 {
-                  "GUID": "fb9ed3",
-                  "Name": "Card",
+                  "GUID": "7d6103",
+                  "Name": "Custom_Tile",
                   "Transform": {
-                    "posX": -20.5010033,
-                    "posY": 1.78360331,
-                    "posZ": 7.99978542,
-                    "rotX": 1.66331247E-05,
-                    "rotY": 179.995209,
-                    "rotZ": -0.00015872973,
-                    "scaleX": 1.0,
+                    "posX": 20.5,
+                    "posY": 1.98857558,
+                    "posZ": 2.0,
+                    "rotX": 0.0108925318,
+                    "rotY": 180.000153,
+                    "rotZ": 0.004947523,
+                    "scaleX": 0.8100004,
                     "scaleY": 1.0,
-                    "scaleZ": 1.0
+                    "scaleZ": 0.810000658
                   },
-                  "Nickname": "Bibliothèque",
-                  "Description": "Pièce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10540\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "Nickname": "",
+                  "Description": "",
+                  "GMNotes": "cultist",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
                     "z": 0.0
                   },
                   "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0
                   },
                   "LayoutGroupSortIndex": 0,
                   "Value": 0,
@@ -20966,18 +21318,17 @@
                   "Tooltip": true,
                   "GridProjection": false,
                   "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113810,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
+                  "Hands": false,
+                  "CustomImage": {
+                    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/10819121326050938896/43990FCC095A8AE2C3398C7D67A6C068DA6A6749/",
+                    "ImageSecondaryURL": "",
+                    "ImageScalar": 1.0,
+                    "WidthScale": 0.0,
+                    "CustomTile": {
+                      "Type": 2,
+                      "Thickness": 0.1,
+                      "Stackable": false,
+                      "Stretch": true
                     }
                   },
                   "LuaScript": "",
@@ -20985,31 +21336,31 @@
                   "XmlUI": ""
                 },
                 {
-                  "GUID": "241c5a",
-                  "Name": "Card",
+                  "GUID": "d3d96a",
+                  "Name": "Custom_Tile",
                   "Transform": {
-                    "posX": 5.00000143,
-                    "posY": 1.52036846,
-                    "posZ": 20.9999981,
-                    "rotX": 0.011639351,
-                    "rotY": 179.995178,
-                    "rotZ": -0.000248604425,
-                    "scaleX": 1.0,
+                    "posX": 22.9998245,
+                    "posY": 2.05200863,
+                    "posZ": 2.000227,
+                    "rotX": -0.00317524583,
+                    "rotY": 179.9798,
+                    "rotZ": 0.0490140952,
+                    "scaleX": 0.81,
                     "scaleY": 1.0,
-                    "scaleZ": 1.0
+                    "scaleZ": 0.81
                   },
-                  "Nickname": "Salle de Bain",
-                  "Description": "Pièce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10537\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "Nickname": "",
+                  "Description": "",
+                  "GMNotes": "elderthing",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
                     "z": 0.0
                   },
                   "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0
                   },
                   "LayoutGroupSortIndex": 0,
                   "Value": 0,
@@ -21024,18 +21375,17 @@
                   "Tooltip": true,
                   "GridProjection": false,
                   "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1114401,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11144": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549560590/F3D97CC92AA63D0E7485B03699510F4FC56DF050/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2497883838549561076/86578E35FF2E4D1075BA91AA9F5336B8E802CEE7/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": false,
-                      "UniqueBack": true,
-                      "Type": 0
+                  "Hands": false,
+                  "CustomImage": {
+                    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/12269151051478770224/9D3E87A4406D441F8BACEAAE05A4215D57D4A36C/",
+                    "ImageSecondaryURL": "",
+                    "ImageScalar": 1.0,
+                    "WidthScale": 0.0,
+                    "CustomTile": {
+                      "Type": 2,
+                      "Thickness": 0.1,
+                      "Stackable": false,
+                      "Stretch": true
                     }
                   },
                   "LuaScript": "",
@@ -21043,31 +21393,31 @@
                   "XmlUI": ""
                 },
                 {
-                  "GUID": "16150d",
-                  "Name": "Card",
+                  "GUID": "1a1506",
+                  "Name": "Custom_Tile",
                   "Transform": {
-                    "posX": -3.00000024,
-                    "posY": 1.51956952,
-                    "posZ": 12.9999971,
-                    "rotX": 0.0113388719,
-                    "rotY": 179.995224,
-                    "rotZ": 0.00185152283,
-                    "scaleX": 1.0,
+                    "posX": 21.0,
+                    "posY": 1.98815215,
+                    "posZ": 3.637979E-12,
+                    "rotX": 0.0108931614,
+                    "rotY": 179.965775,
+                    "rotZ": 0.00494230632,
+                    "scaleX": 0.810000241,
                     "scaleY": 1.0,
-                    "scaleZ": 1.0
+                    "scaleZ": 0.81000036
                   },
-                  "Nickname": "Salle de Bain",
-                  "Description": "Pièce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10536\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
+                  "Nickname": "",
+                  "Description": "",
+                  "GMNotes": "tablet",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
                     "z": 0.0
                   },
                   "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0
                   },
                   "LayoutGroupSortIndex": 0,
                   "Value": 0,
@@ -21082,134 +21432,17 @@
                   "Tooltip": true,
                   "GridProjection": false,
                   "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113806,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "cfab5b",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 5.00000048,
-                    "posY": 1.51884687,
-                    "posZ": 12.9999962,
-                    "rotX": 0.0116510577,
-                    "rotY": 179.995178,
-                    "rotZ": -0.0003174114,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Bibliothèque",
-                  "Description": "Pièce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10539\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113809,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "b572b3",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 13.000001,
-                    "posY": 1.51969349,
-                    "posZ": 20.9999943,
-                    "rotX": 0.0114864176,
-                    "rotY": 179.995255,
-                    "rotZ": 0.0008277152,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Salle de Bain",
-                  "Description": "Pièce. En Sommeil.",
-                  "GMNotes": "{\n  \"id\": \"10538\",\n  \"locationBack\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"victory\": 0\n  },\n  \"locationFront\": {\n    \"connections\": \"\",\n    \"icons\": \"\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 0\n  },\n  \"traits\": \"Room. Dormant.\",\n  \"type\": \"Location\"\n}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": false,
-                  "Hands": true,
-                  "CardID": 1113808,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "11138": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663642400/C79D5BD654716F761CDB1F781246B4A5879F37BB/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2441586401663643237/BBB72D486FC030B213CC37FC7C940350DBEF9641/",
-                      "NumWidth": 10,
-                      "NumHeight": 7,
-                      "BackIsHidden": true,
-                      "UniqueBack": true,
-                      "Type": 0
+                  "Hands": false,
+                  "CustomImage": {
+                    "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/17952552005967267216/05C897C573865E2513D8B08CD68D5ED5CC7E689C/",
+                    "ImageSecondaryURL": "",
+                    "ImageScalar": 1.0,
+                    "WidthScale": 0.0,
+                    "CustomTile": {
+                      "Type": 2,
+                      "Thickness": 0.1,
+                      "Stackable": false,
+                      "Stretch": true
                     }
                   },
                   "LuaScript": "",
@@ -21248,9 +21481,9 @@
             "posX": 5.9998,
             "posY": 5.00000429,
             "posZ": 55.0,
-            "rotX": 9.6393336E-08,
+            "rotX": -5.556401E-09,
             "rotY": 180.0003,
-            "rotZ": -0.00109797076,
+            "rotZ": -0.00109799835,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -39909,72 +40142,15 @@
           ]
         },
         {
-          "GUID": "4df2ac",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 7.16184,
-            "posY": 1.54652965,
-            "posZ": 20.3499641,
-            "rotX": 0.0109880287,
-            "rotY": 179.845016,
-            "rotZ": 0.004923696,
-            "scaleX": 0.23,
-            "scaleY": 1.0,
-            "scaleZ": 0.225
-          },
-          "Nickname": "Indices",
-          "Description": "Click gauche - Ajouter\nClick droit - Soustraire",
-          "GMNotes": "Clue",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": false,
-          "Snap": false,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/784129913444610342/7903BA89870C1656A003FD69C79BFA99BD1AAC24/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\nlocal ZONE_HANDLER_GUID = 'ef3980'\r\nzoneHandler = getObjectFromGUID(ZONE_HANDLER_GUID)\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = { light_mode, val }\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = { 0, 0, 0, 100 }\r\n\r\n    if light_mode then\r\n        f_color = { 1, 1, 1, 100 }\r\n    else\r\n        f_color = { 0, 0, 0, 100 }\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n        label = tostring(val),\r\n        click_function = \"clickOrAlt_click\",\r\n        function_owner = self,\r\n        position = { 0, 0.05, 0.1 },\r\n        height = 600,\r\n        width = 1000,\r\n        alignment = 3,\r\n        scale = { x = 1.5, y = 1.5, z = 1.5 },\r\n        font_size = 800,\r\n        font_color = f_color,\r\n        color = { 1, 1, 1, 0 }\r\n    })\r\n\r\n\r\n    self.createButton({\r\n        click_function = \"takeClue\",\r\n        function_owner = self,\r\n        label = \"Prendre\",\r\n        position = { 3.5, 0.1, 0 },\r\n        rotation = { 0, 270, 0 },\r\n        scale = { 1.6, 1, 1.6 },\r\n        width = 1600,\r\n        height = 500,\r\n        font_size = 400,\r\n        font_color = { 1, 1, 1 },\r\n        color = { 0, 0, 0 },\r\n        tooltip = \"Prendre un indice (click droit pour reposer)\"\r\n    })\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value)\r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction clickOrAlt_click(_obj, _color, alt_click)\r\n    if alt_click then\r\n        substract()\r\n    else\r\n        add()\r\n    end\r\nend\r\n\r\nfunction substract()\r\n    add_subtract(-1)\r\nend\r\n\r\nfunction add()\r\n    add_subtract(1)\r\nend\r\n\r\nfunction add_subtract(mod)\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n        updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction takeClue(_, color, alt_click)\r\n    if alt_click then\r\n        add()\r\n    else\r\n        substract()\r\n    end\r\n    local params = {}\r\n    params.playerColor = color\r\n    params.zone = 'CounterZone'\r\n    local objects = zoneHandler.call('getObjectsInPlayerZone', params)\r\n    for _, token in ipairs(objects) do\r\n        if token.getName() == \"Indices\" and token.getDescription() == \"Compteur de Joueur\" then\r\n            local cluecounter = token\r\n            if alt_click then\r\n                cluecounter.call('substract')\r\n            else\r\n                cluecounter.call('add')\r\n            end\r\n        end\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n    })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n    })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n    })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value)\r\n    reloadAll()\r\nend\r\n",
-          "LuaScriptState": "[true,1]",
-          "XmlUI": ""
-        },
-        {
           "GUID": "4e84af",
           "Name": "Custom_Model_Bag",
           "Transform": {
             "posX": -4.000414,
             "posY": 4.999813,
             "posZ": 55.0,
-            "rotX": 5.322082E-08,
+            "rotX": 4.854926E-08,
             "rotY": 180.000076,
-            "rotZ": -0.001097861,
+            "rotZ": -0.00109792256,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -65862,12 +66038,12 @@
           "GUID": "56d148",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -7.499999,
+            "posX": -7.49999857,
             "posY": 0.979997337,
-            "posZ": 47.5,
-            "rotX": -4.83465328E-06,
-            "rotY": 179.993378,
-            "rotZ": 1.01080786E-06,
+            "posZ": 47.5000038,
+            "rotX": -5.294751E-06,
+            "rotY": 179.993423,
+            "rotZ": -7.268352E-08,
             "scaleX": 1.62385118,
             "scaleY": 0.337996185,
             "scaleZ": 1.7781539
@@ -67373,9 +67549,9 @@
             "posX": 6.0,
             "posY": 4.99999666,
             "posZ": 62.0,
-            "rotX": -5.71151361E-07,
+            "rotX": -5.93128846E-07,
             "rotY": 180.000641,
-            "rotZ": 0.00109794259,
+            "rotZ": 0.00109789567,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -73471,11 +73647,11 @@
           "Name": "Custom_Model_Bag",
           "Transform": {
             "posX": 9.0,
-            "posY": 0.9799973,
+            "posY": 0.979997337,
             "posZ": 47.5,
-            "rotX": -5.06142169E-06,
+            "rotX": -5.054145E-06,
             "rotY": 179.988663,
-            "rotZ": 4.68017E-07,
+            "rotZ": 3.34794976E-07,
             "scaleX": 1.62385118,
             "scaleY": 0.337996185,
             "scaleZ": 1.7781539
@@ -73798,9 +73974,9 @@
             "posX": 16.0000114,
             "posY": 5.000196,
             "posZ": 55.0,
-            "rotX": -1.027049E-08,
+            "rotX": 5.277508E-09,
             "rotY": 180.000153,
-            "rotZ": -0.00109793479,
+            "rotZ": -0.0010979228,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -120076,9 +120252,9 @@
             "posX": 33.0,
             "posY": 1.53149891,
             "posZ": 13.4999,
-            "rotX": -5.66196938E-08,
+            "rotX": 6.01794126E-09,
             "rotY": 180.007,
-            "rotZ": -5.035083E-08,
+            "rotZ": 8.724729E-09,
             "scaleX": 3.25,
             "scaleY": 1.0,
             "scaleZ": 3.25
@@ -120214,9 +120390,9 @@
             "z": 0.0
           },
           "ColorDiffuse": {
-            "r": 0.22516349,
+            "r": 0.22516337,
             "g": 0.471815944,
-            "b": 0.339146584
+            "b": 0.339146465
           },
           "LayoutGroupSortIndex": 0,
           "Value": 0,
@@ -120282,72 +120458,15 @@
           ]
         },
         {
-          "GUID": "762fa9",
-          "Name": "Custom_Token",
-          "Transform": {
-            "posX": 8.048047,
-            "posY": 1.54527652,
-            "posZ": 14.1599216,
-            "rotX": 0.0108904727,
-            "rotY": 180.0463,
-            "rotZ": 0.004988526,
-            "scaleX": 0.23,
-            "scaleY": 1.0,
-            "scaleZ": 0.23
-          },
-          "Nickname": "Dégâts",
-          "Description": "Click gauche - Ajouter\nClick droit - Soustraire",
-          "GMNotes": "Damage",
-          "AltLookAngle": {
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-          },
-          "ColorDiffuse": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0
-          },
-          "LayoutGroupSortIndex": 0,
-          "Value": 0,
-          "Locked": false,
-          "Grid": false,
-          "Snap": false,
-          "IgnoreFoW": false,
-          "MeasureMovement": false,
-          "DragSelectable": true,
-          "Autoraise": true,
-          "Sticky": true,
-          "Tooltip": true,
-          "GridProjection": false,
-          "HideWhenFaceDown": false,
-          "Hands": false,
-          "CustomImage": {
-            "ImageURL": "https://steamusercontent-a.akamaihd.net/ugc/949599153663402915/D881A5A0D8A370851B9A0055DD7834CDCE0F72BE/",
-            "ImageSecondaryURL": "",
-            "ImageScalar": 1.0,
-            "WidthScale": 0.0,
-            "CustomToken": {
-              "Thickness": 0.1,
-              "MergeDistancePixels": 5.0,
-              "StandUp": false,
-              "Stackable": false
-            }
-          },
-          "LuaScript": "MIN_VALUE = -99\r\nMAX_VALUE = 999\r\n\r\nfunction onload(saved_data)\r\n    light_mode = true\r\n    val = 0\r\n\r\n    if saved_data ~= \"\" then\r\n        local loaded_data = JSON.decode(saved_data)\r\n        light_mode = loaded_data[1]\r\n        val = loaded_data[2]\r\n    end\r\n\r\n    createAll()\r\nend\r\n\r\nfunction updateSave()\r\n    local data_to_save = {light_mode, val}\r\n    saved_data = JSON.encode(data_to_save)\r\n    self.script_state = saved_data\r\nend\r\n\r\nfunction createAll()\r\n    s_color = {0,0,0,100}\r\n\r\n    if light_mode then\r\n        f_color = {1,1,1,100}\r\n    else\r\n        f_color = {0,0,0,100}\r\n    end\r\n\r\n\r\n\r\n    self.createButton({\r\n      label=tostring(val),\r\n      click_function=\"add_subtract\",\r\n      function_owner=self,\r\n      position={0,0.05,0.1},\r\n      height=600,\r\n      width=1000,\r\n      alignment = 3,\r\n      scale={x=1.5, y=1.5, z=1.5},\r\n      font_size=800,\r\n      font_color=f_color,\r\n      color={1,1,1,0}\r\n      })\r\n\r\n\r\n\r\n\r\n    if light_mode then\r\n        lightButtonText = \"[ Set dark ]\"\r\n    else\r\n        lightButtonText = \"[ Set light ]\"\r\n    end\r\n \r\nend\r\n\r\nfunction removeAll()\r\n    self.removeInput(0)\r\n    self.removeInput(1)\r\n    self.removeButton(0)\r\n    self.removeButton(1)\r\n    self.removeButton(2)\r\nend\r\n\r\nfunction reloadAll()\r\n    removeAll()\r\n    createAll()\r\n\r\n    updateSave()\r\nend\r\n\r\nfunction swap_fcolor(_obj, _color, alt_click)\r\n    light_mode = not light_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction swap_align(_obj, _color, alt_click)\r\n    center_mode = not center_mode\r\n    reloadAll()\r\nend\r\n\r\nfunction editName(_obj, _string, value) \r\n    self.setName(value)\r\n    setTooltips()\r\nend\r\n\r\nfunction add_subtract(_obj, _color, alt_click)\r\n    mod = alt_click and -1 or 1\r\n    new_value = math.min(math.max(val + mod, MIN_VALUE), MAX_VALUE)\r\n    if val ~= new_value then\r\n        val = new_value\r\n      updateVal()\r\n        updateSave()\r\n    end\r\nend\r\n\r\nfunction updateVal()\r\n\r\n    self.editButton({\r\n        index = 0,\r\n        label = tostring(val),\r\n\r\n        })\r\nend\r\n\r\nfunction reset_val()\r\n    val = 0\r\n    updateVal()\r\n    updateSave()\r\nend\r\n\r\nfunction setTooltips()\r\n    self.editInput({\r\n        index = 0,\r\n        value = self.getName(),\r\n        tooltip = ttText\r\n        })\r\n    self.editButton({\r\n        index = 0,\r\n        value = tostring(val),\r\n        tooltip = ttText\r\n        })\r\nend\r\n\r\nfunction null()\r\nend\r\n\r\nfunction keepSample(_obj, _string, value) \r\n    reloadAll()\r\nend",
-          "LuaScriptState": "[true,0]",
-          "XmlUI": ""
-        },
-        {
           "GUID": "81cf7d",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 20.0000019,
-            "posY": 0.9799972,
+            "posX": 20.0000038,
+            "posY": 0.979997039,
             "posZ": 47.4999,
-            "rotX": -5.06876631E-06,
-            "rotY": 179.988861,
-            "rotZ": 5.51272365E-07,
+            "rotX": -4.91578658E-06,
+            "rotY": 179.988846,
+            "rotZ": 2.283225E-07,
             "scaleX": 1.62385118,
             "scaleY": 0.337996185,
             "scaleZ": 1.7781539
@@ -121885,9 +122004,9 @@
           "GUID": "82ce58",
           "Name": "3DText",
           "Transform": {
-            "posX": 6.00020838,
-            "posY": 0.9999793,
-            "posZ": 42.5001335,
+            "posX": 6.00022364,
+            "posY": 0.9999711,
+            "posZ": 42.5001526,
             "rotX": 90.0,
             "rotY": 3.773066E-08,
             "rotZ": 0.0,
@@ -121961,7 +122080,7 @@
           "ColorDiffuse": {
             "r": 0.597002566,
             "g": 0.6214912,
-            "b": 0.207897753
+            "b": 0.207897633
           },
           "LayoutGroupSortIndex": 0,
           "Value": 0,
@@ -122031,11 +122150,11 @@
           "Name": "Custom_Model_Bag",
           "Transform": {
             "posX": -2.00000167,
-            "posY": 0.979997456,
+            "posY": 0.979997158,
             "posZ": 47.5,
-            "rotX": -4.96256052E-06,
+            "rotX": -5.071891E-06,
             "rotY": 179.988342,
-            "rotZ": 5.3599166E-07,
+            "rotZ": 5.1905505E-07,
             "scaleX": 1.62385118,
             "scaleY": 0.337996185,
             "scaleZ": 1.7781539
@@ -122358,9 +122477,9 @@
             "posX": 0.9999929,
             "posY": 4.999909,
             "posZ": 55.0,
-            "rotX": 1.01337932E-07,
+            "rotX": -2.17578826E-08,
             "rotY": 180.000244,
-            "rotZ": -0.00109795551,
+            "rotZ": -0.0010978689,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -140296,9 +140415,9 @@
             "posX": -26.5,
             "posY": 1.59208155,
             "posZ": -4.99997568,
-            "rotX": 0.164515346,
+            "rotX": 0.164511591,
             "rotY": 179.9976,
-            "rotZ": 2.18437958E-06,
+            "rotZ": 3.55307577E-07,
             "scaleX": 1.69117773,
             "scaleY": 1.0,
             "scaleZ": 1.69117773
@@ -140350,12 +140469,12 @@
           "GUID": "b0832e",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 13.5000076,
+            "posX": 13.50001,
             "posY": 4.99985266,
             "posZ": 62.0,
-            "rotX": -6.052025E-07,
+            "rotX": -6.143391E-07,
             "rotY": 180.000885,
-            "rotZ": 0.001097865,
+            "rotZ": 0.001097924,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -149728,12 +149847,12 @@
           "GUID": "e25d2f",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 14.5000067,
-            "posY": 0.9799972,
+            "posX": 14.5000029,
+            "posY": 0.979997039,
             "posZ": 47.5000038,
-            "rotX": -4.75534762E-06,
-            "rotY": 179.988785,
-            "rotZ": 8.98153246E-07,
+            "rotX": -5.21791526E-06,
+            "rotY": 179.9888,
+            "rotZ": 1.29929191E-07,
             "scaleX": 1.62385118,
             "scaleY": 0.337996185,
             "scaleZ": 1.7781539
@@ -151531,12 +151650,12 @@
           "GUID": "f6e1be",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -1.50000572,
+            "posX": -1.50000751,
             "posY": 5.00014,
             "posZ": 62.0,
-            "rotX": -5.128999E-07,
-            "rotY": 180.0001,
-            "rotZ": 0.00109784876,
+            "rotX": -5.613524E-07,
+            "rotY": 180.000122,
+            "rotZ": 0.0010979966,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -156357,10 +156476,10 @@
           "Transform": {
             "posX": 2.99999928,
             "posY": 1.49197531,
-            "posZ": -5.49999857,
-            "rotX": 0.0108904745,
-            "rotY": 180.012772,
-            "rotZ": 0.00495102676,
+            "posZ": -5.499999,
+            "rotX": 0.0108904671,
+            "rotY": 180.012756,
+            "rotZ": 0.004951062,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
@@ -156412,12 +156531,12 @@
           "GUID": "f9ae54",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 3.49999762,
-            "posY": 0.979997158,
+            "posX": 3.499999,
+            "posY": 0.979997337,
             "posZ": 47.5,
-            "rotX": -5.383486E-06,
-            "rotY": 179.988815,
-            "rotZ": 2.07270062E-07,
+            "rotX": -4.712018E-06,
+            "rotY": 179.9888,
+            "rotZ": 1.02138858E-06,
             "scaleX": 1.62385118,
             "scaleY": 0.337996185,
             "scaleZ": 1.7781539
