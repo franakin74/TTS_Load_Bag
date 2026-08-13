@@ -20,12 +20,12 @@
       "GUID": "e640db",
       "Name": "Custom_Model_Bag",
       "Transform": {
-        "posX": -57.49988,
-        "posY": 0.9799984,
-        "posZ": 39.9994621,
-        "rotX": -5.63802132E-06,
-        "rotY": 180.0017,
-        "rotZ": 2.28524556E-07,
+        "posX": -80.00009,
+        "posY": 0.9799991,
+        "posZ": 33.9999161,
+        "rotX": -5.0184567E-06,
+        "rotY": 180.00145,
+        "rotZ": 4.62188183E-07,
         "scaleX": 0.6144237,
         "scaleY": 0.08580595,
         "scaleZ": 0.6144237
@@ -93,9 +93,9 @@
             "posX": -7.999999,
             "posY": 0.9799974,
             "posZ": 48.0,
-            "rotX": -4.956206E-06,
+            "rotX": -4.994366E-06,
             "rotY": 179.997116,
-            "rotZ": 4.95157451E-07,
+            "rotZ": 3.97681447E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -7048,9 +7048,9 @@
             "posX": 8.499901,
             "posY": 0.979997039,
             "posZ": 48.0001,
-            "rotX": -4.76472769E-06,
+            "rotX": -4.77326239E-06,
             "rotY": 179.9969,
-            "rotZ": 3.841211E-07,
+            "rotZ": 3.8928053E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -20589,12 +20589,12 @@
           "GUID": "54e5a7",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": -13.5000019,
+            "posX": -13.4999981,
             "posY": 0.9799973,
-            "posZ": 48.0,
-            "rotX": -5.38937638E-06,
-            "rotY": 179.997986,
-            "rotZ": -2.89759527E-07,
+            "posZ": 48.0000038,
+            "rotX": -5.300615E-06,
+            "rotY": 179.99791,
+            "rotZ": 1.83194047E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -36740,12 +36740,12 @@
           "GUID": "88ebb1",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 2.99999952,
+            "posX": 2.99999857,
             "posY": 0.979997158,
             "posZ": 48.0,
-            "rotX": -5.01404338E-06,
-            "rotY": 179.981125,
-            "rotZ": 6.18879653E-07,
+            "rotX": -4.938802E-06,
+            "rotY": 179.9812,
+            "rotZ": 7.998268E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -36810,12 +36810,12 @@
               "GUID": "1aa0e5",
               "Name": "Custom_Model_Bag",
               "Transform": {
-                "posX": -22.0000038,
+                "posX": -22.00001,
                 "posY": 1.84000087,
-                "posZ": 6.99999571,
-                "rotX": -4.931122E-06,
-                "rotY": 179.973389,
-                "rotZ": -1.58797292E-07,
+                "posZ": 6.99998045,
+                "rotX": -5.24850975E-06,
+                "rotY": 179.973923,
+                "rotZ": 5.93821255E-07,
                 "scaleX": 0.7,
                 "scaleY": 0.7,
                 "scaleZ": 0.7
@@ -36872,578 +36872,20 @@
               "Bag": {
                 "Order": 2
               },
-              "LuaScript": "local bagGUID = \"1aa0e5\"\r\n\r\n-- local Plaines_Souterraines = \"8b802a\"\r\n-- local Arenes = \"a755ef\"\r\n-- local Temple_abandonne = \"2ca874\"\r\n-- local Necropole = \"6cdf3b\"\r\n-- local Cite_Deserte = \"ed398a\"\r\n-- local Bains_Rituels = \"ee6cd1\"\r\n-- local Jardins_Magnetiques = \"96bf38\"\r\n-- local Fresque_de_Tulu = \"48ef1b\"\r\n-- local Galeries_sans_Fin = \"0fe255\"\r\n--\r\n-- local emplacement_Plaines_Souterraines = {-3.59, 1.51, 24.00}\r\n-- local emplacement_Arenes = {16.50, 1.51, 24.00}\r\n-- local emplacement_Temple_abandonne = {0.00, 1.51, 17.00}\r\n-- local emplacement_Necropole = {14.00, 1.51, 17.00}\r\n-- local emplacement_Cite_Deserte = {-2.00, 1.51, 11.00}\r\n-- local emplacement_Bains_Rituels = {13.50, 1.51, 9.00}\r\n-- local emplacement_Jardins_Magnetiques = {-3.50, 1.51, 4.50}\r\n-- local emplacement_Fresque_de_Tulu = {7.01, 1.51, 6.51}\r\n-- local emplacement_Galeries_sans_Fin = {16.50, 1.51, 4.50}\r\n\r\nlocal Plaines_Souterraines = { guid = \"8b802a\", position = {-3.59, 1.51, 24.00}}\r\nlocal Arenes = { guid = \"a755ef\", position = {16.50, 1.51, 24.00}}\r\nlocal Temple_abandonne = { guid = \"2ca874\", position = {0.00, 1.51, 17.00}}\r\nlocal Necropole = { guid = \"6cdf3b\", position = {14.00, 1.51, 17.00}}\r\nlocal Cite_Deserte = { guid = \"ed398a\", position = {-2.00, 1.51, 11.00}}\r\nlocal Bains_Rituels = { guid = \"ee6cd1\", position = {13.50, 1.51, 9.00}}\r\nlocal Jardins_Magnetiques = { guid = \"96bf38\", position = {-3.50, 1.51, 4.50}}\r\nlocal Fresque_de_Tulu = { guid = \"48ef1b\", position = {7.01, 1.51, 6.51}}\r\nlocal Galeries_sans_Fin = { guid = \"0fe255\", position = {16.50, 1.51, 4.50}}\r\n\r\nlocal Tsath ={ guid = \"cb8fdf\", position = {4.50, 1.51, 13.00}}\r\nlocal Tour_Surveillance ={ guid = \"e00765\", position = {4.50, 1.51, 13.00}}\r\nlocal Nexus ={ guid = \"67bd0e\", position = {4.50, 1.51, 13.00}}\r\n\r\nlieux_a_placer = {Plaines_Souterraines, Arenes, Temple_abandonne, Necropole, Cite_Deserte, Bains_Rituels, Jardins_Magnetiques, Fresque_de_Tulu, Galeries_sans_Fin}\r\n\r\nfunction onLoad()\r\n\r\n    self.createButton({\r\n        click_function = \"mep\",\r\n        function_owner = self,\r\n        label = \"Mise en Place\",\r\n        position = {0, 0.2, 2.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 3600,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"acte2\",\r\n        function_owner = self,\r\n        label = \"Acte 2\",\r\n        position = {0, 0.2, 4.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 3600,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"acte3\",\r\n        function_owner = self,\r\n        label = \"Acte 3\",\r\n        position = {0, 0.2, 6.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 3600,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"range\",\r\n        function_owner = self,\r\n        label = \"Ranger\",\r\n        position = {0, 0.2, -2.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 2800,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\nend\r\n\r\nfunction mep()\r\n\r\n  placeLieu(Tsath, 0)\r\n\r\nend\r\n\r\nfunction acte2()\r\n\r\n  placeLieu(Tour_Surveillance, 1)\r\n\r\nend\r\n\r\nfunction acte3()\r\n\r\n  placeLieu(Nexus, 1)\r\n\r\nend\r\n\r\nfunction range()\r\n\r\n  -- On range les 9 lieux init du plateau\r\n  for i = 1, 9, 1 do\r\n\r\n    local lieu = getObjectFromGUID(lieux_a_placer[i].guid)\r\n\r\n    if lieu then self.putObject(lieu) end\r\n\r\n  end\r\n\r\n  range_deck_explo()\r\n\r\nend\r\n\r\nfunction place_victoire(lieu)\r\n\r\n  local emplacement_victoire = {30.50, 1.65+0.5, 2.50}\r\n\r\n  local liste_carte = self.getObjects()\r\n\r\n  if lieu == Tour_Surveillance then\r\n    for _, obj in ipairs(liste_carte) do\r\n        if obj.guid == Tsath.guid then\r\n          self.takeObject(\r\n                {\r\n                  guid = Tsath.guid,\r\n                  position = emplacement_victoire,\r\n                  rotation = {0, 180, 0},\r\n                  smooth = true,\r\n                })\r\n        end\r\n    end\r\n  end\r\n\r\n  if lieu == Nexus then\r\n    for _, obj in ipairs(liste_carte) do\r\n        if obj.guid == Tour_Surveillance.guid then\r\n          self.takeObject(\r\n                {\r\n                  guid = Tour_Surveillance.guid,\r\n                  position = emplacement_victoire,\r\n                  rotation = {0, 180, 0},\r\n                  smooth = true,\r\n                })\r\n        end\r\n    end\r\n  end\r\n\r\nend\r\n\r\n\r\nfunction placeLieu(lieu_supp, nb_ress_ajouter)\r\n\r\n  playerMinicard = {}\r\n  playerWeakness = {}\r\n  playerClue = {}\r\n  tokenDegat = {}\r\n  tokenRessource = {}\r\n  playerEnemy = {}\r\n  playerTraitrise = {}\r\n  playerLocation = {}\r\n\r\n  -- On recupere tous les objets du plateau de jeu\r\n  local zoneDeJeu = { 5.77, 1.38, 13.77 }\r\n  local zoneDeJeuScale = { 41.00, 3.00, 37.00 }\r\n  local hitlist = Physics.cast({\r\n      origin       = zoneDeJeu,\r\n      direction    = { 0, 1, 0 },\r\n      type         = 3,\r\n      size         = zoneDeJeuScale,\r\n      max_distance = 0,\r\n      debug        = false,\r\n  })\r\n\r\n  for _, obj in ipairs(hitlist) do\r\n\r\n        local object = obj.hit_object\r\n\r\n        if object ~= nil then\r\n\r\n          local GmNote = object.getGMNotes()\r\n          if GmNote ~= nil then\r\n            if GmNote == \"Clue\" then\r\n              table.insert(playerClue, object)\r\n            end\r\n            if GmNote == \"Damage\" then\r\n              table.insert(tokenDegat, object)\r\n            end\r\n            if GmNote == \"Ressource\" then\r\n              table.insert(tokenRessource, object)\r\n            end\r\n          end\r\n\r\n          if object.type == 'Card' and object.getName() ~= 'Set up connections' then\r\n            local cardData = object.getData()\r\n            local metadata = Global.call('getMetadata', cardData)\r\n\r\n            if metadata and metadata.type == 'Minicard' then\r\n              table.insert(playerMinicard, object)\r\n            end\r\n\r\n            if metadata and metadata.weakness ~= nil then\r\n              table.insert(playerWeakness, object)\r\n            end\r\n\r\n            if metadata and metadata.type == 'Location' then\r\n              table.insert(playerLocation, object)\r\n            end\r\n\r\n            if metadata and metadata.type == 'Enemy' and metadata.weakness == nil then\r\n              table.insert(playerEnemy, object)\r\n            end\r\n\r\n            if metadata and metadata.type == 'Treachery' and metadata.weakness == nil then\r\n              table.insert(playerTraitrise, object)\r\n            end\r\n\r\n          end\r\n        end\r\n  end\r\n\r\n  -- Defausser les ennemis non faiblesse : \"Type\":\"Enemy\" et non \"weakness\": \"true\" et non Gurantaka\r\n  local deckTarget = nil\r\n  local discardDeckPos = {x = 35.0, y = 3.00, z = -3.0}\r\n\r\n  local hitDiscard = Physics.cast({\r\n      origin       = discardDeckPos,\r\n      direction    = {0, 1, 0},\r\n      type         = 3,\r\n      size         = {0.5, 0.5, 0.5},\r\n      max_distance = 0,\r\n      debug        = false\r\n  })\r\n\r\n  for _, obj in ipairs(hitDiscard) do\r\n      if obj.hit_object.tag == \"Deck\" then\r\n          deckTarget = obj.hit_object\r\n      end\r\n  end\r\n\r\n  if deckTarget then\r\n    for _, card in ipairs(playerEnemy) do\r\n      deckTarget.putObject(card)\r\n      card.setRotationSmooth({0,180,0}) -- face révélée\r\n    end\r\n    for _, card in ipairs(playerTraitrise) do\r\n      deckTarget.putObject(card)\r\n      card.setRotationSmooth({0,180,0}) -- face révélée\r\n    end\r\n  else\r\n    for _, card in ipairs(playerEnemy) do\r\n        card.setPositionSmooth(discardDeckPos)\r\n        card.setRotationSmooth({0,180,0})\r\n    end\r\n    for _, card in ipairs(playerTraitrise) do\r\n        card.setPositionSmooth(discardDeckPos)\r\n        card.setRotationSmooth({0,180,0})\r\n    end\r\n\r\n  end\r\n\r\n  -- Enlever les lieux existants\r\n  for _, card in ipairs(playerLocation) do\r\n    self.putObject(card)\r\n  end\r\n\r\n  -- Enlever les ressources\r\n  for _, rreeource in ipairs(tokenRessource) do\r\n    rreeource.destruct()\r\n  end\r\n\r\n  -- Enlever les indices\r\n  for _, clue in ipairs(playerClue) do\r\n    clue.destruct()\r\n  end\r\n\r\n  -- Enlever les ddegat\r\n  for _, degat in ipairs(tokenDegat) do\r\n    degat.destruct()\r\n  end\r\n\r\n  range_deck_explo()\r\n\r\n  Wait.time(\r\n    function()\r\n\r\n          -- local bagObjects = self.getObjects()\r\n          -- if #bagObjects ~= 12 then\r\n          --     broadcastToAll(\"Le sac doit contenir exactement 12 éléments.\")\r\n          --     return\r\n          -- end\r\n\r\n          -- Mettre en jeu les lieux\r\n          shuffleTable(lieux_a_placer)\r\n\r\n          --On placce les premier lieu\r\n          for i = 1, 5, 1 do\r\n\r\n            self.takeObject(\r\n                  {\r\n                    guid = lieux_a_placer[i].guid,\r\n                    position = lieux_a_placer[i].position,\r\n                    rotation = {0, 180, 0},\r\n                    smooth = false,\r\n                  })\r\n\r\n            local place_jeton = {lieux_a_placer[i].position[1] - 0.5, lieux_a_placer[i].position[2] + 0.5, lieux_a_placer[i].position[3] - 0.5}\r\n\r\n            local sac_ressource = getObjectFromGUID(\"9fadf9\")\r\n            local ressource = sac_ressource.takeObject(\r\n                  {\r\n                    position = place_jeton,\r\n                    smooth = true,\r\n                  })\r\n            Wait.time(\r\n              function()\r\n                ajoute_ressource(ressource, i + nb_ress_ajouter)\r\n              end,\r\n              0.5)\r\n          end\r\n\r\n          -- Deplacer Investigator lieu 1\r\n          local place = {lieux_a_placer[1].position[1] - 2, lieux_a_placer[1].position[2] + 0.5, lieux_a_placer[1].position[3]+1}\r\n          for _, invest in ipairs(playerMinicard) do\r\n            if invest ~= nil then\r\n              invest.setPosition(place)\r\n              place[3] = place[3] - 2\r\n            end\r\n          end\r\n\r\n          -- Création deck expolrations\r\n          cree_deck_explo(lieu_supp, lieux_a_placer)\r\n\r\n          place_victoire(lieu_supp)\r\n\r\n    end,\r\n    1.5)\r\n\r\nend\r\n\r\nfunction ajoute_ressource(token, nombre)\r\n    for i = 1, nombre, 1 do\r\n      token.call('add_subtract')\r\n    end\r\nend\r\n\r\nfunction cree_deck_explo(lieu_a_ajouter, lieux_restant)\r\n\r\n  local place_deck_explo = {30.39, 1.78, 10.20}\r\n\r\n  --On met le lieu specifiue dans le deck rencontre\r\n  self.takeObject(\r\n        {\r\n          guid = lieu_a_ajouter.guid,\r\n          position = place_deck_explo,\r\n          rotation = {0, 180, 180},\r\n          smooth = true,\r\n        })\r\n\r\n  -- On place les lieu restant\r\n  for i = 6, 9, 1 do\r\n\r\n    self.takeObject(\r\n          {\r\n            guid = lieux_restant[i].guid,\r\n            position = place_deck_explo,\r\n            rotation = {0, 180, 180},\r\n            smooth = false,\r\n          })\r\n  end\r\n\r\n  -- On melange\r\n  Wait.time(\r\n    function()\r\n\r\n      local hitExplo = Physics.cast({\r\n          origin       = place_deck_explo,\r\n          direction    = {0, 1, 0},\r\n          type         = 3,\r\n          size         = {0.5, 0.5, 0.5},\r\n          max_distance = 0,\r\n          debug        = false\r\n      })\r\n\r\n      for _, obj in ipairs(hitExplo) do\r\n          if obj.hit_object.tag == \"Deck\" then\r\n              deckExplo = obj.hit_object\r\n              deckExplo.shuffle()\r\n          end\r\n      end\r\n    end,\r\n    2)\r\n\r\nend\r\n\r\nfunction range_deck_explo()\r\n\r\n  local place_deck_explo = {30.39, 1.78, 10.20}\r\n  local place_defausse_explo = {35.56, 1.78, 10.24}\r\n\r\n  -- On range les cartes restants dans le deck\r\n  local hitExplo = Physics.cast({\r\n      origin       = place_deck_explo,\r\n      direction    = {0, 1, 0},\r\n      type         = 3,\r\n      size         = {2, 2, 3},\r\n      max_distance = 0,\r\n      debug        = false\r\n  })\r\n\r\n  for _, obj in ipairs(hitExplo) do\r\n      if obj.hit_object.tag == \"Deck\" then\r\n          local deckExplo = obj.hit_object\r\n          range_deck_dans_bouton(deckExplo)\r\n      end\r\n\r\n      if obj.hit_object.tag == \"Card\" then\r\n          local carte = obj.hit_object\r\n          self.putObject(carte)\r\n      end\r\n\r\n  end\r\n\r\n  -- On range les cartes restants dans la defausse\r\n  Wait.time(\r\n    function()\r\n      local hitdefausse = Physics.cast({\r\n          origin       = place_defausse_explo,\r\n          direction    = {0, 1, 0},\r\n          type         = 3,\r\n          size         = {2, 2, 3},\r\n          max_distance = 0,\r\n          debug        = false\r\n      })\r\n\r\n      for _, obj in ipairs(hitdefausse) do\r\n          if obj.hit_object.tag == \"Deck\" then\r\n              local deckdefausse = obj.hit_object\r\n              range_deck_dans_bouton(deckdefausse)\r\n          end\r\n\r\n          if obj.hit_object.tag == \"Card\" then\r\n              local carte = obj.hit_object\r\n              self.putObject(carte)\r\n          end\r\n      end\r\n    end,\r\n    0.2)\r\n\r\nend\r\n\r\nfunction range_deck_dans_bouton(deck)\r\n\r\n  local liste_carte = deck.getObjects()\r\n\r\n  local der_carte = liste_carte[#liste_carte].guid\r\n\r\n  for i = 1 , #liste_carte-1, 1 do\r\n\r\n          local position_bouton = {self.getPosition().x, self.getPosition().y+i, self.getPosition().z}\r\n\r\n          deck.takeObject(\r\n                {\r\n                  guid = liste_carte[i].guid,\r\n                  position = position_bouton,\r\n                  rotation = {0, 180, 0},\r\n                  smooth = false,\r\n                })\r\n  end\r\n\r\n  Wait.time(\r\n    function()\r\n      local carte_restante = getObjectFromGUID(der_carte)\r\n      if carte_restante then self.putObject(carte_restante) end\r\n    end,\r\n    0.5)\r\n\r\nend\r\n\r\nfunction shuffleTable(t)\r\n    for i = #t, 2, -1 do\r\n        local n = math.random(i)\r\n        t[i], t[n] = t[n], t[i]\r\n    end\r\n    return t\r\nend\r\n",
+              "LuaScript": "local bagGUID = \"1aa0e5\"\r\n\r\n-- local Plaines_Souterraines = \"8b802a\"\r\n-- local Arenes = \"a755ef\"\r\n-- local Temple_abandonne = \"2ca874\"\r\n-- local Necropole = \"6cdf3b\"\r\n-- local Cite_Deserte = \"ed398a\"\r\n-- local Bains_Rituels = \"ee6cd1\"\r\n-- local Jardins_Magnetiques = \"96bf38\"\r\n-- local Fresque_de_Tulu = \"48ef1b\"\r\n-- local Galeries_sans_Fin = \"0fe255\"\r\n--\r\n-- local emplacement_Plaines_Souterraines = {-3.59, 1.51, 24.00}\r\n-- local emplacement_Arenes = {16.50, 1.51, 24.00}\r\n-- local emplacement_Temple_abandonne = {0.00, 1.51, 17.00}\r\n-- local emplacement_Necropole = {14.00, 1.51, 17.00}\r\n-- local emplacement_Cite_Deserte = {-2.00, 1.51, 11.00}\r\n-- local emplacement_Bains_Rituels = {13.50, 1.51, 9.00}\r\n-- local emplacement_Jardins_Magnetiques = {-3.50, 1.51, 4.50}\r\n-- local emplacement_Fresque_de_Tulu = {7.01, 1.51, 6.51}\r\n-- local emplacement_Galeries_sans_Fin = {16.50, 1.51, 4.50}\r\n\r\nlocal Plaines_Souterraines = { guid = \"8b802a\", position = {-3.59, 1.51, 24.00}}\r\nlocal Arenes = { guid = \"a755ef\", position = {16.50, 1.51, 24.00}}\r\nlocal Temple_abandonne = { guid = \"2ca874\", position = {0.00, 1.51, 17.00}}\r\nlocal Necropole = { guid = \"6cdf3b\", position = {14.00, 1.51, 17.00}}\r\nlocal Cite_Deserte = { guid = \"ed398a\", position = {-2.00, 1.51, 11.00}}\r\nlocal Bains_Rituels = { guid = \"ee6cd1\", position = {13.50, 1.51, 9.00}}\r\nlocal Jardins_Magnetiques = { guid = \"96bf38\", position = {-3.50, 1.51, 4.50}}\r\nlocal Fresque_de_Tulu = { guid = \"48ef1b\", position = {7.01, 1.51, 6.51}}\r\nlocal Galeries_sans_Fin = { guid = \"0fe255\", position = {16.50, 1.51, 4.50}}\r\n\r\nlocal Tsath ={ guid = \"cb8fdf\", position = {4.50, 1.51, 13.00}}\r\nlocal Tour_Surveillance ={ guid = \"e00765\", position = {4.50, 1.51, 13.00}}\r\nlocal Nexus ={ guid = \"67bd0e\", position = {4.50, 1.51, 13.00}}\r\n\r\nlocal nb_lieu_a_placer = 4\r\n\r\nlieux_a_placer = {Plaines_Souterraines, Arenes, Temple_abandonne, Necropole, Cite_Deserte, Bains_Rituels, Jardins_Magnetiques, Fresque_de_Tulu, Galeries_sans_Fin}\r\n\r\nfunction onLoad()\r\n\r\n    self.createButton({\r\n        click_function = \"mep\",\r\n        function_owner = self,\r\n        label = \"Mise en Place\",\r\n        position = {0, 0.2, 2.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 3600,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"acte2\",\r\n        function_owner = self,\r\n        label = \"Acte 2\",\r\n        position = {0, 0.2, 4.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 3600,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"acte3\",\r\n        function_owner = self,\r\n        label = \"Acte 3\",\r\n        position = {0, 0.2, 6.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 3600,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\n    self.createButton({\r\n        click_function = \"range\",\r\n        function_owner = self,\r\n        label = \"Ranger\",\r\n        position = {0, 0.2, -2.5},\r\n        rotation = {0, 0, 0},\r\n        scale = {1, 1, 1},\r\n        width = 2800,\r\n        height = 600,\r\n        font_size = 500,\r\n        color = {0, 0, 0},\r\n        font_color = {1, 1, 1}\r\n    })\r\n\r\nend\r\n\r\nfunction mep()\r\n\r\n  --Il doiit y avoir 12 lieux\r\n  local liste_objet = self.getObjects()\r\n  if #liste_objet ~= 12 then\r\n    broadcastToAll(\"Il doit y avoir les 12 cartes lieux K'n-yan séparées dans le bouton.\", {0.75, 0.75, 1})\r\n    return\r\n  end\r\n\r\n  local uiXML = [[\r\n      <Panel id=\"miska_banner\" width=\"1000\" height=\"240\" rectAlignment=\"MiddleCenter\" offsetXY=\"0 250\" color=\"#333333\">\r\n          <VerticalLayout padding=\"20\">\r\n              <Text text=\"La forêt de Billington vous appelle?\"\r\n                    fontSize=\"48\" color=\"#FFFF00\" alignment=\"MiddleCenter\" height=\"100\" />\r\n              <HorizontalLayout spacing=\"50\" padding=\"20\" height=\"100\">\r\n                  <Button onClick=\"]]..self.getGUID()..[[/miskaOui\" text=\"OUI\" colors=\"#000000|#FFFF00|#444444|#000000\" textColor=\"#FFFF00\" fontSize=\"30\" />\r\n                  <Button onClick=\"]]..self.getGUID()..[[/miskaNon\" text=\"NON\" colors=\"#000000|#FFFF00|#444444|#000000\" textColor=\"#FFFF00\" fontSize=\"30\" />\r\n              </HorizontalLayout>\r\n          </VerticalLayout>\r\n      </Panel>\r\n  ]]\r\n  UI.setXml(uiXML)\r\n\r\nend\r\n\r\nfunction miskaOui()\r\n  UI.setAttribute(\"miska_banner\", \"active\", \"false\");\r\n  nb_lieu_a_placer = 5\r\n  mep_ini()\r\nend\r\n\r\nfunction miskaNon()\r\n  UI.setAttribute(\"miska_banner\", \"active\", \"false\");\r\n  nb_lieu_a_placer = 4\r\n  mep_ini()\r\n end\r\n\r\nfunction mep_ini()\r\n\r\n  placeLieu(Tsath, 0)\r\n\r\nend\r\n\r\n\r\nfunction acte2()\r\n\r\n  placeLieu(Tour_Surveillance, 1)\r\n\r\nend\r\n\r\nfunction acte3()\r\n\r\n  placeLieu(Nexus, 1)\r\n\r\nend\r\n\r\nfunction range()\r\n\r\n  -- On range les 9 lieux init du plateau\r\n  for i = 1, 9, 1 do\r\n\r\n    local lieu = getObjectFromGUID(lieux_a_placer[i].guid)\r\n\r\n    if lieu then self.putObject(lieu) end\r\n\r\n  end\r\n\r\n  Wait.time(\r\n    function()\r\n      range_deck_explo()\r\n    end\r\n   , 0.5)\r\n\r\n  Wait.time(\r\n    function()\r\n       supprime_jeton_plateau()\r\n    end\r\n   , 1)\r\n\r\nend\r\n\r\nfunction place_victoire(lieu)\r\n\r\n  local emplacement_victoire = {30.50, 1.65+0.5, 2.50}\r\n\r\n  local liste_carte = self.getObjects()\r\n\r\n  if lieu == Tour_Surveillance then\r\n    for _, obj in ipairs(liste_carte) do\r\n        if obj.guid == Tsath.guid then\r\n          self.takeObject(\r\n                {\r\n                  guid = Tsath.guid,\r\n                  position = emplacement_victoire,\r\n                  rotation = {0, 180, 0},\r\n                  smooth = true,\r\n                })\r\n        end\r\n    end\r\n  end\r\n\r\n  if lieu == Nexus then\r\n    for _, obj in ipairs(liste_carte) do\r\n        if obj.guid == Tour_Surveillance.guid then\r\n          self.takeObject(\r\n                {\r\n                  guid = Tour_Surveillance.guid,\r\n                  position = emplacement_victoire,\r\n                  rotation = {0, 180, 0},\r\n                  smooth = true,\r\n                })\r\n        end\r\n    end\r\n  end\r\n\r\nend\r\n\r\nfunction supprime_jeton_indices_defausse()\r\n\r\n  playerCluedefausse = {}\r\n  tokenRessourcedefausse = {}\r\n\r\n  -- On recupere tous les objets du plateau de jeu\r\n  local zoneDeJeu = {33.00, 1.77, 9.50}\r\n  local zoneDeJeuScale = { 11.00, 3.00, 8.00 }\r\n  local hitlist = Physics.cast({\r\n      origin       = zoneDeJeu,\r\n      direction    = { 0, 1, 0 },\r\n      type         = 3,\r\n      size         = zoneDeJeuScale,\r\n      max_distance = 0,\r\n      debug        = false,\r\n  })\r\n\r\n  for _, obj in ipairs(hitlist) do\r\n\r\n        local object = obj.hit_object\r\n\r\n        if object ~= nil then\r\n\r\n          local GmNote = object.getGMNotes()\r\n          if GmNote ~= nil then\r\n            if GmNote == \"Clue\" then\r\n              table.insert(playerCluedefausse, object)\r\n            end\r\n            if GmNote == \"Ressource\" then\r\n              table.insert(tokenRessourcedefausse, object)\r\n            end\r\n          end\r\n         end\r\n  end\r\n\r\n  -- Enlever les ressources\r\n  for _, rreeource in ipairs(tokenRessourcedefausse) do\r\n    rreeource.destruct()\r\n  end\r\n\r\n  -- Enlever les indices\r\n  for _, clue in ipairs(playerCluedefausse) do\r\n    clue.destruct()\r\n  end\r\n\r\nend\r\n\r\n\r\n\r\nfunction supprime_jeton_plateau()\r\n\r\n  playerClue = {}\r\n  tokenRessource = {}\r\n\r\n  -- On recupere tous les objets du plateau de jeu\r\n  local zoneDeJeu = { 5.77, 1.38, 13.77 }\r\n  local zoneDeJeuScale = { 41.00, 3.00, 37.00 }\r\n  local hitlist = Physics.cast({\r\n      origin       = zoneDeJeu,\r\n      direction    = { 0, 1, 0 },\r\n      type         = 3,\r\n      size         = zoneDeJeuScale,\r\n      max_distance = 0,\r\n      debug        = false,\r\n  })\r\n\r\n  for _, obj in ipairs(hitlist) do\r\n\r\n        local object = obj.hit_object\r\n\r\n        if object ~= nil then\r\n\r\n          local GmNote = object.getGMNotes()\r\n          if GmNote ~= nil then\r\n            if GmNote == \"Clue\" then\r\n              table.insert(playerClue, object)\r\n            end\r\n            if GmNote == \"Ressource\" then\r\n              table.insert(tokenRessource, object)\r\n            end\r\n          end\r\n         end\r\n  end\r\n\r\n  -- Enlever les ressources\r\n  for _, rreeource in ipairs(tokenRessource) do\r\n    rreeource.destruct()\r\n  end\r\n\r\n  -- Enlever les indices\r\n  for _, clue in ipairs(playerClue) do\r\n    clue.destruct()\r\n  end\r\n\r\nend\r\n\r\n\r\n\r\nfunction placeLieu(lieu_supp, nb_ress_ajouter)\r\n\r\n  playerMinicard = {}\r\n  playerWeakness = {}\r\n  playerClue = {}\r\n  tokenDegat = {}\r\n  tokenRessource = {}\r\n  playerEnemy = {}\r\n  playerTraitrise = {}\r\n  playerLocation = {}\r\n\r\n  -- On recupere tous les objets du plateau de jeu\r\n  local zoneDeJeu = { 5.77, 1.38, 13.77 }\r\n  local zoneDeJeuScale = { 41.00, 3.00, 37.00 }\r\n  local hitlist = Physics.cast({\r\n      origin       = zoneDeJeu,\r\n      direction    = { 0, 1, 0 },\r\n      type         = 3,\r\n      size         = zoneDeJeuScale,\r\n      max_distance = 0,\r\n      debug        = false,\r\n  })\r\n\r\n  for _, obj in ipairs(hitlist) do\r\n\r\n        local object = obj.hit_object\r\n\r\n        if object ~= nil then\r\n\r\n          local GmNote = object.getGMNotes()\r\n          if GmNote ~= nil then\r\n            if GmNote == \"Clue\" then\r\n              table.insert(playerClue, object)\r\n            end\r\n            if GmNote == \"Damage\" then\r\n              table.insert(tokenDegat, object)\r\n            end\r\n            if GmNote == \"Ressource\" then\r\n              table.insert(tokenRessource, object)\r\n            end\r\n          end\r\n\r\n          if object.type == 'Card' and object.getName() ~= 'Set up connections' then\r\n            local cardData = object.getData()\r\n            local metadata = Global.call('getMetadata', cardData)\r\n\r\n            if metadata and metadata.type == 'Minicard' then\r\n              table.insert(playerMinicard, object)\r\n            end\r\n\r\n            if metadata and metadata.weakness ~= nil then\r\n              table.insert(playerWeakness, object)\r\n            end\r\n\r\n            if metadata and metadata.type == 'Location' then\r\n              table.insert(playerLocation, object)\r\n            end\r\n\r\n            if metadata and metadata.type == 'Enemy' and metadata.weakness == nil then\r\n              table.insert(playerEnemy, object)\r\n            end\r\n\r\n            if metadata and metadata.type == 'Treachery' and metadata.weakness == nil then\r\n              table.insert(playerTraitrise, object)\r\n            end\r\n\r\n          end\r\n        end\r\n  end\r\n\r\n  -- Defausser les ennemis non faiblesse : \"Type\":\"Enemy\" et non \"weakness\": \"true\" et non Gurantaka\r\n  local deckTarget = nil\r\n  local discardDeckPos = {x = 35.0, y = 3.00, z = -3.0}\r\n\r\n  local hitDiscard = Physics.cast({\r\n      origin       = discardDeckPos,\r\n      direction    = {0, 1, 0},\r\n      type         = 3,\r\n      size         = {0.5, 0.5, 0.5},\r\n      max_distance = 0,\r\n      debug        = false\r\n  })\r\n\r\n  for _, obj in ipairs(hitDiscard) do\r\n      if obj.hit_object.tag == \"Deck\" then\r\n          deckTarget = obj.hit_object\r\n      end\r\n  end\r\n\r\n  if deckTarget then\r\n    for _, card in ipairs(playerEnemy) do\r\n      deckTarget.putObject(card)\r\n      card.setRotationSmooth({0,180,0}) -- face révélée\r\n    end\r\n    for _, card in ipairs(playerTraitrise) do\r\n      deckTarget.putObject(card)\r\n      card.setRotationSmooth({0,180,0}) -- face révélée\r\n    end\r\n  else\r\n    for _, card in ipairs(playerEnemy) do\r\n        card.setPositionSmooth(discardDeckPos)\r\n        card.setRotationSmooth({0,180,0})\r\n    end\r\n    for _, card in ipairs(playerTraitrise) do\r\n        card.setPositionSmooth(discardDeckPos)\r\n        card.setRotationSmooth({0,180,0})\r\n    end\r\n\r\n  end\r\n\r\n  -- Enlever les lieux existants\r\n  for _, card in ipairs(playerLocation) do\r\n    self.putObject(card)\r\n  end\r\n\r\n  -- Enlever les ressources\r\n  for _, rreeource in ipairs(tokenRessource) do\r\n    rreeource.destruct()\r\n  end\r\n\r\n  -- Enlever les indices\r\n  for _, clue in ipairs(playerClue) do\r\n    clue.destruct()\r\n  end\r\n\r\n  -- Enlever les ddegat\r\n  for _, degat in ipairs(tokenDegat) do\r\n    degat.destruct()\r\n  end\r\n\r\n  supprime_jeton_indices_defausse()\r\n\r\n  range_deck_explo()\r\n\r\n  Wait.time(\r\n    function()\r\n\r\n          -- local bagObjects = self.getObjects()\r\n          -- if #bagObjects ~= 12 then\r\n          --     broadcastToAll(\"Le sac doit contenir exactement 12 éléments.\")\r\n          --     return\r\n          -- end\r\n\r\n\r\n          -- *EC* Il doiit y avoir 12 lieux à l'acte 2 et 11 àà l'acte 3\r\n          if lieu_supp == Tour_Surveillance then\r\n            local liste_objet = self.getObjects()\r\n            if #liste_objet ~= 12 then\r\n              broadcastToAll(\"Il doit y avoir les 12 cartes lieux K'n-yan séparées dans le bouton.\", {0.75, 0.75, 1})\r\n              return\r\n            end\r\n          end\r\n\r\n          if lieu_supp == Nexus then\r\n            local liste_objet = self.getObjects()\r\n            if #liste_objet ~= 11 then\r\n              broadcastToAll(\"Il doit y avoir 11 cartes lieux K'n-yan séparées dans le bouton.Le lieu 'Tsath' doit être dans la pile de victoire\", {0.75, 0.75, 1})\r\n              return\r\n            end\r\n          end\r\n\r\n\r\n          -- Mettre en jeu les lieux\r\n          shuffleTable(lieux_a_placer)\r\n\r\n          --On placce les premier lieu\r\n          for i = 1, nb_lieu_a_placer, 1 do\r\n\r\n            self.takeObject(\r\n                  {\r\n                    guid = lieux_a_placer[i].guid,\r\n                    position = lieux_a_placer[i].position,\r\n                    rotation = {0, 180, 0},\r\n                    smooth = false,\r\n                  })\r\n\r\n            local place_jeton = {lieux_a_placer[i].position[1] - 0.5, lieux_a_placer[i].position[2] + 0.5, lieux_a_placer[i].position[3] - 0.5}\r\n\r\n            local sac_ressource = getObjectFromGUID(\"9fadf9\")\r\n            local ressource = sac_ressource.takeObject(\r\n                  {\r\n                    position = place_jeton,\r\n                    smooth = true,\r\n                  })\r\n            Wait.time(\r\n              function()\r\n                ajoute_ressource(ressource, i + nb_ress_ajouter)\r\n              end,\r\n              0.5)\r\n          end\r\n\r\n          -- Deplacer Investigator lieu 1\r\n          local place = {lieux_a_placer[1].position[1] - 2, lieux_a_placer[1].position[2] + 0.5, lieux_a_placer[1].position[3]+1}\r\n          for _, invest in ipairs(playerMinicard) do\r\n            if invest ~= nil then\r\n              invest.setPosition(place)\r\n              place[3] = place[3] - 2\r\n            end\r\n          end\r\n\r\n          -- Création deck expolrations\r\n          cree_deck_explo(lieu_supp, lieux_a_placer)\r\n\r\n          place_victoire(lieu_supp)\r\n\r\n    end,\r\n    1.5)\r\n\r\nend\r\n\r\nfunction ajoute_ressource(token, nombre)\r\n    for i = 1, nombre, 1 do\r\n      token.call('add_subtract')\r\n    end\r\nend\r\n\r\nfunction cree_deck_explo(lieu_a_ajouter, lieux_restant)\r\n\r\n  local place_deck_explo = {30.39, 1.78, 10.20}\r\n\r\n  --On met le lieu specifiue dans le deck rencontre\r\n  self.takeObject(\r\n        {\r\n          guid = lieu_a_ajouter.guid,\r\n          position = place_deck_explo,\r\n          rotation = {0, 180, 180},\r\n          smooth = true,\r\n        })\r\n\r\n  -- On place les lieu restant\r\n  for i = nb_lieu_a_placer + 1, 9, 1 do\r\n\r\n    self.takeObject(\r\n          {\r\n            guid = lieux_restant[i].guid,\r\n            position = place_deck_explo,\r\n            rotation = {0, 180, 180},\r\n            smooth = false,\r\n          })\r\n  end\r\n\r\n  -- On melange\r\n  Wait.time(\r\n    function()\r\n\r\n      local hitExplo = Physics.cast({\r\n          origin       = place_deck_explo,\r\n          direction    = {0, 1, 0},\r\n          type         = 3,\r\n          size         = {0.5, 0.5, 0.5},\r\n          max_distance = 0,\r\n          debug        = false\r\n      })\r\n\r\n      for _, obj in ipairs(hitExplo) do\r\n          if obj.hit_object.tag == \"Deck\" then\r\n              deckExplo = obj.hit_object\r\n              deckExplo.shuffle()\r\n          end\r\n      end\r\n    end,\r\n    2)\r\n\r\nend\r\n\r\nfunction range_deck_explo()\r\n\r\n  local place_deck_explo = {30.39, 1.78, 10.20}\r\n  local place_defausse_explo = {35.56, 1.78, 10.24}\r\n\r\n  -- On range les cartes restants dans le deck\r\n  local hitExplo = Physics.cast({\r\n      origin       = place_deck_explo,\r\n      direction    = {0, 1, 0},\r\n      type         = 3,\r\n      size         = {2, 2, 3},\r\n      max_distance = 0,\r\n      debug        = false\r\n  })\r\n\r\n  for _, obj in ipairs(hitExplo) do\r\n      if obj.hit_object.tag == \"Deck\" then\r\n          local deckExplo = obj.hit_object\r\n          range_deck_dans_bouton(deckExplo)\r\n      end\r\n\r\n      if obj.hit_object.tag == \"Card\" then\r\n          local carte = obj.hit_object\r\n          self.putObject(carte)\r\n      end\r\n\r\n  end\r\n\r\n  -- On range les cartes restants dans la defausse\r\n  Wait.time(\r\n    function()\r\n      local hitdefausse = Physics.cast({\r\n          origin       = place_defausse_explo,\r\n          direction    = {0, 1, 0},\r\n          type         = 3,\r\n          size         = {2, 2, 3},\r\n          max_distance = 0,\r\n          debug        = false\r\n      })\r\n\r\n      for _, obj in ipairs(hitdefausse) do\r\n          if obj.hit_object.tag == \"Deck\" then\r\n              local deckdefausse = obj.hit_object\r\n              range_deck_dans_bouton(deckdefausse)\r\n          end\r\n\r\n          if obj.hit_object.tag == \"Card\" then\r\n              local carte = obj.hit_object\r\n              self.putObject(carte)\r\n          end\r\n      end\r\n    end,\r\n    0.5)\r\n\r\nend\r\n\r\nfunction range_deck_dans_bouton(deck)\r\n\r\n  local liste_carte = deck.getObjects()\r\n\r\n  local der_carte = liste_carte[#liste_carte].guid\r\n\r\n  for i = 1 , #liste_carte-1, 1 do\r\n\r\n          local position_bouton = {self.getPosition().x, self.getPosition().y+i, self.getPosition().z}\r\n\r\n          deck.takeObject(\r\n                {\r\n                  guid = liste_carte[i].guid,\r\n                  position = position_bouton,\r\n                  rotation = {0, 180, 0},\r\n                  smooth = false,\r\n                })\r\n  end\r\n\r\n  Wait.time(\r\n    function()\r\n      local carte_restante = getObjectFromGUID(der_carte)\r\n      if carte_restante then self.putObject(carte_restante) end\r\n    end,\r\n    0.5)\r\n\r\nend\r\n\r\nfunction shuffleTable(t)\r\n    for i = #t, 2, -1 do\r\n        local n = math.random(i)\r\n        t[i], t[n] = t[n], t[i]\r\n    end\r\n    return t\r\nend\r\n",
               "LuaScriptState": "{\"ml\":{\"35deab\":{\"lock\":false,\"pos\":{\"x\":-24.4499988555908,\"y\":1.78360486030579,\"z\":17.0299987792969},\"rot\":{\"x\":-5.04649278809666E-06,\"y\":180.001953125,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"45187f\":{\"lock\":false,\"pos\":{\"x\":-31.3499984741211,\"y\":1.78360486030579,\"z\":17.0299968719482},\"rot\":{\"x\":-4.6369686970138E-06,\"y\":180.00065612793,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"463bb9\":{\"lock\":false,\"pos\":{\"x\":1.10998833179474,\"y\":1.51952767372131,\"z\":14.4099950790405},\"rot\":{\"x\":0.0108915269374847,\"y\":180.000259399414,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"4c4357\":{\"lock\":false,\"pos\":{\"x\":1.10999083518982,\"y\":1.51828253269196,\"z\":7.85999727249146},\"rot\":{\"x\":0.0108913239091635,\"y\":180.002212524414,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"534b3e\":{\"lock\":false,\"pos\":{\"x\":11.1000022888184,\"y\":1.51741981506348,\"z\":7.85998153686523},\"rot\":{\"x\":0.0108914654701948,\"y\":180.000747680664,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"547534\":{\"lock\":false,\"pos\":{\"x\":-20.9999961853027,\"y\":1.78360521793365,\"z\":13.1000032424927},\"rot\":{\"x\":-4.93870493301074E-06,\"y\":180.00065612793,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"5a78b7\":{\"lock\":false,\"pos\":{\"x\":-22.149995803833,\"y\":1.78360486030579,\"z\":17.0300045013428},\"rot\":{\"x\":-5.0570070015965E-06,\"y\":180.00016784668,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"8833c2\":{\"lock\":false,\"pos\":{\"x\":-23.2999992370605,\"y\":1.78360521793365,\"z\":13.0999994277954},\"rot\":{\"x\":-4.91863966090023E-06,\"y\":179.999786376953,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"b6b09a\":{\"lock\":false,\"pos\":{\"x\":-30.2000141143799,\"y\":1.78360521793365,\"z\":13.0999822616577},\"rot\":{\"x\":-5.01395925311954E-06,\"y\":180.000350952148,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d11414\":{\"lock\":false,\"pos\":{\"x\":6.10499668121338,\"y\":1.51697957515717,\"z\":3.27498602867126},\"rot\":{\"x\":0.0108916284516454,\"y\":179.998748779297,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"d90a31\":{\"lock\":false,\"pos\":{\"x\":-27.8997535705566,\"y\":1.78360521793365,\"z\":13.1442623138428},\"rot\":{\"x\":-4.825135874853E-06,\"y\":180.001815795898,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"db17e6\":{\"lock\":false,\"pos\":{\"x\":11.1000022888184,\"y\":1.51866495609283,\"z\":14.4099941253662},\"rot\":{\"x\":0.0108914179727435,\"y\":180.000915527344,\"z\":180.004959106445},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e40185\":{\"lock\":false,\"pos\":{\"x\":-32.5000228881836,\"y\":1.78360521793365,\"z\":13.099983215332},\"rot\":{\"x\":-5.00540909342817E-06,\"y\":179.998977661133,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e84179\":{\"lock\":false,\"pos\":{\"x\":-29.0499992370605,\"y\":1.78360486030579,\"z\":17.0299987792969},\"rot\":{\"x\":-5.01754857396008E-06,\"y\":180.001434326172,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"e8da76\":{\"lock\":false,\"pos\":{\"x\":-25.6000003814697,\"y\":1.78360521793365,\"z\":13.0999908447266},\"rot\":{\"x\":-5.06032665725797E-06,\"y\":180.000640869141,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}},\"ea8a33\":{\"lock\":false,\"pos\":{\"x\":-26.75,\"y\":1.78360486030579,\"z\":17.0299987792969},\"rot\":{\"x\":-5.01863996760221E-06,\"y\":180.000549316406,\"z\":180},\"tint\":{\"a\":1,\"b\":0.713235259056091,\"g\":0.713235259056091,\"r\":0.713235259056091}}}}",
               "XmlUI": "",
               "ContainedObjects": [
                 {
-                  "GUID": "2ca874",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 2.87921057E-06,
-                    "posY": 1.51002407,
-                    "posZ": 16.9999981,
-                    "rotX": 0.0118249506,
-                    "rotY": 179.9999,
-                    "rotZ": -0.00118269341,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Temple abandonné",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"fcd450ef-0316-438d-bcca-a5e92187e216\",\"id\":\"fcd450ef-0316-438d-bcca-a5e92187e216\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Square\",\"connections\":\"DoubleSlash|Triangle|Diamond|T|Slash\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100800,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1008": {
-                      "FaceURL": "https://i.ibb.co/BHSwNB8m/f97a22376cb7.jpg",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "96bf38",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -3.50001,
-                    "posY": 1.50795746,
-                    "posZ": 4.49999428,
-                    "rotX": 0.0117580341,
-                    "rotY": 179.999985,
-                    "rotZ": -0.000709463435,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Jardins Magnétiques",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"2308da53-4fe9-46ea-8461-e1c9126490a9\",\"id\":\"2308da53-4fe9-46ea-8461-e1c9126490a9\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Circle\",\"connections\":\"Quote|Triangle|Slash|Heart|T\",\"uses\":[{\"count\":0,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100300,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1003": {
-                      "FaceURL": "https://i.ibb.co/mrkDZCkL/450dfb47573e.jpg",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "6cdf3b",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 13.9999971,
-                    "posY": 1.50879109,
-                    "posZ": 16.9999962,
-                    "rotX": 0.01206428,
-                    "rotY": 179.999985,
-                    "rotZ": -0.00277227256,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Nécropole",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"a9b8ba17-53dc-4e9a-8571-ff8c61fdcb3a\",\"id\":\"a9b8ba17-53dc-4e9a-8571-ff8c61fdcb3a\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Slash\",\"connections\":\"Square|Circle|Quote|Heart|Hourglass\",\"uses\":[{\"count\":0,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100600,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1006": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10511758110569061466/BE051B7A80D54F50A42EE1384F7AB942155E8070/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "0fe255",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 16.4999981,
-                    "posY": 1.5062331,
-                    "posZ": 4.49998951,
-                    "rotX": 0.0117308917,
-                    "rotY": 180.000092,
-                    "rotZ": -0.000517139444,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Galeries sans Fin",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"a6cf8e2f-77b2-4496-89b3-e280aef88795\",\"id\":\"a6cf8e2f-77b2-4496-89b3-e280aef88795\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Quote\",\"connections\":\"Circle|Slash|Diamond|Heart|Hourglass\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100500,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1005": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16784406324202902210/693DE812B34D7E3108354AC79EEBCF6400BFBAF4/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "48ef1b",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 7.01003027,
-                    "posY": 1.5074209,
-                    "posZ": 6.50998354,
-                    "rotX": 0.0118638305,
-                    "rotY": 179.9992,
-                    "rotZ": -0.0014281685,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Fresque de Tulu",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"98c111a4-80a7-4073-ab05-2de813a996b9\",\"id\":\"98c111a4-80a7-4073-ab05-2de813a996b9\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Heart\",\"connections\":\"DoubleSlash|Circle|Quote|Slash|Hourglass\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100200,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1002": {
-                      "FaceURL": "https://i.ibb.co/35PwTw6K/79eb882e6d83.jpg",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "ed398a",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -22.00001,
-                    "posY": 1.93808174,
-                    "posZ": 6.999981,
-                    "rotX": 0.0007850924,
-                    "rotY": 180.0,
-                    "rotZ": -0.00016498311,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Cité Déserte",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"2bb9da54-1937-4e4a-9b9e-7f92d966b9b8\",\"id\":\"2bb9da54-1937-4e4a-9b9e-7f92d966b9b8\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Triangle\",\"connections\":\"DoubleSlash|Circle|Diamond|T|Square\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100100,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1001": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17277094838917749994/886C45B29064C494F76CA43104230F5759F65CA7/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "a755ef",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": 30.388134,
-                    "posY": 1.78050482,
-                    "posZ": 10.1981106,
-                    "rotX": -4.997669E-06,
-                    "rotY": 179.999924,
-                    "rotZ": 180.0,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Arènes",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"5a247e5a-db72-47fa-8e78-63db2eba1770\",\"id\":\"5a247e5a-db72-47fa-8e78-63db2eba1770\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Diamond\",\"connections\":\"DoubleSlash|Triangle|Quote|T|Square\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100000,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1000": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11346278459796490657/5D9B5FB27232E0D894BC37803C334CAF34863C27/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "8b802a",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -22.00001,
-                    "posY": 1.94445264,
-                    "posZ": 6.999981,
-                    "rotX": 0.001114547,
-                    "rotY": 180.0,
-                    "rotZ": -0.000236953376,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Plaines Souterraines",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"2ef2d72f-8ff4-4659-85ed-6a7b1a238273\",\"id\":\"2ef2d72f-8ff4-4659-85ed-6a7b1a238273\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"T\",\"connections\":\"Circle|Triangle|Diamond|Hourglass|Square\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100700,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1007": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14023791015357315490/C7EF67D51B91A8ADCB8368DA0E303EF06C6FF1E0/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
-                  "GUID": "ee6cd1",
-                  "Name": "Card",
-                  "Transform": {
-                    "posX": -22.00001,
-                    "posY": 1.93254948,
-                    "posZ": 6.999981,
-                    "rotX": 0.00440797862,
-                    "rotY": 180.0,
-                    "rotZ": -0.0009772048,
-                    "scaleX": 1.0,
-                    "scaleY": 1.0,
-                    "scaleZ": 1.0
-                  },
-                  "Nickname": "Bains Rituels",
-                  "Description": "",
-                  "GMNotes": "{\"TtsZoopGuid\":\"cfb553c7-e3e4-4f27-a3c0-59ee394301ae\",\"id\":\"cfb553c7-e3e4-4f27-a3c0-59ee394301ae\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Hourglass\",\"connections\":\"DoubleSlash|Slash|T|Heart|Quote\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
-                  "AltLookAngle": {
-                    "x": 0.0,
-                    "y": 0.0,
-                    "z": 0.0
-                  },
-                  "ColorDiffuse": {
-                    "r": 0.713235259,
-                    "g": 0.713235259,
-                    "b": 0.713235259
-                  },
-                  "Tags": [
-                    "Location",
-                    "ScenarioCard"
-                  ],
-                  "LayoutGroupSortIndex": 0,
-                  "Value": 0,
-                  "Locked": false,
-                  "Grid": true,
-                  "Snap": true,
-                  "IgnoreFoW": false,
-                  "MeasureMovement": false,
-                  "DragSelectable": true,
-                  "Autoraise": true,
-                  "Sticky": true,
-                  "Tooltip": true,
-                  "GridProjection": false,
-                  "HideWhenFaceDown": true,
-                  "Hands": true,
-                  "CardID": 100400,
-                  "SidewaysCard": false,
-                  "CustomDeck": {
-                    "1004": {
-                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10964633812058644241/D08BC676CC4153BB334C49E17D5DF93CF768E0BE/",
-                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
-                      "NumWidth": 1,
-                      "NumHeight": 1,
-                      "BackIsHidden": true,
-                      "UniqueBack": false,
-                      "Type": 0
-                    }
-                  },
-                  "LuaScript": "",
-                  "LuaScriptState": "",
-                  "XmlUI": ""
-                },
-                {
                   "GUID": "67bd0e",
                   "Name": "Card",
                   "Transform": {
-                    "posX": -22.00001,
-                    "posY": 1.93479633,
-                    "posZ": 6.999981,
-                    "rotX": 0.004915604,
+                    "posX": -22.0000076,
+                    "posY": 1.944453,
+                    "posZ": 6.99998331,
+                    "rotX": 0.00111625565,
                     "rotY": 180.0,
-                    "rotZ": -0.00109010225,
+                    "rotZ": -0.000242158741,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -37500,12 +36942,12 @@
                   "GUID": "e00765",
                   "Name": "Card",
                   "Transform": {
-                    "posX": -22.5000038,
-                    "posY": 1.92844427,
-                    "posZ": 7.000002,
-                    "rotX": -0.001043172,
-                    "rotY": 180.0,
-                    "rotZ": -0.000567152631,
+                    "posX": -22.0000019,
+                    "posY": 1.92815232,
+                    "posZ": 7.50004959,
+                    "rotX": 359.9727,
+                    "rotY": 179.999863,
+                    "rotZ": 0.0008403884,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -37559,15 +37001,511 @@
                   "XmlUI": ""
                 },
                 {
+                  "GUID": "2ca874",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -3.301284E-07,
+                    "posY": 1.51001751,
+                    "posZ": 16.9999981,
+                    "rotX": 0.0118925255,
+                    "rotY": 180.0,
+                    "rotZ": -0.00161782664,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Temple abandonné",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"fcd450ef-0316-438d-bcca-a5e92187e216\",\"id\":\"fcd450ef-0316-438d-bcca-a5e92187e216\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Square\",\"connections\":\"DoubleSlash|Triangle|Diamond|T|Slash\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100800,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1008": {
+                      "FaceURL": "https://i.ibb.co/BHSwNB8m/f97a22376cb7.jpg",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "ed398a",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -2.00000286,
+                    "posY": 1.50903034,
+                    "posZ": 10.9999962,
+                    "rotX": 0.0120831179,
+                    "rotY": 180.0,
+                    "rotZ": -0.00290097017,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Cité Déserte",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"2bb9da54-1937-4e4a-9b9e-7f92d966b9b8\",\"id\":\"2bb9da54-1937-4e4a-9b9e-7f92d966b9b8\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Triangle\",\"connections\":\"DoubleSlash|Circle|Diamond|T|Square\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100100,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1001": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/17277094838917749994/886C45B29064C494F76CA43104230F5759F65CA7/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "96bf38",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -3.500003,
+                    "posY": 1.50794125,
+                    "posZ": 4.499999,
+                    "rotX": 0.0119111445,
+                    "rotY": 180.000015,
+                    "rotZ": -0.00177784881,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Jardins Magnétiques",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"2308da53-4fe9-46ea-8461-e1c9126490a9\",\"id\":\"2308da53-4fe9-46ea-8461-e1c9126490a9\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Circle\",\"connections\":\"Quote|Triangle|Slash|Heart|T\",\"uses\":[{\"count\":0,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100300,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1003": {
+                      "FaceURL": "https://i.ibb.co/mrkDZCkL/450dfb47573e.jpg",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "a755ef",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 16.5,
+                    "posY": 1.50992632,
+                    "posZ": 23.9999962,
+                    "rotX": 0.0118686724,
+                    "rotY": 179.999985,
+                    "rotZ": -0.00141855655,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Arènes",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"5a247e5a-db72-47fa-8e78-63db2eba1770\",\"id\":\"5a247e5a-db72-47fa-8e78-63db2eba1770\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Diamond\",\"connections\":\"DoubleSlash|Triangle|Quote|T|Square\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100000,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1000": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/11346278459796490657/5D9B5FB27232E0D894BC37803C334CAF34863C27/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "6cdf3b",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 13.999999,
+                    "posY": 1.50880623,
+                    "posZ": 16.9999962,
+                    "rotX": 0.011908072,
+                    "rotY": 180.0,
+                    "rotZ": -0.00176382321,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Nécropole",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"a9b8ba17-53dc-4e9a-8571-ff8c61fdcb3a\",\"id\":\"a9b8ba17-53dc-4e9a-8571-ff8c61fdcb3a\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Slash\",\"connections\":\"Square|Circle|Quote|Heart|Hourglass\",\"uses\":[{\"count\":0,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100600,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1006": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10511758110569061466/BE051B7A80D54F50A42EE1384F7AB942155E8070/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "ee6cd1",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -22.00001,
+                    "posY": 1.93808186,
+                    "posZ": 6.99998045,
+                    "rotX": 0.0007890619,
+                    "rotY": 180.0,
+                    "rotZ": -0.0001644979,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Bains Rituels",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"cfb553c7-e3e4-4f27-a3c0-59ee394301ae\",\"id\":\"cfb553c7-e3e4-4f27-a3c0-59ee394301ae\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Hourglass\",\"connections\":\"DoubleSlash|Slash|T|Heart|Quote\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100400,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1004": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/10964633812058644241/D08BC676CC4153BB334C49E17D5DF93CF768E0BE/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "8b802a",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -22.00001,
+                    "posY": 1.944453,
+                    "posZ": 6.99998045,
+                    "rotX": 0.00111524179,
+                    "rotY": 180.0,
+                    "rotZ": -0.000236486885,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Plaines Souterraines",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"2ef2d72f-8ff4-4659-85ed-6a7b1a238273\",\"id\":\"2ef2d72f-8ff4-4659-85ed-6a7b1a238273\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"T\",\"connections\":\"Circle|Triangle|Diamond|Hourglass|Square\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100700,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1007": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/14023791015357315490/C7EF67D51B91A8ADCB8368DA0E303EF06C6FF1E0/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
+                  "GUID": "0fe255",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": 30.3902111,
+                    "posY": 1.78050482,
+                    "posZ": 10.2007294,
+                    "rotX": -4.994885E-06,
+                    "rotY": 180.000092,
+                    "rotZ": 180.0,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Galeries sans Fin",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"a6cf8e2f-77b2-4496-89b3-e280aef88795\",\"id\":\"a6cf8e2f-77b2-4496-89b3-e280aef88795\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Quote\",\"connections\":\"Circle|Slash|Diamond|Heart|Hourglass\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100500,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1005": {
+                      "FaceURL": "https://steamusercontent-a.akamaihd.net/ugc/16784406324202902210/693DE812B34D7E3108354AC79EEBCF6400BFBAF4/",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
+                },
+                {
                   "GUID": "cb8fdf",
                   "Name": "Card",
                   "Transform": {
-                    "posX": -22.0000038,
-                    "posY": 1.92844272,
-                    "posZ": 6.99999332,
-                    "rotX": 0.003144238,
-                    "rotY": 180.000015,
-                    "rotZ": -0.0004937943,
+                    "posX": -22.00001,
+                    "posY": 1.93255019,
+                    "posZ": 6.99998045,
+                    "rotX": 0.004404508,
+                    "rotY": 180.0,
+                    "rotZ": -0.000976526,
                     "scaleX": 1.0,
                     "scaleY": 1.0,
                     "scaleZ": 1.0
@@ -37619,6 +37557,68 @@
                   "LuaScript": "",
                   "LuaScriptState": "",
                   "XmlUI": ""
+                },
+                {
+                  "GUID": "48ef1b",
+                  "Name": "Card",
+                  "Transform": {
+                    "posX": -22.00001,
+                    "posY": 1.93479681,
+                    "posZ": 6.99998045,
+                    "rotX": 0.00491424,
+                    "rotY": 180.0,
+                    "rotZ": -0.00109045964,
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "scaleZ": 1.0
+                  },
+                  "Nickname": "Fresque de Tulu",
+                  "Description": "",
+                  "GMNotes": "{\"TtsZoopGuid\":\"98c111a4-80a7-4073-ab05-2de813a996b9\",\"id\":\"98c111a4-80a7-4073-ab05-2de813a996b9\",\"type\":\"Location\",\"class\":\"Mythos\",\"traits\":\"<family \\\"ArnoPro-Regular\\\"><size 8>K'n-yan. Souterrain.</family></size>\",\"locationFront\":{\"icons\":\"Heart\",\"connections\":\"DoubleSlash|Circle|Quote|Slash|Hourglass\",\"uses\":[{\"countPerInvestigator\":1,\"token\":\"clue\",\"type\":\"Clue\"}]}}",
+                  "AltLookAngle": {
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                  },
+                  "ColorDiffuse": {
+                    "r": 0.713235259,
+                    "g": 0.713235259,
+                    "b": 0.713235259
+                  },
+                  "Tags": [
+                    "Location",
+                    "ScenarioCard"
+                  ],
+                  "LayoutGroupSortIndex": 0,
+                  "Value": 0,
+                  "Locked": false,
+                  "Grid": true,
+                  "Snap": true,
+                  "IgnoreFoW": false,
+                  "MeasureMovement": false,
+                  "DragSelectable": true,
+                  "Autoraise": true,
+                  "Sticky": true,
+                  "Tooltip": true,
+                  "GridProjection": false,
+                  "HideWhenFaceDown": true,
+                  "Hands": true,
+                  "CardID": 100200,
+                  "SidewaysCard": false,
+                  "CustomDeck": {
+                    "1002": {
+                      "FaceURL": "https://i.ibb.co/35PwTw6K/79eb882e6d83.jpg",
+                      "BackURL": "https://steamusercontent-a.akamaihd.net/ugc/2342503777940351785/F64D8EFB75A9E15446D24343DA0A6EEF5B3E43DB/",
+                      "NumWidth": 1,
+                      "NumHeight": 1,
+                      "BackIsHidden": true,
+                      "UniqueBack": false,
+                      "Type": 0
+                    }
+                  },
+                  "LuaScript": "",
+                  "LuaScriptState": "",
+                  "XmlUI": ""
                 }
               ]
             },
@@ -37626,11 +37626,11 @@
               "GUID": "346506",
               "Name": "Deck",
               "Transform": {
-                "posX": -30.5000076,
+                "posX": -30.5001659,
                 "posY": 1.81018782,
-                "posZ": 3.99998927,
-                "rotX": -4.7397657E-06,
-                "rotY": 180.005081,
+                "posZ": 3.999839,
+                "rotX": -4.90564935E-06,
+                "rotY": 180.005035,
                 "rotZ": 180.0,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -37962,15 +37962,83 @@
               ]
             },
             {
+              "GUID": "610a11",
+              "Name": "Custom_Assetbundle",
+              "Transform": {
+                "posX": 33.0,
+                "posY": 1.7669,
+                "posZ": 9.5,
+                "rotX": 0.0,
+                "rotY": 89.9918,
+                "rotZ": 180.0,
+                "scaleX": 1.0,
+                "scaleY": 0.462904,
+                "scaleZ": 1.66
+              },
+              "Nickname": "",
+              "Description": "",
+              "GMNotes": "board",
+              "AltLookAngle": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "ColorDiffuse": {
+                "r": 0.442896873,
+                "g": 0.23089686,
+                "b": 0.08991615
+              },
+              "LayoutGroupSortIndex": 0,
+              "Value": 0,
+              "Locked": true,
+              "Grid": true,
+              "Snap": true,
+              "IgnoreFoW": false,
+              "MeasureMovement": false,
+              "DragSelectable": true,
+              "Autoraise": true,
+              "Sticky": true,
+              "Tooltip": true,
+              "GridProjection": false,
+              "HideWhenFaceDown": false,
+              "Hands": false,
+              "CustomAssetbundle": {
+                "AssetbundleURL": "chry.me/tts/3droom/floorpad.unity3d",
+                "AssetbundleSecondaryURL": "",
+                "MaterialIndex": 3,
+                "TypeIndex": 4,
+                "LoopingEffectIndex": 0
+              },
+              "LuaScript": "",
+              "LuaScriptState": "",
+              "XmlUI": "",
+              "AttachedSnapPoints": [
+                {
+                  "Position": {
+                    "x": 0.7356253,
+                    "y": 1.26104513E-08,
+                    "z": 1.54279387
+                  }
+                },
+                {
+                  "Position": {
+                    "x": 0.6984852,
+                    "y": 2.371781E-08,
+                    "z": -1.57335329
+                  }
+                }
+              ]
+            },
+            {
               "GUID": "6bf5a3",
               "Name": "Custom_Model",
               "Transform": {
-                "posX": 102.495377,
-                "posY": 33.7023926,
-                "posZ": 14.2980194,
-                "rotX": 6.80771973E-06,
-                "rotY": 0.00159163191,
-                "rotZ": -1.71931322E-06,
+                "posX": 30.4415951,
+                "posY": 1.76790011,
+                "posZ": 7.646596,
+                "rotX": 4.89357444E-06,
+                "rotY": 0.0008771878,
+                "rotZ": -1.98213016E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -38018,83 +38086,15 @@
               "XmlUI": ""
             },
             {
-              "GUID": "610a11",
-              "Name": "Custom_Assetbundle",
-              "Transform": {
-                "posX": 104.056129,
-                "posY": 43.6016731,
-                "posZ": 7.591535,
-                "rotX": 3.31263379E-07,
-                "rotY": 89.99172,
-                "rotZ": 180.0,
-                "scaleX": 1.0,
-                "scaleY": 0.462904,
-                "scaleZ": 1.66
-              },
-              "Nickname": "",
-              "Description": "",
-              "GMNotes": "board",
-              "AltLookAngle": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-              },
-              "ColorDiffuse": {
-                "r": 0.4428971,
-                "g": 0.230897129,
-                "b": 0.0899163559
-              },
-              "LayoutGroupSortIndex": 0,
-              "Value": 0,
-              "Locked": false,
-              "Grid": true,
-              "Snap": true,
-              "IgnoreFoW": false,
-              "MeasureMovement": false,
-              "DragSelectable": true,
-              "Autoraise": true,
-              "Sticky": true,
-              "Tooltip": true,
-              "GridProjection": false,
-              "HideWhenFaceDown": false,
-              "Hands": false,
-              "CustomAssetbundle": {
-                "AssetbundleURL": "chry.me/tts/3droom/floorpad.unity3d",
-                "AssetbundleSecondaryURL": "",
-                "MaterialIndex": 3,
-                "TypeIndex": 4,
-                "LoopingEffectIndex": 0
-              },
-              "LuaScript": "",
-              "LuaScriptState": "",
-              "XmlUI": "",
-              "AttachedSnapPoints": [
-                {
-                  "Position": {
-                    "x": 0.7356253,
-                    "y": 1.26104513E-08,
-                    "z": 1.54279387
-                  }
-                },
-                {
-                  "Position": {
-                    "x": 0.6984852,
-                    "y": 2.371781E-08,
-                    "z": -1.57335329
-                  }
-                }
-              ]
-            },
-            {
               "GUID": "7191a9",
               "Name": "Card",
               "Transform": {
                 "posX": 23.5013,
                 "posY": 1.5038048,
-                "posZ": -5.524702,
-                "rotX": 0.010891513,
-                "rotY": 179.999954,
-                "rotZ": 0.004948191,
+                "posZ": -5.524716,
+                "rotX": 0.0108915,
+                "rotY": 180.000122,
+                "rotZ": 0.00494814338,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -38150,12 +38150,12 @@
               "GUID": "bd278f",
               "Name": "Deck",
               "Transform": {
-                "posX": 12.5010052,
+                "posX": 12.5010366,
                 "posY": 1.52642882,
                 "posZ": -6.0186,
-                "rotX": 0.0108919516,
-                "rotY": 179.997971,
-                "rotZ": 0.00494785653,
+                "rotX": 0.0108920243,
+                "rotY": 179.99794,
+                "rotZ": 0.004947826,
                 "scaleX": 0.714285731,
                 "scaleY": 1.0,
                 "scaleZ": 0.714285731
@@ -38421,9 +38421,9 @@
                 "posX": 35.3973,
                 "posY": 1.76790011,
                 "posZ": 7.6378,
-                "rotX": 5.129351E-06,
-                "rotY": -0.000600069237,
-                "rotZ": -4.2584125E-07,
+                "rotX": 5.23272047E-06,
+                "rotY": -0.0006001397,
+                "rotZ": -1.18173666E-07,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
                 "scaleZ": 1.0
@@ -38477,9 +38477,9 @@
                 "posX": 17.501,
                 "posY": 1.52599657,
                 "posZ": -6.0213,
-                "rotX": 0.010891756,
-                "rotY": 180.000275,
-                "rotZ": 0.00494826166,
+                "rotX": 0.0108916638,
+                "rotY": 179.9996,
+                "rotZ": 0.00494808238,
                 "scaleX": 0.714285731,
                 "scaleY": 1.0,
                 "scaleZ": 0.714285731
@@ -38743,10 +38743,10 @@
               "Name": "Deck",
               "Transform": {
                 "posX": 30.5,
-                "posY": 1.65097809,
+                "posY": 1.650978,
                 "posZ": -2.9971,
-                "rotX": -0.000590845768,
-                "rotY": 179.9999,
+                "rotX": -0.0005912107,
+                "rotY": 179.999878,
                 "rotZ": 180.001068,
                 "scaleX": 1.0,
                 "scaleY": 1.0,
@@ -42539,9 +42539,9 @@
             "posX": -18.9999428,
             "posY": 1.48149931,
             "posZ": -4.99999046,
-            "rotX": 4.1219046E-08,
+            "rotX": -9.189236E-09,
             "rotY": 180.0,
-            "rotZ": -2.23713428E-07,
+            "rotZ": -1.12913341E-07,
             "scaleX": 1.81955469,
             "scaleY": 1.0,
             "scaleZ": 1.81955469
@@ -42590,9 +42590,9 @@
             "posX": -2.49999976,
             "posY": 0.9799973,
             "posZ": 48.0,
-            "rotX": -5.006591E-06,
+            "rotX": -5.00708848E-06,
             "rotY": 179.997269,
-            "rotZ": 5.074461E-07,
+            "rotZ": 5.23051369E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -49024,9 +49024,9 @@
             "posX": 19.5000038,
             "posY": 0.979997039,
             "posZ": 48.0000038,
-            "rotX": -4.59694957E-06,
+            "rotX": -4.608844E-06,
             "rotY": 179.997467,
-            "rotZ": 3.16165625E-07,
+            "rotZ": 3.22831625E-07,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -53886,12 +53886,12 @@
           "GUID": "ef957c",
           "Name": "Custom_Model_Bag",
           "Transform": {
-            "posX": 30.497551,
-            "posY": 0.9799969,
-            "posZ": 47.9987,
-            "rotX": -5.003008E-06,
-            "rotY": 179.997238,
-            "rotZ": 5.3661995E-07,
+            "posX": 30.5000019,
+            "posY": 0.9799968,
+            "posZ": 48.0000038,
+            "rotX": -4.97683232E-06,
+            "rotY": 179.996582,
+            "rotZ": 1.52896575E-06,
             "scaleX": 1.20052135,
             "scaleY": 0.249882281,
             "scaleZ": 1.3145982
@@ -59357,9 +59357,9 @@
             "posX": 2.99999642,
             "posY": 1.49197531,
             "posZ": -5.49999857,
-            "rotX": 0.0108903553,
+            "rotX": 0.0108904988,
             "rotY": 180.0128,
-            "rotZ": 0.00495103654,
+            "rotZ": 0.00495112548,
             "scaleX": 1.6428808,
             "scaleY": 1.0,
             "scaleZ": 1.6428808
