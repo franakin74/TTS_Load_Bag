@@ -34203,7 +34203,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53021\",\n  \"locationFront\": {\n    \"connections\": \"Square|Plus|Star|Tee|Triangle\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53021\",\n  \"locationFront\": {\n    \"connections\": \"Square|Plus|Tee|Triangle\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -34319,7 +34319,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53023\",\n  \"locationFront\": {\n    \"connections\": \"Star|Heart|Tee\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53023\",\n  \"locationFront\": {\n    \"connections\": \"Star|Heart|Tee|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -78970,7 +78970,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53021\",\n  \"locationFront\": {\n    \"connections\": \"Square|Plus|Star|Tee|Triangle\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53021\",\n  \"locationFront\": {\n    \"connections\": \"Square|Plus|Tee|Triangle\",\n    \"icons\": \"Heart\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    }\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
@@ -79086,7 +79086,7 @@
                   },
                   "Nickname": "",
                   "Description": "",
-                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53023\",\n  \"locationFront\": {\n    \"connections\": \"Star|Heart|Tee\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
+                  "GMNotes": "{\n  \"cycle\": \"Standalone\",\n  \"id\": \"53023\",\n  \"locationFront\": {\n    \"connections\": \"Star|Heart|Tee|Triangle\",\n    \"icons\": \"Plus\",\n    \"uses\": {\n      \"countPerInvestigator\": 1,\n      \"token\": \"clue\",\n      \"type\": \"Clue\"\n    },\n    \"victory\": 1\n  },\n  \"traits\": \"Ancient. Ruins.\",\n  \"type\": \"Location\"\n}",
                   "AltLookAngle": {
                     "x": 0.0,
                     "y": 0.0,
